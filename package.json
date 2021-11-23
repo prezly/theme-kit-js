@@ -27,6 +27,7 @@
         "prettier:check": "prettier --check './src/**/*.{ts,js}'",
         "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
         "release": "np",
+        "test": "echo \"Tests? maybe next time ;)\" && exit 0",
         "intl:extract": "formatjs extract 'src/messageDescriptors/**/*.ts' --out-file src/messageFiles/source/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
         "intl:compile": "formatjs compile-folder --ast --format crowdin src/messageFiles/source src/messageFiles/compiled"
     },
