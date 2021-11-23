@@ -57,5 +57,8 @@
     },
     "dependencies": {
         "@formatjs/intl": "^1.16.0"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
