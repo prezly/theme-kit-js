@@ -1,0 +1,60 @@
+{
+    "name": "@prezly/themes-intl-messages",
+    "version": "1.0.0",
+    "description": "Translations for Prezly themes",
+    "main": "dist/index.js",
+    "exports": {
+        "./messages": "./dist/messages"
+    },
+    "files": [
+        "dist/**"
+    ],
+    "engines": {
+        "node": ">= 14.x",
+        "npm": ">= 7.x"
+    },
+    "devEngines": {
+        "node": ">= 14.x",
+        "npm": ">= 7.x"
+    },
+    "scripts": {
+        "clean": "rimraf dist",
+        "prebuild": "npm run clean && npm run prettier:check && npm run intl:compile",
+        "copy-messages": "cp -r src/messageFiles/compiled dist/messages",
+        "build": "tsc --project .",
+        "postbuild": "npm run copy-messages",
+        "prerelease": "npm run build",
+        "prettier:check": "prettier --check './src/**/*.{ts,js}'",
+        "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
+        "release": "np",
+        "intl:extract": "formatjs extract 'src/messageDescriptors/**/*.ts' --out-file src/messageFiles/source/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
+        "intl:compile": "formatjs compile-folder --ast --format crowdin src/messageFiles/source src/messageFiles/compiled"
+    },
+    "np": {
+        "yarn": false
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prezly/themes-intl-messages.git"
+    },
+    "keywords": [],
+    "author": "Prezly Team <hello@prezly.com> (https://www.prezly.com)",
+    "license": "GNU GPL v3",
+    "bugs": {
+        "url": "https://github.com/prezly/themes-intl-messages/issues"
+    },
+    "homepage": "https://github.com/prezly/themes-intl-messages#readme",
+    "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.4",
+        "@formatjs/cli": "^4.4.0",
+        "babel-plugin-formatjs": "^10.3.11",
+        "np": "^7.6.0",
+        "prettier": "^2.4.1",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.4.3"
+    },
+    "dependencies": {
+        "@formatjs/intl": "^1.16.0"
+    }
+}
