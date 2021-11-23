@@ -4,6 +4,7 @@
     "description": "Translations for Prezly themes",
     "main": "dist/index.js",
     "exports": {
+        ".": "./dist/index.js",
         "./messages": "./dist/messages"
     },
     "files": [
