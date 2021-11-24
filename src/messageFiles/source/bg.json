@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Абонирайте се"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Отпишете се"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,13 +48,13 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Въведете валиден имейл адрес"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Това поле е задължително"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Възникна грешка. Пробвайте да подадете формуляра отново"
   },
   "labelEmail": {
     "message": "Your email address"
