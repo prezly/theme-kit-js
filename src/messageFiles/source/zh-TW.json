@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "此網站受hCaptcha驗證碼所保護，其{privacyPolicyLink}和{termsOfServiceLink}適用。"
   },
   "subscription.formTitle": {
     "message": "在您的收件匣中取得更新"
@@ -82,9 +82,9 @@
     "message": "您的電子郵件地址"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "私隱政策"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "服務條款"
   }
 }
