@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Teken in"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Teken uit"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,13 +48,13 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Stel 'n geldige e -posadres bekend"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Hierdie veld word vereis"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Iets het verkeerd geloop. Probeer die vorm weer indien"
   },
   "labelEmail": {
     "message": "Your email address"
