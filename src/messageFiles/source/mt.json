@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Abbona"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Temm l-abbonament"
   },
   "boilerplate.title": {
     "message": "About {companyName}"
@@ -42,13 +42,13 @@
     "message": "Contact"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Introduċilna indirizz tal-email tajjeb"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Dit-taqsima hija meħtieġa"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Marret xi ħaġa ħażin. Jekk jogħġbok erġa' ibgħat il-formola mill-ġdid"
   },
   "mediaGallery.title": {
     "message": "Media gallery"
