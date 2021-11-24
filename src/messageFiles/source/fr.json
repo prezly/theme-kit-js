@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Retour à la page d'accueil"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Copier l'URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Télécharger"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Charger davantage"
   },
   "actions.privacyRequests": {
     "message": "Demandes de renseignements personnels"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Recharger"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Partager :"
   },
   "actions.startUsingCookies": {
     "message": "Commencer à utiliser les cookies"
@@ -36,7 +36,7 @@
     "message": "A propos de {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Catégories"
   },
   "contacts.title": {
     "message": "Contact"
@@ -54,19 +54,19 @@
     "message": "Galerie de médias"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Revenez plus tard pour voir de nouvelles histoires."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Bienvenue sur {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Si vous avez tapé l'URL vous-même, vérifiez l'orthographe dans la barre d'adresse."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "La page que vous recherchez n'existe pas..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Essayez de rafraîchir la page ou de revenir un peu plus tard."
   },
   "serverError.title": {
     "message": "Quelque chose n'allait pas..."
