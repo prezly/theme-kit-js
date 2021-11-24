@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "홈페이지로 돌아가기"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "URL 복사"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "다운로드"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "추가 로드하기"
   },
   "actions.privacyRequests": {
     "message": "개인정보 요청"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "다시 로드하기"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "공유:"
   },
   "actions.startUsingCookies": {
     "message": "쿠키 사용 시작"
@@ -36,7 +36,7 @@
     "message": "{companyName} 소개"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "카테고리"
   },
   "contacts.title": {
     "message": "연락처"
@@ -54,19 +54,19 @@
     "message": "미디어 갤러리"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "새로운 이야기를 보려면 나중에 다시 확인하세요."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "{newsroom}에 오신 것을 환영합니다!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "URL을 직접 입력한 경우 주소 표시줄에서 철자를 확인하세요."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "찾는 페이지가 존재하지 않습니다..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "페이지를 새로고침하거나 잠시 후에 다시 시도하세요."
   },
   "serverError.title": {
     "message": "문제가 발생했음..."
