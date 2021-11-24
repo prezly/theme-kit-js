@@ -60,13 +60,13 @@
     "message": "{newsroom} में आपका स्वागत है!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "यदि आपने स्वयं यूआरएल टाइप किया है, तो पता बार में अक्षर विन्यास की जाँच करें।"
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "आप जो पेज खोज रहे हैं वह मौजूद नहीं है..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "पृष्ठ को रीफ्रेश करने का प्रयास करें या थोड़ी देर बाद वापस आएं।"
   },
   "serverError.title": {
     "message": "कुछ गलत हो गया"
