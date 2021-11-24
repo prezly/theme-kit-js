@@ -27,25 +27,25 @@
     "message": "Stop using cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Liostáil"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Díliostáil"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "Eolas faoi {companyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Teagmhálaí"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Cuir isteach seoladh ríomhphoist atá bailí"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Tá an réimse seo riachtanach"
   },
   "errors.unknown": {
     "message": "Something went wrong. Please try submitting the form again"
@@ -69,17 +69,17 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "Bhí rud éigean contráilte..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Faigh nuashonraithe i do bhosca poist"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "Do sheoladh ríomhphoist"
   },
   "subscription.privacyPolicy": {
     "message": "Privacy Policy"
