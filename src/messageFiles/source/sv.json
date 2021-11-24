@@ -27,28 +27,28 @@
     "message": "Stop using cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Prenumerera"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Avregistrera"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "Om {cOmpanyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Kontakt"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Inför en giltig e-postadress"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Detta fält krävs"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Något blev fel. Var god försök sända formuläret igen"
   },
   "mediaGallery.title": {
     "message": "Media gallery"
