@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Quay lại trang chủ"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Sao chép URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Tải về"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Tải thêm"
   },
   "actions.privacyRequests": {
     "message": "Yêu cầu quyền riêng tư"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Tải lại"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Chia sẻ:"
   },
   "actions.startUsingCookies": {
     "message": "Bắt đầu sử dụng cookie"
@@ -36,7 +36,7 @@
     "message": "Giới thiệu về {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Danh mục"
   },
   "contacts.title": {
     "message": "Liên hệ"
@@ -54,19 +54,19 @@
     "message": "Thư viện đa phương tiện"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Quay lại sau để xem những câu chuyện mới."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Chào mừng đến với {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Nếu bạn tự nhập URL, hãy kiểm tra chính tả trên thanh địa chỉ."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Trang bạn đang tìm kiếm không tồn tại..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Hãy thử làm mới trang hoặc quay lại sau chốc lát."
   },
   "serverError.title": {
     "message": "Đã xảy ra vấn đề..."
