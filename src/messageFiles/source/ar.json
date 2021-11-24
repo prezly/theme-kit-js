@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "طلبات الخصوصية"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,13 +21,13 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "ابدأ باستخدام ملفات تعريف الارتباط"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "توقف عن استخدام ملفات تعريف الارتباط"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "اشترك"
   },
   "actions.unsubscribe": {
     "message": "Unsubscribe"
@@ -42,16 +42,16 @@
     "message": "Contact"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "أدخل عنوان بريد إلكتروني صالح"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "هذا الحقل مطلوب"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "حدث خطأ ما. يُرجى تجربة إرسال النموذج مُجددًا"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "معرض الوسائط"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,17 +69,17 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "حدث خطأ ما..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "تلق التحديثات في صندوق بريدك"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "عنوان بريدك الإلكتروني"
   },
   "subscription.privacyPolicy": {
     "message": "Privacy Policy"
