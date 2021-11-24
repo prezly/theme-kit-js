@@ -1,98 +1,90 @@
 {
-  "actionBackToHomepage": {
+  "actions.backToHomepage": {
     "message": "Back to homepage"
   },
-  "actionCopyShareUrl": {
+  "actions.copyShareUrl": {
     "message": "Copy URL"
   },
-  "actionDownload": {
+  "actions.download": {
     "message": "Download"
   },
-  "actionLoadMore": {
+  "actions.loadMore": {
     "message": "Load more"
   },
-  "actionPrivacyRequests": {
-    "message": "Запрос персональных данных"
+  "actions.privacyRequests": {
+    "message": "Privacy requests"
   },
-  "actionReload": {
+  "actions.reload": {
     "message": "Reload"
   },
-  "actionShare": {
+  "actions.share": {
     "message": "Share:"
   },
-  "actionStartUsingCookies": {
-    "message": "Разрешить использование cookie-файлов"
+  "actions.startUsingCookies": {
+    "message": "Start using cookies"
   },
-  "actionStopUsingCookies": {
-    "message": "Прекратить использование cookie-файлов"
+  "actions.stopUsingCookies": {
+    "message": "Stop using cookies"
   },
-  "actionSubscribe": {
-    "message": "Подписаться"
+  "actions.subscribe": {
+    "message": "Subscribe"
   },
-  "actionUnsubscribe": {
-    "message": "Oтписаться"
+  "actions.unsubscribe": {
+    "message": "Unsubscribe"
   },
-  "boilerplateTitle": {
-    "message": "О {companyName}"
+  "boilerplate.title": {
+    "message": "About {companyName}"
   },
-  "captchaDisclaimer": {
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
-  },
-  "categoriesTitle": {
+  "categories.title": {
     "message": "Categories"
   },
-  "contactsTitle": {
-    "message": "Контакты"
+  "contacts.title": {
+    "message": "Contact"
   },
-  "embargoMessage": {
-    "message": "Embargo until {date}"
+  "errors.emailInvalid": {
+    "message": "Introduce a valid email address"
   },
-  "errorEmailInvalid": {
-    "message": "Укажите действительный адрес электронной почты"
+  "errors.fieldRequired": {
+    "message": "This field is required"
   },
-  "errorFieldRequired": {
-    "message": "Это поле необходимо заполнить"
+  "errors.unknown": {
+    "message": "Something went wrong. Please try submitting the form again"
   },
-  "errorUnknown": {
-    "message": "Что-то пошло не так. Попробуйте отправить форму снова"
+  "mediaGallery.title": {
+    "message": "Media gallery"
   },
-  "labelEmail": {
-    "message": "Ваш электронный адрес"
-  },
-  "loading": {
-    "message": "Loading..."
-  },
-  "mediaGalleryTitle": {
-    "message": "Медиагалерея"
-  },
-  "noStoriesSubtitle": {
+  "noStories.subtitle": {
     "message": "Come back later to see new stories."
   },
-  "noStoriesTitle": {
+  "noStories.title": {
     "message": "Welcome to {newsroom}!"
   },
-  "notFoundSubtitle": {
+  "notFound.subtitle": {
     "message": "If you typed the URL yourself, check the spelling in the address bar."
   },
-  "notFoundTitle": {
+  "notFound.title": {
     "message": "The page you’re looking for doesn’t exist..."
   },
-  "privacyPolicy": {
-    "message": "Privacy Policy"
-  },
-  "serverErrorSubtitle": {
+  "serverError.subtitle": {
     "message": "Try refreshing the page or coming back a bit later."
   },
-  "serverErrorTitle": {
-    "message": "Что-то пошло не так..."
+  "serverError.title": {
+    "message": "Something went wrong..."
   },
-  "shareUrlCopied": {
-    "message": "URL copied!"
+  "subscription.captchaDisclaimer": {
+    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
+    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
   },
-  "subscribeFormTitle": {
-    "message": "Получайте обновления на ваш почтовый ящик"
+  "subscription.formTitle": {
+    "message": "Get updates in your mailbox"
   },
-  "termsOfService": {
+  "subscription.labelEmail": {
+    "message": "Your email address"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Privacy Policy"
+  },
+  "subscription.termsOfService": {
     "message": "Terms of Service"
   }
 }
