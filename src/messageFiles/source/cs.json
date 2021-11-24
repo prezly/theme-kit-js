@@ -27,13 +27,13 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Odebírat"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Odhlásit odběr"
   },
   "boilerplateTitle": {
-    "message": "About {companyName}"
+    "message": "O spOlečnOsti {cOmpanyName}"
   },
   "captchaDisclaimer": {
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
@@ -42,19 +42,19 @@
     "message": "Categories"
   },
   "contactsTitle": {
-    "message": "Contact"
+    "message": "Kontakt"
   },
   "embargoMessage": {
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Uveďte platnou e-mailovou adresu"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Toto pole je povinné"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Něco se pokazilo. Zkuste prosím odeslat formulář znovu"
   },
   "labelEmail": {
     "message": "Your email address"
