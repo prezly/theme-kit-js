@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Liostáil"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Díliostáil"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,10 +48,10 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Cuir isteach seoladh ríomhphoist atá bailí"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Tá an réimse seo riachtanach"
   },
   "errorUnknown": {
     "message": "Something went wrong. Please try submitting the form again"
