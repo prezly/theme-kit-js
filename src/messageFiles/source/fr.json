@@ -27,13 +27,13 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "S'abonner"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Désabonnez-vous"
   },
   "boilerplateTitle": {
-    "message": "About {companyName}"
+    "message": "A propos de {compAnyNAme}"
   },
   "captchaDisclaimer": {
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
@@ -48,13 +48,13 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Indiquez une adresse e-mail valide"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Ce champ est requis"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Une erreur s'est produite. Veuillez envoyer le formulaire à nouveau"
   },
   "labelEmail": {
     "message": "Your email address"
