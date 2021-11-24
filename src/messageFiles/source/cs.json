@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "Požadavky na ochranu osobních údajů"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,37 +21,37 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "Začít používat soubory cookie"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "Přestat používat soubory cookie"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Odebírat"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Odhlásit odběr"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "O společnosti {companyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Kontakt"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Uveďte platnou e-mailovou adresu"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Toto pole je povinné"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Něco se pokazilo. Zkuste prosím odeslat formulář znovu"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "Galerie médií"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,17 +69,17 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "Něco nastalo špatně..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Dostávejte aktualizace do své poštovní schránky"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "Vaše emailová adresa"
   },
   "subscription.privacyPolicy": {
     "message": "Privacy Policy"
