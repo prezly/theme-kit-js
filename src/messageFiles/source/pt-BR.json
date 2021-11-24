@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Inscrever-se"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Cancelar Inscrição"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,13 +48,13 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Digite um e-mail válido"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Este campo é obrigatório"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Ocorreu algum erro. Tente enviar o formulário novamente"
   },
   "labelEmail": {
     "message": "Your email address"
