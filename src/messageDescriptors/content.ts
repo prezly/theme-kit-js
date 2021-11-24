@@ -2,39 +2,39 @@ import { defineMessages } from '@formatjs/intl';
 
 export const boilerplate = defineMessages({
     title: {
-        id: 'boilerplateTitle',
+        id: 'boilerplate.title',
         defaultMessage: 'About {companyName}',
     },
 });
 
 export const categories = defineMessages({
     title: {
-        id: 'categoriesTitle',
+        id: 'categories.title',
         defaultMessage: 'Categories',
     },
 });
 
 export const contacts = defineMessages({
     title: {
-        id: 'contactsTitle',
+        id: 'contacts.title',
         defaultMessage: 'Contact',
     },
 });
 
 export const mediaGallery = defineMessages({
     title: {
-        id: 'mediaGalleryTitle',
+        id: 'mediaGallery.title',
         defaultMessage: 'Media gallery',
     },
 });
 
 export const noStories = defineMessages({
     title: {
-        id: 'noStoriesTitle',
+        id: 'noStories.title',
         defaultMessage: 'Welcome to {newsroom}!',
     },
     subtitle: {
-        id: 'noStoriesSubtitle',
+        id: 'noStories.subtitle',
         defaultMessage: 'Come back later to see new stories.',
     },
 });

@@ -2,47 +2,47 @@ import { defineMessages } from '@formatjs/intl';
 
 export const actions = defineMessages({
     backToHomePage: {
-        id: 'actionBackToHomepage',
+        id: 'actions.backToHomepage',
         defaultMessage: 'Back to homepage',
     },
     copyShareUrl: {
-        id: 'actionCopyShareUrl',
+        id: 'actions.copyShareUrl',
         defaultMessage: 'Copy URL',
     },
     download: {
-        id: 'actionDownload',
+        id: 'actions.download',
         defaultMessage: 'Download',
     },
     loadMore: {
-        id: 'actionLoadMore',
+        id: 'actions.loadMore',
         defaultMessage: 'Load more',
     },
     privacyRequests: {
-        id: 'actionPrivacyRequests',
+        id: 'actions.privacyRequests',
         defaultMessage: 'Privacy requests',
     },
     reload: {
-        id: 'actionReload',
+        id: 'actions.reload',
         defaultMessage: 'Reload',
     },
     share: {
-        id: 'actionShare',
+        id: 'actions.share',
         defaultMessage: 'Share:',
     },
     startUsingCookies: {
-        id: 'actionStartUsingCookies',
+        id: 'actions.startUsingCookies',
         defaultMessage: 'Start using cookies',
     },
     stopUsingCookies: {
-        id: 'actionStopUsingCookies',
+        id: 'actions.stopUsingCookies',
         defaultMessage: 'Stop using cookies',
     },
     subscribe: {
-        id: 'actionSubscribe',
+        id: 'actions.subscribe',
         defaultMessage: 'Subscribe',
     },
     unsubscribe: {
-        id: 'actionUnsubscribe',
+        id: 'actions.unsubscribe',
         defaultMessage: 'Unsubscribe',
     },
 });
