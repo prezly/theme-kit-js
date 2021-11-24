@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "Personvernhenvendelser"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,10 +21,10 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "Start å bruke informasjonskapsler"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "Slutt å bruke informasjonskapsler"
   },
   "actions.subscribe": {
     "message": "Abonner"
@@ -33,13 +33,13 @@
     "message": "Avslutt abonnementet"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "Om {companyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Kontakt"
   },
   "errors.emailInvalid": {
     "message": "Legg til en gyldig e-postadresse"
@@ -51,7 +51,7 @@
     "message": "Det har oppstått en feil. Prøv å sende skjemaet på nytt"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "Media galleri"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,22 +69,22 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "Noe gikk galt..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Dette nettstedet er beskyttet av hCaptcha og dens {privacyPolicyLink} og {termsOfServiceLink}."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Få oppdateringer i innboksen din"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "Din e-postadresse"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Personvernregler"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Tjenestevilkår"
   }
 }
