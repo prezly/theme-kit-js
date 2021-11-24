@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Este sitio está protegido por hCaptcha y se aplican su {privacyPolicyLink} y {termsOfServiceLink}."
   },
   "subscription.formTitle": {
     "message": "Consigue actualizaciones en tu bandeja de correo"
@@ -82,9 +82,9 @@
     "message": "Tu dirección de email"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Política de Privacidad"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Términos del servicio"
   }
 }
