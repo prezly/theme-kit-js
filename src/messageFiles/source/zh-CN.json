@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "订阅"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "退订"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,10 +48,10 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "提供一个有效的电子邮件地址"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "此字段为必填项"
   },
   "errorUnknown": {
     "message": "Something went wrong. Please try submitting the form again"
