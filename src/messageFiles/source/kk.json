@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Жазылу"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Жазылымнан бас тарту"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,13 +48,13 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Жарамды электрондық пошта беріңіз"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Бұл жол міндетті"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Бірдеңе дұрыс болмады. Пішінді қайтадан жіберіп көріңіз"
   },
   "labelEmail": {
     "message": "Your email address"
