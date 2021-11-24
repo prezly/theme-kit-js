@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Acest site este protejat de hCaptcha și îi sunt aplicabile {privacyPolicyLink} și {termsOfServiceLink}."
   },
   "subscription.formTitle": {
     "message": "Primire actualizări în căsuța poștală"
@@ -82,9 +82,9 @@
     "message": "Adresa dvs. de e-mail"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Politica de confidențialitate"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Termenii de utilizare"
   }
 }
