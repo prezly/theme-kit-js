@@ -27,13 +27,13 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Abone ol"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Abonelikten çık - "
   },
   "boilerplateTitle": {
-    "message": "About {companyName}"
+    "message": "{companyName} Hakkında"
   },
   "captchaDisclaimer": {
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
@@ -42,19 +42,19 @@
     "message": "Categories"
   },
   "contactsTitle": {
-    "message": "Contact"
+    "message": "Iletişim"
   },
   "embargoMessage": {
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Geçerli bir e-posta adresi girin"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Bu alan zorunludur"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Bir şeyler yanlış gitti. Lütfen formu tekrar göndermeyi dene"
   },
   "labelEmail": {
     "message": "Your email address"
