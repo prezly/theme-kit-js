@@ -27,13 +27,13 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Abonnieren"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Abbestellen"
   },
   "boilerplateTitle": {
-    "message": "About {companyName}"
+    "message": "Über {companyName}"
   },
   "captchaDisclaimer": {
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
@@ -42,19 +42,19 @@
     "message": "Categories"
   },
   "contactsTitle": {
-    "message": "Contact"
+    "message": "Kontakt"
   },
   "embargoMessage": {
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Geben Sie eine gültige E-Mail-Adresse an"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Dies ist ein Pflichtfeld"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Etwas ist schief gelaufen. Bitte versuchen Sie erneut, das Formular abzusenden"
   },
   "labelEmail": {
     "message": "Your email address"
