@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "返回首页"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "复制网址"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "下载"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "加载更多"
   },
   "actions.privacyRequests": {
     "message": "隐私请求"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "重新加载"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "共享："
   },
   "actions.startUsingCookies": {
     "message": "开始使用Cookies"
@@ -36,7 +36,7 @@
     "message": "关于{companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "类别"
   },
   "contacts.title": {
     "message": "联系"
@@ -54,19 +54,19 @@
     "message": "媒体画廊"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "稍后再回来查看新故事。"
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "欢迎来到{newsroom}！"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "如果您自己输入网址，请检查地址栏中的拼写。"
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "您要找的页面不存在..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "尝试刷新页面或稍后再回来。"
   },
   "serverError.title": {
     "message": "出了一些错误..."
