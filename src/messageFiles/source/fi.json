@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Tilaa"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Peru tilaus"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,13 +48,13 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Syötä voimassaoleva sähköpostiosoite"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Tämä kenttä on pakollinen"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Jotain meni pieleen. Yritä lähettää lomake uudelleen"
   },
   "labelEmail": {
     "message": "Your email address"
