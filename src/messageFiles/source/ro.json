@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Abonare"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Dezabonare"
   },
   "boilerplate.title": {
     "message": "About {companyName}"
@@ -42,13 +42,13 @@
     "message": "Contact"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Introdu o adresă de e-mail validă"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Câmpul este obligatoriu"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Ceva nu este în regulă. Încercați să trimiteți formularul din nou"
   },
   "mediaGallery.title": {
     "message": "Media gallery"
