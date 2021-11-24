@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "สมัคร"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "ยกเลิกการสมัคร"
   },
   "boilerplate.title": {
     "message": "About {companyName}"
@@ -42,10 +42,10 @@
     "message": "Contact"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "แนะนำที่อยู่อีเมลที่ถูกต้อง"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "ต้องกรอกข้อมูลในช่องนี้"
   },
   "errors.unknown": {
     "message": "Something went wrong. Please try submitting the form again"
