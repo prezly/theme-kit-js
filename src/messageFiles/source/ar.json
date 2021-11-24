@@ -27,7 +27,7 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "اشترك"
   },
   "actionUnsubscribe": {
     "message": "Unsubscribe"
@@ -48,13 +48,13 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "أدخل عنوان بريد إلكتروني صالح"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "هذا الحقل مطلوب"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "حدث خطأ ما. يُرجى تجربة إرسال النموذج مُجددًا"
   },
   "labelEmail": {
     "message": "Your email address"
