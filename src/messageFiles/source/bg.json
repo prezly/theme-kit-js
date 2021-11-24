@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Този сайт се защитава чрез hCaptcha, като се прилагат нейната {privacyPolicyLink} и {termsOfServiceLink}."
   },
   "subscription.formTitle": {
     "message": "Получавайте актуална информация в пощенската си кутия"
@@ -82,9 +82,9 @@
     "message": "Вашият имейл адрес"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Политика за поверителност"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Условията ѝ за ползване"
   }
 }
