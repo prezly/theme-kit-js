@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "購読"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "登録解除"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,10 +48,10 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "有効なメールアドレスを紹介"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "この項目は必須です"
   },
   "errorUnknown": {
     "message": "Something went wrong. Please try submitting the form again"
