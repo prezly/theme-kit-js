@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "私隱要求"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,37 +21,37 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "開始使用Cookie"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "停止使用Cookie"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "訂閱"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "取消訂閱"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "關於 {companyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "聯繫"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "介紹一個有效的電郵地址"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "此字段為必填項"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "出了點問題。請再嘗試提交表格。"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "媒體畫廊"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,17 +69,17 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "發生錯誤..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "在您的收件匣中取得更新"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "您的電子郵件地址"
   },
   "subscription.privacyPolicy": {
     "message": "Privacy Policy"
