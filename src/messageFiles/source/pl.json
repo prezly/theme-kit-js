@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "Żądania dot. prywatności"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,10 +21,10 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "Zacznij korzystać z plików cookies"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "Przestań korzystać z plików cookies"
   },
   "actions.subscribe": {
     "message": "Subskrybuj"
@@ -51,7 +51,7 @@
     "message": "Coś poszło nie tak. Spróbuj ponownie przesłać formularz"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "Galeria multimediów"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,22 +69,22 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "Wystąpił błąd..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Ta strona jest chroniona przez hCaptcha, obowiązuje {privacyPolicyLink} i {termsOfServiceLink}."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Aktualizacje w Twojej skrzynce pocztowej"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "Twój adres e-mail"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Polityka prywatności"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Warunki korzystania z usługi"
   }
 }
