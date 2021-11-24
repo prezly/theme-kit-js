@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Deze site is beschermd door hCaptcha en het {privacyPolicyLink} en {termsOfServiceLink} zijn van toepassing."
   },
   "subscription.formTitle": {
     "message": "Updates in je mailbox"
@@ -82,9 +82,9 @@
     "message": "E-mailadres"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privacybeleid"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Gebruiksvoorwaarden"
   }
 }
