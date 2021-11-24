@@ -1,0 +1,3 @@
+files:
+  - source: /src/messageFiles/source/en.json
+    translation: /src/messageFiles/source/%two_letters_code%.%file_extension%
