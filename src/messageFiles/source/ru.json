@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actionPrivacyRequests": {
-    "message": "Privacy requests"
+    "message": "Запрос персональных данных"
   },
   "actionReload": {
     "message": "Reload"
@@ -21,19 +21,19 @@
     "message": "Share:"
   },
   "actionStartUsingCookies": {
-    "message": "Start using cookies"
+    "message": "Разрешить использование cookie-файлов"
   },
   "actionStopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "Прекратить использование cookie-файлов"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Подписаться"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Oтписаться"
   },
   "boilerplateTitle": {
-    "message": "About {companyName}"
+    "message": "О {companyName}"
   },
   "captchaDisclaimer": {
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
@@ -42,28 +42,28 @@
     "message": "Categories"
   },
   "contactsTitle": {
-    "message": "Contact"
+    "message": "Контакты"
   },
   "embargoMessage": {
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Укажите действительный адрес электронной почты"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Это поле необходимо заполнить"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Что-то пошло не так. Попробуйте отправить форму снова"
   },
   "labelEmail": {
-    "message": "Your email address"
+    "message": "Ваш электронный адрес"
   },
   "loading": {
     "message": "Loading..."
   },
   "mediaGalleryTitle": {
-    "message": "Media gallery"
+    "message": "Медиагалерея"
   },
   "noStoriesSubtitle": {
     "message": "Come back later to see new stories."
@@ -84,13 +84,13 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverErrorTitle": {
-    "message": "Something went wrong..."
+    "message": "Что-то пошло не так..."
   },
   "shareUrlCopied": {
     "message": "URL copied!"
   },
   "subscribeFormTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Получайте обновления на ваш почтовый ящик"
   },
   "termsOfService": {
     "message": "Terms of Service"
