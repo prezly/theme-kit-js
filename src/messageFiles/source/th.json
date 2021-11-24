@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "คำขอความเป็นส่วนตัว"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,37 +21,37 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "เริ่มการใช้คุกกี้"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "หยุดการใช้คุกกี้"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "สมัคร"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "ยกเลิกการสมัคร"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "เกี่ยวกับ {companyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "ติดต่อ"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "แนะนำที่อยู่อีเมลที่ถูกต้อง"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "ต้องกรอกข้อมูลในช่องนี้"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "อะไรบางอย่างผิดปกติ โปรดลองส่งแบบฟอร์มอีกครั้ง"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "แกลลอรี่สื่อ"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,22 +69,22 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "มีบางอย่างผิดปกติ"
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "เว็บไซต์นี้ได้รับการคุ้มครองโดย hCaptcha และมีการนำ {privacyPolicyLink} และ {termsOfServiceLink} ของเว็บไซต์มาบังคับใช้"
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "รับอัพเดทในกล่องจดหมายของคุณ"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "ที่อยู่อีเมลของคุณ"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "นโยบายความเป็นส่วนตัว"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "ข้อตกลงการใช้บริการ"
   }
 }

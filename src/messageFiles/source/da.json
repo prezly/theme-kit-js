@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "Fortrolighedsanmodninger"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,37 +21,37 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "Begynd at bruge cookies"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "Stop med at bruge cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Tilmeld"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Frameld"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "Om {companyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Kontakt"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Opgiv en gyldig e-mailadresse"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Dette felt er obligatorisk"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Noget gik galt. Prøv at indsende formularen igen"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "Mediegalleri"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,22 +69,22 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "Noget er gået galt..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Dette websted er beskyttet af hCaptcha, og dets {privacyPolicyLink} og {termsOfServiceLink} gælder."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Få opdateringer i din indbakke"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "Din e-mail-adresse"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privatlivspolitik"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Servicevilkår"
   }
 }

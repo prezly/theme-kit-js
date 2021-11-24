@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "Privacyverzoeken"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,19 +21,19 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "Start met het gebruik van cookies"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "Stop met het gebruik van cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Inschrijven"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Schrijf je uit"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "Over {companyName}"
   },
   "categories.title": {
     "message": "Categories"
@@ -42,16 +42,16 @@
     "message": "Contact"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Voer een geldig e-mailadres in"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Dit veld is vereist"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Er is iets fout gegaan. Probeer het formulier opnieuw te verzenden"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "Media"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,22 +69,22 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "Er liep iets mis..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Deze site is beschermd door hCaptcha en het {privacyPolicyLink} en {termsOfServiceLink} zijn van toepassing."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Updates in je mailbox"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "E-mailadres"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privacybeleid"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Gebruiksvoorwaarden"
   }
 }

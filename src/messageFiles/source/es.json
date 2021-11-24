@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "Solicitudes de privacidad"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,37 +21,37 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "Empezar a usar cookies"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "Dejar de usar cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Suscribirse"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Cancelar la suscripción"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "Sobre {companyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Contactar"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Introduce un correo electrónico válido"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Este campo es obligatorio"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Ha habido un error. Intenta volver a enviar el formulario"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "Galería multimedia"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,22 +69,22 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "Algo ha ido mal..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Este sitio está protegido por hCaptcha y se aplican su {privacyPolicyLink} y {termsOfServiceLink}."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Consigue actualizaciones en tu bandeja de correo"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "Tu dirección de email"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Política de Privacidad"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Términos del servicio"
   }
 }

@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "개인정보 요청"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,37 +21,37 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "쿠키 사용 시작"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "쿠키 사용 중지"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "구독"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "구독 해제"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "{companyName} 소개"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "연락처"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "유효한 이메일 주소를 제시하세요."
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "이 필드는 필수 항목입니다."
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "뭔가 잘 되었습니다. 양식을 다시 제출하세요"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "미디어 갤러리"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,22 +69,22 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "문제가 발생했음..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "이 사이트는 hCaptcha의 보호를 받고 있으며 {privacyPolicyLink} 및 {termsOfServiceLink} 이 적용됩니다."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "메일박스에서 업데이트 가져오기"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "사용자 이메일 주소"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "개인정보 보호 정책"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "서비스 약관"
   }
 }
