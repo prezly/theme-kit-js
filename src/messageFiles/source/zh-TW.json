@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "返回主頁"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "複製網址"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "下載"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "加載更多"
   },
   "actions.privacyRequests": {
     "message": "私隱要求"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "重新加載"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "分享"
   },
   "actions.startUsingCookies": {
     "message": "開始使用Cookie"
@@ -36,7 +36,7 @@
     "message": "關於 {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "類別"
   },
   "contacts.title": {
     "message": "聯繫"
@@ -54,19 +54,19 @@
     "message": "媒體畫廊"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "稍後回來看新的故事。"
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "歡迎來到{newsroom}！"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "如果您自行輸入網址，請檢查地址欄中的拼寫。"
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "您要找的頁面不存在…"
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "嘗試刷新頁面或稍後再嘗試。"
   },
   "serverError.title": {
     "message": "發生錯誤..."
