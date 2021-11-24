@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Đăng ký"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Hủy đăng ký"
   },
   "boilerplate.title": {
     "message": "About {companyName}"
@@ -42,13 +42,13 @@
     "message": "Contact"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Giới thiệu một địa chỉ email hợp lệ"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Đây là trường bắt buộc"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Đã xảy ra sự cố. Vui lòng gửi lại mẫu đơn"
   },
   "mediaGallery.title": {
     "message": "Media gallery"
