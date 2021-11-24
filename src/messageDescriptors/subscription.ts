@@ -13,6 +13,8 @@ export const subscription = defineMessages({
         id: 'subscription.captchaDisclaimer',
         defaultMessage:
             'This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply.',
+        description:
+            'The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively',
     },
     privacyPolicy: {
         id: 'subscription.privacyPolicy',
