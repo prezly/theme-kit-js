@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "यह साइट hCaptcha और उनकी {privacyPolicyLink} के द्वारा संरक्षित है और {termsOfServiceLink} लागू होती हैं।"
   },
   "subscription.formTitle": {
     "message": "अपने मेलबॉक्स में नई जानकारी प्राप्त करें"
@@ -82,9 +82,9 @@
     "message": "आपका ईमेल पता"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "गोपनीयता नीति"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "सेवा की शर्तें"
   }
 }
