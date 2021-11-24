@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Trang web này được bảo vệ bởi hCaptcha và áp dụng {privacyPolicyLink} và {termsOfServiceLink} của hCaptcha."
   },
   "subscription.formTitle": {
     "message": "Nhận thông tin cập nhật trong hộp thư của bạn"
@@ -82,9 +82,9 @@
     "message": "Địa chỉ email của bạn"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Chính sách Quyền Riêng tư"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Điều khoản Dịch vụ"
   }
 }
