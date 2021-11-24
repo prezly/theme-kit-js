@@ -12,7 +12,7 @@
     "message": "Load more"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "Privatumo reikalavimai"
   },
   "actions.reload": {
     "message": "Reload"
@@ -21,10 +21,10 @@
     "message": "Share:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "Pradėti naudoti slapukus"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "Nustoti naudoti slapukus"
   },
   "actions.subscribe": {
     "message": "Prenumeruoti"
@@ -33,13 +33,13 @@
     "message": "Atsisakyti prenumeratos"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "Apie {companyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Kontaktai"
   },
   "errors.emailInvalid": {
     "message": "Nurodykite galiojantį el. pašto adresą"
@@ -51,7 +51,7 @@
     "message": "Kažkas nepavyko. Bandykite dar kartą pateikti formą"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "Medijos galerija"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -69,22 +69,22 @@
     "message": "Try refreshing the page or coming back a bit later."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "Kažkas ne taip..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Ši svetainė apsaugota „hCaptcha” ir galioja {privacyPolicyLink} ir {termsOfServiceLink}."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Gaukite naujinimus savo el. pašto dėžutėje"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "Jūsų el. pašto adresas"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privatumo politika"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Paslaugų teikimo sąlygos"
   }
 }
