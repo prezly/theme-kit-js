@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "เว็บไซต์นี้ได้รับการคุ้มครองโดย hCaptcha และมีการนำ {privacyPolicyLink} และ {termsOfServiceLink} ของเว็บไซต์มาบังคับใช้"
   },
   "subscription.formTitle": {
     "message": "รับอัพเดทในกล่องจดหมายของคุณ"
@@ -82,9 +82,9 @@
     "message": "ที่อยู่อีเมลของคุณ"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "นโยบายความเป็นส่วนตัว"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "ข้อตกลงการใช้บริการ"
   }
 }
