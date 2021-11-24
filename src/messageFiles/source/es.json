@@ -27,13 +27,13 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Suscribirse"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Cancelar la suscripción"
   },
   "boilerplateTitle": {
-    "message": "About {companyName}"
+    "message": "Sobre {companyName}"
   },
   "captchaDisclaimer": {
     "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
@@ -42,19 +42,19 @@
     "message": "Categories"
   },
   "contactsTitle": {
-    "message": "Contact"
+    "message": "Contactar"
   },
   "embargoMessage": {
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Introduce un correo electrónico válido"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Este campo es obligatorio"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Ha habido un error. Intenta volver a enviar el formulario"
   },
   "labelEmail": {
     "message": "Your email address"
