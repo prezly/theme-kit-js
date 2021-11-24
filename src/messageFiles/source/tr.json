@@ -27,28 +27,28 @@
     "message": "Stop using cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Abone ol"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Abonelikten çık - "
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "{companyName} Hakkında"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Iletişim"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Geçerli bir e-posta adresi girin"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Bu alan zorunludur"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Bir şeyler yanlış gitti. Lütfen formu tekrar göndermeyi dene"
   },
   "mediaGallery.title": {
     "message": "Media gallery"
