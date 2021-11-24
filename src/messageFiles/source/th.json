@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "สมัคร"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "ยกเลิกการสมัคร"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,10 +48,10 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "แนะนำที่อยู่อีเมลที่ถูกต้อง"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "ต้องกรอกข้อมูลในช่องนี้"
   },
   "errorUnknown": {
     "message": "Something went wrong. Please try submitting the form again"
