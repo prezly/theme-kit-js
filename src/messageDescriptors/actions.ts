@@ -1,56 +1,48 @@
-import { defineMessage } from '@formatjs/intl';
+import { defineMessages } from '@formatjs/intl';
 
-export const actionBackToHomepage = defineMessage({
-    id: 'actionBackToHomepage',
-    defaultMessage: 'Back to homepage',
-});
-
-export const actionCopyShareUrl = defineMessage({
-    id: 'actionCopyShareUrl',
-    defaultMessage: 'Copy URL',
-});
-
-export const actionDownload = defineMessage({
-    id: 'actionDownload',
-    defaultMessage: 'Download',
-});
-
-export const actionLoadMore = defineMessage({
-    id: 'actionLoadMore',
-    defaultMessage: 'Load more',
-});
-
-export const actionPrivacyRequests = defineMessage({
-    id: 'actionPrivacyRequests',
-    defaultMessage: 'Privacy requests',
-});
-
-export const actionReload = defineMessage({
-    id: 'actionReload',
-    defaultMessage: 'Reload',
-});
-
-export const actionShare = defineMessage({
-    id: 'actionShare',
-    defaultMessage: 'Share:',
-});
-
-export const actionStartUsingCookies = defineMessage({
-    id: 'actionStartUsingCookies',
-    defaultMessage: 'Start using cookies',
-});
-
-export const actionStopUsingCookies = defineMessage({
-    id: 'actionStopUsingCookies',
-    defaultMessage: 'Stop using cookies',
-});
-
-export const actionSubscribe = defineMessage({
-    id: 'actionSubscribe',
-    defaultMessage: 'Subscribe',
-});
-
-export const actionUnsubscribe = defineMessage({
-    id: 'actionUnsubscribe',
-    defaultMessage: 'Unsubscribe',
+export const actions = defineMessages({
+    backToHomePage: {
+        id: 'actionBackToHomepage',
+        defaultMessage: 'Back to homepage',
+    },
+    copyShareUrl: {
+        id: 'actionCopyShareUrl',
+        defaultMessage: 'Copy URL',
+    },
+    download: {
+        id: 'actionDownload',
+        defaultMessage: 'Download',
+    },
+    loadMore: {
+        id: 'actionLoadMore',
+        defaultMessage: 'Load more',
+    },
+    privacyRequests: {
+        id: 'actionPrivacyRequests',
+        defaultMessage: 'Privacy requests',
+    },
+    reload: {
+        id: 'actionReload',
+        defaultMessage: 'Reload',
+    },
+    share: {
+        id: 'actionShare',
+        defaultMessage: 'Share:',
+    },
+    startUsingCookies: {
+        id: 'actionStartUsingCookies',
+        defaultMessage: 'Start using cookies',
+    },
+    stopUsingCookies: {
+        id: 'actionStopUsingCookies',
+        defaultMessage: 'Stop using cookies',
+    },
+    subscribe: {
+        id: 'actionSubscribe',
+        defaultMessage: 'Subscribe',
+    },
+    unsubscribe: {
+        id: 'actionUnsubscribe',
+        defaultMessage: 'Unsubscribe',
+    },
 });

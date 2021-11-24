@@ -1,1 +1,1 @@
-export * from './messageDescriptors';
+export { default } from './messageDescriptors';
