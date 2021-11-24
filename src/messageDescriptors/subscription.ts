@@ -1,27 +1,27 @@
-import { defineMessage } from '@formatjs/intl';
+import { defineMessages } from '@formatjs/intl';
 
-export const subscribeFormTitle = defineMessage({
-    id: 'subscribeFormTitle',
-    defaultMessage: 'Get updates in your mailbox',
-});
-
-export const labelEmail = defineMessage({
-    id: 'labelEmail',
-    defaultMessage: 'Your email address',
-});
-
-export const captchaDisclaimer = defineMessage({
-    id: 'captchaDisclaimer',
-    defaultMessage:
-        'This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply.',
-});
-
-export const privacyPolicy = defineMessage({
-    id: 'privacyPolicy',
-    defaultMessage: 'Privacy Policy',
-});
-
-export const termsOfService = defineMessage({
-    id: 'termsOfService',
-    defaultMessage: 'Terms of Service',
+export const subscription = defineMessages({
+    formTitle: {
+        id: 'subscription.formTitle',
+        defaultMessage: 'Get updates in your mailbox',
+    },
+    labelEmail: {
+        id: 'subscription.labelEmail',
+        defaultMessage: 'Your email address',
+    },
+    captchaDisclaimer: {
+        id: 'subscription.captchaDisclaimer',
+        defaultMessage:
+            'This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply.',
+        description:
+            'The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively',
+    },
+    privacyPolicy: {
+        id: 'subscription.privacyPolicy',
+        defaultMessage: 'Privacy Policy',
+    },
+    termsOfService: {
+        id: 'subscription.termsOfService',
+        defaultMessage: 'Terms of Service',
+    },
 });
