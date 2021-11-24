@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Гэты сайт абаронены hCaptcha. Прымяняюцца {privacyPolicyLink} і {termsOfServiceLink}."
   },
   "subscription.formTitle": {
     "message": "Атрымлівайце навіны ў сваю паштовую скрыню"
@@ -82,9 +82,9 @@
     "message": "Ваш электронны адрас"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Палітыка прыватнасці"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Умовы прадастаўлення паслуг"
   }
 }
