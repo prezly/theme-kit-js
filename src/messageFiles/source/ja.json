@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "ホームページに戻る"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "URLをコピー"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "ダウンロード"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "続きを読み込む"
   },
   "actions.privacyRequests": {
     "message": "プライバシーに関するリクエスト"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "再読み込み"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "共有"
   },
   "actions.startUsingCookies": {
     "message": "Cookieの使用を開始"
@@ -36,7 +36,7 @@
     "message": "{companyName}について"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "カテゴリー"
   },
   "contacts.title": {
     "message": "コンタクト"
@@ -54,19 +54,19 @@
     "message": "メディアギャラリー"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "後ほど再度アクセスし、新しいストーリーをご覧ください。"
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "{newsroom} へようこそ！"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "ご自身で URL を入力した場合は、アドレスバーのスペルを確認してください。"
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "お探しのページは存在しません..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "ページを再読み込みするか、少ししてから再度ご確認ください。"
   },
   "serverError.title": {
     "message": "エラーが発生しました..."
