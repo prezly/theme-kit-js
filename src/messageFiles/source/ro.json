@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Înapoi la pagina principală"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Copiați URL-ul"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Descărcare"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Încarcă mai mult"
   },
   "actions.privacyRequests": {
     "message": "Cereri de confidențialitate"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Reîncarcă"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Distribuiți:"
   },
   "actions.startUsingCookies": {
     "message": "Începe să folosești module cookie"
@@ -36,7 +36,7 @@
     "message": "Despre {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Categorii"
   },
   "contacts.title": {
     "message": "Contact"
@@ -54,19 +54,19 @@
     "message": "Galerie media"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Reveniți mai târziu pentru a vedea articole noi."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Bun venit la {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Dacă dvs. ați scris URL-ul, verificați ortografia în bara de adrese."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Pagina pe care o căutați nu există..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Încercați să reîmprospătați pagina sau să reveniți puțin mai târziu."
   },
   "serverError.title": {
     "message": "Ceva nu a funcționat cum trebuie..."
