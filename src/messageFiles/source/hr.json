@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actionSubscribe": {
-    "message": "Subscribe"
+    "message": "Pretplatite se"
   },
   "actionUnsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Raskini pretplatu"
   },
   "boilerplateTitle": {
     "message": "About {companyName}"
@@ -48,13 +48,13 @@
     "message": "Embargo until {date}"
   },
   "errorEmailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Unesite valjanu e-mail adresu"
   },
   "errorFieldRequired": {
-    "message": "This field is required"
+    "message": "Ovo polje je obvezno"
   },
   "errorUnknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Nešto je pošlo po krivu. Pokušajte ponovno poslati zahtjev"
   },
   "labelEmail": {
     "message": "Your email address"
