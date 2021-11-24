@@ -27,10 +27,10 @@
     "message": "Stop using cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Inscrever-se"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Cancelar Inscrição"
   },
   "boilerplate.title": {
     "message": "About {companyName}"
@@ -42,13 +42,13 @@
     "message": "Contact"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Digite um e-mail válido"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Este campo é obrigatório"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Ocorreu algum erro. Tente enviar o formulário novamente"
   },
   "mediaGallery.title": {
     "message": "Media gallery"
