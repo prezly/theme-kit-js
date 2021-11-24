@@ -27,28 +27,28 @@
     "message": "Stop using cookies"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Iscriviti"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Disiscriviti"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "Maggiori informazioni su {companyName}"
   },
   "categories.title": {
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Contatto"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Inserisci un indirizzo email valido"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Questo campo è obbligatorio"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Qualcosa è andato storto. Prova a inviare nuovamente il modulo"
   },
   "mediaGallery.title": {
     "message": "Media gallery"
