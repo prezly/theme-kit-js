@@ -73,7 +73,7 @@
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Bu site hCaptcha tarafından korunmaktadır ve {privacyPolicyLink} ve {termsOfServiceLink} geçerlidir."
   },
   "subscription.formTitle": {
     "message": "Güncellemeleri posta kutunuzda alın"
@@ -82,9 +82,9 @@
     "message": "E-posta adresiniz"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Gizlilik Politikası"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Hizmet Şartları"
   }
 }
