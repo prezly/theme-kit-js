@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Takaisin kotisivulle"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Kopioi URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Lataa"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Lataa lisää"
   },
   "actions.privacyRequests": {
     "message": "Tietosuojapyynnöt"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Lataa uudelleen"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Jaa:"
   },
   "actions.startUsingCookies": {
     "message": "Aloita evästeiden käyttö"
@@ -36,7 +36,7 @@
     "message": "Tietoja yrityksestä {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategoriat"
   },
   "contacts.title": {
     "message": "Ota yhteyttä"
@@ -54,19 +54,19 @@
     "message": "Mediagalleria"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Palaa takaisin myöhemmin nähdäksesi uusia tarinoita."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Tervetuloa {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Jos kirjoitit URL-osoitteen itse, tarkista oikeinkirjoitus osoitepalkista."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Etsimääsi sivua ei ole olemassa..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Yritä päivittää sivu tai palaa takaisin myöhemmin."
   },
   "serverError.title": {
     "message": "Jokin meni vikaan..."
