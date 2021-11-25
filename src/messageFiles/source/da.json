@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Tilbage til startsiden"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Kopier URL"
   },
   "actions.download": {
     "message": "Download"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Indlæs mere"
   },
   "actions.privacyRequests": {
     "message": "Fortrolighedsanmodninger"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Genindlæs"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Del:"
   },
   "actions.startUsingCookies": {
     "message": "Begynd at bruge cookies"
@@ -36,7 +36,7 @@
     "message": "Om {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategorier"
   },
   "contacts.title": {
     "message": "Kontakt"
@@ -54,19 +54,19 @@
     "message": "Mediegalleri"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Kom tilbage senere for at se nye historier."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Velkommen til {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Hvis du selv har skrevet denne URL, bedes du kontrollere stavningen i adresselinjen."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Den side, du ledere efter, eksisterer ikke..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Prøv at genindlæse siden eller at komme tilbage om nogen tid."
   },
   "serverError.title": {
     "message": "Noget er gået galt..."
