@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Επιστροφή στην αρχική σελίδα"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Αντιγραφή της διεύθυνσης URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Λήψη"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Φορτώστε περισσότερα"
   },
   "actions.privacyRequests": {
     "message": "Αιτήματα απορρήτου"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Επαναφόρτωση"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Κοινοποίηση:"
   },
   "actions.startUsingCookies": {
     "message": "Έναρξη χρήσης cookies"
@@ -36,7 +36,7 @@
     "message": "Σχετικά με την {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Κατηγορίες"
   },
   "contacts.title": {
     "message": "Επαφή"
@@ -54,19 +54,19 @@
     "message": "Γκαλερί Μέσων"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Επιστρέψτε αργότερα για να δείτε νέες ιστορίες."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Καλώς ήρθατε στο {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Εάν πληκτρολογήσατε μόνοι σας τη διεύθυνση URL, ελέγξτε την ορθογραφία στη γραμμή διευθύνσεων."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Η σελίδα που αναζητάτε δεν υπάρχει..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Δοκιμάστε να ανανεώσετε τη σελίδα ή επιστρέψτε λίγο αργότερα."
   },
   "serverError.title": {
     "message": "Κάτι δεν πήγε καλά..."
