@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Terug na tuisblad"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Kopieer URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Aflaai"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Laai meer"
   },
   "actions.privacyRequests": {
     "message": "Privaatheid versoeke"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Herlaai"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Deel:"
   },
   "actions.startUsingCookies": {
     "message": "Begin om koekies te gebruik"
@@ -36,7 +36,7 @@
     "message": "Omtrent {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategorieë"
   },
   "contacts.title": {
     "message": "Kontak"
@@ -54,19 +54,19 @@
     "message": "Media-gallery"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Kom later terug om nuwe stories te sien."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Welkom by {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "As jy self die URL ingetik het, gaan die spelling na in die adresbalk."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Die bladsy waarna jy soek bestaan ​​nie..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Probeer om die bladsy te verfris of kom 'n bietjie later terug."
   },
   "serverError.title": {
     "message": "Lets het verkeerd geloop..."
