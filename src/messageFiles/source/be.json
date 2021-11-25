@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Назад на галоўную старонку"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Капіяваць URL-адрас"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Спампаваць"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Загрузіць яшчэ"
   },
   "actions.privacyRequests": {
     "message": "Запыты аб канфiдэнцыяльнасцi"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Перазагрузіць"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Падзяліцца:"
   },
   "actions.startUsingCookies": {
     "message": "Пачаць выкарыстанне кукі-файлаў"
@@ -36,7 +36,7 @@
     "message": "Пра {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Катэгорыі"
   },
   "contacts.title": {
     "message": "Кантакт"
@@ -54,19 +54,19 @@
     "message": "Медыягалерэя"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Заходзьце пазней, каб убачыць новыя гісторыі."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Сардэчна запрашаем у {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Калі вы набралі URL-адрас самастойна, праверце яго правапіс у адраснам радку."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Старонкі, якую вы шукаеце, не існуе..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Паспрабуйце абнавіць старонку або зайсці трохі пазней."
   },
   "serverError.title": {
     "message": "Нешта пайшло не так..."
