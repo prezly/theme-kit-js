@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Grįžti į pagrindinį puslapį"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Kopijuoti URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Parsisiųsti"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Įkelti daugiau"
   },
   "actions.privacyRequests": {
     "message": "Privatumo reikalavimai"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Įkelti iš naujo"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Dalintis:"
   },
   "actions.startUsingCookies": {
     "message": "Pradėti naudoti slapukus"
@@ -36,7 +36,7 @@
     "message": "Apie {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategorijos"
   },
   "contacts.title": {
     "message": "Kontaktai"
@@ -54,19 +54,19 @@
     "message": "Medijos galerija"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Grįžkite vėliau, norėdami pamatyti naujų istorijų."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Sveiki atvykę į {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Jei URL įvedėte patys, patikrinkite rašybą adreso juostoje."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Puslapis, kurio ieškote, neegzistuoja..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Pabandykite atnaujinti puslapį arba grįžti šiek tiek vėliau."
   },
   "serverError.title": {
     "message": "Kažkas ne taip..."
