@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "חזרה לעמוד הבית"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "העתקת כתובת URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "הורדה"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "לטעון עוד"
   },
   "actions.privacyRequests": {
     "message": "בקשות פרטיות"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "טעינה מחדש"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "שיתוף:"
   },
   "actions.startUsingCookies": {
     "message": "התחל להשתמש בקוקיות"
@@ -36,7 +36,7 @@
     "message": "אודות {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "קטגוריות"
   },
   "contacts.title": {
     "message": "צור קשר"
@@ -54,26 +54,26 @@
     "message": "גלריית מדיה"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "חזרו מאוחר יותר כדי לראות סיפורים חדשים."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "ברוכים הבאים אל {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "אם הזנתם את כתובת ה-URL בעצמכם, בדקו את האיות בשורת הכתובת."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "העמוד שחיפשתם אינו קיים..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "נסו לרענן את העמוד, או חזרו מאוחר יותר."
   },
   "serverError.title": {
     "message": "משהו השתבש..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "אתר זה מוגן על-ידי hCaptcha, וחלים עליו {privacyPolicyLink} ו-{termsOfServiceLink} שלו."
   },
   "subscription.formTitle": {
     "message": "קבל עדכונים לתיבת האימייל"
@@ -82,9 +82,9 @@
     "message": "כתובת האימייל שלך"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "מדיניות הפרטיות"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "תנאי השירות"
   }
 }
