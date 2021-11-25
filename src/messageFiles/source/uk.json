@@ -3,7 +3,7 @@
     "message": "Повернутися на головну"
   },
   "actions.copyShareUrl": {
-    "message": "Скопіювати URL-посилання"
+    "message": "Скопіювати URL-адресу"
   },
   "actions.download": {
     "message": "Завантажити"
@@ -63,10 +63,10 @@
     "message": "Якщо ви набрали URL-адресу самостійно, перевірте написання ще раз в адресному рядку."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Сторінка, яку ви шукаєте, не існує..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Спробуйте перезавантажити сторінку, або поверніться трохи згодом."
   },
   "serverError.title": {
     "message": "Щось пішло не так..."
