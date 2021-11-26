@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Nazaj domov"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Kopiraj URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Prenesi"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Naloži več"
   },
   "actions.privacyRequests": {
     "message": "Zahteve glede zasebnosti"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Ponovno naloži"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Deli:"
   },
   "actions.startUsingCookies": {
     "message": "Začni uporabljati piškotke"
@@ -36,7 +36,7 @@
     "message": "O {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategorije"
   },
   "contacts.title": {
     "message": "Kontakt"
@@ -54,19 +54,19 @@
     "message": "Medijska galerija"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Vrnite se pozneje in si oglejte nove zgodbe."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Dobrodošli v {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Če ste URL vnesli sami, preverite črkovanje v naslovni vrstici."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Stran, ki jo iščete, ne obstaja..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Poskusite osvežiti stran ali se vrnite nekoliko kasneje."
   },
   "serverError.title": {
     "message": "Nekaj je bilo narobe..."

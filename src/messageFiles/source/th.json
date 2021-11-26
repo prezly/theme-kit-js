@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "กลับสู่หน้าแรก"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "คัดลอก URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "ดาวน์โหลด"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "โหลดเพิ่ม"
   },
   "actions.privacyRequests": {
     "message": "คำขอความเป็นส่วนตัว"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "โหลดซ้ำ"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "แชร์:"
   },
   "actions.startUsingCookies": {
     "message": "เริ่มการใช้คุกกี้"
@@ -36,7 +36,7 @@
     "message": "เกี่ยวกับ {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "หมวดหมู่"
   },
   "contacts.title": {
     "message": "ติดต่อ"
@@ -54,19 +54,19 @@
     "message": "แกลลอรี่สื่อ"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "กลับมาใหม่ภายหลังเพื่อดูเรื่องราวใหม่ๆ"
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "ยินดีต้อนรับสู่ {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "ถ้าหากคุณพิมพ์ URL ด้วยตัวคุณเอง, ตรวจสอบการสะกดในช่องแสตงที่อยู่เว็ปไซต์"
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "ไม่มีหน้าที่คุณกำลังค้นหา"
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "ลองรีเฟรชหน้าเพจใหม่หรือกลับมาใหม่ในภายหลัง"
   },
   "serverError.title": {
     "message": "มีบางอย่างผิดปกติ"

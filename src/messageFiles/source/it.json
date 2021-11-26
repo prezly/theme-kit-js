@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Torna alla homepage"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Copia URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Scarica"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Carica altri"
   },
   "actions.privacyRequests": {
     "message": "Richieste di privacy"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Ricarica"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Condividi:"
   },
   "actions.startUsingCookies": {
     "message": "Inizia a utilizzare i cookie"
@@ -36,7 +36,7 @@
     "message": "Maggiori informazioni su {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Categorie"
   },
   "contacts.title": {
     "message": "Contatto"
@@ -54,19 +54,19 @@
     "message": "Galleria media"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Torna più tardi per vedere nuove storie."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Benvenuto/a in {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Se hai digitato l'URL manualmente, verificane l'ortografia nella barra degli indirizzi."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "La pagina che stai cercando non esiste..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Prova ad aggiornare la pagina oppure torna più tardi."
   },
   "serverError.title": {
     "message": "Qualcosa è andato storto..."

@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Atgriezties uz sākumlapu"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Kopēt URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Lejupielādēt"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Ielādēt vairāk"
   },
   "actions.privacyRequests": {
     "message": "Privātuma pieprasījumi"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Pārlādēt"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Kopīgot:"
   },
   "actions.startUsingCookies": {
     "message": "Sākt izmantot sīkdatnes"
@@ -36,7 +36,7 @@
     "message": "Par {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategorijas"
   },
   "contacts.title": {
     "message": "Kontakts"
@@ -54,19 +54,19 @@
     "message": "Mediju galerija"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Atgriezieties vēlāk, lai skatītu pēdējos jaunumus."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Laipni lūgti {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Ja URL ievadījāt pats, pārbaudiet pareizrakstību adreses joslā."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Lapa, kuru meklējat, neeksistē..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Mēģiniet atsvaidzināt lapu vai atgriezties vēlāk."
   },
   "serverError.title": {
     "message": "Kaut kas nogāja greizi..."

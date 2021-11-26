@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Ana sayfaya geri dön"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "URL adresini kopyala"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "İndir"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Daha fazlasını yükle"
   },
   "actions.privacyRequests": {
     "message": "Gizlilik talepleri"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Tekrar Yükle"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Paylaş:"
   },
   "actions.startUsingCookies": {
     "message": "Çerezleri kullanmaya başla"
@@ -36,7 +36,7 @@
     "message": "{companyName} Hakkında"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategoriler"
   },
   "contacts.title": {
     "message": "Iletişim"
@@ -54,19 +54,19 @@
     "message": "Medya galerisi"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Yeni hikayeleri görmek için daha sonra tekrar gel."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "{newsroom} alanına hoş geldin!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "URL adresini kendin yazdıysan adres çubuğunda yazımı kontrol et."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Aradığın sayfa mevcut değil..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Sayfayı yenilemeyi veya bir süre sonra tekrar gelmeyi dene."
   },
   "serverError.title": {
     "message": "Birşey ters gitti..."

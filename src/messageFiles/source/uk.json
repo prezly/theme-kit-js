@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Повернутися на головну"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Скопіювати URL-адресу"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Завантажити"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Завантажити більще"
   },
   "actions.privacyRequests": {
     "message": "Запити про конфіденційність"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Перезавантажити"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Поділитися:"
   },
   "actions.startUsingCookies": {
     "message": "Дозволити файли cookies"
@@ -36,7 +36,7 @@
     "message": "Про {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Категорії"
   },
   "contacts.title": {
     "message": "Контакти"
@@ -54,19 +54,19 @@
     "message": "Медіа-галерея"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Повертайтеся пізніше та переглядайте нові історії."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Вітаємо у {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Якщо ви набрали URL-адресу самостійно, перевірте написання ще раз в адресному рядку."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Сторінка, яку ви шукаєте, не існує..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Спробуйте перезавантажити сторінку, або поверніться трохи згодом."
   },
   "serverError.title": {
     "message": "Щось пішло не так..."

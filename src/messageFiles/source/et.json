@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Tagasi avalehele"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "URL-i kopeerimine"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Laadi alla"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Laadi veel"
   },
   "actions.privacyRequests": {
     "message": "Privaatsuspäringud"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Laadi uuesti"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Jaga:"
   },
   "actions.startUsingCookies": {
     "message": "Alusta küpsiste kasutamist"
@@ -36,7 +36,7 @@
     "message": "{companyName} Kohta"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategooriad"
   },
   "contacts.title": {
     "message": "Kontakt"
@@ -54,19 +54,19 @@
     "message": "Meediagalerii"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Tulge hiljem tagasi, et näha uusi lugusid."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Tere tulemast uudisteruumi {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Kui sisestasite URL-i ise, kontrollige aadressiribal õigekirja."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Lehte, mida otsite, pole olemas..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Proovige lehte värskendada või naasta veidi hiljem."
   },
   "serverError.title": {
     "message": "Miski läks valesti..."

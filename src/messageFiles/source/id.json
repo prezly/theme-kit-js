@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Kembali ke beranda"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Salin URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Unduh"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Muat lebih banyak"
   },
   "actions.privacyRequests": {
     "message": "Permintaan privasi"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Muat ulang"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Bagikan:"
   },
   "actions.startUsingCookies": {
     "message": "Mulai gunakan kuki"
@@ -36,7 +36,7 @@
     "message": "Tentang {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategori"
   },
   "contacts.title": {
     "message": "Kontak"
@@ -54,19 +54,19 @@
     "message": "Galeri media"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Kembali lagi nanti untuk melihat cerita baru."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Selamat datang di {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Jika Anda mengetik sendiri URL-nya, periksa ejaan di bilah alamat."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Halaman yang Anda cari tidak ada..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Cobalah untuk menyegarkan halaman atau kembali lagi nanti."
   },
   "serverError.title": {
     "message": "Terjadi kesalahan..."

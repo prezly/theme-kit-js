@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Zpět na domovskou stránku"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Zkopírovat adresu URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Stáhnout"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Zjistit více"
   },
   "actions.privacyRequests": {
     "message": "Požadavky na ochranu osobních údajů"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Znovu načíst"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Sdílet:"
   },
   "actions.startUsingCookies": {
     "message": "Začít používat soubory cookie"
@@ -36,7 +36,7 @@
     "message": "O společnosti {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategorie"
   },
   "contacts.title": {
     "message": "Kontakt"
@@ -54,19 +54,19 @@
     "message": "Galerie médií"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Vraťte se později zpět a podívejte se na nové příběhy."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Vítejte v {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Pokud jste adresu URL napsali ručně, zkontrolujte pravopis v panelu adresy."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Stránka, kterou hledáte, neexistuje…"
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Zkuste stránku obnovit nebo se vraťte později."
   },
   "serverError.title": {
     "message": "Něco nastalo špatně..."

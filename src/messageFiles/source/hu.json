@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Vissza a kezdőlapra"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "URL másolása"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Letöltés"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Továbbiak betöltése"
   },
   "actions.privacyRequests": {
     "message": "Adatvédelmi kérések"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Újratöltés"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Megosztás:"
   },
   "actions.startUsingCookies": {
     "message": "Sütik használatának elkezdése"
@@ -36,7 +36,7 @@
     "message": "A(z) {companyName} cégről"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategóriák"
   },
   "contacts.title": {
     "message": "Kapcsolat"
@@ -54,19 +54,19 @@
     "message": "Médiagaléria"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Térj vissza később az újabb történetekért."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Üdv a következőben: {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Amennyiben gépelted a linket, ellenőrizd helyesírását a címsorban."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "A keresett oldal nem található..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Próbáld meg frissíteni az oldalt, vagy nézz vissza kicsit később."
   },
   "serverError.title": {
     "message": "Valami hiba történt..."
