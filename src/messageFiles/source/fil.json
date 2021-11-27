@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Bumalik sa homepage"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Kopyahin ang URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Mag-download"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Mag-load pa"
   },
   "actions.privacyRequests": {
     "message": "Mga kahilingan sa pagkapribado"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Mag-reload"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Ibahagi:"
   },
   "actions.startUsingCookies": {
     "message": "Magsimulang gumamit ng mga cookie"
@@ -36,7 +36,7 @@
     "message": "Tungkol sa {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Mga kategorya"
   },
   "contacts.title": {
     "message": "Contact"
@@ -54,26 +54,26 @@
     "message": "Gallery ng media"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Bumalik sa ibang pagkakataon para makita ang mga bagong kwento."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Welcome sa {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Kung ikaw mismo ang nag-type ng URL, tingnan ang baybay sa address bar."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Walang ganitong page na hinahanap mo..."
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Subukang i-refresh ang page o bumalik pagkaraan ng ilang saglit."
   },
   "serverError.title": {
     "message": "May nangyaring hindi tama..."
   },
   "subscription.captchaDisclaimer": {
     "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+    "message": "Ang site na ito ay protektado ng hCaptcha at ito ay {privacyPolicyLink} at ang {termsOfServiceLink} ay ilalapat."
   },
   "subscription.formTitle": {
     "message": "Makatanggap ng mga update sa mailbox mo"
@@ -82,9 +82,9 @@
     "message": "Email address mo"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Patakaran ng Pagkapribado"
   },
   "subscription.termsOfService": {
-    "message": "Terms of Service"
+    "message": "Mga Tuntunin ng Serbisyo"
   }
 }
