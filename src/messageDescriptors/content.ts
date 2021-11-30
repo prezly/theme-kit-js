@@ -46,7 +46,8 @@ export const cookieConsent = defineMessages({
     },
     description: {
         id: 'cookieConsent.subtitle',
-        defaultMessage: 'We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others.',
+        defaultMessage:
+            'We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others.',
     },
     accept: {
         id: 'cookieConsent.accept',
@@ -59,5 +60,5 @@ export const cookieConsent = defineMessages({
     notice: {
         id: 'cookieConsent.notice',
         defaultMessage: 'You can revoke cookies at anytime at the bottom of the page.',
-    }
+    },
 });
