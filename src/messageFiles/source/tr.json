@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Iletişim"
   },
+  "cookieConsent.accept": {
+    "message": "Evet, çerezleri kullanabilirsiniz"
+  },
+  "cookieConsent.notice": {
+    "message": "Çerezleri istediğiniz zaman bu sayfanın altından iptal edebilirsiniz."
+  },
+  "cookieConsent.reject": {
+    "message": "Hayır, çerezleri kullanmayın"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Web sitemizde çerez kullanıyoruz. Çerezler sizi biraz tanımamıza ve web sitemizi nasıl kullandığınızı öğrenmemize yardımcı olur. Böylece çerezler, siz ve diğer kullanıcılar için daha değerli ve daha uygun hâle getirilmiş bir deneyim sunmamıza yardım eder."
+  },
+  "cookieConsent.title": {
+    "message": "Çerezler kullanmak istiyoruz"
+  },
   "errors.emailInvalid": {
     "message": "Geçerli bir e-posta adresi girin"
   },
