@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakt"
   },
+  "cookieConsent.accept": {
+    "message": "Ano, můžete používat soubory cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Použití souborů cookies můžete kdykoli zrušit v dolní části stránky."
+  },
+  "cookieConsent.reject": {
+    "message": "Ne, nepoužívejte soubory cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Na našich webových stránkách používáme soubory cookies. Pomáhají nám vás trochu poznat a zjistit, jak naše webové stránky využíváte. Díky tomu můžeme vám i ostatním uživatelům poskytovat cennější a přizpůsobený zážitek."
+  },
+  "cookieConsent.title": {
+    "message": "Chtěli bychom používat cookies"
+  },
   "errors.emailInvalid": {
     "message": "Uveďte platnou e-mailovou adresu"
   },
