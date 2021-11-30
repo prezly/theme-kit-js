@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Contact"
   },
+  "cookieConsent.accept": {
+    "message": "Yes, you can use cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "You can revoke cookies at anytime at the bottom of the page."
+  },
+  "cookieConsent.reject": {
+    "message": "No, do not use cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others."
+  },
+  "cookieConsent.title": {
+    "message": "We would like to use cookies"
+  },
   "errors.emailInvalid": {
     "message": "Introduce a valid email address"
   },
