@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Ikkuntattja"
   },
+  "cookieConsent.accept": {
+    "message": "Iva, tistgħu tużaw il-cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Meta trid tista' tneħħi l-permess għall-cookies minn qiegħ il-paġna."
+  },
+  "cookieConsent.reject": {
+    "message": "Le, tużawx il-cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Aħna nużaw il-cookies fuq is-sit tagħna. Dawn jgħinuna nsiru nafuk aħjar filwaqt li nifhmu kif tuża s-sit tagħna. B'hekk inkunu nistgħu noffru lilek u lill-utenti l-oħra esperjenza aqwa u iktar personalizzata."
+  },
+  "cookieConsent.title": {
+    "message": "Nixtiequ nużaw il-cookies"
+  },
   "errors.emailInvalid": {
     "message": "Introduċilna indirizz tal-email tajjeb"
   },

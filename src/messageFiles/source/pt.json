@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Contacto"
   },
+  "cookieConsent.accept": {
+    "message": "Sim, podem usar 'cookies'"
+  },
+  "cookieConsent.notice": {
+    "message": "Pode revogar os 'cookies' a qualquer momento no fundo da página."
+  },
+  "cookieConsent.reject": {
+    "message": "Não, não usem 'cookies'"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Utilizamos 'cookies' no nosso 'website'. Ajudam-nos a saber um pouco de si e como utiliza o nosso 'website'. Isto ajuda-nos a fornecer uma experiência mais valiosa e personalizada para si e os outros."
+  },
+  "cookieConsent.title": {
+    "message": "Gostaríamos de usar 'cookies'"
+  },
   "errors.emailInvalid": {
     "message": "Introduza um endereço de e-mail válido"
   },

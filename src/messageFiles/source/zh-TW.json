@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "聯繫"
   },
+  "cookieConsent.accept": {
+    "message": "是的，您可以使用 cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "您可以隨時在網頁底部撤銷 cookies 。"
+  },
+  "cookieConsent.reject": {
+    "message": "不，不要使用 cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "我們的網站使用 cookies 。 它們幫助我們稍微了解您，以及您如何使用我們的網站。 這有助於我們為您和其他人提供更有價值和量身定制的體驗。"
+  },
+  "cookieConsent.title": {
+    "message": "我們想使用 cookies"
+  },
   "errors.emailInvalid": {
     "message": "介紹一個有效的電郵地址"
   },

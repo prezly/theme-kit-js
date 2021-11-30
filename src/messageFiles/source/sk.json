@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakt"
   },
+  "cookieConsent.accept": {
+    "message": "Môžete používať súbory cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Súbory cookies môžete kedykoľvek zrušiť v spodnej časti stránky."
+  },
+  "cookieConsent.reject": {
+    "message": "Nepoužívajte súbory cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Na našej webstránke používame súbory cookies. Pomáhajú nám o niečo viac vás spoznať a tiež zistiť, akým spôsobom používate našu webstránku. Vďaka nim vám môžeme poskytnúť hodnotnejší zážitok šitý na mieru vám aj ostatným."
+  },
+  "cookieConsent.title": {
+    "message": "Radi by sme používali súbory cookies"
+  },
   "errors.emailInvalid": {
     "message": "Zadajte platnú e-mailovú adresu"
   },

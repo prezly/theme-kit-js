@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kapcsolat"
   },
+  "cookieConsent.accept": {
+    "message": "Igen, használhat cookie-kat"
+  },
+  "cookieConsent.notice": {
+    "message": "A cookie-kat bármikor visszavonhatja az oldal alján."
+  },
+  "cookieConsent.reject": {
+    "message": "Nem, ne használjon cookie-kat"
+  },
+  "cookieConsent.subtitle": {
+    "message": "A weboldalunkon cookie-kat használunk. Segítenek nekünk egy kicsit jobban megismerni önt, és azt, hogyan használja a honlapunkat. Ez segít nekünk értékesebb és személyre szabott élményt nyújtani önnek és másoknak."
+  },
+  "cookieConsent.title": {
+    "message": "Szeretnénk cookie-kat használni"
+  },
   "errors.emailInvalid": {
     "message": "Mutass be egy létező e-mail-címet"
   },

@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontak"
   },
+  "cookieConsent.accept": {
+    "message": "Ja, julle kan koekies gebruik"
+  },
+  "cookieConsent.notice": {
+    "message": "Jy kan koekies enige tyd onder aan die bladsy herroep."
+  },
+  "cookieConsent.reject": {
+    "message": "Nee, moenie koekies gebruik nie"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Ons gebruik koekies op ons webwerf. Hulle help ons om ’n bietjie meer oor jou en hoe jy ons webwerf gebruik, uit te vind. Dit help ons om ’n waardevoller en persoonlike ondervinding aan jou en ander te verskaf."
+  },
+  "cookieConsent.title": {
+    "message": "Ons wil graag koekies gebruik"
+  },
   "errors.emailInvalid": {
     "message": "Stel 'n geldige e -posadres bekend"
   },

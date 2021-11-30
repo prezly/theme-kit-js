@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakts"
   },
+  "cookieConsent.accept": {
+    "message": "Jā, jūs varat izmantot sīkdatnes"
+  },
+  "cookieConsent.notice": {
+    "message": "Sīkdatnes varat atcelt jebkurā laikā lapas apakšdaļā."
+  },
+  "cookieConsent.reject": {
+    "message": "Nē, neizmantojiet sīkdatnes"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Mēs savā vietnē izmantojam sīkdatnes. Tās palīdz mums iepazīt jūs un to, kā jūs izmantojat mūsu vietni. Tas palīdz mums sniegt vērtīgāku un pielāgotu pieredzi gan jums, gan citiem."
+  },
+  "cookieConsent.title": {
+    "message": "Mēs vēlētos izmantot sīkdatnes"
+  },
   "errors.emailInvalid": {
     "message": "Ievadiet derīgu e -pasta adresi"
   },

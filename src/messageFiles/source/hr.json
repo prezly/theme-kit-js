@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakt"
   },
+  "cookieConsent.accept": {
+    "message": "Da, možete koristiti kolačiće"
+  },
+  "cookieConsent.notice": {
+    "message": "Privolu za kolačiće možete na dnu stranice povući u svakom trenutku."
+  },
+  "cookieConsent.reject": {
+    "message": "Ne, nemojte koristiti kolačiće"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Mi na našim internetskim stranicama koristimo kolačiće. Oni nam pomažu da vas bolje upoznamo i da više znamo o tome kako koristite naše stranice. To nam pomaže u pružanju sadržaja koji će biti bolji i prilagođeniji vama i drugima."
+  },
+  "cookieConsent.title": {
+    "message": "Željeli bismo koristiti kolačiće"
+  },
   "errors.emailInvalid": {
     "message": "Unesite valjanu e-mail adresu"
   },

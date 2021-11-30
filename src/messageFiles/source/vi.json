@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Liên hệ"
   },
+  "cookieConsent.accept": {
+    "message": "Vâng, bạn có thể sử dụng cookie"
+  },
+  "cookieConsent.notice": {
+    "message": "Bạn có thể thu hồi cookie bất kỳ lúc nào ở cuối trang."
+  },
+  "cookieConsent.reject": {
+    "message": "Không, đừng sử dụng cookie"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Chúng tôi sử dụng cookie trên trang web của chúng tôi. Chúng giúp chúng tôi hiểu chút ít về bạn và cách bạn sử dụng trang web của chúng tôi. Điều này giúp chúng tôi đem lại trải nghiệm đáng giá và phù hợp với bạn và những người khác."
+  },
+  "cookieConsent.title": {
+    "message": "Chúng tôi muốn sử dụng cookie"
+  },
   "errors.emailInvalid": {
     "message": "Giới thiệu một địa chỉ email hợp lệ"
   },

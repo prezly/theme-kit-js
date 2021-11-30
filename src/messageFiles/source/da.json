@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakt"
   },
+  "cookieConsent.accept": {
+    "message": "Ja, cookies må anvendes"
+  },
+  "cookieConsent.notice": {
+    "message": "Du kan afvise cookies når som helst nederst på siden."
+  },
+  "cookieConsent.reject": {
+    "message": "Nej, cookies må ikke anvendes"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Vi bruger cookies på vores hjemmeside. De hjælper os med at lære lidt om dig og hvordan du bruger vores hjemmeside. Dette hjælper os til at give dig og andre brugere end mere værdifuld og personlig oplevelse."
+  },
+  "cookieConsent.title": {
+    "message": "Vi vil gerne anvende cookies"
+  },
   "errors.emailInvalid": {
     "message": "Opgiv en gyldig e-mailadresse"
   },

@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Teagmhálaí"
   },
+  "cookieConsent.accept": {
+    "message": "Is féidir fianáin a úsáid"
+  },
+  "cookieConsent.notice": {
+    "message": "Is féidir leat fianáin a chúlghairm am ar bith ag bun an leathanaigh seo."
+  },
+  "cookieConsent.reject": {
+    "message": "Ná húsáidtear fianáin"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Bainimid úsáid as fianáin ar ár láithreán gréasáin. Tá siad ina gcuidiú linn aithne a chur ort agus insint dúinn conas a úsáideann tú ár láithreán gréasáin. Cuidíonn sé sin linn eispéireas níos luachmhaire, saincheaptha a thabhairt duit agus do dhaoine eile."
+  },
+  "cookieConsent.title": {
+    "message": "Ba mhaith linn fianáin a úsáid"
+  },
   "errors.emailInvalid": {
     "message": "Cuir isteach seoladh ríomhphoist atá bailí"
   },
@@ -51,7 +66,7 @@
     "message": "Something went wrong. Please try submitting the form again"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "Gailearaí meán"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
