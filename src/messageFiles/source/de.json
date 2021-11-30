@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakt"
   },
+  "cookieConsent.accept": {
+    "message": "Ja, Sie dürfen Cookies verwenden"
+  },
+  "cookieConsent.notice": {
+    "message": "Sie können Cookies jederzeit auf der Seite unten widerrufen."
+  },
+  "cookieConsent.reject": {
+    "message": "Nein, verwenden Sie keine Cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Wir verwenden auf unserer Website Cookies. Diese helfen uns dabei, Sie ein wenig kennenzulernen und zu sehen, wie Sie unsere Website nutzen. Dadurch können wir Ihnen und anderen ein wertvolleres und auf Sie zugeschnittenes Erlebnis bieten."
+  },
+  "cookieConsent.title": {
+    "message": "Wir möchten Cookies verwenden"
+  },
   "errors.emailInvalid": {
     "message": "Geben Sie eine gültige E-Mail-Adresse an"
   },
