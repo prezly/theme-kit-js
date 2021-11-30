@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Επαφή"
   },
+  "cookieConsent.accept": {
+    "message": "Ναι, μπορείτε να χρησιμοποιείτε cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Μπορείτε να ανακαλέσετε τα cookies οποιαδήποτε στιγμή, στο κάτω μέρος της σελίδας."
+  },
+  "cookieConsent.reject": {
+    "message": "Όχι, μην χρησιμοποιείτε cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Χρησιμοποιούμε cookies στην ιστοσελίδα μας. Μας βοηθούν να σας γνωρίσουμε και πώς χρησιμοποιείτε την ιστοσελίδα μας. Μπορούμε έτσι να παρέχουμε πιο αξιόλογο περιεχόμενο και εμπειρία προσαρμοσμένη στα μέτρα σας."
+  },
+  "cookieConsent.title": {
+    "message": "Θα θέλαμε να χρησιμοποιήσουμε cookies"
+  },
   "errors.emailInvalid": {
     "message": "Εισαγάγετε μια έγκυρη διεύθυνση email"
   },
