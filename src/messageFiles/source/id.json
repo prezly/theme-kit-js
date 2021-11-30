@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontak"
   },
+  "cookieConsent.accept": {
+    "message": "Ya, Anda dapat menggunakan kuki."
+  },
+  "cookieConsent.notice": {
+    "message": "Anda dapat mencabut kuki kapan saja pada bagian bawah halaman."
+  },
+  "cookieConsent.reject": {
+    "message": "Tidak, jangan menggunakan kuki."
+  },
+  "cookieConsent.subtitle": {
+    "message": "Kami menggunakan kuki di situs web kami. Kuki membantu untuk mengetahui sedikit tentang Anda dan bagaimana Anda menggunakan situs web kami. Hal ini membantu kami menyediakan pengalaman yang lebih berharga dan disesuaikan untuk Anda dan orang lain."
+  },
+  "cookieConsent.title": {
+    "message": "Kami ingin menggunakan cookie"
+  },
   "errors.emailInvalid": {
     "message": "Perkenalkan alamat surel yang valid"
   },
