@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontaktai"
   },
+  "cookieConsent.accept": {
+    "message": "Taip, galite naudoti slapukus"
+  },
+  "cookieConsent.notice": {
+    "message": "Puslapio apačioje galite bet kada atšaukti slapukus."
+  },
+  "cookieConsent.reject": {
+    "message": "Ne, nenaudokite slapukų"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Savo svetainėje naudojame slapukus. Jie padeda mums kiek pažinti jus ir sužinoti, kaip naudojatės mūsų svetaine. Tai padeda mums suteikti labiau vertingą ir pritaikytą patirtį jums ir kitiems."
+  },
+  "cookieConsent.title": {
+    "message": "Norėtume naudoti slapukus"
+  },
   "errors.emailInvalid": {
     "message": "Nurodykite galiojantį el. pašto adresą"
   },
