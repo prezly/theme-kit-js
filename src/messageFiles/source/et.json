@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakt"
   },
+  "cookieConsent.accept": {
+    "message": "Jah, võite kasutada küpsiseid"
+  },
+  "cookieConsent.notice": {
+    "message": "Saad küpsised igal ajal lehe allosas tühistada."
+  },
+  "cookieConsent.reject": {
+    "message": "Ei, te ei või kasutada küpsiseid"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Kasutame oma veebisaidil küpsiseid. Need aitavad meil sind veidi tundma õppida ja samuti infot selle kohta, kuidas sa meie veebisaiti kasutad. See info aitab meil pakkuda sulle ja teistele väärtuslikumaid ning kohandatumaid kogemusi."
+  },
+  "cookieConsent.title": {
+    "message": "Soovime kasutada küpsiseid"
+  },
   "errors.emailInvalid": {
     "message": "Sisestage kehtiv e-posti aadress"
   },
