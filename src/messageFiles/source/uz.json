@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakt"
   },
+  "cookieConsent.accept": {
+    "message": "Ha, cookie fayllardan foydalanishingiz mumkin"
+  },
+  "cookieConsent.notice": {
+    "message": "Cookie fayllarni istalgan vaqt sahifaning pastki qismida bekor qilishingiz mumkin."
+  },
+  "cookieConsent.reject": {
+    "message": "Yoʻq, cookie fayllardan foydalanmang"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Veb-saytimizda cookie fayllardan foydalanamiz. Ular bizga siz haqingizda ozroq bilishga va veb-saytimizdan qanday foydalanishingizda yordam beradi. Bu biz uchun yanada qimmatli va mos tajribalarni siz va boshqalarga taqdim qilishimizda yordam beradi."
+  },
+  "cookieConsent.title": {
+    "message": "Biz cookie fayllardan foydalanmoqchimiz"
+  },
   "errors.emailInvalid": {
     "message": "Mavjud email manzilni kiriting"
   },
