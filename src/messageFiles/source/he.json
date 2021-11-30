@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "צור קשר"
   },
+  "cookieConsent.accept": {
+    "message": "כן, ניתן להשתמש בקוקיות"
+  },
+  "cookieConsent.notice": {
+    "message": "ניתן לבטל את ההסכמה לקוקיות בכל עת, בתחתית הדף."
+  },
+  "cookieConsent.reject": {
+    "message": "לא, אל תשתמשו בקוקיות"
+  },
+  "cookieConsent.subtitle": {
+    "message": "אנו משתמשים בקוקיות באתר האינטרנט שלנו. הן עוזרות לנו להכיר אותך קצת יותר טוב וללמוד על אופן השימוש שלך באתר. זה עוזר לנו להעניק לך ולאחרים חוויית שימוש מלאה יותר ומותאמת אישית."
+  },
+  "cookieConsent.title": {
+    "message": "אנו מבקשים להשתמש בקוקיות"
+  },
   "errors.emailInvalid": {
     "message": "הזינו כתובת אימייל חוקית"
   },
