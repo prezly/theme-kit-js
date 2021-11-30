@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakt"
   },
+  "cookieConsent.accept": {
+    "message": "Tak, możecie używać ciasteczek"
+  },
+  "cookieConsent.notice": {
+    "message": "Możesz unieważnić ciasteczka w każdej chwili na dole strony."
+  },
+  "cookieConsent.reject": {
+    "message": "Nie, nie możecie używać ciasteczek"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Używamy ciasteczek na naszej stronie. Pomagają nam one dowiedzieć się trochę o Tobie i o tym, jak używasz naszej strony. To pomaga nam zapewnić cenniejsze i bardziej dostosowane doznania dla Ciebie i innych."
+  },
+  "cookieConsent.title": {
+    "message": "Chcielibyśmy użyć pliki cookies"
+  },
   "errors.emailInvalid": {
     "message": "Wprowadź poprawny adres e-mail"
   },
