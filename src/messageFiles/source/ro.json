@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Contact"
   },
+  "cookieConsent.accept": {
+    "message": "Da, puteți utiliza cookie-uri"
+  },
+  "cookieConsent.notice": {
+    "message": "Puteți revoca oricând cookie-urile în partea de jos a ecranului."
+  },
+  "cookieConsent.reject": {
+    "message": "Nu, nu utilizați cookie-uri"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Utilizăm cookie-uri pe site-ul nostru. Acestea ne ajută să ne familiarizăm puțin cu dvs. și cu modul în care folosiți site-ul nostru. Acest lucru ne ajută să oferim, dvs. și altora, o experiență mai valoroasă și mai personalizată."
+  },
+  "cookieConsent.title": {
+    "message": "Am dori să utilizăm cookie-uri"
+  },
   "errors.emailInvalid": {
     "message": "Introdu o adresă de e-mail validă"
   },
