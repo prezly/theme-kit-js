@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Contact"
   },
+  "cookieConsent.accept": {
+    "message": "Oo, maaari kayong gumamit ng mga cookie"
+  },
+  "cookieConsent.notice": {
+    "message": "Maaari mong ipawalang-bisa ang mga cookie sa anumang oras sa ibaba ng page."
+  },
+  "cookieConsent.reject": {
+    "message": "Hindi, huwag gumamit ng mga cookie"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Gumagamit kami ng mga cookie sa aming website. Tinutulungan kami ng mga ito na makilala ka nang kaunti at kung paano mo ginagamit ang aming website. Tinutulungan kami nito na makapagbigay ng mas mahalaga at iniakmang karanasan para sa iyo at iba pa."
+  },
+  "cookieConsent.title": {
+    "message": "Gusto naming gumamit ng mga cookie"
+  },
   "errors.emailInvalid": {
     "message": "Ipakilala ang tamang email address"
   },
