@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Ota yhteyttä"
   },
+  "cookieConsent.accept": {
+    "message": "Kyllä, voitte käyttää evästeitä"
+  },
+  "cookieConsent.notice": {
+    "message": "Voit peruuttaa evästeet milloin tahansa sivun alalaidasta."
+  },
+  "cookieConsent.reject": {
+    "message": "Ei, älkää käyttäkö evästeitä"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Käytämme sivustollamme evästeitä. Niiden avulla tutustumme sinuun ja tapoihisi käyttää sivustoa. Näin pystymme tarjoamaan arvokkaamman ja yksilöllisemmän kokemuksen sinulle ja muille käyttäjille."
+  },
+  "cookieConsent.title": {
+    "message": "Käyttäisimme mielellämme evästeitä"
+  },
   "errors.emailInvalid": {
     "message": "Syötä voimassaoleva sähköpostiosoite"
   },
