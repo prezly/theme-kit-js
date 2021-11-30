@@ -41,6 +41,21 @@
   "contacts.title": {
     "message": "Kontakt"
   },
+  "cookieConsent.accept": {
+    "message": "Ja, ni kan använda cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Du kan återkalla cookies när som helst längst ner på sidan."
+  },
+  "cookieConsent.reject": {
+    "message": "Nej, använd inte cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Vi använder cookies på vår hemsida. De hjälper oss att lära känna dig lite och hur du använder vår hemsida. Detta hjälper oss att ge en mer värdefull och skräddarsydd upplevelse för dig och andra."
+  },
+  "cookieConsent.title": {
+    "message": "Vi vill använda cookies"
+  },
   "errors.emailInvalid": {
     "message": "Inför en giltig e-postadress"
   },
