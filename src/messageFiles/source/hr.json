@@ -68,6 +68,20 @@
   "mediaGallery.title": {
     "message": "Medijska galerija"
   },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo until {date}"
+  },
+  "misc.loading": {
+    "message": "Loading..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL copied!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Toggle navigation"
+  },
   "noStories.subtitle": {
     "message": "Vratite se kasnije kako biste vidjeli nove priče."
   },
