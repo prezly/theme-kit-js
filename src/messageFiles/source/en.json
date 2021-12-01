@@ -78,6 +78,10 @@
   "misc.shareUrlCopied": {
     "message": "URL copied!"
   },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Toggle navigation"
+  },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
   },

@@ -15,4 +15,9 @@ export const misc = defineMessages({
         id: 'misc.shareUrlCopied',
         defaultMessage: 'URL copied!',
     },
+    toggleMobileNavigation: {
+        id: 'misc.toggleMobileNavigation',
+        defaultMessage: 'Toggle navigation',
+        description: 'A tooltip for a button that toggles the mobile menu on the web page'
+    }
 });
