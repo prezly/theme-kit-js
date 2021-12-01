@@ -68,6 +68,16 @@
   "mediaGallery.title": {
     "message": "Media gallery"
   },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo until {date}"
+  },
+  "misc.loading": {
+    "message": "Loading..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL copied!"
+  },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
   },

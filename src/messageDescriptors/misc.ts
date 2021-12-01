@@ -1,6 +1,6 @@
-import { defineMessage } from '@formatjs/intl';
+import { defineMessages } from '@formatjs/intl';
 
-export const misc = defineMessage({
+export const misc = defineMessages({
     embargoMessage: {
         id: 'misc.embargoMessage',
         defaultMessage: 'Embargo until {date}',
