@@ -33,7 +33,7 @@
     "message": "取消訂閱"
   },
   "boilerplate.contact": {
-    "message": "Contact"
+    "message": "聯繫"
   },
   "boilerplate.title": {
     "message": "關於 {companyName}"
@@ -42,7 +42,7 @@
     "message": "類別"
   },
   "contacts.title": {
-    "message": "Contact us"
+    "message": "聯絡我們"
   },
   "cookieConsent.accept": {
     "message": "是的，您可以使用 cookies"
