@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "ان سبسکرائب کریں"
   },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
   "boilerplate.title": {
     "message": "کے بارے میں {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "زمرہ جات"
   },
   "contacts.title": {
-    "message": "رابطہ"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "جی ہاں، آپ کوکیز استعمال کر سکتے ہیں"
