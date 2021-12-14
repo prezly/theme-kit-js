@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Lahku meililistist"
   },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
   "boilerplate.title": {
     "message": "{companyName} Kohta"
   },
@@ -39,7 +42,7 @@
     "message": "Kategooriad"
   },
   "contacts.title": {
-    "message": "Kontakt"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Jah, võite kasutada küpsiseid"
