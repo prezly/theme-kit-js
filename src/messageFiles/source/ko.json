@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "구독 해제"
   },
+  "boilerplate.contact": {
+    "message": "연락처"
+  },
   "boilerplate.title": {
     "message": "{companyName} 소개"
   },
@@ -39,7 +42,7 @@
     "message": "카테고리"
   },
   "contacts.title": {
-    "message": "연락처"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "네, 쿠키를 사용하세요"
