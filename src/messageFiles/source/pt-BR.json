@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Cancelar Inscrição"
   },
+  "boilerplate.contact": {
+    "message": "Contato"
+  },
   "boilerplate.title": {
     "message": "Sobre {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Categorias"
   },
   "contacts.title": {
-    "message": "Contato"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Sim, pode usar cookies"
