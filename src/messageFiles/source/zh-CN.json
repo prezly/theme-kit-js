@@ -33,7 +33,7 @@
     "message": "退订"
   },
   "boilerplate.contact": {
-    "message": "Contact"
+    "message": "联系"
   },
   "boilerplate.title": {
     "message": "关于{companyName}"
@@ -42,7 +42,7 @@
     "message": "类别"
   },
   "contacts.title": {
-    "message": "Contact us"
+    "message": "联系我们"
   },
   "cookieConsent.accept": {
     "message": "好的，你可以使用信息记录程序（cookies）"
