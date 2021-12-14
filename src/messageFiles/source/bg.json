@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Отпишете се"
   },
+  "boilerplate.contact": {
+    "message": "Контакт"
+  },
   "boilerplate.title": {
     "message": "Относно {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Категории"
   },
   "contacts.title": {
-    "message": "Контакт"
+    "message": "Контакт с нас"
   },
   "cookieConsent.accept": {
     "message": "Да, можете да използвате „бисквитки“"

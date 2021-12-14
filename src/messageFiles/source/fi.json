@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Peru tilaus"
   },
+  "boilerplate.contact": {
+    "message": "Ota yhteyttä"
+  },
   "boilerplate.title": {
     "message": "Tietoja yrityksestä {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Kategoriat"
   },
   "contacts.title": {
-    "message": "Ota yhteyttä"
+    "message": "Ota meihin yhteyttä"
   },
   "cookieConsent.accept": {
     "message": "Kyllä, voitte käyttää evästeitä"

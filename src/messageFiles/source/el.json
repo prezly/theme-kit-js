@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Κατάργηση εγγραφής"
   },
+  "boilerplate.contact": {
+    "message": "Επαφή"
+  },
   "boilerplate.title": {
     "message": "Σχετικά με την {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Κατηγορίες"
   },
   "contacts.title": {
-    "message": "Επαφή"
+    "message": "Επικοινωνήστε μαζί μας"
   },
   "cookieConsent.accept": {
     "message": "Ναι, μπορείτε να χρησιμοποιείτε cookies"

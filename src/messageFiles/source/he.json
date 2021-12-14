@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "ביטול הרשמה"
   },
+  "boilerplate.contact": {
+    "message": "צור קשר"
+  },
   "boilerplate.title": {
     "message": "אודות {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "קטגוריות"
   },
   "contacts.title": {
-    "message": "צור קשר"
+    "message": "צור קשר אתנו"
   },
   "cookieConsent.accept": {
     "message": "כן, ניתן להשתמש בקוקיות"

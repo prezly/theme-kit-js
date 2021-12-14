@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Teken uit"
   },
+  "boilerplate.contact": {
+    "message": "Kontak"
+  },
   "boilerplate.title": {
     "message": "Omtrent {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Kategorieë"
   },
   "contacts.title": {
-    "message": "Kontak"
+    "message": "Kontak ons"
   },
   "cookieConsent.accept": {
     "message": "Ja, julle kan koekies gebruik"

@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "ยกเลิกการสมัคร"
   },
+  "boilerplate.contact": {
+    "message": "ติดต่อ"
+  },
   "boilerplate.title": {
     "message": "เกี่ยวกับ {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "หมวดหมู่"
   },
   "contacts.title": {
-    "message": "ติดต่อ"
+    "message": "ติดต่อเรา"
   },
   "cookieConsent.accept": {
     "message": "ได้ คุณสามารถใช้คุกกี้"

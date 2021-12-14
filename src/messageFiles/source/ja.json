@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "登録解除"
   },
+  "boilerplate.contact": {
+    "message": "コンタクト"
+  },
   "boilerplate.title": {
     "message": "{companyName}について"
   },
@@ -39,7 +42,7 @@
     "message": "カテゴリー"
   },
   "contacts.title": {
-    "message": "コンタクト"
+    "message": "当社に連絡"
   },
   "cookieConsent.accept": {
     "message": "はい、クッキーの使用を許可します"

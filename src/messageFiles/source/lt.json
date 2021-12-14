@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Atsisakyti prenumeratos"
   },
+  "boilerplate.contact": {
+    "message": "Kontaktai"
+  },
   "boilerplate.title": {
     "message": "Apie {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Kategorijos"
   },
   "contacts.title": {
-    "message": "Kontaktai"
+    "message": "Kreipkitės į mus"
   },
   "cookieConsent.accept": {
     "message": "Taip, galite naudoti slapukus"

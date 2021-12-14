@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Mag-unsubscribe"
   },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
   "boilerplate.title": {
     "message": "Tungkol sa {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Mga kategorya"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Makipag-ugnayan sa amin"
   },
   "cookieConsent.accept": {
     "message": "Oo, maaari kayong gumamit ng mga cookie"

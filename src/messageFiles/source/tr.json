@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Abonelikten çık - "
   },
+  "boilerplate.contact": {
+    "message": "Iletişim"
+  },
   "boilerplate.title": {
     "message": "{companyName} Hakkında"
   },
@@ -39,7 +42,7 @@
     "message": "Kategoriler"
   },
   "contacts.title": {
-    "message": "Iletişim"
+    "message": "Bizimle iletişim kur"
   },
   "cookieConsent.accept": {
     "message": "Evet, çerezleri kullanabilirsiniz"

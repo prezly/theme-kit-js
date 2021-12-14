@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Avregistrera"
   },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
   "boilerplate.title": {
     "message": "Om {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Kategorier"
   },
   "contacts.title": {
-    "message": "Kontakt"
+    "message": "Kontakta oss"
   },
   "cookieConsent.accept": {
     "message": "Ja, ni kan använda cookies"

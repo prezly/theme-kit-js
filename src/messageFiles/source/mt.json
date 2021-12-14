@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Temm l-abbonament"
   },
+  "boilerplate.contact": {
+    "message": "Ikkuntattja"
+  },
   "boilerplate.title": {
     "message": "Dwar {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Kategoriji"
   },
   "contacts.title": {
-    "message": "Ikkuntattja"
+    "message": "Ikkuntattjana"
   },
   "cookieConsent.accept": {
     "message": "Iva, tistgħu tużaw il-cookies"

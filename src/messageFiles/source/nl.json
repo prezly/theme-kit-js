@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Schrijf je uit"
   },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
   "boilerplate.title": {
     "message": "Over {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Categorieën"
   },
   "contacts.title": {
-    "message": "Contact"
+    "message": "Contacteer ons"
   },
   "cookieConsent.accept": {
     "message": "Ja, u kunt cookies gebruiken"

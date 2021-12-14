@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "退订"
   },
+  "boilerplate.contact": {
+    "message": "联系"
+  },
   "boilerplate.title": {
     "message": "关于{companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "类别"
   },
   "contacts.title": {
-    "message": "联系"
+    "message": "联系我们"
   },
   "cookieConsent.accept": {
     "message": "好的，你可以使用信息记录程序（cookies）"

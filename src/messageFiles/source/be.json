@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Адмовіцца ад падпіскі"
   },
+  "boilerplate.contact": {
+    "message": "Кантакт"
+  },
   "boilerplate.title": {
     "message": "Пра {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Катэгорыі"
   },
   "contacts.title": {
-    "message": "Кантакт"
+    "message": "Зв'яжіться з намі"
   },
   "cookieConsent.accept": {
     "message": "Так, вы можаце выкарыстоўваць кукі-файлы"

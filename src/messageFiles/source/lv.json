@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Atteikties"
   },
+  "boilerplate.contact": {
+    "message": "Kontakts"
+  },
   "boilerplate.title": {
     "message": "Par {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Kategorijas"
   },
   "contacts.title": {
-    "message": "Kontakts"
+    "message": "Sazinieties ar mums"
   },
   "cookieConsent.accept": {
     "message": "Jā, jūs varat izmantot sīkdatnes"
