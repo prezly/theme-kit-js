@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Oтписаться"
   },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
   "boilerplate.title": {
     "message": "О {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Категории"
   },
   "contacts.title": {
-    "message": "контакт"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Да, вы можете использовать куки-файлы"
