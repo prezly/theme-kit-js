@@ -33,7 +33,7 @@
     "message": "Unsubscribe"
   },
   "boilerplate.contact": {
-    "message": "الاتصال بنا"
+    "message": "اتصل"
   },
   "boilerplate.title": {
     "message": "About {companyName}"
@@ -42,7 +42,7 @@
     "message": "الفئات"
   },
   "contacts.title": {
-    "message": "Contact us"
+    "message": "الاتصال بنا"
   },
   "cookieConsent.accept": {
     "message": "نعم، يمكنكم استخدام ملفات تعريف الارتباط"
