@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Hủy đăng ký"
   },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
   "boilerplate.title": {
     "message": "Giới thiệu về {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Danh mục"
   },
   "contacts.title": {
-    "message": "Liên hệ"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Vâng, bạn có thể sử dụng cookie"
