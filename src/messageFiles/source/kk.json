@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Жазылымнан бас тарту"
   },
+  "boilerplate.contact": {
+    "message": "Контакт"
+  },
   "boilerplate.title": {
     "message": "{companyName} Туралы"
   },
@@ -39,7 +42,7 @@
     "message": "Санаттар"
   },
   "contacts.title": {
-    "message": "Контакт"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Иә, кукилерді пайдаланылады"
