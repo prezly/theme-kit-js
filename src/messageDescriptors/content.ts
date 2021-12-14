@@ -8,7 +8,7 @@ export const boilerplate = defineMessages({
     contact: {
         id: 'boilerplate.contact',
         defaultMessage: 'Contact',
-    }
+    },
 });
 
 export const categories = defineMessages({
