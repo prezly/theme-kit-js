@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "取消訂閱"
   },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
   "boilerplate.title": {
     "message": "關於 {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "類別"
   },
   "contacts.title": {
-    "message": "聯繫"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "是的，您可以使用 cookies"
