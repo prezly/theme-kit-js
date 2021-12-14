@@ -33,7 +33,7 @@
     "message": "Відписатися"
   },
   "boilerplate.contact": {
-    "message": "Contact"
+    "message": "Контакти"
   },
   "boilerplate.title": {
     "message": "Про {companyName}"
@@ -42,7 +42,7 @@
     "message": "Категорії"
   },
   "contacts.title": {
-    "message": "Contact us"
+    "message": "Наші контакти"
   },
   "cookieConsent.accept": {
     "message": "Так, ви можете використовувати кукіз"
