@@ -33,7 +33,7 @@
     "message": "Avregistrera"
   },
   "boilerplate.contact": {
-    "message": "Contact"
+    "message": "Kontakt"
   },
   "boilerplate.title": {
     "message": "Om {companyName}"
@@ -42,7 +42,7 @@
     "message": "Kategorier"
   },
   "contacts.title": {
-    "message": "Contact us"
+    "message": "Kontakta oss"
   },
   "cookieConsent.accept": {
     "message": "Ja, ni kan använda cookies"
