@@ -33,7 +33,7 @@
     "message": "Oтписаться"
   },
   "boilerplate.contact": {
-    "message": "Contact"
+    "message": "контакт"
   },
   "boilerplate.title": {
     "message": "О {companyName}"
@@ -42,7 +42,7 @@
     "message": "Категории"
   },
   "contacts.title": {
-    "message": "Contact us"
+    "message": "Свяжитесь с нами"
   },
   "cookieConsent.accept": {
     "message": "Да, вы можете использовать куки-файлы"
