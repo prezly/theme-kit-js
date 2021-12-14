@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Odhlásit odběr"
   },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
   "boilerplate.title": {
     "message": "O společnosti {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Kategorie"
   },
   "contacts.title": {
-    "message": "Kontakt"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Ano, můžete používat soubory cookies"
