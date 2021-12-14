@@ -5,6 +5,10 @@ export const boilerplate = defineMessages({
         id: 'boilerplate.title',
         defaultMessage: 'About {companyName}',
     },
+    contact: {
+        id: 'boilerplate.contact',
+        defaultMessage: 'Contact',
+    }
 });
 
 export const categories = defineMessages({
@@ -17,7 +21,7 @@ export const categories = defineMessages({
 export const contacts = defineMessages({
     title: {
         id: 'contacts.title',
-        defaultMessage: 'Contact',
+        defaultMessage: 'Contact us',
     },
 });
 
