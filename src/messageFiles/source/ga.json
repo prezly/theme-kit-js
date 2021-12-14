@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Díliostáil"
   },
+  "boilerplate.contact": {
+    "message": "Teagmhálaí"
+  },
   "boilerplate.title": {
     "message": "Eolas faoi {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Categories"
   },
   "contacts.title": {
-    "message": "Teagmhálaí"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Is féidir fianáin a úsáid"
