@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "अनसब्सक्राइब करें"
   },
+  "boilerplate.contact": {
+    "message": "संपर्क"
+  },
   "boilerplate.title": {
     "message": "{companyName} के बारे में"
   },
@@ -39,7 +42,7 @@
     "message": "श्रेणियाँ"
   },
   "contacts.title": {
-    "message": "संपर्क"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "हाँ, आप कुकीज़ का प्रयोग कर सकते हैं"
