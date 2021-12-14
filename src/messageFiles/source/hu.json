@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Leiratkozás"
   },
+  "boilerplate.contact": {
+    "message": "Kapcsolat"
+  },
   "boilerplate.title": {
     "message": "A(z) {companyName} cégről"
   },
@@ -39,7 +42,7 @@
     "message": "Kategóriák"
   },
   "contacts.title": {
-    "message": "Kapcsolat"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Igen, használhat cookie-kat"
