@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Odjavite se"
   },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
   "boilerplate.title": {
     "message": "O {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Kategorije"
   },
   "contacts.title": {
-    "message": "Kontakt"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Da, lahko uporabljate piškotke"
