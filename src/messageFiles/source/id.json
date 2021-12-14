@@ -32,6 +32,9 @@
   "actions.unsubscribe": {
     "message": "Berhenti Berlangganan"
   },
+  "boilerplate.contact": {
+    "message": "Kontak"
+  },
   "boilerplate.title": {
     "message": "Tentang {companyName}"
   },
@@ -39,7 +42,7 @@
     "message": "Kategori"
   },
   "contacts.title": {
-    "message": "Kontak"
+    "message": "Contact us"
   },
   "cookieConsent.accept": {
     "message": "Ya, Anda dapat menggunakan kuki."
