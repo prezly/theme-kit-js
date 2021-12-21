@@ -97,6 +97,40 @@
   "notFound.title": {
     "message": "La pagina che stai cercando non esiste..."
   },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Search"
+  },
+  "search.inputHint": {
+    "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
+    "message": "Type your search {inputHintExtra}"
+  },
+  "search.inputHintExtra": {
+    "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
+    "message": "and press {keyHint} or click {buttonLabel}"
+  },
+  "search.inputLabel": {
+    "message": "Search newsroom"
+  },
+  "search.noResults": {
+    "message": "Nothing found! Please try another search term!"
+  },
+  "search.resultsTitle": {
+    "message": "Quick results"
+  },
+  "search.showAllResults": {
+    "message": "Show all results"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Search"
+  },
+  "search.viewLess": {
+    "message": "View less"
+  },
+  "search.viewMore": {
+    "message": "View more"
+  },
   "serverError.subtitle": {
     "message": "Prova ad aggiornare la pagina oppure torna più tardi."
   },
