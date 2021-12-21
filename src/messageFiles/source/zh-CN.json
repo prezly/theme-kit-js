@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "禁运直至{date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "加载中..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "已复制URL！"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "切换导航"
   },
   "noStories.subtitle": {
     "message": "稍后再回来查看新故事。"
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "搜索"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "输入您的搜索{inputHintExtra}"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "并按下{keyHint}或点击{buttonLabel}"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "搜索新闻编辑室"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "未找到任何內容。请尝试另一个搜索词！"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "快速结果"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "显示全部结果"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "搜索"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "查看更少"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "查看更多"
   },
   "serverError.subtitle": {
     "message": "尝试刷新页面或稍后再回来。"
