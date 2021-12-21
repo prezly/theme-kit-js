@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Embargo sa(l-) {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Qed itella'..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL ikkuppjat!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Navigazzjoni tat-Toggle"
   },
   "noStories.subtitle": {
     "message": "Ejja lura aktar tard biex tara stejjer ġodda."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Fittex"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "Ittajpja t-tfittxija tiegħek {inputHintExtra}"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "u agħfas {keyHint} jew agħfas {buttonLabel}"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Fittex fil-kamra tal-aħbarijiet"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Ma nstab xejn. Ipprova terminu ieħor xi tfittex!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Riżultati malajr"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Uri r-riżultati kollha"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Fittex"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Ara inqas"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Ara aktar"
   },
   "serverError.subtitle": {
     "message": "Ipprova ġedded il-paġna jew erġa' ejja lura aktar tard."
