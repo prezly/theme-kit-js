@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Embargo hasta el {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Cargando..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "¡URL copiada!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Activar/desactivar navegación"
   },
   "noStories.subtitle": {
     "message": "Regresa más tarde para ver nuevas historias."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Buscar"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "Introduce tu búsqueda {inputHintExtra}"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "y pulsa {keyHint} o haz clic en {buttonLabel}"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Buscar en la sala de prensa"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "No se encontró nada. Por favor, prueba con otro término de búsqueda."
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Resultados rápidos"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Mostrar todos los resultados"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Búsqueda"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Mostrar menos"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Mostrar más"
   },
   "serverError.subtitle": {
     "message": "Intenta actualizar la página o vuelve un poco más tarde."
