@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Embargo do {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Nahrávanie..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL skopírovaná!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Tlačidlo prepnutia"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -99,7 +99,7 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Vyhľadávanie"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
