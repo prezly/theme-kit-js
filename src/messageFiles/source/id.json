@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Embargo hingga {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Memuat..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL disalin!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Alihkan navigasi"
   },
   "noStories.subtitle": {
     "message": "Kembali lagi nanti untuk melihat cerita baru."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Cari"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "Ketik pencarian Anda {inputHintExtra}"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "dan tekan {keyHint} atau klik {buttonLabel}"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Cari ruang berita"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Tidak ada yang ditemukan! Coba istilah pencarian lain!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Hasil cepat"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Tampilkan semua hasil"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Pencarian"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Lihat lebih sedikit"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Lihat lebih banyak"
   },
   "serverError.subtitle": {
     "message": "Cobalah untuk menyegarkan halaman atau kembali lagi nanti."
