@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Embargó eddig: {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Betöltés..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL másolva!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Navigáció váltása"
   },
   "noStories.subtitle": {
     "message": "Térj vissza később az újabb történetekért."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Keresés"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "Kezdjen gépelni a kereséshez {inputHintExtra}"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "és nyomja meg a(z) {keyHint} elemet, vagy kattintson a(z) {buttonLabel} gombra"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Keresés a hírolvasóban"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Nincs találat. Próbálkozzon másik keresőszóval!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Gyorseredmények"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Összes eredmény mutatása"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Keresés"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Kevesebb mutatása"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Több mutatása"
   },
   "serverError.subtitle": {
     "message": "Próbáld meg frissíteni az oldalt, vagy nézz vissza kicsit később."
