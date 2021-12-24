@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "{date} tarihine kadar ambargo"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Yükleniyor..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL kopyalandı!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Gezinti menüsünü değiştir"
   },
   "noStories.subtitle": {
     "message": "Yeni hikayeleri görmek için daha sonra tekrar gel."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Ara"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "Aramanı gir {inputHintExtra}"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "ve {keyHint} düğmesine bas veya {buttonLabel} düğmesine tıkla"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Haber odasında ara"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Hiçbir şey bulunamadı! Lütfen başka bir arama terimi dene!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Hızlı sonuçlar"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Tüm sonuçları göster"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Ara"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Daha azını göster"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Daha fazlasını görüntüle"
   },
   "serverError.subtitle": {
     "message": "Sayfayı yenilemeyi veya bir süre sonra tekrar gelmeyi dene."

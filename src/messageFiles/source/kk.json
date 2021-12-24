@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Эмбарга мына күнге дейін: {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Жүктелуде..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL көшірілді!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Навигацияны ауыстыру"
   },
   "noStories.subtitle": {
     "message": "Жаңа оқиғаларды көру үшін кейінірек қайта ашыңыз."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Іздеу"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "Іздеген сөзіңізді {inputHintExtra} теріңіз"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "және {keyHint} пернесін не {buttonLabel} түймесін басыңыз"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Жаңалықтар бөлмесінен іздеу"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Ештеңе табылмады! Ізделетін сөзді өзгертіп көріңіз!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Жылдам нәтижелер"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Барлық нәтижені көрсету"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Іздеу"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Жию"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Жаю"
   },
   "serverError.subtitle": {
     "message": "Бетті жаңартып көріңіз немесе кейінірек ашыңыз."

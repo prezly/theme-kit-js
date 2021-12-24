@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "{date}일까지 통상 금지"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "불러오는 중..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL 복사함!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "토글 내비게이션"
   },
   "noStories.subtitle": {
     "message": "새로운 이야기를 보려면 나중에 다시 확인하세요."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "검색"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "검색 {inputHintExtra}을(를) 입력하고"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "{keyHint}를 누르거나 {buttonLabel}을(를) 클릭하세요"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "뉴스룸 검색"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "검색 결과가 없습니다! 다른 검색어를 사용하세요!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "빠른 결과"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "모든 결과 보기"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "검색"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "줄이기"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "더 보기"
   },
   "serverError.subtitle": {
     "message": "페이지를 새로고침하거나 잠시 후에 다시 시도하세요."

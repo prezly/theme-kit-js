@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Parkera till {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Laddar..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL-kopierad!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Växla navigering"
   },
   "noStories.subtitle": {
     "message": "Kom igen senare och läs nya berättelser."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Sök"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "Ange din sökning {inputHintExtra}"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "och tryck på {keyHint} eller klicka på {buttonLabel}"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Sök newsroom"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Inget hittat! Vänligen testa ett annat sökord!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Snabbresultat"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Visa alla resultat"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Sök"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Visa mindre"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Visa mer"
   },
   "serverError.subtitle": {
     "message": "Testa att uppdatera sidan, eller återkom lite senare."

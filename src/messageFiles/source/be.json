@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Забарона публікацыі да {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Загрузка..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL скапіяваны!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Пераключыць навігацыю"
   },
   "noStories.subtitle": {
     "message": "Заходзьце пазней, каб убачыць новыя гісторыі."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Пошук"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "Увядзіце свой пошукавы запыт {inputHintExtra}"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "і націсніце {keyHint} або {buttonLabel}"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Пошук у прэс-цэнтры"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Нічога не знойдзена. Паспрабуйце змяніць умовы пошуку!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Хуткія вынікі"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Паказаць усе вынікі"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Пошук"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Паказаць менш"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Паказаць больш"
   },
   "serverError.subtitle": {
     "message": "Паспрабуйце абнавіць старонку або зайсці трохі пазней."
