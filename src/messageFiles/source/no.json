@@ -73,17 +73,17 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Embargo til {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Laster inn …"
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "Nettadresen er kopiert."
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Slå navigasjon av/på"
   },
   "noStories.subtitle": {
     "message": "Kom tilbake senere for å se nye historier."
@@ -99,37 +99,37 @@
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Søk"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "Angi søket ditt {inputHintExtra}"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "og trykk på {keyHint} eller klikk på {buttonLabel}"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Søk etter nyhetsrom"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Fant ikke noe. Prøv et annet søkebegrep."
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Raske resultater"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Vis alle resultater"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Søk"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Se mindre"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Se mer"
   },
   "serverError.subtitle": {
     "message": "Du må enten oppdatere siden eller prøve igjen senere."
