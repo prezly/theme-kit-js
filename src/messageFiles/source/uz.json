@@ -113,26 +113,26 @@
     "message": "Yangiliklar xonasini qidirish"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Hech nima topilmadi! Boshqa qidiruv termini bilan urining!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Tezkor natijalar"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Barcha natijalarni ko‘rsatish"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Qidirish"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Kamroq ko‘rsatish"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Ko‘proq ko‘rsatish"
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Sahifani yangidan yuklab ko‘ring yoki biroz keyinroq qayta kiring."
   },
   "serverError.title": {
     "message": "Nimadir xatolik yuz berdi..."
