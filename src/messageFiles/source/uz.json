@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Orqaga bosh sahifaga"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "URL dan nusxa ko‘chirish"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Yuklab olish"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Ko‘proq yuklash"
   },
   "actions.privacyRequests": {
     "message": "Maxfiylik talablari"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Qayta yuklash"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Ulashish:"
   },
   "actions.startUsingCookies": {
     "message": "Cookie fayllardan foydalanish"
@@ -39,7 +39,7 @@
     "message": "{companyName} Haqida"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Toifalar"
   },
   "contacts.title": {
     "message": "Biz bilan bog‘lanish"
@@ -73,44 +73,44 @@
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "{date} sanasigcha embargo"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Yuklanayapti..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL dan nusxa olindi!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Navigatsiyani o‘tkazish"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Yangi hikoyalarni ko‘rish uchun keyinroq qaytib o‘ting."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "{newsroom} xonasiga xush kelibsiz!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Agar siz URL ni o‘zingiz kiritgan bo‘lsangiz, manzillar satrida imlo xatolar yo‘qligini tekshiring."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Siz qidirayotgan sahifa mavjud emas..."
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Qidirish"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Type your search {inputHintExtra}"
+    "message": "{inputHintExtra} qidirishingizni kiriting"
   },
   "search.inputHintExtra": {
     "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "and press {keyHint} or click {buttonLabel}"
+    "message": "{keyHint} tugmasini bosing yoki {buttonLabel} ni cherting"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Yangiliklar xonasini qidirish"
   },
   "search.noResults": {
     "message": "Nothing found! Please try another search term!"
