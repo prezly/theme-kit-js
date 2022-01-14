@@ -1,24 +1,24 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Späť na domovskú stránku"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Skopírovať URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Stiahnuť"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Načítať viac"
   },
   "actions.privacyRequests": {
     "message": "Žiadosti o ochranu osobných údajov"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Obnoviť"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Zdieľať:"
   },
   "actions.startUsingCookies": {
     "message": "Začnite používať súbory cookie"
@@ -39,7 +39,7 @@
     "message": "O {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategórie"
   },
   "contacts.title": {
     "message": "Kontaktujte nás"
@@ -86,16 +86,16 @@
     "message": "Tlačidlo prepnutia"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Ak si chcete pozrieť nové príbehy, vráťte sa neskôr."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Vitajte v {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Ak ste sami vpísali URL, skontrolujte jeho správnosť."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Stránka, ktorú hľadáte, neexistuje..."
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
@@ -132,7 +132,7 @@
     "message": "Zobraziť viac"
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Skúste obnoviť stránku alebo sa vráťte trošku neskôr."
   },
   "serverError.title": {
     "message": "Nastal problém..."
