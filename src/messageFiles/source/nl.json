@@ -142,7 +142,7 @@
     "message": "Deze site is beschermd door hCaptcha en het {privacyPolicyLink} en {termsOfServiceLink} zijn van toepassing."
   },
   "subscription.formTitle": {
-    "message": "Updates in je mailbox"
+    "message": "Persberichten in je mailbox"
   },
   "subscription.labelEmail": {
     "message": "E-mailadres"
