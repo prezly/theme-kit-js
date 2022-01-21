@@ -30,7 +30,7 @@
     "message": "सब्सक्राइब करें"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "सर्च फिल्टर टॉगल करें"
   },
   "actions.unsubscribe": {
     "message": "अनसब्सक्राइब करें"
@@ -105,7 +105,7 @@
     "message": "खोजें"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "वर्ग"
   },
   "search.facets.month": {
     "message": "महिना"
@@ -114,7 +114,7 @@
     "message": "साल"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "हमें {searchQuery} के लिए {resultsCount} परिणाम मिले"
   },
   "search.fullResultsTitle": {
     "message": "खोजे नतीजे"
