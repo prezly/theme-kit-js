@@ -61,14 +61,14 @@ export const search = defineMessages({
 export const searchFacets = defineMessages({
     category: {
         id: 'search.facets.category',
-        defineMessage: 'Category',
+        defaultMessage: 'Category',
     },
     year: {
         id: 'search.facets.year',
-        defineMessage: 'Year',
+        defaultMessage: 'Year',
     },
     month: {
         id: 'search.facets.month',
-        defineMessage: 'Month',
+        defaultMessage: 'Month',
     }
 })
