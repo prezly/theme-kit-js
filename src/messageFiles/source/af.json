@@ -30,7 +30,7 @@
     "message": "Teken in"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Wissel soekfilters"
   },
   "actions.unsubscribe": {
     "message": "Teken uit"
@@ -105,7 +105,7 @@
     "message": "Soek"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategorie"
   },
   "search.facets.month": {
     "message": "Maand"
@@ -114,7 +114,7 @@
     "message": "Jaar"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Ons het {resultsCount} resultate gevind vir {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Soekresultate"
