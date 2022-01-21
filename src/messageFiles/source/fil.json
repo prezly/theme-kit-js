@@ -30,7 +30,7 @@
     "message": "Mag-subscribe"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Toggle ng paghahanap ng mga filter"
   },
   "actions.unsubscribe": {
     "message": "Mag-unsubscribe"
@@ -105,7 +105,7 @@
     "message": "Maghanap"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategorya"
   },
   "search.facets.month": {
     "message": "Buwan"
@@ -114,7 +114,7 @@
     "message": "Taon"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Nahanap namin {resultsCount} ang mga resulta para sa {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Mga resulta ng paghahanap"
