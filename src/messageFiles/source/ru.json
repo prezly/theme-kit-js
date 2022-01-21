@@ -30,7 +30,7 @@
     "message": "Подписаться"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Переключить фильтры поиска"
   },
   "actions.unsubscribe": {
     "message": "Oтписаться"
@@ -105,16 +105,16 @@
     "message": "Поиск"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Категория"
   },
   "search.facets.month": {
-    "message": "Month"
+    "message": "Месяц"
   },
   "search.facets.year": {
-    "message": "Year"
+    "message": "Год"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Мы нашили {resultsCount} результата(-ов) для {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Результаты поиска"
