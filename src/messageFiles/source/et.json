@@ -30,7 +30,7 @@
     "message": "Telli"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Otsingufiltrite sisselülitamine"
   },
   "actions.unsubscribe": {
     "message": "Lahku meililistist"
@@ -105,7 +105,7 @@
     "message": "Otsi"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategooria"
   },
   "search.facets.month": {
     "message": "Kuu"
@@ -114,7 +114,7 @@
     "message": "Aasta"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Leidsime otsingule {searchQuery} {resultsCount} tulemust"
   },
   "search.fullResultsTitle": {
     "message": "Otsingutulemused"
