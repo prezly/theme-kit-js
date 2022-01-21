@@ -30,7 +30,7 @@
     "message": "Prihlásiť sa na odber"
   },
   "actions.toggleFilters": {
-    "message": "Nastaviť filtre vyhľadávania"
+    "message": "Prepnúť filtre vyhľadávania"
   },
   "actions.unsubscribe": {
     "message": "Zrušiť odber"
