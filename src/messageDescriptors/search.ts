@@ -53,7 +53,8 @@ export const search = defineMessages({
     },
     fullResultsSubTitle: {
         id: 'search.fullResultsSubTitle',
-        defaultMessage: 'We found {resultsCount} results for "{searchQuery}"'
+        defaultMessage: 'We found {resultsCount} results for &quot;{searchQuery}&quot;',
+        description: '`&quot;` is an HTML-escaped quotation mark. Please try to preserve those or use other HTML-escaped characters for other quote types'
     }
 });
 
