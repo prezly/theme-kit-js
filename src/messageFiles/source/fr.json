@@ -114,8 +114,7 @@
     "message": "Année"
   },
   "search.fullResultsSubTitle": {
-    "description": "`&quot;` is an HTML-escaped quotation mark. Please try to preserve those or use other HTML-escaped characters for other quote types",
-    "message": "We found {resultsCount} results for &quot;{searchQuery}&quot;"
+    "message": "We found {resultsCount} results for {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Résultats de la recherche"
