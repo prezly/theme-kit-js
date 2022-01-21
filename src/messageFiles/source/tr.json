@@ -30,7 +30,7 @@
     "message": "Abone ol"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Arama filtrelerini değiştir"
   },
   "actions.unsubscribe": {
     "message": "Abonelikten çık - "
@@ -105,7 +105,7 @@
     "message": "Ara"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategori"
   },
   "search.facets.month": {
     "message": "Ay"
@@ -114,7 +114,7 @@
     "message": "Yıl"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "{searchQuery} için {resultsCount} sonuç bulduk"
   },
   "search.fullResultsTitle": {
     "message": "Arama sonuçları"
