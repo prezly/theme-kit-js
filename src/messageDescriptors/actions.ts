@@ -45,4 +45,8 @@ export const actions = defineMessages({
         id: 'actions.unsubscribe',
         defaultMessage: 'Unsubscribe',
     },
+    toggleFilters: {
+        id: 'actions.toggleFilters',
+        defaultMessage: 'Toggle search filters',
+    }
 });

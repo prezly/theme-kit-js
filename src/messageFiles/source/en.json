@@ -29,6 +29,9 @@
   "actions.subscribe": {
     "message": "Subscribe"
   },
+  "actions.toggleFilters": {
+    "message": "Toggle search filters"
+  },
   "actions.unsubscribe": {
     "message": "Unsubscribe"
   },
@@ -100,6 +103,18 @@
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
     "message": "Search"
+  },
+  "search.facets.category": {
+  },
+  "search.facets.month": {
+  },
+  "search.facets.year": {
+  },
+  "search.fullResultsSubTitle": {
+    "message": "We found {resultsCount} results for \"{searchQuery}\""
+  },
+  "search.fullResultsTitle": {
+    "message": "Search results"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",

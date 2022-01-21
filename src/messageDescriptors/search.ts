@@ -47,4 +47,27 @@ export const search = defineMessages({
         id: 'search.viewLess',
         defaultMessage: 'View less',
     },
+    fullResultsTitle: {
+        id: 'search.fullResultsTitle',
+        defaultMessage: 'Search results',
+    },
+    fullResultsSubTitle: {
+        id: 'search.fullResultsSubTitle',
+        defaultMessage: 'We found {resultsCount} results for "{searchQuery}"'
+    }
 });
+
+export const searchFacets = defineMessages({
+    category: {
+        id: 'search.facets.category',
+        defineMessage: 'Category',
+    },
+    year: {
+        id: 'search.facets.year',
+        defineMessage: 'Year',
+    },
+    month: {
+        id: 'search.facets.month',
+        defineMessage: 'Month',
+    }
+})
