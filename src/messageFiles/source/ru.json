@@ -118,7 +118,7 @@
     "message": "We found {resultsCount} results for &quot;{searchQuery}&quot;"
   },
   "search.fullResultsTitle": {
-    "message": "Search results"
+    "message": "Результаты поиска"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
