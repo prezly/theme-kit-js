@@ -30,7 +30,7 @@
     "message": "Prihlásiť sa na odber"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Nastaviť filtre vyhľadávania"
   },
   "actions.unsubscribe": {
     "message": "Zrušiť odber"
@@ -105,7 +105,7 @@
     "message": "Vyhľadávanie"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategória"
   },
   "search.facets.month": {
     "message": "Mesiac"
@@ -114,7 +114,7 @@
     "message": "Rok"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Našli sme {resultsCount} výsledky / výsledkov pre {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Výsledok vyhľadávania"
