@@ -30,7 +30,7 @@
     "message": "Tilaa"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Vaihda hakusuodattimet"
   },
   "actions.unsubscribe": {
     "message": "Peru tilaus"
@@ -105,7 +105,7 @@
     "message": "Etsi"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategoria"
   },
   "search.facets.month": {
     "message": "Kuukausi"
@@ -114,7 +114,7 @@
     "message": "Vuosi"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Löysimme {resultsCount} tulosta haulle {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Hakutulokset"
