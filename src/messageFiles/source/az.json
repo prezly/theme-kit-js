@@ -30,7 +30,7 @@
     "message": "Abunə olun"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Axtarış filtrlərini dəyişin"
   },
   "actions.unsubscribe": {
     "message": "Abunəliyi dayandırın"
@@ -105,7 +105,7 @@
     "message": "Axtar"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kateqoriya"
   },
   "search.facets.month": {
     "message": "Ay"
@@ -114,7 +114,7 @@
     "message": "Il"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Biz {searchQuery} üçün {resultsCount} nəticə tapdıq"
   },
   "search.fullResultsTitle": {
     "message": "Axtarış nəticələri"
