@@ -29,6 +29,9 @@
   "actions.subscribe": {
     "message": "S'abonner"
   },
+  "actions.toggleFilters": {
+    "message": "Toggle search filters"
+  },
   "actions.unsubscribe": {
     "message": "Désabonnez-vous"
   },
@@ -100,6 +103,22 @@
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
     "message": "Recherche"
+  },
+  "search.facets.category": {
+    "message": "Category"
+  },
+  "search.facets.month": {
+    "message": "Mois"
+  },
+  "search.facets.year": {
+    "message": "Année"
+  },
+  "search.fullResultsSubTitle": {
+    "description": "`&quot;` is an HTML-escaped quotation mark. Please try to preserve those or use other HTML-escaped characters for other quote types",
+    "message": "We found {resultsCount} results for &quot;{searchQuery}&quot;"
+  },
+  "search.fullResultsTitle": {
+    "message": "Résultats de la recherche"
   },
   "search.inputHint": {
     "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
