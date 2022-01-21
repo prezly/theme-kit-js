@@ -30,7 +30,7 @@
     "message": "Obuna"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Qidiruv filtrlarini yoqish/oʻchirish"
   },
   "actions.unsubscribe": {
     "message": "Obunani bekor qilish"
@@ -105,7 +105,7 @@
     "message": "Qidirish"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Turkum"
   },
   "search.facets.month": {
     "message": "Oy"
@@ -114,7 +114,7 @@
     "message": "Yil"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "{searchQuery} uchun {resultsCount} natija topdik"
   },
   "search.fullResultsTitle": {
     "message": "Natijalarni qidirish"
