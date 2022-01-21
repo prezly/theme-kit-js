@@ -30,7 +30,7 @@
     "message": "Абонирайте се"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Вкл./изкл. филтрите за търсене"
   },
   "actions.unsubscribe": {
     "message": "Отпишете се"
@@ -105,7 +105,7 @@
     "message": "Търсене"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Категория"
   },
   "search.facets.month": {
     "message": "Месец"
@@ -114,7 +114,7 @@
     "message": "Година"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Намерихме {resultsCount} резултата за {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Резултати от търсенето"
