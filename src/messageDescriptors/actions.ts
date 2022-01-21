@@ -48,5 +48,5 @@ export const actions = defineMessages({
     toggleFilters: {
         id: 'actions.toggleFilters',
         defaultMessage: 'Toggle search filters',
-    }
+    },
 });
