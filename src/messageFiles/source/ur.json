@@ -30,7 +30,7 @@
     "message": "سبسکرائب کریں"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "تلاش کے فلٹرز تبدیل کریں"
   },
   "actions.unsubscribe": {
     "message": "ان سبسکرائب کریں"
@@ -105,7 +105,7 @@
     "message": "تلاش"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "زمرہ"
   },
   "search.facets.month": {
     "message": "مہینہ"
@@ -114,7 +114,7 @@
     "message": "سال"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "ہمیں {searchQuery} کے لئے {resultsCount} نتائج ملے"
   },
   "search.fullResultsTitle": {
     "message": "تلاش کے نتائج"
