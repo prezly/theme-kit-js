@@ -30,7 +30,7 @@
     "message": "Abbona"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Għażliet ta' tfittxija toggle"
   },
   "actions.unsubscribe": {
     "message": "Temm l-abbonament"
@@ -105,7 +105,7 @@
     "message": "Fittex"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategorija"
   },
   "search.facets.month": {
     "message": "Xahar"
@@ -114,7 +114,7 @@
     "message": "Sena"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Sibna {resultsCount} riżultati għal {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Riżultati tat-tiftix"
