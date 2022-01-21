@@ -30,7 +30,7 @@
     "message": "Pretplatite se"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Prebaci filtre pretraživanja"
   },
   "actions.unsubscribe": {
     "message": "Raskini pretplatu"
@@ -105,7 +105,7 @@
     "message": "Pretraživanje"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategorija"
   },
   "search.facets.month": {
     "message": "Mjesec"
@@ -114,7 +114,7 @@
     "message": "Godina"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Pronašli smo {resultsCount} rezultata za {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Rezultati pretraživanja"
