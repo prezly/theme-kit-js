@@ -30,7 +30,7 @@
     "message": "Εγγραφή"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Εναλλαγή φίλτρων αναζήτησης"
   },
   "actions.unsubscribe": {
     "message": "Κατάργηση εγγραφής"
@@ -105,7 +105,7 @@
     "message": "Αναζήτηση"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Κατηγορία"
   },
   "search.facets.month": {
     "message": "Μήνας"
@@ -114,7 +114,7 @@
     "message": "Έτος"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Βρήκαμε {resultsCount} αποτελέσματα για {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Αποτελέσματα αναζήτησης"
