@@ -30,7 +30,7 @@
     "message": "Inschrijven"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Zoekfilters wijzigen"
   },
   "actions.unsubscribe": {
     "message": "Schrijf je uit"
@@ -105,7 +105,7 @@
     "message": "Zoeken"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Categorie"
   },
   "search.facets.month": {
     "message": "Maand"
@@ -114,7 +114,7 @@
     "message": "Jaar"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "We hebben {resultsCount} resultaten voor {searchQuery} gevonden"
   },
   "search.fullResultsTitle": {
     "message": "Zoekresultaten"
