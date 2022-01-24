@@ -30,7 +30,7 @@
     "message": "구독"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "검색 필터 토글"
   },
   "actions.unsubscribe": {
     "message": "구독 해제"
@@ -105,7 +105,7 @@
     "message": "검색"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "카테고리"
   },
   "search.facets.month": {
     "message": "월"
@@ -114,7 +114,7 @@
     "message": "년"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "{searchQuery}에 대한 결과를 {resultsCount}개 찾았습니다"
   },
   "search.fullResultsTitle": {
     "message": "검색 결과"

@@ -30,7 +30,7 @@
     "message": "訂閱"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "切換搜索過濾器"
   },
   "actions.unsubscribe": {
     "message": "取消訂閱"
@@ -105,7 +105,7 @@
     "message": "搜尋"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "類別"
   },
   "search.facets.month": {
     "message": "月"
@@ -114,7 +114,7 @@
     "message": "年"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "我們找到了{searchQuery} 的{resultsCount} 結果"
   },
   "search.fullResultsTitle": {
     "message": "搜尋結果"

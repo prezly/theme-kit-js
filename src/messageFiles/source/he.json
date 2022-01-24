@@ -30,7 +30,7 @@
     "message": "הרשמה"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "הפעילו/כבו מסנני חיפוש"
   },
   "actions.unsubscribe": {
     "message": "ביטול הרשמה"
@@ -105,7 +105,7 @@
     "message": "חיפוש"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "קטגוריה"
   },
   "search.facets.month": {
     "message": "חודש"
@@ -114,7 +114,7 @@
     "message": "שנה"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "מצאנו {resultsCount} תוצאות עבור {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "תוצאות החיפוש"

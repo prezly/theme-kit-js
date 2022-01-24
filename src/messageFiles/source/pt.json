@@ -30,7 +30,7 @@
     "message": "Inscrever-se"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Ativar os filtros de pesquisa"
   },
   "actions.unsubscribe": {
     "message": "Cancelar"
@@ -105,7 +105,7 @@
     "message": "Pesquisar"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Categoria"
   },
   "search.facets.month": {
     "message": "Mês"
@@ -114,7 +114,7 @@
     "message": "Ano"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Encontrámos {resultsCount} resultados para {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Resultados da Pesquisa"

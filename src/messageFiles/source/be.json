@@ -30,7 +30,7 @@
     "message": "Падпісацца"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Пераключыць фільтры пошуку"
   },
   "actions.unsubscribe": {
     "message": "Адмовіцца ад падпіскі"
@@ -105,7 +105,7 @@
     "message": "Пошук"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Катэгорыя"
   },
   "search.facets.month": {
     "message": "Месяц"
@@ -114,7 +114,7 @@
     "message": "Год"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Мы знайшлі {resultsCount} выніку(аў) для {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Вынікі пошуку"

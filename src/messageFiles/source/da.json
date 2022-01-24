@@ -30,7 +30,7 @@
     "message": "Tilmeld"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Skift søgefiltre"
   },
   "actions.unsubscribe": {
     "message": "Frameld"
@@ -105,7 +105,7 @@
     "message": "Søg"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategori"
   },
   "search.facets.month": {
     "message": "Måned"
@@ -114,7 +114,7 @@
     "message": "År"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Vi fandt {resultsCount} resultater for {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Søgeresultater"

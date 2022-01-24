@@ -30,7 +30,7 @@
     "message": "Odebírat"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Přepnout vyhledávací filtry"
   },
   "actions.unsubscribe": {
     "message": "Odhlásit odběr"
@@ -105,7 +105,7 @@
     "message": "Hledat"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategorie"
   },
   "search.facets.month": {
     "message": "Měsíc"
@@ -114,7 +114,7 @@
     "message": "Rok"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Pro vyhledávací dotaz {searchQuery} jsme nalezli tento počet výsledků: {resultsCount}"
   },
   "search.fullResultsTitle": {
     "message": "Výsledky hledání"

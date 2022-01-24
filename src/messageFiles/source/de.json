@@ -30,7 +30,7 @@
     "message": "Abonnieren"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Suchfilter umschalten"
   },
   "actions.unsubscribe": {
     "message": "Abbestellen"
@@ -105,7 +105,7 @@
     "message": "Suchen"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategorie"
   },
   "search.facets.month": {
     "message": "Monat"
@@ -114,7 +114,7 @@
     "message": "Jahr"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Wir haben {resultsCount} Ergebnisse für {searchQuery} gefunden"
   },
   "search.fullResultsTitle": {
     "message": "Suchergebnisse"

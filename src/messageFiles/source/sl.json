@@ -30,7 +30,7 @@
     "message": "Naročite se"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Preklop iskalnih filtrov"
   },
   "actions.unsubscribe": {
     "message": "Odjavite se"
@@ -105,7 +105,7 @@
     "message": "Iskanje"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategorija"
   },
   "search.facets.month": {
     "message": "Mesec"
@@ -114,7 +114,7 @@
     "message": "Leto"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Našli smo {resultsCount} rezultatov za {searchQuery}"
   },
   "search.fullResultsTitle": {
     "message": "Rezultati iskanja"
