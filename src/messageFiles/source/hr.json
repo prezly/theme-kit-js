@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Nešto je pošlo krivo..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Ove su internetske stranice zaštićene sustavom hCaptcha i primjenjuje se njezina {privacyPolicyLink} i {termsOfServiceLink}."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Primajte najnovije vijesti u vaš sandučić"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Politika privatnosti"
-  },
-  "subscription.termsOfService": {
-    "message": "Uvjeti usluge"
   }
 }
