@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "มีบางอย่างผิดปกติ"
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "เว็บไซต์นี้ได้รับการคุ้มครองโดย hCaptcha และมีการนำ {privacyPolicyLink} และ {termsOfServiceLink} ของเว็บไซต์มาบังคับใช้"
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "รับอัพเดทในกล่องจดหมายของคุณ"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "นโยบายความเป็นส่วนตัว"
-  },
-  "subscription.termsOfService": {
-    "message": "ข้อตกลงการใช้บริการ"
   }
 }
