@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Nastal problém..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Táto stránka je chránená hCaptcha a jej {privacyPolicyLink} a {termsOfServiceLink} sú platné."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Dostávajte správy do vašej schránky"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Zásady ochrany osobných údajov"
-  },
-  "subscription.termsOfService": {
-    "message": "Podmienky služby"
   }
 }
