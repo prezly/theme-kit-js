@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
+    "message": "Нажимая \"{subscribe}\", я подтверждаю, что прочитал(-ла) {privacyPolicyLink} и согласился(-ась) с нею."
   },
   "subscription.formTitle": {
     "message": "Получайте обновления на ваш почтовый ящик"
