@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Jokin meni vikaan..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Sivusto on suojattu hCaptchalla ja sen {privacyPolicyLink} sekä {termsOfServiceLink} ovat voimassa."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Ota vastaan päivityksiä sähköpostiisi"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Tietosuojakäytännöt"
-  },
-  "subscription.termsOfService": {
-    "message": "Käyttöehdot"
   }
 }
