@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "May nangyaring hindi tama..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Ang site na ito ay protektado ng hCaptcha at ito ay {privacyPolicyLink} at ang {termsOfServiceLink} ay ilalapat."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Makatanggap ng mga update sa mailbox mo"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Patakaran ng Pagkapribado"
-  },
-  "subscription.termsOfService": {
-    "message": "Mga Tuntunin ng Serbisyo"
   }
 }
