@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Bhí rud éigean contráilte..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Faigh nuashonraithe i do bhosca poist"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Privacy Policy"
-  },
-  "subscription.termsOfService": {
-    "message": "Terms of Service"
   }
 }
