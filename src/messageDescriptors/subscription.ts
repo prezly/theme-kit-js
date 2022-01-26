@@ -9,19 +9,15 @@ export const subscription = defineMessages({
         id: 'subscription.labelEmail',
         defaultMessage: 'Your email address',
     },
-    captchaDisclaimer: {
-        id: 'subscription.captchaDisclaimer',
+    disclaimer: {
+        id: 'subscription.disclaimer',
         defaultMessage:
-            'This site is protected by hCaptcha and its {privacyPolicyLink} and {termsOfServiceLink} apply.',
+            'By clicking "{subscribe}" I confirm I have read and agree to {privacyPolicyLink}.',
         description:
-            'The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively',
+            'The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.',
     },
     privacyPolicy: {
         id: 'subscription.privacyPolicy',
         defaultMessage: 'Privacy Policy',
-    },
-    termsOfService: {
-        id: 'subscription.termsOfService',
-        defaultMessage: 'Terms of Service',
     },
 });
