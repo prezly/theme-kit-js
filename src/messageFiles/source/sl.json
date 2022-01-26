@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Nekaj je bilo narobe..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "To spletno mesto je zaščiteno s preskusom hCaptcha in veljata njegov {privacyPolicyLink} in {termsOfServiceLink}."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Prejmite posodobitve v vaš poštni nabiralnik"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Pravilnik o zasebnosti"
-  },
-  "subscription.termsOfService": {
-    "message": "Pogoji storitve"
   }
 }
