@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "發生錯誤..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "此網站受hCaptcha驗證碼所保護，其{privacyPolicyLink}和{termsOfServiceLink}適用。"
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "在您的收件匣中取得更新"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "私隱政策"
-  },
-  "subscription.termsOfService": {
-    "message": "服務條款"
   }
 }
