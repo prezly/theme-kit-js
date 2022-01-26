@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
+    "message": "Door op \"{subscribe}\" te klikken, bevestig ik dat ik {privacyPolicyLink} gelezen heb en ermee akkoord ga."
   },
   "subscription.formTitle": {
     "message": "Persberichten in je mailbox"
