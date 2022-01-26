@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "حدث خطأ ما..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "هذا الموقع محمي بواسطة hCaptcha، وتُطبق {privacyPolicyLink} و {termsOfServiceLink} الخاصة به."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "تلق التحديثات في صندوق بريدك"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "سياسة الخصوصية"
-  },
-  "subscription.termsOfService": {
-    "message": "بنود الخدمة"
   }
 }
