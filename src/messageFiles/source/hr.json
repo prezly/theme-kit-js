@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
+    "message": "Klikom na \"{subscribe}\" potvrđujem da sam pročitao/la i složio/la se s {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Primajte najnovije vijesti u vaš sandučić"
