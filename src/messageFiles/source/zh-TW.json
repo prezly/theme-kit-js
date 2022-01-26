@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
+    "message": "點擊「{subscribe}」，我確認我已詳閱並同意{privacyPolicyLink}。"
   },
   "subscription.formTitle": {
     "message": "在您的收件匣中取得更新"
