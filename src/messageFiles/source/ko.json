@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "문제가 발생했음..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "이 사이트는 hCaptcha의 보호를 받고 있으며 {privacyPolicyLink} 및 {termsOfServiceLink} 이 적용됩니다."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "메일박스에서 업데이트 가져오기"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "개인정보 보호 정책"
-  },
-  "subscription.termsOfService": {
-    "message": "서비스 약관"
   }
 }
