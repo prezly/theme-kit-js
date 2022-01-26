@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
+    "message": "Bằng cách nhấn \"{subscribe}\" Tôi xác nhận đã đọc và đồng ý với {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Nhận thông tin cập nhật trong hộp thư của bạn"
