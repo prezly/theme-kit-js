@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Algo deu errado..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Este site é protegido por hCaptcha e sua {privacyPolicyLink} e {termsOfServiceLink} aplicáveis."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Receba atualizações em seu email"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Política de Privacidade"
-  },
-  "subscription.termsOfService": {
-    "message": "Termos de Serviço"
   }
 }
