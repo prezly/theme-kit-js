@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Ceva nu a funcționat cum trebuie..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Acest site este protejat de hCaptcha și îi sunt aplicabile {privacyPolicyLink} și {termsOfServiceLink}."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Dând clic pe \"{subscribe}\", confirm că am citit și sunt de acord cu {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Primire actualizări în căsuța poștală"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Politica de confidențialitate"
-  },
-  "subscription.termsOfService": {
-    "message": "Termenii de utilizare"
   }
 }

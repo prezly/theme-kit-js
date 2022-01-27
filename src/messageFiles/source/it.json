@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Qualcosa è andato storto..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Questo sito è protetto da hCaptcha e vengono applicate la sua {privacyPolicyLink} e i suoi {termsOfServiceLink}."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Cliccando su \"{subscribe}\" confermo di aver letto e di accettare {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Ottieni gli aggiornamenti nella tua casella di posta"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Informativa sulla privacy"
-  },
-  "subscription.termsOfService": {
-    "message": "Termini di servizio"
   }
 }

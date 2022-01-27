@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "कुछ गलत हो गया"
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "यह साइट hCaptcha और उनकी {privacyPolicyLink} के द्वारा संरक्षित है और {termsOfServiceLink} लागू होती हैं।"
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "\"{subscribe}\" पर क्लिक करके मैं पुष्टि करता हूं कि मैंने {privacyPolicyLink} को पढ़ लिया है और इससे सहमत हूं।"
   },
   "subscription.formTitle": {
     "message": "अपने मेलबॉक्स में नई जानकारी प्राप्त करें"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "गोपनीयता नीति"
-  },
-  "subscription.termsOfService": {
-    "message": "सेवा की शर्तें"
   }
 }

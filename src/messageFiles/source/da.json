@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Noget er gået galt..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Dette websted er beskyttet af hCaptcha, og dets {privacyPolicyLink} og {termsOfServiceLink} gælder."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Ved at klikke \"{subscribe}\" bekræfter jeg, at jeg har læst og accepterer {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Få opdateringer i din indbakke"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Privatlivspolitik"
-  },
-  "subscription.termsOfService": {
-    "message": "Servicevilkår"
   }
 }

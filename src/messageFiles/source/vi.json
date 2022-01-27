@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Đã xảy ra vấn đề..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Trang web này được bảo vệ bởi hCaptcha và áp dụng {privacyPolicyLink} và {termsOfServiceLink} của hCaptcha."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Bằng cách nhấn \"{subscribe}\" Tôi xác nhận đã đọc và đồng ý với {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Nhận thông tin cập nhật trong hộp thư của bạn"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Chính sách Quyền Riêng tư"
-  },
-  "subscription.termsOfService": {
-    "message": "Điều khoản Dịch vụ"
   }
 }

@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "出了一些错误..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "本站点受hCaptcha及其{privacyPolicyLink}和{termsOfServiceLink}的保护。"
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "点击\"{subscribe}\"，即为确认我已阅读并同意{privacyPolicyLink}。"
   },
   "subscription.formTitle": {
     "message": "在您邮箱中获得更新"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "隐私政策"
-  },
-  "subscription.termsOfService": {
-    "message": "服务条款"
   }
 }

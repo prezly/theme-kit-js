@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Valami hiba történt..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Ez az oldal hCaptcha által védett, {privacyPolicyLink} és {termsOfServiceLink} érvényesek."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "A {subscribe}-ra történő kattintássak megerősítem, hogy elolvastam és elfogadtam a(z) {privacyPolicyLink} adatvédelmi politikáját."
   },
   "subscription.formTitle": {
     "message": "Kapj híreket a postafiókodba"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Adatvédelmi politikája"
-  },
-  "subscription.termsOfService": {
-    "message": "Általános szerződési feltételei"
   }
 }

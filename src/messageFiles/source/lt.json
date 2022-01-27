@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Kažkas ne taip..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Ši svetainė apsaugota „hCaptcha” ir galioja {privacyPolicyLink} ir {termsOfServiceLink}."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Spustelėdamas „{subscribe}“ patvirtinu, kad perskaičiau ir sutinku su {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Gaukite naujinimus savo el. pašto dėžutėje"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Privatumo politika"
-  },
-  "subscription.termsOfService": {
-    "message": "Paslaugų teikimo sąlygos"
   }
 }

@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Någonting gick fel..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Denna webbplats skyddas av hCaptcha och dess {privacyPolicyLink} och {termsOfServiceLink} gäller."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Genom att klicka på \"{subscribe}\" bekräftar jag att jag har läst och samtycker till {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Få uppdateringar i din brevlåda"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Integritetspolicy"
-  },
-  "subscription.termsOfService": {
-    "message": "Användarvillkor"
   }
 }

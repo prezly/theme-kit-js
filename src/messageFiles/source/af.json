@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Lets het verkeerd geloop..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Hierdie webwerf word beskerm deur hCaptcha en sy {privacyPolicyLink} en {termsOfServiceLink} geld."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Deur \"{subscribe}\" te klik bevestig ek dat ek die {privacyPolicyLink} gelees het en daartoe instem."
   },
   "subscription.formTitle": {
     "message": "Kry nuus in jou posbus"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Privaatheidsbeleid"
-  },
-  "subscription.termsOfService": {
-    "message": "Diensvoorwaardes"
   }
 }

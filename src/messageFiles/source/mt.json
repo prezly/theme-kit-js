@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Gara xi ħaġa..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Das-sit imħares bit-teknoloġija hCaptcha, skont il-{privacyPolicyLink} u r-{termsOfServiceLink} tagħha."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Meta nagħfas \"{sottoskrivi}\" nikkonferma li qrajt u qbilt ma' {ħolqaPolitikaPrivatezza}."
   },
   "subscription.formTitle": {
     "message": "Ikseb aġġornamenti fil-indirizz tal-post tiegħek"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Politika tal-Privatezza"
-  },
-  "subscription.termsOfService": {
-    "message": "Regoli tas-Servizz"
   }
 }

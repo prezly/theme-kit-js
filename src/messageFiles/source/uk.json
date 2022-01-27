@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Щось пішло не так..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Цей сайт захищено hCaptcha, тому діють їхні {privacyPolicyLink} та {termsOfServiceLink}."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Натискаючи \"{subscribe}\", я підтверджую, що прочитав(-ла) та погоджуюся з {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Отримайте оновлення у свою поштову скриньку"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Політика конфіденційності"
-  },
-  "subscription.termsOfService": {
-    "message": "Умови використання"
   }
 }

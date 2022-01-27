@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "Възникна грешка..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "Този сайт се защитава чрез hCaptcha, като се прилагат нейната {privacyPolicyLink} и {termsOfServiceLink}."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "С кликването си върху бутона \"{subscribe}\" потвърждавам, че съм прочел(а) и приемам {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Получавайте актуална информация в пощенската си кутия"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "Политика за поверителност"
-  },
-  "subscription.termsOfService": {
-    "message": "Условията ѝ за ползване"
   }
 }

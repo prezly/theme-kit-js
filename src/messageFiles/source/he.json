@@ -155,9 +155,9 @@
   "serverError.title": {
     "message": "משהו השתבש..."
   },
-  "subscription.captchaDisclaimer": {
-    "description": "The variables are replaced with links containing text from `subscription.privacyPolicy` and `subscription.termsOfService` messages respectively",
-    "message": "אתר זה מוגן על-ידי hCaptcha, וחלים עליו {privacyPolicyLink} ו-{termsOfServiceLink} שלו."
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "לחיצה על \"{subscribe}\" מהווה אישור לכך שקראתי את {privacyPolicyLink} והסכמתי אתה."
   },
   "subscription.formTitle": {
     "message": "קבל עדכונים לתיבת האימייל"
@@ -167,8 +167,5 @@
   },
   "subscription.privacyPolicy": {
     "message": "מדיניות הפרטיות"
-  },
-  "subscription.termsOfService": {
-    "message": "תנאי השירות"
   }
 }
