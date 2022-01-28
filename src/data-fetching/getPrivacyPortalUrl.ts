@@ -1,5 +1,6 @@
-import { LocaleObject } from '@prezly/libs/intl';
 import type { Newsroom } from '@prezly/sdk';
+
+import { LocaleObject } from '../intl';
 
 type PrivacyPortalUrlOptions = { email?: string; action?: 'subscribe' | 'unsubscribe' };
 

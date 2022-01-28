@@ -1,6 +1,3 @@
-import type { AlgoliaSettings } from '../data-fetching';
-import { LocaleObject } from '../intl';
-import { Translations } from '../types';
 import type {
     Category,
     Newsroom,
@@ -12,7 +9,11 @@ import type {
 } from '@prezly/sdk';
 import { createContext, FunctionComponent, useMemo } from 'react';
 
-interface Context {
+import type { AlgoliaSettings } from '../data-fetching';
+import { LocaleObject } from '../intl';
+import { Translations } from '../types';
+
+export interface INewsroomContext {
     newsroom: Newsroom;
     companyInformation: NewsroomCompanyInformation;
     categories: Category[];
@@ -26,13 +27,13 @@ interface Context {
     algoliaSettings: AlgoliaSettings;
 }
 
-interface Props extends Omit<Context, 'locale'> {
+interface Props extends Omit<INewsroomContext, 'locale'> {
     isTrackingEnabled?: boolean;
     localeCode: string;
     translations?: Translations;
 }
 
-export const NewsroomContext = createContext<Context | undefined>(undefined);
+export const NewsroomContext = createContext<INewsroomContext | undefined>(undefined);
 
 export const NewsroomContextProvider: FunctionComponent<Props> = ({
     categories,

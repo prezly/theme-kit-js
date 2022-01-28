@@ -1,6 +1,7 @@
+import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+
 import { getRedirectToCanonicalLocale } from '../intl';
 import { BasePageProps } from '../types';
-import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
 export function processRequest<Props extends BasePageProps>(
     context: GetServerSidePropsContext,

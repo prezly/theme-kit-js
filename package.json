@@ -29,9 +29,11 @@
   "homepage": "https://github.com/prezly/theme-kit-nextjs#readme",
   "scripts": {
     "clean": "rimraf build/ node_modules/",
+    "typecheck": "tsc --noEmit --incremental --project .",
+    "prebuild": "npm run clean && npm install",
     "build": "tsc --project .",
     "test": "echo \"Tests? maybe next time ;)\" && exit 0",
-    "prerelease": "npm run clean && npm install && npm run build",
+    "prerelease": "npm run typecheck && npm run build",
     "release": "np"
   },
   "peerDependencies": {

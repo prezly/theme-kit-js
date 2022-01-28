@@ -1,6 +1,7 @@
+import type { GetServerSidePropsContext } from 'next';
+
 import { getPrezlyApi } from '../data-fetching';
 import { importMessages } from '../intl';
-import type { GetServerSidePropsContext } from 'next';
 
 interface BasePagePropsOptions {
     loadHomepageContacts?: boolean;

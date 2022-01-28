@@ -1,6 +1,7 @@
-import { LocaleObject } from '@prezly/libs/intl';
-import { AlgoliaCategoryRef } from '@prezly/libs/types';
 import type { Category } from '@prezly/sdk';
+
+import { LocaleObject } from '../intl';
+import { AlgoliaCategoryRef } from '../types';
 
 function isAlgoliaCategory(
     category: Category | AlgoliaCategoryRef,

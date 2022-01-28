@@ -1,6 +1,7 @@
-import { BasePageProps } from '../types';
 import type { Redirect } from 'next';
 import { ParsedUrlQuery, stringify } from 'querystring';
+
+import { BasePageProps } from '../types';
 
 import { LocaleObject } from './localeObject';
 

@@ -1,8 +1,9 @@
-import { getCategoryHasTranslation, getCategoryUrl } from '@prezly/libs/data-fetching';
-import { LocaleObject } from '@prezly/libs/intl';
 import type { Category, Story } from '@prezly/sdk';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
+
+import { getCategoryHasTranslation, getCategoryUrl } from '../../data-fetching';
+import { LocaleObject } from '../../intl';
 
 import { useSelectedCategory } from './useSelectedCategory';
 import { useSelectedStory } from './useSelectedStory';

@@ -1,2 +1,2 @@
-export * from './context';
+export { NewsroomContext, NewsroomContextProvider } from './context';
 export * from './hooks';

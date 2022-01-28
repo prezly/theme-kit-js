@@ -1,5 +1,3 @@
-import { LocaleObject } from '@prezly/libs/intl';
-import { BasePageProps } from '@prezly/libs/types';
 import PrezlySDK, {
     Category,
     ExtraStoryFields,
@@ -9,6 +7,8 @@ import PrezlySDK, {
 } from '@prezly/sdk';
 import type { IncomingMessage } from 'http';
 
+import { LocaleObject } from '../../intl';
+import { BasePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../constants';
 import { getAlgoliaSettings } from '../lib/getAlgoliaSettings';
 
