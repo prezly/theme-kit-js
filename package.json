@@ -4,7 +4,6 @@
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "type": "module",
   "files": [
     "build",
     "src"

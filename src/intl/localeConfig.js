@@ -1,5 +1,4 @@
 // This list is pulled from the main Prezly application. The underscores are replaced with dashes.
-// The files is in CommonJS format in order to allow requiring it `next.config.js`
 const supportedLocales = [
     'af-ZA',
     'ar',
