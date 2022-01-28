@@ -28,6 +28,8 @@ export interface BasePageProps {
     translations?: Translations;
     contacts?: NewsroomContact[];
     isTrackingEnabled?: boolean;
+    selectedCategory?: Category;
+    selectedStory?: Story;
 }
 
 export interface PaginationProps {
