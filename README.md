@@ -12,7 +12,8 @@ npm install --save @prezly/theme-kit-nextjs
 
 #### peerDependencies
 
-This library is intended to be used with NextJS applications, so it requires `next`, `react` and `react-dom` to work. These should already be installed if you have an existing NextJS app. If you starting from scratch, use [`create-next-app`](https://nextjs.org/docs/api-reference/create-next-app) to quick-start the project.
+This library is intended to be used with NextJS applications, so it requires `next`, `react` and `react-dom` to work. These should already be installed if you have an existing NextJS app. 
+If you're starting from scratch, use [`create-next-app`](https://nextjs.org/docs/api-reference/create-next-app) to quick-start the project.
 
 To keep things fresh, we require at least NextJS 12 and React 17.
 
