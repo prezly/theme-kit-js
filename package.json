@@ -37,13 +37,12 @@
     "release": "np"
   },
   "peerDependencies": {
-    "@prezly/sdk": "^6.11.0",
-    "@prezly/themes-intl-messages": "^1.x",
     "next": "^12.x",
     "react": "^17.x",
     "react-dom": "^17.x"
   },
   "dependencies": {
+    "@prezly/sdk": "^6.11.0",
     "parse-data-url": "^4.0.1"
   },
   "devDependencies": {

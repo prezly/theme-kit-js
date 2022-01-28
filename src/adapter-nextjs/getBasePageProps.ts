@@ -1,7 +1,6 @@
 import type { GetServerSidePropsContext } from 'next';
 
 import { getPrezlyApi } from '../data-fetching';
-import { importMessages } from '../intl';
 
 interface BasePagePropsOptions {
     loadHomepageContacts?: boolean;
@@ -19,8 +18,6 @@ export async function getBasePageProps(
     if (options.loadHomepageContacts) {
         basePageProps.contacts = await api.getNewsroomContacts();
     }
-
-    basePageProps.translations = await importMessages(basePageProps.localeCode);
 
     return { api, basePageProps };
 }
