@@ -1,2 +1,2 @@
-# theme-kit-js
-Data layer and utility library for developing Prezly themes with JavaScript
+# theme-kit-nextjs
+Data layer and utility library for developing Prezly themes with NextJS
