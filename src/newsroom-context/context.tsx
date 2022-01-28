@@ -7,7 +7,7 @@ import type {
     NewsroomThemePreset,
     Story,
 } from '@prezly/sdk';
-import { createContext, FunctionComponent, useMemo } from 'react';
+import React, { createContext, FunctionComponent, useMemo } from 'react';
 
 import type { AlgoliaSettings } from '../data-fetching';
 import { LocaleObject } from '../intl';
