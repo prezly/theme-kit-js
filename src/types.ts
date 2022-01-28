@@ -31,15 +31,6 @@ export interface BasePageProps {
     selectedCategory?: Category;
     selectedStory?: Story;
 }
-
-export interface PaginationProps {
-    itemsTotal: number;
-    currentPage: number;
-    pageSize: number;
-}
-
-export type StoryWithImage = Story & Pick<ExtraStoryFields, 'thumbnail_image'>;
-
 export interface AlgoliaCategoryRef {
     id: number;
     name: string;
