@@ -1,4 +1,4 @@
-import localeConfig from './localeConfig';
+import localeConfig from './localeConfig.cjs';
 
 export class LocaleObject {
     /**
