@@ -12,7 +12,7 @@ import React, { createContext, FunctionComponent, useMemo } from 'react';
 import type { AlgoliaSettings } from '../data-fetching';
 import { DEFAULT_LOCALE, LocaleObject } from '../intl';
 
-export interface INewsroomContext {
+export interface NewsroomContextType {
     newsroom: Newsroom;
     companyInformation: NewsroomCompanyInformation;
     categories: Category[];
@@ -26,11 +26,11 @@ export interface INewsroomContext {
     algoliaSettings: AlgoliaSettings;
 }
 
-interface Props extends Omit<INewsroomContext, 'locale'> {
+interface Props extends Omit<NewsroomContextType, 'locale'> {
     localeCode: string;
 }
 
-export const NewsroomContext = createContext<INewsroomContext | undefined>(undefined);
+export const NewsroomContext = createContext<NewsroomContextType | undefined>(undefined);
 
 export const NewsroomContextProvider: FunctionComponent<Props> = ({
     categories,

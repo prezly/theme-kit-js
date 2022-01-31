@@ -1,5 +1,4 @@
 // TODO: Re-arrange the types to make them isolated to respective libs where possible
-import type { AlgoliaSettings } from './data-fetching';
 import type {
     Category,
     CultureRef,
@@ -12,6 +11,8 @@ import type {
     NewsroomThemePreset,
     Story,
 } from '@prezly/sdk';
+
+import type { AlgoliaSettings } from './data-fetching';
 
 export interface BasePageProps {
     newsroom: Newsroom;
