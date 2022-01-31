@@ -107,7 +107,6 @@ function App({ Component, pageProps }: AppProps<AnyPageProps>) {
         algoliaSettings,
         selectedCategory,
         selectedStory,
-        hasError,
         ...customPageProps
     } = pageProps as BasePageProps & AnyPageProps;
 
@@ -123,7 +122,6 @@ function App({ Component, pageProps }: AppProps<AnyPageProps>) {
             selectedCategory={selectedCategory}
             selectedStory={selectedStory}
             algoliaSettings={algoliaSettings}
-            hasError={hasError}
         >
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...customPageProps} />

@@ -21,7 +21,6 @@ export interface NewsroomContextType {
     selectedStory?: ExtendedStory;
     languages: NewsroomLanguageSettings[];
     locale: LocaleObject;
-    hasError?: boolean;
     themePreset: NewsroomThemePreset;
     algoliaSettings: AlgoliaSettings;
 }
@@ -41,7 +40,6 @@ export const NewsroomContextProvider: FunctionComponent<Props> = ({
     companyInformation,
     languages,
     localeCode,
-    hasError,
     themePreset,
     algoliaSettings,
     children,
@@ -62,7 +60,6 @@ export const NewsroomContextProvider: FunctionComponent<Props> = ({
                 companyInformation,
                 languages,
                 locale,
-                hasError,
                 themePreset,
                 algoliaSettings,
             }}
