@@ -10,8 +10,7 @@ import type {
 import React, { createContext, FunctionComponent, useMemo } from 'react';
 
 import type { AlgoliaSettings } from '../data-fetching';
-import { LocaleObject } from '../intl';
-import { Translations } from '../types';
+import { DEFAULT_LOCALE, LocaleObject } from '../intl';
 
 export interface INewsroomContext {
     newsroom: Newsroom;
@@ -28,9 +27,7 @@ export interface INewsroomContext {
 }
 
 interface Props extends Omit<INewsroomContext, 'locale'> {
-    isTrackingEnabled?: boolean;
     localeCode: string;
-    translations?: Translations;
 }
 
 export const NewsroomContext = createContext<INewsroomContext | undefined>(undefined);
@@ -49,7 +46,10 @@ export const NewsroomContextProvider: FunctionComponent<Props> = ({
     algoliaSettings,
     children,
 }) => {
-    const locale = useMemo(() => LocaleObject.fromAnyCode(localeCode || 'en'), [localeCode]);
+    const locale = useMemo(
+        () => LocaleObject.fromAnyCode(localeCode || DEFAULT_LOCALE),
+        [localeCode],
+    );
 
     return (
         <NewsroomContext.Provider
