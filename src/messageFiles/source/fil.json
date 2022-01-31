@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "Sa pamamagitan ng pag-click sa \"{subscribe}\" Kinukumpirma ko na aking binasa at sumasang-ayon ako sa {privacyPolicyLink}."
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Makatanggap ng mga update sa mailbox mo"
