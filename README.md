@@ -87,7 +87,7 @@ module.exports = {
 
 ### pages/_app.tsx
 
-In order to provide all the necessary data to the entire application, we provde the `NewsroomContextProvider` component, which accepts props provided by our data-fetching methods (which you'll need to call in each page's `getServerSideProps` method).
+In order to provide all the necessary data to the entire application, this library exports the `NewsroomContextProvider` component, which accepts props retrieved by our data-fetching methods (see next section).
 
 ```ts
 import { BasePageProps, NewsroomContextProvider } from '@prezly/theme-kit-nextjs';
