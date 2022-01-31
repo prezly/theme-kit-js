@@ -12,7 +12,7 @@ export const subscription = defineMessages({
     disclaimer: {
         id: 'subscription.disclaimer',
         defaultMessage:
-            'By clicking "{subscribe}" I confirm I have read and agree to {privacyPolicyLink}.',
+            'By clicking "{subscribe}" I confirm I have read and agree to the {privacyPolicyLink}.',
         description:
             'The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.',
     },
