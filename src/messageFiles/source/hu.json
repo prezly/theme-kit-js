@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "A {subscribe}-ra történő kattintássak megerősítem, hogy elolvastam és elfogadtam a(z) {privacyPolicyLink} adatvédelmi politikáját."
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Kapj híreket a postafiókodba"
