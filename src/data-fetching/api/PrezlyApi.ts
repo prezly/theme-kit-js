@@ -17,7 +17,6 @@ import {
     getDefaultLanguage,
     getLanguageFromNextLocaleIsoCode,
     getLanguageFromStory,
-    getShortestLocaleCode,
 } from './languages';
 import {
     getContactsQuery,
@@ -218,7 +217,6 @@ export class PrezlyApi {
 
         const { code: localeCode } = currentLanguage || defaultLanguage;
         const locale = LocaleObject.fromAnyCode(localeCode);
-        const shortestLocaleCode = getShortestLocaleCode(languages, locale);
 
         // TODO: if no information given for current language, show boilerplate from default language
         const companyInformation = getCompanyInformation(languages, locale);
@@ -231,10 +229,9 @@ export class PrezlyApi {
             categories,
             languages,
             localeCode,
-            shortestLocaleCode,
-            localeResolved: Boolean(currentLanguage),
             themePreset,
             algoliaSettings,
+            localeResolved: Boolean(currentLanguage),
         };
     }
 }

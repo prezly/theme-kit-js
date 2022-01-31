@@ -1,8 +1,6 @@
 import type { Redirect } from 'next';
 import { ParsedUrlQuery, stringify } from 'querystring';
 
-import { BasePageProps } from '../types';
-
 import { LocaleObject } from './localeObject';
 
 export const DEFAULT_LOCALE = 'en';
@@ -76,12 +74,11 @@ export function getSupportedLocaleIsoCode(locale: LocaleObject): string {
 }
 
 export function getRedirectToCanonicalLocale(
-    basePageProps: BasePageProps,
+    shortestLocaleCode: string | false,
     nextLocaleIsoCode: string | undefined,
     redirectPath: string,
     query?: ParsedUrlQuery,
 ): Redirect | undefined {
-    const { shortestLocaleCode } = basePageProps;
     const shortestLocaleSlug = shortestLocaleCode
         ? LocaleObject.fromAnyCode(shortestLocaleCode).toUrlSlug()
         : shortestLocaleCode;

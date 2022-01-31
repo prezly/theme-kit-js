@@ -1,38 +1,10 @@
 // TODO: Re-arrange the types to make them isolated to respective libs where possible
-import type {
-    Category,
-    CultureRef,
-    ExtendedStory,
-    ExtraStoryFields,
-    Newsroom,
-    NewsroomCompanyInformation,
-    NewsroomContact,
-    NewsroomLanguageSettings,
-    NewsroomThemePreset,
-    Story,
-} from '@prezly/sdk';
+import type { CultureRef, ExtraStoryFields, Story } from '@prezly/sdk';
 
-import type { AlgoliaSettings } from './data-fetching';
+import { NewsroomContextProps } from './newsroom-context';
 
-export interface BasePageProps {
-    newsroom: Newsroom;
-    companyInformation: NewsroomCompanyInformation;
-    categories: Category[];
-    languages: NewsroomLanguageSettings[];
-    localeCode: string;
-    /**
-     * `false` means it's the default locale
-     */
-    shortestLocaleCode: string | false;
-    localeResolved: boolean;
-    themePreset: NewsroomThemePreset;
-    algoliaSettings: AlgoliaSettings;
-    translations?: Translations;
-    contacts?: NewsroomContact[];
-    isTrackingEnabled?: boolean;
-    selectedCategory?: Category;
-    selectedStory?: ExtendedStory;
-}
+export type BasePageProps = NewsroomContextProps & { localeResolved: boolean };
+
 export interface AlgoliaCategoryRef {
     id: number;
     name: string;
@@ -47,5 +19,3 @@ export type AlgoliaStory = Pick<Story, 'uuid' | 'slug' | 'title' | 'subtitle'> &
         culture: Pick<CultureRef, 'code' | 'name' | 'native_name' | 'language_code'>;
         categories: AlgoliaCategoryRef[];
     };
-
-export type Translations = Record<string, string>;
