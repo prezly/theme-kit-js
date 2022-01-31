@@ -27,6 +27,11 @@
     "react-hooks",
     "sort-export-all"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     // Prettier handles indent, whitespace and empty lines
     "prettier/prettier": 2,
