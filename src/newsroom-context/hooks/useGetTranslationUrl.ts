@@ -1,4 +1,4 @@
-import type { Category, Story } from '@prezly/sdk';
+import type { Category, ExtendedStory } from '@prezly/sdk';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
@@ -13,7 +13,7 @@ function getTranslationUrl(
     locale: LocaleObject,
     path: string,
     selectedCategory?: Category,
-    selectedStory?: Story,
+    selectedStory?: ExtendedStory,
     noFallback?: boolean,
 ) {
     if (selectedCategory) {

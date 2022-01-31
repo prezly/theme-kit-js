@@ -3,6 +3,7 @@ import type { AlgoliaSettings } from './data-fetching';
 import type {
     Category,
     CultureRef,
+    ExtendedStory,
     ExtraStoryFields,
     Newsroom,
     NewsroomCompanyInformation,
@@ -29,7 +30,7 @@ export interface BasePageProps {
     contacts?: NewsroomContact[];
     isTrackingEnabled?: boolean;
     selectedCategory?: Category;
-    selectedStory?: Story;
+    selectedStory?: ExtendedStory;
 }
 export interface AlgoliaCategoryRef {
     id: number;

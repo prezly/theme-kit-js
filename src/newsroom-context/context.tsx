@@ -1,11 +1,11 @@
 import type {
     Category,
+    ExtendedStory,
     Newsroom,
     NewsroomCompanyInformation,
     NewsroomContact,
     NewsroomLanguageSettings,
     NewsroomThemePreset,
-    Story,
 } from '@prezly/sdk';
 import React, { createContext, FunctionComponent, useMemo } from 'react';
 
@@ -18,7 +18,7 @@ export interface INewsroomContext {
     categories: Category[];
     contacts?: NewsroomContact[];
     selectedCategory?: Category;
-    selectedStory?: Story;
+    selectedStory?: ExtendedStory;
     languages: NewsroomLanguageSettings[];
     locale: LocaleObject;
     hasError?: boolean;
