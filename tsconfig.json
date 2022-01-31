@@ -16,7 +16,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "outDir": "./build",
     "rootDir": "./src",
     "typeRoots": ["./node_modules/@types", "src/@types"]
