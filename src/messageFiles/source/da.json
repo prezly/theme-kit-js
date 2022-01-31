@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "Ved at klikke \"{subscribe}\" bekræfter jeg, at jeg har læst og accepterer {privacyPolicyLink}."
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Få opdateringer i din indbakke"
