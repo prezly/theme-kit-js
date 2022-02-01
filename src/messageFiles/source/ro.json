@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
+    "message": "Dând clic pe \"{subscribe}\", confirm că am citit și sunt de acord cu {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Primire actualizări în căsuța poștală"
