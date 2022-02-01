@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
+    "message": "Meta nagħfas \"{subscribe}\" inkun qed nikkonferma li qrajt u naqbel mal-{privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Ikseb aġġornamenti fil-indirizz tal-post tiegħek"
