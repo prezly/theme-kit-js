@@ -4,19 +4,6 @@ import { getShortestLocaleCode } from '../data-fetching';
 import { getRedirectToCanonicalLocale, LocaleObject } from '../intl';
 import { PageProps, ServerSidePageProps } from '../types';
 
-// TODO: Try to make the typings even more robust
-function extractServerSideProps<Props>(props: Props & ServerSidePageProps): {
-    pageProps: Props;
-    serverSideProps: ServerSidePageProps;
-} {
-    const { localeResolved, ...pageProps } = props;
-
-    return {
-        pageProps: pageProps as unknown as Props,
-        serverSideProps: { localeResolved },
-    };
-}
-
 export function processRequest<Props>(
     context: GetServerSidePropsContext,
     props: Props & PageProps & ServerSidePageProps,
@@ -24,9 +11,9 @@ export function processRequest<Props>(
 ): GetServerSidePropsResult<Props> {
     const { locale: nextLocale, query } = context;
 
-    const { pageProps, serverSideProps } = extractServerSideProps(props);
+    const { localeResolved, ...pageProps } = props;
 
-    if (!serverSideProps.localeResolved) {
+    if (!localeResolved) {
         return { notFound: true };
     }
 
@@ -47,6 +34,6 @@ export function processRequest<Props>(
     }
 
     return {
-        props: pageProps,
+        props: pageProps as Props & PageProps,
     };
 }
