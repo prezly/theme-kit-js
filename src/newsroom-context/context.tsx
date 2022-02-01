@@ -17,8 +17,8 @@ export interface NewsroomContextType {
     companyInformation: NewsroomCompanyInformation;
     categories: Category[];
     contacts?: NewsroomContact[];
-    selectedCategory?: Category;
-    selectedStory?: ExtendedStory;
+    currentCategory?: Category;
+    currentStory?: ExtendedStory;
     languages: NewsroomLanguageSettings[];
     locale: LocaleObject;
     themePreset: NewsroomThemePreset;
@@ -35,8 +35,8 @@ export const NewsroomContextProvider: FunctionComponent<NewsroomContextProps> = 
     categories,
     contacts,
     newsroom,
-    selectedCategory,
-    selectedStory,
+    currentCategory,
+    currentStory,
     companyInformation,
     languages,
     localeCode,
@@ -55,8 +55,8 @@ export const NewsroomContextProvider: FunctionComponent<NewsroomContextProps> = 
                 categories,
                 contacts,
                 newsroom,
-                selectedCategory,
-                selectedStory,
+                currentCategory,
+                currentStory,
                 companyInformation,
                 languages,
                 locale,

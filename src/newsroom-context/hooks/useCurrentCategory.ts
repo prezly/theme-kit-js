@@ -1,7 +1,7 @@
 import { useNewsroomContext } from './useNewsroomContext';
 
-export const useSelectedCategory = () => {
+export const useCurrentCategory = () => {
     const context = useNewsroomContext();
 
-    return context.selectedCategory;
+    return context.currentCategory;
 };
