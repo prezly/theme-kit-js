@@ -8,7 +8,6 @@ import PrezlySDK, {
 import type { IncomingMessage } from 'http';
 
 import { LocaleObject } from '../../intl';
-import { NewsroomContextProps } from '../../newsroom-context';
 import { PageProps, ServerSidePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../constants';
 import { getAlgoliaSettings } from '../lib/getAlgoliaSettings';
