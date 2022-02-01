@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
+    "message": "Spustelėdama(s) \"{subscribe}\" patvirtinu, kad perskaičiau ir sutinku su {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Gaukite naujinimus savo el. pašto dėžutėje"
