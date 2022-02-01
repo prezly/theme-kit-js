@@ -9,7 +9,7 @@ import type { IncomingMessage } from 'http';
 
 import { LocaleObject } from '../../intl';
 import { NewsroomContextProps } from '../../newsroom-context';
-import { ServerSidePageProps } from '../../types';
+import { PageProps, ServerSidePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../constants';
 import { getAlgoliaSettings } from '../lib/getAlgoliaSettings';
 
@@ -203,7 +203,7 @@ export class PrezlyApi {
         request: IncomingMessage | undefined,
         nextLocaleIsoCode?: string,
         story?: Story,
-    ): Promise<NewsroomContextProps & ServerSidePageProps> {
+    ): Promise<PageProps & ServerSidePageProps> {
         const [newsroom, languages, categories, themePreset] = await Promise.all([
             this.getNewsroom(),
             this.getNewsroomLanguages(),
@@ -225,13 +225,15 @@ export class PrezlyApi {
         const algoliaSettings = getAlgoliaSettings(request);
 
         return {
-            newsroom,
-            companyInformation,
-            categories,
-            languages,
-            localeCode,
-            themePreset,
-            algoliaSettings,
+            newsroomContextProps: {
+                newsroom,
+                companyInformation,
+                categories,
+                languages,
+                localeCode,
+                themePreset,
+                algoliaSettings,
+            },
             localeResolved: Boolean(currentLanguage),
         };
     }

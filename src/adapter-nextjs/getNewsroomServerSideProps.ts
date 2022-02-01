@@ -13,11 +13,11 @@ export async function getNewsroomServerSideProps(
     const { req: request, locale } = context;
 
     const api = getPrezlyApi(request);
-    const basePageProps = await api.getNewsroomServerSideProps(request, locale);
+    const serverSideProps = await api.getNewsroomServerSideProps(request, locale);
 
     if (options.loadHomepageContacts) {
-        basePageProps.contacts = await api.getNewsroomContacts();
+        serverSideProps.newsroomContextProps.contacts = await api.getNewsroomContacts();
     }
 
-    return { api, basePageProps };
+    return { api, serverSideProps };
 }
