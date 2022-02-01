@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
+    "message": "\"{subscribe}\" پر کلک کر کے میں تصدیق کرتا ہوں کہ میں نے {privacyPolicyLink} کو پڑھ لیا ہے اور اس سے اتفاق کرتا ہوں۔"
   },
   "subscription.formTitle": {
     "message": "آپنے میل باکس میں اپ ڈیٹس حاصل کریں"
