@@ -2,24 +2,24 @@ import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
 import { getShortestLocaleCode } from '../data-fetching';
 import { getRedirectToCanonicalLocale, LocaleObject } from '../intl';
-import { BasePageProps } from '../types';
+import { NewsroomContextProps } from '../newsroom-context';
+import { ServerSidePageProps } from '../types';
 
-export function processRequest<Props extends BasePageProps>(
+export function processRequest<Props extends NewsroomContextProps>(
     context: GetServerSidePropsContext,
-    basePageProps: BasePageProps,
+    props: Props & ServerSidePageProps,
     canonicalUrl?: string,
-    customProps?: Omit<Props, keyof BasePageProps>,
 ): GetServerSidePropsResult<Props> {
     const { locale: nextLocale, query } = context;
 
-    const { localeResolved, ...newsroomContextProps } = basePageProps;
+    const { localeResolved, ...pageProps } = props;
 
     if (!localeResolved) {
         return { notFound: true };
     }
 
     if (canonicalUrl) {
-        const { languages, localeCode } = newsroomContextProps;
+        const { languages, localeCode } = props;
         const currentLocale = LocaleObject.fromAnyCode(localeCode);
         const shortestLocaleCode = getShortestLocaleCode(languages, currentLocale);
 
@@ -35,9 +35,6 @@ export function processRequest<Props extends BasePageProps>(
     }
 
     return {
-        props: {
-            ...newsroomContextProps,
-            ...customProps,
-        } as Props,
+        props: pageProps as unknown as Props,
     };
 }

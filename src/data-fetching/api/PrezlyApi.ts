@@ -8,7 +8,8 @@ import PrezlySDK, {
 import type { IncomingMessage } from 'http';
 
 import { LocaleObject } from '../../intl';
-import { BasePageProps } from '../../types';
+import { NewsroomContextProps } from '../../newsroom-context';
+import { ServerSidePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../constants';
 import { getAlgoliaSettings } from '../lib/getAlgoliaSettings';
 
@@ -198,11 +199,11 @@ export class PrezlyApi {
         return this.sdk.newsroomThemes.getActive(this.newsroomUuid);
     }
 
-    async getBasePageProps(
+    async getNewsroomServerSideProps(
         request: IncomingMessage | undefined,
         nextLocaleIsoCode?: string,
         story?: Story,
-    ): Promise<BasePageProps> {
+    ): Promise<NewsroomContextProps & ServerSidePageProps> {
         const [newsroom, languages, categories, themePreset] = await Promise.all([
             this.getNewsroom(),
             this.getNewsroomLanguages(),

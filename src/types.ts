@@ -1,9 +1,9 @@
 // TODO: Re-arrange the types to make them isolated to respective libs where possible
 import type { CultureRef, ExtraStoryFields, Story } from '@prezly/sdk';
 
-import { NewsroomContextProps } from './newsroom-context';
-
-export type BasePageProps = NewsroomContextProps & { localeResolved: boolean };
+export interface ServerSidePageProps {
+    localeResolved: boolean;
+}
 
 export interface AlgoliaCategoryRef {
     id: number;

@@ -90,7 +90,7 @@ module.exports = {
 In order to provide all the necessary data to the entire application, this library exports the `NewsroomContextProvider` component, which accepts props retrieved by our data-fetching methods (see next section).
 
 ```ts
-import { BasePageProps, NewsroomContextProvider } from '@prezly/theme-kit-nextjs';
+import { NewsroomContextProps, NewsroomContextProvider } from '@prezly/theme-kit-nextjs';
 import { AppProps } from 'next/app';
 
 type AnyPageProps = Record<string, any>;
@@ -108,7 +108,7 @@ function App({ Component, pageProps }: AppProps<AnyPageProps>) {
         selectedCategory,
         selectedStory,
         ...customPageProps
-    } = pageProps as BasePageProps & AnyPageProps;
+    } = pageProps as NewsroomContextProps & AnyPageProps;
 
     return (
         <NewsroomContextProvider
@@ -137,25 +137,30 @@ export default App;
 Every page requires a bit of boilerplate code to set up.
 
 ```ts
-import { BasePageProps, getBasePageProps, processRequest } from '@prezly/theme-kit-nextjs';
+import { getNewsroomServerSideProps, NewsroomContextProps, processRequest } from '@prezly/theme-kit-nextjs';
 import { GetServerSideProps } from 'next';
 import type { FunctionComponent } from 'react';
 
-interface Props extends BasePageProps {
+interface Props extends NewsroomContextProps {
     /* Additional props for this page */
 }
 
 const Page: FunctionComponent<Props> = () => <>{/* Your display components */}</>;
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-    const { api, basePageProps } = await getBasePageProps(context);
+    const { api, basePageProps } = await getNewsroomServerSideProps(context);
 
     /* Your logic to get additional props for this page  */
 
-    // '/' is the canonical URL of your page without locale prefix
-    return processRequest(context, basePageProps, '/', {
-        /* Additional props for this page */
-    });
+    return processRequest(
+        context, 
+        {
+            ...basePageProps,
+            /* Additional props for this page */
+        }, 
+        // '/' is the canonical URL of your page without locale prefix
+        '/',
+    );
 };
 
 export default Page;
@@ -181,7 +186,7 @@ Since all of the common data is loaded into the `NewsroomContextProvider`, you d
 
 **Data fetching**
 ```ts
-const { api, basePageProps } = await getBasePageProps(context);
+const { api, basePageProps } = await getNewsroomServerSideProps(context);
 ```
 This function fetches all the required base props and exposes the `PrezlyApi` instance, which you can use to fetch additional content like stories or categories.
 
