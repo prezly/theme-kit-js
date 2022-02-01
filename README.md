@@ -98,13 +98,13 @@ type AnyPageProps = Record<string, any>;
 function App({ Component, pageProps }: AppProps<AnyPageProps>) {
     const { newsroomContextProps, ...customPageProps } = pageProps as PageProps & AnyPageProps;
 
-    // eslint-disable react/jsx-props-no-spreading
+    /* eslint-disable react/jsx-props-no-spreading */
     return (
         <NewsroomContextProvider {...newsroomContextProps}>
             <Component {...customPageProps} />
         </NewsroomContextProvider>
     );
-    // eslint-enable react/jsx-props-no-spreading
+    /* eslint-enable react/jsx-props-no-spreading */
 }
 
 export default App;
