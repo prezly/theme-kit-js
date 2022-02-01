@@ -4,7 +4,7 @@ import { getAssetsUrl } from './getAssetsUrl';
 
 export function getNewsroomLogoUrl(newsroom: Newsroom): string {
     if (newsroom.newsroom_logo) {
-        getAssetsUrl(newsroom.newsroom_logo.uuid);
+        return getAssetsUrl(newsroom.newsroom_logo.uuid);
     }
 
     return '';
