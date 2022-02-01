@@ -1,31 +1,39 @@
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
-import { getRedirectToCanonicalLocale } from '../intl';
-import { BasePageProps } from '../types';
+import { getShortestLocaleCode } from '../data-fetching';
+import { getRedirectToCanonicalLocale, LocaleObject } from '../intl';
+import { PageProps, ServerSidePageProps } from '../types';
 
-export function processRequest<Props extends BasePageProps>(
+export function processRequest<Props>(
     context: GetServerSidePropsContext,
-    basePageProps: BasePageProps,
+    props: Props & PageProps & ServerSidePageProps,
     canonicalUrl?: string,
-    customProps?: Omit<Props, keyof BasePageProps>,
 ): GetServerSidePropsResult<Props> {
-    const { locale, query } = context;
+    const { locale: nextLocale, query } = context;
 
-    if (!basePageProps.localeResolved) {
+    const { localeResolved, ...pageProps } = props;
+
+    if (!localeResolved) {
         return { notFound: true };
     }
 
     if (canonicalUrl) {
-        const redirect = getRedirectToCanonicalLocale(basePageProps, locale, canonicalUrl, query);
+        const { languages, localeCode } = pageProps.newsroomContextProps;
+        const currentLocale = LocaleObject.fromAnyCode(localeCode);
+        const shortestLocaleCode = getShortestLocaleCode(languages, currentLocale);
+
+        const redirect = getRedirectToCanonicalLocale(
+            shortestLocaleCode,
+            nextLocale,
+            canonicalUrl,
+            query,
+        );
         if (redirect) {
             return { redirect };
         }
     }
 
     return {
-        props: {
-            ...basePageProps,
-            ...customProps,
-        } as Props,
+        props: pageProps as Props & PageProps,
     };
 }

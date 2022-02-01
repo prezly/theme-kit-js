@@ -1,2 +1,2 @@
-export * from './getBasePageProps';
+export * from './getNewsroomServerSideProps';
 export * from './processRequest';

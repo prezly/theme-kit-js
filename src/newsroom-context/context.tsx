@@ -17,31 +17,29 @@ export interface NewsroomContextType {
     companyInformation: NewsroomCompanyInformation;
     categories: Category[];
     contacts?: NewsroomContact[];
-    selectedCategory?: Category;
-    selectedStory?: ExtendedStory;
+    currentCategory?: Category;
+    currentStory?: ExtendedStory;
     languages: NewsroomLanguageSettings[];
     locale: LocaleObject;
-    hasError?: boolean;
     themePreset: NewsroomThemePreset;
     algoliaSettings: AlgoliaSettings;
 }
 
-interface Props extends Omit<NewsroomContextType, 'locale'> {
+export interface NewsroomContextProps extends Omit<NewsroomContextType, 'locale'> {
     localeCode: string;
 }
 
 export const NewsroomContext = createContext<NewsroomContextType | undefined>(undefined);
 
-export const NewsroomContextProvider: FunctionComponent<Props> = ({
+export const NewsroomContextProvider: FunctionComponent<NewsroomContextProps> = ({
     categories,
     contacts,
     newsroom,
-    selectedCategory,
-    selectedStory,
+    currentCategory,
+    currentStory,
     companyInformation,
     languages,
     localeCode,
-    hasError,
     themePreset,
     algoliaSettings,
     children,
@@ -57,12 +55,11 @@ export const NewsroomContextProvider: FunctionComponent<Props> = ({
                 categories,
                 contacts,
                 newsroom,
-                selectedCategory,
-                selectedStory,
+                currentCategory,
+                currentStory,
                 companyInformation,
                 languages,
                 locale,
-                hasError,
                 themePreset,
                 algoliaSettings,
             }}

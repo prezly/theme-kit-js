@@ -5,20 +5,20 @@ import { useCallback } from 'react';
 import { getCategoryHasTranslation, getCategoryUrl } from '../../data-fetching';
 import { LocaleObject } from '../../intl';
 
-import { useSelectedCategory } from './useSelectedCategory';
-import { useSelectedStory } from './useSelectedStory';
+import { useCurrentCategory } from './useCurrentCategory';
+import { useCurrentStory } from './useCurrentStory';
 
 // Determine correct URL for translated stories/categories with a fallback to homepage
 function getTranslationUrl(
     locale: LocaleObject,
     path: string,
-    selectedCategory?: Category,
-    selectedStory?: ExtendedStory,
+    currentCategory?: Category,
+    currentStory?: ExtendedStory,
     noFallback?: boolean,
 ) {
-    if (selectedCategory) {
-        if (getCategoryHasTranslation(selectedCategory, locale)) {
-            return getCategoryUrl(selectedCategory, locale);
+    if (currentCategory) {
+        if (getCategoryHasTranslation(currentCategory, locale)) {
+            return getCategoryUrl(currentCategory, locale);
         }
 
         if (noFallback) {
@@ -30,8 +30,8 @@ function getTranslationUrl(
 
     const localeCode = locale.toUnderscoreCode();
 
-    if (selectedStory && selectedStory.culture.locale !== localeCode) {
-        const translatedStory = selectedStory.translations.find(
+    if (currentStory && currentStory.culture.locale !== localeCode) {
+        const translatedStory = currentStory.translations.find(
             ({ culture }) => culture.locale === localeCode,
         );
         if (translatedStory) {
@@ -50,12 +50,12 @@ function getTranslationUrl(
 
 export function useGetTranslationUrl() {
     const { asPath } = useRouter();
-    const selectedCategory = useSelectedCategory();
-    const selectedStory = useSelectedStory();
+    const currentCategory = useCurrentCategory();
+    const currentStory = useCurrentStory();
 
     return useCallback(
         (locale: LocaleObject, noFallback?: boolean) =>
-            getTranslationUrl(locale, asPath, selectedCategory, selectedStory, noFallback),
-        [asPath, selectedCategory, selectedStory],
+            getTranslationUrl(locale, asPath, currentCategory, currentStory, noFallback),
+        [asPath, currentCategory, currentStory],
     );
 }

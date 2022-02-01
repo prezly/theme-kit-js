@@ -87,48 +87,24 @@ module.exports = {
 
 ### pages/_app.tsx
 
-In order to provide all the necessary data to the entire application, this library exports the `NewsroomContextProvider` component, which accepts props retrieved by our data-fetching methods (see next section).
+In order to provide all the necessary data to the entire application, this library exports the `NewsroomContextProvider` component, which accepts props retrieved by our data-fetching methods (see next section). These props contain data that would be required to display common components like navigation, language picker, boilerplate, etc.
 
-```ts
-import { BasePageProps, NewsroomContextProvider } from '@prezly/theme-kit-nextjs';
-import { AppProps } from 'next/app';
+```tsx
+import { NewsroomContextProvider, PageProps } from '@prezly/theme-kit-nextjs';
+import type { AppProps } from 'next/app';
 
 type AnyPageProps = Record<string, any>;
 
 function App({ Component, pageProps }: AppProps<AnyPageProps>) {
-    const {
-        categories,
-        contacts,
-        newsroom,
-        companyInformation,
-        languages,
-        localeCode,
-        themePreset,
-        algoliaSettings,
-        selectedCategory,
-        selectedStory,
-        hasError,
-        ...customPageProps
-    } = pageProps as BasePageProps & AnyPageProps;
+    const { newsroomContextProps, ...customPageProps } = pageProps as PageProps & AnyPageProps;
 
+    /* eslint-disable react/jsx-props-no-spreading */
     return (
-        <NewsroomContextProvider
-            categories={categories}
-            contacts={contacts}
-            newsroom={newsroom}
-            companyInformation={companyInformation}
-            languages={languages}
-            localeCode={localeCode}
-            themePreset={themePreset}
-            selectedCategory={selectedCategory}
-            selectedStory={selectedStory}
-            algoliaSettings={algoliaSettings}
-            hasError={hasError}
-        >
-            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <NewsroomContextProvider {...newsroomContextProps}>
             <Component {...customPageProps} />
         </NewsroomContextProvider>
     );
+    /* eslint-enable react/jsx-props-no-spreading */
 }
 
 export default App;
@@ -138,64 +114,60 @@ export default App;
 
 Every page requires a bit of boilerplate code to set up.
 
-```ts
-import { BasePageProps, getBasePageProps, processRequest } from '@prezly/theme-kit-nextjs';
-import { GetServerSideProps } from 'next';
+```tsx
+import { getNewsroomServerSideProps, processRequest } from '@prezly/theme-kit-nextjs';
+import type { GetServerSideProps } from 'next';
 import type { FunctionComponent } from 'react';
 
-interface Props extends BasePageProps {
-    /* Additional props for this page */
+interface Props {
+    myProp: string;
 }
 
-const Page: FunctionComponent<Props> = () => <>{/* Your display components */}</>;
+const Page: FunctionComponent<Props> = ({ myProp }) => <p>{myProp}</p>;
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-    const { api, basePageProps } = await getBasePageProps(context);
+    const { api, serverSideProps } = await getNewsroomServerSideProps(context);
 
     /* Your logic to get additional props for this page  */
 
-    // '/' is the canonical URL of your page without locale prefix
-    return processRequest(context, basePageProps, '/', {
-        /* Additional props for this page */
-    });
+    return processRequest(
+        context,
+        {
+            ...serverSideProps,
+            myProp: 'My Custom Prop',
+        },
+        '/',
+    );
 };
 
 export default Page;
 ```
 
-
-#### Here's a breakdown of what's happening:
-
-**Prop types**
-```ts
-interface Props extends BasePageProps {
-    /* Additional props for this page */
-}
-```
-Every page props should extend `BasePageProps` type, since they are required for `NewsroomContextProvider` added previously.
-These props contain data that would be required to display common components like navigation, language picker, boilerplate, etc.
-
 **Page display component**
-```ts
-const Page: FunctionComponent<Props> = () => <>{/* Your display components */}</>;
+```tsx
+const Page: FunctionComponent<Props> = ({ myProp }) => <p>{myProp}</p>;
 ```
-Since all of the common data is loaded into the `NewsroomContextProvider`, you don't need to handle any of those in your display components. So the Page component should just handle rendering the provided data.
+Since all of the common data is loaded into the `NewsroomContextProvider`, you don't need to handle any of those in your display components. So the Page component should just handle rendering the provided data. You can still use context hooks to access the newsroom data.
 
 **Data fetching**
 ```ts
-const { api, basePageProps } = await getBasePageProps(context);
+const { api, serverSideProps } = await getNewsroomServerSideProps(context);
 ```
 This function fetches all the required base props and exposes the `PrezlyApi` instance, which you can use to fetch additional content like stories or categories.
 
 ```ts
-// '/' is the canonical URL of your page without locale prefix
-return processRequest(context, basePageProps, '/', {
-    /* Additional props for this page */
-});
+return processRequest(
+    context,
+    {
+        ...serverSideProps,
+        myProp: 'My Custom Prop',
+    },
+    '/',
+);
 ```
 This function returns the combined base props and your additional props, with some extra logic in between to handle locale URLs.
 
-The third argument is required to properly handle locale redirects. It should contain the URL for the current page without locale prefixes (like `/`, `/media`, `/category/${category.slug}`.
+The third argument is needed to properly handle locale redirects. It should contain the URL for the current page without locale prefixes (like `/`, `/media`, `/category/${category.slug}`. If omitted, the redirect logic will not be executing.
 
 ----
 

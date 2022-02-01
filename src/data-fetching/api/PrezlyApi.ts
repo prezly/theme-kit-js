@@ -8,7 +8,7 @@ import PrezlySDK, {
 import type { IncomingMessage } from 'http';
 
 import { LocaleObject } from '../../intl';
-import { BasePageProps } from '../../types';
+import { PageProps, ServerSidePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../constants';
 import { getAlgoliaSettings } from '../lib/getAlgoliaSettings';
 
@@ -17,7 +17,6 @@ import {
     getDefaultLanguage,
     getLanguageFromNextLocaleIsoCode,
     getLanguageFromStory,
-    getShortestLocaleCode,
 } from './languages';
 import {
     getContactsQuery,
@@ -199,11 +198,11 @@ export class PrezlyApi {
         return this.sdk.newsroomThemes.getActive(this.newsroomUuid);
     }
 
-    async getBasePageProps(
+    async getNewsroomServerSideProps(
         request: IncomingMessage | undefined,
         nextLocaleIsoCode?: string,
         story?: Story,
-    ): Promise<BasePageProps> {
+    ): Promise<PageProps & ServerSidePageProps> {
         const [newsroom, languages, categories, themePreset] = await Promise.all([
             this.getNewsroom(),
             this.getNewsroomLanguages(),
@@ -218,7 +217,6 @@ export class PrezlyApi {
 
         const { code: localeCode } = currentLanguage || defaultLanguage;
         const locale = LocaleObject.fromAnyCode(localeCode);
-        const shortestLocaleCode = getShortestLocaleCode(languages, locale);
 
         // TODO: if no information given for current language, show boilerplate from default language
         const companyInformation = getCompanyInformation(languages, locale);
@@ -226,15 +224,16 @@ export class PrezlyApi {
         const algoliaSettings = getAlgoliaSettings(request);
 
         return {
-            newsroom,
-            companyInformation,
-            categories,
-            languages,
-            localeCode,
-            shortestLocaleCode,
+            newsroomContextProps: {
+                newsroom,
+                companyInformation,
+                categories,
+                languages,
+                localeCode,
+                themePreset,
+                algoliaSettings,
+            },
             localeResolved: Boolean(currentLanguage),
-            themePreset,
-            algoliaSettings,
         };
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "1.1.4",
+  "version": "1.1.5-1",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -39,7 +39,8 @@
     "prettier:fix": "npm run prettier -- --write --no-list-different",
     "check": "npm run lint && npm run typecheck",
     "prerelease": "npm run check && npm run build",
-    "release": "np"
+    "release": "np",
+    "release:preview": "npm run prerelease && np prerelease --any-branch --no-release-draft --tag=preview"
   },
   "peerDependencies": {
     "next": "^12.x",
