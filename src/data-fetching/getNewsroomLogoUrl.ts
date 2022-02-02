@@ -11,10 +11,9 @@ export function getNewsroomLogoUrl(newsroom: Newsroom): string {
 }
 
 export function getNewsroomFaviconUrl(newsroom: Newsroom, previewSize = 400): string {
-    if (newsroom.icon) {
-        return `${getAssetsUrl(
-            newsroom.icon.uuid,
-        )}-/preview/${previewSize}x${previewSize}/-/quality/best/`;
+    const image = newsroom.icon || newsroom.square_logo;
+    if (image) {
+        return `${getAssetsUrl(image.uuid)}-/preview/${previewSize}x${previewSize}/-/quality/best/`;
     }
 
     return '';
