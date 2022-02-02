@@ -2,7 +2,10 @@ import type { Newsroom } from '@prezly/sdk';
 
 import { LocaleObject } from '../intl';
 
-type PrivacyPortalUrlOptions = { email?: string; action?: 'subscribe' | 'unsubscribe' };
+type PrivacyPortalUrlOptions = {
+    email?: string;
+    action?: 'data-request' | 'subscribe' | 'unsubscribe';
+};
 
 export function getPrivacyPortalUrl(
     newsroom: Newsroom,
