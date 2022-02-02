@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "לחיצה על \"{subscribe}\" מהווה אישור לכך שקראתי את {privacyPolicyLink} והסכמתי אתה."
+    "message": "בלחיצה על \"{להרשמה}\" אני מאשר שקראתי ואני מסכים ל- {תנאים בחוזה}.\n\n בכתב הוויתור המשתנים יוחלפו בטקסט מהודעות `הרשמה` ו` תנאים בחוזה` יחד עם קישור למדיניות הפרטיות."
   },
   "subscription.formTitle": {
     "message": "קבל עדכונים לתיבת האימייל"

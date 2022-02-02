@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "\"{subscribe}\" түймесін басу арқылы мен {privacyPolicyLink} талаптарын оқып, олармен келісетінімді растаймын."
+    "message": "\"{subscribe}\" түймесін басу арқылы {privacyPolicyLink} талаптарын оқығанымды және оларға келісетінімді растаймын."
   },
   "subscription.formTitle": {
     "message": "Пошта жәшігімен жаңалықтар алу"

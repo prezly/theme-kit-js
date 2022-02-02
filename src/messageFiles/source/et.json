@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "Klõpsates \"{subscribe}\" kinnitan, et olen lugenud ja nõustun dokumendiga {privacyPolicyLink}."
+    "message": "Klõpsates \"{subscribe}\" kinnitan, et olen läbi lugenud ja nõustun dokumendiga {privacyPolicyLink}."
   },
   "subscription.formTitle": {
     "message": "Hangi uuendused postkasti"

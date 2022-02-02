@@ -157,7 +157,7 @@
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "“{subscribe}”ni bosish orqali {privacyPolicyLink}ni oʻqiganim va unga rozi ekanimni tasdiqlayman."
+    "message": "{subscribe} ustiga bosish orqali {privacyPolicyLink}ni oʻqib chiqqanim va shartlarga roz ekanimni tasdiqlayman."
   },
   "subscription.formTitle": {
     "message": "Yangilanishlarni pochangizda oling"
