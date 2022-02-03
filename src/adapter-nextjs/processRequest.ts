@@ -2,7 +2,7 @@ import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
 import { getShortestLocaleCode } from '../data-fetching';
 import { getRedirectToCanonicalLocale, LocaleObject } from '../intl';
-import { PageProps, ServerSidePageProps } from '../types';
+import type { PageProps, ServerSidePageProps } from '../types';
 
 export function processRequest<Props>(
     context: GetServerSidePropsContext,

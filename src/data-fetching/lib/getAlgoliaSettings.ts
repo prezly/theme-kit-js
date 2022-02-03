@@ -1,10 +1,10 @@
 import type { IncomingMessage } from 'http';
 
-import { AlgoliaSettings } from '../types';
+import type { AlgoliaSettings } from '../types';
 
 import { getEnvVariables } from './getEnvVariables';
 
-export const getAlgoliaSettings = (req?: IncomingMessage): AlgoliaSettings => {
+export function getAlgoliaSettings(req?: IncomingMessage): AlgoliaSettings {
     if (process.browser) {
         throw new Error('"getAlgoliaSettings" should only be used on back-end side.');
     }
@@ -26,4 +26,4 @@ export const getAlgoliaSettings = (req?: IncomingMessage): AlgoliaSettings => {
         ALGOLIA_APP_ID,
         ALGOLIA_INDEX,
     };
-};
+}

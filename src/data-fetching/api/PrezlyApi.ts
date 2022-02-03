@@ -1,10 +1,11 @@
-import PrezlySDK, {
+import type {
     Category,
     ExtraStoryFields,
     Newsroom,
     NewsroomLanguageSettings,
     Story,
 } from '@prezly/sdk';
+import PrezlySDK from '@prezly/sdk';
 import type { IncomingMessage } from 'http';
 
 import { LocaleObject } from '../../intl';

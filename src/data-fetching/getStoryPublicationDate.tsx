@@ -1,6 +1,6 @@
 import type { Story } from '@prezly/sdk';
 
-import { AlgoliaStory } from '../types';
+import type { AlgoliaStory } from '../types';
 
 export function getStoryPublicationDate(story: Story | AlgoliaStory): Date | null {
     const { published_at } = story;

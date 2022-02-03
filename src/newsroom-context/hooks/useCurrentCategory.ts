@@ -1,7 +1,7 @@
 import { useNewsroomContext } from './useNewsroomContext';
 
-export const useCurrentCategory = () => {
+export function useCurrentCategory() {
     const context = useNewsroomContext();
 
     return context.currentCategory;
-};
+}

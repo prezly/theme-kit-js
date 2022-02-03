@@ -8,15 +8,17 @@ const publishedAndPublic = [
     { visibility: { $in: ['public'] } },
 ];
 
-export const getSlugQuery = (newsroomUuid: string, slug: string) => ({
-    $and: [
-        { 'newsroom.uuid': { $in: [newsroomUuid] } },
-        { slug: { $eq: slug } },
-        ...publishedAndAccessible,
-    ],
-});
+export function getSlugQuery(newsroomUuid: string, slug: string) {
+    return {
+        $and: [
+            { 'newsroom.uuid': { $in: [newsroomUuid] } },
+            { slug: { $eq: slug } },
+            ...publishedAndAccessible,
+        ],
+    };
+}
 
-export const getStoriesQuery = (newsroomUuid: string, categoryId?: number, localeCode?: string) => {
+export function getStoriesQuery(newsroomUuid: string, categoryId?: number, localeCode?: string) {
     const query: any = {
         $and: [...publishedAndPublic, { 'newsroom.uuid': { $in: [newsroomUuid] } }],
     };
@@ -30,15 +32,20 @@ export const getStoriesQuery = (newsroomUuid: string, categoryId?: number, local
     }
 
     return query;
-};
+}
 
-export const getSortByPublishedDate = (order: 'asc' | 'desc') =>
-    order === 'desc' ? '-published_at' : 'published_at';
+export function getSortByPublishedDate(order: 'asc' | 'desc') {
+    return order === 'desc' ? '-published_at' : 'published_at';
+}
 
-export const getGalleriesQuery = () => ({
-    $and: [{ status: { $eq: 'public' } }, { images_number: { $gt: 0 } }],
-});
+export function getGalleriesQuery() {
+    return {
+        $and: [{ status: { $eq: 'public' } }, { images_number: { $gt: 0 } }],
+    };
+}
 
-export const getContactsQuery = () => ({
-    $and: [{ is_featured: { $eq: true } }],
-});
+export function getContactsQuery() {
+    return {
+        $and: [{ is_featured: { $eq: true } }],
+    };
+}

@@ -7,7 +7,8 @@ import type {
     NewsroomLanguageSettings,
     NewsroomThemePreset,
 } from '@prezly/sdk';
-import { createContext, FunctionComponent, useMemo } from 'react';
+import type { PropsWithChildren } from 'react';
+import { createContext, useMemo } from 'react';
 
 import type { AlgoliaSettings } from '../data-fetching';
 import { DEFAULT_LOCALE, LocaleObject } from '../intl';
@@ -31,7 +32,7 @@ export interface NewsroomContextProps extends Omit<NewsroomContextType, 'locale'
 
 export const NewsroomContext = createContext<NewsroomContextType | undefined>(undefined);
 
-export const NewsroomContextProvider: FunctionComponent<NewsroomContextProps> = ({
+export function NewsroomContextProvider({
     categories,
     contacts,
     newsroom,
@@ -43,7 +44,7 @@ export const NewsroomContextProvider: FunctionComponent<NewsroomContextProps> = 
     themePreset,
     algoliaSettings,
     children,
-}) => {
+}: PropsWithChildren<NewsroomContextProps>) {
     const locale = useMemo(
         () => LocaleObject.fromAnyCode(localeCode || DEFAULT_LOCALE),
         [localeCode],
@@ -67,4 +68,4 @@ export const NewsroomContextProvider: FunctionComponent<NewsroomContextProps> = 
             {children}
         </NewsroomContext.Provider>
     );
-};
+}

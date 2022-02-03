@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
 import { getCategoryHasTranslation, getCategoryUrl } from '../../data-fetching';
-import { LocaleObject } from '../../intl';
+import type { LocaleObject } from '../../intl';
 
 import { useCurrentCategory } from './useCurrentCategory';
 import { useCurrentStory } from './useCurrentStory';

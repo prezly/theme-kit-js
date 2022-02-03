@@ -1,7 +1,7 @@
 import { useNewsroomContext } from './useNewsroomContext';
 
-export const useCompanyInformation = () => {
+export function useCompanyInformation() {
     const context = useNewsroomContext();
 
     return context.companyInformation;
-};
+}

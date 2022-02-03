@@ -1,7 +1,7 @@
 import { useNewsroomContext } from './useNewsroomContext';
 
-export const useLanguages = () => {
+export function useLanguages() {
     const context = useNewsroomContext();
 
     return context.languages;
-};
+}

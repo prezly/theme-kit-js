@@ -1,5 +1,6 @@
 import type { Redirect } from 'next';
-import { ParsedUrlQuery, stringify } from 'querystring';
+import type { ParsedUrlQuery } from 'querystring';
+import { stringify } from 'querystring';
 
 import { LocaleObject } from './localeObject';
 

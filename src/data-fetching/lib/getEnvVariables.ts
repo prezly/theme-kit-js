@@ -3,7 +3,7 @@ import parseDataUrl from 'parse-data-url';
 
 import type { PrezlyEnv } from '../types';
 
-const decodeJson = (json: string): Record<string, any> => {
+function decodeJson(json: string): Record<string, any> {
     try {
         const decoded = JSON.parse(json);
         if (decoded && typeof decoded === 'object') {
@@ -13,9 +13,9 @@ const decodeJson = (json: string): Record<string, any> => {
         // passthru
     }
     return {};
-};
+}
 
-const decodeHttpEnv = (header: string): Record<string, any> => {
+function decodeHttpEnv(header: string): Record<string, any> {
     if (header.startsWith('data:')) {
         const parsed = parseDataUrl(header);
         if (parsed && parsed.contentType === 'application/json') {
@@ -25,9 +25,9 @@ const decodeHttpEnv = (header: string): Record<string, any> => {
         return {}; // unsupported data-uri
     }
     return decodeJson(header);
-};
+}
 
-export const getEnvVariables = (req?: IncomingMessage): PrezlyEnv => {
+export function getEnvVariables(req?: IncomingMessage): PrezlyEnv {
     if (process.browser) {
         throw new Error('"getEnvVariables" should only be used on back-end side.');
     }
@@ -41,4 +41,4 @@ export const getEnvVariables = (req?: IncomingMessage): PrezlyEnv => {
     }
 
     return { ...process.env };
-};
+}

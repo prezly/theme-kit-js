@@ -52,7 +52,7 @@
     "parse-data-url": "^4.0.1"
   },
   "devDependencies": {
-    "@prezly/eslint-config": "^4.0.0-4",
+    "@prezly/eslint-config": "^4.0.0-5",
     "@types/node": "^17.0.13",
     "@types/parse-data-url": "^3.0.0",
     "@types/react": "^17.0.38",
