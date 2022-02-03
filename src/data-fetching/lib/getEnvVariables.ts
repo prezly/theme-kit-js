@@ -28,7 +28,7 @@ function decodeHttpEnv(header: string): Record<string, any> {
 }
 
 export function getEnvVariables(req?: IncomingMessage): PrezlyEnv {
-    if (process.browser) {
+    if (typeof window !== 'undefined') {
         throw new Error('"getEnvVariables" should only be used on back-end side.');
     }
 

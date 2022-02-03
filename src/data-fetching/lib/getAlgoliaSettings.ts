@@ -5,7 +5,7 @@ import type { AlgoliaSettings } from '../types';
 import { getEnvVariables } from './getEnvVariables';
 
 export function getAlgoliaSettings(req?: IncomingMessage): AlgoliaSettings {
-    if (process.browser) {
+    if (typeof window !== 'undefined') {
         throw new Error('"getAlgoliaSettings" should only be used on back-end side.');
     }
 

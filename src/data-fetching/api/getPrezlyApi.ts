@@ -5,7 +5,7 @@ import { getEnvVariables } from '../lib/getEnvVariables';
 import { PrezlyApi } from './PrezlyApi';
 
 export function getPrezlyApi(req?: IncomingMessage): PrezlyApi {
-    if (process.browser) {
+    if (typeof window !== 'undefined') {
         throw new Error('"getPrezlyApi" should only be used on back-end side.');
     }
 
