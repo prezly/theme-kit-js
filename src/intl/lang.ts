@@ -1,4 +1,4 @@
-import { CultureRef, NewsroomLanguageSettings } from '@prezly/sdk';
+import type { CultureRef, NewsroomLanguageSettings } from '@prezly/sdk';
 
 function isOnlyCulture(culture: CultureRef, languages: NewsroomLanguageSettings[]): boolean {
     const numberOfLanguages = languages.filter(

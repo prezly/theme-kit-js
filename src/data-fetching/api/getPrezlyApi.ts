@@ -4,8 +4,8 @@ import { getEnvVariables } from '../lib/getEnvVariables';
 
 import { PrezlyApi } from './PrezlyApi';
 
-export const getPrezlyApi = (req?: IncomingMessage): PrezlyApi => {
-    if (process.browser) {
+export function getPrezlyApi(req?: IncomingMessage): PrezlyApi {
+    if (typeof window !== 'undefined') {
         throw new Error('"getPrezlyApi" should only be used on back-end side.');
     }
 
@@ -21,4 +21,4 @@ export const getPrezlyApi = (req?: IncomingMessage): PrezlyApi => {
     }
 
     return new PrezlyApi(PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID);
-};
+}

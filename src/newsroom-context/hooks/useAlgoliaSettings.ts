@@ -1,7 +1,7 @@
 import { useNewsroomContext } from './useNewsroomContext';
 
-export const useAlgoliaSettings = () => {
+export function useAlgoliaSettings() {
     const context = useNewsroomContext();
 
     return context.algoliaSettings;
-};
+}
