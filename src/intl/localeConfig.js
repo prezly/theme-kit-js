@@ -33,6 +33,7 @@ const supportedLocales = [
     'en-IE',
     'en-IL',
     'en-IN',
+    'en-JM',
     'en-JP',
     'en-KH',
     'en-KR',

@@ -1,4 +1,4 @@
-import { Story } from '@prezly/sdk';
+import type { Story } from '@prezly/sdk';
 import type { GetServerSidePropsContext } from 'next';
 
 import { getPrezlyApi } from '../data-fetching';
