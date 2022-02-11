@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/npm/v/@prezly/theme-kit-nextjs)
 ![License](https://img.shields.io/npm/l/@prezly/theme-kit-nextjs)
 
-This library is a collection of data-fetching functions, hooks and utility functions to abstract some of the under-the-hood logic used by Prezly newsrooms and help developers create themes with [Next.jS] much faster with little boilerplate required.
+This library is a collection of data-fetching functions, hooks and utility functions to abstract some of the under-the-hood logic used by Prezly newsrooms and help developers create themes with [Next.js] much faster with little boilerplate required.
 
 The package is built with [Typescript] on top of [Prezly SDK].
 
@@ -185,7 +185,7 @@ You can also learn more about Prezly API by checking out typings in [Prezly SDK]
 Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=@prezly/theme-kit-nextjs).
 
 [create-next-app]: https://nextjs.org/docs/api-reference/create-next-app
-[Next.JS]: https://nextjs.org
+[Next.js]: https://nextjs.org
 [Prezly SDK]: https://www.npmjs.com/package/@prezly/sdk
 [Prezly API Docs]: https://developers.prezly.com/docs/api
 [Typescript]: https://www.typescriptlang.org
