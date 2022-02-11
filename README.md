@@ -1,13 +1,13 @@
-# NextJS Prezly Theme Kit
+# Next.js Prezly Theme Kit
 
 ![Version](https://img.shields.io/npm/v/@prezly/theme-kit-nextjs)
 ![License](https://img.shields.io/npm/l/@prezly/theme-kit-nextjs)
 
-This library is a collection of data-fetching functions, hooks and utility functions to abstract some of the under-the-hood logic used by Prezly newsrooms and help developers create themes with [Next.JS] much faster with little boilerplate required.
+This library is a collection of data-fetching functions, hooks and utility functions to abstract some of the under-the-hood logic used by Prezly newsrooms and help developers create themes with [Next.jS] much faster with little boilerplate required.
 
 The package is built with [Typescript] on top of [Prezly SDK].
 
-## Adding the library to your NextJS theme
+## Adding the library to your Next.js theme
 
 ### npm
 
@@ -17,10 +17,10 @@ npm install --save @prezly/theme-kit-nextjs
 
 #### peerDependencies
 
-This library is intended to be used with [Next.JS] applications, so it requires `next`, `react` and `react-dom` to work. These should already be installed if you have an existing NextJS app. 
+This library is intended to be used with [Next.js] applications, so it requires `next`, `react` and `react-dom` to work. These should already be installed if you have an existing [Next.js] app.
 If you're starting from scratch, use [create-next-app] to quick-start the project.
 
-To keep things fresh, we require at least NextJS 12 and React 17.
+To keep things fresh, we require at least Next.js 12 and React 17.
 
 You can also install the dependencies manually
 ```Shell
@@ -49,7 +49,7 @@ Depending on your use-case, you might need to make some additions to your base c
 
 #### Using next/image to display images served from Prezly
 
-We provide `@prezly/uploadcare-image` package to conviniently display images inside Prezly content, and this is the recommended way to display images in your theme.
+We provide `@prezly/uploadcare-image` package to conveniently display images inside Prezly content, and this is the recommended way to display images in your theme.
 However, if you need to use the default `next/image` component, you will need to add our CDN url to image domains settings:
 ```js
 module.exports = {
@@ -70,7 +70,7 @@ const locales = require('@prezly/theme-kit-nextjs/build/intl/localeConfig');
 
 module.exports = {
     /* ...your next config... */
-    
+
     i18n: {
         // These are all the locales you want to support in
         // your application
@@ -175,8 +175,8 @@ The third argument is needed to properly handle locale redirects. It should cont
 
 This kit is just a collection of building blocks, so it doesn't really force any page structure or guidelines on how to render the content.
 You can learn more on how this kit can be used by checking the code of Prezly's themes:
-- [Theme Starter](https://github.com/prezly/theme-nextjs-starter) - this is a bare-bones application created to demonstrate how to display the fetched content and recommended page structure
-- [Bea Theme](https://github.com/prezly/theme-nextjs-bea) - this is our new fully-fledged theme available to all Prezly customers. It has lots of stuff on top, both in styling and in data logic.
+- [Prezly Starter Theme](https://github.com/prezly/theme-nextjs-starter) - this is a bare-bones application created to demonstrate how to display the fetched content and recommended page structure
+- [Prezly Bea Theme](https://github.com/prezly/theme-nextjs-bea) - this is our new fully-fledged theme available to all Prezly customers. It has lots of stuff on top, both in styling and in data logic.
 
 You can also learn more about Prezly API by checking out typings in [Prezly SDK] package, and referring to the [Prezly API Docs]
 
