@@ -2,10 +2,16 @@ import type { NewsroomLanguageSettings, Story } from '@prezly/sdk';
 
 import { DUMMY_DEFAULT_LOCALE, LocaleObject } from '../../intl';
 
+/**
+ * @returns Language set as default in the Newsroom Settings.
+ */
 export function getDefaultLanguage(languages: NewsroomLanguageSettings[]) {
     return languages.find(({ is_default }) => is_default) || languages[0];
 }
 
+/**
+ * @returns Only languages having at least one published story
+ */
 export function getUsedLanguages(languages: NewsroomLanguageSettings[]) {
     return languages.filter((language) => language.public_stories_count > 0);
 }
@@ -110,6 +116,9 @@ export function getLanguageFromStory(languages: NewsroomLanguageSettings[], stor
     return languages.find(({ code }) => code === storyLocaleCode);
 }
 
+/**
+ * Extracts company information for the selected locale
+ */
 export function getCompanyInformation(languages: NewsroomLanguageSettings[], locale: LocaleObject) {
     const currentLanguage =
         getLanguageByExactLocaleCode(languages, locale) || getDefaultLanguage(languages);

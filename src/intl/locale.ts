@@ -5,8 +5,13 @@ import { stringify } from 'querystring';
 import { LocaleObject } from './localeObject';
 
 export const DEFAULT_LOCALE = 'en';
+// We use pseudo locale used for localization testing, to reliably determine if we need to fallback to the default newsroom language
 export const DUMMY_DEFAULT_LOCALE = 'qps-ploc';
 
+/**
+ * This a list of locales that Prezly has translations for. Each code represents a language file in the `@prezly/themes-intl-messages` package.
+ * See https://github.com/prezly/themes-intl-messages for more info.
+ */
 const SUPPORTED_LOCALES = [
     'af',
     'ar',
@@ -56,6 +61,10 @@ const SUPPORTED_LOCALES = [
     'zh-TW',
 ];
 
+/**
+ * Use this function to determine which translations file you should load from `@prezly/themes-intl-mesages` package.
+ * See https://github.com/prezly/theme-nextjs-bea/blob/main/utils/lang.ts for a usage example.
+ */
 export function getSupportedLocaleIsoCode(locale: LocaleObject): string {
     const localeIsoCode = locale.toHyphenCode();
 

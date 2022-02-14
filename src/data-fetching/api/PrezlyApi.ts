@@ -54,6 +54,7 @@ export class PrezlyApi {
         this.sdk = new PrezlySDK({
             accessToken,
             baseUrl,
+            // This returns stories created by legacy version of the editor in a format that can be displayed by the Prezly Content Renderer.
             headers: { 'X-Convert-v1-To-v3': 'true' },
         });
         this.newsroomUuid = newsroomUuid;
@@ -77,6 +78,9 @@ export class PrezlyApi {
         return (await this.sdk.newsroomLanguages.list(this.newsroomUuid)).languages;
     }
 
+    /**
+     * Note: this method returns ALL stories from the newsroom. It's intended to be used for sitemaps and not to display actual content.
+     */
     async getAllStories(order: SortOrder = DEFAULT_SORT_ORDER) {
         const sortOrder = getSortByPublishedDate(order);
         const newsroom = await this.getNewsroom();

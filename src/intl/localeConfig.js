@@ -1,4 +1,8 @@
-// This list is pulled from the main Prezly application. The underscores are replaced with dashes.
+/**
+ * This list is pulled from the main Prezly application. The underscores are replaced with dashes.
+ * Together with permutation performed lower in the code,
+ * the exported list represents all of the possible locale codes that Next.js theme application might accept.
+ */
 const supportedLocales = [
     'af-ZA',
     'ar',
@@ -105,7 +109,7 @@ const supportedLocales = [
 
 const lowercaseLocales = supportedLocales.map((l) => l.toLowerCase());
 
-// Get all permutations for the shorter locale codes supported by Prezly (e.g. short region codes)
+// Get all permutations for the shorter locale codes supported by Prezly (e.g. short region codes and neutral language codes)
 const lowercaseLocalPermutations = Array.from(
     new Set([
         ...lowercaseLocales,
