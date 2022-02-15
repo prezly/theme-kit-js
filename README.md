@@ -58,4 +58,13 @@ You can check an example on how to import messages in a Next.js theme in the [Pr
 - `subscription` -> Messages related to the Subscription module
 - `misc` -> Messages not suiting in any of the above categories
 
+---
+
+### Documentation on updating the translations (Prezly internal)
+The process of adding new translations to Prezly Themes is described in the [Notion article](https://www.notion.so/prezly/Themes-Translations-i18n-4ae8aa613db146168623dfc65d9e8359)
+
+----
+
+Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=@prezly/themes-intl-messages).
+
 [react-intl]: https://formatjs.io/docs/react-intl
