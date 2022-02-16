@@ -49,7 +49,9 @@ export class PrezlyApi {
 
     private readonly newsroomUuid: Newsroom['uuid'];
 
-    constructor(accessToken: string, newsroomUuid: Newsroom['uuid']) {
+    private readonly themeUuid: string | undefined;
+
+    constructor(accessToken: string, newsroomUuid: Newsroom['uuid'], themeUuid?: string) {
         const baseUrl = process.env.API_BASE_URL_OVERRIDE ?? undefined;
         this.sdk = new PrezlySDK({
             accessToken,
@@ -58,6 +60,7 @@ export class PrezlyApi {
             headers: { 'X-Convert-v1-To-v3': 'true' },
         });
         this.newsroomUuid = newsroomUuid;
+        this.themeUuid = themeUuid;
     }
 
     getStory(uuid: string) {
@@ -203,8 +206,8 @@ export class PrezlyApi {
      * In order to prevent issues with theme preview, we only load the theme preset for a specified theme, and not the currently active one.
      */
     async getThemePreset() {
-        if (process.env.PREZLY_THEME_UUID) {
-            return this.sdk.newsroomThemes.get(this.newsroomUuid, process.env.PREZLY_THEME_UUID);
+        if (this.themeUuid) {
+            return this.sdk.newsroomThemes.get(this.newsroomUuid, this.themeUuid);
         }
 
         return null;

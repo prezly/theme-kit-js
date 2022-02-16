@@ -7,6 +7,7 @@ export interface AlgoliaSettings {
 export interface PrezlyNewsroomEnv {
     PREZLY_ACCESS_TOKEN: string;
     PREZLY_NEWSROOM_UUID: string;
+    PREZLY_THEME_UUID?: string;
 }
 
 export interface PrezlyEnv extends PrezlyNewsroomEnv, AlgoliaSettings {}
