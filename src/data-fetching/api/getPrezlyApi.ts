@@ -10,7 +10,7 @@ export function getPrezlyApi(req?: IncomingMessage): PrezlyApi {
     }
 
     // `getEnvVariables` handles both cases for envs parsing - .env and request headers
-    const { PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID } = getEnvVariables(req);
+    const { PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID, PREZLY_THEME_UUID } = getEnvVariables(req);
 
     if (!PREZLY_ACCESS_TOKEN) {
         throw new Error('"PREZLY_ACCESS_TOKEN" is not set in env variables.');
@@ -20,5 +20,5 @@ export function getPrezlyApi(req?: IncomingMessage): PrezlyApi {
         throw new Error('"PREZLY_NEWSROOM_UUID" is not set in env variables.');
     }
 
-    return new PrezlyApi(PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID);
+    return new PrezlyApi(PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID, PREZLY_THEME_UUID);
 }

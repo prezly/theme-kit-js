@@ -34,11 +34,15 @@ Prezly themes use two ways of getting base environment variables:
 - Getting variables straight from `.env` file
 - Extracting variables from HTTP headers (when hosted on the Prezly infrastructure)
 
-For local development, and for self-hosted themes, you can only use the former option. Add these two variables to your `.env` file:
+For local development, and for self-hosted themes, you can only use the former option. Add these variables to your `.env` file:
 ```
 PREZLY_ACCESS_TOKEN=your access token
 PREZLY_NEWSROOM_UUID=your newsroom UUID
+PREZLY_THEME_UUID=your theme UUID
 ```
+
+`PREZLY_THEME_UUID` variable is only reqiured for developing themes that are already hosted on Prezly infrastructure.
+It determines which theme preset will be pulled from the API. For self-hosted themes, you'll want to handle the theme settings in some other way.
 
 If you don't have these credentials, you can use one of our [testing newsrooms credentials](https://github.com/prezly/theme-nextjs-starter#testingtoken).
 
