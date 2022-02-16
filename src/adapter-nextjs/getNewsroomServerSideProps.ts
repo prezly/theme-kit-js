@@ -8,6 +8,10 @@ interface Options {
     story?: Story;
 }
 
+/**
+ * Use this function in your `getServerSideProps` page methods to retrieve the data necessary for the NewsroomContextProvider and `processRequest` function.
+ * See README for usage examples.
+ */
 export async function getNewsroomServerSideProps(
     context: GetServerSidePropsContext,
     options: Options = {},

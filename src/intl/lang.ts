@@ -9,14 +9,16 @@ function isOnlyCulture(culture: CultureRef, languages: NewsroomLanguageSettings[
 }
 
 /**
+ * @returns the display name of the locale in its native language
+ *
  * If there's only one culture used in a specific language,
  * we strip the culture name completely.
  *
  * Examples:
  *  - English (Global), Spanish (Spain)
- *      -> English, Spanish
+ *  - -> English, Spanish
  *  - English (Global), English (UK), Spanish (Spain)
- *      -> English (Global), English (UK), Spanish
+ *  - -> English (Global), English (UK), Spanish
  */
 export function getLanguageDisplayName(
     language: NewsroomLanguageSettings,
