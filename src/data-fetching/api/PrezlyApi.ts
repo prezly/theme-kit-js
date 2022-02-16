@@ -199,8 +199,15 @@ export class PrezlyApi {
         return this.sdk.newsroomGalleries.get(this.newsroomUuid, uuid);
     }
 
+    /**
+     * In order to prevent issues with theme preview, we only load the theme preset for a specified theme, and not the currently active one.
+     */
     async getThemePreset() {
-        return this.sdk.newsroomThemes.getActive(this.newsroomUuid);
+        if (process.env.PREZLY_THEME_UUID) {
+            return this.sdk.newsroomThemes.get(this.newsroomUuid, process.env.PREZLY_THEME_UUID);
+        }
+
+        return null;
     }
 
     async getNewsroomServerSideProps(

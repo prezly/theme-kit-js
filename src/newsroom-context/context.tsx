@@ -48,9 +48,11 @@ export interface NewsroomContextType {
      */
     locale: LocaleObject;
     /**
-     * Theme settings of the currently active theme as set in the Prezly app.
+     * Theme settings as set in the Prezly app.
+     * You need to provide `PREZLY_THEME_UUID` in environment variables in order for the preset to be loaded.
+     * Only applicable to themes hosted on the Prezly infrastructure.
      */
-    themePreset: NewsroomThemePreset;
+    themePreset: NewsroomThemePreset | null;
     /**
      * Environment variables required for Algolia search to work.
      */
