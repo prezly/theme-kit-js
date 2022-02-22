@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "ไม่ต้องสลับช่องทาง"
   },
+  "newsroom.title": {
+    "message": "Newsroom"
+  },
   "noStories.subtitle": {
     "message": "กลับมาใหม่ภายหลังเพื่อดูเรื่องราวใหม่ๆ"
   },
