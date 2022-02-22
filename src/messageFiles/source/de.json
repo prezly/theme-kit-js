@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Navigation umschalten"
   },
+  "newsroom.title": {
+    "message": "Newsroom"
+  },
   "noStories.subtitle": {
     "message": "Kommen Sie später wieder, um neue Stories zu sehen."
   },
