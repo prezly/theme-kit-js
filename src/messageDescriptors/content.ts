@@ -43,6 +43,13 @@ export const noStories = defineMessages({
     },
 });
 
+export const newsroom = defineMessages({
+    title: {
+        id: 'newsroom.title',
+        defaultMessage: 'Newsroom',
+    }
+})
+
 export const cookieConsent = defineMessages({
     title: {
         id: 'cookieConsent.title',
