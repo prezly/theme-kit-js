@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Переключить навигацию"
   },
+  "newsroom.title": {
+    "message": "Newsroom"
+  },
   "noStories.subtitle": {
     "message": "Заходите позже, чтобы увидеть новые истории."
   },
