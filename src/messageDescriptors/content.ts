@@ -47,8 +47,8 @@ export const newsroom = defineMessages({
     title: {
         id: 'newsroom.title',
         defaultMessage: 'Newsroom',
-    }
-})
+    },
+});
 
 export const cookieConsent = defineMessages({
     title: {
