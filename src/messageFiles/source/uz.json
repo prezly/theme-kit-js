@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Navigatsiyani o‘tkazish"
   },
+  "newsroom.title": {
+    "message": "Newsroom"
+  },
   "noStories.subtitle": {
     "message": "Yangi hikoyalarni ko‘rish uchun keyinroq qaytib o‘ting."
   },
