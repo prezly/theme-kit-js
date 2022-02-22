@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Naviqasiyanı dəyiş"
   },
+  "newsroom.title": {
+    "message": "Xəbər otağı"
+  },
   "noStories.subtitle": {
     "message": "Yeni hekayələrə baxmaq üçün daha sonra qayıt."
   },

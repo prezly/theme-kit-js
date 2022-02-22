@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Přepnout navigaci"
   },
+  "newsroom.title": {
+    "message": "Zpravodajská místnost"
+  },
   "noStories.subtitle": {
     "message": "Vraťte se později zpět a podívejte se na nové příběhy."
   },

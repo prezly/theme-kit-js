@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Bật/tắt điều hướng"
   },
+  "newsroom.title": {
+    "message": "Tòa soạn"
+  },
   "noStories.subtitle": {
     "message": "Quay lại sau để xem những câu chuyện mới."
   },

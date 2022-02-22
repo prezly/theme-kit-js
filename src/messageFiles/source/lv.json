@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Pārslēgt navigāciju"
   },
+  "newsroom.title": {
+    "message": "Ziņu telpa"
+  },
   "noStories.subtitle": {
     "message": "Atgriezieties vēlāk, lai skatītu pēdējos jaunumus."
   },

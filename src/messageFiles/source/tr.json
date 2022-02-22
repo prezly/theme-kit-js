@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Gezinti menüsünü değiştir"
   },
+  "newsroom.title": {
+    "message": "Haber merkezi"
+  },
   "noStories.subtitle": {
     "message": "Yeni hikayeleri görmek için daha sonra tekrar gel."
   },

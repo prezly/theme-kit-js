@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Navigáció váltása"
   },
+  "newsroom.title": {
+    "message": "Sajtószoba"
+  },
   "noStories.subtitle": {
     "message": "Térj vissza később az újabb történetekért."
   },

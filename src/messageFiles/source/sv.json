@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Växla navigering"
   },
+  "newsroom.title": {
+    "message": "Nyhetsrum"
+  },
   "noStories.subtitle": {
     "message": "Kom igen senare och läs nya berättelser."
   },

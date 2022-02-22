@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Attiva/disattiva navigazione"
   },
+  "newsroom.title": {
+    "message": "Newsroom"
+  },
   "noStories.subtitle": {
     "message": "Torna più tardi per vedere nuove storie."
   },

@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Навигацияны ауыстыру"
   },
+  "newsroom.title": {
+    "message": "Жаңалықтар бөлмесі"
+  },
   "noStories.subtitle": {
     "message": "Жаңа оқиғаларды көру үшін кейінірек қайта ашыңыз."
   },

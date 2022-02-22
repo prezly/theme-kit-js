@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Slå navigasjon av/på"
   },
+  "newsroom.title": {
+    "message": "Nyhetsrom"
+  },
   "noStories.subtitle": {
     "message": "Kom tilbake senere for å se nye historier."
   },

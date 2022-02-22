@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "מתג תפריט"
   },
+  "newsroom.title": {
+    "message": "חדר חדשות"
+  },
   "noStories.subtitle": {
     "message": "חזרו מאוחר יותר כדי לראות סיפורים חדשים."
   },

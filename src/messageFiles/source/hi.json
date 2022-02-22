@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "नैविगेशन टॉगल करें"
   },
+  "newsroom.title": {
+    "message": "न्यूज़रूम"
+  },
   "noStories.subtitle": {
     "message": "नई कहानियाँ देखने के लिए बाद में वापस आएँ।"
   },

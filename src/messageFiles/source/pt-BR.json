@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Alternar navegação"
   },
+  "newsroom.title": {
+    "message": "Sala de Imprensa"
+  },
   "noStories.subtitle": {
     "message": "Volte depois para ver novas histórias."
   },

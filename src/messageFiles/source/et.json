@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Lülitage navigeerimine sisse"
   },
+  "newsroom.title": {
+    "message": "Uudisteruum"
+  },
   "noStories.subtitle": {
     "message": "Tulge hiljem tagasi, et näha uusi lugusid."
   },
