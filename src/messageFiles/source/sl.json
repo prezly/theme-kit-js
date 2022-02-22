@@ -88,6 +88,9 @@
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
     "message": "Mobilna navigacija"
   },
+  "newsroom.title": {
+    "message": "Newsroom"
+  },
   "noStories.subtitle": {
     "message": "Vrnite se pozneje in si oglejte nove zgodbe."
   },
