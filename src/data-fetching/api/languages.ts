@@ -16,13 +16,16 @@ export function getUsedLanguages(languages: NewsroomLanguageSettings[]) {
     return languages.filter((language) => language.public_stories_count > 0);
 }
 
-function getLanguageByExactLocaleCode(languages: NewsroomLanguageSettings[], locale: LocaleObject) {
+export function getLanguageByExactLocaleCode(
+    languages: NewsroomLanguageSettings[],
+    locale: LocaleObject,
+) {
     const localeCode = locale.toUnderscoreCode();
     return languages.find(({ code }) => code === localeCode);
 }
 
 // See https://github.com/prezly/prezly/blob/master/lib/model/CulturePeer.php#L123
-function getLanguageByNeutralLocaleCode(
+export function getLanguageByNeutralLocaleCode(
     languages: NewsroomLanguageSettings[],
     locale: LocaleObject,
 ) {
@@ -54,7 +57,10 @@ function getLanguageByNeutralLocaleCode(
 }
 
 // See https://github.com/prezly/prezly/blob/master/lib/model/CulturePeer.php#L159
-function getLanguageByShortRegionCode(languages: NewsroomLanguageSettings[], locale: LocaleObject) {
+export function getLanguageByShortRegionCode(
+    languages: NewsroomLanguageSettings[],
+    locale: LocaleObject,
+) {
     const shortRegionCode = locale.toRegionCode();
 
     // Prefer default language
