@@ -20,7 +20,10 @@ export class LocaleObject {
         const [language, region] = localeCode.split('-');
 
         if (region) {
-            this.localeCode = [language, region.toUpperCase()].join('-');
+            // Workaround for `zh-Hant` locale, which is the only locale with non-uppercase region part
+            const regionSuffix = region === 'hant' ? 'Hant' : region.toUpperCase();
+
+            this.localeCode = [language, regionSuffix].join('-');
         } else {
             this.localeCode = language;
         }
