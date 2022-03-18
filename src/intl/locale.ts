@@ -80,6 +80,14 @@ export function getSupportedLocaleIsoCode(locale: LocaleObject): string {
         return language;
     }
 
+    // Custom mapping for Chinese locales
+    if (localeIsoCode.toLowerCase() === 'zh-hant') {
+        return 'zh-TW';
+    }
+    if (localeIsoCode.toLowerCase() === 'zh-hk') {
+        return 'zh-CN';
+    }
+
     return DEFAULT_LOCALE;
 }
 
