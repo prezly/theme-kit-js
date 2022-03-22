@@ -22,7 +22,9 @@ export function processRequest<Props>(
 
     const { localeResolved, ...pageProps } = props;
 
-    if (!localeResolved) {
+    // If no locale was provided by Next, it most likely means that the theme is not supporting multi-language.
+    // In that case we won't show 404 page.
+    if (!localeResolved && nextLocale) {
         return { notFound: true };
     }
 
