@@ -39,8 +39,6 @@ export function useInfiniteLoading<T>({
         const newData = await fetchingFn(nextPage, pageSize);
         setCurrentPage(nextPage);
         setData((currentData) => [...currentData, ...newData]);
-
-        return newData;
     }, [currentPage, fetchingFn, setCurrentPage]);
 
     const loadMore = useCallback(() => {
