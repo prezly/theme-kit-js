@@ -27,18 +27,21 @@ function decodeHttpEnv(header: string): Record<string, any> {
     return decodeJson(header);
 }
 
-export function getEnvVariables(req?: IncomingMessage): PrezlyEnv {
+export function getEnvVariables<EnvType extends PrezlyEnv = PrezlyEnv>(
+    req?: IncomingMessage,
+): EnvType {
     if (typeof window !== 'undefined') {
         throw new Error('"getEnvVariables" should only be used on back-end side.');
     }
 
     const headerName = (process.env.HTTP_ENV_HEADER || '').toLowerCase();
+    const processEnv = process.env as unknown as EnvType;
 
     if (headerName && req) {
         const header = req.headers[headerName] as string | undefined;
         const httpEnv = decodeHttpEnv(header || '');
-        return { ...process.env, ...httpEnv };
+        return { ...processEnv, ...httpEnv };
     }
 
-    return { ...process.env };
+    return { ...processEnv };
 }
