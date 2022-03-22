@@ -37,3 +37,9 @@ export type AlgoliaStory = Pick<Story, 'uuid' | 'slug' | 'title' | 'subtitle'> &
         culture: Pick<CultureRef, 'code' | 'name' | 'native_name' | 'language_code'>;
         categories: AlgoliaCategoryRef[];
     };
+
+export interface Pagination {
+    itemsTotal: number;
+    currentPage: number;
+    pageSize: number;
+}

@@ -6,5 +6,6 @@ export * from './getNewsroomLogoUrl';
 export * from './getPrivacyPortalUrl';
 export * from './getStoryPublicationDate';
 export * from './getUploadcareGroupUrl';
+export * from './hooks';
 export * from './lib';
 export * from './types';
