@@ -97,13 +97,14 @@ export function getRedirectToCanonicalLocale(
     redirectPath: string,
     query?: ParsedUrlQuery,
 ): Redirect | undefined {
+    // No need to redirect if no particular locale was requested by the application
+    if (!nextLocaleIsoCode || nextLocaleIsoCode === DUMMY_DEFAULT_LOCALE) {
+        return undefined;
+    }
+
     const shortestLocaleSlug = shortestLocaleCode
         ? LocaleObject.fromAnyCode(shortestLocaleCode).toUrlSlug()
         : shortestLocaleCode;
-
-    if (nextLocaleIsoCode === DUMMY_DEFAULT_LOCALE) {
-        return undefined;
-    }
 
     if (shortestLocaleSlug !== nextLocaleIsoCode) {
         const prefixedPath =
