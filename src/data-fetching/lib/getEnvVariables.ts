@@ -27,7 +27,9 @@ function decodeHttpEnv(header: string): Record<string, any> {
     return decodeJson(header);
 }
 
-export function getEnvVariables(req?: IncomingMessage): PrezlyEnv {
+export function getEnvVariables<EnvType extends PrezlyEnv = PrezlyEnv>(
+    req?: IncomingMessage,
+): NodeJS.ProcessEnv & EnvType {
     if (typeof window !== 'undefined') {
         throw new Error('"getEnvVariables" should only be used on back-end side.');
     }
@@ -37,8 +39,8 @@ export function getEnvVariables(req?: IncomingMessage): PrezlyEnv {
     if (headerName && req) {
         const header = req.headers[headerName] as string | undefined;
         const httpEnv = decodeHttpEnv(header || '');
-        return { ...process.env, ...httpEnv };
+        return { ...process.env, ...httpEnv } as NodeJS.ProcessEnv & EnvType;
     }
 
-    return { ...process.env };
+    return { ...process.env } as NodeJS.ProcessEnv & EnvType;
 }
