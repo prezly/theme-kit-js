@@ -17,15 +17,7 @@ export const search = defineMessages({
     },
     inputHint: {
         id: 'search.inputHint',
-        defaultMessage: 'Type your search {inputHintExtra}',
-        description:
-            '{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden',
-    },
-    inputHintExtra: {
-        id: 'search.inputHintExtra',
-        defaultMessage: 'and press {keyHint} or click {buttonLabel}',
-        description:
-            '{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the "Search" action',
+        defaultMessage: 'Type your search',
     },
     resultsTitle: {
         id: 'search.resultsTitle',
