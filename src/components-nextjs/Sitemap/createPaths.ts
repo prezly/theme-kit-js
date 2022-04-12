@@ -8,9 +8,9 @@ export function createPaths(stories: Story[], categories: Category[]) {
             const allSlugs = translations
                 .map(({ slug }) => slug || '')
                 .filter(Boolean)
-                .reduce(
+                .reduce<string[]>(
                     (slugs, slug) => (slugs.includes(slug) ? [...slugs] : [...slugs, slug]),
-                    [] as string[],
+                    [],
                 );
 
             return allSlugs.map((slug) => `/category/${slug}`);
