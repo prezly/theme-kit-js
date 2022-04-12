@@ -1,5 +1,5 @@
 export type SitemapUrl = {
-    loc: string;
-    changefreq?: string;
+    location: string;
+    changeFrequency?: string;
     priority?: string;
 };
