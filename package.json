@@ -51,6 +51,7 @@
     "@prezly/sdk": "^6.21.0",
     "next-seo": "^5.4.0",
     "parse-data-url": "^4.0.1",
+    "react-use": "^17.3.2",
     "string-strip-html": "^9.1.9"
   },
   "devDependencies": {
