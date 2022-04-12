@@ -173,6 +173,10 @@ This function returns the combined base props and your additional props, with so
 
 The third argument is needed to properly handle locale redirects. It should contain the URL for the current page without locale prefixes (like `/`, `/media`, `/category/${category.slug}`. If omitted, the redirect logic will not be executing.
 
+### SEO Helper components
+
+This library provides two components: [PageSeo](./tree/main/src/components-nextjs/PageSeo) and [StorySeo](./tree/main/src/components-nextjs/StorySeo), both based on the [next-seo](https://github.com/garmeeh/next-seo) library. They consume information from the `NewsroomContext` and provide all the necessary tags for your pages, with correct social preview, as well as JsonLD and OpenGraph data for your stories. You can also override the parameters for `PageSeo` component, these will be passed straight to `NextSeo` component. See the JSDoc comments on the exported components to get instructions on their usage.
+
 ----
 
 ## What's next
