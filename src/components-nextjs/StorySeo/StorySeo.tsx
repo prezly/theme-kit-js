@@ -5,6 +5,10 @@ type Props = {
     story: ExtendedStory;
 };
 
+/**
+ * This components provides additional page attributes for the Story page.
+ * It works in conjunction with `PageSeo` component, overidding some of its attributes.
+ */
 export function StorySeo({ story }: Props) {
     const { title, subtitle, published_at, updated_at, author, oembed, newsroom, summary } = story;
 
