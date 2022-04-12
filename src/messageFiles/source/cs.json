@@ -123,12 +123,7 @@
     "message": "Výsledky hledání"
   },
   "search.inputHint": {
-    "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "Sem zadejte vyhledávání {inputHintExtra}"
-  },
-  "search.inputHintExtra": {
-    "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "a stiskněte klávesu {keyHint} nebo klikněte na tlačítko {buttonLabel}"
+    "message": "Type your search"
   },
   "search.inputLabel": {
     "message": "Hledat ve zpravodajství"
