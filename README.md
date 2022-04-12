@@ -177,6 +177,32 @@ The third argument is needed to properly handle locale redirects. It should cont
 
 This library provides two components: [PageSeo](./tree/main/src/components-nextjs/PageSeo) and [StorySeo](./tree/main/src/components-nextjs/StorySeo), both based on the [next-seo](https://github.com/garmeeh/next-seo) library. They consume information from the `NewsroomContext` and provide all the necessary tags for your pages, with correct social preview, as well as JsonLD and OpenGraph data for your stories. You can also override the parameters for `PageSeo` component, these will be passed straight to `NextSeo` component. See the JSDoc comments on the exported components to get instructions on their usage.
 
+### Auto-generated Sitemap
+
+This kit can also help you with building your Sitemap automatically. Here's what you need to get started:
+
+1. Create a sitemap page file: `/pages/sitemap.xml.ts`
+2. Use this code to display the default Sitemap built with your Newsroom stories:
+```ts
+import type { NextPage } from 'next';
+import { getSitemapInitialProps } from '@prezly/theme-kit-nextjs';
+
+const Sitemap: NextPage = () => null;
+
+Sitemap.getInitialProps = getSitemapInitialProps;
+
+export default Sitemap;
+```
+
+You can also add additional paths to the sitemap by passing them as a second argument to `getSitemapInitialProps`, like so:
+```ts
+const additionalPaths = ['/my-custom-path'];
+
+Sitemap.getInitialProps = (ctx: NextPageContext) => getSitemapInitialProps(ctx, additionalPaths);
+```
+
+If you need a more customized approach, you can build your own Sitemap by extending the `SitemapBuilder` class exported from the library, as well as referring to the code in the [Sitemap](./tree/main/src/components-nextjs/Sitemap) component directory.
+
 ----
 
 ## What's next
