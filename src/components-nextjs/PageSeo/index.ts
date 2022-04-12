@@ -1,2 +1,2 @@
 export { PageSeo } from './PageSeo';
-export * from './types';
+export * from './lib/types';
