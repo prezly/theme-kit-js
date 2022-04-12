@@ -1,5 +1,5 @@
+import { useAsync } from '@react-hookz/web';
 import { useCallback, useEffect, useState } from 'react';
-import { useAsyncFn } from 'react-use';
 
 import type { PaginationProps } from './types';
 
@@ -30,12 +30,12 @@ export function useInfiniteLoading<T>({
     const pagesTotal = Math.ceil(itemsTotal / pageSize);
     const canLoadMore = currentPage < pagesTotal;
 
-    const [{ error, loading: isLoading }, loadMoreFn] = useAsyncFn(async () => {
+    const [{ error, status }, { execute: loadMoreFn }] = useAsync(async () => {
         const nextPage = currentPage + 1;
         const newData = await fetchingFn(nextPage, pageSize);
         setCurrentPage(nextPage);
         setData((currentData) => [...currentData, ...newData]);
-    }, [currentPage, fetchingFn, setCurrentPage]);
+    });
 
     const loadMore = useCallback(() => {
         if (canLoadMore) {
@@ -59,7 +59,7 @@ export function useInfiniteLoading<T>({
         canLoadMore,
         currentPage,
         data,
-        isLoading,
+        isLoading: status === 'loading',
         loadMore,
         resetData,
     };
