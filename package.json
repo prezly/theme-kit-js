@@ -48,7 +48,8 @@
     "react-dom": "^17.x"
   },
   "dependencies": {
-    "@prezly/sdk": "^6.11.0",
+    "@prezly/sdk": "^6.21.0",
+    "next-seo": "^5.4.0",
     "parse-data-url": "^4.0.1"
   },
   "devDependencies": {
