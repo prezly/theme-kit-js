@@ -123,7 +123,6 @@
     "message": "Search results"
   },
   "search.inputHint": {
-    "description": "This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
     "message": "Type your search"
   },
   "search.inputLabel": {
