@@ -11,6 +11,7 @@ import type { IncomingMessage } from 'http';
 import { LocaleObject } from '../../intl';
 import type { PageProps, ServerSidePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../constants';
+import { isSdkError } from '../lib';
 import { getAlgoliaSettings } from '../lib/getAlgoliaSettings';
 
 import {
@@ -63,8 +64,15 @@ export class PrezlyApi {
         this.themeUuid = themeUuid;
     }
 
-    getStory(uuid: string) {
-        return this.sdk.stories.get(uuid);
+    async getStory(uuid: string) {
+        try {
+            return await this.sdk.stories.get(uuid);
+        } catch (error) {
+            if (isSdkError(error) && error.status === 404) {
+                return null;
+            }
+            throw error;
+        }
     }
 
     async getNewsroom() {
@@ -199,7 +207,14 @@ export class PrezlyApi {
     }
 
     async getGallery(uuid: string) {
-        return this.sdk.newsroomGalleries.get(this.newsroomUuid, uuid);
+        try {
+            return await this.sdk.newsroomGalleries.get(this.newsroomUuid, uuid);
+        } catch (error) {
+            if (isSdkError(error) && error.status === 404) {
+                return null;
+            }
+            throw error;
+        }
     }
 
     /**
