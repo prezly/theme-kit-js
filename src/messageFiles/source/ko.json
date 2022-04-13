@@ -123,12 +123,7 @@
     "message": "검색 결과"
   },
   "search.inputHint": {
-    "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "검색 {inputHintExtra}을(를) 입력하고"
-  },
-  "search.inputHintExtra": {
-    "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "{keyHint}를 누르거나 {buttonLabel}을(를) 클릭하세요"
+    "message": "Type your search"
   },
   "search.inputLabel": {
     "message": "뉴스룸 검색"

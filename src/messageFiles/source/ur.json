@@ -123,12 +123,7 @@
     "message": "تلاش کے نتائج"
   },
   "search.inputHint": {
-    "description": "{inputHintExtra} variable will contain the text from `search.inputHintExtra` string wrapped in a container. This part of the text can either be shown or hidden to fit on the screen. Please construct the sentence in a way that makes sense with both the extra part present and hidden",
-    "message": "تلاش کے لئے {inputHintExtra} درج کریں"
-  },
-  "search.inputHintExtra": {
-    "description": "{keyHint} variable will be replaced with an icon of Enter key, the {buttonLabel} variable will refer to the \"Search\" action",
-    "message": "اور {keyHint} دبائیں یا {buttonLabel} کلک کریں"
+    "message": "Type your search"
   },
   "search.inputLabel": {
     "message": "نیوزروم میں تلاش کریں"
