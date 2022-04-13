@@ -37,3 +37,15 @@ export type AlgoliaStory = Pick<Story, 'uuid' | 'slug' | 'title' | 'subtitle'> &
         culture: Pick<CultureRef, 'code' | 'name' | 'native_name' | 'language_code'>;
         categories: AlgoliaCategoryRef[];
     };
+
+// TODO: This should be exported from `@prezly/sdk`
+export interface SdkError extends Error {
+    status: number;
+    statusText: string;
+    payload: {
+        errors: {
+            reason: string;
+        };
+        message: string;
+    };
+}
