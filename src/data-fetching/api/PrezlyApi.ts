@@ -1,11 +1,14 @@
 import type {
     Category,
+    ExtendedStory,
     ExtraStoryFields,
     Newsroom,
     NewsroomLanguageSettings,
     Story,
 } from '@prezly/sdk';
 import PrezlySDK from '@prezly/sdk';
+import type { StoryBookmarkNode } from '@prezly/slate-types';
+import { isStoryBookmarkNode } from '@prezly/slate-types';
 import type { IncomingMessage } from 'http';
 
 import { LocaleObject } from '../../intl';
@@ -22,6 +25,7 @@ import {
 } from './languages';
 import {
     getContactsQuery,
+    getEmbedStoriesQuery,
     getGalleriesQuery,
     getSlugQuery,
     getSortByPublishedDate,
@@ -226,6 +230,28 @@ export class PrezlyApi {
         }
 
         return null;
+    }
+
+    /**
+     * Returns summaries for stories embed in the current story (like in Bookmark Blocks)
+     * @returns a map of `Story` object with their UUID as keys
+     */
+    async getEmbedStories(story: ExtendedStory) {
+        const nodes = JSON.parse(story.content);
+
+        const embedUuids: Array<string> = await Promise.all(
+            nodes.children.filter(isStoryBookmarkNode).map((c: StoryBookmarkNode) => c.story.uuid),
+        );
+
+        const jsonQuery = JSON.stringify(getEmbedStoriesQuery(this.newsroomUuid, embedUuids));
+        const { stories } = await this.searchStories({
+            jsonQuery,
+        });
+
+        return stories.reduce<Record<Story['uuid'], Story>>(
+            (result, embedStory) => ({ ...result, [embedStory.uuid]: embedStory }),
+            {},
+        );
     }
 
     async getNewsroomServerSideProps(

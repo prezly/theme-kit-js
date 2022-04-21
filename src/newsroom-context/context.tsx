@@ -6,6 +6,7 @@ import type {
     NewsroomContact,
     NewsroomLanguageSettings,
     NewsroomThemePreset,
+    Story,
 } from '@prezly/sdk';
 import type { PropsWithChildren } from 'react';
 import { createContext, useMemo } from 'react';
@@ -39,6 +40,10 @@ export interface NewsroomContextType {
      * Optional: Refers to a currently selected story when navigated to `/[slug]` page.
      */
     currentStory?: ExtendedStory;
+    /**
+     * Optional: Embed stories data referenced from the current story content (currently used by Story Bookmark blocks)
+     */
+    embedStories?: Record<Story['uuid'], Story>;
     /**
      * List of currently enabled newsroom languages, as well as company information translated for each language
      */
@@ -75,6 +80,7 @@ export function NewsroomContextProvider({
     newsroom,
     currentCategory,
     currentStory,
+    embedStories,
     companyInformation,
     languages,
     localeCode,
@@ -95,6 +101,7 @@ export function NewsroomContextProvider({
                 newsroom,
                 currentCategory,
                 currentStory,
+                embedStories,
                 companyInformation,
                 languages,
                 locale,
