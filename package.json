@@ -38,7 +38,7 @@
     "prettier": "prettier --check './**/*.(js|ts|tsx|css)'",
     "prettier:fix": "npm run prettier -- --write --no-list-different",
     "check": "npm run lint && npm run typecheck",
-    "prerelease": "npm run check && npm run build",
+    "prerelease": "npm run clean && npm install && npm run check && npm run build",
     "release": "np",
     "release:preview": "npm run prerelease && np prerelease --any-branch --no-release-draft --tag=preview"
   },
