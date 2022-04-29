@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Leto"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Našli smo {resultsCount} rezultatov za {searchQuery}"
   },
