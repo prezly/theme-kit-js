@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Yil"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "{searchQuery} uchun {resultsCount} natija topdik"
   },

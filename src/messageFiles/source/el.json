@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Έτος"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Βρήκαμε {resultsCount} αποτελέσματα για {searchQuery}"
   },

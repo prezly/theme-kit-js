@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Năm"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Chúng tôi tìm thấy {resultsCount} kết quả cho {searchQuery}"
   },

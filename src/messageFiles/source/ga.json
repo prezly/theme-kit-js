@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Bliain"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "We found {resultsCount} results for {searchQuery}"
   },

@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Година"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Намерихме {resultsCount} резултата за {searchQuery}"
   },

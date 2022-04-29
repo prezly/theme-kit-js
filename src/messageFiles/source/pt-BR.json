@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Ano"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Encontramos {resultsCount} resultados para {searchQuery}"
   },

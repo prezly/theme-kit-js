@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "साल"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "हमें {searchQuery} के लिए {resultsCount} परिणाम मिले"
   },

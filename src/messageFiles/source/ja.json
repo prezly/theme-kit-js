@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "年"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "{searchQuery}で{resultsCount}の結果を見つけました"
   },

@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Év"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "{resultsCount} eredményt találtunk a(z) {searchQuery} keresésre"
   },

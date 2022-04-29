@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "年"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "我們找到了{searchQuery} 的{resultsCount} 結果"
   },

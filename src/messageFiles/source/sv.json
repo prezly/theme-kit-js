@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "År"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Vi hittade {resultsCount} resultat för {searchQuery}"
   },
