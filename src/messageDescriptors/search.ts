@@ -11,6 +11,10 @@ export const search = defineMessages({
         defaultMessage: 'Search',
         description: 'The word should be treated as a verb (e.g. a Search action on a button)',
     },
+    filters: {
+        id: 'search.filters',
+        defaultMessage: 'Filters',
+    },
     inputLabel: {
         id: 'search.inputLabel',
         defaultMessage: 'Search newsroom',
