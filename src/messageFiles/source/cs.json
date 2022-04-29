@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Rok"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Pro vyhledávací dotaz {searchQuery} jsme nalezli tento počet výsledků: {resultsCount}"
   },
