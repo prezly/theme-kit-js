@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Vuosi"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Löysimme {resultsCount} tulosta haulle {searchQuery}"
   },
