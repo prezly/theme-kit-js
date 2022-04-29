@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Gads"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Mēs atradām {resultsCount} rezultātus vaicājumam {searchQuery}"
   },
