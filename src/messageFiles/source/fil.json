@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Taon"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Nahanap namin {resultsCount} ang mga resulta para sa {searchQuery}"
   },
