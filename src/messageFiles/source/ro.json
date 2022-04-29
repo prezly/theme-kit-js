@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "An"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Am găsit {resultsCount} (de) rezultate pentru {searchQuery}"
   },
