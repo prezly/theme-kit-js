@@ -11,6 +11,23 @@ jobs:
             - name: Check out Git repository
               uses: actions/checkout@v2
 
+            - name: Use Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version-file: '.nvmrc'
+
+            - name: Cache node modules
+              uses: actions/cache@v3
+              env:
+                cache-name: cache-node-modules
+              with:
+                path: "**/node_modules"
+                key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+                restore-keys: |
+                  ${{ runner.os }}-build-${{ env.cache-name }}-
+                  ${{ runner.os }}-build-
+                  ${{ runner.os }}-
+
             - name: Install Node.js dependencies
               run: npm ci
 

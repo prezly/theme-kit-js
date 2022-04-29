@@ -29,8 +29,8 @@
   "homepage": "https://github.com/prezly/theme-kit-nextjs#readme",
   "scripts": {
     "clean": "rimraf build/ node_modules/",
-    "prebuild": "npm run clean && npm install",
     "build": "tsc --project .",
+    "watch": "tsc --watch --project .",
     "test": "echo \"Tests? maybe next time ;)\" && exit 0",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
@@ -38,7 +38,7 @@
     "prettier": "prettier --check './**/*.(js|ts|tsx|css)'",
     "prettier:fix": "npm run prettier -- --write --no-list-different",
     "check": "npm run lint && npm run typecheck",
-    "prerelease": "npm run check && npm run build",
+    "prerelease": "npm run clean && npm install && npm run check && npm run build",
     "release": "np",
     "release:preview": "npm run prerelease && np prerelease --any-branch --no-release-draft --tag=preview"
   },
@@ -62,8 +62,11 @@
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "eslint": "^8.8.0",
+    "next": "^12.x",
     "np": "^7.6.0",
     "prettier": "^2.5.1",
+    "react": "^17.x",
+    "react-dom": "^17.x",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.5"
   },
