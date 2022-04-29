@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Il"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Biz {searchQuery} üçün {resultsCount} nəticə tapdıq"
   },
