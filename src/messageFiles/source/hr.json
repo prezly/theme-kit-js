@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Godina"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Pronašli smo {resultsCount} rezultata za {searchQuery}"
   },
