@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Aasta"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Leidsime otsingule {searchQuery} {resultsCount} tulemust"
   },
