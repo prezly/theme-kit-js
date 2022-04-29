@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "שנה"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "מצאנו {resultsCount} תוצאות עבור {searchQuery}"
   },
