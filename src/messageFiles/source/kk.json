@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Жыл"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Біз {searchQuery} бойынша {resultsCount} нәтиже таптық"
   },
