@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "년"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "{searchQuery}에 대한 결과를 {resultsCount}개 찾았습니다"
   },
