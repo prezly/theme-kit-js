@@ -116,6 +116,9 @@
   "search.facets.year": {
     "message": "Metai"
   },
+  "search.filters": {
+    "message": "Filters"
+  },
   "search.fullResultsSubTitle": {
     "message": "Radome {resultsCount} rezultatų {searchQuery} paieškoje"
   },
