@@ -23,6 +23,7 @@
         "prebuild": "npm run clean && npm run prettier:check && npm run intl:compile",
         "copy-messages": "cp -r src/messageFiles/compiled dist/messages",
         "build": "tsc --project .",
+        "watch": "tsc --watch --preserveWatchOutput --project .",
         "postbuild": "npm run copy-messages",
         "prerelease": "npm run build",
         "lint": "eslint src",
