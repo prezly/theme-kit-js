@@ -30,7 +30,7 @@
   "scripts": {
     "clean": "rimraf build/ node_modules/",
     "build": "tsc --project .",
-    "watch": "tsc --watch --project .",
+    "watch": "tsc --watch --preserveWatchOutput --project .",
     "test": "echo \"Tests? maybe next time ;)\" && exit 0",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
