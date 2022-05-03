@@ -41,10 +41,6 @@ export interface NewsroomContextType {
      */
     currentStory?: ExtendedStory;
     /**
-     * Optional: Embed stories data referenced from the current story content (currently used by Story Bookmark blocks)
-     */
-    embedStories?: Record<Story['uuid'], Story>;
-    /**
      * List of currently enabled newsroom languages, as well as company information translated for each language
      */
     languages: NewsroomLanguageSettings[];
@@ -80,7 +76,6 @@ export function NewsroomContextProvider({
     newsroom,
     currentCategory,
     currentStory,
-    embedStories,
     companyInformation,
     languages,
     localeCode,
@@ -101,7 +96,6 @@ export function NewsroomContextProvider({
                 newsroom,
                 currentCategory,
                 currentStory,
-                embedStories,
                 companyInformation,
                 languages,
                 locale,
