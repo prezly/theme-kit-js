@@ -1,14 +1,11 @@
 import type {
     Category,
-    ExtendedStory,
     ExtraStoryFields,
     Newsroom,
     NewsroomLanguageSettings,
     Story,
 } from '@prezly/sdk';
 import PrezlySDK from '@prezly/sdk';
-import type { StoryBookmarkNode } from '@prezly/slate-types';
-import { isStoryBookmarkNode } from '@prezly/slate-types';
 import type { IncomingMessage } from 'http';
 
 import { LocaleObject } from '../../intl';

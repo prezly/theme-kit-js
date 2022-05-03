@@ -6,7 +6,6 @@ import type {
     NewsroomContact,
     NewsroomLanguageSettings,
     NewsroomThemePreset,
-    Story,
 } from '@prezly/sdk';
 import type { PropsWithChildren } from 'react';
 import { createContext, useMemo } from 'react';
