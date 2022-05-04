@@ -117,7 +117,7 @@
     "message": "Metai"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtrai"
   },
   "search.fullResultsSubTitle": {
     "message": "Radome {resultsCount} rezultatų {searchQuery} paieškoje"
@@ -126,7 +126,7 @@
     "message": "Paieškos rezultatai"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Įrašyti savo iešką"
   },
   "search.inputLabel": {
     "message": "Ieškoti naujienose"
