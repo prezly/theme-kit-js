@@ -117,7 +117,7 @@
     "message": "År"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filter"
   },
   "search.fullResultsSubTitle": {
     "message": "Vi hittade {resultsCount} resultat för {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Sökresultat"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Ange din sökning"
   },
   "search.inputLabel": {
     "message": "Sök newsroom"
