@@ -117,7 +117,7 @@
     "message": "År"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtre"
   },
   "search.fullResultsSubTitle": {
     "message": "Vi fandt {resultsCount} resultater for {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Søgeresultater"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Indtast dit søgeord"
   },
   "search.inputLabel": {
     "message": "Søg i nyhedsrummet"
