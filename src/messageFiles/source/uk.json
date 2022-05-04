@@ -117,7 +117,7 @@
     "message": "Рік"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Фільтри"
   },
   "search.fullResultsSubTitle": {
     "message": "Ми знайшли {resultsCount} результати(-ів) для {searchQuery}"
