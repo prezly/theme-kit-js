@@ -117,7 +117,7 @@
     "message": "ปี"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "ตัวกรอง"
   },
   "search.fullResultsSubTitle": {
     "message": "เราพบ {resultsCount} ผลลัพธ์สำหรับ {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "ผลการค้นหา"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "พิมพ์การค้นหาของคุณ"
   },
   "search.inputLabel": {
     "message": "ค้นหาห้องข่าว"
