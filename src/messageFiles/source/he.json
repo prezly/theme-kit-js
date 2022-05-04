@@ -117,7 +117,7 @@
     "message": "שנה"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "מסננים"
   },
   "search.fullResultsSubTitle": {
     "message": "מצאנו {resultsCount} תוצאות עבור {searchQuery}"
