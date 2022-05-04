@@ -117,7 +117,7 @@
     "message": "Vuosi"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Suodattimet"
   },
   "search.fullResultsSubTitle": {
     "message": "Löysimme {resultsCount} tulosta haulle {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Hakutulokset"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Kirjoita hakusi"
   },
   "search.inputLabel": {
     "message": "Hae uutishuoneesta"
