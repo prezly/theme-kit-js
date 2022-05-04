@@ -117,7 +117,7 @@
     "message": "Έτος"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Φίλτρα"
   },
   "search.fullResultsSubTitle": {
     "message": "Βρήκαμε {resultsCount} αποτελέσματα για {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Αποτελέσματα αναζήτησης"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Πληκτρολογήστε την αναζήτησή σας"
   },
   "search.inputLabel": {
     "message": "Αναζήτηση Αίθουσας Σύνταξης"
