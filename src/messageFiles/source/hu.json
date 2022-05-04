@@ -117,7 +117,7 @@
     "message": "Év"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Szűrők"
   },
   "search.fullResultsSubTitle": {
     "message": "{resultsCount} eredményt találtunk a(z) {searchQuery} keresésre"
