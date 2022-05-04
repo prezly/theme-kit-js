@@ -117,7 +117,7 @@
     "message": "Yıl"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtreler"
   },
   "search.fullResultsSubTitle": {
     "message": "{searchQuery} için {resultsCount} sonuç bulduk"
@@ -126,7 +126,7 @@
     "message": "Arama sonuçları"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Aramanı gir"
   },
   "search.inputLabel": {
     "message": "Haber odasında ara"
