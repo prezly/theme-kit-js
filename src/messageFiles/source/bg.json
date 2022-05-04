@@ -117,7 +117,7 @@
     "message": "Година"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Филтри"
   },
   "search.fullResultsSubTitle": {
     "message": "Намерихме {resultsCount} резултата за {searchQuery}"
