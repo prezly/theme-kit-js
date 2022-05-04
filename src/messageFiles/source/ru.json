@@ -89,7 +89,7 @@
     "message": "Переключить навигацию"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Пресс-центр"
   },
   "noStories.subtitle": {
     "message": "Заходите позже, чтобы увидеть новые истории."
@@ -117,7 +117,7 @@
     "message": "Год"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Фильтры"
   },
   "search.fullResultsSubTitle": {
     "message": "Мы нашили {resultsCount} результата(-ов) для {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Результаты поиска"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Введите свой поисковый запрос"
   },
   "search.inputLabel": {
     "message": "Поиск в пресс-центре"
