@@ -117,7 +117,7 @@
     "message": "År"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtre"
   },
   "search.fullResultsSubTitle": {
     "message": "Vi fant {resultsCount} resultater for {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Søkeresultater"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Angi søket ditt"
   },
   "search.inputLabel": {
     "message": "Søk etter nyhetsrom"
