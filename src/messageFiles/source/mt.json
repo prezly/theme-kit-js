@@ -117,7 +117,7 @@
     "message": "Sena"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtri"
   },
   "search.fullResultsSubTitle": {
     "message": "Sibna {resultsCount} riżultati għal {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Riżultati tat-tiftix"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Ittajpja t-tfittxija tiegħek"
   },
   "search.inputLabel": {
     "message": "Fittex fil-kamra tal-aħbarijiet"
