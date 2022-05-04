@@ -117,7 +117,7 @@
     "message": "Gads"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtri"
   },
   "search.fullResultsSubTitle": {
     "message": "Mēs atradām {resultsCount} rezultātus vaicājumam {searchQuery}"
