@@ -117,7 +117,7 @@
     "message": "Anno"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtri"
   },
   "search.fullResultsSubTitle": {
     "message": "Abbiamo trovato {resultsCount} risultati per {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Risultati di ricerca"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Digita la tua ricerca"
   },
   "search.inputLabel": {
     "message": "Cerca redazione"
