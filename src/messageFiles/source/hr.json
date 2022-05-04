@@ -117,7 +117,7 @@
     "message": "Godina"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtri"
   },
   "search.fullResultsSubTitle": {
     "message": "Pronašli smo {resultsCount} rezultata za {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Rezultati pretraživanja"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Upišite svoje pretraživanje"
   },
   "search.inputLabel": {
     "message": "Pretraživanje medijskog centra"
