@@ -117,7 +117,7 @@
     "message": "साल"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "फिल्टर"
   },
   "search.fullResultsSubTitle": {
     "message": "हमें {searchQuery} के लिए {resultsCount} परिणाम मिले"
@@ -126,7 +126,7 @@
     "message": "खोजे नतीजे"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "अपनी खोज लिखें"
   },
   "search.inputLabel": {
     "message": "न्यूजरूम खोजें"
