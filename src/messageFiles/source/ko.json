@@ -117,7 +117,7 @@
     "message": "년"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "필터"
   },
   "search.fullResultsSubTitle": {
     "message": "{searchQuery}에 대한 결과를 {resultsCount}개 찾았습니다"
@@ -126,7 +126,7 @@
     "message": "검색 결과"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "검색어 입력"
   },
   "search.inputLabel": {
     "message": "뉴스룸 검색"
