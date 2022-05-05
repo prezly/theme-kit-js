@@ -117,7 +117,7 @@
     "message": "An"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtre"
   },
   "search.fullResultsSubTitle": {
     "message": "Am găsit {resultsCount} (de) rezultate pentru {searchQuery}"
