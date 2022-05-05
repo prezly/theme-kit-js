@@ -117,7 +117,7 @@
     "message": "An"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtre"
   },
   "search.fullResultsSubTitle": {
     "message": "Am găsit {resultsCount} (de) rezultate pentru {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Rezultate căutare"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Tastați termenul căutat"
   },
   "search.inputLabel": {
     "message": "Căutare în redacția de știri"

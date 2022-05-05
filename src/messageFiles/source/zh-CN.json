@@ -117,7 +117,7 @@
     "message": "年"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "过滤器/滤镜"
   },
   "search.fullResultsSubTitle": {
     "message": "我们找到{resultsCount} 个{searchQuery} 的结果"
@@ -126,7 +126,7 @@
     "message": "搜索结果"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "输入您的搜索"
   },
   "search.inputLabel": {
     "message": "搜索新闻编辑室"

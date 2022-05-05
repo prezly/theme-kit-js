@@ -117,7 +117,7 @@
     "message": "Година"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Филтри"
   },
   "search.fullResultsSubTitle": {
     "message": "Намерихме {resultsCount} резултата за {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Резултати от търсенето"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Напишете търсенето си"
   },
   "search.inputLabel": {
     "message": "Търсене в пресцентъра"

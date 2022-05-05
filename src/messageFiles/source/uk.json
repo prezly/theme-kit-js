@@ -117,7 +117,7 @@
     "message": "Рік"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Фільтри"
   },
   "search.fullResultsSubTitle": {
     "message": "Ми знайшли {resultsCount} результати(-ів) для {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Результати пошуку"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Введіть пошуковий запит"
   },
   "search.inputLabel": {
     "message": "Пошук у прес-центрі"

@@ -117,7 +117,7 @@
     "message": "Rok"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtry"
   },
   "search.fullResultsSubTitle": {
     "message": "Znaleziono {resultsCount} wyników dla {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Wyniki wyszukiwania"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Wpisz wyszukiwaną frazę"
   },
   "search.inputLabel": {
     "message": "Szukaj w newsroomie"

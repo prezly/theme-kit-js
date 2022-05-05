@@ -117,7 +117,7 @@
     "message": "Năm"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Bộ lọc"
   },
   "search.fullResultsSubTitle": {
     "message": "Chúng tôi tìm thấy {resultsCount} kết quả cho {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Kết quả tìm kiếm"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Nhập nội dung tìm kiếm"
   },
   "search.inputLabel": {
     "message": "Tìm kiếm trang tin tức"

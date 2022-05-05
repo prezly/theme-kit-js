@@ -117,7 +117,7 @@
     "message": "Ano"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtros"
   },
   "search.fullResultsSubTitle": {
     "message": "Encontrámos {resultsCount} resultados para {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Resultados da Pesquisa"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Digite a sua pesquisa"
   },
   "search.inputLabel": {
     "message": "Pesquisar sala de imprensa"

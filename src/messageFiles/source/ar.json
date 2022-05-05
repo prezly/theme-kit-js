@@ -117,7 +117,7 @@
     "message": "سنة"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "مرشحات"
   },
   "search.fullResultsSubTitle": {
     "message": "عثرنا على {resultsCount} من نتائج البحث عن {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "نتائج البحث"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "اكتب مصطلح البحث"
   },
   "search.inputLabel": {
     "message": "بحث في غرفة الأخبار"

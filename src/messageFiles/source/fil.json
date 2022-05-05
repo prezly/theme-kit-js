@@ -117,7 +117,7 @@
     "message": "Taon"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Mga Filter"
   },
   "search.fullResultsSubTitle": {
     "message": "Nahanap namin {resultsCount} ang mga resulta para sa {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Mga resulta ng paghahanap"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "I-type kung ano ang hahanapin"
   },
   "search.inputLabel": {
     "message": "Maghanap sa newsroom"

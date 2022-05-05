@@ -117,7 +117,7 @@
     "message": "Aasta"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtrid"
   },
   "search.fullResultsSubTitle": {
     "message": "Leidsime otsingule {searchQuery} {resultsCount} tulemust"
@@ -126,7 +126,7 @@
     "message": "Otsingutulemused"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Sisestage oma otsing"
   },
   "search.inputLabel": {
     "message": "Uudistetoa otsimine"

@@ -117,7 +117,7 @@
     "message": "年"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "過濾器"
   },
   "search.fullResultsSubTitle": {
     "message": "我們找到了{searchQuery} 的{resultsCount} 結果"
@@ -126,7 +126,7 @@
     "message": "搜尋結果"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "輸入您的搜尋"
   },
   "search.inputLabel": {
     "message": "搜尋新聞編輯室"

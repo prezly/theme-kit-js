@@ -89,7 +89,7 @@
     "message": "Пераключыць навігацыю"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Прэс-цэнтр"
   },
   "noStories.subtitle": {
     "message": "Заходзьце пазней, каб убачыць новыя гісторыі."
@@ -117,7 +117,7 @@
     "message": "Год"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Фільтры"
   },
   "search.fullResultsSubTitle": {
     "message": "Мы знайшлі {resultsCount} выніку(аў) для {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Вынікі пошуку"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Увядзіце свой пошукавы запыт"
   },
   "search.inputLabel": {
     "message": "Пошук у прэс-цэнтры"

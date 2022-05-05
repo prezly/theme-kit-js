@@ -117,7 +117,7 @@
     "message": "Il"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtrlər"
   },
   "search.fullResultsSubTitle": {
     "message": "Biz {searchQuery} üçün {resultsCount} nəticə tapdıq"
@@ -126,7 +126,7 @@
     "message": "Axtarış nəticələri"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Axtarışınızı yazın"
   },
   "search.inputLabel": {
     "message": "Xəbər otağında axtarın"

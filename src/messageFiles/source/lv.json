@@ -117,7 +117,7 @@
     "message": "Gads"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtri"
   },
   "search.fullResultsSubTitle": {
     "message": "Mēs atradām {resultsCount} rezultātus vaicājumam {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Meklēšanas rezultāti"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Ierakstiet meklēšanas vaicājumu"
   },
   "search.inputLabel": {
     "message": "Meklēt ziņu telpā"

@@ -117,7 +117,7 @@
     "message": "שנה"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "מסננים"
   },
   "search.fullResultsSubTitle": {
     "message": "מצאנו {resultsCount} תוצאות עבור {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "תוצאות החיפוש"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "נא להזין תוכן חיפוש"
   },
   "search.inputLabel": {
     "message": "חיפוש בחדר עיתונות"

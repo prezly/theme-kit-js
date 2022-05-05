@@ -117,7 +117,7 @@
     "message": "Rok"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtry"
   },
   "search.fullResultsSubTitle": {
     "message": "Pro vyhledávací dotaz {searchQuery} jsme nalezli tento počet výsledků: {resultsCount}"
@@ -126,7 +126,7 @@
     "message": "Výsledky hledání"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Sem zadejte vyhledávání"
   },
   "search.inputLabel": {
     "message": "Hledat ve zpravodajství"

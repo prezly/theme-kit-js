@@ -117,7 +117,7 @@
     "message": "Év"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Szűrők"
   },
   "search.fullResultsSubTitle": {
     "message": "{resultsCount} eredményt találtunk a(z) {searchQuery} keresésre"
@@ -126,7 +126,7 @@
     "message": "Keresési találatok"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Kezdjen gépelni a kereséshez"
   },
   "search.inputLabel": {
     "message": "Keresés a hírolvasóban"

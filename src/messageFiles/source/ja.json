@@ -117,7 +117,7 @@
     "message": "年"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "フィルター"
   },
   "search.fullResultsSubTitle": {
     "message": "{searchQuery}で{resultsCount}の結果を見つけました"
@@ -126,7 +126,7 @@
     "message": "検索結果"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "検索を入力し"
   },
   "search.inputLabel": {
     "message": "ニュースルームを検索"

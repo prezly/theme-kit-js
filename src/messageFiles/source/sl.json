@@ -117,7 +117,7 @@
     "message": "Leto"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtri"
   },
   "search.fullResultsSubTitle": {
     "message": "Našli smo {resultsCount} rezultatov za {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Rezultati iskanja"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Vnesite svoje iskanje"
   },
   "search.inputLabel": {
     "message": "Iskanje uredništva"

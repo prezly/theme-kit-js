@@ -117,7 +117,7 @@
     "message": "Yil"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtrlar"
   },
   "search.fullResultsSubTitle": {
     "message": "{searchQuery} uchun {resultsCount} natija topdik"
@@ -126,7 +126,7 @@
     "message": "Natijalarni qidirish"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Qidiriladigan jumlani yozing"
   },
   "search.inputLabel": {
     "message": "Yangiliklar xonasini qidirish"

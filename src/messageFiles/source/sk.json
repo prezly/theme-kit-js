@@ -117,7 +117,7 @@
     "message": "Rok"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Filtre"
   },
   "search.fullResultsSubTitle": {
     "message": "Našli sme {resultsCount} výsledky / výsledkov pre {searchQuery}"
@@ -126,7 +126,7 @@
     "message": "Výsledok vyhľadávania"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Zadajte vaše vyhľadávanie"
   },
   "search.inputLabel": {
     "message": "Hľadať v newsroome"

@@ -117,7 +117,7 @@
     "message": "سال"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "فلٹرز"
   },
   "search.fullResultsSubTitle": {
     "message": "ہمیں {searchQuery} کے لئے {resultsCount} نتائج ملے"
@@ -126,7 +126,7 @@
     "message": "تلاش کے نتائج"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "تلاش کے لئے الفاظ درج کریں"
   },
   "search.inputLabel": {
     "message": "نیوزروم میں تلاش کریں"
