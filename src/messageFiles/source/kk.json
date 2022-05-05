@@ -117,7 +117,7 @@
     "message": "Жыл"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Сүзгілер"
   },
   "search.fullResultsSubTitle": {
     "message": "Біз {searchQuery} бойынша {resultsCount} нәтиже таптық"
@@ -126,7 +126,7 @@
     "message": "Іздеу нәтижелері"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Іздеген нәрсеңізді теріңіз"
   },
   "search.inputLabel": {
     "message": "Жаңалықтар бөлмесінен іздеу"
