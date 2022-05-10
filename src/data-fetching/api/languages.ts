@@ -101,7 +101,7 @@ export function getLanguageFromNextLocaleIsoCode(
     const locale = LocaleObject.fromAnyCode(nextLocaleIsoCode);
     let targetLanguage: NewsroomLanguageSettings | undefined;
 
-    if (nextLocaleIsoCode.length === 2) {
+    if (nextLocaleIsoCode.length >= 2 && nextLocaleIsoCode.length <= 4) {
         targetLanguage =
             getLanguageByExactLocaleCode(languages, locale) ||
             getLanguageByNeutralLocaleCode(languages, locale) ||
