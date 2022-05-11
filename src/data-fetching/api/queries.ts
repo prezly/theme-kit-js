@@ -18,16 +18,6 @@ export function getSlugQuery(newsroomUuid: string, slug: string) {
     };
 }
 
-export function getEmbedStoriesQuery(newsroomUuid: string, uuids: string[]) {
-    return {
-        $and: [
-            { 'newsroom.uuid': { $in: [newsroomUuid] } },
-            { uuid: { $in: uuids } },
-            ...publishedAndAccessible,
-        ],
-    };
-}
-
 export function getStoriesQuery(newsroomUuid: string, categoryId?: number, localeCode?: string) {
     const query: any = {
         $and: [...publishedAndPublic, { 'newsroom.uuid': { $in: [newsroomUuid] } }],

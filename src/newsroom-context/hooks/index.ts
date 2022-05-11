@@ -4,7 +4,6 @@ export * from './useCompanyInformation';
 export * from './useCurrentCategory';
 export * from './useCurrentLocale';
 export * from './useCurrentStory';
-export * from './useEmbedStory';
 export * from './useGetLinkLocaleSlug';
 export * from './useGetTranslationUrl';
 export * from './useLanguages';
