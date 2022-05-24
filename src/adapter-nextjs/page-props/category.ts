@@ -14,7 +14,7 @@ export interface CategoryPageProps<StoryType extends Story = Story> {
 }
 
 interface Options {
-    storiesIncludeFields?: (keyof ExtraStoryFields)[];
+    extraStoryFields?: (keyof ExtraStoryFields)[];
     pageSize?: number;
 }
 
@@ -22,7 +22,7 @@ export function getCategoryPageServerSideProps<
     CustomProps extends Record<string, any>,
     StoryType extends Story = Story,
 >(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options) {
-    const { pageSize = DEFAULT_PAGE_SIZE, storiesIncludeFields } = options || {};
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options || {};
 
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
@@ -45,7 +45,7 @@ export function getCategoryPageServerSideProps<
 
         const { stories, storiesTotal } = await api.getStoriesFromCategory(category, {
             page,
-            include: storiesIncludeFields,
+            include: extraStoryFields,
             localeCode,
         });
 
