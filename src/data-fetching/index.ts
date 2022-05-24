@@ -1,6 +1,7 @@
 export * from './api';
 export * from './constants';
 export * from './getAssetsUrl';
+export * from './getDataRequestLink';
 export * from './getLocalizedCategoryData';
 export * from './getNewsroomLogoUrl';
 export * from './getPrivacyPortalUrl';
