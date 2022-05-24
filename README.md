@@ -181,6 +181,49 @@ This function returns the combined base props and your additional props, with so
 
 The third argument is needed to properly handle locale redirects. It should contain the URL for the current page without locale prefixes (like `/`, `/media`, `/category/${category.slug}`. If omitted, the redirect logic will not be executing.
 
+**Helpers for common pages**
+
+To reduce boilerplate for common scenarios, the library provides a collection of prop fetching methods for each of the default Prezly Newsroom pages. All of them support custom props, so you can still have minimal boilerplate with all the same customization. If you have a more specific scenario, you can still use the code shown in the beginning of this section.
+
+Here's an example of `getServerSideProps` function with no custom props:
+```ts
+import { getHomepageServerSideProps } from '@prezly/theme-kit-nextjs';
+
+/* ...your page component */
+
+export const getServerSideProps = getHomepageServerSideProps({});
+```
+
+And here's a more sophisticated scenario from Bea Theme, with extra options and custom props that depend on the Next request context and newsroom context props:
+```ts
+import { getHomepageServerSideProps, type HomePageProps } from '@prezly/theme-kit-nextjs';
+import dynamic from 'next/dynamic';
+import type { FunctionComponent } from 'react';
+
+import { importMessages, isTrackingEnabled } from '@/utils';
+import type { BasePageProps, StoryWithImage } from 'types';
+
+const Stories = dynamic(() => import('@/modules/Stories'), { ssr: true });
+
+type Props = BasePageProps & HomePageProps<StoryWithImage>;
+
+const IndexPage: FunctionComponent<Props> = ({ stories, pagination }) => (
+    <Stories stories={stories} pagination={pagination} />
+);
+
+export const getServerSideProps = getHomepageServerSideProps<BasePageProps, StoryWithImage>(
+    async (context, { newsroomContextProps }) => ({
+        isTrackingEnabled: isTrackingEnabled(context),
+        translations: await importMessages(newsroomContextProps.localeCode),
+    }),
+    { extraStoryFields: ['thumbnail_image'] },
+);
+
+export default IndexPage;
+```
+
+You can find all of the helper methods in the [page-props](./tree/main/src/adapter-nextjs/page-props) directory. You can also refer to [Prezly Bea Theme](https://github.com/prezly/theme-nextjs-bea) for usage examples.
+
 ### SEO Helper components
 
 This library provides two components: [PageSeo](./tree/main/src/components-nextjs/PageSeo) and [StorySeo](./tree/main/src/components-nextjs/StorySeo), both based on the [next-seo](https://github.com/garmeeh/next-seo) library. They consume information from the `NewsroomContext` and provide all the necessary tags for your pages, with correct social preview, as well as JsonLD and OpenGraph data for your stories. You can also override the parameters for `PageSeo` component, these will be passed straight to `NextSeo` component. See the JSDoc comments on the exported components to get instructions on their usage.
