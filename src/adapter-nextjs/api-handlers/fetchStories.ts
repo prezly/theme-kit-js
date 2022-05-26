@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { getPrezlyApi } from '../../data-fetching';
+import { getPrezlyApi } from '../../data-fetching/api';
 
 export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== 'POST') {
