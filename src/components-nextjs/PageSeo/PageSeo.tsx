@@ -4,8 +4,7 @@ import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import { stripHtml } from 'string-strip-html';
 
-import { getNewsroomLogoUrl, getUsedLanguages } from '../../data-fetching';
-import { LocaleObject } from '../../intl';
+import { getUsedLanguages, LocaleObject } from '../../intl';
 import {
     useCompanyInformation,
     useCurrentLocale,
@@ -15,6 +14,7 @@ import {
     useLanguages,
     useNewsroom,
 } from '../../newsroom-context';
+import { getNewsroomLogoUrl } from '../../utils';
 
 import { getAbsoluteUrl } from './lib/getAbsoluteUrl';
 import type { AlternateLanguageLink } from './lib/types';

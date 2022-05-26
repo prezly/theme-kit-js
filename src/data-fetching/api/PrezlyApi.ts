@@ -8,18 +8,17 @@ import type {
 import PrezlySDK from '@prezly/sdk';
 import type { IncomingMessage } from 'http';
 
-import { LocaleObject } from '../../intl';
-import type { PageProps, ServerSidePageProps } from '../../types';
-import { DEFAULT_PAGE_SIZE } from '../constants';
-import { isSdkError } from '../lib';
-import { getAlgoliaSettings } from '../lib/getAlgoliaSettings';
-
 import {
     getCompanyInformation,
     getDefaultLanguage,
     getLanguageFromNextLocaleIsoCode,
     getLanguageFromStory,
-} from './languages';
+    LocaleObject,
+} from '../../intl';
+import type { PageProps, ServerSidePageProps } from '../../types';
+import { DEFAULT_PAGE_SIZE } from '../../utils';
+import { getAlgoliaSettings, isSdkError } from '../lib';
+
 import {
     getContactsQuery,
     getGalleriesQuery,

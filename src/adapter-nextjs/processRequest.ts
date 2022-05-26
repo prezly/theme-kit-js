@@ -1,7 +1,6 @@
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
-import { getShortestLocaleCode } from '../data-fetching';
-import { getRedirectToCanonicalLocale, LocaleObject } from '../intl';
+import { getRedirectToCanonicalLocale, getShortestLocaleCode, LocaleObject } from '../intl';
 import type { PageProps, ServerSidePageProps } from '../types';
 
 /**

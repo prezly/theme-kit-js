@@ -2,8 +2,8 @@ import type { Category, ExtendedStory } from '@prezly/sdk';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
-import { getCategoryHasTranslation, getCategoryUrl } from '../../data-fetching';
 import type { LocaleObject } from '../../intl';
+import { getCategoryHasTranslation, getCategoryUrl } from '../../utils';
 
 import { useCurrentCategory } from './useCurrentCategory';
 import { useCurrentStory } from './useCurrentStory';
