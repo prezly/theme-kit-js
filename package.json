@@ -48,11 +48,10 @@
     "react-dom": "^17.x"
   },
   "dependencies": {
-    "@prezly/sdk": "^6.23.0",
+    "@prezly/sdk": "^6.24.0",
     "@react-hookz/web": "^13.2.1",
     "next-seo": "^5.4.0",
-    "parse-data-url": "^4.0.1",
-    "string-strip-html": "^8.3.0"
+    "parse-data-url": "^4.0.1"
   },
   "devDependencies": {
     "@prezly/eslint-config": "^4.0.0",

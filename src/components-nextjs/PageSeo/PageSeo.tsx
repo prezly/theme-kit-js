@@ -2,7 +2,6 @@ import { NextSeo } from 'next-seo';
 import type { NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
-import { stripHtml } from 'string-strip-html';
 
 import { getUsedLanguages, LocaleObject } from '../../intl';
 import {
@@ -47,7 +46,7 @@ export function PageSeo({
     const { asPath } = useRouter();
 
     const pageTitle = title || companyInformation.name;
-    const pageDescription = description || stripHtml(companyInformation.about).result;
+    const pageDescription = description || companyInformation.about_plaintext;
     const canonicalUrl =
         canonical || getAbsoluteUrl(asPath, newsroom.url, getLinkLocaleSlug(currentLocale));
     const siteName = companyInformation.name;
