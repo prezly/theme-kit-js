@@ -1,6 +1,4 @@
 {
-  "extends": [
-    "@prezly",
-    "@prezly/eslint-config/react"
-  ]
+  "extends": ["@prezly", "@prezly/eslint-config/react"],
+  "ignorePatterns": ["**/*.test.*"]
 }
