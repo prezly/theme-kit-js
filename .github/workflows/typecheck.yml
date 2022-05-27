@@ -1,10 +1,10 @@
-name: Build
+name: Typecheck
 
 on: [push]
 
 jobs:
-  build:
-
+  typecheck:
+    name: Run TSC type check
     runs-on: ubuntu-latest
 
     steps:
@@ -29,6 +29,6 @@ jobs:
 
     - run: npm ci
 
-    - run: npm run build
+    - run: npm run typecheck
       env:
         CI: true
