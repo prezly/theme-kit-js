@@ -235,24 +235,24 @@ This kit can also help you with building your Sitemap automatically. Here's what
 1. Create a sitemap page file: `/pages/sitemap.xml.ts`
 2. Use this code to display the default Sitemap built with your Newsroom stories:
 ```ts
+import { getSitemapServerSideProps } from '@prezly/theme-kit-nextjs';
 import type { NextPage } from 'next';
-import { getSitemapInitialProps } from '@prezly/theme-kit-nextjs';
 
 const Sitemap: NextPage = () => null;
 
-Sitemap.getInitialProps = getSitemapInitialProps;
+export const getServerSideProps = getSitemapServerSideProps();
 
 export default Sitemap;
 ```
 
-You can also add additional paths to the sitemap by passing them as a second argument to `getSitemapInitialProps`, like so:
+You can also add additional paths to the sitemap by passing them as an argument to `getSitemapServerSideProps`, like so:
 ```ts
 const additionalPaths = ['/my-custom-path'];
 
-Sitemap.getInitialProps = (ctx: NextPageContext) => getSitemapInitialProps(ctx, additionalPaths);
+export const getServerSideProps = getSitemapServerSideProps(additionalPaths);
 ```
 
-If you need a more customized approach, you can build your own Sitemap by extending the `SitemapBuilder` class exported from the library, as well as referring to the code in the [Sitemap](./tree/main/src/components-nextjs/Sitemap) component directory.
+If you need a more customized approach, you can build your own Sitemap by extending the `SitemapBuilder` class exported from the library, as well as referring to the code in the [Sitemap](./tree/main/src/adapter-nextjs/page-props/sitemap) component directory.
 
 ----
 
