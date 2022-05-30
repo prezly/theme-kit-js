@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Lataa lisää"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Tietosuojapyynnöt"
   },
