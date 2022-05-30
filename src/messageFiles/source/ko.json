@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "추가 로드하기"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "개인정보 요청"
   },
