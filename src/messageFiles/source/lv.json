@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Ielādēt vairāk"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Privātuma pieprasījumi"
   },
