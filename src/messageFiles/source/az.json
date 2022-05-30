@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Daha çox yüklə"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Məxfilik tələbləri"
   },
