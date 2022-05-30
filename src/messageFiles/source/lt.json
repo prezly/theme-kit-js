@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Įkelti daugiau"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Privatumo reikalavimai"
   },
