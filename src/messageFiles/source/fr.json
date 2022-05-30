@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Charger davantage"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Demandes de renseignements personnels"
   },
