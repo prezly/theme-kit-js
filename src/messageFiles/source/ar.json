@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "تحميل المزيد"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "طلبات الخصوصية"
   },
