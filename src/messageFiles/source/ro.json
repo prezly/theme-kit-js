@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Încarcă mai mult"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Cereri de confidențialitate"
   },
