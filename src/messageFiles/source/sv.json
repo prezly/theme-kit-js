@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Ladda fler"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Sekretessförfrågningar"
   },
