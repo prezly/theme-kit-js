@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Tella' aktar"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Talbiet tal-privatezza"
   },
