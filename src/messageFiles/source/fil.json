@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Mag-load pa"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Mga kahilingan sa pagkapribado"
   },
