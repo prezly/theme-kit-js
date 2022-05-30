@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Zjistit více"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Požadavky na ochranu osobních údajů"
   },
