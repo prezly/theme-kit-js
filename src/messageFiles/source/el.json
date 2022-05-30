@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Φορτώστε περισσότερα"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Αιτήματα απορρήτου"
   },
