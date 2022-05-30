@@ -17,6 +17,10 @@ export const actions = defineMessages({
         id: 'actions.loadMore',
         defaultMessage: 'Load more',
     },
+    more: {
+        id: 'actions.more',
+        defaultMessage: 'More',
+    },
     privacyRequests: {
         id: 'actions.privacyRequests',
         defaultMessage: 'Privacy requests',
