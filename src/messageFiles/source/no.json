@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Last inn mer"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Personvernhenvendelser"
   },
