@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "โหลดเพิ่ม"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "คำขอความเป็นส่วนตัว"
   },
