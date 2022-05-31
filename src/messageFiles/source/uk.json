@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Завантажити більще"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Запити про конфіденційність"
   },

@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Indlæs mere"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Fortrolighedsanmodninger"
   },

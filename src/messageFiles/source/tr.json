@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Daha fazlasını yükle"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Gizlilik talepleri"
   },

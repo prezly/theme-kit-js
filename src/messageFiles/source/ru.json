@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Загрузить еще"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Запрос персональных данных"
   },

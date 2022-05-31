@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Naloži več"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Zahteve glede zasebnosti"
   },

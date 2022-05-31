@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Laai meer"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Privaatheid versoeke"
   },

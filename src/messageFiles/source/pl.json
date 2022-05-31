@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Załaduj więcej"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Żądania dot. prywatności"
   },

@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Басқаларын жүктеу"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Құпиялылыққа қатысты талаптар"
   },

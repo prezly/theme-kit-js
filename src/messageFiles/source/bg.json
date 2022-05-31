@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Зареди повече"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Заявки за достъп до лична информация"
   },

@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Továbbiak betöltése"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Adatvédelmi kérések"
   },

@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "加载更多"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "隐私请求"
   },

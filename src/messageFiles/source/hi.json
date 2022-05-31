@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "और लोड करें"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "गोपनीयता के अनुरोध"
   },

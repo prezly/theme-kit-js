@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "続きを読み込む"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "プライバシーに関するリクエスト"
   },

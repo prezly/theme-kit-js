@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "مزید لوڈ کریں"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "پرائیویسی درخواستیں"
   },

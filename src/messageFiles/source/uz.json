@@ -11,6 +11,9 @@
   "actions.loadMore": {
     "message": "Ko‘proq yuklash"
   },
+  "actions.more": {
+    "message": "More"
+  },
   "actions.privacyRequests": {
     "message": "Maxfiylik talablari"
   },
