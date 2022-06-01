@@ -45,6 +45,7 @@ export function getCategoryPageServerSideProps<
 
         const { stories, storiesTotal } = await api.getStoriesFromCategory(category, {
             page,
+            pageSize,
             include: extraStoryFields,
             localeCode,
         });

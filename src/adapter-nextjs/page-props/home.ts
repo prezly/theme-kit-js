@@ -38,6 +38,7 @@ export function getHomepageServerSideProps<
 
         const storiesPaginated = await api.getStories({
             page,
+            pageSize,
             include: extraStoryFields,
             localeCode,
         });
