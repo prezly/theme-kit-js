@@ -11,7 +11,9 @@ export function getSitemapServerSideProps(additionalPaths?: string[]) {
 
         if (!req || !res) {
             // client side
-            return null;
+            return {
+                props: {},
+            };
         }
 
         const baseUrl = req.headers.host || '/';
@@ -34,6 +36,8 @@ export function getSitemapServerSideProps(additionalPaths?: string[]) {
         res.write(sitemapBuilder.serialize());
         res.end();
 
-        return null;
+        return {
+            props: {},
+        };
     };
 }
