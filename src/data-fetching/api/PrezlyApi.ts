@@ -27,6 +27,7 @@ import {
     getStoriesQuery,
 } from './queries';
 
+const CATEGORIES_SORT_ORDER = '+order';
 const DEFAULT_SORT_ORDER: SortOrder = 'desc';
 
 type SortOrder = 'desc' | 'asc';
@@ -181,7 +182,9 @@ export class PrezlyApi {
     }
 
     async getCategories(): Promise<Category[]> {
-        const categories = await this.sdk.newsroomCategories.list(this.newsroomUuid);
+        const categories = await this.sdk.newsroomCategories.list(this.newsroomUuid, {
+            sortOrder: CATEGORIES_SORT_ORDER,
+        });
 
         return Array.isArray(categories) ? categories : Object.values(categories);
     }
