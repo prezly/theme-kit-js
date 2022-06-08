@@ -181,7 +181,9 @@ export class PrezlyApi {
     }
 
     async getCategories(): Promise<Category[]> {
-        const categories = await this.sdk.newsroomCategories.list(this.newsroomUuid);
+        const categories = await this.sdk.newsroomCategories.list(this.newsroomUuid, {
+            sortOrder: '+order',
+        });
 
         return Array.isArray(categories) ? categories : Object.values(categories);
     }
