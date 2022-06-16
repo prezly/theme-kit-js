@@ -58,7 +58,7 @@
     "@types/jest": "27.5.2",
     "@types/node": "17.0.14",
     "@types/parse-data-url": "3.0.0",
-    "@types/react": "17.0.45",
+    "@types/react": "17.0.46",
     "@types/react-dom": "17.0.17",
     "eslint": "8.17.0",
     "jest": "28.1.1",
