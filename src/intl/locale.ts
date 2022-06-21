@@ -51,6 +51,7 @@ const SUPPORTED_LOCALES = [
     'sk',
     'sl',
     'sv',
+    'sw',
     'th',
     'tr',
     'uk',

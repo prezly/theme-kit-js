@@ -95,6 +95,7 @@ module.exports = [
     'sk-SK',
     'sl-SI',
     'sv-SE',
+    'sw',
     'th-TH',
     'tr-TR',
     'uk-UA',
