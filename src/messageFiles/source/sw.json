@@ -1,160 +1,160 @@
 {
   "actions.backToHomepage": {
-    "message": "Back to homepage"
+    "message": "Rudi kwa Ukurasa wa Nyumbani"
   },
   "actions.copyShareUrl": {
-    "message": "Copy URL"
+    "message": "Nakili Kiunganishi"
   },
   "actions.download": {
     "message": "Download"
   },
   "actions.loadMore": {
-    "message": "Load more"
+    "message": "Pakia zaidi"
   },
   "actions.more": {
-    "message": "More"
+    "message": "Zaidi"
   },
   "actions.privacyRequests": {
-    "message": "Privacy requests"
+    "message": "Maombi ya faragha"
   },
   "actions.reload": {
-    "message": "Reload"
+    "message": "Pakua tena"
   },
   "actions.share": {
-    "message": "Share:"
+    "message": "Shiriki:"
   },
   "actions.startUsingCookies": {
-    "message": "Start using cookies"
+    "message": "Anza kutumia vidakuzi"
   },
   "actions.stopUsingCookies": {
-    "message": "Stop using cookies"
+    "message": "Acha kutumia vidakuzi"
   },
   "actions.subscribe": {
-    "message": "Subscribe"
+    "message": "Jisajili"
   },
   "actions.toggleFilters": {
-    "message": "Toggle search filters"
+    "message": "Geuza vichujio vya utafutaji"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Jiondoe"
   },
   "boilerplate.contact": {
-    "message": "Contact"
+    "message": "Mawasiliano"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "Kuhusu {companyName}"
   },
   "categories.title": {
-    "message": "Categories"
+    "message": "Kategoria"
   },
   "contacts.title": {
-    "message": "Contact us"
+    "message": "Wasiliana nasi"
   },
   "cookieConsent.accept": {
-    "message": "Yes, you can use cookies"
+    "message": "Ndio, unaweza kutumia vidakuzi"
   },
   "cookieConsent.notice": {
-    "message": "You can revoke cookies at anytime at the bottom of the page."
+    "message": "Unaweza kubatilisha vidakuzi wakati wowote chini ya ukurasa."
   },
   "cookieConsent.reject": {
-    "message": "No, do not use cookies"
+    "message": "Hapana, usitumie vidakuzi"
   },
   "cookieConsent.subtitle": {
-    "message": "We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others."
+    "message": "Tunatumia vidakuzi kwenye tovuti yetu. Zinatusaidia kukufahamu kidogo na jinsi unavyotumia tovuti yetu. Hii hutusaidia kukupa hali ya utumiaji yenye thamani zaidi na iliyoundwa mahsusi kwako na kwa wengine."
   },
   "cookieConsent.title": {
-    "message": "We would like to use cookies"
+    "message": "Tungependa kutumia vidakuzi"
   },
   "errors.emailInvalid": {
-    "message": "Introduce a valid email address"
+    "message": "Tambulisha barua pepe halali"
   },
   "errors.fieldRequired": {
-    "message": "This field is required"
+    "message": "Hii sehemu inahitajika"
   },
   "errors.unknown": {
-    "message": "Something went wrong. Please try submitting the form again"
+    "message": "Hitilafu fulani imetokea. Tafadhali jaribu kuwasilisha fomu tena"
   },
   "mediaGallery.title": {
-    "message": "Media gallery"
+    "message": "Hifadhi ya Midia"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
-    "message": "Embargo until {date}"
+    "message": "Embargo mpaka {date}"
   },
   "misc.loading": {
-    "message": "Loading..."
+    "message": "Inapakia..."
   },
   "misc.shareUrlCopied": {
-    "message": "URL copied!"
+    "message": "URL imenakiliwa!"
   },
   "misc.toggleMobileNavigation": {
     "description": "A tooltip for a button that toggles the mobile menu on the web page",
-    "message": "Toggle navigation"
+    "message": "Geuza urambazaji"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Chumba cha habari"
   },
   "noStories.subtitle": {
-    "message": "Come back later to see new stories."
+    "message": "Rudi baadaye ili kuona hadithi mpya."
   },
   "noStories.title": {
-    "message": "Welcome to {newsroom}!"
+    "message": "Karibu kwa {newsroom}!"
   },
   "notFound.subtitle": {
-    "message": "If you typed the URL yourself, check the spelling in the address bar."
+    "message": "Ikiwa uliandika URL mwenyewe, angalia tahajia kwenye upau wa anwani."
   },
   "notFound.title": {
-    "message": "The page you’re looking for doesn’t exist..."
+    "message": "Ukurasa unaotafuta haupo..."
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",
-    "message": "Search"
+    "message": "Tafuta"
   },
   "search.facets.category": {
-    "message": "Category"
+    "message": "Kategoria"
   },
   "search.facets.month": {
-    "message": "Month"
+    "message": "Mwezi"
   },
   "search.facets.year": {
-    "message": "Year"
+    "message": "Mwaka"
   },
   "search.filters": {
-    "message": "Filters"
+    "message": "Vichujio"
   },
   "search.fullResultsSubTitle": {
-    "message": "We found {resultsCount} results for {searchQuery}"
+    "message": "Tumepata matokeo {resultsCount} kwa {searchQuery}"
   },
   "search.fullResultsTitle": {
-    "message": "Search results"
+    "message": "Matokeo ya utafutaji"
   },
   "search.inputHint": {
-    "message": "Type your search"
+    "message": "Andika utafutaji wako"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Tafuta chumba cha habari"
   },
   "search.noResults": {
-    "message": "Nothing found! Please try another search term!"
+    "message": "Hakuna kilichopatikana! Tafadhali jaribu neno lingine la utafutaji!"
   },
   "search.resultsTitle": {
-    "message": "Quick results"
+    "message": "Matokeo ya haraka"
   },
   "search.showAllResults": {
-    "message": "Show all results"
+    "message": "Onyesha matokeo yote"
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Search"
+    "message": "Tafuta"
   },
   "search.viewLess": {
-    "message": "View less"
+    "message": "Angalia machache"
   },
   "search.viewMore": {
-    "message": "View more"
+    "message": "Tazama mengi"
   },
   "serverError.subtitle": {
-    "message": "Try refreshing the page or coming back a bit later."
+    "message": "Jaribu kuonyesha upya ukurasa au urudi baadaye kidogo."
   },
   "serverError.title": {
     "message": "Something went wrong..."
