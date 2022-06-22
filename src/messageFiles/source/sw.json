@@ -6,7 +6,7 @@
     "message": "Nakili Kiunganishi"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Pakua"
   },
   "actions.loadMore": {
     "message": "Pakia zaidi"
@@ -157,19 +157,19 @@
     "message": "Jaribu kuonyesha upya ukurasa au urudi baadaye kidogo."
   },
   "serverError.title": {
-    "message": "Something went wrong..."
+    "message": "Hitilafu fulani imetokea..."
   },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
-    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
+    "message": "Kwa kubonyeza \"{subscribe}\" Ninathibitisha kuwa nimesoma na kukubaliana na {privacyPolicyLink}."
   },
   "subscription.formTitle": {
-    "message": "Get updates in your mailbox"
+    "message": "Pata masasisho kwenye kisanduku chako cha barua pepe"
   },
   "subscription.labelEmail": {
-    "message": "Your email address"
+    "message": "Anwani yako ya barua pepe"
   },
   "subscription.privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Sera ya Faragha"
   }
 }
