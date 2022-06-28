@@ -155,12 +155,18 @@ describe('getLanguageFromNextLocaleIsoCode', () => {
         expect(getLanguageFromNextLocaleIsoCode(ALL_LANGUAGES, 'en')).toEqual(LANGUAGES.en);
     });
 
-    it('returns language by neutral code second', () => {
-        expect(getLanguageFromNextLocaleIsoCode(ALL_LANGUAGES, 'nl')).toEqual(LANGUAGES.nl_BE);
+    it('returns language by region code second', () => {
+        expect(getLanguageFromNextLocaleIsoCode(ALL_LANGUAGES, 'be')).toEqual(LANGUAGES.nl_BE);
+        expect(getLanguageFromNextLocaleIsoCode(ALL_LANGUAGES, 'nl')).toEqual(LANGUAGES.nl_NL);
     });
 
-    it('returns language by region code thrid', () => {
-        expect(getLanguageFromNextLocaleIsoCode(ALL_LANGUAGES, 'us')).toEqual(LANGUAGES.en_US);
+    it('returns language by neutral code thrid', () => {
+        expect(
+            getLanguageFromNextLocaleIsoCode(
+                ALL_LANGUAGES.filter(({ code }) => code !== 'fr'),
+                'fr',
+            ),
+        ).toEqual(LANGUAGES.fr_BE);
     });
 
     it('returns undefined when no language found', () => {
