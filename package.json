@@ -40,7 +40,7 @@
     "check": "npm run lint && npm run typecheck",
     "prerelease": "npm run clean && npm install && npm run check && npm run build",
     "release": "np",
-    "release:preview": "npm run prerelease && np prerelease --any-branch --no-release-draft --tag=preview"
+    "release:preview": "npm run prerelease && np preminor --any-branch --no-release-draft --tag=preview"
   },
   "peerDependencies": {
     "next": "^12.x",
