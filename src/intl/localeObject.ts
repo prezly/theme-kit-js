@@ -13,7 +13,7 @@ export class LocaleObject {
     private localeCode: string;
 
     private constructor(localeCode: string) {
-        if (!/^([a-z]+)-?([a-z\d]+)$/.test(localeCode.toLowerCase())) {
+        if (!/^([a-z]{2,3})-?([a-z\d]{0,4})$/.test(localeCode.toLowerCase())) {
             throw new Error('Invalid locale code provided!');
         }
 
