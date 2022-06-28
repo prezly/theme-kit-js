@@ -200,18 +200,16 @@ describe('getShortestLocaleCode', () => {
     it('returns region code if it is the only culture with that region', () => {
         expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('en-US'))).toBe('US');
         expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('en-GB'))).toBe('GB');
+        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('nl-NL'))).toBe('NL');
+        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('fr'))).toBe('FR');
     });
 
     it('returns full code if it can not be shortened', () => {
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('fr'))).toBe('fr');
         expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('fr-BE'))).toBe(
             'fr_BE',
         );
         expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('nl-BE'))).toBe(
             'nl_BE',
-        );
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('nl-NL'))).toBe(
-            'nl_NL',
         );
     });
 });

@@ -210,7 +210,8 @@ export function getShortestLocaleCode(
     );
     if (
         matchingLanguagesByRegionCode.length === 1 &&
-        !mathchingNeutralLanguagesByRegionCode.length
+        // If there are 2 or more matching neutral languages, it means that there are no languages that can be shortened to neutral code
+        mathchingNeutralLanguagesByRegionCode.length !== 1
     ) {
         return shortRegionCode;
     }
