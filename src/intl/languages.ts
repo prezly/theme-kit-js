@@ -71,6 +71,7 @@ export function getLanguageByNeutralLocaleCode(
 
     // Prefer default language
     const defaultLanguage = getDefaultLanguage(languages);
+    // TODO: This doesn't align with other methods logic
     if (defaultLanguage.code === locale.toUnderscoreCode()) {
         return defaultLanguage;
     }
@@ -79,8 +80,7 @@ export function getLanguageByNeutralLocaleCode(
     const usedLanguages = getUsedLanguages(languages);
     const usedLanguage = usedLanguages.find(
         ({ code }) =>
-            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode ||
-            code === neutralLanguageCode,
+            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode,
     );
     if (usedLanguage) {
         return usedLanguage;
@@ -89,8 +89,7 @@ export function getLanguageByNeutralLocaleCode(
     // Search in all languages
     return languages.find(
         ({ code }) =>
-            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode ||
-            code === neutralLanguageCode,
+            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode,
     );
 }
 
@@ -144,9 +143,6 @@ export function getLanguageFromNextLocaleIsoCode(
             getLanguageByExactLocaleCode(languages, locale) ||
             getLanguageByNeutralLocaleCode(languages, locale) ||
             getLanguageByShortRegionCode(languages, locale);
-        if (targetLanguage) {
-            return targetLanguage;
-        }
     } else {
         targetLanguage = getLanguageByExactLocaleCode(languages, locale);
     }
