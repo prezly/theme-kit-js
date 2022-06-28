@@ -71,6 +71,7 @@ export function getLanguageByNeutralLocaleCode(
 
     // Prefer default language
     const defaultLanguage = getDefaultLanguage(languages);
+    // TODO: This doesn't align with other methods logic
     if (defaultLanguage.code === locale.toUnderscoreCode()) {
         return defaultLanguage;
     }
@@ -79,8 +80,7 @@ export function getLanguageByNeutralLocaleCode(
     const usedLanguages = getUsedLanguages(languages);
     const usedLanguage = usedLanguages.find(
         ({ code }) =>
-            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode ||
-            code === neutralLanguageCode,
+            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode,
     );
     if (usedLanguage) {
         return usedLanguage;
@@ -89,8 +89,7 @@ export function getLanguageByNeutralLocaleCode(
     // Search in all languages
     return languages.find(
         ({ code }) =>
-            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode ||
-            code === neutralLanguageCode,
+            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode,
     );
 }
 
@@ -140,13 +139,11 @@ export function getLanguageFromNextLocaleIsoCode(
     let targetLanguage: NewsroomLanguageSettings | undefined;
 
     if (nextLocaleIsoCode.length >= 2 && nextLocaleIsoCode.length <= 4) {
+        // The order of methods here is reversed from `getShortestLocaleCode`, so that the logic "unwraps" the possible variants with no collisions
         targetLanguage =
             getLanguageByExactLocaleCode(languages, locale) ||
-            getLanguageByNeutralLocaleCode(languages, locale) ||
-            getLanguageByShortRegionCode(languages, locale);
-        if (targetLanguage) {
-            return targetLanguage;
-        }
+            getLanguageByShortRegionCode(languages, locale) ||
+            getLanguageByNeutralLocaleCode(languages, locale);
     } else {
         targetLanguage = getLanguageByExactLocaleCode(languages, locale);
     }
@@ -175,6 +172,8 @@ export function getCompanyInformation(languages: NewsroomLanguageSettings[], loc
  * First: try shorting to neutral language code (there should be no locales with the same language code)
  * Then: try shorting to region code (there should be no locales with the same region code)
  * Finally: return the original locale code (shorting is not possible)
+ *
+ * @param locale A LocaleObject constructed from FULL locale code (taken straight from the selected language)
  */
 export function getShortestLocaleCode(
     languages: NewsroomLanguageSettings[],
@@ -189,11 +188,6 @@ export function getShortestLocaleCode(
 
     // Try shorting to neutral language code
     const neutralLanguageCode = locale.toNeutralLanguageCode();
-    // The code is already as short as possible
-    if (neutralLanguageCode === localeCode) {
-        return localeCode;
-    }
-
     const matchingLanguagesByNeutralCode = languages.filter(
         ({ code }) =>
             LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode ||
@@ -209,14 +203,16 @@ export function getShortestLocaleCode(
         ({ code }) => LocaleObject.fromAnyCode(code).toRegionCode() === shortRegionCode,
     );
     // Prevent collision with neutral language codes
+    const lowerCasedShortRegionCode = shortRegionCode.toLowerCase();
     const mathchingNeutralLanguagesByRegionCode = languages.filter(
         ({ code }) =>
-            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === shortRegionCode ||
-            code === shortRegionCode,
+            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === lowerCasedShortRegionCode ||
+            code === lowerCasedShortRegionCode,
     );
     if (
         matchingLanguagesByRegionCode.length === 1 &&
-        !mathchingNeutralLanguagesByRegionCode.length
+        // If there are 2 or more matching neutral languages, it means that there are no languages that can be shortened to neutral code
+        mathchingNeutralLanguagesByRegionCode.length !== 1
     ) {
         return shortRegionCode;
     }

@@ -75,7 +75,7 @@ export function getSupportedLocaleIsoCode(locale: LocaleObject): string {
         return localeIsoCode;
     }
 
-    const language = localeIsoCode.slice(0, 2);
+    const language = locale.toNeutralLanguageCode();
     const isSupportedLanguage = SUPPORTED_LOCALES.includes(language);
     if (isSupportedLanguage) {
         return language;
@@ -89,6 +89,11 @@ export function getSupportedLocaleIsoCode(locale: LocaleObject): string {
         return 'zh-CN';
     }
 
+    // This code should never be reached, because locale code check is happening in `LocaleObject.fromAnyCode`
+    // eslint-disable-next-line no-console
+    console.warn(
+        'Unsupported locale provided. Please use `LocaleObject.fromAnyCode` to ensure you are using a correct language code',
+    );
     return DEFAULT_LOCALE;
 }
 
