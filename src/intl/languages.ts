@@ -171,6 +171,8 @@ export function getCompanyInformation(languages: NewsroomLanguageSettings[], loc
  * First: try shorting to neutral language code (there should be no locales with the same language code)
  * Then: try shorting to region code (there should be no locales with the same region code)
  * Finally: return the original locale code (shorting is not possible)
+ *
+ * @param locale A LocaleObject constructed from FULL locale code (taken straight from the selected language)
  */
 export function getShortestLocaleCode(
     languages: NewsroomLanguageSettings[],
