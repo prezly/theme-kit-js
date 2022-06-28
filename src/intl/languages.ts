@@ -185,11 +185,6 @@ export function getShortestLocaleCode(
 
     // Try shorting to neutral language code
     const neutralLanguageCode = locale.toNeutralLanguageCode();
-    // The code is already as short as possible
-    if (neutralLanguageCode === localeCode) {
-        return localeCode;
-    }
-
     const matchingLanguagesByNeutralCode = languages.filter(
         ({ code }) =>
             LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === neutralLanguageCode ||
@@ -205,10 +200,11 @@ export function getShortestLocaleCode(
         ({ code }) => LocaleObject.fromAnyCode(code).toRegionCode() === shortRegionCode,
     );
     // Prevent collision with neutral language codes
+    const lowerCasedShortRegionCode = shortRegionCode.toLowerCase();
     const mathchingNeutralLanguagesByRegionCode = languages.filter(
         ({ code }) =>
-            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === shortRegionCode ||
-            code === shortRegionCode,
+            LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === lowerCasedShortRegionCode ||
+            code === lowerCasedShortRegionCode,
     );
     if (
         matchingLanguagesByRegionCode.length === 1 &&
