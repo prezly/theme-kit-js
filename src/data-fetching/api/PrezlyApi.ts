@@ -248,7 +248,7 @@ export class PrezlyApi {
     }
 
     async getNewsroomServerSideProps(
-        request: IncomingMessage | undefined,
+        request?: IncomingMessage,
         nextLocaleIsoCode?: string,
         story?: Story,
     ): Promise<PageProps & ServerSidePageProps> {
