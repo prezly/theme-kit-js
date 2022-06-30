@@ -18,6 +18,7 @@ import {
 import type { PageProps, ServerSidePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../../utils';
 import { getAlgoliaSettings, isSdkError } from '../lib';
+import { isUuid } from '../lib/isUuid';
 
 import {
     getContactsQuery,
@@ -65,6 +66,10 @@ export class PrezlyApi {
     }
 
     async getStory(uuid: string) {
+        if (!isUuid(uuid)) {
+            return undefined;
+        }
+
         try {
             return await this.sdk.stories.get(uuid);
         } catch (error) {
@@ -209,6 +214,13 @@ export class PrezlyApi {
     }
 
     async getGallery(uuid: string) {
+        if (!isUuid(uuid)) {
+            // Check for legacy number ID reference, which is also supported for back-compat.
+            if (Number.isNaN(Number(uuid))) {
+                return undefined;
+            }
+        }
+
         try {
             return await this.sdk.newsroomGalleries.get(this.newsroomUuid, uuid);
         } catch (error) {
