@@ -17,8 +17,7 @@ import {
 } from '../../intl';
 import type { PageProps, ServerSidePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../../utils';
-import { getAlgoliaSettings, isSdkError } from '../lib';
-import { isUuid } from '../lib/isUuid';
+import { getAlgoliaSettings, isSdkError, isUuid } from '../lib';
 
 import {
     getContactsQuery,
