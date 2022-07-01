@@ -8,6 +8,32 @@ import { getCategoryHasTranslation, getCategoryUrl } from '../../utils';
 import { useCurrentCategory } from './useCurrentCategory';
 import { useCurrentStory } from './useCurrentStory';
 
+// Pulled from SDK types to not leak the `@prezly/sdk` dependency into the client bundle
+enum StoryVisibility {
+    PUBLIC = 'public',
+    EMBARGO = 'embargo',
+    PRIVATE = 'private',
+    CONFIDENTIAL = 'confidential',
+}
+
+function getAllowedTranslationVisibilityValues(story: ExtendedStory): StoryVisibility[] {
+    const { visibility } = story;
+
+    if (visibility === StoryVisibility.EMBARGO) {
+        return [StoryVisibility.EMBARGO, StoryVisibility.PUBLIC];
+    }
+
+    if (visibility === StoryVisibility.PRIVATE) {
+        return [StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
+    }
+
+    if (visibility === StoryVisibility.CONFIDENTIAL) {
+        return [StoryVisibility.CONFIDENTIAL, StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
+    }
+
+    return [StoryVisibility.PUBLIC];
+}
+
 /**
  * Determine correct URL for translated stories/categories with a fallback to homepage.
  * E.g. if a story has a translation, the function will return the localized slug URL.
@@ -36,8 +62,11 @@ function getTranslationUrl(
     const localeCode = locale.toUnderscoreCode();
 
     if (currentStory && currentStory.culture.locale !== localeCode) {
+        const allowedVisibilityValues = getAllowedTranslationVisibilityValues(currentStory);
+
         const translatedStory = currentStory.translations.find(
-            ({ culture }) => culture.locale === localeCode,
+            ({ culture, visibility }) =>
+                culture.locale === localeCode && allowedVisibilityValues.includes(visibility),
         );
         if (translatedStory) {
             return `/${translatedStory.slug}`;
