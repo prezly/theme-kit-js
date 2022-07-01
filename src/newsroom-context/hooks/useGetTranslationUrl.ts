@@ -19,19 +19,16 @@ enum StoryVisibility {
 function getAllowedTranslationVisibilityValues(story: ExtendedStory): StoryVisibility[] {
     const { visibility } = story;
 
-    if (visibility === StoryVisibility.EMBARGO) {
-        return [StoryVisibility.EMBARGO, StoryVisibility.PUBLIC];
+    switch (visibility) {
+        case StoryVisibility.EMBARGO:
+            return [StoryVisibility.EMBARGO, StoryVisibility.PUBLIC];
+        case StoryVisibility.PRIVATE:
+            return [StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
+        case StoryVisibility.CONFIDENTIAL:
+            return [StoryVisibility.CONFIDENTIAL, StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
+        default:
+            return [StoryVisibility.PUBLIC];
     }
-
-    if (visibility === StoryVisibility.PRIVATE) {
-        return [StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
-    }
-
-    if (visibility === StoryVisibility.CONFIDENTIAL) {
-        return [StoryVisibility.CONFIDENTIAL, StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
-    }
-
-    return [StoryVisibility.PUBLIC];
 }
 
 /**
