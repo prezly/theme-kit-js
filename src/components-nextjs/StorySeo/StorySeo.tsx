@@ -1,4 +1,5 @@
 import type { ExtendedStory } from '@prezly/sdk';
+import { StoryVisibility } from '@prezly/sdk';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 
 type Props = {
@@ -14,6 +15,7 @@ export function StorySeo({ story }: Props) {
 
     const authorName = author?.display_name || author?.email || 'Unknown';
     const description = subtitle || summary;
+    const indexable = newsroom.is_indexable && story.visibility === StoryVisibility.PUBLIC;
 
     return (
         <>
@@ -21,6 +23,8 @@ export function StorySeo({ story }: Props) {
                 title={title}
                 description={description}
                 canonical={oembed.url}
+                noindex={!indexable}
+                nofollow={!indexable}
                 openGraph={{
                     title,
                     description,
