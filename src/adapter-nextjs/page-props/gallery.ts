@@ -38,7 +38,9 @@ export function getGalleryPageServerSideProps<CustomProps extends Record<string,
 
             return {
                 redirect: {
-                    destination: `/media/album/${uuid}`,
+                    destination: context.locale
+                        ? `/${context.locale}/media/album/${uuid}`
+                        : `/media/album/${uuid}`,
                     permanent: false,
                 },
             };
