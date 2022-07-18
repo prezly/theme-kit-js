@@ -12,7 +12,11 @@ const lowercaseLocalPermutations = Array.from(
     new Set([
         ...lowercaseLocales,
         ...lowercaseLocales.map((code) => code.split('-')[0]),
-        ...lowercaseLocales.map((code) => code.split('-')[1]).filter(Boolean),
+        ...lowercaseLocales
+            .map((code) => code.split('-')[1])
+            .filter(Boolean)
+            // Remove `419` from possible permutations of `es-419`
+            .filter((code) => code !== '419'),
     ]),
 ).sort();
 

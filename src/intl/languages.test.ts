@@ -200,7 +200,12 @@ describe('getShortestLocaleCode', () => {
     });
 
     it('returns neutral language code if it is the only culture with that language', () => {
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('es-ES'))).toBe('es');
+        expect(
+            getShortestLocaleCode(
+                ALL_LANGUAGES.filter(({ code }) => code !== 'es_419'),
+                LocaleObject.fromAnyCode('es-ES'),
+            ),
+        ).toBe('es');
     });
 
     it('returns region code if it is the only culture with that region', () => {
@@ -216,6 +221,12 @@ describe('getShortestLocaleCode', () => {
         );
         expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('nl-BE'))).toBe(
             'nl_BE',
+        );
+    });
+
+    it('returns full code when trying to shorten to region code for es-419', () => {
+        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('es-419'))).toBe(
+            'es_419',
         );
     });
 });
