@@ -214,7 +214,7 @@ export function getShortestLocaleCode(
         // If there are 2 or more matching neutral languages, it means that there are no languages that can be shortened to neutral code
         mathchingNeutralLanguagesByRegionCode.length !== 1 &&
         // We don't want just numbers in our region code
-        shortRegionCode !== '419'
+        Number.isNaN(Number(shortRegionCode))
     ) {
         return shortRegionCode;
     }

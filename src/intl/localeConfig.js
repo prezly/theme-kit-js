@@ -15,8 +15,8 @@ const lowercaseLocalPermutations = Array.from(
         ...lowercaseLocales
             .map((code) => code.split('-')[1])
             .filter(Boolean)
-            // Remove `419` from possible permutations of `es-419`
-            .filter((code) => code !== '419'),
+            // Remove number-only codes from possible permutations (like `419` for `es-419`)
+            .filter((code) => Number.isNaN(Number(code))),
     ]),
 ).sort();
 
