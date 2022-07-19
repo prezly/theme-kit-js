@@ -1,27 +1,23 @@
-import type {
-    GetServerSidePropsContext,
-    GetServerSidePropsResult,
-    GetStaticPropsContext,
-} from 'next';
+import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
 import { getRedirectToCanonicalLocale, getShortestLocaleCode, LocaleObject } from '../intl';
 import type { PageProps, ServerSidePageProps } from '../types';
 
 /**
- * This function combines the props returned from `getNewsroomServerSideProps` or `getNewsroomStaticProps` and your optional custom props for the page.
+ * This function combines the props returned from `getNewsroomServerSideProps` and your optional custom props for the page.
  * It also handles locale redirects, if `canonicalUrl` parameter is provided.
  * See README for usage examples.
  *
- * @param context Next.js context passed to the `getServerSideProps` or `getStaticProps` method of the page
+ * @param context Next.js context passed to the `getServerSideProps` method of the page
  * @param props Object containing the return of `getNewsroomServerSideProps` and your optional custom props.
  * @param canonicalUrl Optional: a canonical URL for the current page without locale part. If provided, locale redirects will be handled by the function.
  */
 export function processRequest<Props>(
-    context: GetServerSidePropsContext | GetStaticPropsContext,
+    context: GetServerSidePropsContext,
     props: Props & PageProps & ServerSidePageProps,
     canonicalUrl?: string,
 ): GetServerSidePropsResult<Props> {
-    const { locale: nextLocale } = context;
+    const { locale: nextLocale, query } = context;
 
     const { localeResolved, ...pageProps } = props;
 
@@ -40,7 +36,7 @@ export function processRequest<Props>(
             shortestLocaleCode,
             nextLocale,
             canonicalUrl,
-            'query' in context ? context.query : undefined,
+            query,
         );
         if (redirect) {
             return { redirect };
