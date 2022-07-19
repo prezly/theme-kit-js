@@ -362,4 +362,47 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
                 '<p>Al confirmar su suscripción, confirma que entiende que se está registrando para recibir contenido y accede a que su información se procese y guarde de manera segura.</p>',
         },
     },
+    es_419: {
+        code: 'es_419',
+        locale: {
+            code: 'es_419',
+            locale: 'es_419',
+            name: 'Spanish (Latin America)',
+            native_name: 'Español (Latinoamérica)',
+            direction: TextDirection.LTR,
+            language_code: 'es',
+        },
+        is_default: false,
+        stories_count: 0,
+        public_stories_count: 0,
+        categories_count: 0,
+        default_email_disclaimer:
+            "<p>Ha recibido este correo electrónico porque usted es uno de los contactos de %companyname%. Si no quiere seguir recibiendo estos correos electrónicos, por favor, <a href='%unsubscribe_url%'>cancele la suscripción</a>.</p>",
+        default_cookie_statement:
+            '<p>Utilizamos cookies en nuestro sitio web. Nos ayudan a conocerle un poco y saber cómo usa nuestro sitio web, lo que nos sirve para proporcionarle a usted y a los demás una experiencia más valiosa y personalizada.</p>',
+        default_subscribe_disclaimer:
+            '<p>Al confirmar su suscripción, confirma que entiende que se está registrando para recibir contenido y accede a que su información se procese y guarde de manera segura.</p>',
+        company_information: {
+            name: 'The Good News Room',
+            about: '',
+            about_plaintext: '',
+            email: null,
+            website: null,
+            phone: null,
+            address: null,
+            twitter: null,
+            facebook: null,
+            linkedin: null,
+            pinterest: null,
+            youtube: null,
+            instagram: null,
+            tiktok: null,
+            email_disclaimer:
+                '<p>Ha recibido este correo electrónico porque usted es uno de los contactos de %companyname%. Si no quiere seguir recibiendo estos correos electrónicos, por favor, <a href="%unsubscribe_url%">cancele la suscripción</a>.</p>',
+            cookie_statement:
+                '<p>Utilizamos cookies en nuestro sitio web. Nos ayudan a conocerle un poco y saber cómo usa nuestro sitio web, lo que nos sirve para proporcionarle a usted y a los demás una experiencia más valiosa y personalizada.</p>',
+            subscribe_disclaimer:
+                '<p>Al confirmar su suscripción, confirma que entiende que se está registrando para recibir contenido y accede a que su información se procese y guarde de manera segura.</p>',
+        },
+    },
 };

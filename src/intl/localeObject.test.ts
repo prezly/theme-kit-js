@@ -24,6 +24,9 @@ it('accepts any valid code type and converts it to hyphen code consistently', ()
     expect(LocaleObject.fromAnyCode('en_us').toHyphenCode()).toBe('en-US');
     expect(LocaleObject.fromAnyCode('en_US').toHyphenCode()).toBe('en-US');
     expect(LocaleObject.fromAnyCode('EN_US').toHyphenCode()).toBe('en-US');
+
+    expect(LocaleObject.fromAnyCode('es-419').toHyphenCode()).toBe('es-419');
+    expect(LocaleObject.fromAnyCode('es_419').toHyphenCode()).toBe('es-419');
 });
 
 it('converts to underscore code consistently', () => {
