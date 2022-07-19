@@ -1,8 +1,8 @@
-import type { GetServerSidePropsContext } from 'next';
+import type { GetServerSidePropsContext, GetStaticPropsContext } from 'next';
 
 import type { PageProps } from '../../../types';
 
 export type PropsFunction<CustomProps> = (
-    context: GetServerSidePropsContext,
+    context: GetServerSidePropsContext | GetStaticPropsContext,
     props: PageProps,
 ) => CustomProps | Promise<CustomProps>;

@@ -45,7 +45,7 @@ interface GetStoriesOptions {
 
 interface GetGalleriesOptions {
     page?: number;
-    pageSize: number;
+    pageSize?: number;
 }
 
 export class PrezlyApi {
@@ -210,7 +210,7 @@ export class PrezlyApi {
     searchStories: typeof PrezlySDK.prototype.stories.search = (options) =>
         this.sdk.stories.search(options);
 
-    async getGalleries({ page = undefined, pageSize }: GetGalleriesOptions) {
+    async getGalleries({ page = undefined, pageSize = 0 }: GetGalleriesOptions) {
         return this.sdk.newsroomGalleries.list(this.newsroomUuid, {
             limit: pageSize,
             offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
@@ -284,5 +284,10 @@ export class PrezlyApi {
             },
             localeResolved: Boolean(currentLanguage),
         };
+    }
+
+    async getNewsroomDefaultLanguage() {
+        const languages = await this.getNewsroomLanguages();
+        return getDefaultLanguage(languages);
     }
 }

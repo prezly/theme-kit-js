@@ -1,8 +1,17 @@
 import type { NewsroomGallery } from '@prezly/sdk';
-import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+import type {
+    GetServerSidePropsContext,
+    GetServerSidePropsResult,
+    GetStaticPathsResult,
+    GetStaticPropsContext,
+    GetStaticPropsResult,
+} from 'next';
 
+import { getPrezlyApi } from '../../data-fetching';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
+import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
 import { processRequest } from '../processRequest';
+import { processStaticRequest } from '../processStaticRequest';
 
 import type { PropsFunction } from './lib/types';
 
@@ -36,5 +45,42 @@ export function getGalleryAlbumPageServerSideProps<CustomProps extends Record<st
             },
             `/media/album/${uuid}`,
         );
+    };
+}
+
+export function getGalleryAlbumPageStaticProps<CustomProps extends Record<string, any>>(
+    customProps: CustomProps | PropsFunction<CustomProps>,
+) {
+    return async function getStaticProps(
+        context: GetStaticPropsContext,
+    ): Promise<GetStaticPropsResult<GalleryAlbumPageProps & CustomProps>> {
+        const { api, staticProps } = await getNewsroomStaticProps(context);
+
+        const { uuid } = context.params as { uuid: string };
+        const gallery = await api.getGallery(uuid);
+
+        if (!gallery || !gallery.images_number) {
+            return { notFound: true };
+        }
+
+        return processStaticRequest(context, {
+            ...staticProps,
+            gallery,
+            ...(typeof customProps === 'function'
+                ? await (customProps as PropsFunction<CustomProps>)(context, staticProps)
+                : customProps),
+        });
+    };
+}
+
+export async function getGalleryAlbumPageStaticPaths(): Promise<GetStaticPathsResult> {
+    const api = getPrezlyApi();
+    const { galleries } = await api.getGalleries({});
+
+    const paths = galleries.map(({ uuid }) => ({ params: { uuid } }));
+
+    return {
+        paths,
+        fallback: 'blocking',
     };
 }
