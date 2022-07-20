@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Gizlilik talepleri"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Tekrar Yükle"
   },
