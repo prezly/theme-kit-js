@@ -210,10 +210,13 @@ export class PrezlyApi {
     searchStories: typeof PrezlySDK.prototype.stories.search = (options) =>
         this.sdk.stories.search(options);
 
-    async getGalleries({ page = undefined, pageSize = 0 }: GetGalleriesOptions) {
+    async getGalleries({ page, pageSize }: GetGalleriesOptions) {
         return this.sdk.newsroomGalleries.list(this.newsroomUuid, {
             limit: pageSize,
-            offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
+            offset:
+                typeof page === 'undefined' || typeof pageSize === 'undefined'
+                    ? undefined
+                    : (page - 1) * pageSize,
             scope: getGalleriesQuery(),
         });
     }
