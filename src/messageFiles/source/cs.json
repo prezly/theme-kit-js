@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Požadavky na ochranu osobních údajů"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Znovu načíst"
   },

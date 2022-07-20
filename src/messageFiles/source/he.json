@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "בקשות פרטיות"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "טעינה מחדש"
   },

@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Запыты аб канфiдэнцыяльнасцi"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Перазагрузіць"
   },

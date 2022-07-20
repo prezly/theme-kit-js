@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Demandes de renseignements personnels"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Recharger"
   },

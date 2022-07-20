@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Maxfiylik talablari"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Qayta yuklash"
   },

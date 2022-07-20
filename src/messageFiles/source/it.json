@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Richieste di privacy"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Ricarica"
   },

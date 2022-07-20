@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Talbiet tal-privatezza"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Erġa' tella'"
   },

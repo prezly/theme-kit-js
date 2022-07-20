@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Заявки за достъп до лична информация"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Презареди"
   },

@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Məxfilik tələbləri"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Yenidən yüklə"
   },

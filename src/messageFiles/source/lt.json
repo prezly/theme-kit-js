@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Privatumo reikalavimai"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Įkelti iš naujo"
   },

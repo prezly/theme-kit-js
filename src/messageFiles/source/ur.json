@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "پرائیویسی درخواستیں"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "دوبارہ لوڈ کریں"
   },

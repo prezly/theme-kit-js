@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "개인정보 요청"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "다시 로드하기"
   },

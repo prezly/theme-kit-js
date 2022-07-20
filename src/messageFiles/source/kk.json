@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Құпиялылыққа қатысты талаптар"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Қайта жүктеу"
   },

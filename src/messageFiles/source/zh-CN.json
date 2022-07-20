@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "隐私请求"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "重新加载"
   },

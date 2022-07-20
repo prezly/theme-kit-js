@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Fortrolighedsanmodninger"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Genindlæs"
   },
