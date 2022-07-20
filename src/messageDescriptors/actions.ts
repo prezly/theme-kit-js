@@ -25,6 +25,10 @@ export const actions = defineMessages({
         id: 'actions.privacyRequests',
         defaultMessage: 'Privacy requests',
     },
+    readMore: {
+        id: 'actions.readMore',
+        defaultMessage: 'Read more',
+    },
     reload: {
         id: 'actions.reload',
         defaultMessage: 'Reload',
