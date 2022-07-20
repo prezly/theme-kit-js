@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "คำขอความเป็นส่วนตัว"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "โหลดซ้ำ"
   },
