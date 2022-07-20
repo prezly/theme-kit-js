@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Запрос персональных данных"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Перезагрузить"
   },
