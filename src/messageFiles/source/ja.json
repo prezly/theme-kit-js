@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "プライバシーに関するリクエスト"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "再読み込み"
   },
