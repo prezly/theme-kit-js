@@ -17,6 +17,9 @@
   "actions.privacyRequests": {
     "message": "Zahtjevi privatnosti"
   },
+  "actions.readMore": {
+    "message": "Read more"
+  },
   "actions.reload": {
     "message": "Ponovno učitaj"
   },
