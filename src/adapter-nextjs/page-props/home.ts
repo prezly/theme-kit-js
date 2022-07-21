@@ -1,10 +1,17 @@
 import type { ExtraStoryFields, Story } from '@prezly/sdk';
-import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+import type {
+    GetServerSidePropsContext,
+    GetServerSidePropsResult,
+    GetStaticPropsContext,
+    GetStaticPropsResult,
+} from 'next';
 
 import type { PaginationProps } from '../../infinite-loading/types';
 import { DEFAULT_PAGE_SIZE } from '../../utils';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
+import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
 import { processRequest } from '../processRequest';
+import { processStaticRequest } from '../processStaticRequest';
 
 import type { PropsFunction } from './lib/types';
 
@@ -61,5 +68,43 @@ export function getHomepageServerSideProps<
             },
             '/',
         );
+    };
+}
+
+export function getHomepageStaticProps<
+    CustomProps extends Record<string, any>,
+    StoryType extends Story = Story,
+>(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options) {
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options || {};
+
+    return async function getStaticProps(
+        context: GetStaticPropsContext,
+    ): Promise<GetStaticPropsResult<HomePageProps<StoryType> & CustomProps>> {
+        const { api, staticProps } = await getNewsroomStaticProps(context, {
+            loadHomepageContacts: true,
+        });
+
+        const { localeCode } = staticProps.newsroomContextProps;
+
+        const storiesPaginated = await api.getStories({
+            pageSize,
+            include: extraStoryFields,
+            localeCode,
+        });
+        const { stories, storiesTotal } = storiesPaginated;
+
+        return processStaticRequest(context, {
+            ...staticProps,
+            // TODO: This is temporary until return types from API are figured out
+            stories: stories as StoryType[],
+            pagination: {
+                itemsTotal: storiesTotal,
+                currentPage: 1,
+                pageSize,
+            },
+            ...(typeof customProps === 'function'
+                ? await (customProps as PropsFunction<CustomProps>)(context, staticProps)
+                : customProps),
+        });
     };
 }

@@ -1,10 +1,20 @@
 import type { ExtraStoryFields, Story } from '@prezly/sdk';
-import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+import type {
+    GetServerSidePropsContext,
+    GetServerSidePropsResult,
+    GetStaticPathsResult,
+    GetStaticPropsContext,
+    GetStaticPropsResult,
+} from 'next';
 
+import { getPrezlyApi } from '../../data-fetching';
 import type { PaginationProps } from '../../infinite-loading/types';
-import { DEFAULT_PAGE_SIZE } from '../../utils';
+import { LocaleObject } from '../../intl';
+import { DEFAULT_PAGE_SIZE, getLocalizedCategoryData } from '../../utils';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
+import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
 import { processRequest } from '../processRequest';
+import { processStaticRequest } from '../processStaticRequest';
 
 import type { PropsFunction } from './lib/types';
 
@@ -71,5 +81,78 @@ export function getCategoryPageServerSideProps<
             },
             `/category/${slug}`,
         );
+    };
+}
+
+export function getCategoryPageStaticProps<
+    CustomProps extends Record<string, any>,
+    StoryType extends Story = Story,
+>(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options) {
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options || {};
+
+    return async function getStaticProps(
+        context: GetStaticPropsContext,
+    ): Promise<GetStaticPropsResult<CategoryPageProps<StoryType> & CustomProps>> {
+        const { api, staticProps } = await getNewsroomStaticProps(context);
+
+        const { slug } = context.params as { slug: string };
+        const category = await api.getCategoryBySlug(slug);
+
+        if (!category) {
+            return {
+                notFound: true,
+            };
+        }
+
+        const { localeCode } = staticProps.newsroomContextProps;
+
+        const { stories, storiesTotal } = await api.getStoriesFromCategory(category, {
+            pageSize,
+            include: extraStoryFields,
+            localeCode,
+        });
+
+        return processStaticRequest(context, {
+            ...staticProps,
+            newsroomContextProps: {
+                ...staticProps.newsroomContextProps,
+                currentCategory: category,
+            },
+            // TODO: This is temporary until return types from API are figured out
+            stories: stories as StoryType[],
+            pagination: {
+                itemsTotal: storiesTotal,
+                currentPage: 1,
+                pageSize,
+            },
+            ...(typeof customProps === 'function'
+                ? await (customProps as PropsFunction<CustomProps>)(context, staticProps)
+                : customProps),
+        });
+    };
+}
+
+export async function getCategoryPageStaticPaths(): Promise<GetStaticPathsResult> {
+    const api = getPrezlyApi();
+    const [categories, defaultLanguage] = await Promise.all([
+        api.getCategories(),
+        api.getNewsroomDefaultLanguage(),
+    ]);
+    const locale = LocaleObject.fromAnyCode(defaultLanguage.code);
+
+    const paths = categories
+        .map((category) => {
+            const { slug } = getLocalizedCategoryData(category, locale);
+            if (!slug) {
+                return undefined;
+            }
+
+            return { params: { slug } };
+        })
+        .filter<{ params: { slug: string } }>(Boolean as any);
+
+    return {
+        paths,
+        fallback: 'blocking',
     };
 }

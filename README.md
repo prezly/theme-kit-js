@@ -254,6 +254,61 @@ export const getServerSideProps = getSitemapServerSideProps(additionalPaths);
 
 If you need a more customized approach, you can build your own Sitemap by extending the `SitemapBuilder` class exported from the library, as well as referring to the code in the [Sitemap](./tree/main/src/adapter-nextjs/page-props/sitemap) component directory.
 
+### Experimental: Static Site Generation
+
+For self-hosted applications, we now provide an option to use SSG in your project. However, this comes with some limitations:
+
+- Multi-langugage is not yet supported. Make sure to remove the `i18n` property from your `next.config.js`.
+- Sitemap will still use SSR to set the XML Content-Type headers on the response.
+- Story preview page needs to use SSR to ensure that content is always up to date.
+
+The workflow is pretty much the same as with our default SSR approach. You will need to use the new `getNewsroomStaticProps` and `processStaticRequest` methods. Note that `getNewsroomStaticProps` returns its props in the `staticProps` property. The data is still the same as in the SSR methods, so apart from multi-language, this should be a drop-in replacement for your pages.
+```tsx
+import { getNewsroomStaticProps, processStaticRequest } from '@prezly/theme-kit-nextjs';
+import type { GetStaticProps } from 'next';
+
+/* Your Page component code */
+
+export const getStaticProps: GetServerSideProps<Props> = async (context) => {
+    const { api, staticProps } = await getNewsroomStaticProps(context);
+
+    /* Your logic to get additional props for this page  */
+
+    return processStaticRequest(
+        context,
+        {
+            ...serverSideProps,
+            myProp: 'My Custom Prop',
+        },
+    );
+};
+```
+
+We also have added all of the page helpers (except Story Preview) for SSG prop fetching. Here's an example for the Home page:
+```ts
+import { getHomepageStaticProps } from '@prezly/theme-kit-nextjs';
+
+/* ...your page component */
+
+export const getStaticProps = getHomepageStaticProps({});
+```
+
+
+For dynamic pages, like `/story/[slug]`, we also provide `getStaticPaths` helper functions:
+```tsx
+import { getStoryPageStaticPaths, getStoryPageStaticProps } from '@prezly/theme-kit-nextjs';
+
+/* Your Page component code */
+
+export const getStaticProps = getStoryPageStaticProps({});
+
+export const getStaticPaths = getStoryPageStaticPaths;
+```
+
+These are available for `/category/[slug]`, `/story/[slug]` and `/media/album/[uuid]` pages.
+
+You can find all of the helper methods in the [page-props](./tree/main/src/adapter-nextjs/page-props) directory.
+
 ----
 
 ## What's next
