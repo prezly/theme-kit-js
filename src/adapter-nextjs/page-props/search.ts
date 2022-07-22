@@ -33,7 +33,7 @@ export function getSearchPageServerSideProps<CustomProps extends Record<string, 
 }
 
 export function getSearchPageStaticProps<CustomProps extends Record<string, any>>(
-    customProps: CustomProps | PropsFunction<CustomProps>,
+    customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
 ) {
     return async function getStaticProps(
         context: GetServerSidePropsContext,

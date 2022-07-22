@@ -87,7 +87,7 @@ export function getCategoryPageServerSideProps<
 export function getCategoryPageStaticProps<
     CustomProps extends Record<string, any>,
     StoryType extends Story = Story,
->(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options) {
+>(customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>, options?: Options) {
     const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options || {};
 
     return async function getStaticProps(

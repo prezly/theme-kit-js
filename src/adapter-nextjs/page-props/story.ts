@@ -54,7 +54,7 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
 }
 
 export function getStoryPageStaticProps<CustomProps extends Record<string, any>>(
-    customProps: CustomProps | PropsFunction<CustomProps>,
+    customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
 ) {
     return async function getStaticProps(
         context: GetStaticPropsContext,

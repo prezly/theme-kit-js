@@ -74,7 +74,7 @@ export function getHomepageServerSideProps<
 export function getHomepageStaticProps<
     CustomProps extends Record<string, any>,
     StoryType extends Story = Story,
->(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options) {
+>(customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>, options?: Options) {
     const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options || {};
 
     return async function getStaticProps(

@@ -49,7 +49,7 @@ export function getGalleryAlbumPageServerSideProps<CustomProps extends Record<st
 }
 
 export function getGalleryAlbumPageStaticProps<CustomProps extends Record<string, any>>(
-    customProps: CustomProps | PropsFunction<CustomProps>,
+    customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
 ) {
     return async function getStaticProps(
         context: GetStaticPropsContext,

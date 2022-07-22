@@ -71,7 +71,7 @@ export function getGalleryPageServerSideProps<CustomProps extends Record<string,
 }
 
 export function getGalleryPageStaticProps<CustomProps extends Record<string, any>>(
-    customProps: CustomProps | PropsFunction<CustomProps>,
+    customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
     options?: Options,
 ) {
     const { pageSize = DEFAULT_GALLERY_PAGE_SIZE } = options || {};
