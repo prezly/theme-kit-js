@@ -1,7 +1,6 @@
 import type {
     GetServerSidePropsContext,
     GetServerSidePropsResult,
-    GetStaticPathsContext,
     GetStaticPropsContext,
 } from 'next';
 
