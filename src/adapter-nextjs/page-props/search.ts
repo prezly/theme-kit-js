@@ -1,4 +1,9 @@
-import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+import type {
+    GetServerSidePropsContext,
+    GetServerSidePropsResult,
+    GetStaticPathsContext,
+    GetStaticPropsContext,
+} from 'next';
 
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
@@ -39,7 +44,10 @@ export function getSearchPageStaticProps<CustomProps extends Record<string, any>
         return processStaticRequest(context, {
             ...staticProps,
             ...(typeof customProps === 'function'
-                ? await (customProps as PropsFunction<CustomProps>)(context, staticProps)
+                ? await (customProps as PropsFunction<CustomProps, GetStaticPropsContext>)(
+                      context,
+                      staticProps,
+                  )
                 : customProps),
         });
     };

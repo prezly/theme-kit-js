@@ -104,7 +104,10 @@ export function getGalleryPageStaticProps<CustomProps extends Record<string, any
                 pageSize,
             },
             ...(typeof customProps === 'function'
-                ? await (customProps as PropsFunction<CustomProps>)(context, staticProps)
+                ? await (customProps as PropsFunction<CustomProps, GetStaticPropsContext>)(
+                      context,
+                      staticProps,
+                  )
                 : customProps),
         });
     };
