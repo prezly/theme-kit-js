@@ -95,8 +95,8 @@ export function PageSeo({
             title={pageTitle}
             description={pageDescription}
             canonical={canonicalUrl}
-            noindex={newsroom.is_indexable}
-            nofollow={newsroom.is_indexable}
+            noindex={!newsroom.is_indexable}
+            nofollow={!newsroom.is_indexable}
             openGraph={{
                 url: canonicalUrl,
                 title: pageTitle,
