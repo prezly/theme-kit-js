@@ -60,14 +60,12 @@ export function getCategoryPageServerSideProps<
             localeCode,
         });
 
+        serverSideProps.newsroomContextProps.currentCategory = category;
+
         return processRequest(
             context,
             {
                 ...serverSideProps,
-                newsroomContextProps: {
-                    ...serverSideProps.newsroomContextProps,
-                    currentCategory: category,
-                },
                 // TODO: This is temporary until return types from API are figured out
                 stories: stories as StoryType[],
                 pagination: {
@@ -112,12 +110,10 @@ export function getCategoryPageStaticProps<
             localeCode,
         });
 
+        staticProps.newsroomContextProps.currentCategory = category;
+
         return processStaticRequest(context, {
             ...staticProps,
-            newsroomContextProps: {
-                ...staticProps.newsroomContextProps,
-                currentCategory: category,
-            },
             // TODO: This is temporary until return types from API are figured out
             stories: stories as StoryType[],
             pagination: {

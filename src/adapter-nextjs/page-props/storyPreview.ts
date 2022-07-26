@@ -21,12 +21,10 @@ export function getStoryPreviewPageServerSideProps<CustomProps extends Record<st
 
         const { serverSideProps } = await getNewsroomServerSideProps(context, { story });
 
+        serverSideProps.newsroomContextProps.currentStory = story;
+
         return processRequest(context, {
             ...serverSideProps,
-            newsroomContextProps: {
-                ...serverSideProps.newsroomContextProps,
-                currentStory: story,
-            },
             ...(typeof customProps === 'function'
                 ? await (customProps as PropsFunction<CustomProps>)(context, serverSideProps)
                 : customProps),

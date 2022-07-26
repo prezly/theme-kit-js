@@ -40,12 +40,10 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
             };
         }
 
+        serverSideProps.newsroomContextProps.currentStory = story;
+
         return processRequest(context, {
             ...serverSideProps,
-            newsroomContextProps: {
-                ...serverSideProps.newsroomContextProps,
-                currentStory: story,
-            },
             ...(typeof customProps === 'function'
                 ? await (customProps as PropsFunction<CustomProps>)(context, serverSideProps)
                 : customProps),
@@ -69,12 +67,10 @@ export function getStoryPageStaticProps<CustomProps extends Record<string, any>>
 
         const { staticProps } = await getNewsroomStaticProps(context, { story });
 
+        staticProps.newsroomContextProps.currentStory = story;
+
         return processStaticRequest(context, {
             ...staticProps,
-            newsroomContextProps: {
-                ...staticProps.newsroomContextProps,
-                currentStory: story,
-            },
             ...(typeof customProps === 'function'
                 ? await (customProps as PropsFunction<CustomProps, GetStaticPropsContext>)(
                       context,
