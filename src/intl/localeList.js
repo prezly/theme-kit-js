@@ -11,6 +11,7 @@ module.exports = [
     'az',
     'be',
     'bg-BG',
+    'ca',
     'cs-CZ',
     'da-DK',
     'de',
