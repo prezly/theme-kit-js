@@ -6,6 +6,7 @@ import type {
     NewsroomContact,
     NewsroomLanguageSettings,
     NewsroomThemePreset,
+    Notification,
 } from '@prezly/sdk';
 import type { PropsWithChildren } from 'react';
 import { createContext, useMemo } from 'react';
@@ -48,6 +49,10 @@ export interface NewsroomContextType {
      */
     locale: LocaleObject;
     /**
+     * Newsroom user-facing notifications (usually displayed as top-edge banners)
+     */
+    notifications: Notification[];
+    /**
      * Theme settings as set in the Prezly app.
      * You need to provide `PREZLY_THEME_UUID` in environment variables in order for the preset to be loaded.
      * Only applicable to themes hosted on the Prezly infrastructure.
@@ -78,6 +83,7 @@ export function NewsroomContextProvider({
     companyInformation,
     languages,
     localeCode,
+    notifications,
     themePreset,
     algoliaSettings,
     children,
@@ -98,6 +104,7 @@ export function NewsroomContextProvider({
                 companyInformation,
                 languages,
                 locale,
+                notifications,
                 themePreset,
                 algoliaSettings,
             }}
