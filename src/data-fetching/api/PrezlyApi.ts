@@ -13,6 +13,7 @@ import {
     getDefaultLanguage,
     getLanguageFromNextLocaleIsoCode,
     getLanguageFromStory,
+    getNotifications,
     LocaleObject,
 } from '../../intl';
 import type { PageProps, ServerSidePageProps } from '../../types';
@@ -273,6 +274,7 @@ export class PrezlyApi {
         // TODO: if no information given for current language, show boilerplate from default language
         const companyInformation = getCompanyInformation(languages, locale);
 
+        const notifications = getNotifications(languages, locale);
         const algoliaSettings = getAlgoliaSettings(request);
 
         return {
@@ -282,6 +284,7 @@ export class PrezlyApi {
                 categories,
                 languages,
                 localeCode,
+                notifications,
                 themePreset,
                 algoliaSettings,
             },

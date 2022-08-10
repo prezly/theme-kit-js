@@ -48,6 +48,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             subscribe_disclaimer:
                 '<p>Door uw abonnement te bevestigen, bevestigt u dat u begrijpt dat u zich registreert om materiaal te ontvangen en dat uw gegevens veilig worden verwerkt en opgeslagen.</p>',
         },
+        notifications: [],
     },
     nl_NL: {
         code: 'nl_NL',
@@ -88,6 +89,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             cookie_statement: '',
             subscribe_disclaimer: '',
         },
+        notifications: [],
     },
     en: {
         code: 'en',
@@ -134,6 +136,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             subscribe_disclaimer:
                 '<p>By confirming your subscription you are confirming you understand that you are registering to receive content and consent to your information being securely processed and stored.</p>',
         },
+        notifications: [],
     },
     en_US: {
         code: 'en_US',
@@ -180,6 +183,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             subscribe_disclaimer:
                 '<p>By confirming your subscription you are confirming you understand that you are registering to receive content and consent to your information being securely processed and stored.</p>',
         },
+        notifications: [],
     },
     en_GB: {
         code: 'en_GB',
@@ -226,6 +230,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             subscribe_disclaimer:
                 '<p>By confirming your subscription you are confirming you understand that you are registering to receive content and consent to your information being securely processed and stored.</p>',
         },
+        notifications: [],
     },
     fr: {
         code: 'fr',
@@ -272,6 +277,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             subscribe_disclaimer:
                 '<p>En confirmant votre inscription, vous confirmez que vous comprenez que vous vous inscrivez pour recevoir du contenu, et consentez à ce que vos données personnelles soient traitées et stockées en toute sécurité.</p>',
         },
+        notifications: [],
     },
     fr_BE: {
         code: 'fr_BE',
@@ -318,6 +324,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             subscribe_disclaimer:
                 '<p>En confirmant votre inscription, vous confirmez que vous comprenez que vous vous inscrivez pour recevoir du contenu, et consentez à ce que vos données personnelles soient traitées et stockées en toute sécurité.</p>',
         },
+        notifications: [],
     },
     es_ES: {
         code: 'es_ES',
@@ -361,6 +368,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             subscribe_disclaimer:
                 '<p>Al confirmar su suscripción, confirma que entiende que se está registrando para recibir contenido y accede a que su información se procese y guarde de manera segura.</p>',
         },
+        notifications: [],
     },
     es_419: {
         code: 'es_419',
@@ -404,5 +412,6 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             subscribe_disclaimer:
                 '<p>Al confirmar su suscripción, confirma que entiende que se está registrando para recibir contenido y accede a que su información se procese y guarde de manera segura.</p>',
         },
+        notifications: [],
     },
 };

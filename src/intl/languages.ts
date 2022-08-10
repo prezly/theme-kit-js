@@ -168,7 +168,17 @@ export function getCompanyInformation(languages: NewsroomLanguageSettings[], loc
 }
 
 /**
- * Get shortest locale code possible from full locale code
+ * Get newsroom notifications for the selected locale
+ */
+export function getNotifications(languages: NewsroomLanguageSettings[], locale: LocaleObject) {
+    const currentLanguage =
+        getLanguageByExactLocaleCode(languages, locale) || getDefaultLanguage(languages);
+
+    return currentLanguage.notifications;
+}
+
+/**
+ * Get the shortest locale code possible from full locale code
  * First: try shorting to neutral language code (there should be no locales with the same language code)
  * Then: try shorting to region code (there should be no locales with the same region code)
  * Finally: return the original locale code (shorting is not possible)
