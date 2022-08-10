@@ -1,5 +1,6 @@
 import type { ExtendedStory } from '@prezly/sdk';
 import {
+    NewsroomStatus,
     StoryLifecycleStatus,
     StoryPublicationStatus,
     StoryVisibility,
@@ -68,6 +69,7 @@ export const STORY: ExtendedStory = {
         thumbnail_url:
             'https://avatars-cdn.prezly.com/newsroom/12698/e4939974b7781d4c61e282713116690387e9b7b1f6302478b13b68e18e0d3055?t=1648556918&v=1',
         timezone: 'europe/london',
+        status: NewsroomStatus.ACTIVE,
         is_active: true,
         is_archived: false,
         is_online: true,
@@ -77,7 +79,6 @@ export const STORY: ExtendedStory = {
         url: 'https://the-good-news-room.prezly.com/',
         links: {
             media_gallery_api: 'https://api.prezly.com/v1/rooms/12698/media',
-            room_contacts_api: 'https://api.prezly.com/v1/rooms/12698/contacts',
             analytics_and_visibility_settings:
                 'https://rock.prezly.com/pressroom/the-good-news-room/ga',
             categories_management:
@@ -178,6 +179,7 @@ export const STORY: ExtendedStory = {
                 thumbnail_url:
                     'https://avatars-cdn.prezly.com/newsroom/12698/e4939974b7781d4c61e282713116690387e9b7b1f6302478b13b68e18e0d3055?t=1648556918&v=1',
                 timezone: 'europe/london',
+                status: NewsroomStatus.ACTIVE,
                 is_active: true,
                 is_archived: false,
                 is_online: true,
@@ -187,7 +189,6 @@ export const STORY: ExtendedStory = {
                 url: 'https://the-good-news-room.prezly.com/',
                 links: {
                     media_gallery_api: 'https://api.prezly.com/v1/rooms/12698/media',
-                    room_contacts_api: 'https://api.prezly.com/v1/rooms/12698/contacts',
                     analytics_and_visibility_settings:
                         'https://rock.prezly.com/pressroom/the-good-news-room/ga',
                     categories_management:
@@ -277,6 +278,7 @@ export const STORY: ExtendedStory = {
                 thumbnail_url:
                     'https://avatars-cdn.prezly.com/newsroom/12698/e4939974b7781d4c61e282713116690387e9b7b1f6302478b13b68e18e0d3055?t=1648556918&v=1',
                 timezone: 'europe/london',
+                status: NewsroomStatus.ACTIVE,
                 is_active: true,
                 is_archived: false,
                 is_online: true,
@@ -286,7 +288,6 @@ export const STORY: ExtendedStory = {
                 url: 'https://the-good-news-room.prezly.com/',
                 links: {
                     media_gallery_api: 'https://api.prezly.com/v1/rooms/12698/media',
-                    room_contacts_api: 'https://api.prezly.com/v1/rooms/12698/contacts',
                     analytics_and_visibility_settings:
                         'https://rock.prezly.com/pressroom/the-good-news-room/ga',
                     categories_management:
