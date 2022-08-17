@@ -11,10 +11,6 @@ const uploadcareImage: UploadedImage = {
     original_width: 1162,
     original_height: 369,
     effects: ['/crop/369x369/0,0/', '/preview/'],
-    // isImage: true,
-    // download_url:
-    //     'https://cdn.uc.assets.prezly.com/43258238-9e71-49fa-a35e-dca5baf16a3b/-/crop/369x369/0,0/-/preview/-/inline/no/prezly-photographe.png',
-    // cdnUrl: 'https://cdn.uc.assets.prezly.com/43258238-9e71-49fa-a35e-dca5baf16a3b/-/crop/369x369/0,0/-/preview/',
 };
 
 describe('getAssetsUrl', () => {
