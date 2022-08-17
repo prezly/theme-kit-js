@@ -11,8 +11,7 @@ export function getAssetsUrl(image: UploadedImage | string) {
         return `${ASSETS_URL}/${image}/`;
     }
     if (image.effects.length > 0) {
-        const img = `${ASSETS_URL}/${image.uuid}/-${image.effects.join('-')}`;
-        return img;
+        return `${ASSETS_URL}/${image.uuid}/-${image.effects.join('-')}`;
     }
     return `${ASSETS_URL}/${image.uuid}/`;
 }
