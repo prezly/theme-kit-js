@@ -28,4 +28,9 @@ describe('getAssetsUrl', () => {
             `${ASSETS_URL}/${image.uuid}/-${image.effects[0]}-${image.effects[1]}`,
         );
     });
+
+    it('generates correct asset URL with uuid passed to it', () => {
+        const image = { ...uploadCareImage };
+        expect(getAssetsUrl(image.uuid)).toBe(`${ASSETS_URL}/${image.uuid}/`);
+    });
 });
