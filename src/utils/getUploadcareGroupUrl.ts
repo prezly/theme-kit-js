@@ -1,5 +1,3 @@
-import { UploadcareImage } from '@prezly/uploadcare';
-
 import { ASSETS_URL } from './constants';
 
 /**
@@ -10,7 +8,5 @@ import { ASSETS_URL } from './constants';
  * @returns URL to an archive containing all of the images in the Gallery.
  */
 export function getUploadcareGroupUrl(uuid: string, title: string) {
-    // eslint-disable-next-line no-console
-    console.log(UploadcareImage);
     return `${ASSETS_URL}/${uuid}/archive/zip/${encodeURI(title)}.zip`;
 }
