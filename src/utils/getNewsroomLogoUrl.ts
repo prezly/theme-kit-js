@@ -1,19 +1,21 @@
 import type { Newsroom } from '@prezly/sdk';
-
-import { getAssetsUrl } from './getAssetsUrl';
+import { UploadcareImage } from '@prezly/uploadcare';
 
 export function getNewsroomLogoUrl(newsroom: Newsroom): string {
     if (newsroom.newsroom_logo) {
-        return getAssetsUrl(newsroom.newsroom_logo);
+        const image = UploadcareImage.createFromPrezlyStoragePayload(newsroom.newsroom_logo);
+        return image.cdnUrl;
     }
 
     return '';
 }
 
 export function getNewsroomFaviconUrl(newsroom: Newsroom, previewSize = 400): string {
-    const image = newsroom.icon || newsroom.square_logo;
-    if (image) {
-        return `${getAssetsUrl(image)}-/preview/${previewSize}x${previewSize}/-/quality/best/`;
+    const imageObject = newsroom.icon || newsroom.square_logo;
+
+    if (imageObject) {
+        const image = UploadcareImage.createFromPrezlyStoragePayload(imageObject);
+        return image.preview(previewSize, previewSize).cdnUrl;
     }
 
     return '';
