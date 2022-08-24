@@ -32,6 +32,7 @@ const CATEGORIES_SORT_ORDER = '+order';
 const DEFAULT_SORT_ORDER: SortOrder = 'desc';
 
 const ERROR_CODE_NOT_FOUND = 404;
+const ERROR_CODE_FORBIDDEN = 403;
 const ERROR_CODE_GONE = 410;
 
 type SortOrder = 'desc' | 'asc';
@@ -78,7 +79,9 @@ export class PrezlyApi {
         } catch (error) {
             if (
                 isSdkError(error) &&
-                (error.status === ERROR_CODE_NOT_FOUND || error.status === ERROR_CODE_GONE)
+                (error.status === ERROR_CODE_NOT_FOUND ||
+                    error.status === ERROR_CODE_GONE ||
+                    error.status === ERROR_CODE_FORBIDDEN)
             ) {
                 return null;
             }
