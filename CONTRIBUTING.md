@@ -1,6 +1,9 @@
 # Contributing to @prezly/theme-kit-nextjs
 
-First off, thanks for taking the time to contribute! 🎉
+First off, thanks for taking the time to contribute! 🎉  
+All work on @prezly/theme-kit-nextjs happens directly on GitHub. Both core team members from Prezly and external contributors send pull requests which go through the same review process.
+
+## Development
 
 Assuming you have cloned the repo and installed dependencies on your machine, the very next step is to develop the package.
 
@@ -49,3 +52,13 @@ yalc publish --push
 It acts like you have released a new version of your package that your theme can use.
 
 If the changes are not automatically picked up by theme's dev server, restart the **theme's dev server**.
+
+## Bugs
+
+We use [Linear](https://linear.app) to track issues for our bugs at Prezly, but we also keep an eye on GitHub issues for bugs reported from the community. Before filing a new issue, try to make sure your problem doesn't already exist.
+
+The best way to get your bug fixed is to provide a reduced test case. Please provide a public repository with a runnable example.
+
+## License
+
+By contributing to @prezly/theme-kit-nextjs, you agree that your contributions will be licensed under its [MIT license](./LICENSE).
