@@ -43,10 +43,9 @@ What did we do? We simply removed the theme's `@prezly/theme-kit-nextjs` package
 Now the fun part begins, go ahead and hack the package (Make changes) :) Once you're done, simply run the following in **theme-kit's project root** folder:
 
 ```bash
-yalc push
+yalc publish --push
 ```
 
 It acts like you have released a new version of your package that your theme can use.
-And don't forget to run `npm install` in the theme's folder _if you have changed dependencies_ for the **theme-kit**.
 
 If the changes are not automatically picked up by theme's dev server, restart the **theme's dev server**.
