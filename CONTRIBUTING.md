@@ -55,7 +55,7 @@ If the changes are not automatically picked up by theme's dev server, restart th
 
 ## Bugs
 
-We use [Linear](https://linear.app) to track issues for our bugs at Prezly, but we also keep an eye on GitHub issues for bugs reported from the community. Before filing a new issue, try to make sure your problem doesn't already exist.
+We use [Linear](https://linear.app) to track issues for our bugs at Prezly, but we also keep an eye on [GitHub issues](https://github.com/prezly/theme-kit-nextjs/issues) for bugs reported from the community. Before filing a new issue, try to make sure your problem doesn't already exist.
 
 The best way to get your bug fixed is to provide a reduced test case. Please provide a public repository with a runnable example.
 
