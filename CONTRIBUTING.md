@@ -9,7 +9,7 @@ All work on @prezly/theme-kit-nextjs happens directly on GitHub. Both core team 
 
 Assuming you have cloned the repo and installed dependencies on your machine, the very next step is to develop the package.
 
-Since theme-kit provides a collection of base functions, hooks, and utilities that works with [Prezly themes](https://github.com/prezly?q=theme-nextjs&type=all&language=&sort=) under the hood, in order to make changes and test things out on your side, you're gonna need to keep a theme running in parallel with the theme-kit.
+Since theme-kit provides a collection of base functions, hooks, and utilities that work with [Prezly themes](https://github.com/prezly?q=theme-nextjs&type=all&language=&sort=) under the hood, in order to make changes and test things out on your side, you're gonna need to keep a theme running in parallel with the theme-kit.
 
 So if you haven't already, go ahead and follow the [instructions on Bea theme](https://github.com/prezly/theme-nextjs-bea#quick-start) to get it up and running.
 
