@@ -311,6 +311,11 @@ You can find all of the helper methods in the [page-props](./tree/main/src/adapt
 
 ----
 
+## Contributing
+Please see our [CONTRIBUTING.md](CONTRIBUTING.md).
+
+----
+
 ## What's next
 
 This kit is just a collection of building blocks, so it doesn't really force any page structure or guidelines on how to render the content.
