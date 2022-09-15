@@ -71,7 +71,7 @@ Then go back to **theme's project root** and run:
 npm link @prezly/theme-kit-nextjs
 ```
 
-This will create a symbolic link between local version of the package and theme.
+This will create a symbolic link between local version of the package and theme. Checkout [Common Errors](#common-errors) section in case you have reached unexpected errors.
 
 ### Common Errors
 
