@@ -15,23 +15,7 @@ So if you haven't already, go ahead and follow the [instructions on Bea theme](h
 
 As you can already see in the theme's `package.json` file, we're using `@prezly/theme-kit-nextjs` package. So we need to make sure that our theme is using our local version of theme-kit and not the one's in the theme's `node_modules` folder. How do we achieve that?
 
-### Option 1 - Using `npm link`
-
-In the **theme-kit's project root** folder run the following command:
-
-```
-npm link
-```
-
-Then go back to **theme's project root** and run:
-
-```
-npm link @prezly/theme-kit-nextjs
-```
-
-This will create a symbolic link between local version of the package and theme.
-
-### Option 2 - Using `yalc`
+### Option 1 - Using `yalc` (Preferred way)
 
 There's this awesome package called [yalc](https://github.com/wclr/yalc), which serves the purpose for our use case! So let's install it:
 
@@ -72,6 +56,22 @@ yalc publish --push
 It acts like you have released a new version of your package that your theme can use.
 
 If the changes are not automatically picked up by theme's dev server, restart the **theme's dev server**.
+
+### Option 2 - Using `npm link`
+
+In the **theme-kit's project root** folder run the following command:
+
+```
+npm link
+```
+
+Then go back to **theme's project root** and run:
+
+```
+npm link @prezly/theme-kit-nextjs
+```
+
+This will create a symbolic link between local version of the package and theme.
 
 ### Common Errors
 
