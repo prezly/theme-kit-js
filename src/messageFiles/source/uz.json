@@ -167,7 +167,7 @@
     "message": "{subscribe} ustiga bosish orqali {privacyPolicyLink}ni oʻqib chiqqanim va shartlarga roz ekanimni tasdiqlayman."
   },
   "subscription.formTitle": {
-    "message": "Yangilanishlarni pochangizda oling"
+    "message": "Yangiliklarni elektron pochta orqali oling"
   },
   "subscription.labelEmail": {
     "message": "Email manzilingiz"
