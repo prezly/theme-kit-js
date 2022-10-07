@@ -8,5 +8,6 @@ import { ASSETS_URL } from './constants';
  * @returns URL to an archive containing all of the images in the Gallery.
  */
 export function getUploadcareGroupUrl(uuid: string, title: string) {
-    return `${ASSETS_URL}/${uuid}/archive/zip/${encodeURI(title)}.zip`;
+    // UploadCare doesn't like slashes in filenames even in encoded form.
+    return `${ASSETS_URL}/${uuid}/archive/zip/${encodeURIComponent(title.replace('/', '_'))}.zip`;
 }
