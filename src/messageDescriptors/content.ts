@@ -28,13 +28,6 @@ export const contacts = defineMessages({
 export const mediaGallery = defineMessages({
     title: {
         id: 'mediaGallery.title',
-        defaultMessage: 'Media gallery',
-    },
-});
-
-export const mediaGalleries = defineMessages({
-    title: {
-        id: 'mediaGalleries.title',
         defaultMessage: 'Media galleries',
     },
 });
