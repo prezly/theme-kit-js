@@ -80,6 +80,9 @@
   "mediaGallery.title": {
     "message": "Media gallery"
   },
+  "mediaGalleries.title": {
+    "message": "Media galleries"
+  },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
     "message": "Embargo until {date}"

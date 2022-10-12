@@ -32,6 +32,13 @@ export const mediaGallery = defineMessages({
     },
 });
 
+export const mediaGalleries = defineMessages({
+    title: {
+        id: 'mediaGalleries.title',
+        defaultMessage: 'Media galleries',
+    },
+});
+
 export const noStories = defineMessages({
     title: {
         id: 'noStories.title',
