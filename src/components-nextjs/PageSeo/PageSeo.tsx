@@ -121,7 +121,7 @@ export function PageSeo({
                 {
                     rel: 'alternate',
                     type: 'application/rss+xml',
-                    href: `${document.location.origin}/feed`,
+                    href: getAbsoluteUrl('/feed', newsroom.url),
                 },
             ]}
             languageAlternates={alternateLanguageLinks}

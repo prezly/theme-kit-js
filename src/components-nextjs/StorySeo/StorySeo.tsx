@@ -60,7 +60,7 @@ export function StorySeo({ story, noindex }: Props) {
                     {
                         rel: 'alternate',
                         type: 'application/json',
-                        href: `${document.location.origin}${document.location.pathname}.json`,
+                        href: `${oembed.url}.json`,
                     },
                 ]}
             />
