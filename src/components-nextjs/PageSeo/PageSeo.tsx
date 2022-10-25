@@ -117,6 +117,13 @@ export function PageSeo({
                 ...twitter,
             }}
             additionalMetaTags={[{ name: 'twitter:image', content: logoUrl }]}
+            additionalLinkTags={[
+                {
+                    rel: 'alternate',
+                    type: 'application/rss+xml',
+                    href: `${document.location.origin}/feed`,
+                },
+            ]}
             languageAlternates={alternateLanguageLinks}
             {...nextSeoProps}
         />

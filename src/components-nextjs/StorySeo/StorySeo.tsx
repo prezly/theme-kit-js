@@ -56,6 +56,13 @@ export function StorySeo({ story, noindex }: Props) {
                           ]
                         : undefined
                 }
+                additionalLinkTags={[
+                    {
+                        rel: 'alternate',
+                        type: 'application/json',
+                        href: `${document.location.origin}${document.location.pathname}.json`,
+                    },
+                ]}
             />
             <ArticleJsonLd
                 url={oembed.url}
