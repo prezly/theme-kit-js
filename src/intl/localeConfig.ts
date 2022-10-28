@@ -1,3 +1,5 @@
+import type { I18NConfig } from 'next/dist/server/config-shared';
+
 /**
  * This list is pulled from the main Prezly application. The underscores are replaced with dashes.
  * Together with permutation performed lower in the code,
@@ -13,7 +15,6 @@ export const DUMMY_DEFAULT_LOCALE = 'qps-ploc';
 // Get all permutations for the shorter locale codes supported by Prezly (e.g. short region codes and neutral language codes)
 const lowercaseLocalPermutations = Array.from(
     new Set([
-        ...DUMMY_DEFAULT_LOCALE,
         ...lowercaseLocales,
         ...lowercaseLocales.map((code) => code.split('-')[0]),
         ...lowercaseLocales
@@ -24,4 +25,14 @@ const lowercaseLocalPermutations = Array.from(
     ]),
 ).sort();
 
-export const localeConfig = lowercaseLocalPermutations;
+export const localeConfig: I18NConfig = {
+    // These are all the locales you want to support in
+    // your application
+    locales: [DUMMY_DEFAULT_LOCALE, ...lowercaseLocalPermutations],
+    // This is the default locale you want to be used when visiting
+    // a non-locale prefixed path e.g. `/media`
+    // We use Pseudo locale used for localization testing, to reliably determine if we need to fallback to the default newsroom language
+    defaultLocale: DUMMY_DEFAULT_LOCALE,
+    // Default locale detection is disabled, since the locales would be determined by Prezly API
+    localeDetection: false,
+};
