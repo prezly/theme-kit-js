@@ -1,11 +1,12 @@
 import type {
     Category,
-    ExtraStoryFields,
     Newsroom,
     NewsroomLanguageSettings,
+    PrezlyClient,
+    Stories,
     Story,
 } from '@prezly/sdk';
-import PrezlySDK from '@prezly/sdk';
+import { createPrezlyClient } from '@prezly/sdk';
 import type { IncomingMessage } from 'http';
 
 import {
@@ -41,7 +42,7 @@ interface GetStoriesOptions {
     page?: number;
     pageSize?: number;
     order?: SortOrder;
-    include?: (keyof ExtraStoryFields)[];
+    include?: (keyof Story.ExtraFields)[];
     localeCode?: string;
 }
 
@@ -51,7 +52,7 @@ interface GetGalleriesOptions {
 }
 
 export class PrezlyApi {
-    private readonly sdk: PrezlySDK;
+    private readonly sdk: PrezlyClient;
 
     private readonly newsroomUuid: Newsroom['uuid'];
 
@@ -59,7 +60,7 @@ export class PrezlyApi {
 
     constructor(accessToken: string, newsroomUuid: Newsroom['uuid'], themeUuid?: string) {
         const baseUrl = process.env.API_BASE_URL_OVERRIDE ?? undefined;
-        this.sdk = new PrezlySDK({
+        this.sdk = createPrezlyClient({
             accessToken,
             baseUrl,
             // This returns stories created by legacy version of the editor in a format that can be displayed by the Prezly Content Renderer.
@@ -75,7 +76,8 @@ export class PrezlyApi {
         }
 
         try {
-            return await this.sdk.stories.get(uuid);
+            const story = await this.sdk.stories.get(uuid);
+            return story;
         } catch (error) {
             if (
                 isSdkError(error) &&
@@ -109,7 +111,7 @@ export class PrezlyApi {
     async getAllStories(order: SortOrder = DEFAULT_SORT_ORDER) {
         const sortOrder = getSortByPublishedDate(order);
         const newsroom = await this.getNewsroom();
-        const jsonQuery = JSON.stringify(getStoriesQuery(newsroom.uuid));
+        const query = JSON.stringify(getStoriesQuery(newsroom.uuid));
         const maxStories = newsroom.stories_number;
         const chunkSize = 200;
 
@@ -118,7 +120,7 @@ export class PrezlyApi {
             this.searchStories({
                 limit: chunkSize,
                 sortOrder,
-                jsonQuery,
+                query,
                 offset: pageIndex * chunkSize,
             }),
         );
@@ -138,13 +140,13 @@ export class PrezlyApi {
         localeCode,
     }: GetStoriesOptions = {}) {
         const sortOrder = getSortByPublishedDate(order);
-        const jsonQuery = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
+        const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
 
         const { stories, pagination } = await this.searchStories({
             limit: pageSize,
             offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
             sortOrder,
-            jsonQuery,
+            query,
             include,
         });
 
@@ -164,15 +166,13 @@ export class PrezlyApi {
         }: GetStoriesOptions = {},
     ) {
         const sortOrder = getSortByPublishedDate(order);
-        const jsonQuery = JSON.stringify(
-            getStoriesQuery(this.newsroomUuid, category.id, localeCode),
-        );
+        const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, category.id, localeCode));
 
         const { stories, pagination } = await this.searchStories({
             limit: pageSize,
             offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
             sortOrder,
-            jsonQuery,
+            query,
             include,
         });
 
@@ -182,10 +182,10 @@ export class PrezlyApi {
     }
 
     async getStoryBySlug(slug: string) {
-        const jsonQuery = JSON.stringify(getSlugQuery(this.newsroomUuid, slug));
+        const query = JSON.stringify(getSlugQuery(this.newsroomUuid, slug));
         const { stories } = await this.searchStories({
             limit: 1,
-            jsonQuery,
+            query,
         });
 
         if (stories[0]) {
@@ -211,17 +211,16 @@ export class PrezlyApi {
         );
     }
 
-    searchStories: typeof PrezlySDK.prototype.stories.search = (options) =>
-        this.sdk.stories.search(options);
+    searchStories: Stories.Client['search'] = (options) => this.sdk.stories.search(options);
 
     async getGalleries({ page, pageSize }: GetGalleriesOptions) {
-        return this.sdk.newsroomGalleries.list(this.newsroomUuid, {
+        return this.sdk.newsroomGalleries.search(this.newsroomUuid, {
             limit: pageSize,
             offset:
                 typeof page === 'undefined' || typeof pageSize === 'undefined'
                     ? undefined
                     : (page - 1) * pageSize,
-            scope: getGalleriesQuery(),
+            query: getGalleriesQuery(),
         });
     }
 
@@ -234,7 +233,8 @@ export class PrezlyApi {
         }
 
         try {
-            return await this.sdk.newsroomGalleries.get(this.newsroomUuid, uuid);
+            const gallery = await this.sdk.newsroomGalleries.get(this.newsroomUuid, uuid);
+            return gallery;
         } catch (error) {
             if (isSdkError(error) && error.status === 404) {
                 return null;

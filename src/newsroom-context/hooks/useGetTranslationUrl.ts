@@ -1,4 +1,5 @@
 import type { Category, ExtendedStory } from '@prezly/sdk';
+import { Story } from '@prezly/sdk';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
@@ -8,26 +9,22 @@ import { getCategoryHasTranslation, getCategoryUrl } from '../../utils';
 import { useCurrentCategory } from './useCurrentCategory';
 import { useCurrentStory } from './useCurrentStory';
 
-// Pulled from SDK types to not leak the `@prezly/sdk` dependency into the client bundle
-enum StoryVisibility {
-    PUBLIC = 'public',
-    EMBARGO = 'embargo',
-    PRIVATE = 'private',
-    CONFIDENTIAL = 'confidential',
-}
-
-function getAllowedTranslationVisibilityValues(story: ExtendedStory): StoryVisibility[] {
+function getAllowedTranslationVisibilityValues(story: ExtendedStory): Story.Visibility[] {
     const { visibility } = story;
 
     switch (visibility) {
-        case StoryVisibility.EMBARGO:
-            return [StoryVisibility.EMBARGO, StoryVisibility.PUBLIC];
-        case StoryVisibility.PRIVATE:
-            return [StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
-        case StoryVisibility.CONFIDENTIAL:
-            return [StoryVisibility.CONFIDENTIAL, StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
+        case Story.Visibility.EMBARGO:
+            return [Story.Visibility.EMBARGO, Story.Visibility.PUBLIC];
+        case Story.Visibility.PRIVATE:
+            return [Story.Visibility.PRIVATE, Story.Visibility.PUBLIC];
+        case Story.Visibility.CONFIDENTIAL:
+            return [
+                Story.Visibility.CONFIDENTIAL,
+                Story.Visibility.PRIVATE,
+                Story.Visibility.PUBLIC,
+            ];
         default:
-            return [StoryVisibility.PUBLIC];
+            return [Story.Visibility.PUBLIC];
     }
 }
 

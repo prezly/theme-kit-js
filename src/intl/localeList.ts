@@ -1,7 +1,7 @@
 /**
  * This list is pulled from the main Prezly application. The underscores are replaced with dashes.
  */
-module.exports = [
+export const localeList = [
     'af-ZA',
     'ar',
     'ar-AE',
