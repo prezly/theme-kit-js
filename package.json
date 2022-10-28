@@ -48,7 +48,7 @@
   "dependencies": {
     "@prezly/sdk": "^10.0.0",
     "@prezly/uploadcare": "^2.3.4",
-    "@react-hookz/web": "^14.2.2",
+    "@react-hookz/web": "^16.0.0",
     "next-seo": "^5.4.0",
     "parse-data-url": "^4.0.1"
   },
