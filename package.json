@@ -7,12 +7,12 @@
   "types": "build/index.d.ts",
   "files": ["build"],
   "engines": {
-    "node": ">= 14.x",
-    "npm": ">= 7.x"
+    "node": ">= 16.x",
+    "npm": ">= 8.x"
   },
   "devEngines": {
-    "node": ">= 14.x",
-    "npm": ">= 7.x"
+    "node": ">= 16.x",
+    "npm": ">= 8.x"
   },
   "repository": {
     "type": "git",
