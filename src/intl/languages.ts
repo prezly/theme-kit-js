@@ -1,6 +1,6 @@
 import type { CultureRef, NewsroomLanguageSettings, Story } from '@prezly/sdk';
 
-import { DUMMY_DEFAULT_LOCALE } from './locale';
+import { DUMMY_DEFAULT_LOCALE } from './localeConfig';
 import { LocaleObject } from './localeObject';
 
 function isOnlyCulture(culture: CultureRef, languages: NewsroomLanguageSettings[]): boolean {

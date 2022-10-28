@@ -7,9 +7,13 @@ import { localeList } from './localeList';
 
 const lowercaseLocales = localeList.map((l) => l.toLowerCase());
 
+// We use pseudo locale used for localization testing, to reliably determine if we need to fallback to the default newsroom language
+export const DUMMY_DEFAULT_LOCALE = 'qps-ploc';
+
 // Get all permutations for the shorter locale codes supported by Prezly (e.g. short region codes and neutral language codes)
 const lowercaseLocalPermutations = Array.from(
     new Set([
+        ...DUMMY_DEFAULT_LOCALE,
         ...lowercaseLocales,
         ...lowercaseLocales.map((code) => code.split('-')[0]),
         ...lowercaseLocales

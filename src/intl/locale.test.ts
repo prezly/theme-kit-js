@@ -2,11 +2,11 @@ import { jest } from '@jest/globals';
 
 import {
     DEFAULT_LOCALE,
-    DUMMY_DEFAULT_LOCALE,
     getLocaleDirection,
     getRedirectToCanonicalLocale,
     getSupportedLocaleIsoCode,
 } from './locale';
+import { DUMMY_DEFAULT_LOCALE } from './localeConfig';
 import { LocaleObject } from './localeObject';
 
 describe('getSupportedLocaleIsoCode', () => {

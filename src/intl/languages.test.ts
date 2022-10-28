@@ -13,7 +13,7 @@ import {
     getShortestLocaleCode,
     getUsedLanguages,
 } from './languages';
-import { DUMMY_DEFAULT_LOCALE } from './locale';
+import { DUMMY_DEFAULT_LOCALE } from './localeConfig';
 import { LocaleObject } from './localeObject';
 
 const ALL_LANGUAGES = Object.values(LANGUAGES);

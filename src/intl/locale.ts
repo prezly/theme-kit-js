@@ -2,11 +2,10 @@ import type { Redirect } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import { stringify } from 'querystring';
 
+import { DUMMY_DEFAULT_LOCALE } from './localeConfig';
 import { LocaleObject } from './localeObject';
 
 export const DEFAULT_LOCALE = 'en';
-// We use pseudo locale used for localization testing, to reliably determine if we need to fallback to the default newsroom language
-export const DUMMY_DEFAULT_LOCALE = 'qps-ploc';
 
 /**
  * This a list of locales that Prezly has translations for. Each code represents a language file in the `@prezly/themes-intl-messages` package.
