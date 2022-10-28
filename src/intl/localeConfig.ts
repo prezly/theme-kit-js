@@ -3,9 +3,9 @@
  * Together with permutation performed lower in the code,
  * the exported list represents all of the possible locale codes that Next.js theme application might accept.
  */
-const supportedLocales = require('./localeList');
+import { localeList } from './localeList';
 
-const lowercaseLocales = supportedLocales.map((l) => l.toLowerCase());
+const lowercaseLocales = localeList.map((l) => l.toLowerCase());
 
 // Get all permutations for the shorter locale codes supported by Prezly (e.g. short region codes and neutral language codes)
 const lowercaseLocalPermutations = Array.from(
@@ -20,4 +20,4 @@ const lowercaseLocalPermutations = Array.from(
     ]),
 ).sort();
 
-module.exports = lowercaseLocalPermutations;
+export const localeConfig = lowercaseLocalPermutations;
