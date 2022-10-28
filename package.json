@@ -5,9 +5,14 @@
   "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "files": [
-    "build"
-  ],
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.js"
+    },
+    "./localeConfig": "./build/intl/localeConfig.js"
+  },
+  "files": ["build"],
   "engines": {
     "node": ">= 16.x",
     "npm": ">= 8.x"
