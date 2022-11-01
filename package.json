@@ -57,7 +57,7 @@
   "devDependencies": {
     "@prezly/eslint-config": "4.2.0",
     "@sentry/nextjs": "7.17.3",
-    "@types/jest": "29.2.0",
+    "@types/jest": "29.2.1",
     "@types/node": "17.0.14",
     "@types/parse-data-url": "3.0.0",
     "@types/react": "18.0.24",
