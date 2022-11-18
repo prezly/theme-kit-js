@@ -9,5 +9,5 @@ import { ASSETS_URL } from './constants';
  */
 export function getUploadcareGroupUrl(uuid: string, title: string) {
     // UploadCare doesn't like slashes in filenames even in encoded form.
-    return `${ASSETS_URL}/${uuid}/archive/zip/${encodeURIComponent(title.replace('/', '_'))}.zip`;
+    return `${ASSETS_URL}/${uuid}/archive/zip/${encodeURIComponent(title.replace(/\//g, '_'))}.zip`;
 }
