@@ -51,12 +51,17 @@ If you don't have these credentials, you can use one of our [testing newsrooms c
 In a base setup, you don't have to make any changes to your config.
 Depending on your use-case, you might need to make some additions to your base config.
 
+#### ⚠️ IMPORTANT: Theme Kit v2 is ESM-only package!
+
+You should be totally fine if you don't need to import anything from `@prezly/theme-kit-nextjs` in your `next.config.js`, which is a CommonJS file by default.
+In order to import from `@prezly/theme-kit-nextjs`, you will need either to set `type` property to `module` in your `package.json`, or rename `next.config.js` to `next.config.mjs`, so that it's treated as ES Module.
+
 #### Using next/image to display images served from Prezly
 
 We provide `@prezly/uploadcare-image` package to conveniently display images inside Prezly content, and this is the recommended way to display images in your theme.
 However, if you need to use the default `next/image` component, you will need to add our CDN url to image domains settings:
 ```js
-module.exports = {
+export default {
     /* ...your next config... */
     images: {
         domains: ['cdn.uc.assets.prezly.com'],
@@ -69,9 +74,9 @@ module.exports = {
 If you want to support multi-language in your theme, you'll need to make additional changes to the file:
 
 ```js
-const { localeConfig } = require('@prezly/theme-kit-nextjs/localeConfig');
+import { localeConfig } from '@prezly/theme-kit-nextjs/localeConfig';
 
-module.exports = {
+export default {
     /* ...your next config... */
 
     i18n: localeConfig,
