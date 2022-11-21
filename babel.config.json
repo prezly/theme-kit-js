@@ -4,8 +4,5 @@
     "@babel/preset-react",
     ["@babel/preset-env", { "modules": false, "targets": { "node": "current" } }]
   ],
-  "plugins": [
-    "./fixNextEsmImports.plugin.js",
-    ["babel-plugin-add-import-extension", { "extension": "js" }]
-  ]
+  "plugins": [["babel-plugin-add-import-extension", { "extension": "js" }]]
 }
