@@ -1,9 +1,14 @@
+import type { DocumentProps } from 'next/document';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
+import { Component } from 'react';
 
 import { DEFAULT_LOCALE, getLocaleDirection, LocaleObject } from '../intl';
 import type { PageProps } from '../types';
 
-export class PrezlyThemeDocument extends Document {
+// Somehow extending the default Next Document class messes up with the ESM build of the package.
+export class PrezlyThemeDocument extends Component<DocumentProps> {
+    static getInitialProps = Document.getInitialProps;
+
     getLocaleCode() {
         const {
             newsroomContextProps,
