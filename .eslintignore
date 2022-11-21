@@ -1,3 +1,4 @@
 next-env.d.ts
 src/__mocks__
 build/
+fixNextEsmImports.plugins.js
