@@ -1,7 +1,6 @@
-import { ExtendedStory, User } from '@prezly/sdk';
-import { Newsroom, Story, Culture } from '@prezly/sdk';
+import type { ExtendedStory } from '@prezly/sdk';
 
-export const STORY: ExtendedStory = {
+export const STORY = {
     id: 380023,
     uuid: '65018f5b-b313-453f-b23b-9e739c6a8591',
     thumbnail_url:
@@ -17,15 +16,15 @@ export const STORY: ExtendedStory = {
         locale: 'en',
         name: 'English (Global)',
         native_name: 'English (Global)',
-        direction: Culture.TextDirection.LTR,
+        direction: 'ltr',
         language_code: 'en',
     },
     slug: 'take-a-breath',
     format_version: 3,
     language: 'EN',
-    lifecycle_status: Story.LifecycleStatus.PUBLISHED,
-    publication_status: Story.PublicationStatus.PUBLISHED,
-    visibility: Story.Visibility.PUBLIC,
+    lifecycle_status: 'published',
+    publication_status: 'published',
+    visibility: 'public',
     is_archived: false,
     is_finalized: true,
     is_published: true,
@@ -48,8 +47,8 @@ export const STORY: ExtendedStory = {
         last_name: 'Anthonis',
         avatar_url:
             'https://avatars-cdn.prezly.com/user/7680/6260be53465a846a511c44edd8f594f38235d782f3fa515ab968ad2f947a236c?v=1&c=cc6e751bdb46638cd948d0d812149ce391e45b7cd2b5d80a94de575ba0ce65d0',
-        use_case_answer: User.UseCaseAnswer.UNKNOWN,
-        sign_in_flow: User.SignInFlow.PASSWORD,
+        use_case_answer: 'unknown',
+        sign_in_flow: 'password',
         created_at: '2019-02-06T09:54:34+00:00',
         is_terms_of_service_accepted: false,
         last_seen_at: '2021-12-03T09:15:39+00:00',
@@ -64,7 +63,7 @@ export const STORY: ExtendedStory = {
         thumbnail_url:
             'https://avatars-cdn.prezly.com/newsroom/12698/e4939974b7781d4c61e282713116690387e9b7b1f6302478b13b68e18e0d3055?t=1648556918&v=1',
         timezone: 'europe/london',
-        status: Newsroom.Status.ACTIVE,
+        status: 'active',
         is_active: true,
         is_archived: false,
         is_online: true,
@@ -140,12 +139,12 @@ export const STORY: ExtendedStory = {
                 locale: 'nl_BE',
                 name: 'Dutch (Belgium)',
                 native_name: 'Nederlands (België)',
-                direction: Culture.TextDirection.LTR,
+                direction: 'ltr',
                 language_code: 'nl',
             },
-            lifecycle_status: Story.LifecycleStatus.PUBLISHED,
-            publication_status: Story.PublicationStatus.PUBLISHED,
-            visibility: Story.Visibility.PUBLIC,
+            lifecycle_status: 'published',
+            publication_status: 'published',
+            visibility: 'public',
             created_at: '2020-05-05T10:07:11+00:00',
             updated_at: '2021-12-21T09:05:05+00:00',
             published_at: '2020-05-05T10:21:00+00:00',
@@ -159,8 +158,8 @@ export const STORY: ExtendedStory = {
                 last_name: 'Anthonis',
                 avatar_url:
                     'https://avatars-cdn.prezly.com/user/7680/6260be53465a846a511c44edd8f594f38235d782f3fa515ab968ad2f947a236c?v=1&c=cc6e751bdb46638cd948d0d812149ce391e45b7cd2b5d80a94de575ba0ce65d0',
-                use_case_answer: User.UseCaseAnswer.UNKNOWN,
-                sign_in_flow: User.SignInFlow.PASSWORD,
+                use_case_answer: 'unknown',
+                sign_in_flow: 'password',
                 created_at: '2019-02-06T09:54:34+00:00',
                 is_terms_of_service_accepted: false,
                 last_seen_at: '2021-12-03T09:15:39+00:00',
@@ -175,7 +174,7 @@ export const STORY: ExtendedStory = {
                 thumbnail_url:
                     'https://avatars-cdn.prezly.com/newsroom/12698/e4939974b7781d4c61e282713116690387e9b7b1f6302478b13b68e18e0d3055?t=1648556918&v=1',
                 timezone: 'europe/london',
-                status: Newsroom.Status.ACTIVE,
+                status: 'active',
                 is_active: true,
                 is_archived: false,
                 is_online: true,
@@ -240,12 +239,12 @@ export const STORY: ExtendedStory = {
                 locale: 'nl_NL',
                 name: 'Dutch (Netherlands)',
                 native_name: 'Nederlands (Nederland)',
-                direction: Culture.TextDirection.LTR,
+                direction: 'ltr',
                 language_code: 'nl',
             },
-            lifecycle_status: Story.LifecycleStatus.PUBLISHED,
-            publication_status: Story.PublicationStatus.PUBLISHED,
-            visibility: Story.Visibility.PUBLIC,
+            lifecycle_status: 'published',
+            publication_status: 'published',
+            visibility: 'public',
             created_at: '2022-06-28T07:29:03+00:00',
             updated_at: '2022-06-28T07:29:09+00:00',
             published_at: '2022-06-28T07:29:09+00:00',
@@ -259,8 +258,8 @@ export const STORY: ExtendedStory = {
                 last_name: 'Semyonov',
                 avatar_url:
                     'https://avatars-cdn.prezly.com/user/10324/85fc2201624703503c24a3a97cc7e1776015e9f6ffe2ad96016650add0b9ab5f?v=1&c=add8f27908ec1f74f1a7c0530a74d88027eea08d05cac4300713d1c07fed0e1b',
-                use_case_answer: User.UseCaseAnswer.STORIES,
-                sign_in_flow: User.SignInFlow.GOOGLE,
+                use_case_answer: 'stories',
+                sign_in_flow: 'google',
                 created_at: '2021-02-25T13:30:04+00:00',
                 is_terms_of_service_accepted: true,
                 last_seen_at: '2022-06-28T09:06:32+00:00',
@@ -275,7 +274,7 @@ export const STORY: ExtendedStory = {
                 thumbnail_url:
                     'https://avatars-cdn.prezly.com/newsroom/12698/e4939974b7781d4c61e282713116690387e9b7b1f6302478b13b68e18e0d3055?t=1648556918&v=1',
                 timezone: 'europe/london',
-                status: Newsroom.Status.ACTIVE,
+                status: 'active',
                 is_active: true,
                 is_archived: false,
                 is_online: true,
@@ -346,4 +345,4 @@ export const STORY: ExtendedStory = {
         stories: {},
     },
     attached_gallery_content: null,
-};
+} as ExtendedStory;

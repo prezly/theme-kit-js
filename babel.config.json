@@ -2,7 +2,7 @@
   "presets": [
     "@babel/typescript",
     "@babel/preset-react",
-    ["@babel/preset-env", { "modules": false, "targets": { "node": "current" } }]
+    ["@babel/preset-env", { "modules": "commonjs", "targets": { "node": "current" } }]
   ],
   "plugins": [["babel-plugin-add-import-extension", { "extension": "js" }]]
 }

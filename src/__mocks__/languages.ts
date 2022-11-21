@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { type NewsroomLanguageSettings, Culture } from '@prezly/sdk';
+import { type NewsroomLanguageSettings } from '@prezly/sdk';
 
 /**
  * Pulled from The Good Newsroom (with some additions)
  */
-export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
+export const LANGUAGES = {
     nl_BE: {
         code: 'nl_BE',
         locale: {
@@ -12,7 +12,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             locale: 'nl_BE',
             name: 'Dutch (Belgium)',
             native_name: 'Nederlands (België)',
-            direction: Culture.TextDirection.LTR,
+            direction: 'ltr',
             language_code: 'nl',
         },
         is_default: false,
@@ -57,7 +57,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             locale: 'nl_NL',
             name: 'Dutch (Netherlands)',
             native_name: 'Nederlands (Nederland)',
-            direction: Culture.TextDirection.LTR,
+            direction: 'ltr',
             language_code: 'nl',
         },
         is_default: false,
@@ -98,7 +98,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             locale: 'en',
             name: 'English (Global)',
             native_name: 'English (Global)',
-            direction: Culture.TextDirection.LTR,
+            direction: 'ltr',
             language_code: 'en',
         },
         is_default: true,
@@ -145,7 +145,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             locale: 'en_US',
             name: 'English (US)',
             native_name: 'English (US)',
-            direction: Culture.TextDirection.LTR,
+            direction: 'ltr',
             language_code: 'en',
         },
         is_default: false,
@@ -192,7 +192,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             locale: 'en_GB',
             name: 'English (UK)',
             native_name: 'English (UK)',
-            direction: Culture.TextDirection.LTR,
+            direction: 'ltr',
             language_code: 'en',
         },
         is_default: false,
@@ -239,7 +239,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             locale: 'fr',
             name: 'French (Global)',
             native_name: 'Français (Mondial)',
-            direction: Culture.TextDirection.LTR,
+            direction: 'ltr',
             language_code: 'fr',
         },
         is_default: false,
@@ -286,7 +286,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             locale: 'fr_BE',
             name: 'French (Belgium)',
             native_name: 'Français (België)',
-            direction: Culture.TextDirection.LTR,
+            direction: 'ltr',
             language_code: 'fr',
         },
         is_default: false,
@@ -333,7 +333,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             locale: 'es_ES',
             name: 'Spanish (Spain)',
             native_name: 'Español (España)',
-            direction: Culture.TextDirection.LTR,
+            direction: 'ltr',
             language_code: 'es',
         },
         is_default: false,
@@ -377,7 +377,7 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             locale: 'es_419',
             name: 'Spanish (Latin America)',
             native_name: 'Español (Latinoamérica)',
-            direction: Culture.TextDirection.LTR,
+            direction: 'ltr',
             language_code: 'es',
         },
         is_default: false,
@@ -414,4 +414,4 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
         },
         notifications: [],
     },
-};
+} as Record<string, NewsroomLanguageSettings>;

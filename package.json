@@ -2,7 +2,6 @@
   "name": "@prezly/theme-kit-nextjs",
   "version": "2.0.1-0",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
-  "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "exports": {
@@ -41,7 +40,7 @@
     "build:types": "tsc --project .",
     "build:es": "babel ./src --ignore='**/*.test.ts','**/__mocks__/**' --config-file=./babel.config.json --extensions=.ts,.tsx --source-root=./src --out-dir=./build",
     "watch": "tsc --watch --preserveWatchOutput --project .",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "jest",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
