@@ -52,7 +52,7 @@ You can check an example on how to import messages in a Next.js theme in the [Pr
 ### Message descriptors structure
 
 - `actions` -> Labels for buttons or links that trigger a specific action
-- `content` -> Mostly titles for various sections of a Newsroom that are related to the displayed content in some way
+- `content` -> Mostly titles for various sections of a site that are related to the displayed content in some way
 - `errors` -> Messages for error pages (404/500) and form validation errors
 - `search` -> Messages related to the Search module
 - `subscription` -> Messages related to the Subscription module

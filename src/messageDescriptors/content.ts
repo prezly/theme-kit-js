@@ -46,7 +46,7 @@ export const noStories = defineMessages({
 export const newsroom = defineMessages({
     title: {
         id: 'newsroom.title',
-        defaultMessage: 'Newsroom',
+        defaultMessage: 'Site',
     },
 });
 
