@@ -95,7 +95,7 @@
     "message": "Vaihda navigointi"
   },
   "newsroom.title": {
-    "message": "Uutishuone"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Palaa takaisin myöhemmin nähdäksesi uusia tarinoita."
@@ -135,7 +135,7 @@
     "message": "Kirjoita hakusi"
   },
   "search.inputLabel": {
-    "message": "Hae uutishuoneesta"
+    "message": "Etsi"
   },
   "search.noResults": {
     "message": "Mitään ei löytynyt. Kokeile toisella hakuehdolla!"

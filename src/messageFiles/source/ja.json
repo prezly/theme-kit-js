@@ -95,7 +95,7 @@
     "message": "ナビゲーションを切り替える"
   },
   "newsroom.title": {
-    "message": "ニュースルーム"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "後ほど再度アクセスし、新しいストーリーをご覧ください。"
@@ -135,7 +135,7 @@
     "message": "検索を入力し"
   },
   "search.inputLabel": {
-    "message": "ニュースルームを検索"
+    "message": "検索"
   },
   "search.noResults": {
     "message": "何も見つかりませんでした！別の検索語でお試しください。"

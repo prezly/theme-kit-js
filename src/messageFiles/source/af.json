@@ -95,7 +95,7 @@
     "message": "Wissel navigasie"
   },
   "newsroom.title": {
-    "message": "Nuuskamer"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Kom later terug om nuwe stories te sien."
@@ -135,7 +135,7 @@
     "message": "Tik jou soektog"
   },
   "search.inputLabel": {
-    "message": "Soek in die nuuskamer"
+    "message": "Soek"
   },
   "search.noResults": {
     "message": "Niks gevind! Probeer asseblief 'n ander soekterm!"

@@ -95,7 +95,7 @@
     "message": "Ativar a navegação"
   },
   "newsroom.title": {
-    "message": "Redação"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Volte mais tarde para ver novas histórias."
@@ -135,7 +135,7 @@
     "message": "Digite a sua pesquisa"
   },
   "search.inputLabel": {
-    "message": "Pesquisar sala de imprensa"
+    "message": "Pesquisar"
   },
   "search.noResults": {
     "message": "Não encontrámos nada! Por favor, tente outro termo de pesquisa!"

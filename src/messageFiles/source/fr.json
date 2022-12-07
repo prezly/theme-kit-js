@@ -95,7 +95,7 @@
     "message": "Menu déroulant"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Revenez plus tard pour voir de nouvelles histoires."
@@ -135,7 +135,7 @@
     "message": "Tapez votre recherche"
   },
   "search.inputLabel": {
-    "message": "Rechercher dans la salle de presse"
+    "message": "Recherche"
   },
   "search.noResults": {
     "message": "Aucun résultat n'a été trouvé. Veuillez essayer avec un autre mot-clé !"

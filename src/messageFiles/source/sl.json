@@ -95,7 +95,7 @@
     "message": "Mobilna navigacija"
   },
   "newsroom.title": {
-    "message": "Portal novic"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Vrnite se pozneje in si oglejte nove zgodbe."
@@ -135,7 +135,7 @@
     "message": "Vnesite svoje iskanje"
   },
   "search.inputLabel": {
-    "message": "Iskanje uredništva"
+    "message": "Iskanje"
   },
   "search.noResults": {
     "message": "Ni rezultatov iskanja! Prosimo, poskusite z drugim iskalnim pojmom!"

@@ -95,7 +95,7 @@
     "message": "ไม่ต้องสลับช่องทาง"
   },
   "newsroom.title": {
-    "message": "ห้องข่าว"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "กลับมาใหม่ภายหลังเพื่อดูเรื่องราวใหม่ๆ"
@@ -135,7 +135,7 @@
     "message": "พิมพ์การค้นหาของคุณ"
   },
   "search.inputLabel": {
-    "message": "ค้นหาห้องข่าว"
+    "message": "ค้นหา"
   },
   "search.noResults": {
     "message": "ไม่พบสิ่งใด! โปรดลองใช้คำค้นหาอื่น!"

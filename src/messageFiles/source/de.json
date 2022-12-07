@@ -95,7 +95,7 @@
     "message": "Navigation umschalten"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Kommen Sie später wieder, um neue Stories zu sehen."
@@ -135,7 +135,7 @@
     "message": "Suche eingeben"
   },
   "search.inputLabel": {
-    "message": "Newsroom suchen"
+    "message": "Suchen"
   },
   "search.noResults": {
     "message": "Nichts gefunden! Probieren Sie es bitte mit einem anderen Suchbegriff!"

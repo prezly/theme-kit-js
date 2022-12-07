@@ -95,7 +95,7 @@
     "message": "Alihkan navigasi"
   },
   "newsroom.title": {
-    "message": "Ruang Berita"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Kembali lagi nanti untuk melihat cerita baru."
@@ -135,7 +135,7 @@
     "message": "Ketik pencarian Anda"
   },
   "search.inputLabel": {
-    "message": "Cari ruang berita"
+    "message": "Cari"
   },
   "search.noResults": {
     "message": "Tidak ada yang ditemukan! Coba istilah pencarian lain!"

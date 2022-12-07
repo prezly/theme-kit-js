@@ -95,7 +95,7 @@
     "message": "Comutare navigație"
   },
   "newsroom.title": {
-    "message": "Birou de presă"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Reveniți mai târziu pentru a vedea articole noi."
@@ -135,7 +135,7 @@
     "message": "Tastați termenul căutat"
   },
   "search.inputLabel": {
-    "message": "Căutare în redacția de știri"
+    "message": "Căutare"
   },
   "search.noResults": {
     "message": "Nu s-a găsit nimic! Încercați să căutați un alt termen!"

@@ -95,7 +95,7 @@
     "message": "नैविगेशन टॉगल करें"
   },
   "newsroom.title": {
-    "message": "न्यूज़रूम"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "नई कहानियाँ देखने के लिए बाद में वापस आएँ।"
@@ -135,7 +135,7 @@
     "message": "अपनी खोज लिखें"
   },
   "search.inputLabel": {
-    "message": "न्यूजरूम खोजें"
+    "message": "खोजें"
   },
   "search.noResults": {
     "message": "कुछ नहीं मिला। कोई दूसरा खोज शब्द लिखकर प्रयास करें।"

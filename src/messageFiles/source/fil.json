@@ -95,7 +95,7 @@
     "message": "Nabigasyon ng toggle"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Bumalik sa ibang pagkakataon para makita ang mga bagong kwento."
@@ -135,7 +135,7 @@
     "message": "I-type kung ano ang hahanapin"
   },
   "search.inputLabel": {
-    "message": "Maghanap sa newsroom"
+    "message": "Maghanap"
   },
   "search.noResults": {
     "message": "Walang nahanap. Sumubok ng ibang termino sa paghahanap!"

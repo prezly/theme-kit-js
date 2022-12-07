@@ -95,7 +95,7 @@
     "message": "Canvia la navegació"
   },
   "newsroom.title": {
-    "message": "Sala de premsa"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Torna més endavant per veure noves històries."
@@ -135,7 +135,7 @@
     "message": "Escriure text a cercar"
   },
   "search.inputLabel": {
-    "message": "Cerca sala de premsa"
+    "message": "Cerca"
   },
   "search.noResults": {
     "message": "No hem trobat res! Si us plau, prova un altre terme de cerca!"

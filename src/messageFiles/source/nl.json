@@ -95,7 +95,7 @@
     "message": "Toggle-navigatie"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Kom later nog eens terug om nieuwe verhalen te zien."
@@ -135,7 +135,7 @@
     "message": "Typ uw zoekopdracht"
   },
   "search.inputLabel": {
-    "message": "Zoeken in nieuwssectie"
+    "message": "Zoeken"
   },
   "search.noResults": {
     "message": "Niets gevonden! Probeer een andere zoekterm!"

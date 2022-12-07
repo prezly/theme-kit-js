@@ -95,7 +95,7 @@
     "message": "Navigáció váltása"
   },
   "newsroom.title": {
-    "message": "Sajtószoba"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Térj vissza később az újabb történetekért."
@@ -135,7 +135,7 @@
     "message": "Kezdjen gépelni a kereséshez"
   },
   "search.inputLabel": {
-    "message": "Keresés a hírolvasóban"
+    "message": "Keresés"
   },
   "search.noResults": {
     "message": "Nincs találat. Próbálkozzon másik keresőszóval!"

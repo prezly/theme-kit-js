@@ -95,7 +95,7 @@
     "message": "토글 내비게이션"
   },
   "newsroom.title": {
-    "message": "뉴스룸"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "새로운 이야기를 보려면 나중에 다시 확인하세요."
@@ -135,7 +135,7 @@
     "message": "검색어 입력"
   },
   "search.inputLabel": {
-    "message": "뉴스룸 검색"
+    "message": "검색"
   },
   "search.noResults": {
     "message": "검색 결과가 없습니다! 다른 검색어를 사용하세요!"

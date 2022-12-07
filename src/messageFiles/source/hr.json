@@ -95,7 +95,7 @@
     "message": "Uključi/isključi navigaciju"
   },
   "newsroom.title": {
-    "message": "Press centar"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Vratite se kasnije kako biste vidjeli nove priče."
@@ -135,7 +135,7 @@
     "message": "Upišite svoje pretraživanje"
   },
   "search.inputLabel": {
-    "message": "Pretraživanje medijskog centra"
+    "message": "Pretraživanje"
   },
   "search.noResults": {
     "message": "Ništa nije pronađeno. Pokušajte s drugim pojmom za pretraživanje!"

@@ -95,7 +95,7 @@
     "message": "Bật/tắt điều hướng"
   },
   "newsroom.title": {
-    "message": "Tòa soạn"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Quay lại sau để xem những câu chuyện mới."
@@ -135,7 +135,7 @@
     "message": "Nhập nội dung tìm kiếm"
   },
   "search.inputLabel": {
-    "message": "Tìm kiếm trang tin tức"
+    "message": "Tìm kiếm"
   },
   "search.noResults": {
     "message": "Không có kết quả. Vui lòng thử từ khóa tìm kiếm khác!"

@@ -95,7 +95,7 @@
     "message": "Attiva/disattiva navigazione"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Torna più tardi per vedere nuove storie."
@@ -135,7 +135,7 @@
     "message": "Digita la tua ricerca"
   },
   "search.inputLabel": {
-    "message": "Cerca redazione"
+    "message": "Cerca"
   },
   "search.noResults": {
     "message": "Non abbiamo trovato nulla! Prova un altro termine di ricerca!"

@@ -95,7 +95,7 @@
     "message": "切换导航"
   },
   "newsroom.title": {
-    "message": "新闻中心"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "稍后再回来查看新故事。"
@@ -135,7 +135,7 @@
     "message": "输入您的搜索"
   },
   "search.inputLabel": {
-    "message": "搜索新闻编辑室"
+    "message": "搜索"
   },
   "search.noResults": {
     "message": "未找到任何內容。请尝试另一个搜索词！"

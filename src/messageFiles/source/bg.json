@@ -95,7 +95,7 @@
     "message": "Превключване навигация"
   },
   "newsroom.title": {
-    "message": "Новинарски бюлетин"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Върнете се по-късно, за да видите нови истории."
@@ -135,7 +135,7 @@
     "message": "Напишете търсенето си"
   },
   "search.inputLabel": {
-    "message": "Търсене в пресцентъра"
+    "message": "Търсене"
   },
   "search.noResults": {
     "message": "Нищо не е открито. Опитайте с друг термин за търсене!"

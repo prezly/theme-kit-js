@@ -95,7 +95,7 @@
     "message": "Activar/desactivar navegación"
   },
   "newsroom.title": {
-    "message": "Sala de prensa"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Regresa más tarde para ver nuevas historias."
@@ -135,7 +135,7 @@
     "message": "Introduce tu búsqueda"
   },
   "search.inputLabel": {
-    "message": "Buscar en la sala de prensa"
+    "message": "Buscar"
   },
   "search.noResults": {
     "message": "No se encontró nada. Por favor, prueba con otro término de búsqueda."

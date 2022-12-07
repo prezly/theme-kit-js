@@ -95,7 +95,7 @@
     "message": "Slå navigasjon av/på"
   },
   "newsroom.title": {
-    "message": "Nyhetsrom"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Kom tilbake senere for å se nye historier."
@@ -135,7 +135,7 @@
     "message": "Angi søket ditt"
   },
   "search.inputLabel": {
-    "message": "Søk etter nyhetsrom"
+    "message": "Søk"
   },
   "search.noResults": {
     "message": "Fant ikke noe. Prøv et annet søkebegrep."

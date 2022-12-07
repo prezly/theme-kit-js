@@ -95,7 +95,7 @@
     "message": "מתג תפריט"
   },
   "newsroom.title": {
-    "message": "חדר חדשות"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "חזרו מאוחר יותר כדי לראות סיפורים חדשים."
@@ -135,7 +135,7 @@
     "message": "נא להזין תוכן חיפוש"
   },
   "search.inputLabel": {
-    "message": "חיפוש בחדר עיתונות"
+    "message": "חיפוש"
   },
   "search.noResults": {
     "message": "לא נמצא כלום! נא לנסות קריטריון חיפוש אחר!"

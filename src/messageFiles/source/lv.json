@@ -95,7 +95,7 @@
     "message": "Pārslēgt navigāciju"
   },
   "newsroom.title": {
-    "message": "Ziņu telpa"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Atgriezieties vēlāk, lai skatītu pēdējos jaunumus."
@@ -135,7 +135,7 @@
     "message": "Ierakstiet meklēšanas vaicājumu"
   },
   "search.inputLabel": {
-    "message": "Meklēt ziņu telpā"
+    "message": "Meklēt"
   },
   "search.noResults": {
     "message": "Nekas netika atrasts! Lūdzu, mēģiniet lietot citu meklēšanas terminu!"

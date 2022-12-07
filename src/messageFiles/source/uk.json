@@ -95,7 +95,7 @@
     "message": "Переключити навігацію"
   },
   "newsroom.title": {
-    "message": "Новини"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Повертайтеся пізніше та переглядайте нові історії."
@@ -135,7 +135,7 @@
     "message": "Введіть пошуковий запит"
   },
   "search.inputLabel": {
-    "message": "Пошук у прес-центрі"
+    "message": "Пошук"
   },
   "search.noResults": {
     "message": "Нічого не знайдено! Спробуйте інший пошуковий запит!"

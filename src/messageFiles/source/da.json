@@ -95,7 +95,7 @@
     "message": "Skift navigation"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Kom tilbage senere for at se nye historier."
@@ -135,7 +135,7 @@
     "message": "Indtast dit søgeord"
   },
   "search.inputLabel": {
-    "message": "Søg i nyhedsrummet"
+    "message": "Søg"
   },
   "search.noResults": {
     "message": "Intet fundet! Prøv et andet søgeord!"

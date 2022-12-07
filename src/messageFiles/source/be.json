@@ -95,7 +95,7 @@
     "message": "Пераключыць навігацыю"
   },
   "newsroom.title": {
-    "message": "Прэс-цэнтр"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Заходзьце пазней, каб убачыць новыя гісторыі."
@@ -135,7 +135,7 @@
     "message": "Увядзіце свой пошукавы запыт"
   },
   "search.inputLabel": {
-    "message": "Пошук у прэс-цэнтры"
+    "message": "Пошук"
   },
   "search.noResults": {
     "message": "Нічога не знойдзена. Паспрабуйце змяніць умовы пошуку!"

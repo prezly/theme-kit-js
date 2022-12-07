@@ -95,7 +95,7 @@
     "message": "Przesuwane menu"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Wróć później, aby zobaczyć nowe wpisy."
@@ -135,7 +135,7 @@
     "message": "Wpisz wyszukiwaną frazę"
   },
   "search.inputLabel": {
-    "message": "Szukaj w newsroomie"
+    "message": "Szukaj"
   },
   "search.noResults": {
     "message": "Nic nie znaleziono! Proszę spróbować innego terminu wyszukiwania!"

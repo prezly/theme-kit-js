@@ -95,7 +95,7 @@
     "message": "Perjungti naršymą"
   },
   "newsroom.title": {
-    "message": "Naujienų centras"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Grįžkite vėliau, norėdami pamatyti naujų istorijų."
@@ -135,7 +135,7 @@
     "message": "Įrašyti savo iešką"
   },
   "search.inputLabel": {
-    "message": "Ieškoti naujienose"
+    "message": "Ieška"
   },
   "search.noResults": {
     "message": "Nieko nerasta! Prašome išbandyti kitą paieškos terminą!"

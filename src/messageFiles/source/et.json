@@ -95,7 +95,7 @@
     "message": "Lülitage navigeerimine sisse"
   },
   "newsroom.title": {
-    "message": "Uudisteruum"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Tulge hiljem tagasi, et näha uusi lugusid."
@@ -135,7 +135,7 @@
     "message": "Sisestage oma otsing"
   },
   "search.inputLabel": {
-    "message": "Uudistetoa otsimine"
+    "message": "Otsi"
   },
   "search.noResults": {
     "message": "Ei leitud midagi! Palun proovi teist otsinguterminit!"

@@ -95,7 +95,7 @@
     "message": "Přepnout navigaci"
   },
   "newsroom.title": {
-    "message": "Zpravodajská místnost"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Vraťte se později zpět a podívejte se na nové příběhy."
@@ -135,7 +135,7 @@
     "message": "Sem zadejte vyhledávání"
   },
   "search.inputLabel": {
-    "message": "Hledat ve zpravodajství"
+    "message": "Hledat"
   },
   "search.noResults": {
     "message": "Nic nebylo nalezeno. Zkuste jiný hledaný výraz!"

@@ -95,7 +95,7 @@
     "message": "Навигацияны ауыстыру"
   },
   "newsroom.title": {
-    "message": "Жаңалықтар бөлмесі"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Жаңа оқиғаларды көру үшін кейінірек қайта ашыңыз."
@@ -135,7 +135,7 @@
     "message": "Іздеген нәрсеңізді теріңіз"
   },
   "search.inputLabel": {
-    "message": "Жаңалықтар бөлмесінен іздеу"
+    "message": "Іздеу"
   },
   "search.noResults": {
     "message": "Ештеңе табылмады! Ізделетін сөзді өзгертіп көріңіз!"

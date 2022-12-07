@@ -95,7 +95,7 @@
     "message": "Naviqasiyanı dəyiş"
   },
   "newsroom.title": {
-    "message": "Xəbər otağı"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Yeni hekayələrə baxmaq üçün daha sonra qayıt."
@@ -135,7 +135,7 @@
     "message": "Axtarışınızı yazın"
   },
   "search.inputLabel": {
-    "message": "Xəbər otağında axtarın"
+    "message": "Axtar"
   },
   "search.noResults": {
     "message": "Heç nə tapılmadı! Zəhmət olmasa, başqa axtarış sorğusunu cəhd edinn!"

@@ -95,7 +95,7 @@
     "message": "تبديل الملاحة"
   },
   "newsroom.title": {
-    "message": "غرفة الأخبار"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "عُد لاحقًا لمشاهدة القصص الجديدة."
@@ -135,7 +135,7 @@
     "message": "اكتب مصطلح البحث"
   },
   "search.inputLabel": {
-    "message": "بحث في غرفة الأخبار"
+    "message": "بحث"
   },
   "search.noResults": {
     "message": "لم يتم العثور على شيء. يرجى تجربة مصطلح بحث آخر!"

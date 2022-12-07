@@ -95,7 +95,7 @@
     "message": "Переключить навигацию"
   },
   "newsroom.title": {
-    "message": "Пресс-центр"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Заходите позже, чтобы увидеть новые истории."
@@ -135,7 +135,7 @@
     "message": "Введите свой поисковый запрос"
   },
   "search.inputLabel": {
-    "message": "Поиск в пресс-центре"
+    "message": "Поиск"
   },
   "search.noResults": {
     "message": "Ничего не найдено. Попробуйте изменить условия поиска!"

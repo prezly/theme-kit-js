@@ -95,7 +95,7 @@
     "message": "Navigatsiyani o‘tkazish"
   },
   "newsroom.title": {
-    "message": "Yangiliklar xonasi"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Yangi hikoyalarni ko‘rish uchun keyinroq qaytib o‘ting."
@@ -135,7 +135,7 @@
     "message": "Qidiriladigan jumlani yozing"
   },
   "search.inputLabel": {
-    "message": "Yangiliklar xonasini qidirish"
+    "message": "Qidirish"
   },
   "search.noResults": {
     "message": "Hech nima topilmadi! Boshqa qidiruv termini bilan urining!"

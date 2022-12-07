@@ -95,7 +95,7 @@
     "message": "Navigazzjoni tat-Toggle"
   },
   "newsroom.title": {
-    "message": "Kamra tal-aħbarijiet"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Ejja lura aktar tard biex tara stejjer ġodda."
@@ -135,7 +135,7 @@
     "message": "Ittajpja t-tfittxija tiegħek"
   },
   "search.inputLabel": {
-    "message": "Fittex fil-kamra tal-aħbarijiet"
+    "message": "Fittex"
   },
   "search.noResults": {
     "message": "Ma nstab xejn. Ipprova terminu ieħor xi tfittex!"

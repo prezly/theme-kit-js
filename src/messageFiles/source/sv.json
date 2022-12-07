@@ -95,7 +95,7 @@
     "message": "Växla navigering"
   },
   "newsroom.title": {
-    "message": "Nyhetsrum"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Kom igen senare och läs nya berättelser."
@@ -135,7 +135,7 @@
     "message": "Ange din sökning"
   },
   "search.inputLabel": {
-    "message": "Sök newsroom"
+    "message": "Sök"
   },
   "search.noResults": {
     "message": "Inget hittat! Vänligen testa ett annat sökord!"

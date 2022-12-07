@@ -95,7 +95,7 @@
     "message": "Gezinti menüsünü değiştir"
   },
   "newsroom.title": {
-    "message": "Haber merkezi"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Yeni hikayeleri görmek için daha sonra tekrar gel."
@@ -135,7 +135,7 @@
     "message": "Aramanı gir"
   },
   "search.inputLabel": {
-    "message": "Haber odasında ara"
+    "message": "Ara"
   },
   "search.noResults": {
     "message": "Hiçbir şey bulunamadı! Lütfen başka bir arama terimi dene!"

@@ -95,7 +95,7 @@
     "message": "切換導航"
   },
   "newsroom.title": {
-    "message": "新聞發佈室"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "稍後回來看新的故事。"
@@ -135,7 +135,7 @@
     "message": "輸入您的搜尋"
   },
   "search.inputLabel": {
-    "message": "搜尋新聞編輯室"
+    "message": "搜尋"
   },
   "search.noResults": {
     "message": "無法找到相關內容，請嘗試輸入其他關鍵字。"
