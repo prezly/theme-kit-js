@@ -17,7 +17,7 @@ export const search = defineMessages({
     },
     inputLabel: {
         id: 'search.inputLabel',
-        defaultMessage: 'Search site',
+        defaultMessage: 'Search',
     },
     inputHint: {
         id: 'search.inputHint',
