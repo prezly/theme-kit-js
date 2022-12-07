@@ -1,4 +1,4 @@
-import type { ExtraStoryFields, Story } from '@prezly/sdk';
+import type { Story } from '@prezly/sdk';
 import type {
     GetServerSidePropsContext,
     GetServerSidePropsResult,
@@ -24,7 +24,7 @@ export interface CategoryPageProps<StoryType extends Story = Story> {
 }
 
 interface Options {
-    extraStoryFields?: (keyof ExtraStoryFields)[];
+    extraStoryFields?: (keyof Story.ExtraFields)[];
     pageSize?: number;
 }
 

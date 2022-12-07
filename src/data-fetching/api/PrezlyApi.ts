@@ -1,11 +1,12 @@
+import { createPrezlyClient } from '@prezly/sdk';
 import type {
     Category,
-    ExtraStoryFields,
     Newsroom,
     NewsroomLanguageSettings,
+    PrezlyClient,
+    Stories,
     Story,
 } from '@prezly/sdk';
-import PrezlySDK from '@prezly/sdk';
 import type { IncomingMessage } from 'http';
 
 import {
@@ -41,7 +42,7 @@ interface GetStoriesOptions {
     page?: number;
     pageSize?: number;
     order?: SortOrder;
-    include?: (keyof ExtraStoryFields)[];
+    include?: (keyof Story.ExtraFields)[];
     localeCode?: string;
 }
 
@@ -51,7 +52,7 @@ interface GetGalleriesOptions {
 }
 
 export class PrezlyApi {
-    private readonly sdk: PrezlySDK;
+    private readonly sdk: PrezlyClient;
 
     private readonly newsroomUuid: Newsroom['uuid'];
 
@@ -59,7 +60,7 @@ export class PrezlyApi {
 
     constructor(accessToken: string, newsroomUuid: Newsroom['uuid'], themeUuid?: string) {
         const baseUrl = process.env.API_BASE_URL_OVERRIDE ?? undefined;
-        this.sdk = new PrezlySDK({
+        this.sdk = createPrezlyClient({
             accessToken,
             baseUrl,
             // This returns stories created by legacy version of the editor in a format that can be displayed by the Prezly Content Renderer.
@@ -75,7 +76,8 @@ export class PrezlyApi {
         }
 
         try {
-            return await this.sdk.stories.get(uuid);
+            const story = await this.sdk.stories.get(uuid);
+            return story;
         } catch (error) {
             if (
                 isSdkError(error) &&
@@ -211,11 +213,10 @@ export class PrezlyApi {
         );
     }
 
-    searchStories: typeof PrezlySDK.prototype.stories.search = (options) =>
-        this.sdk.stories.search(options);
+    searchStories: Stories.Client['search'] = (options) => this.sdk.stories.search(options);
 
     async getGalleries({ page, pageSize }: GetGalleriesOptions) {
-        return this.sdk.newsroomGalleries.list(this.newsroomUuid, {
+        return this.sdk.newsroomGalleries.search(this.newsroomUuid, {
             limit: pageSize,
             offset:
                 typeof page === 'undefined' || typeof pageSize === 'undefined'
@@ -234,7 +235,8 @@ export class PrezlyApi {
         }
 
         try {
-            return await this.sdk.newsroomGalleries.get(this.newsroomUuid, uuid);
+            const gallery = await this.sdk.newsroomGalleries.get(this.newsroomUuid, uuid);
+            return gallery;
         } catch (error) {
             if (isSdkError(error) && error.status === 404) {
                 return null;
