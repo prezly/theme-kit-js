@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { type NewsroomLanguageSettings, Culture } from '@prezly/sdk';
 
 /**
