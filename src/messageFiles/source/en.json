@@ -95,7 +95,7 @@
     "message": "Toggle navigation"
   },
   "newsroom.title": {
-    "message": "Newsroom"
+    "message": "Site"
   },
   "noStories.subtitle": {
     "message": "Come back later to see new stories."
@@ -135,7 +135,7 @@
     "message": "Type your search"
   },
   "search.inputLabel": {
-    "message": "Search newsroom"
+    "message": "Search"
   },
   "search.noResults": {
     "message": "Nothing found! Please try another search term!"
