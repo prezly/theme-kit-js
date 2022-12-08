@@ -9,25 +9,26 @@ import { useCurrentCategory } from './useCurrentCategory';
 import { useCurrentStory } from './useCurrentStory';
 
 // Pulled from SDK types to not leak the `@prezly/sdk` dependency into the client bundle
-enum StoryVisibility {
+// It looks like a hack, but the name of enum must be the same as in SDK
+enum Visibility {
     PUBLIC = 'public',
     EMBARGO = 'embargo',
     PRIVATE = 'private',
     CONFIDENTIAL = 'confidential',
 }
 
-function getAllowedTranslationVisibilityValues(story: ExtendedStory): StoryVisibility[] {
+function getAllowedTranslationVisibilityValues(story: ExtendedStory): Visibility[] {
     const { visibility } = story;
 
     switch (visibility) {
-        case StoryVisibility.EMBARGO:
-            return [StoryVisibility.EMBARGO, StoryVisibility.PUBLIC];
-        case StoryVisibility.PRIVATE:
-            return [StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
-        case StoryVisibility.CONFIDENTIAL:
-            return [StoryVisibility.CONFIDENTIAL, StoryVisibility.PRIVATE, StoryVisibility.PUBLIC];
+        case Visibility.EMBARGO:
+            return [Visibility.EMBARGO, Visibility.PUBLIC];
+        case Visibility.PRIVATE:
+            return [Visibility.PRIVATE, Visibility.PUBLIC];
+        case Visibility.CONFIDENTIAL:
+            return [Visibility.CONFIDENTIAL, Visibility.PRIVATE, Visibility.PUBLIC];
         default:
-            return [StoryVisibility.PUBLIC];
+            return [Visibility.PUBLIC];
     }
 }
 

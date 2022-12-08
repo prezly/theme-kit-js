@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import {
     DEFAULT_LOCALE,
     DUMMY_DEFAULT_LOCALE,

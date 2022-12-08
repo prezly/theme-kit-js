@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "1.18.3",
+  "version": "1.18.4-1",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -48,7 +48,7 @@
     "react-dom": "^17.x || ^18.x"
   },
   "dependencies": {
-    "@prezly/sdk": "^7.11.0-0",
+    "@prezly/sdk": "^11.9.0",
     "@prezly/uploadcare": "^2.3.4",
     "@react-hookz/web": "^16.0.0",
     "next-seo": "^5.4.0",

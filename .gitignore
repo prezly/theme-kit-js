@@ -18,6 +18,7 @@ pids
 # IDE
 .idea
 .vscode
+.history
 
 # Dependency directories
 node_modules/

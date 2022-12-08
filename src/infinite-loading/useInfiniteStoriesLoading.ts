@@ -1,4 +1,4 @@
-import type { Category, ExtraStoryFields, Story } from '@prezly/sdk';
+import type { Category, Story } from '@prezly/sdk';
 import { useEffect } from 'react';
 
 import type { LocaleObject } from '../intl';
@@ -12,7 +12,7 @@ async function fetchStories<T extends Story = Story>(
     pageSize: number,
     category?: Category,
     locale?: LocaleObject,
-    include?: (keyof ExtraStoryFields)[],
+    include?: (keyof Story.ExtraFields)[],
 ): Promise<{ stories: T[] }> {
     const result = await fetch('/api/fetch-stories', {
         method: 'POST',
@@ -47,7 +47,7 @@ export function useInfiniteStoriesLoading<T extends Story = Story>(
     initialStories: T[],
     pagination: PaginationProps,
     category?: Category,
-    include?: (keyof ExtraStoryFields)[],
+    include?: (keyof Story.ExtraFields)[],
 ) {
     const currentLocale = useCurrentLocale();
 

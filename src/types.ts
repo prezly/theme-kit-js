@@ -1,4 +1,4 @@
-import type { CultureRef, ExtraStoryFields, Story } from '@prezly/sdk';
+import type { CultureRef, Story } from '@prezly/sdk';
 
 import type { NewsroomContextProps } from './newsroom-context';
 
@@ -30,7 +30,7 @@ export interface AlgoliaCategoryRef {
  * Stories in Algolia index are stored in a simplified format, with only minimal subset of fields.
  */
 export type AlgoliaStory = Pick<Story, 'uuid' | 'slug' | 'title' | 'subtitle'> &
-    Pick<ExtraStoryFields, 'thumbnail_image'> & {
+    Pick<Story.ExtraFields, 'thumbnail_image'> & {
         content_text: string;
         updated_at: number;
         published_at: number;
