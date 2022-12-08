@@ -48,7 +48,7 @@
     "react-dom": "^17.x || ^18.x"
   },
   "dependencies": {
-    "@prezly/sdk": "^11.8.1-0",
+    "@prezly/sdk": "^11.9.0",
     "@prezly/uploadcare": "^2.3.4",
     "@react-hookz/web": "^16.0.0",
     "next-seo": "^5.4.0",
