@@ -15,20 +15,22 @@ export function StorySeo({ story, noindex }: Props) {
     const { title, subtitle, published_at, updated_at, author, oembed, newsroom, summary } = story;
 
     const authorName = author?.display_name || author?.email || 'Unknown';
-    const description = subtitle || summary;
+    const seoTitle = story.seo_settings.meta_title || title;
+    const seoDescription = story.seo_settings.meta_description || subtitle || summary;
+    const canonical = story.seo_settings.canonical_url || oembed.url;
     const indexable = newsroom.is_indexable && story.visibility === Story.Visibility.PUBLIC;
 
     return (
         <>
             <NextSeo
-                title={title}
-                description={description}
-                canonical={oembed.url}
+                title={seoTitle}
+                description={seoDescription}
+                canonical={canonical}
                 noindex={noindex ?? !indexable}
                 nofollow={noindex ?? !indexable}
                 openGraph={{
                     title,
-                    description,
+                    description: seoDescription,
                     url: oembed.url,
                     site_name: newsroom.display_name,
                     type: 'article',
@@ -73,7 +75,7 @@ export function StorySeo({ story, noindex }: Props) {
                 authorName={[authorName]}
                 publisherName={newsroom.display_name}
                 publisherLogo={newsroom.thumbnail_url}
-                description={description}
+                description={seoDescription}
             />
         </>
     );
