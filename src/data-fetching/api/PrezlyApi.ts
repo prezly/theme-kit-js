@@ -111,7 +111,7 @@ export class PrezlyApi {
     async getAllStories(order: SortOrder = DEFAULT_SORT_ORDER) {
         const sortOrder = getSortByPublishedDate(order);
         const newsroom = await this.getNewsroom();
-        const jsonQuery = JSON.stringify(getStoriesQuery(newsroom.uuid));
+        const query = JSON.stringify(getStoriesQuery(newsroom.uuid));
         const maxStories = newsroom.stories_number;
         const chunkSize = 200;
 
@@ -120,7 +120,7 @@ export class PrezlyApi {
             this.searchStories({
                 limit: chunkSize,
                 sortOrder,
-                jsonQuery,
+                query,
                 offset: pageIndex * chunkSize,
             }),
         );
@@ -140,13 +140,13 @@ export class PrezlyApi {
         localeCode,
     }: GetStoriesOptions = {}) {
         const sortOrder = getSortByPublishedDate(order);
-        const jsonQuery = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
+        const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
 
         const { stories, pagination } = await this.searchStories({
             limit: pageSize,
             offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
             sortOrder,
-            jsonQuery,
+            query,
             include,
         });
 
@@ -166,15 +166,13 @@ export class PrezlyApi {
         }: GetStoriesOptions = {},
     ) {
         const sortOrder = getSortByPublishedDate(order);
-        const jsonQuery = JSON.stringify(
-            getStoriesQuery(this.newsroomUuid, category.id, localeCode),
-        );
+        const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, category.id, localeCode));
 
         const { stories, pagination } = await this.searchStories({
             limit: pageSize,
             offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
             sortOrder,
-            jsonQuery,
+            query,
             include,
         });
 
@@ -184,10 +182,10 @@ export class PrezlyApi {
     }
 
     async getStoryBySlug(slug: string) {
-        const jsonQuery = JSON.stringify(getSlugQuery(this.newsroomUuid, slug));
+        const query = JSON.stringify(getSlugQuery(this.newsroomUuid, slug));
         const { stories } = await this.searchStories({
             limit: 1,
-            jsonQuery,
+            query,
         });
 
         if (stories[0]) {
