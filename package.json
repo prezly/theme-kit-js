@@ -31,7 +31,7 @@
     "clean": "rimraf build/ node_modules/",
     "build": "tsc --project .",
     "watch": "tsc --watch --preserveWatchOutput --project .",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test": "jest",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
