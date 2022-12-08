@@ -78,7 +78,7 @@
     "message": "Бірдеңе дұрыс болмады. Пішінді қайтадан жіберіп көріңіз"
   },
   "mediaGallery.title": {
-    "message": "Media galleries"
+    "message": "Мультимедиа галереялары"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
@@ -95,7 +95,7 @@
     "message": "Навигацияны ауыстыру"
   },
   "newsroom.title": {
-    "message": "Site"
+    "message": "Сайт"
   },
   "noStories.subtitle": {
     "message": "Жаңа оқиғаларды көру үшін кейінірек қайта ашыңыз."
