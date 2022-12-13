@@ -46,6 +46,13 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
                 '<p>We maken gebruik van cookies op onze website. Deze helpen ons om u iets beter te leren kennen en te zien hoe u onze website gebruikt. <br>Dit helpt ons een waardevollere en op maat gemaakte ervaring te bieden voor u en anderen.</p>',
             subscribe_disclaimer:
                 '<p>Door uw abonnement te bevestigen, bevestigt u dat u begrijpt dat u zich registreert om materiaal te ontvangen en dat uw gegevens veilig worden verwerkt en opgeslagen.</p>',
+            seo_settings: {
+                canonical_url: null,
+                default_meta_title: null,
+                default_meta_description: null,
+                meta_title: null,
+                meta_description: null,
+            },
         },
         notifications: [],
     },
@@ -87,6 +94,13 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
             email_disclaimer: '',
             cookie_statement: '',
             subscribe_disclaimer: '',
+            seo_settings: {
+                canonical_url: null,
+                default_meta_title: null,
+                default_meta_description: null,
+                meta_title: null,
+                meta_description: null,
+            },
         },
         notifications: [],
     },
@@ -134,6 +148,13 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
                 '<p>We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others.</p>',
             subscribe_disclaimer:
                 '<p>By confirming your subscription you are confirming you understand that you are registering to receive content and consent to your information being securely processed and stored.</p>',
+            seo_settings: {
+                canonical_url: null,
+                default_meta_title: null,
+                default_meta_description: null,
+                meta_title: null,
+                meta_description: null,
+            },
         },
         notifications: [],
     },
@@ -181,6 +202,13 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
                 '<p>We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others.</p>',
             subscribe_disclaimer:
                 '<p>By confirming your subscription you are confirming you understand that you are registering to receive content and consent to your information being securely processed and stored.</p>',
+            seo_settings: {
+                canonical_url: null,
+                default_meta_title: null,
+                default_meta_description: null,
+                meta_title: null,
+                meta_description: null,
+            },
         },
         notifications: [],
     },
@@ -228,6 +256,13 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
                 '<p>We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others.</p>',
             subscribe_disclaimer:
                 '<p>By confirming your subscription you are confirming you understand that you are registering to receive content and consent to your information being securely processed and stored.</p>',
+            seo_settings: {
+                canonical_url: null,
+                default_meta_title: null,
+                default_meta_description: null,
+                meta_title: null,
+                meta_description: null,
+            },
         },
         notifications: [],
     },
@@ -275,6 +310,13 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
                 "<p>Nous utilisons des cookies sur notre site internet. Ils nous aident à en savoir un tout petit peu plus sur vous et sur votre façon d'utiliser notre site. Ainsi, il nous est possible de vous proposer, à vous comme à d'autres, une expérience plus riche et personnalisée.</p>",
             subscribe_disclaimer:
                 '<p>En confirmant votre inscription, vous confirmez que vous comprenez que vous vous inscrivez pour recevoir du contenu, et consentez à ce que vos données personnelles soient traitées et stockées en toute sécurité.</p>',
+            seo_settings: {
+                canonical_url: null,
+                default_meta_title: null,
+                default_meta_description: null,
+                meta_title: null,
+                meta_description: null,
+            },
         },
         notifications: [],
     },
@@ -322,6 +364,13 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
                 "<p>Nous utilisons des cookies sur notre site internet. Ils nous aident à en savoir un tout petit peu plus sur vous et sur votre façon d'utiliser notre site. Ainsi, il nous est possible de vous proposer, à vous comme à d'autres, une expérience plus riche et personnalisée.</p>",
             subscribe_disclaimer:
                 '<p>En confirmant votre inscription, vous confirmez que vous comprenez que vous vous inscrivez pour recevoir du contenu, et consentez à ce que vos données personnelles soient traitées et stockées en toute sécurité.</p>',
+            seo_settings: {
+                canonical_url: null,
+                default_meta_title: null,
+                default_meta_description: null,
+                meta_title: null,
+                meta_description: null,
+            },
         },
         notifications: [],
     },
@@ -366,6 +415,13 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
                 '<p>Utilizamos cookies en nuestro sitio web. Nos ayudan a conocerle un poco y saber cómo usa nuestro sitio web, lo que nos sirve para proporcionarle a usted y a los demás una experiencia más valiosa y personalizada.</p>',
             subscribe_disclaimer:
                 '<p>Al confirmar su suscripción, confirma que entiende que se está registrando para recibir contenido y accede a que su información se procese y guarde de manera segura.</p>',
+            seo_settings: {
+                canonical_url: null,
+                default_meta_title: null,
+                default_meta_description: null,
+                meta_title: null,
+                meta_description: null,
+            },
         },
         notifications: [],
     },
@@ -410,6 +466,13 @@ export const LANGUAGES: Record<string, NewsroomLanguageSettings> = {
                 '<p>Utilizamos cookies en nuestro sitio web. Nos ayudan a conocerle un poco y saber cómo usa nuestro sitio web, lo que nos sirve para proporcionarle a usted y a los demás una experiencia más valiosa y personalizada.</p>',
             subscribe_disclaimer:
                 '<p>Al confirmar su suscripción, confirma que entiende que se está registrando para recibir contenido y accede a que su información se procese y guarde de manera segura.</p>',
+            seo_settings: {
+                canonical_url: null,
+                default_meta_title: null,
+                default_meta_description: null,
+                meta_title: null,
+                meta_description: null,
+            },
         },
         notifications: [],
     },
