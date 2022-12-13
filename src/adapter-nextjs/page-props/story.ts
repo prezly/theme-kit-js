@@ -81,9 +81,11 @@ export function getStoryPageStaticProps<CustomProps extends Record<string, any>>
     };
 }
 
-export async function getStoryPageStaticPaths() {
+export async function getStoryPageStaticPaths(options: { pinning?: boolean } = {}) {
     const api = getPrezlyApi();
-    const stories = await api.getAllStories();
+    const stories = await api.getAllStories({
+        pinning: options.pinning ?? false,
+    });
 
     const paths = stories.map(({ slug }) => ({ params: { slug } }));
 
