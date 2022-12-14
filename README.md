@@ -249,7 +249,7 @@ You can also add additional paths to the sitemap by passing them as an argument 
 ```ts
 const additionalPaths = ['/my-custom-path'];
 
-export const getServerSideProps = getSitemapServerSideProps(additionalPaths);
+export const getServerSideProps = getSitemapServerSideProps({ additionalPaths });
 ```
 
 If you need a more customized approach, you can build your own Sitemap by extending the `SitemapBuilder` class exported from the library, as well as referring to the code in the [Sitemap](./tree/main/src/adapter-nextjs/page-props/sitemap) component directory.
