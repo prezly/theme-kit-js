@@ -119,13 +119,11 @@ export function PageSeo({
             }}
             additionalMetaTags={[
                 { name: 'twitter:image', content: logoUrl },
-                site.google_search_console_key
-                    ? {
-                          name: 'google-site-verification',
-                          content: site.google_search_console_key,
-                      }
-                    : undefined,
-            ].filter((tag): tag is Exclude<typeof tag, undefined> => Boolean(tag))}
+                site.google_search_console_key && {
+                    name: 'google-site-verification',
+                    content: site.google_search_console_key,
+                },
+            ].filter((tag): tag is Exclude<typeof tag, string | null> => Boolean(tag))}
             additionalLinkTags={[
                 {
                     rel: 'alternate',
