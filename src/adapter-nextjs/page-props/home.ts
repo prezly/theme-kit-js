@@ -23,13 +23,14 @@ export interface HomePageProps<StoryType extends Story = Story> {
 interface Options {
     extraStoryFields?: (keyof Story.ExtraFields)[];
     pageSize?: number;
+    pinning?: boolean;
 }
 
 export function getHomepageServerSideProps<
     CustomProps extends Record<string, any>,
     StoryType extends Story = Story,
 >(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options) {
-    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options || {};
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields, pinning = false } = options || {};
 
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
@@ -46,6 +47,7 @@ export function getHomepageServerSideProps<
         const storiesPaginated = await api.getStories({
             page,
             pageSize,
+            pinning,
             include: extraStoryFields,
             localeCode,
         });
@@ -75,7 +77,7 @@ export function getHomepageStaticProps<
     CustomProps extends Record<string, any>,
     StoryType extends Story = Story,
 >(customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>, options?: Options) {
-    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options || {};
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields, pinning = false } = options || {};
 
     return async function getStaticProps(
         context: GetStaticPropsContext,
@@ -88,6 +90,7 @@ export function getHomepageStaticProps<
 
         const storiesPaginated = await api.getStories({
             pageSize,
+            pinning,
             include: extraStoryFields,
             localeCode,
         });

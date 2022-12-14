@@ -1,4 +1,4 @@
-import { createPrezlyClient } from '@prezly/sdk';
+import { createPrezlyClient, SortOrder } from '@prezly/sdk';
 import type {
     Category,
     Newsroom,
@@ -22,26 +22,25 @@ import { DEFAULT_PAGE_SIZE } from '../../utils';
 import { getAlgoliaSettings, isSdkError, isUuid } from '../lib';
 
 import {
+    getChronologicalSortOrder,
     getContactsQuery,
     getGalleriesQuery,
     getSlugQuery,
-    getSortByPublishedDate,
     getStoriesQuery,
 } from './queries';
 
 const CATEGORIES_SORT_ORDER = '+order';
-const DEFAULT_SORT_ORDER: SortOrder = 'desc';
+const DEFAULT_SORT_ORDER = SortOrder.Direction.DESC;
 
 const ERROR_CODE_NOT_FOUND = 404;
 const ERROR_CODE_FORBIDDEN = 403;
 const ERROR_CODE_GONE = 410;
 
-type SortOrder = 'desc' | 'asc';
-
 interface GetStoriesOptions {
     page?: number;
     pageSize?: number;
-    order?: SortOrder;
+    order?: `${SortOrder.Direction}`;
+    pinning?: boolean;
     include?: (keyof Story.ExtraFields)[];
     localeCode?: string;
 }
@@ -108,8 +107,8 @@ export class PrezlyApi {
     /**
      * Note: this method returns ALL stories from the newsroom. It's intended to be used for sitemaps and not to display actual content.
      */
-    async getAllStories(order: SortOrder = DEFAULT_SORT_ORDER) {
-        const sortOrder = getSortByPublishedDate(order);
+    async getAllStories({ order = DEFAULT_SORT_ORDER, pinning = false }: GetStoriesOptions = {}) {
+        const sortOrder = getChronologicalSortOrder(order, pinning);
         const newsroom = await this.getNewsroom();
         const query = JSON.stringify(getStoriesQuery(newsroom.uuid));
         const maxStories = newsroom.stories_number;
@@ -136,10 +135,11 @@ export class PrezlyApi {
         page = undefined,
         pageSize = DEFAULT_PAGE_SIZE,
         order = DEFAULT_SORT_ORDER,
+        pinning = false,
         include,
         localeCode,
     }: GetStoriesOptions = {}) {
-        const sortOrder = getSortByPublishedDate(order);
+        const sortOrder = getChronologicalSortOrder(order, pinning);
         const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
 
         const { stories, pagination } = await this.searchStories({
@@ -163,9 +163,9 @@ export class PrezlyApi {
             order = DEFAULT_SORT_ORDER,
             include,
             localeCode,
-        }: GetStoriesOptions = {},
+        }: Omit<GetStoriesOptions, 'pinning'> = {},
     ) {
-        const sortOrder = getSortByPublishedDate(order);
+        const sortOrder = getChronologicalSortOrder(order);
         const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, category.id, localeCode));
 
         const { stories, pagination } = await this.searchStories({

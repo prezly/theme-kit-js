@@ -1,3 +1,5 @@
+import { SortOrder } from '@prezly/sdk';
+
 const publishedAndAccessible = [
     { lifecycle_status: { $in: ['published', 'embargo'] } },
     { visibility: { $in: ['public', 'private', 'embargo'] } },
@@ -34,8 +36,14 @@ export function getStoriesQuery(newsroomUuid: string, categoryId?: number, local
     return query;
 }
 
-export function getSortByPublishedDate(order: 'asc' | 'desc') {
-    return order === 'desc' ? '-published_at' : 'published_at';
+export function getChronologicalSortOrder(direction: `${SortOrder.Direction}`, pinning = false) {
+    const pinnedFirst = SortOrder.desc('is_pinned');
+    const chronological =
+        direction === SortOrder.Direction.ASC
+            ? SortOrder.asc('published_at')
+            : SortOrder.desc('published_at');
+
+    return pinning ? SortOrder.combine(pinnedFirst, chronological) : chronological;
 }
 
 export function getGalleriesQuery() {

@@ -5,7 +5,9 @@ import { getPrezlyApi } from '../../../data-fetching';
 import { createPaths } from './createPaths';
 import { SitemapBuilder } from './SitemapBuilder';
 
-export function getSitemapServerSideProps(additionalPaths?: string[]) {
+export function getSitemapServerSideProps(
+    options: { additionalPaths?: string[]; pinning?: boolean } = {},
+) {
     return async function getServerSideProps(ctx: NextPageContext) {
         const { res, req } = ctx;
 
@@ -19,7 +21,9 @@ export function getSitemapServerSideProps(additionalPaths?: string[]) {
         const baseUrl = req.headers.host || '/';
 
         const api = getPrezlyApi(req);
-        const stories = await api.getAllStories();
+        const stories = await api.getAllStories({
+            pinning: options.pinning ?? false,
+        });
         const categories = await api.getCategories();
 
         const paths = createPaths(stories, categories);
@@ -28,9 +32,7 @@ export function getSitemapServerSideProps(additionalPaths?: string[]) {
         sitemapBuilder.addUrl('/');
         paths.forEach((path) => sitemapBuilder.addUrl(path));
 
-        if (additionalPaths) {
-            additionalPaths.forEach((path) => sitemapBuilder.addUrl(path));
-        }
+        options.additionalPaths?.forEach((path) => sitemapBuilder.addUrl(path));
 
         res.setHeader('Content-Type', 'text/xml');
         res.write(sitemapBuilder.serialize());
