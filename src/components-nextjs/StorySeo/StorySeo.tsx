@@ -15,8 +15,13 @@ export function StorySeo({ story, noindex }: Props) {
     const { title, subtitle, published_at, updated_at, author, oembed, newsroom, summary } = story;
 
     const authorName = author?.display_name || author?.email || 'Unknown';
-    const seoTitle = story.seo_settings.meta_title || title;
-    const seoDescription = story.seo_settings.meta_description || subtitle || summary;
+    const seoTitle =
+        story.seo_settings.meta_title || story.seo_settings.default_meta_title || title;
+    const seoDescription =
+        story.seo_settings.meta_description ||
+        story.seo_settings.default_meta_description ||
+        subtitle ||
+        summary;
     const canonical = story.seo_settings.canonical_url || oembed.url;
     const indexable = newsroom.is_indexable && story.visibility === Story.Visibility.PUBLIC;
 

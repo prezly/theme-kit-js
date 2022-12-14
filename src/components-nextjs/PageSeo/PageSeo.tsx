@@ -37,7 +37,7 @@ export function PageSeo({
     ...nextSeoProps
 }: Props) {
     const companyInformation = useCompanyInformation();
-    const newsroom = useNewsroom();
+    const site = useNewsroom();
     const currentLocale = useCurrentLocale();
     const languages = useLanguages();
     const getTranslationUrl = useGetTranslationUrl();
@@ -45,12 +45,20 @@ export function PageSeo({
     const currentStory = useCurrentStory();
     const { asPath } = useRouter();
 
-    const pageTitle = title || companyInformation.name;
-    const pageDescription = description || companyInformation.about_plaintext;
+    const pageTitle =
+        companyInformation.seo_settings.meta_title ||
+        companyInformation.seo_settings.default_meta_title ||
+        title ||
+        companyInformation.name;
+    const pageDescription =
+        companyInformation.seo_settings.meta_description ||
+        companyInformation.seo_settings.default_meta_description ||
+        description ||
+        companyInformation.about_plaintext;
     const canonicalUrl =
-        canonical || getAbsoluteUrl(asPath, newsroom.url, getLinkLocaleSlug(currentLocale));
+        canonical || getAbsoluteUrl(asPath, site.url, getLinkLocaleSlug(currentLocale));
     const siteName = companyInformation.name;
-    const logoUrl = imageUrl || getNewsroomLogoUrl(newsroom);
+    const logoUrl = imageUrl || getNewsroomLogoUrl(site);
 
     const alternateLanguageLinks: AlternateLanguageLink[] = useMemo(() => {
         if (!languages.length) {
@@ -75,28 +83,21 @@ export function PageSeo({
                     hrefLang: locale.toHyphenCode(),
                     href: getAbsoluteUrl(
                         translationLink,
-                        newsroom.url,
+                        site.url,
                         currentStory && translationLink !== '/' ? false : getLinkLocaleSlug(locale),
                     ),
                 };
             })
             .filter<AlternateLanguageLink>(Boolean as any);
-    }, [
-        currentLocale,
-        getLinkLocaleSlug,
-        getTranslationUrl,
-        languages,
-        newsroom.url,
-        currentStory,
-    ]);
+    }, [currentLocale, getLinkLocaleSlug, getTranslationUrl, languages, site.url, currentStory]);
 
     return (
         <NextSeo
             title={pageTitle}
             description={pageDescription}
             canonical={canonicalUrl}
-            noindex={nextSeoProps.noindex ?? !newsroom.is_indexable}
-            nofollow={nextSeoProps.nofollow ?? !newsroom.is_indexable}
+            noindex={nextSeoProps.noindex ?? !site.is_indexable}
+            nofollow={nextSeoProps.nofollow ?? !site.is_indexable}
             openGraph={{
                 url: canonicalUrl,
                 title: pageTitle,
@@ -116,12 +117,20 @@ export function PageSeo({
                 cardType: 'summary',
                 ...twitter,
             }}
-            additionalMetaTags={[{ name: 'twitter:image', content: logoUrl }]}
+            additionalMetaTags={[
+                { name: 'twitter:image', content: logoUrl },
+                site.google_search_console_key
+                    ? {
+                          name: 'google-site-verification',
+                          content: site.google_search_console_key,
+                      }
+                    : undefined,
+            ].filter((tag): tag is Exclude<typeof tag, undefined> => Boolean(tag))}
             additionalLinkTags={[
                 {
                     rel: 'alternate',
                     type: 'application/rss+xml',
-                    href: getAbsoluteUrl('/feed', newsroom.url),
+                    href: getAbsoluteUrl('/feed', site.url),
                 },
             ]}
             languageAlternates={alternateLanguageLinks}
