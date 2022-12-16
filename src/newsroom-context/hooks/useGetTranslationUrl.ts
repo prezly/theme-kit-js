@@ -1,4 +1,5 @@
 import type { Category, ExtendedStory } from '@prezly/sdk';
+import { Story } from '@prezly/sdk';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
@@ -63,8 +64,10 @@ function getTranslationUrl(
         const allowedVisibilityValues = getAllowedTranslationVisibilityValues(currentStory);
 
         const translatedStory = currentStory.translations.find(
-            ({ culture, visibility }) =>
-                culture.locale === localeCode && allowedVisibilityValues.includes(visibility),
+            ({ culture, lifecycle_status, visibility }) =>
+                culture.locale === localeCode &&
+                Story.isPublished(lifecycle_status) &&
+                allowedVisibilityValues.includes(visibility),
         );
         if (translatedStory) {
             return `/${translatedStory.slug}`;
