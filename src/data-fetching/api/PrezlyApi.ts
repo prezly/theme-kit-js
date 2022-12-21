@@ -43,6 +43,11 @@ interface GetStoriesOptions {
     pinning?: boolean;
     include?: (keyof Story.ExtraFields)[];
     localeCode?: string;
+    /**
+     * When set to `true`, the result for the first page will include one extra story to place as highlighted story.
+     * This will offset each subsequent page by 1 story to account for that.
+     */
+    useHighlightedStory?: boolean;
 }
 
 interface GetGalleriesOptions {
@@ -138,13 +143,25 @@ export class PrezlyApi {
         pinning = false,
         include,
         localeCode,
+        useHighlightedStory,
     }: GetStoriesOptions = {}) {
         const sortOrder = getChronologicalSortOrder(order, pinning);
         const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
 
+        const limit = useHighlightedStory && (!page || page === 1) ? pageSize + 1 : pageSize;
+
+        function getPageOffset() {
+            if (typeof page === 'undefined') {
+                return undefined;
+            }
+
+            const baseOffset = (page - 1) * pageSize;
+            return useHighlightedStory && baseOffset ? baseOffset + 1 : baseOffset;
+        }
+
         const { stories, pagination } = await this.searchStories({
-            limit: pageSize,
-            offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
+            limit,
+            offset: getPageOffset(),
             sortOrder,
             query,
             include,
@@ -163,7 +180,7 @@ export class PrezlyApi {
             order = DEFAULT_SORT_ORDER,
             include,
             localeCode,
-        }: Omit<GetStoriesOptions, 'pinning'> = {},
+        }: Omit<GetStoriesOptions, 'pinning' | 'useHighlightedStory'> = {},
     ) {
         const sortOrder = getChronologicalSortOrder(order);
         const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, category.id, localeCode));

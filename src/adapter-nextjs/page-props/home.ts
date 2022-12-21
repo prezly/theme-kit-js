@@ -22,6 +22,11 @@ export interface HomePageProps<StoryType extends Story = Story> {
 
 interface Options {
     extraStoryFields?: (keyof Story.ExtraFields)[];
+    /**
+     * When set to `true`, the initial `stories` array will include one extra story to place as highlighted story.
+     * This will offset each subsequent page by 1 story to account for that.
+     */
+    useHighlightedStory?: boolean;
     pageSize?: number;
     pinning?: boolean;
 }
@@ -30,7 +35,12 @@ export function getHomepageServerSideProps<
     CustomProps extends Record<string, any>,
     StoryType extends Story = Story,
 >(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options) {
-    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields, pinning = false } = options || {};
+    const {
+        pageSize = DEFAULT_PAGE_SIZE,
+        extraStoryFields,
+        pinning = false,
+        useHighlightedStory = false,
+    } = options || {};
 
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
@@ -50,6 +60,7 @@ export function getHomepageServerSideProps<
             pinning,
             include: extraStoryFields,
             localeCode,
+            useHighlightedStory,
         });
         const { stories, storiesTotal } = storiesPaginated;
 
@@ -63,6 +74,7 @@ export function getHomepageServerSideProps<
                     itemsTotal: storiesTotal,
                     currentPage: page ?? 1,
                     pageSize,
+                    useHighlightedStory,
                 },
                 ...(typeof customProps === 'function'
                     ? await (customProps as PropsFunction<CustomProps>)(context, serverSideProps)

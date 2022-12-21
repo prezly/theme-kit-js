@@ -10,6 +10,7 @@ import { useInfiniteLoading } from './useInfiniteLoading';
 async function fetchStories<T extends Story = Story>(
     page: number,
     pageSize: number,
+    useHighlightedStory: boolean,
     category?: Category,
     locale?: LocaleObject,
     include?: (keyof Story.ExtraFields)[],
@@ -22,6 +23,7 @@ async function fetchStories<T extends Story = Story>(
         body: JSON.stringify({
             page,
             pageSize,
+            useHighlightedStory,
             category,
             include,
             ...(locale && {
@@ -50,12 +52,14 @@ export function useInfiniteStoriesLoading<T extends Story = Story>(
     include?: (keyof Story.ExtraFields)[],
 ) {
     const currentLocale = useCurrentLocale();
+    const { useHighlightedStory = false } = pagination;
 
     const { canLoadMore, data, isLoading, loadMore, resetData } = useInfiniteLoading<T>({
         fetchingFn: async (nextPage, pageSize) => {
             const { stories } = await fetchStories<T>(
                 nextPage,
                 pageSize,
+                useHighlightedStory,
                 category,
                 currentLocale,
                 include,
