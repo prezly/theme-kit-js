@@ -159,6 +159,8 @@ export class PrezlyApi {
             return useHighlightedStory && baseOffset ? baseOffset + 1 : baseOffset;
         }
 
+        console.log({ limit, offset: getPageOffset(), useHighlightedStory });
+
         const { stories, pagination } = await this.searchStories({
             limit,
             offset: getPageOffset(),
