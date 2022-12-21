@@ -149,21 +149,14 @@ export class PrezlyApi {
         const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
 
         const limit = useHighlightedStory && (!page || page === 1) ? pageSize + 1 : pageSize;
+        const baseOffset = typeof page !== 'undefined' ? (page - 1) * pageSize : undefined;
+        const offset = useHighlightedStory && baseOffset ? baseOffset + 1 : baseOffset;
 
-        function getPageOffset() {
-            if (typeof page === 'undefined') {
-                return undefined;
-            }
-
-            const baseOffset = (page - 1) * pageSize;
-            return useHighlightedStory && baseOffset ? baseOffset + 1 : baseOffset;
-        }
-
-        console.log({ limit, offset: getPageOffset(), useHighlightedStory });
+        console.log({ limit, offset, useHighlightedStory });
 
         const { stories, pagination } = await this.searchStories({
             limit,
-            offset: getPageOffset(),
+            offset,
             sortOrder,
             query,
             include,
