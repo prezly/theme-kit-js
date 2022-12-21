@@ -26,8 +26,9 @@ export function useInfiniteLoading<T>({
     const [data, setData] = useState<T[]>(initialData);
     const [currentPage, setCurrentPage] = useState(pagination.currentPage);
 
-    const { itemsTotal, pageSize } = pagination;
-    const pagesTotal = Math.ceil(itemsTotal / pageSize);
+    const { itemsTotal, pageSize, useHighlightedStory } = pagination;
+    const adjustedItemsTotal = useHighlightedStory ? itemsTotal : itemsTotal - 1;
+    const pagesTotal = Math.ceil(adjustedItemsTotal / pageSize);
     const canLoadMore = currentPage < pagesTotal;
 
     const [{ error, status }, { execute: loadMoreFn }] = useAsync(async () => {
