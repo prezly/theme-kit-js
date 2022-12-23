@@ -8,7 +8,7 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
         return;
     }
 
-    const { page, pageSize, useHighlightedStory, category, include, localeCode, pinning } =
+    const { page, pageSize, withHighlightedStory, category, include, localeCode, pinning } =
         req.body;
 
     try {
@@ -21,7 +21,7 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
                   pageSize,
                   include,
                   localeCode,
-                  useHighlightedStory,
+                  withHighlightedStory,
                   pinning,
               }));
 

@@ -26,7 +26,7 @@ interface Options {
      * When set to `true`, the initial `stories` array will include one extra story to place as highlighted story.
      * This will offset each subsequent page by 1 story to account for that.
      */
-    useHighlightedStory?: boolean;
+    withHighlightedStory?: boolean;
     pageSize?: number;
     pinning?: boolean;
 }
@@ -39,7 +39,7 @@ export function getHomepageServerSideProps<
         pageSize = DEFAULT_PAGE_SIZE,
         extraStoryFields,
         pinning = false,
-        useHighlightedStory = false,
+        withHighlightedStory = false,
     } = options || {};
 
     return async function getServerSideProps(
@@ -60,7 +60,7 @@ export function getHomepageServerSideProps<
             pinning,
             include: extraStoryFields,
             localeCode,
-            useHighlightedStory,
+            withHighlightedStory,
         });
         const { stories, storiesTotal } = storiesPaginated;
 
@@ -74,7 +74,7 @@ export function getHomepageServerSideProps<
                     itemsTotal: storiesTotal,
                     currentPage: page ?? 1,
                     pageSize,
-                    useHighlightedStory,
+                    withHighlightedStory,
                 },
                 ...(typeof customProps === 'function'
                     ? await (customProps as PropsFunction<CustomProps>)(context, serverSideProps)
