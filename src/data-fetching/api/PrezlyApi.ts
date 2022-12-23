@@ -21,6 +21,7 @@ import type { PageProps, ServerSidePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../../utils';
 import { getAlgoliaSettings, isSdkError, isUuid } from '../lib';
 
+import { toPaginationParams } from './lib';
 import {
     getChronologicalSortOrder,
     getContactsQuery,
@@ -148,9 +149,7 @@ export class PrezlyApi {
         const sortOrder = getChronologicalSortOrder(order, pinning);
         const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
 
-        const limit = withHighlightedStory && (!page || page === 1) ? pageSize + 1 : pageSize;
-        const baseOffset = typeof page !== 'undefined' ? (page - 1) * pageSize : undefined;
-        const offset = withHighlightedStory && baseOffset ? baseOffset + 1 : baseOffset;
+        const { offset, limit } = toPaginationParams({ page, pageSize, withHighlightedStory });
 
         const { stories, pagination } = await this.searchStories({
             limit,
@@ -178,9 +177,11 @@ export class PrezlyApi {
         const sortOrder = getChronologicalSortOrder(order);
         const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, category.id, localeCode));
 
+        const { offset, limit } = toPaginationParams({ page, pageSize });
+
         const { stories, pagination } = await this.searchStories({
-            limit: pageSize,
-            offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
+            limit,
+            offset,
             sortOrder,
             query,
             include,
@@ -224,12 +225,11 @@ export class PrezlyApi {
     searchStories: Stories.Client['search'] = (options) => this.sdk.stories.search(options);
 
     async getGalleries({ page, pageSize }: GetGalleriesOptions) {
+        const { offset, limit } = toPaginationParams({ page, pageSize });
+
         return this.sdk.newsroomGalleries.search(this.newsroomUuid, {
-            limit: pageSize,
-            offset:
-                typeof page === 'undefined' || typeof pageSize === 'undefined'
-                    ? undefined
-                    : (page - 1) * pageSize,
+            limit,
+            offset,
             scope: getGalleriesQuery(),
         });
     }
