@@ -21,6 +21,7 @@ import type { PageProps, ServerSidePageProps } from '../../types';
 import { DEFAULT_PAGE_SIZE } from '../../utils';
 import { getAlgoliaSettings, isSdkError, isUuid } from '../lib';
 
+import { toPaginationParams } from './lib';
 import {
     getChronologicalSortOrder,
     getContactsQuery,
@@ -43,6 +44,11 @@ interface GetStoriesOptions {
     pinning?: boolean;
     include?: (keyof Story.ExtraFields)[];
     localeCode?: string;
+    /**
+     * When set to `true`, the result for the first page will include one extra story to place as highlighted story.
+     * This will offset each subsequent page by 1 story to account for that.
+     */
+    withHighlightedStory?: boolean;
 }
 
 interface GetGalleriesOptions {
@@ -138,13 +144,16 @@ export class PrezlyApi {
         pinning = false,
         include,
         localeCode,
+        withHighlightedStory,
     }: GetStoriesOptions = {}) {
         const sortOrder = getChronologicalSortOrder(order, pinning);
         const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
 
+        const { offset, limit } = toPaginationParams({ page, pageSize, withHighlightedStory });
+
         const { stories, pagination } = await this.searchStories({
-            limit: pageSize,
-            offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
+            limit,
+            offset,
             sortOrder,
             query,
             include,
@@ -163,14 +172,16 @@ export class PrezlyApi {
             order = DEFAULT_SORT_ORDER,
             include,
             localeCode,
-        }: Omit<GetStoriesOptions, 'pinning'> = {},
+        }: Omit<GetStoriesOptions, 'pinning' | 'withHighlightedStory'> = {},
     ) {
         const sortOrder = getChronologicalSortOrder(order);
         const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, category.id, localeCode));
 
+        const { offset, limit } = toPaginationParams({ page, pageSize });
+
         const { stories, pagination } = await this.searchStories({
-            limit: pageSize,
-            offset: typeof page === 'undefined' ? undefined : (page - 1) * pageSize,
+            limit,
+            offset,
             sortOrder,
             query,
             include,
@@ -214,12 +225,11 @@ export class PrezlyApi {
     searchStories: Stories.Client['search'] = (options) => this.sdk.stories.search(options);
 
     async getGalleries({ page, pageSize }: GetGalleriesOptions) {
+        const { offset, limit } = toPaginationParams({ page, pageSize });
+
         return this.sdk.newsroomGalleries.search(this.newsroomUuid, {
-            limit: pageSize,
-            offset:
-                typeof page === 'undefined' || typeof pageSize === 'undefined'
-                    ? undefined
-                    : (page - 1) * pageSize,
+            limit,
+            offset,
             scope: getGalleriesQuery(),
         });
     }

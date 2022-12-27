@@ -10,9 +10,11 @@ import { useInfiniteLoading } from './useInfiniteLoading';
 async function fetchStories<T extends Story = Story>(
     page: number,
     pageSize: number,
+    withHighlightedStory: boolean,
     category?: Category,
     locale?: LocaleObject,
     include?: (keyof Story.ExtraFields)[],
+    pinning?: boolean,
 ): Promise<{ stories: T[] }> {
     const result = await fetch('/api/fetch-stories', {
         method: 'POST',
@@ -22,8 +24,10 @@ async function fetchStories<T extends Story = Story>(
         body: JSON.stringify({
             page,
             pageSize,
+            withHighlightedStory,
             category,
             include,
+            pinning,
             ...(locale && {
                 localeCode: locale.toUnderscoreCode(),
             }),
@@ -48,17 +52,21 @@ export function useInfiniteStoriesLoading<T extends Story = Story>(
     pagination: PaginationProps,
     category?: Category,
     include?: (keyof Story.ExtraFields)[],
+    pinning?: boolean,
 ) {
     const currentLocale = useCurrentLocale();
+    const { withHighlightedStory = false } = pagination;
 
     const { canLoadMore, data, isLoading, loadMore, resetData } = useInfiniteLoading<T>({
         fetchingFn: async (nextPage, pageSize) => {
             const { stories } = await fetchStories<T>(
                 nextPage,
                 pageSize,
+                withHighlightedStory,
                 category,
                 currentLocale,
                 include,
+                pinning,
             );
             return stories;
         },

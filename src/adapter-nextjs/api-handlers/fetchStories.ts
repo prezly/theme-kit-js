@@ -8,14 +8,22 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
         return;
     }
 
-    const { page, pageSize, category, include, localeCode } = req.body;
+    const { page, pageSize, withHighlightedStory, category, include, localeCode, pinning } =
+        req.body;
 
     try {
         const api = getPrezlyApi(req);
 
         const { stories } = await (category
             ? api.getStoriesFromCategory(category, { page, pageSize, include, localeCode })
-            : api.getStories({ page, pageSize, include, localeCode }));
+            : api.getStories({
+                  page,
+                  pageSize,
+                  include,
+                  localeCode,
+                  withHighlightedStory,
+                  pinning,
+              }));
 
         res.status(200).json({ stories });
     } catch (error) {
