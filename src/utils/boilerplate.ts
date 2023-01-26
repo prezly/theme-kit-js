@@ -22,6 +22,9 @@ export function hasAnyAboutInformation(companyInformation: NewsroomCompanyInform
 
 export function hasAnyContactInformation(companyInformation: NewsroomCompanyInformation): boolean {
     return Boolean(
-        companyInformation.address || companyInformation.phone || companyInformation.email,
+        companyInformation.address ||
+            companyInformation.phone ||
+            companyInformation.email ||
+            companyInformation.website,
     );
 }
