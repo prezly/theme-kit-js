@@ -119,6 +119,21 @@ describe('getAlternateLanguageLinks', () => {
         ]);
     });
 
+    it('should fallback en link to en-US locale when there is en-GB locale', () => {
+        const links = getAlternateLanguageLinks(
+            [lang('en-GB'), lang('en-US')],
+            getTranslationUrl,
+            createHref,
+        );
+
+        expect(links).toMatchObject([
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'en' },
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'en-US' },
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'x-default' },
+        ]);
+    });
+
     it('should should omit locales if getTranslationUrl is undefined', () => {
         const links = getAlternateLanguageLinks(
             [lang('en-US'), lang('fr'), lang('fr-FR', true)],
