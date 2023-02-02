@@ -8,11 +8,15 @@ export const DEFAULT_LOCALE = 'en';
 // We use pseudo locale used for localization testing, to reliably determine if we need to fallback to the default newsroom language
 export const DUMMY_DEFAULT_LOCALE = 'qps-ploc';
 
+export type LangCode = string & { __BRAND__?: 'langCode' };
+export type RegionCode = string & { __BRAND__?: 'regionCode' };
+export type LocaleCode = string & { __BRAND__?: 'localeCode' };
+
 /**
  * This a list of locales that Prezly has translations for. Each code represents a language file in the `@prezly/themes-intl-messages` package.
  * See https://github.com/prezly/themes-intl-messages for more info.
  */
-const SUPPORTED_LOCALES = [
+const SUPPORTED_LOCALES: LocaleCode[] = [
     'af',
     'ar',
     'az',

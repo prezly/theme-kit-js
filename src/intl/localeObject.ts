@@ -12,6 +12,12 @@ export class LocaleObject {
      */
     private localeCode: string;
 
+    /**
+     * Whether the locale is global (without region/culture part).
+     * I.E. `en` is global, while `en-US` is not.
+     */
+    public isGlobal: boolean;
+
     private constructor(localeCode: string) {
         if (!/^([a-z]{2,3})(-[a-z\d]{1,4})?$/i.test(localeCode)) {
             throw new Error('Invalid locale code provided!');
@@ -20,11 +26,13 @@ export class LocaleObject {
         const [language, region] = localeCode.split('-');
 
         if (region) {
+            this.isGlobal = false;
             // Workaround for `zh-Hant` locale, which is the only locale with non-uppercase region part
             const regionSuffix = region === 'hant' ? 'Hant' : region.toUpperCase();
 
             this.localeCode = [language, regionSuffix].join('-');
         } else {
+            this.isGlobal = true;
             this.localeCode = language;
         }
     }
