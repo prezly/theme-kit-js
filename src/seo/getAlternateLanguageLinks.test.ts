@@ -18,19 +18,11 @@ describe('getAlternateLanguageLinks', () => {
     it('should handle one en-GB non-default language', () => {
         const links = getAlternateLanguageLinks([lang('en-GB')], getTranslationUrl, createHref);
 
-        [
-            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
+        expect(links).toMatchObject([
             { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
             { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'x-default' },
-        ];
-
-        expect(links).toMatchObject(
-            [
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'x-default' },
-            ].sort((a, b) => a.hrefLang.localeCompare(b.hrefLang)),
-        );
+        ]);
     });
 
     it('should handle one en-GB default language', () => {
@@ -40,13 +32,11 @@ describe('getAlternateLanguageLinks', () => {
             createHref,
         );
 
-        expect(links).toMatchObject(
-            [
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'x-default' },
-            ].sort((a, b) => a.hrefLang.localeCompare(b.hrefLang)),
-        );
+        expect(links).toMatchObject([
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'x-default' },
+        ]);
     });
 
     it('should handle two full locales', () => {
@@ -56,15 +46,13 @@ describe('getAlternateLanguageLinks', () => {
             createHref,
         );
 
-        expect(links).toMatchObject(
-            [
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
-                { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
-                { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr' },
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'x-default' },
-            ].sort((a, b) => a.hrefLang.localeCompare(b.hrefLang)),
-        );
+        expect(links).toMatchObject([
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'x-default' },
+        ]);
     });
 
     it('should use en-GB locale as x-default even if other locale is set as default', () => {
@@ -74,15 +62,13 @@ describe('getAlternateLanguageLinks', () => {
             createHref,
         );
 
-        expect(links).toMatchObject(
-            [
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
-                { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
-                { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr' },
-                { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'x-default' },
-            ].sort((a, b) => a.hrefLang.localeCompare(b.hrefLang)),
-        );
+        expect(links).toMatchObject([
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'x-default' },
+        ]);
     });
 
     it('should use default locale as x-default when there is eng locale', () => {
@@ -92,15 +78,13 @@ describe('getAlternateLanguageLinks', () => {
             createHref,
         );
 
-        expect(links).toMatchObject(
-            [
-                { href: 'http://localhost:3000/ru/translationUrl/ru-RU', hrefLang: 'ru-RU' },
-                { href: 'http://localhost:3000/ru/translationUrl/ru-RU', hrefLang: 'ru' },
-                { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
-                { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr' },
-                { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'x-default' },
-            ].sort((a, b) => a.hrefLang.localeCompare(b.hrefLang)),
-        );
+        expect(links).toMatchObject([
+            { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
+            { href: 'http://localhost:3000/ru/translationUrl/ru-RU', hrefLang: 'ru' },
+            { href: 'http://localhost:3000/ru/translationUrl/ru-RU', hrefLang: 'ru-RU' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'x-default' },
+        ]);
     });
 
     it('should use provided global locale', () => {
@@ -110,15 +94,13 @@ describe('getAlternateLanguageLinks', () => {
             createHref,
         );
 
-        expect(links).toMatchObject(
-            [
-                { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'en-US' },
-                { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'en' },
-                { href: 'http://localhost:3000/fr/translationUrl/fr', hrefLang: 'fr' },
-                { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
-                { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'x-default' },
-            ].sort((a, b) => a.hrefLang.localeCompare(b.hrefLang)),
-        );
+        expect(links).toMatchObject([
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'en' },
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'en-US' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr', hrefLang: 'fr' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'x-default' },
+        ]);
     });
 
     it('should should omit locales if getTranslationUrl is undefined', () => {

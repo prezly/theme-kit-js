@@ -11,6 +11,7 @@ export function getDefaultHrefLang(
     createHref: (locale: LocaleObject, translationUrl: string) => string,
 ): AlternateLanguageLink | undefined {
     const engFallback = 'en';
+    const hrefLang = 'x-default';
 
     const fallbackFromLocales = localeAlternates.find(
         (alternate) => alternate.isGlobal && alternate.toNeutralLanguageCode() === engFallback,
@@ -24,7 +25,7 @@ export function getDefaultHrefLang(
         );
 
         if (link) {
-            return { ...link, hrefLang: 'x-default' };
+            return { ...link, hrefLang };
         }
     }
 
@@ -33,14 +34,14 @@ export function getDefaultHrefLang(
     );
 
     if (fallbackFromGlobalLocales) {
-        return { ...fallbackFromGlobalLocales, hrefLang: 'x-default' };
+        return { ...fallbackFromGlobalLocales, hrefLang };
     }
 
     if (defaultLocale) {
         const link = createAlternateLanguageLink(defaultLocale, getTranslationUrl, createHref);
 
         if (link) {
-            return { ...link, hrefLang: 'x-default' };
+            return { ...link, hrefLang };
         }
     }
 
