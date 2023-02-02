@@ -1,93 +1,12 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 
 import type { AlternateLanguageLink } from '../components-nextjs/PageSeo';
-import type { LangCode, LocaleCode } from '../intl';
-import { getFallbackLocale, LocaleObject } from '../intl';
+import type { LocaleObject } from '../intl';
+import { getFallbackLocale } from '../intl';
 
-function mapLanguagesToLocales(languages: NewsroomLanguageSettings[]) {
-    let defaultLocale: LocaleObject | undefined;
-    const localesByLanguage = new Map<LangCode, Map<LocaleCode, LocaleObject>>();
-
-    languages.forEach((language) => {
-        const locale = LocaleObject.fromAnyCode(language.code);
-        const globalLanguageCode = locale.toNeutralLanguageCode();
-        let currentLocale = localesByLanguage.get(globalLanguageCode);
-
-        if (!currentLocale) {
-            currentLocale = new Map([[locale.toHyphenCode(), locale]]);
-            localesByLanguage.set(globalLanguageCode, currentLocale);
-        }
-
-        currentLocale.set(locale.toHyphenCode(), locale);
-
-        if (language.is_default) {
-            defaultLocale = locale;
-        }
-    });
-
-    return [localesByLanguage, defaultLocale] as const;
-}
-
-function createAlternateLanguageLink(
-    locale: LocaleObject,
-    getTranslationUrl: (locale: LocaleObject) => string | undefined,
-    createHref: (locale: LocaleObject, translationUrl: string) => string,
-) {
-    const translationUrl = getTranslationUrl(locale);
-
-    if (!translationUrl) {
-        return undefined;
-    }
-
-    return {
-        hrefLang: locale.toHyphenCode(),
-        href: createHref(locale, translationUrl),
-    };
-}
-
-function getXdefaultHrefLang(
-    localeAlternates: LocaleObject[],
-    globalLocalesFallbackLinks: AlternateLanguageLink[],
-    defaultLocale: LocaleObject | undefined,
-    getTranslationUrl: (locale: LocaleObject) => string | undefined,
-    createHref: (locale: LocaleObject, translationUrl: string) => string,
-): AlternateLanguageLink | undefined {
-    const engFallback = 'en';
-
-    const fallbackFromLocales = localeAlternates.find(
-        (alternate) => alternate.isGlobal && alternate.toNeutralLanguageCode() === engFallback,
-    );
-
-    if (fallbackFromLocales) {
-        const link = createAlternateLanguageLink(
-            fallbackFromLocales,
-            getTranslationUrl,
-            createHref,
-        );
-
-        if (link) {
-            return { ...link, hrefLang: 'x-default' };
-        }
-    }
-
-    const fallbackFromGlobalLocales = globalLocalesFallbackLinks.find(
-        (alternate) => alternate.hrefLang === engFallback,
-    );
-
-    if (fallbackFromGlobalLocales) {
-        return { ...fallbackFromGlobalLocales, hrefLang: 'x-default' };
-    }
-
-    if (defaultLocale) {
-        const link = createAlternateLanguageLink(defaultLocale, getTranslationUrl, createHref);
-
-        if (link) {
-            return { ...link, hrefLang: 'x-default' };
-        }
-    }
-
-    return undefined;
-}
+import { createAlternateLanguageLink } from './utils/createAlternateLanguageLink';
+import { getDefaultHrefLang } from './utils/getDefaultHrefLang';
+import { mapLanguagesToLocales } from './utils/mapLanguagesToLocales';
 
 export function getAlternateLanguageLinks(
     languages: NewsroomLanguageSettings[],
@@ -137,7 +56,7 @@ export function getAlternateLanguageLinks(
 
     languageAlternates = languageAlternates.concat(globalLocalesFallbackLinks);
 
-    const xDefault = getXdefaultHrefLang(
+    const xDefault = getDefaultHrefLang(
         localeAlternates,
         globalLocalesFallbackLinks,
         defaultLocale,
