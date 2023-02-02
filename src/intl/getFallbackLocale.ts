@@ -1,6 +1,10 @@
 import type { LangCode } from './locale';
 import { LocaleObject } from './localeObject';
 
+/**
+ * Fallback locales for each language.
+ * For example, a story has no en(global) locale, then we can take some fallback locale from here.
+ */
 export const localeFallback: Record<LangCode, LocaleObject[]> = {
     en: [LocaleObject.fromAnyCode('en-US'), LocaleObject.fromAnyCode('en-GB')],
     fr: [LocaleObject.fromAnyCode('fr-FR'), LocaleObject.fromAnyCode('fr-CA')],
