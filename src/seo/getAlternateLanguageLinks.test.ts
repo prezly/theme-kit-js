@@ -87,7 +87,7 @@ describe('getAlternateLanguageLinks', () => {
         ]);
     });
 
-    it('should use provided global locale', () => {
+    it('should include provided global locale', () => {
         const links = getAlternateLanguageLinks(
             [lang('en-US'), lang('fr'), lang('fr-FR', true)],
             getTranslationUrl,
@@ -100,6 +100,22 @@ describe('getAlternateLanguageLinks', () => {
             { href: 'http://localhost:3000/fr/translationUrl/fr', hrefLang: 'fr' },
             { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
             { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'x-default' },
+        ]);
+    });
+
+    it('should use provided en global locale as x-default', () => {
+        const links = getAlternateLanguageLinks(
+            [lang('en'), lang('en-US'), lang('fr'), lang('fr-FR')],
+            getTranslationUrl,
+            createHref,
+        );
+
+        expect(links).toMatchObject([
+            { href: 'http://localhost:3000/en/translationUrl/en', hrefLang: 'en' },
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'en-US' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr', hrefLang: 'fr' },
+            { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'fr-FR' },
+            { href: 'http://localhost:3000/en/translationUrl/en', hrefLang: 'x-default' },
         ]);
     });
 
