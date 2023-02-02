@@ -4,25 +4,25 @@ import type { LangCode, LocaleCode } from '../../intl';
 import { LocaleObject } from '../../intl';
 
 export function mapLanguagesToLocales(languages: NewsroomLanguageSettings[]) {
-    let defaultLocale: LocaleObject | undefined;
-    const localesByLanguage = new Map<LangCode, Map<LocaleCode, LocaleObject>>();
+    let defaultLangLocale: LocaleObject | undefined;
+    const localesByLangCode = new Map<LangCode, Map<LocaleCode, LocaleObject>>();
 
     languages.forEach((language) => {
-        const locale = LocaleObject.fromAnyCode(language.code);
-        const globalLanguageCode = locale.toNeutralLanguageCode();
-        let currentLocale = localesByLanguage.get(globalLanguageCode);
+        const languageLocale = LocaleObject.fromAnyCode(language.code);
+        const globalLanguageCode = languageLocale.toNeutralLanguageCode();
+        let currentLocale = localesByLangCode.get(globalLanguageCode);
 
         if (!currentLocale) {
-            currentLocale = new Map([[locale.toHyphenCode(), locale]]);
-            localesByLanguage.set(globalLanguageCode, currentLocale);
+            currentLocale = new Map([[languageLocale.toHyphenCode(), languageLocale]]);
+            localesByLangCode.set(globalLanguageCode, currentLocale);
         }
 
-        currentLocale.set(locale.toHyphenCode(), locale);
+        currentLocale.set(languageLocale.toHyphenCode(), languageLocale);
 
         if (language.is_default) {
-            defaultLocale = locale;
+            defaultLangLocale = languageLocale;
         }
     });
 
-    return [localesByLanguage, defaultLocale] as const;
+    return [localesByLangCode, defaultLangLocale] as const;
 }

@@ -13,15 +13,15 @@ export function getAlternateLanguageLinks(
     getTranslationUrl: (locale: LocaleObject) => string | undefined,
     createHref: (locale: LocaleObject, translationUrl: string) => string,
 ): AlternateLanguageLink[] {
-    const globalLocalesFallbackLinks: AlternateLanguageLink[] = [];
-    const localeAlternates: LocaleObject[] = [];
-    const [localesMap, defaultLocale] = mapLanguagesToLocales(languages);
+    const alternateLanguageFallbackGlobalLinks: AlternateLanguageLink[] = [];
+    const alternateLanguageLocales: LocaleObject[] = [];
+    const [localesByLangCode, defaultLangLocale] = mapLanguagesToLocales(languages);
 
-    localesMap.forEach((locales, globalLocaleCode) => {
+    localesByLangCode.forEach((locales, globalLocaleCode) => {
         let hasGlobalLocale = false;
 
         locales.forEach((locale) => {
-            localeAlternates.push(locale);
+            alternateLanguageLocales.push(locale);
 
             if (!hasGlobalLocale && locale.isGlobal) {
                 hasGlobalLocale = true;
@@ -41,7 +41,7 @@ export function getAlternateLanguageLinks(
                 );
 
                 if (fallbackLink) {
-                    globalLocalesFallbackLinks.push({
+                    alternateLanguageFallbackGlobalLinks.push({
                         ...fallbackLink,
                         hrefLang: globalLocaleCode,
                     });
@@ -50,19 +50,19 @@ export function getAlternateLanguageLinks(
         }
     });
 
-    let languageAlternates: Array<AlternateLanguageLink | undefined> = localeAlternates.map(
+    let languageAlternates: Array<AlternateLanguageLink | undefined> = alternateLanguageLocales.map(
         (locale) => createAlternateLanguageLink(locale, getTranslationUrl, createHref),
     );
 
-    languageAlternates = languageAlternates.concat(globalLocalesFallbackLinks);
+    languageAlternates = languageAlternates.concat(alternateLanguageFallbackGlobalLinks);
 
-    const xDefault = getDefaultHrefLang(
-        localeAlternates,
-        globalLocalesFallbackLinks,
-        defaultLocale,
+    const xDefault = getDefaultHrefLang({
+        alternateLanguageLocales,
+        alternateLanguageFallbackGlobalLinks,
+        defaultLangLocale,
         getTranslationUrl,
         createHref,
-    );
+    });
 
     languageAlternates.push(xDefault);
 

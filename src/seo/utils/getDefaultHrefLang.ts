@@ -3,17 +3,25 @@ import type { LocaleObject } from '../../intl';
 
 import { createAlternateLanguageLink } from './createAlternateLanguageLink';
 
-export function getDefaultHrefLang(
-    localeAlternates: LocaleObject[],
-    globalLocalesFallbackLinks: AlternateLanguageLink[],
-    defaultLocale: LocaleObject | undefined,
-    getTranslationUrl: (locale: LocaleObject) => string | undefined,
-    createHref: (locale: LocaleObject, translationUrl: string) => string,
-): AlternateLanguageLink | undefined {
+interface Options {
+    alternateLanguageLocales: LocaleObject[];
+    alternateLanguageFallbackGlobalLinks: AlternateLanguageLink[];
+    defaultLangLocale: LocaleObject | undefined;
+    getTranslationUrl: (locale: LocaleObject) => string | undefined;
+    createHref: (locale: LocaleObject, translationUrl: string) => string;
+}
+
+export function getDefaultHrefLang({
+    createHref,
+    defaultLangLocale,
+    getTranslationUrl,
+    alternateLanguageFallbackGlobalLinks,
+    alternateLanguageLocales,
+}: Options): AlternateLanguageLink | undefined {
     const engFallback = 'en';
     const hrefLang = 'x-default';
 
-    const fallbackFromLocales = localeAlternates.find(
+    const fallbackFromLocales = alternateLanguageLocales.find(
         (alternate) => alternate.isGlobal && alternate.toNeutralLanguageCode() === engFallback,
     );
 
@@ -29,7 +37,7 @@ export function getDefaultHrefLang(
         }
     }
 
-    const fallbackFromGlobalLocales = globalLocalesFallbackLinks.find(
+    const fallbackFromGlobalLocales = alternateLanguageFallbackGlobalLinks.find(
         (alternate) => alternate.hrefLang === engFallback,
     );
 
@@ -37,8 +45,8 @@ export function getDefaultHrefLang(
         return { ...fallbackFromGlobalLocales, hrefLang };
     }
 
-    if (defaultLocale) {
-        const link = createAlternateLanguageLink(defaultLocale, getTranslationUrl, createHref);
+    if (defaultLangLocale) {
+        const link = createAlternateLanguageLink(defaultLangLocale, getTranslationUrl, createHref);
 
         if (link) {
             return { ...link, hrefLang };
