@@ -28,8 +28,14 @@ export function getAlternateLanguageLinks(
             }
         });
 
+        // If there is no global locale of provided locales
+        // however, we still need something as global locale
         if (!hasGlobalLocale) {
             const localesArray = Array.from(locales.values());
+
+            // Try to find some possible fallback for the globalLocaleCode from hardcoded list
+            // We try to find fallback from provided translations of current globalLocaleCode
+            // If there is no defined fallback in the list we will just first translation as a region independent translation
             const fallback =
                 getFallbackLocale(globalLocaleCode, localesArray) ?? localesArray.at(0);
 

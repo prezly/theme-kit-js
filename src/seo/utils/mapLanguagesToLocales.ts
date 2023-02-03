@@ -3,6 +3,9 @@ import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import type { LangCode, LocaleCode } from '../../intl';
 import { LocaleObject } from '../../intl';
 
+/**
+ * Group languages by their global language code (e.g. "en" for "en-US" and "en-GB").
+ */
 export function mapLanguagesToLocales(languages: NewsroomLanguageSettings[]) {
     let defaultLangLocale: LocaleObject | undefined;
     const localesByLangCode = new Map<LangCode, Map<LocaleCode, LocaleObject>>();
@@ -13,7 +16,7 @@ export function mapLanguagesToLocales(languages: NewsroomLanguageSettings[]) {
         let currentLocale = localesByLangCode.get(globalLanguageCode);
 
         if (!currentLocale) {
-            currentLocale = new Map([[languageLocale.toHyphenCode(), languageLocale]]);
+            currentLocale = new Map();
             localesByLangCode.set(globalLanguageCode, currentLocale);
         }
 

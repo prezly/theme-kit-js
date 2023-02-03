@@ -11,6 +11,9 @@ interface Options {
     createHref: (locale: LocaleObject, translationUrl: string) => string;
 }
 
+/**
+ * This function returns locale that will be used as default hreflang
+ */
 export function getDefaultHrefLang({
     createHref,
     defaultLangLocale,
@@ -18,9 +21,12 @@ export function getDefaultHrefLang({
     alternateLanguageFallbackGlobalLinks,
     alternateLanguageLocales,
 }: Options): AlternateLanguageLink | undefined {
+    // We use english locale as fallback since English is the most common language
     const engFallback = 'en';
     const hrefLang = 'x-default';
 
+    // First we try to find global english locale (en)
+    // If the story has just global `en` translation we will use it as default hreflang
     const fallbackFromLocales = alternateLanguageLocales.find(
         (alternate) => alternate.isGlobal && alternate.toNeutralLanguageCode() === engFallback,
     );
@@ -37,6 +43,8 @@ export function getDefaultHrefLang({
         }
     }
 
+    // If there is no explicit global `en` translation for this story
+    // we will try to find some link that already has `en` fallback
     const fallbackFromGlobalLocales = alternateLanguageFallbackGlobalLinks.find(
         (alternate) => alternate.hrefLang === engFallback,
     );
@@ -45,6 +53,7 @@ export function getDefaultHrefLang({
         return { ...fallbackFromGlobalLocales, hrefLang };
     }
 
+    // If there is no english locale at all we will use is_default language (provided from server)
     if (defaultLangLocale) {
         const link = createAlternateLanguageLink(defaultLangLocale, getTranslationUrl, createHref);
 
