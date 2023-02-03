@@ -28,8 +28,8 @@ export function getAlternateLanguageLinks(
             }
         });
 
-        // If there is no global locale of provided locales
-        // however, we still need something as global locale
+        // When there is no global locale of provided locales
+        // we still need something as global locale
         if (!hasGlobalLocale) {
             const localesArray = Array.from(locales.values());
 
