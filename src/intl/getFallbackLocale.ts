@@ -8,7 +8,7 @@ const localeFallback: Record<LangCode, LocaleObject[]> = {
 
 /**
  * Fallback locales for each global locale.
- * For example, a story has en-CA en-AU and en-GB locales. As you can see there is region independent locale.
+ * For example, a story has en-CA en-AU and en-GB locales. As you can see there is no region independent locale.
  * We will use a list of possible fallbacks to determine global locale alias.
  * In the provided example the result will be en-GB since it is defined in the localeFallback list
  * If the list will be en-CA en-AU and en-US then the result will be en-US since it is the first one and hence takes precedence.
