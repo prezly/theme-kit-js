@@ -26,7 +26,6 @@ export class PrezlyThemeDocument extends Document {
             <Html lang={locale.toHyphenCode()} dir={direction}>
                 <Head>
                     <meta name="og:locale" content={locale.toHyphenCode()} />
-                    {/* TODO: Add alternate locales */}
                 </Head>
                 <body>
                     <Main />
