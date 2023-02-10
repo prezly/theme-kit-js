@@ -22,14 +22,10 @@ export function getAlternateLanguageLinks(
         : undefined;
 
     localesByLangCode.forEach((locales, globalLocaleCode) => {
-        let hasGlobalLocale = false;
+        const hasGlobalLocale = Array.from(locales).some(([_, locale]) => locale.isGlobal);
 
         locales.forEach((locale) => {
             alternateLanguageLocales.push(locale);
-
-            if (!hasGlobalLocale && locale.isGlobal) {
-                hasGlobalLocale = true;
-            }
         });
 
         // When there is no global locale of provided locales
