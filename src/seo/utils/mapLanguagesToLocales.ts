@@ -7,7 +7,6 @@ import { LocaleObject } from '../../intl';
  * Group languages by their global language code (e.g. "en" for "en-US" and "en-GB").
  */
 export function mapLanguagesToLocales(languages: NewsroomLanguageSettings[]) {
-    let defaultLangLocale: LocaleObject | undefined;
     const localesByLangCode = new Map<LangCode, Map<LocaleCode, LocaleObject>>();
 
     languages.forEach((language) => {
@@ -21,11 +20,7 @@ export function mapLanguagesToLocales(languages: NewsroomLanguageSettings[]) {
         }
 
         currentLocale.set(languageLocale.toHyphenCode(), languageLocale);
-
-        if (language.is_default) {
-            defaultLangLocale = languageLocale;
-        }
     });
 
-    return [localesByLangCode, defaultLangLocale] as const;
+    return localesByLangCode;
 }

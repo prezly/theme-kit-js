@@ -1,8 +1,7 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 
 import type { AlternateLanguageLink } from '../components-nextjs/PageSeo';
-import type { LocaleObject } from '../intl';
-import { getFallbackLocale } from '../intl';
+import { getFallbackLocale, LocaleObject } from '../intl';
 
 import { createAlternateLanguageLink } from './utils/createAlternateLanguageLink';
 import { getDefaultHrefLang } from './utils/getDefaultHrefLang';
@@ -15,7 +14,12 @@ export function getAlternateLanguageLinks(
 ): AlternateLanguageLink[] {
     const alternateLanguageFallbackGlobalLinks: AlternateLanguageLink[] = [];
     const alternateLanguageLocales: LocaleObject[] = [];
-    const [localesByLangCode, defaultLangLocale] = mapLanguagesToLocales(languages);
+    const localesByLangCode = mapLanguagesToLocales(languages);
+
+    const defaultLanguage = languages.find((language) => language.is_default);
+    const defaultLangLocale = defaultLanguage
+        ? LocaleObject.fromAnyCode(defaultLanguage.code)
+        : undefined;
 
     localesByLangCode.forEach((locales, globalLocaleCode) => {
         let hasGlobalLocale = false;
