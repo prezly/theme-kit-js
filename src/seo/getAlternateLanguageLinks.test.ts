@@ -147,4 +147,18 @@ describe('getAlternateLanguageLinks', () => {
             { href: 'http://localhost:3000/fr/translationUrl/fr-FR', hrefLang: 'x-default' },
         ]);
     });
+
+    it('should should not duplicate links when equal languages passed', () => {
+        const links = getAlternateLanguageLinks(
+            [lang('en-GB'), lang('en-GB'), lang('en-US'), lang('en-US')],
+            generateTranslationUrl,
+        );
+
+        expect(links).toMatchObject([
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'en' },
+            { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en-GB' },
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'en-US' },
+            { href: 'http://localhost:3000/en/translationUrl/en-US', hrefLang: 'x-default' },
+        ]);
+    });
 });
