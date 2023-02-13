@@ -9,19 +9,19 @@ interface LocaleWithLanguage {
 }
 
 /**
- * Group languages by their global language code (e.g. "en" for "en-US" and "en-GB").
+ * Group languages by their region independent language code (e.g. "en" for "en-US" and "en-GB").
  */
 export function bindLanguagesWithLocales(languages: NewsroomLanguageSettings[]) {
     const localesByLangCode = new Map<LangCode, Map<LocaleCode, LocaleWithLanguage>>();
 
     languages.forEach((language) => {
         const languageLocale = LocaleObject.fromAnyCode(language.code);
-        const globalLanguageCode = languageLocale.toNeutralLanguageCode();
-        let currentLocale = localesByLangCode.get(globalLanguageCode);
+        const regionIndependentLanguageCode = languageLocale.toNeutralLanguageCode();
+        let currentLocale = localesByLangCode.get(regionIndependentLanguageCode);
 
         if (!currentLocale) {
             currentLocale = new Map();
-            localesByLangCode.set(globalLanguageCode, currentLocale);
+            localesByLangCode.set(regionIndependentLanguageCode, currentLocale);
         }
 
         currentLocale.set(languageLocale.toHyphenCode(), { language, locale: languageLocale });

@@ -34,26 +34,28 @@ export function getAlternateLanguageLinks(
         );
     }
 
-    function populateGlobalLinks() {
-        languagesWithLocales.forEach((binds, globalLocaleCode) => {
-            // When there is no global locale of provided locales
-            // we still need something as global locale
+    function populateRegionIndependentLinks() {
+        languagesWithLocales.forEach((binds, regionIndependentLocaleCode) => {
+            // When there is no region independent locale of provided locales
+            // we still need something as a region independent locale
             const localesArray = Array.from(binds.values()).map(({ locale }) => locale);
 
-            const hasGlobalLocale = localesArray.some((locale) => locale.isGlobal);
+            const hasRegionIndependentLocale = localesArray.some(
+                (locale) => locale.isRegionIndependent,
+            );
 
-            if (hasGlobalLocale) {
+            if (hasRegionIndependentLocale) {
                 return;
             }
 
-            // Try to find some possible fallback for the globalLocaleCode from hardcoded list
-            // We try to find fallback from provided translations of current globalLocaleCode
+            // Try to find some possible fallback for the regionIndependentLocaleCode from hardcoded list
+            // We try to find fallback from provided translations of current regionIndependentLocaleCode
             // If there is no defined fallback in the list we will use just first translation as a region independent translation
             const fallback =
-                getFallbackLocale(globalLocaleCode, localesArray) ?? localesArray.at(0);
+                getFallbackLocale(regionIndependentLocaleCode, localesArray) ?? localesArray.at(0);
 
             if (fallback) {
-                pushLocaleToLinks(fallback, globalLocaleCode);
+                pushLocaleToLinks(fallback, regionIndependentLocaleCode);
             }
         });
     }
@@ -65,11 +67,11 @@ export function getAlternateLanguageLinks(
 
         let isDefaultAddedToLinks = false;
 
-        // First we try to find global english locale (en)
-        // If the story has just global `en` translation we will use it as default hreflang
+        // First we try to find region independent english locale (en)
+        // If the story has just region independent `en` translation we will use it as default hreflang
         languagesWithLocales.forEach((binds) =>
             binds.forEach(({ locale }) => {
-                if (locale.isGlobal && locale.toNeutralLanguageCode() === engFallback) {
+                if (locale.isRegionIndependent && locale.toNeutralLanguageCode() === engFallback) {
                     pushLocaleToLinks(locale, defaultHrefLang);
                     isDefaultAddedToLinks = true;
                 }
@@ -77,14 +79,17 @@ export function getAlternateLanguageLinks(
         );
 
         if (!isDefaultAddedToLinks) {
-            // If there is no explicit global `en` translation for this story
+            // If there is no explicit region independent `en` translation for this story
             // we will try to find some link that already has `en` fallback
-            const fallbackFromGlobalLocales = hrefLangLinks.find(
+            const fallbackFromRegionIndependentLocales = hrefLangLinks.find(
                 (alternate) => alternate.hrefLang === engFallback,
             );
 
-            if (fallbackFromGlobalLocales) {
-                hrefLangLinks.push({ ...fallbackFromGlobalLocales, hrefLang: defaultHrefLang });
+            if (fallbackFromRegionIndependentLocales) {
+                hrefLangLinks.push({
+                    ...fallbackFromRegionIndependentLocales,
+                    hrefLang: defaultHrefLang,
+                });
                 isDefaultAddedToLinks = true;
             }
         }
@@ -103,7 +108,7 @@ export function getAlternateLanguageLinks(
     }
 
     populateDirectLinks();
-    populateGlobalLinks();
+    populateRegionIndependentLinks();
     populateDefault();
 
     return hrefLangLinks.sort((a, b) => a.hrefLang.localeCompare(b.hrefLang));
