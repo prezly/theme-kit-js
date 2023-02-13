@@ -13,8 +13,8 @@ export class LocaleObject {
     private localeCode: string;
 
     /**
-     * Whether the locale is global (without region/culture part).
-     * I.E. `en` is global, while `en-US` is not.
+     * Whether the locale is region independent (without region/culture part).
+     * I.E. `en` is region independent, while `en-US` is not.
      */
     public isRegionIndependent: boolean;
 

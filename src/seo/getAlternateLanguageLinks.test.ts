@@ -82,7 +82,7 @@ describe('getAlternateLanguageLinks', () => {
         ]);
     });
 
-    it('should include provided global locale', () => {
+    it('should include provided region independent locale', () => {
         const links = getAlternateLanguageLinks(
             [lang('en-US'), lang('fr'), lang('fr-FR', true)],
             generateTranslationUrl,
@@ -97,7 +97,7 @@ describe('getAlternateLanguageLinks', () => {
         ]);
     });
 
-    it('should use provided en global locale as x-default', () => {
+    it('should use provided en region independent locale as x-default', () => {
         const links = getAlternateLanguageLinks(
             [lang('en'), lang('en-US'), lang('fr'), lang('fr-FR')],
             generateTranslationUrl,
