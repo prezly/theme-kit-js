@@ -7,17 +7,15 @@ interface Options {
     alternateLanguageLocales: LocaleObject[];
     alternateLanguageFallbackGlobalLinks: AlternateLanguageLink[];
     defaultLangLocale: LocaleObject | undefined;
-    getTranslationUrl: (locale: LocaleObject) => string | undefined;
-    createHref: (locale: LocaleObject, translationUrl: string) => string;
+    generateTranslationUrl: (locale: LocaleObject) => string | undefined;
 }
 
 /**
  * This function returns locale that will be used as default hreflang
  */
 export function getDefaultHrefLang({
-    createHref,
     defaultLangLocale,
-    getTranslationUrl,
+    generateTranslationUrl,
     alternateLanguageFallbackGlobalLinks,
     alternateLanguageLocales,
 }: Options): AlternateLanguageLink | undefined {
@@ -32,11 +30,7 @@ export function getDefaultHrefLang({
     );
 
     if (fallbackFromLocales) {
-        const link = createAlternateLanguageLink(
-            fallbackFromLocales,
-            getTranslationUrl,
-            createHref,
-        );
+        const link = createAlternateLanguageLink(fallbackFromLocales, generateTranslationUrl);
 
         if (link) {
             return { ...link, hrefLang };
@@ -55,7 +49,7 @@ export function getDefaultHrefLang({
 
     // If there is no english locale at all we will use is_default language (provided from server)
     if (defaultLangLocale) {
-        const link = createAlternateLanguageLink(defaultLangLocale, getTranslationUrl, createHref);
+        const link = createAlternateLanguageLink(defaultLangLocale, generateTranslationUrl);
 
         if (link) {
             return { ...link, hrefLang };

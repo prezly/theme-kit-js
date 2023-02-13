@@ -10,13 +10,15 @@ function getTranslationUrl(locale: LocaleObject) {
     return `translationUrl/${locale.toHyphenCode()}`;
 }
 
-function createHref(locale: LocaleObject, translationUrl: string) {
+function generateTranslationUrl(locale: LocaleObject) {
+    const translationUrl = getTranslationUrl(locale);
+
     return `http://localhost:3000/${locale.toNeutralLanguageCode()}/${translationUrl}`;
 }
 
 describe('getAlternateLanguageLinks', () => {
     it('should handle one en-GB non-default language', () => {
-        const links = getAlternateLanguageLinks([lang('en-GB')], getTranslationUrl, createHref);
+        const links = getAlternateLanguageLinks([lang('en-GB')], generateTranslationUrl);
 
         expect(links).toMatchObject([
             { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
@@ -26,11 +28,7 @@ describe('getAlternateLanguageLinks', () => {
     });
 
     it('should handle one en-GB default language', () => {
-        const links = getAlternateLanguageLinks(
-            [lang('en-GB', true)],
-            getTranslationUrl,
-            createHref,
-        );
+        const links = getAlternateLanguageLinks([lang('en-GB', true)], generateTranslationUrl);
 
         expect(links).toMatchObject([
             { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
@@ -42,8 +40,7 @@ describe('getAlternateLanguageLinks', () => {
     it('should handle two full locales', () => {
         const links = getAlternateLanguageLinks(
             [lang('en-GB', true), lang('fr-FR')],
-            getTranslationUrl,
-            createHref,
+            generateTranslationUrl,
         );
 
         expect(links).toMatchObject([
@@ -58,8 +55,7 @@ describe('getAlternateLanguageLinks', () => {
     it('should use en-GB locale as x-default even if other locale is set as default', () => {
         const links = getAlternateLanguageLinks(
             [lang('en-GB'), lang('fr-FR', true)],
-            getTranslationUrl,
-            createHref,
+            generateTranslationUrl,
         );
 
         expect(links).toMatchObject([
@@ -74,8 +70,7 @@ describe('getAlternateLanguageLinks', () => {
     it('should use default locale as x-default when there is eng locale', () => {
         const links = getAlternateLanguageLinks(
             [lang('ru-RU'), lang('fr-FR', true)],
-            getTranslationUrl,
-            createHref,
+            generateTranslationUrl,
         );
 
         expect(links).toMatchObject([
@@ -90,8 +85,7 @@ describe('getAlternateLanguageLinks', () => {
     it('should include provided global locale', () => {
         const links = getAlternateLanguageLinks(
             [lang('en-US'), lang('fr'), lang('fr-FR', true)],
-            getTranslationUrl,
-            createHref,
+            generateTranslationUrl,
         );
 
         expect(links).toMatchObject([
@@ -106,8 +100,7 @@ describe('getAlternateLanguageLinks', () => {
     it('should use provided en global locale as x-default', () => {
         const links = getAlternateLanguageLinks(
             [lang('en'), lang('en-US'), lang('fr'), lang('fr-FR')],
-            getTranslationUrl,
-            createHref,
+            generateTranslationUrl,
         );
 
         expect(links).toMatchObject([
@@ -122,8 +115,7 @@ describe('getAlternateLanguageLinks', () => {
     it('should fallback en link to en-US locale when there is en-GB locale', () => {
         const links = getAlternateLanguageLinks(
             [lang('en-GB'), lang('en-US')],
-            getTranslationUrl,
-            createHref,
+            generateTranslationUrl,
         );
 
         expect(links).toMatchObject([
@@ -137,8 +129,16 @@ describe('getAlternateLanguageLinks', () => {
     it('should should omit locales if getTranslationUrl is undefined', () => {
         const links = getAlternateLanguageLinks(
             [lang('en-US'), lang('fr'), lang('fr-FR', true)],
-            (locale) => (locale.toHyphenCode() === 'en-US' ? undefined : getTranslationUrl(locale)),
-            createHref,
+            (locale) => {
+                const translationUrl =
+                    locale.toHyphenCode() === 'en-US' ? undefined : getTranslationUrl(locale);
+
+                if (translationUrl) {
+                    return generateTranslationUrl(locale);
+                }
+
+                return undefined;
+            },
         );
 
         expect(links).toMatchObject([

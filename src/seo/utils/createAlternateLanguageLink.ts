@@ -2,10 +2,9 @@ import type { LocaleObject } from '../../intl';
 
 export function createAlternateLanguageLink(
     locale: LocaleObject,
-    getTranslationUrl: (locale: LocaleObject) => string | undefined,
-    createHref: (locale: LocaleObject, translationUrl: string) => string,
+    generateTranslationUrl: (locale: LocaleObject) => string | undefined,
 ) {
-    const translationUrl = getTranslationUrl(locale);
+    const translationUrl = generateTranslationUrl(locale);
 
     if (!translationUrl) {
         return undefined;
@@ -13,6 +12,6 @@ export function createAlternateLanguageLink(
 
     return {
         hrefLang: locale.toHyphenCode(),
-        href: createHref(locale, translationUrl),
+        href: translationUrl,
     };
 }

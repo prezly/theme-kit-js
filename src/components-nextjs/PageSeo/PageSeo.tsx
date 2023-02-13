@@ -68,16 +68,19 @@ export function PageSeo({
 
         const usedLanguages = getUsedLanguages(languages);
 
-        return getAlternateLanguageLinks(
-            usedLanguages,
-            getTranslationUrl,
-            (locale, translationUrl) =>
-                getAbsoluteUrl(
-                    translationUrl,
-                    site.url,
-                    currentStory && translationUrl !== '/' ? false : getLinkLocaleSlug(locale),
-                ),
-        );
+        return getAlternateLanguageLinks(usedLanguages, (locale) => {
+            const translationUrl = getTranslationUrl(locale);
+
+            if (!translationUrl) {
+                return undefined;
+            }
+
+            return getAbsoluteUrl(
+                translationUrl,
+                site.url,
+                currentStory && translationUrl !== '/' ? false : getLinkLocaleSlug(locale),
+            );
+        });
     }, [currentStory, getLinkLocaleSlug, getTranslationUrl, languages, site.url]);
 
     return (

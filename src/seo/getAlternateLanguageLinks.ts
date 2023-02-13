@@ -9,8 +9,7 @@ import { mapLanguagesToLocales } from './utils/mapLanguagesToLocales';
 
 export function getAlternateLanguageLinks(
     languages: NewsroomLanguageSettings[],
-    getTranslationUrl: (locale: LocaleObject) => string | undefined,
-    createHref: (locale: LocaleObject, translationUrl: string) => string,
+    generateTranslationUrl: (locale: LocaleObject) => string | undefined,
 ): AlternateLanguageLink[] {
     const alternateLanguageFallbackGlobalLinks: AlternateLanguageLink[] = [];
     const alternateLanguageLocales: LocaleObject[] = [];
@@ -40,11 +39,7 @@ export function getAlternateLanguageLinks(
                 getFallbackLocale(globalLocaleCode, localesArray) ?? localesArray.at(0);
 
             if (fallback) {
-                const fallbackLink = createAlternateLanguageLink(
-                    fallback,
-                    getTranslationUrl,
-                    createHref,
-                );
+                const fallbackLink = createAlternateLanguageLink(fallback, generateTranslationUrl);
 
                 if (fallbackLink) {
                     alternateLanguageFallbackGlobalLinks.push({
@@ -57,7 +52,7 @@ export function getAlternateLanguageLinks(
     });
 
     let languageAlternates: Array<AlternateLanguageLink | undefined> = alternateLanguageLocales.map(
-        (locale) => createAlternateLanguageLink(locale, getTranslationUrl, createHref),
+        (locale) => createAlternateLanguageLink(locale, generateTranslationUrl),
     );
 
     languageAlternates = languageAlternates.concat(alternateLanguageFallbackGlobalLinks);
@@ -66,8 +61,7 @@ export function getAlternateLanguageLinks(
         alternateLanguageLocales,
         alternateLanguageFallbackGlobalLinks,
         defaultLangLocale,
-        getTranslationUrl,
-        createHref,
+        generateTranslationUrl,
     });
 
     languageAlternates.push(xDefault);
