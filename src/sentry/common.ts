@@ -31,10 +31,12 @@ export function getCommonClientOptions(dsn: string, themeName: string): Paramete
         beforeSend: (event) => {
             // `culprit` is not a documented property, but it is present in all Sentry events and is even displayed in the interface.
             // Just in case it's not defined, we can fallback to the stack trace.
-            if ('culprit' in event) {
+            if ('culprit' in event && typeof event.culprit === 'string') {
+                const { culprit } = event;
                 if (
-                    typeof event.culprit === 'string' &&
-                    IGNORED_EVENT_CULPRITS.includes(event.culprit)
+                    IGNORED_EVENT_CULPRITS.some((ignoredCulprit) =>
+                        culprit.includes(ignoredCulprit),
+                    )
                 ) {
                     return null;
                 }
@@ -43,7 +45,10 @@ export function getCommonClientOptions(dsn: string, themeName: string): Paramete
                     event.exception.values?.some((value) =>
                         value.stacktrace?.frames?.some(
                             (frame) =>
-                                frame.abs_path && IGNORED_EVENT_CULPRITS.includes(frame.abs_path),
+                                frame.abs_path &&
+                                IGNORED_EVENT_CULPRITS.some((ignoredCulprit) =>
+                                    frame.abs_path?.includes(ignoredCulprit),
+                                ),
                         ),
                     )
                 ) {
