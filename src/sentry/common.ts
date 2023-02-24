@@ -5,6 +5,7 @@ const IGNORED_EVENT_CULPRITS = [
     // All instances of errors with this origin that I found usually were caused by referring to variables that couldn't ever exist in our code.
     // Likely misbehaving browser extensions or people playing around in DevTools trying to break the app.
     '?(<anonymous>)',
+    'global code',
 ];
 
 export function getCommonClientOptions(dsn: string, themeName: string): Parameters<typeof init>[0] {
