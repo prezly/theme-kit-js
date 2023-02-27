@@ -1,5 +1,13 @@
 import type { init } from '@sentry/nextjs';
 
+const IGNORED_EVENT_CULPRITS = [
+    // This usually means that something happened outside of application code.
+    // All instances of errors with this origin that I found usually were caused by referring to variables that couldn't ever exist in our code.
+    // Likely misbehaving browser extensions or people playing around in DevTools trying to break the app.
+    '?(<anonymous>)',
+    'global code',
+];
+
 export function getCommonClientOptions(dsn: string, themeName: string): Parameters<typeof init>[0] {
     return {
         dsn,
@@ -18,6 +26,40 @@ export function getCommonClientOptions(dsn: string, themeName: string): Paramete
             // This error is caused by `beacon.min.js` polyfill in Cloudflare Insights. From what we see, it doesn't affect the user experience.
             'Illegal invocation',
         ],
+
+        // Ignore global code errors that are not related to the application code.
+        // See comments in `IGNORED_EVENT_CULPRITS` const for context on each entry
+        beforeSend: (event) => {
+            // `culprit` is not a documented property, but it is present in all Sentry events and is even displayed in the interface.
+            // Just in case it's not defined, we can fallback to the stack trace.
+            if ('culprit' in event && typeof event.culprit === 'string') {
+                const { culprit } = event;
+                if (
+                    IGNORED_EVENT_CULPRITS.some((ignoredCulprit) =>
+                        culprit.includes(ignoredCulprit),
+                    )
+                ) {
+                    return null;
+                }
+            } else if (event.exception) {
+                if (
+                    event.exception.values?.some((value) =>
+                        value.stacktrace?.frames?.some(
+                            (frame) =>
+                                frame.abs_path &&
+                                IGNORED_EVENT_CULPRITS.some((ignoredCulprit) =>
+                                    frame.abs_path?.includes(ignoredCulprit),
+                                ),
+                        ),
+                    )
+                ) {
+                    return null;
+                }
+            }
+
+            return event;
+        },
+
         // Attach theme tag to each event
         initialScope: (scope) => {
             scope.setTags({ prezly_theme: themeName });
