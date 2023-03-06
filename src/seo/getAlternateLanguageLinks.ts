@@ -7,6 +7,10 @@ import { getFallbackLocale } from '../intl';
 import { bindLanguagesWithLocales } from './utils/bindLanguagesWithLocales';
 import { createAlternateLanguageLink } from './utils/createAlternateLanguageLink';
 
+// We use english locale as fallback since English is the most common language
+const ENG_FALLBACK = 'en';
+const DEFAULT_HREF_LANG = 'x-default';
+
 export function getAlternateLanguageLinks(
     availableLanguages: NewsroomLanguageSettings[],
     generateTranslationUrl: (locale: LocaleObject) => string | undefined,
@@ -61,18 +65,14 @@ export function getAlternateLanguageLinks(
     }
 
     function populateDefault() {
-        // We use english locale as fallback since English is the most common language
-        const engFallback = 'en';
-        const defaultHrefLang = 'x-default';
-
         let isDefaultAddedToLinks = false;
 
         // First we try to find region independent english locale (en)
         // If the story has just region independent `en` translation we will use it as default hreflang
         languagesWithLocales.forEach((binds) =>
             binds.forEach(({ locale }) => {
-                if (locale.isRegionIndependent && locale.toNeutralLanguageCode() === engFallback) {
-                    pushLocaleToLinks(locale, defaultHrefLang);
+                if (locale.isRegionIndependent && locale.toNeutralLanguageCode() === ENG_FALLBACK) {
+                    pushLocaleToLinks(locale, DEFAULT_HREF_LANG);
                     isDefaultAddedToLinks = true;
                 }
             }),
@@ -82,13 +82,13 @@ export function getAlternateLanguageLinks(
             // If there is no explicit region independent `en` translation for this story
             // we will try to find some link that already has `en` fallback
             const fallbackFromRegionIndependentLocales = hrefLangLinks.find(
-                (alternate) => alternate.hrefLang === engFallback,
+                (alternate) => alternate.hrefLang === ENG_FALLBACK,
             );
 
             if (fallbackFromRegionIndependentLocales) {
                 hrefLangLinks.push({
                     ...fallbackFromRegionIndependentLocales,
-                    hrefLang: defaultHrefLang,
+                    hrefLang: DEFAULT_HREF_LANG,
                 });
                 isDefaultAddedToLinks = true;
             }
@@ -99,7 +99,7 @@ export function getAlternateLanguageLinks(
             languagesWithLocales.forEach((binds) =>
                 binds.forEach(({ locale, language }) => {
                     if (language.is_default) {
-                        pushLocaleToLinks(locale, defaultHrefLang);
+                        pushLocaleToLinks(locale, DEFAULT_HREF_LANG);
                         isDefaultAddedToLinks = true;
                     }
                 }),
