@@ -1,4 +1,4 @@
-import type { Exception, init } from '@sentry/nextjs';
+import type { Exception, init, StackFrame } from '@sentry/nextjs';
 
 const IGNORED_EVENT_CULPRITS = [
     // This usually means that something happened outside of application code.
@@ -9,21 +9,32 @@ const IGNORED_EVENT_CULPRITS = [
     'global code',
 ];
 
+function shouldStackFrameBeIgnored(frame: StackFrame) {
+    const { abs_path, function: frameFunction } = frame;
+
+    if (
+        abs_path &&
+        IGNORED_EVENT_CULPRITS.some((ignoredCulprit) => abs_path.includes(ignoredCulprit))
+    ) {
+        return true;
+    }
+
+    if (
+        frameFunction &&
+        IGNORED_EVENT_CULPRITS.some((ignoredCulprit) => frameFunction.includes(ignoredCulprit))
+    ) {
+        return true;
+    }
+
+    return false;
+}
+
 function shouldExceptionBeIgnored(exception: Exception) {
     const { stacktrace } = exception;
 
     // Ignore global code errors that are not related to the application code.
     // See comments in `IGNORED_EVENT_CULPRITS` const for context on each entry
-    if (
-        stacktrace &&
-        stacktrace.frames?.some(
-            (frame) =>
-                frame.abs_path &&
-                IGNORED_EVENT_CULPRITS.some((ignoredCulprit) =>
-                    frame.abs_path?.includes(ignoredCulprit),
-                ),
-        )
-    ) {
+    if (stacktrace && stacktrace.frames?.some(shouldStackFrameBeIgnored)) {
         return true;
     }
 
