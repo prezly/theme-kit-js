@@ -9,17 +9,11 @@ const IGNORED_EVENT_CULPRITS = [
     'global code',
 ];
 
-const IGNORED_ERRORS_REGEXP = [/ReferenceError: (\w+) is not defined/gi];
-
-// Ignore global code errors that are not related to the application code.
-// See comments in `IGNORED_EVENT_CULPRITS` const for context on each entry
 function shouldExceptionBeIgnored(exception: Exception) {
-    const { stacktrace, value } = exception;
+    const { stacktrace } = exception;
 
-    if (value && IGNORED_ERRORS_REGEXP.some((regexp) => regexp.test(value))) {
-        return true;
-    }
-
+    // Ignore global code errors that are not related to the application code.
+    // See comments in `IGNORED_EVENT_CULPRITS` const for context on each entry
     if (
         stacktrace &&
         stacktrace.frames?.some(
