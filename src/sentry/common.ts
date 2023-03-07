@@ -1,14 +1,50 @@
-import type { init } from '@sentry/nextjs';
+import type { Exception, init, StackFrame } from '@sentry/nextjs';
 
 const IGNORED_EVENT_CULPRITS = [
     // This usually means that something happened outside of application code.
     // All instances of errors with this origin that I found usually were caused by referring to variables that couldn't ever exist in our code.
     // Likely misbehaving browser extensions or people playing around in DevTools trying to break the app.
+    '<anonymous>',
     '?(<anonymous>)',
     'global code',
 ];
 
-export function getCommonClientOptions(dsn: string, themeName: string): Parameters<typeof init>[0] {
+function shouldStackFrameBeIgnored(frame: StackFrame) {
+    const { abs_path, function: frameFunction } = frame;
+
+    if (
+        abs_path &&
+        IGNORED_EVENT_CULPRITS.some((ignoredCulprit) => abs_path.includes(ignoredCulprit))
+    ) {
+        return true;
+    }
+
+    if (
+        frameFunction &&
+        IGNORED_EVENT_CULPRITS.some((ignoredCulprit) => frameFunction.includes(ignoredCulprit))
+    ) {
+        return true;
+    }
+
+    return false;
+}
+
+function shouldExceptionBeIgnored(exception: Exception) {
+    const { stacktrace } = exception;
+
+    // Ignore global code errors that are not related to the application code.
+    // See comments in `IGNORED_EVENT_CULPRITS` const for context on each entry
+    if (stacktrace && stacktrace.frames?.some(shouldStackFrameBeIgnored)) {
+        return true;
+    }
+
+    return false;
+}
+
+export function getCommonClientOptions(
+    dsn: string,
+    themeName: string | null,
+): Parameters<typeof init>[0] {
     return {
         dsn,
         // Adjust this value in production, or use tracesSampler for greater control
@@ -27,34 +63,9 @@ export function getCommonClientOptions(dsn: string, themeName: string): Paramete
             'Illegal invocation',
         ],
 
-        // Ignore global code errors that are not related to the application code.
-        // See comments in `IGNORED_EVENT_CULPRITS` const for context on each entry
         beforeSend: (event) => {
-            // `culprit` is not a documented property, but it is present in all Sentry events and is even displayed in the interface.
-            // Just in case it's not defined, we can fallback to the stack trace.
-            if ('culprit' in event && typeof event.culprit === 'string') {
-                const { culprit } = event;
-                if (
-                    IGNORED_EVENT_CULPRITS.some((ignoredCulprit) =>
-                        culprit.includes(ignoredCulprit),
-                    )
-                ) {
-                    return null;
-                }
-            } else if (event.exception) {
-                if (
-                    event.exception.values?.some((value) =>
-                        value.stacktrace?.frames?.some(
-                            (frame) =>
-                                frame.abs_path &&
-                                IGNORED_EVENT_CULPRITS.some((ignoredCulprit) =>
-                                    frame.abs_path?.includes(ignoredCulprit),
-                                ),
-                        ),
-                    )
-                ) {
-                    return null;
-                }
+            if (event.exception?.values?.every(shouldExceptionBeIgnored)) {
+                return null;
             }
 
             return event;
@@ -62,7 +73,9 @@ export function getCommonClientOptions(dsn: string, themeName: string): Paramete
 
         // Attach theme tag to each event
         initialScope: (scope) => {
-            scope.setTags({ prezly_theme: themeName });
+            if (themeName) {
+                scope.setTags({ prezly_theme: themeName });
+            }
             return scope;
         },
     };
