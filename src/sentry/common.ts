@@ -41,7 +41,10 @@ function shouldExceptionBeIgnored(exception: Exception) {
     return false;
 }
 
-export function getCommonClientOptions(dsn: string, themeName: string): Parameters<typeof init>[0] {
+export function getCommonClientOptions(
+    dsn: string,
+    themeName: string | null,
+): Parameters<typeof init>[0] {
     return {
         dsn,
         // Adjust this value in production, or use tracesSampler for greater control
@@ -70,7 +73,9 @@ export function getCommonClientOptions(dsn: string, themeName: string): Paramete
 
         // Attach theme tag to each event
         initialScope: (scope) => {
-            scope.setTags({ prezly_theme: themeName });
+            if (themeName) {
+                scope.setTags({ prezly_theme: themeName });
+            }
             return scope;
         },
     };
