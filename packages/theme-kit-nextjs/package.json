@@ -1,0 +1,56 @@
+{
+  "name": "@prezly/theme-kit-nextjs",
+  "version": "3.3.1",
+  "description": "Data layer and utility library for developing Prezly themes with NextJS",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": ["build", "src"],
+  "engines": {
+    "node": ">= 16.x",
+    "npm": ">= 8.x"
+  },
+  "devEngines": {
+    "node": ">= 16.x",
+    "npm": ">= 8.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prezly/theme-kit-nextjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prezly/theme-kit-nextjs/issues"
+  },
+  "homepage": "https://github.com/prezly/theme-kit-nextjs#readme",
+  "scripts": {
+    "clean": "rimraf build/* *.tsbuildinfo",
+    "build": "tsc --project .",
+    "watch": "tsc --watch --preserveWatchOutput --project .",
+    "typecheck": "tsc --noEmit --incremental --project .",
+    "lint": "eslint src",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "next": "^12.x || ^13.x",
+    "react": "^17.x || ^18.x",
+    "react-dom": "^17.x || ^18.x"
+  },
+  "dependencies": {
+    "@prezly/sdk": "^11.11.0",
+    "@prezly/uploadcare": "^2.3.4",
+    "@react-hookz/web": "^16.0.0",
+    "next-seo": "^5.4.0",
+    "parse-data-url": "^4.0.1"
+  },
+  "devDependencies": {
+    "@sentry/nextjs": "7.45.0",
+    "@types/parse-data-url": "3.0.0",
+    "rimraf": "3.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,8 @@
+{
+  "packages": ["packages/*"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "useWorkspaces": true,
+  "version": "3.3.1"
+}
