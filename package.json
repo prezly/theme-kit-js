@@ -37,7 +37,7 @@
     "release:preview": "npm run release:prepare && npm run release:publish:preview",
     "release:prepare": "npm run check",
     "release:publish": "lerna publish",
-    "release:publish:preview": "lerna publish --npm-tag preview --skip-git"
+    "release:publish:preview": "lerna publish --dist-tag preview --no-git-tag-version --no-push"
   },
   "dependencies": {
     "next": "^13.1.1",
