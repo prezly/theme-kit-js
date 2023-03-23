@@ -1,0 +1,4 @@
+next-env.d.ts
+__mocks__
+build
+*.test.*
