@@ -1,5 +1,7 @@
-import { NewsroomLanguageSettings } from '@prezly/sdk';
-import { LocaleCode, LocaleObject } from '../intl';
+import type { NewsroomLanguageSettings } from '@prezly/sdk';
+
+import type { LocaleCode, LocaleObject } from '../intl';
+
 import { getAlternateLanguageLinks } from './getAlternateLanguageLinks';
 
 function lang(code: LocaleCode, isDefault = false) {

@@ -1,4 +1,4 @@
-import { type NewsroomLanguageSettings, Culture } from '@prezly/sdk';
+import { Culture, type NewsroomLanguageSettings } from '@prezly/sdk';
 
 /**
  * Pulled from The Good Newsroom (with some additions)
