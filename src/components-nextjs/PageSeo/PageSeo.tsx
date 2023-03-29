@@ -3,7 +3,7 @@ import type { NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 
-import { getUsedLanguages, LocaleObject } from '../../intl';
+import { getUsedLanguages } from '../../intl';
 import {
     useCompanyInformation,
     useCurrentLocale,
@@ -13,6 +13,7 @@ import {
     useLanguages,
     useNewsroom,
 } from '../../newsroom-context';
+import { getAlternateLanguageLinks } from '../../seo';
 import { getNewsroomLogoUrl } from '../../utils';
 
 import { getAbsoluteUrl } from './lib/getAbsoluteUrl';
@@ -65,31 +66,22 @@ export function PageSeo({
             return [];
         }
 
-        const alternateLanguages = getUsedLanguages(languages).filter(
-            (language) => language.code !== currentLocale.toUnderscoreCode(),
-        );
+        const usedLanguages = getUsedLanguages(languages);
 
-        return alternateLanguages
-            .map((language) => {
-                const locale = LocaleObject.fromAnyCode(language.code);
+        return getAlternateLanguageLinks(usedLanguages, (locale) => {
+            const translationUrl = getTranslationUrl(locale);
 
-                const translationLink = getTranslationUrl(locale, true);
+            if (!translationUrl) {
+                return undefined;
+            }
 
-                if (!translationLink) {
-                    return undefined;
-                }
-
-                return {
-                    hrefLang: locale.toHyphenCode(),
-                    href: getAbsoluteUrl(
-                        translationLink,
-                        site.url,
-                        currentStory && translationLink !== '/' ? false : getLinkLocaleSlug(locale),
-                    ),
-                };
-            })
-            .filter<AlternateLanguageLink>(Boolean as any);
-    }, [currentLocale, getLinkLocaleSlug, getTranslationUrl, languages, site.url, currentStory]);
+            return getAbsoluteUrl(
+                translationUrl,
+                site.url,
+                currentStory && translationUrl !== '/' ? false : getLinkLocaleSlug(locale),
+            );
+        });
+    }, [currentStory, getLinkLocaleSlug, getTranslationUrl, languages, site.url]);
 
     return (
         <NextSeo
