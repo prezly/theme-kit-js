@@ -1,4 +1,7 @@
 {
-  "extends": ["@prezly", "@prezly/eslint-config/react"],
-  "ignorePatterns": ["**/*.test.*"]
+  "root": true,
+  "extends": ["@prezly"],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  }
 }

@@ -2,13 +2,19 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
+    "composite": true,
     "declaration": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "importsNotUsedAsValues": "error",
+    "jsx": "react-jsx",
     "lib": ["dom", "es2019"],
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
@@ -17,10 +23,8 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "jsx": "react-jsx",
     "outDir": "./build",
-    "typeRoots": ["./node_modules/@types", "src/@types"]
   },
-  "exclude": ["node_modules", "**/*.test.*", "src/__mocks__"],
-  "include": ["./src", "next-env.d.ts"]
+  "include": [".prettierrc.js"],
+  "references": [{ "path": "packages/theme-kit-nextjs" }]
 }

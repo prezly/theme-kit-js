@@ -1,5 +1,5 @@
 import type { ExtendedStory } from '@prezly/sdk';
-import { Newsroom, Story, Culture, User } from '@prezly/sdk';
+import { Culture, Newsroom, Story, User } from '@prezly/sdk';
 
 export const STORY: ExtendedStory = {
     id: 380023,
