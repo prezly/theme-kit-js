@@ -15,7 +15,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prezly/theme-kit-nextjs.git"
+    "url": "git+https://github.com/prezly/theme-kit-nextjs.git",
+    "directory": "packages/theme-kit-nextjs"
   },
   "keywords": [],
   "author": "",
