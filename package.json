@@ -4,7 +4,7 @@
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {
-    "build": "npm run build -w packages/nextjs",
+    "build": "npm run build --workspaces",
     "watch": "concurrently --kill-others --names 'nextjs' 'npm run watch -w packages/nextjs'",
     "lint": "npm run lint --workspaces",
     "lint:fix": "npm run lint --workspaces -- --fix",

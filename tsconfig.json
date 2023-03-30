@@ -26,5 +26,5 @@
     "outDir": "./build"
   },
   "include": [".prettierrc.js"],
-  "references": [{ "path": "packages/nextjs" }]
+  "references": [{ "path": "./packages/nextjs" }, { "path": "./packages/core" }]
 }
