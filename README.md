@@ -4,6 +4,7 @@ This is a monorepo for Prezly JavaScript Theme Kit packages.
 
 See individual package READMEs for more information:
 
+- [@prezly/theme-kit-core](./packages/core#readme)
 - [@prezly/theme-kit-nextjs](./packages/nextjs#readme)
 
 
@@ -14,7 +15,9 @@ See individual package READMEs for more information:
 
 After pulling the repo, run `npm i` to install the dependencies. This will install the root dependencies, as well as dependencies for individual packages.
 
-The repo is designed to run all of the scripts from the root directory. This will simultaneously run the corresponding tasks on each repository. If you don't want this, you can `cd` into the package directory and run its own scripts.
+The repo is designed to run all of the scripts from the root directory with the help of [Lerna] and [Nx].
+This ensures that all tasks are aware of dependencies between packages. Nx also provides caching, which speeds up the repeated tasks.
+You can learn more about task pipeline configuration from [Lerna docs](https://lerna.js.org/docs/concepts/task-pipeline-configuration).
 
 ### Publishing new releases
 
@@ -27,3 +30,6 @@ To publish a preview version (e.g. for testing), run `npm run release:preview`. 
 ----
 
 Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=@prezly/theme-kit).
+
+[Lerna]: https://lerna.js.org/
+[Nx]: https://nx.dev/
