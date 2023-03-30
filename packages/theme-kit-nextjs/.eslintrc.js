@@ -5,7 +5,7 @@ module.exports = {
         tsconfigRootDir: __dirname,
     },
     rules: {},
-    ignorePatterns: ['next-end.d.ts', 'build/'],
+    ignorePatterns: ['next-env.d.ts', 'build/'],
     overrides: [
         {
             files: ['**/*.test.*'],
