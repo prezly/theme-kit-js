@@ -19,6 +19,8 @@ The repo is designed to run all of the scripts from the root directory with the 
 This ensures that all tasks are aware of dependencies between packages. Nx also provides caching, which speeds up the repeated tasks.
 You can learn more about task pipeline configuration from [Lerna docs](https://lerna.js.org/docs/concepts/task-pipeline-configuration).
 
+For convenient development of individual packages, you have the `dev:` npm scripts. Each script will start the selected package in watch mode. Changes to both the package and its dependencies will result in a new build, so you only need to run a single script when working on packages.
+
 ### Publishing new releases
 
 To keep versions in sync, releasing new packages should only be done from the root directory.
