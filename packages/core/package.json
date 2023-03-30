@@ -6,9 +6,9 @@
   "types": "build/index.d.ts",
   "files": ["build", "README.md"],
   "scripts": {
-    "clean": "rimraf build/* *.tsbuildinfo",
+    "prebuild": "rimraf build/* *.tsbuildinfo",
     "build": "tsc --project .",
-    "watch": "tsc --watch --preserveWatchOutput --project .",
+    "dev": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
     "test": "jest"

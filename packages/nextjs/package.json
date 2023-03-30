@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/nextjs#readme",
   "scripts": {
-    "clean": "rimraf build/* *.tsbuildinfo",
+    "prebuild": "rimraf build/* *.tsbuildinfo",
     "build": "tsc --project .",
-    "watch": "tsc --watch --preserveWatchOutput --project .",
+    "dev": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
     "test": "jest"
