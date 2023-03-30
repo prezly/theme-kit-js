@@ -13,17 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prezly/theme-kit-nextjs.git"
+    "url": "git+https://github.com/prezly/theme-kit-js.git"
   },
   "author": "Prezly Team",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prezly/theme-kit-nextjs/issues"
+    "url": "https://github.com/prezly/theme-kit-js/issues"
   },
-  "homepage": "https://github.com/prezly/theme-kit-nextjs#readme",
-  "workspaces": [
-    "packages/*"
-  ],
+  "homepage": "https://github.com/prezly/theme-kit-js#readme",
+  "workspaces": ["packages/*"],
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "npm run build -w packages/theme-kit-nextjs",

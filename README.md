@@ -1,6 +1,6 @@
-# Prezly Theme Kit
+# Prezly JavaScript Theme Kit
 
-This is a monorepo for Prezly Theme Kit packages.
+This is a monorepo for Prezly JavaScript Theme Kit packages.
 
 See individual package READMEs for more information:
 
