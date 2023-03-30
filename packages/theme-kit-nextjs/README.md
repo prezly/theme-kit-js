@@ -334,4 +334,3 @@ Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaig
 [Prezly SDK]: https://www.npmjs.com/package/@prezly/sdk
 [Prezly API Docs]: https://developers.prezly.com/docs/api
 [Typescript]: https://www.typescriptlang.org
-[Prezly Content React Renderer]: https://www.npmjs.com/package/@prezly/content-renderer-react-js
