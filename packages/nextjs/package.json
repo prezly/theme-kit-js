@@ -16,7 +16,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/prezly/theme-kit-js.git",
-    "directory": "packages/theme-kit-nextjs"
+    "directory": "packages/nextjs"
   },
   "keywords": ["prezly", "nextjs"],
   "author": "Prezly Team",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/prezly/theme-kit-js/issues"
   },
-  "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/theme-kit-nextjs#readme",
+  "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/nextjs#readme",
   "scripts": {
     "clean": "rimraf build/* *.tsbuildinfo",
     "build": "tsc --project .",

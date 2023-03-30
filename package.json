@@ -4,8 +4,8 @@
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {
-    "build": "npm run build -w packages/theme-kit-nextjs",
-    "watch": "concurrently --kill-others --names 'theme-kit-nextjs' 'npm run watch -w packages/theme-kit-nextjs'",
+    "build": "npm run build -w packages/nextjs",
+    "watch": "concurrently --kill-others --names 'nextjs' 'npm run watch -w packages/nextjs'",
     "lint": "npm run lint --workspaces",
     "lint:fix": "npm run lint --workspaces -- --fix",
     "prettier": "prettier --check './packages/**/*.(js|ts|tsx)'",

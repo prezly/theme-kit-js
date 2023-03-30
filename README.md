@@ -4,7 +4,7 @@ This is a monorepo for Prezly JavaScript Theme Kit packages.
 
 See individual package READMEs for more information:
 
-- [@prezly/theme-kit-nextjs](./packages/theme-kit-nextjs#readme)
+- [@prezly/theme-kit-nextjs](./packages/nextjs#readme)
 
 
 

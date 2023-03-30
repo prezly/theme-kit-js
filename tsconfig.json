@@ -23,8 +23,8 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "outDir": "./build",
+    "outDir": "./build"
   },
   "include": [".prettierrc.js"],
-  "references": [{ "path": "packages/theme-kit-nextjs" }]
+  "references": [{ "path": "packages/nextjs" }]
 }
