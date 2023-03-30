@@ -3,7 +3,6 @@ import {
     getAlgoliaSettings,
     getCompanyInformation,
     getDefaultLanguage,
-    getLanguageFromNextLocaleIsoCode,
     getLanguageFromStory,
     getNotifications,
     LocaleObject,
@@ -11,6 +10,7 @@ import {
 } from '@prezly/theme-kit-core';
 import type { IncomingMessage } from 'http';
 
+import { getLanguageFromNextLocaleIsoCode } from '../intl';
 import type { PageProps, ServerSidePageProps } from '../types';
 
 export class NextPrezlyApi extends PrezlyApi {
