@@ -1,4 +1,4 @@
-import type { PrezlyEnv } from '@prezly/theme-kit-core';
+import type { PrezlyEnv } from '../data-fetching';
 
 declare global {
     export namespace NodeJS {

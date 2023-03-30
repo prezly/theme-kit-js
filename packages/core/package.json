@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "@prezly/sdk": "^11.11.0",
-    "@prezly/uploadcare": "^2.3.4"
+    "@prezly/uploadcare": "^2.3.4",
+    "parse-data-url": "^4.0.1"
   },
   "devDependencies": {
     "@types/parse-data-url": "3.0.0",

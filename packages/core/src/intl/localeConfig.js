@@ -1,7 +1,7 @@
 /**
  * This list is pulled from the main Prezly application. The underscores are replaced with dashes.
  * Together with permutation performed lower in the code,
- * the exported list represents all of the possible locale codes that Next.js theme application might accept.
+ * the exported list represents all of the possible locale codes that a theme application might accept.
  */
 const supportedLocales = require('./localeList');
 

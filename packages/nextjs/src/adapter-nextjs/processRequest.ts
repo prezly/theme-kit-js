@@ -1,6 +1,10 @@
+import {
+    getRedirectToCanonicalLocale,
+    getShortestLocaleCode,
+    LocaleObject,
+} from '@prezly/theme-kit-core';
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
-import { getRedirectToCanonicalLocale, getShortestLocaleCode, LocaleObject } from '../intl';
 import type { PageProps, ServerSidePageProps } from '../types';
 
 /**
