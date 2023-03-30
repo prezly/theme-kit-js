@@ -1,26 +1,7 @@
 {
   "name": "theme-kit",
-  "version": "0.1.0",
-  "description": "Data layer and utility library for developing Prezly themes with NextJS",
+  "version": "0.0.0",
   "private": true,
-  "engines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
-  },
-  "devEngines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prezly/theme-kit-js.git"
-  },
-  "author": "Prezly Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/prezly/theme-kit-js/issues"
-  },
-  "homepage": "https://github.com/prezly/theme-kit-js#readme",
   "workspaces": ["packages/*"],
   "scripts": {
     "build": "npm run build -w packages/theme-kit-nextjs",

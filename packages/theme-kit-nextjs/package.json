@@ -15,16 +15,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prezly/theme-kit-nextjs.git",
+    "url": "git+https://github.com/prezly/theme-kit-js.git",
     "directory": "packages/theme-kit-nextjs"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["prezly", "nextjs"],
+  "author": "Prezly Team",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prezly/theme-kit-nextjs/issues"
+    "url": "https://github.com/prezly/theme-kit-js/issues"
   },
-  "homepage": "https://github.com/prezly/theme-kit-nextjs#readme",
+  "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/theme-kit-nextjs#readme",
   "scripts": {
     "clean": "rimraf build/* *.tsbuildinfo",
     "build": "tsc --project .",
