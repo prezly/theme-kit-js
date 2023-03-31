@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/npm/v/@prezly/theme-kit-core)
 ![License](https://img.shields.io/npm/l/@prezly/theme-kit-core)
 
-This library is a collection of data-fetching and utility functions to abstract some of the under-the-hood logic used by Prezly newsrooms and help developers create themes with JavaScript much faster.
+This library is a collection of data-fetching and utility functions to abstract some of the under-the-hood logic used by Prezly sites and help developers create themes with JavaScript much faster.
 
 The package is built with [Typescript] on top of [Prezly SDK].
 
@@ -24,14 +24,14 @@ Prezly themes use two ways of getting base environment variables:
 For local development, and for self-hosted themes, you can only use the former option. Add these variables to your `.env` file:
 ```
 PREZLY_ACCESS_TOKEN=your access token
-PREZLY_NEWSROOM_UUID=your newsroom UUID
+PREZLY_NEWSROOM_UUID=your site UUID
 PREZLY_THEME_UUID=your theme UUID
 ```
 
 `PREZLY_THEME_UUID` variable is only reqiured for developing themes that are already hosted on Prezly infrastructure.
 It determines which theme preset will be pulled from the API. For self-hosted themes, you'll want to handle the theme settings in some other way.
 
-If you don't have these credentials, you can use one of our [testing newsrooms credentials](https://github.com/prezly/theme-nextjs-starter#testingtoken).
+If you don't have these credentials, you can use one of our [testing sites credentials](https://github.com/prezly/theme-nextjs-starter#testingtoken).
 
 ----
 
