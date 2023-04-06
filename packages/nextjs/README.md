@@ -12,12 +12,14 @@ The package is built with [Typescript] on top of [Prezly SDK].
 ### npm
 
 ```Shell
-npm install --save @prezly/theme-kit-nextjs
+npm install --save @prezly/theme-kit-core @prezly/theme-kit-nextjs
 ```
 
 #### peerDependencies
 
-This library is intended to be used with [Next.js] applications, so it requires `next`, `react` and `react-dom` to work. These should already be installed if you have an existing [Next.js] app.
+This library depends on `@prezly/theme-kit-core` package, which contains more helpers that are not specific to Next.
+
+This library is intended to be used with [Next.js] applications, so it also requires `next`, `react` and `react-dom` to work. These should already be installed if you have an existing [Next.js] app.
 If you're starting from scratch, use [create-next-app] to quick-start the project.
 
 To keep things fresh, we require at least Next.js 12 and React 17.
@@ -70,7 +72,7 @@ If you want to support multi-language in your theme, you'll need to make additio
 
 ```js
 const { DUMMY_DEFAULT_LOCALE } = require('@prezly/theme-kit-nextjs');
-const locales = require('@prezly/theme-kit-nextjs/build/intl/localeConfig');
+const locales = require('@prezly/theme-kit-nextjs/core/intl/localeConfig');
 
 module.exports = {
     /* ...your next config... */
