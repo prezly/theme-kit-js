@@ -18,7 +18,7 @@
     "release:preview": "npm run release:prepare && npm run release:publish:preview",
     "release:prepare": "npx lerna run lint,test,build",
     "release:publish": "lerna publish --no-private",
-    "release:publish:preview": "lerna publish prerelease --dist-tag preview --no-push"
+    "release:publish:preview": "lerna publish prerelease --dist-tag preview"
   },
   "dependencies": {
     "next": "^13.1.1",
