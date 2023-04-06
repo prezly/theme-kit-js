@@ -1,4 +1,5 @@
 import type { Story } from '@prezly/sdk';
+import { DEFAULT_PAGE_SIZE, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
 import type {
     GetServerSidePropsContext,
     GetServerSidePropsResult,
@@ -7,10 +8,8 @@ import type {
     GetStaticPropsResult,
 } from 'next';
 
-import { getPrezlyApi } from '../../data-fetching';
+import { getNextPrezlyApi } from '../../data-fetching';
 import type { PaginationProps } from '../../infinite-loading/types';
-import { LocaleObject } from '../../intl';
-import { DEFAULT_PAGE_SIZE, getLocalizedCategoryData } from '../../utils';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
 import { processRequest } from '../processRequest';
@@ -132,7 +131,7 @@ export function getCategoryPageStaticProps<
 }
 
 export async function getCategoryPageStaticPaths(): Promise<GetStaticPathsResult> {
-    const api = getPrezlyApi();
+    const api = getNextPrezlyApi();
     const [categories, defaultLanguage] = await Promise.all([
         api.getCategories(),
         api.getNewsroomDefaultLanguage(),

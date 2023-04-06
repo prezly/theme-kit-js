@@ -1,7 +1,7 @@
 import type { Story } from '@prezly/sdk';
 import type { GetServerSidePropsContext } from 'next';
 
-import { getPrezlyApi } from '../data-fetching';
+import { getNextPrezlyApi } from '../data-fetching';
 
 interface Options {
     loadHomepageContacts?: boolean;
@@ -18,7 +18,7 @@ export async function getNewsroomServerSideProps(
 ) {
     const { req: request, locale } = context;
 
-    const api = getPrezlyApi(request);
+    const api = getNextPrezlyApi(request);
     const serverSideProps = await api.getNewsroomServerSideProps(request, locale, options.story);
 
     if (options.loadHomepageContacts) {

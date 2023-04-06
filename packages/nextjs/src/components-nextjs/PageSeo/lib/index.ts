@@ -1,0 +1,1 @@
+export { getAbsoluteUrl } from './getAbsoluteUrl';

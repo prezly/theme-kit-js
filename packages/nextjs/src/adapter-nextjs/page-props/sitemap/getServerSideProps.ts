@@ -1,6 +1,6 @@
 import type { NextPageContext } from 'next';
 
-import { getPrezlyApi } from '../../../data-fetching';
+import { getNextPrezlyApi } from '../../../data-fetching';
 
 import { createPaths } from './createPaths';
 import { SitemapBuilder } from './SitemapBuilder';
@@ -20,7 +20,7 @@ export function getSitemapServerSideProps(
 
         const baseUrl = req.headers.host || '/';
 
-        const api = getPrezlyApi(req);
+        const api = getNextPrezlyApi(req);
         const stories = await api.getAllStories({
             pinning: options.pinning ?? false,
         });

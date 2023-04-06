@@ -1,6 +1,6 @@
+import { DEFAULT_LOCALE, getLocaleDirection, LocaleObject } from '@prezly/theme-kit-core';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-import { DEFAULT_LOCALE, getLocaleDirection, LocaleObject } from '../intl';
 import type { PageProps } from '../types';
 
 export class PrezlyThemeDocument extends Document {

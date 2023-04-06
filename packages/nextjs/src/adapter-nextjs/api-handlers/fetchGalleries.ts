@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { getPrezlyApi } from '../../data-fetching';
+import { getNextPrezlyApi } from '../../data-fetching';
 
 export async function fetchGalleries(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== 'POST') {
@@ -11,7 +11,7 @@ export async function fetchGalleries(req: NextApiRequest, res: NextApiResponse) 
     const { page, pageSize } = req.body;
 
     try {
-        const api = getPrezlyApi(req);
+        const api = getNextPrezlyApi(req);
 
         const { galleries } = await api.getGalleries({ page, pageSize });
 

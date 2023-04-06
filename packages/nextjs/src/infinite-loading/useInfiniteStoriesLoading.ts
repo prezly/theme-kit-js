@@ -1,7 +1,7 @@
 import type { Category, Story } from '@prezly/sdk';
+import type { LocaleObject } from '@prezly/theme-kit-core';
 import { useEffect } from 'react';
 
-import type { LocaleObject } from '../intl';
 import { useCurrentLocale } from '../newsroom-context';
 
 import type { PaginationProps } from './types';

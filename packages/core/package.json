@@ -1,0 +1,48 @@
+{
+  "name": "@prezly/theme-kit-core",
+  "version": "3.3.1",
+  "description": "Data layer and utility library for developing Prezly themes with JavaScript",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": ["build", "README.md"],
+  "scripts": {
+    "prebuild": "rimraf build/* *.tsbuildinfo",
+    "build": "tsc --project .",
+    "dev": "tsc --watch --preserveWatchOutput --project .",
+    "typecheck": "tsc --noEmit --incremental --project .",
+    "lint": "eslint src",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@prezly/sdk": "^11.11.0",
+    "@prezly/uploadcare": "^2.3.4",
+    "parse-data-url": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/parse-data-url": "3.0.0",
+    "rimraf": "3.0.2"
+  },
+  "engines": {
+    "node": ">= 16.x",
+    "npm": ">= 8.x"
+  },
+  "devEngines": {
+    "node": ">= 16.x",
+    "npm": ">= 8.x"
+  },
+  "keywords": ["prezly"],
+  "author": "Prezly Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prezly/theme-kit-js/issues"
+  },
+  "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/core#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prezly/theme-kit-js.git",
+    "directory": "packages/core"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

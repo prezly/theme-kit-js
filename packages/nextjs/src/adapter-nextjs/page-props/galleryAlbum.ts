@@ -7,7 +7,7 @@ import type {
     GetStaticPropsResult,
 } from 'next';
 
-import { getPrezlyApi } from '../../data-fetching';
+import { getNextPrezlyApi } from '../../data-fetching';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
 import { processRequest } from '../processRequest';
@@ -77,7 +77,7 @@ export function getGalleryAlbumPageStaticProps<CustomProps extends Record<string
 }
 
 export async function getGalleryAlbumPageStaticPaths(): Promise<GetStaticPathsResult> {
-    const api = getPrezlyApi();
+    const api = getNextPrezlyApi();
     const { galleries } = await api.getGalleries({});
 
     const paths = galleries.map(({ uuid }) => ({ params: { uuid } }));

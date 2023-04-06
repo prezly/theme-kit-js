@@ -7,19 +7,10 @@ import type {
     Stories,
     Story,
 } from '@prezly/sdk';
-import type { IncomingMessage } from 'http';
 
-import {
-    getCompanyInformation,
-    getDefaultLanguage,
-    getLanguageFromNextLocaleIsoCode,
-    getLanguageFromStory,
-    getNotifications,
-    LocaleObject,
-} from '../../intl';
-import type { PageProps, ServerSidePageProps } from '../../types';
+import { getDefaultLanguage } from '../../intl';
 import { DEFAULT_PAGE_SIZE } from '../../utils';
-import { getAlgoliaSettings, isSdkError, isUuid } from '../lib';
+import { isSdkError, isUuid } from '../lib';
 
 import { toPaginationParams } from './lib';
 import {
@@ -57,11 +48,11 @@ interface GetGalleriesOptions {
 }
 
 export class PrezlyApi {
-    private readonly sdk: PrezlyClient;
+    protected readonly sdk: PrezlyClient;
 
-    private readonly newsroomUuid: Newsroom['uuid'];
+    protected readonly newsroomUuid: Newsroom['uuid'];
 
-    private readonly themeUuid: string | undefined;
+    protected readonly themeUuid: string | undefined;
 
     constructor(accessToken: string, newsroomUuid: Newsroom['uuid'], themeUuid?: string) {
         const baseUrl = process.env.API_BASE_URL_OVERRIDE ?? undefined;
@@ -262,47 +253,6 @@ export class PrezlyApi {
         }
 
         return null;
-    }
-
-    async getNewsroomServerSideProps(
-        request?: IncomingMessage,
-        nextLocaleIsoCode?: string,
-        story?: Story,
-    ): Promise<PageProps & ServerSidePageProps> {
-        const [newsroom, languages, categories, themePreset] = await Promise.all([
-            this.getNewsroom(),
-            this.getNewsroomLanguages(),
-            this.getCategories(),
-            this.getThemePreset(),
-        ]);
-
-        const currentLanguage = story
-            ? getLanguageFromStory(languages, story)
-            : getLanguageFromNextLocaleIsoCode(languages, nextLocaleIsoCode);
-        const defaultLanguage = getDefaultLanguage(languages);
-
-        const { code: localeCode } = currentLanguage || defaultLanguage;
-        const locale = LocaleObject.fromAnyCode(localeCode);
-
-        // TODO: if no information given for current language, show boilerplate from default language
-        const companyInformation = getCompanyInformation(languages, locale);
-
-        const notifications = getNotifications(languages, locale);
-        const algoliaSettings = getAlgoliaSettings(request);
-
-        return {
-            newsroomContextProps: {
-                newsroom,
-                companyInformation,
-                categories,
-                languages,
-                localeCode,
-                notifications,
-                themePreset,
-                algoliaSettings,
-            },
-            localeResolved: Boolean(currentLanguage),
-        };
     }
 
     async getNewsroomDefaultLanguage() {

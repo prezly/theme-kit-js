@@ -1,4 +1,5 @@
 import type { NewsroomGallery } from '@prezly/sdk';
+import { DEFAULT_GALLERY_PAGE_SIZE } from '@prezly/theme-kit-core';
 import type {
     GetServerSidePropsContext,
     GetServerSidePropsResult,
@@ -7,7 +8,6 @@ import type {
 } from 'next';
 
 import type { PaginationProps } from '../../infinite-loading/types';
-import { DEFAULT_GALLERY_PAGE_SIZE } from '../../utils';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
 import { processRequest } from '../processRequest';

@@ -1,9 +1,14 @@
+import {
+    getAlternateLanguageLinks,
+    getNewsroomLogoUrl,
+    getUsedLanguages,
+} from '@prezly/theme-kit-core';
+import type { AlternateLanguageLink } from '@prezly/theme-kit-core';
 import { NextSeo } from 'next-seo';
 import type { NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 
-import { getUsedLanguages } from '../../intl';
 import {
     useCompanyInformation,
     useCurrentLocale,
@@ -13,11 +18,8 @@ import {
     useLanguages,
     useNewsroom,
 } from '../../newsroom-context';
-import { getAlternateLanguageLinks } from '../../seo';
-import { getNewsroomLogoUrl } from '../../utils';
 
-import { getAbsoluteUrl } from './lib/getAbsoluteUrl';
-import type { AlternateLanguageLink } from './lib/types';
+import { getAbsoluteUrl } from './lib';
 
 type Props = NextSeoProps & {
     imageUrl?: string;

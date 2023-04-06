@@ -1,11 +1,10 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 
-import type { AlternateLanguageLink } from '../components-nextjs/PageSeo';
 import type { LocaleObject } from '../intl';
 import { getFallbackLocale } from '../intl';
 
-import { bindLanguagesWithLocales } from './utils/bindLanguagesWithLocales';
-import { createAlternateLanguageLink } from './utils/createAlternateLanguageLink';
+import type { AlternateLanguageLink } from './types';
+import { bindLanguagesWithLocales, createAlternateLanguageLink } from './utils';
 
 // We use english locale as fallback since English is the most common language
 const ENG_FALLBACK = 'en';
