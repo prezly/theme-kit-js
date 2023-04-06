@@ -3,9 +3,9 @@ import type { IncomingMessage } from 'http';
 
 import { NextPrezlyApi } from './NextPrezlyApi';
 
-export function getPrezlyApi(req?: IncomingMessage): NextPrezlyApi {
+export function getNextPrezlyApi(req?: IncomingMessage): NextPrezlyApi {
     if (typeof window !== 'undefined') {
-        throw new Error('"getPrezlyApi" should only be used on back-end side.');
+        throw new Error('"getNextPrezlyApi" should only be used on back-end side.');
     }
 
     // `getEnvVariables` handles both cases for envs parsing - .env and request headers

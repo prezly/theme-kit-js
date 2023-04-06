@@ -5,7 +5,7 @@ import type {
     GetStaticPropsResult,
 } from 'next';
 
-import { getPrezlyApi } from '../../data-fetching';
+import { getNextPrezlyApi } from '../../data-fetching';
 import { DUMMY_DEFAULT_LOCALE } from '../../intl';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
@@ -20,7 +20,7 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
     ): Promise<GetServerSidePropsResult<CustomProps>> {
-        const api = getPrezlyApi(context.req);
+        const api = getNextPrezlyApi(context.req);
 
         const { slug } = context.params as { slug?: string };
         const story = slug ? await api.getStoryBySlug(slug) : null;
@@ -57,7 +57,7 @@ export function getStoryPageStaticProps<CustomProps extends Record<string, any>>
     return async function getStaticProps(
         context: GetStaticPropsContext,
     ): Promise<GetStaticPropsResult<CustomProps>> {
-        const api = getPrezlyApi();
+        const api = getNextPrezlyApi();
 
         const { slug } = context.params as { slug?: string };
         const story = slug ? await api.getStoryBySlug(slug) : null;
@@ -82,7 +82,7 @@ export function getStoryPageStaticProps<CustomProps extends Record<string, any>>
 }
 
 export async function getStoryPageStaticPaths(options: { pinning?: boolean } = {}) {
-    const api = getPrezlyApi();
+    const api = getNextPrezlyApi();
     const stories = await api.getAllStories({
         pinning: options.pinning ?? false,
     });

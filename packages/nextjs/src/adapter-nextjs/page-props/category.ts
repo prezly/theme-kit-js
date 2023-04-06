@@ -8,7 +8,7 @@ import type {
     GetStaticPropsResult,
 } from 'next';
 
-import { getPrezlyApi } from '../../data-fetching';
+import { getNextPrezlyApi } from '../../data-fetching';
 import type { PaginationProps } from '../../infinite-loading/types';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
@@ -131,7 +131,7 @@ export function getCategoryPageStaticProps<
 }
 
 export async function getCategoryPageStaticPaths(): Promise<GetStaticPathsResult> {
-    const api = getPrezlyApi();
+    const api = getNextPrezlyApi();
     const [categories, defaultLanguage] = await Promise.all([
         api.getCategories(),
         api.getNewsroomDefaultLanguage(),

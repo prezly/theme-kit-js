@@ -1,1 +1,1 @@
-export { getPrezlyApi } from './getPrezlyApi';
+export { getNextPrezlyApi } from './getNextPrezlyApi';

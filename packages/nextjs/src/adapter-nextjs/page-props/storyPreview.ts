@@ -1,6 +1,6 @@
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
-import { getPrezlyApi } from '../../data-fetching';
+import { getNextPrezlyApi } from '../../data-fetching';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { processRequest } from '../processRequest';
 
@@ -12,7 +12,7 @@ export function getStoryPreviewPageServerSideProps<CustomProps extends Record<st
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
     ): Promise<GetServerSidePropsResult<CustomProps>> {
-        const api = getPrezlyApi(context.req);
+        const api = getNextPrezlyApi(context.req);
         const { uuid } = context.params as { uuid: string };
         const story = await api.getStory(uuid);
         if (!story) {
