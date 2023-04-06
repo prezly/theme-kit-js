@@ -34,7 +34,7 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "@prezly/theme-kit-core": "^3.3.1",
+    "@prezly/theme-kit-core": "*",
     "next": "^12.x || ^13.x",
     "react": "^17.x || ^18.x",
     "react-dom": "^17.x || ^18.x"
