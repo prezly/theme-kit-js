@@ -10,6 +10,7 @@ async function fetchGalleries(
     const result = await fetch('/api/fetch-galleries', {
         method: 'POST',
         headers: {
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({

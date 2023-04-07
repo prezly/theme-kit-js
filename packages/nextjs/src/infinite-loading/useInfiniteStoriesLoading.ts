@@ -19,6 +19,7 @@ async function fetchStories<T extends Story = Story>(
     const result = await fetch('/api/fetch-stories', {
         method: 'POST',
         headers: {
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
