@@ -15,6 +15,7 @@ async function fetchStories<T extends Story = Story>(
     locale?: LocaleObject,
     include?: (keyof Story.ExtraFields)[],
     pinning?: boolean,
+    filterQuery?: Object,
 ): Promise<{ stories: T[] }> {
     const result = await fetch('/api/fetch-stories', {
         method: 'POST',
@@ -32,6 +33,7 @@ async function fetchStories<T extends Story = Story>(
             ...(locale && {
                 localeCode: locale.toUnderscoreCode(),
             }),
+            filterQuery,
         }),
     });
 
@@ -54,6 +56,7 @@ export function useInfiniteStoriesLoading<T extends Story = Story>(
     category?: Category,
     include?: (keyof Story.ExtraFields)[],
     pinning?: boolean,
+    filterQuery?: Object,
 ) {
     const currentLocale = useCurrentLocale();
     const { withHighlightedStory = false } = pagination;
@@ -68,6 +71,7 @@ export function useInfiniteStoriesLoading<T extends Story = Story>(
                 currentLocale,
                 include,
                 pinning,
+                filterQuery,
             );
             return stories;
         },
