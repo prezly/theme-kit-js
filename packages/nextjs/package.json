@@ -4,7 +4,10 @@
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "files": ["build", "src"],
+  "files": [
+    "build",
+    "src"
+  ],
   "engines": {
     "node": ">= 16.x",
     "npm": ">= 8.x"
@@ -18,7 +21,10 @@
     "url": "git+https://github.com/prezly/theme-kit-js.git",
     "directory": "packages/nextjs"
   },
-  "keywords": ["prezly", "nextjs"],
+  "keywords": [
+    "prezly",
+    "nextjs"
+  ],
   "author": "Prezly Team",
   "license": "MIT",
   "bugs": {
@@ -45,6 +51,7 @@
     "next-seo": "^5.4.0"
   },
   "devDependencies": {
+    "@prezly/theme-kit-core": "4.0.0",
     "@sentry/nextjs": "7.48.0",
     "rimraf": "3.0.2"
   },
