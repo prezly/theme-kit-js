@@ -20,7 +20,12 @@ export function getSlugQuery(newsroomUuid: string, slug: string) {
     };
 }
 
-export function getStoriesQuery(newsroomUuid: string, categoryId?: number, localeCode?: string) {
+export function getStoriesQuery(
+    newsroomUuid: string,
+    categoryId?: number,
+    localeCode?: string,
+    filterQuery?: Object,
+) {
     const query: any = {
         $and: [...publishedAndPublic, { 'newsroom.uuid': { $in: [newsroomUuid] } }],
     };
@@ -31,6 +36,10 @@ export function getStoriesQuery(newsroomUuid: string, categoryId?: number, local
 
     if (localeCode) {
         query.$and.push({ locale: { $in: [localeCode] } });
+    }
+
+    if (filterQuery) {
+        query.$and.push(filterQuery);
     }
 
     return query;

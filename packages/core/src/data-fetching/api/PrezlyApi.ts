@@ -40,6 +40,10 @@ interface GetStoriesOptions {
      * This will offset each subsequent page by 1 story to account for that.
      */
     withHighlightedStory?: boolean;
+    /**
+     * Additional filter to apply to the story query. Note that it will be inserted into the root `$and` query operator along with default filters.
+     */
+    filterQuery?: Object;
 }
 
 interface GetGalleriesOptions {
@@ -104,7 +108,10 @@ export class PrezlyApi {
     /**
      * Note: this method returns ALL stories from the newsroom. It's intended to be used for sitemaps and not to display actual content.
      */
-    async getAllStories({ order = DEFAULT_SORT_ORDER, pinning = false }: GetStoriesOptions = {}) {
+    async getAllStories({
+        order = DEFAULT_SORT_ORDER,
+        pinning = false,
+    }: Pick<GetStoriesOptions, 'order' | 'pinning'> = {}) {
         const sortOrder = getChronologicalSortOrder(order, pinning);
         const newsroom = await this.getNewsroom();
         const query = JSON.stringify(getStoriesQuery(newsroom.uuid));
@@ -136,9 +143,12 @@ export class PrezlyApi {
         include,
         localeCode,
         withHighlightedStory,
+        filterQuery,
     }: GetStoriesOptions = {}) {
         const sortOrder = getChronologicalSortOrder(order, pinning);
-        const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, undefined, localeCode));
+        const query = JSON.stringify(
+            getStoriesQuery(this.newsroomUuid, undefined, localeCode, filterQuery),
+        );
 
         const { offset, limit } = toPaginationParams({ page, pageSize, withHighlightedStory });
 
@@ -163,10 +173,13 @@ export class PrezlyApi {
             order = DEFAULT_SORT_ORDER,
             include,
             localeCode,
+            filterQuery,
         }: Omit<GetStoriesOptions, 'pinning' | 'withHighlightedStory'> = {},
     ) {
         const sortOrder = getChronologicalSortOrder(order);
-        const query = JSON.stringify(getStoriesQuery(this.newsroomUuid, category.id, localeCode));
+        const query = JSON.stringify(
+            getStoriesQuery(this.newsroomUuid, category.id, localeCode, filterQuery),
+        );
 
         const { offset, limit } = toPaginationParams({ page, pageSize });
 
