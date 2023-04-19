@@ -29,6 +29,7 @@ interface Options {
     withHighlightedStory?: boolean;
     pageSize?: number;
     pinning?: boolean;
+    filterQuery?: Object;
 }
 
 export function getHomepageServerSideProps<
@@ -40,6 +41,7 @@ export function getHomepageServerSideProps<
         extraStoryFields,
         pinning = false,
         withHighlightedStory = false,
+        filterQuery,
     } = options || {};
 
     return async function getServerSideProps(
@@ -61,6 +63,7 @@ export function getHomepageServerSideProps<
             include: extraStoryFields,
             localeCode,
             withHighlightedStory,
+            filterQuery,
         });
         const { stories, storiesTotal } = storiesPaginated;
 

@@ -8,8 +8,16 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
         return;
     }
 
-    const { page, pageSize, withHighlightedStory, category, include, localeCode, pinning } =
-        req.body;
+    const {
+        page,
+        pageSize,
+        withHighlightedStory,
+        category,
+        include,
+        localeCode,
+        pinning,
+        filterQuery,
+    } = req.body;
 
     try {
         const api = getNextPrezlyApi(req);
@@ -23,6 +31,7 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
                   localeCode,
                   withHighlightedStory,
                   pinning,
+                  filterQuery,
               }));
 
         res.status(200).json({ stories });
