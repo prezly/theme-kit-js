@@ -2,9 +2,7 @@
   "name": "theme-kit",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "scripts": {
     "build": "npx lerna run build",
     "dev:core": "npx lerna run dev --scope=@prezly/theme-kit-core",
@@ -19,7 +17,7 @@
     "release": "npm run release:prepare && npm run release:publish",
     "release:preview": "npm run release:prepare && npm run release:publish:preview",
     "release:prepare": "npx lerna run lint,test,build",
-    "release:publish": "lerna publish --no-private --create-release",
+    "release:publish": "lerna publish --no-private",
     "release:publish:preview": "lerna publish prerelease --dist-tag preview"
   },
   "dependencies": {
