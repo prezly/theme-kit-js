@@ -72,7 +72,7 @@ If you want to support multi-language in your theme, you'll need to make additio
 
 ```js
 const { DUMMY_DEFAULT_LOCALE } = require('@prezly/theme-kit-nextjs');
-const locales = require('@prezly/theme-kit-nextjs/core/intl/localeConfig');
+const locales = require('@prezly/theme-kit-nextjs/core/localeConfig');
 
 module.exports = {
     /* ...your next config... */
@@ -310,6 +310,11 @@ export const getStaticPaths = getStoryPageStaticPaths;
 These are available for `/category/[slug]`, `/story/[slug]` and `/media/album/[uuid]` pages.
 
 You can find all of the helper methods in the [page-props](./tree/main/src/adapter-nextjs/page-props) directory.
+
+### Experimental: Next 13 /app directory
+
+Currently, Next doesn't work well with tree-shaking during the code introspection phase, which will result in errors if you import anything from main export of `@prezly/theme-kit-nextjs` into a Next server component.
+So far, the workaround for this (introduced in v4.2.0) is to import from the `server` subpath (`import ... from '@prezly/theme-kit-nextjs/server`). For client components and code that is not imported into server components, you can still use regular `@prezly/theme-kit-nextjs` imports.
 
 ----
 
