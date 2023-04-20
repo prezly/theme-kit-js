@@ -5,9 +5,21 @@
   "main": "build/esm/index.js",
   "types": "build/types/index.d.ts",
   "exports": {
-    "import": "./build/esm/index.js",
-    "require": "./build/cjs/index.js",
-    "default": "./build/esm/index.js"
+    ".": {
+      "import": "./build/esm/index.js",
+      "require": "./build/cjs/index.js",
+      "default": "./build/esm/index.js"
+    },
+    "./localeConfig": {
+      "import": "./build/esm/intl/localeConfig.js",
+      "require": "./build/cjs/intl/localeConfig.js",
+      "default": "./build/esm/intl/localeConfig.js"
+    },
+    "./build/intl/localeConfig": {
+      "import": "./build/esm/intl/localeConfig.js",
+      "require": "./build/cjs/intl/localeConfig.js",
+      "default": "./build/esm/intl/localeConfig.js"
+    }
   },
   "files": ["build", "README.md"],
   "scripts": {
