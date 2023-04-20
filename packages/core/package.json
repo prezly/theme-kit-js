@@ -2,12 +2,19 @@
   "name": "@prezly/theme-kit-core",
   "version": "4.1.0",
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "build/esm/index.js",
+  "types": "build/types/index.d.ts",
+  "exports": {
+    "import": "./build/esm/index.js",
+    "require": "./build/cjs/index.js",
+    "default": "./build/esm/index.js"
+  },
   "files": ["build", "README.md"],
   "scripts": {
     "prebuild": "rimraf build/* *.tsbuildinfo",
-    "build": "tsc --project .",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build": "npm run build:esm && npm run build:cjs",
     "dev": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",

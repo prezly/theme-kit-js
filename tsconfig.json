@@ -3,7 +3,6 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "composite": true,
-    "declaration": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -26,5 +25,8 @@
     "outDir": "./build"
   },
   "include": [".prettierrc.js"],
-  "references": [{ "path": "./packages/nextjs" }, { "path": "./packages/core" }]
+  "references": [
+    { "path": "./packages/nextjs/tsconfig.base.json" },
+    { "path": "./packages/core/tsconfig.base.json" }
+  ]
 }
