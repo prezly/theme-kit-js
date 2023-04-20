@@ -27,8 +27,8 @@
     "build:esm": "tsc --project tsconfig.esm.json",
     "build:cjs": "tsc --project tsconfig.cjs.json",
     "build": "npm run build:esm && npm run build:cjs",
-    "dev": "tsc --watch --preserveWatchOutput --project .",
-    "typecheck": "tsc --noEmit --incremental --project .",
+    "dev": "tsc --watch --preserveWatchOutput --project tsconfig.base.json",
+    "typecheck": "tsc --noEmit --incremental --project tsconfig.base.json",
     "lint": "eslint src",
     "test": "jest"
   },
