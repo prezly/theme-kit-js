@@ -1,3 +1,5 @@
+'use client';
+
 import type { ExtendedStory } from '@prezly/sdk';
 import { Story } from '@prezly/sdk';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
