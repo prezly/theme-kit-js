@@ -9,7 +9,7 @@
     "require": "./build/cjs/index.js",
     "default": "./build/esm/index.js"
   },
-  "files": ["build", "src"],
+  "files": ["build", "README.md"],
   "engines": {
     "node": ">= 16.x",
     "npm": ">= 8.x"
