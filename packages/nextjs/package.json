@@ -5,9 +5,21 @@
   "main": "build/esm/index.js",
   "types": "build/types/index.d.ts",
   "exports": {
-    "import": "./build/esm/index.js",
-    "require": "./build/cjs/index.js",
-    "default": "./build/esm/index.js"
+    ".": {
+      "import": "./build/esm/index.js",
+      "require": "./build/cjs/index.js",
+      "default": "./build/esm/index.js"
+    },
+    "./client": {
+      "import": "./build/esm/client.js",
+      "require": "./build/cjs/client.js",
+      "default": "./build/esm/client.js"
+    },
+    "./server": {
+      "import": "./build/esm/server.js",
+      "require": "./build/cjs/server.js",
+      "default": "./build/esm/server.js"
+    }
   },
   "files": ["build", "README.md"],
   "engines": {
