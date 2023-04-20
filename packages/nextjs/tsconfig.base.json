@@ -1,11 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declarationDir": "./build",
     "jsx": "react-jsx",
-    "module": "commonjs",
     "noEmit": false,
-    "outDir": "./build",
     "rootDir": "./src",
     "target": "esnext",
     "typeRoots": ["../../node_modules/@types"]

@@ -1,10 +1,33 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "4.1.0",
+  "version": "4.2.0-alpha.5",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
-  "files": ["build", "src"],
+  "main": "build/esm/index.js",
+  "types": "build/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./build/esm/index.js",
+      "require": "./build/cjs/index.js",
+      "default": "./build/esm/index.js"
+    },
+    "./client": {
+      "import": "./build/esm/client.js",
+      "require": "./build/cjs/client.js",
+      "default": "./build/esm/client.js"
+    },
+    "./server": {
+      "import": "./build/esm/server.js",
+      "require": "./build/cjs/server.js",
+      "default": "./build/esm/server.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "client": ["build/types/client.d.ts"],
+      "server": ["build/types/server.d.ts"]
+    }
+  },
+  "files": ["build", "README.md"],
   "engines": {
     "node": ">= 16.x",
     "npm": ">= 8.x"
@@ -27,14 +50,16 @@
   "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/nextjs#readme",
   "scripts": {
     "prebuild": "rimraf build/* *.tsbuildinfo",
-    "build": "tsc --project .",
-    "dev": "tsc --watch --preserveWatchOutput --project .",
-    "typecheck": "tsc --noEmit --incremental --project .",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build": "npm run build:esm && npm run build:cjs",
+    "dev": "tsc --watch --preserveWatchOutput --project tsconfig.base.json",
+    "typecheck": "tsc --noEmit --incremental --project tsconfig.base.json",
     "lint": "eslint src",
     "test": "jest"
   },
   "peerDependencies": {
-    "@prezly/theme-kit-core": "^4.0.1-alpha",
+    "@prezly/theme-kit-core": "^4.2.0-alpha",
     "next": "^12.x || ^13.x",
     "react": "^17.x || ^18.x",
     "react-dom": "^17.x || ^18.x"
@@ -45,7 +70,7 @@
     "next-seo": "^5.4.0"
   },
   "devDependencies": {
-    "@prezly/theme-kit-core": "^4.1.0",
+    "@prezly/theme-kit-core": "^4.2.0-alpha.2",
     "@sentry/nextjs": "7.48.0",
     "rimraf": "3.0.2"
   },

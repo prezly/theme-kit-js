@@ -1,3 +1,5 @@
+'use client';
+
 import { DEFAULT_LOCALE, getLocaleDirection, LocaleObject } from '@prezly/theme-kit-core';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
