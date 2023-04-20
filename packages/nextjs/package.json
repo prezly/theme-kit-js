@@ -21,6 +21,11 @@
       "default": "./build/esm/server.js"
     }
   },
+  "typesVersions": {
+    "*": {
+      "client": ["build/types/client.d.ts"],
+      "server": ["build/types/server.d.ts"]
+  },
   "files": ["build", "README.md"],
   "engines": {
     "node": ">= 16.x",
