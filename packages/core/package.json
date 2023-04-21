@@ -15,6 +15,11 @@
       "require": "./build/cjs/intl/localeConfig.js",
       "default": "./build/esm/intl/localeConfig.js"
     },
+    "./localeList": {
+      "import": "./build/esm/intl/localeList.js",
+      "require": "./build/cjs/intl/localeList.js",
+      "default": "./build/esm/intl/localeList.js"
+    },
     "./build/intl/localeConfig": {
       "import": "./build/esm/intl/localeConfig.js",
       "require": "./build/cjs/intl/localeConfig.js",
