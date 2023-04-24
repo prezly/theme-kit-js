@@ -1,2 +1,5 @@
-// eslint-disable-next-line no-restricted-exports, import/no-default-export
-export { default } from './messageDescriptors';
+import translations from './messageDescriptors';
+
+// eslint-disable-next-line import/no-default-export
+export default translations;
+export { translations };

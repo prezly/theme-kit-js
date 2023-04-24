@@ -1,14 +1,20 @@
 {
     "name": "@prezly/themes-intl-messages",
-    "version": "1.15.4",
+    "version": "1.16.0-3",
     "description": "Translations for Prezly themes",
-    "main": "dist/index.js",
+    "main": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
     "exports": {
-        ".": "./dist/index.js",
+        ".": {
+            "import": "./dist/esm/index.js",
+            "require": "./dist/cjs/index.js",
+            "default": "./dist/esm/index.js"
+        },
         "./messages": "./dist/messages"
     },
     "files": [
-        "dist/**"
+        "dist",
+        "README.md"
     ],
     "engines": {
         "node": ">= 14.x",
@@ -19,10 +25,12 @@
         "npm": ">= 7.x"
     },
     "scripts": {
-        "clean": "rimraf dist",
+        "clean": "rimraf dist/* *.tsbuildinfo",
         "prebuild": "npm run clean && npm run prettier:check && npm run intl:compile",
+        "build:esm": "tsc --project tsconfig.esm.json",
+        "build:cjs": "tsc --project tsconfig.cjs.json",
+        "build": "npm run build:esm && npm run build:cjs",
         "copy-messages": "cp -r src/messageFiles/compiled dist/messages",
-        "build": "tsc --project .",
         "build:pnpm": "npm run build && npm run intl:compile && npm run postbuild",
         "watch": "tsc --watch --preserveWatchOutput --project .",
         "postbuild": "npm run copy-messages",
@@ -31,6 +39,7 @@
         "prettier:check": "prettier --check './src/**/*.{ts,js}'",
         "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
         "release": "np",
+        "release:preview": "npm run release -- --any-branch --tag preview --no-release-draft",
         "test": "echo \"Tests? maybe next time ;)\" && exit 0",
         "intl:extract": "formatjs extract 'src/messageDescriptors/**/*.ts' --out-file src/messageFiles/source/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
         "intl:compile": "formatjs compile-folder --ast --format crowdin src/messageFiles/source src/messageFiles/compiled"

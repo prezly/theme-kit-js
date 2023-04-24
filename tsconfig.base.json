@@ -1,9 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
+        "target": "esnext",
         "lib": ["esnext", "dom"],
-        "outDir": "./dist",
         "removeComments": false,
         "inlineSourceMap": true,
         "inlineSources": true,
@@ -14,9 +12,7 @@
         "noImplicitReturns": true,
         "moduleResolution": "node",
         "rootDir": "./src",
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "declaration": true
+        "forceConsistentCasingInFileNames": true
     },
     "include": ["./src"],
     "exclude": ["node_modules"]
