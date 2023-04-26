@@ -1,7 +1,7 @@
 import type { NewsroomGallery } from '@prezly/sdk';
 
 import type { PaginationProps } from './types';
-import { useInfiniteLoading } from './useInfiniteLoading';
+import { useInfiniteLoading } from './useInfiniteLoading.js';
 
 async function fetchGalleries(
     page: number,

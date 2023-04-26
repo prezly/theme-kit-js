@@ -1,7 +1,7 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 
-import type { LangCode, LocaleCode } from '../../intl';
-import { LocaleObject } from '../../intl';
+import type { LangCode, LocaleCode } from '../../intl/index.js';
+import { LocaleObject } from '../../intl/index.js';
 
 interface LocaleWithLanguage {
     language: NewsroomLanguageSettings;

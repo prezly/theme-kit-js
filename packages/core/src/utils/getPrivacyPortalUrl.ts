@@ -1,6 +1,6 @@
 import type { Newsroom } from '@prezly/sdk';
 
-import type { LocaleObject } from '../intl';
+import type { LocaleObject } from '../intl/index.js';
 
 type PrivacyPortalUrlOptions = {
     email?: string;

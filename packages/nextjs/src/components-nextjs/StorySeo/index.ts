@@ -1,1 +1,1 @@
-export { StorySeo } from './StorySeo';
+export { StorySeo } from './StorySeo.js';

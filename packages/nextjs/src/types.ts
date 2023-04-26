@@ -1,4 +1,4 @@
-import type { NewsroomContextProps } from './newsroom-context';
+import type { NewsroomContextProps } from './newsroom-context/index.js';
 
 export interface ServerSidePageProps {
     /**

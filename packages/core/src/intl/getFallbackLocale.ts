@@ -1,5 +1,5 @@
 import type { LangCode } from './locale';
-import { LocaleObject } from './localeObject';
+import { LocaleObject } from './localeObject.js';
 
 const localeFallback: Record<LangCode, LocaleObject[]> = {
     en: [LocaleObject.fromAnyCode('en-US'), LocaleObject.fromAnyCode('en-GB')],

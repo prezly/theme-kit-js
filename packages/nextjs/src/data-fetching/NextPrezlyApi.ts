@@ -10,7 +10,7 @@ import {
 } from '@prezly/theme-kit-core';
 import type { IncomingMessage } from 'http';
 
-import { getLanguageFromNextLocaleIsoCode } from '../intl';
+import { getLanguageFromNextLocaleIsoCode } from '../intl/index.js';
 import type { PageProps, ServerSidePageProps } from '../types';
 
 export class NextPrezlyApi extends PrezlyApi {

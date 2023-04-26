@@ -1,7 +1,7 @@
 import type { Story } from '@prezly/sdk';
 import type { GetStaticPropsContext } from 'next';
 
-import { getNextPrezlyApi } from '../data-fetching';
+import { getNextPrezlyApi } from '../data-fetching/index.js';
 
 interface Options {
     loadHomepageContacts?: boolean;

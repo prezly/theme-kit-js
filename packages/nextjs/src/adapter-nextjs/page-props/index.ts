@@ -3,24 +3,24 @@ export {
     getCategoryPageStaticPaths,
     getCategoryPageStaticProps,
     type CategoryPageProps,
-} from './category';
+} from './category.js';
 export {
     getGalleryPageServerSideProps,
     getGalleryPageStaticProps,
     type GalleryPageProps,
-} from './gallery';
+} from './gallery.js';
 export {
     getGalleryAlbumPageServerSideProps,
     getGalleryAlbumPageStaticPaths,
     getGalleryAlbumPageStaticProps,
     type GalleryAlbumPageProps,
-} from './galleryAlbum';
-export { getHomepageServerSideProps, getHomepageStaticProps, type HomePageProps } from './home';
-export { getSearchPageServerSideProps, getSearchPageStaticProps } from './search';
-export * from './sitemap';
+} from './galleryAlbum.js';
+export { getHomepageServerSideProps, getHomepageStaticProps, type HomePageProps } from './home.js';
+export { getSearchPageServerSideProps, getSearchPageStaticProps } from './search.js';
+export * from './sitemap/index.js';
 export {
     getStoryPageServerSideProps,
     getStoryPageStaticPaths,
     getStoryPageStaticProps,
-} from './story';
-export { getStoryPreviewPageServerSideProps } from './storyPreview';
+} from './story.js';
+export { getStoryPreviewPageServerSideProps } from './storyPreview.js';

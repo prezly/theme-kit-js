@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import type { NewsroomContextType } from '../context';
-import { NewsroomContext } from '../context';
+import { NewsroomContext } from '../context.js';
 
 export function useNewsroomContext() {
     // TS Compiler is having a hard time figuring this type implicitly, so we have to set it explicitly

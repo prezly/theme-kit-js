@@ -5,8 +5,8 @@ import { getCategoryHasTranslation, getCategoryUrl } from '@prezly/theme-kit-cor
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
-import { useCurrentCategory } from './useCurrentCategory';
-import { useCurrentStory } from './useCurrentStory';
+import { useCurrentCategory } from './useCurrentCategory.js';
+import { useCurrentStory } from './useCurrentStory.js';
 
 // Pulled from SDK types to not leak the `@prezly/sdk` dependency into the client bundle
 // It looks like a hack, but the name of enum must be the same as in SDK

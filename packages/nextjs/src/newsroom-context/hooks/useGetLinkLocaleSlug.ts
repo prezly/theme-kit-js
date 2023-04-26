@@ -2,8 +2,8 @@ import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { getShortestLocaleCode, LocaleObject } from '@prezly/theme-kit-core';
 import { useCallback } from 'react';
 
-import { useCurrentLocale } from './useCurrentLocale';
-import { useLanguages } from './useLanguages';
+import { useCurrentLocale } from './useCurrentLocale.js';
+import { useLanguages } from './useLanguages.js';
 
 /**
  * Determines correct locale slug for the link (trying to shorten the locale code if possible).

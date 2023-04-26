@@ -8,18 +8,18 @@ import type {
     Story,
 } from '@prezly/sdk';
 
-import { getDefaultLanguage } from '../../intl';
-import { DEFAULT_PAGE_SIZE } from '../../utils';
-import { isSdkError, isUuid } from '../lib';
+import { getDefaultLanguage } from '../../intl/index.js';
+import { DEFAULT_PAGE_SIZE } from '../../utils/index.js';
+import { isSdkError, isUuid } from '../lib/index.js';
 
-import { toPaginationParams } from './lib';
+import { toPaginationParams } from './lib.js';
 import {
     getChronologicalSortOrder,
     getContactsQuery,
     getGalleriesQuery,
     getSlugQuery,
     getStoriesQuery,
-} from './queries';
+} from './queries.js';
 
 const CATEGORIES_SORT_ORDER = '+order';
 const DEFAULT_SORT_ORDER = SortOrder.Direction.DESC;

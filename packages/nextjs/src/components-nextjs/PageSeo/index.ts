@@ -1,1 +1,1 @@
-export { PageSeo } from './PageSeo';
+export { PageSeo } from './PageSeo.js';

@@ -1,2 +1,2 @@
-export { fetchGalleries } from './fetchGalleries';
-export { fetchStories } from './fetchStories';
+export { fetchGalleries } from './fetchGalleries.js';
+export { fetchStories } from './fetchStories.js';

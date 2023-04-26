@@ -7,7 +7,7 @@ import {
     LocaleObject,
 } from '@prezly/theme-kit-core';
 
-import { DUMMY_DEFAULT_LOCALE } from './locale';
+import { DUMMY_DEFAULT_LOCALE } from './locale.js';
 
 /**
  * Retrieve a culture with fallback to legacy codes support.

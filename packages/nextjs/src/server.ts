@@ -4,5 +4,5 @@
  *
  */
 
-export * from './adapter-nextjs';
-export * from './data-fetching';
+export * from './adapter-nextjs/index.js';
+export * from './data-fetching/index.js';

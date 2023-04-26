@@ -1,2 +1,2 @@
-export * from './languages';
-export * from './locale';
+export * from './languages.js';
+export * from './locale.js';

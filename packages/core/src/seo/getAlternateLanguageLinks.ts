@@ -1,10 +1,10 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 
-import type { LocaleObject } from '../intl';
-import { getFallbackLocale } from '../intl';
+import type { LocaleObject } from '../intl/index.js';
+import { getFallbackLocale } from '../intl/index.js';
 
 import type { AlternateLanguageLink } from './types';
-import { bindLanguagesWithLocales, createAlternateLanguageLink } from './utils';
+import { bindLanguagesWithLocales, createAlternateLanguageLink } from './utils/index.js';
 
 // We use english locale as fallback since English is the most common language
 const ENG_FALLBACK = 'en';

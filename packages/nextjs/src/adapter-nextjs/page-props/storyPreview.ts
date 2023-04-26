@@ -1,8 +1,8 @@
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
-import { getNextPrezlyApi } from '../../data-fetching';
-import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
-import { processRequest } from '../processRequest';
+import { getNextPrezlyApi } from '../../data-fetching/index.js';
+import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps.js';
+import { processRequest } from '../processRequest.js';
 
 import type { PropsFunction } from './lib/types';
 

@@ -1,5 +1,5 @@
-export { getSitemapServerSideProps } from './getServerSideProps';
+export { getSitemapServerSideProps } from './getServerSideProps.js';
 
-export { SitemapBuilder } from './SitemapBuilder';
-export { createPaths } from './createPaths';
-export * from './types';
+export { SitemapBuilder } from './SitemapBuilder.js';
+export { createPaths } from './createPaths.js';
+export * from './types.js';

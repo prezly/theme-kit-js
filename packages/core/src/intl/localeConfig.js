@@ -3,7 +3,7 @@
  * Together with permutation performed lower in the code,
  * the exported list represents all of the possible locale codes that a theme application might accept.
  */
-const supportedLocales = require('./localeList');
+const supportedLocales = require('./localeList.js');
 
 const lowercaseLocales = supportedLocales.map((l) => l.toLowerCase());
 

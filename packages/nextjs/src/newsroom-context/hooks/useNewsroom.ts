@@ -1,4 +1,4 @@
-import { useNewsroomContext } from './useNewsroomContext';
+import { useNewsroomContext } from './useNewsroomContext.js';
 
 export function useNewsroom() {
     const context = useNewsroomContext();

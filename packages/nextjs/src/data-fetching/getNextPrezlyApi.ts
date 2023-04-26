@@ -1,7 +1,7 @@
 import { getEnvVariables } from '@prezly/theme-kit-core';
 import type { IncomingMessage } from 'http';
 
-import { NextPrezlyApi } from './NextPrezlyApi';
+import { NextPrezlyApi } from './NextPrezlyApi.js';
 
 export function getNextPrezlyApi(req?: IncomingMessage): NextPrezlyApi {
     if (typeof window !== 'undefined') {

@@ -1,2 +1,2 @@
-export * from './getAlternateLanguageLinks';
-export * from './types';
+export * from './getAlternateLanguageLinks.js';
+export * from './types.js';

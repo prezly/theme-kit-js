@@ -1,8 +1,8 @@
 import type { IncomingMessage } from 'http';
 
-import { getEnvVariables } from '../lib/getEnvVariables';
+import { getEnvVariables } from '../lib/getEnvVariables.js';
 
-import { PrezlyApi } from './PrezlyApi';
+import { PrezlyApi } from './PrezlyApi.js';
 
 export function getPrezlyApi(req?: IncomingMessage): PrezlyApi {
     if (typeof window !== 'undefined') {

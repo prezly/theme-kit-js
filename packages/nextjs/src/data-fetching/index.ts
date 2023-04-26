@@ -1,1 +1,1 @@
-export { getNextPrezlyApi } from './getNextPrezlyApi';
+export { getNextPrezlyApi } from './getNextPrezlyApi.js';

@@ -1,9 +1,9 @@
 import type { NextPageContext } from 'next';
 
-import { getNextPrezlyApi } from '../../../data-fetching';
+import { getNextPrezlyApi } from '../../../data-fetching/index.js';
 
-import { createPaths } from './createPaths';
-import { SitemapBuilder } from './SitemapBuilder';
+import { createPaths } from './createPaths.js';
+import { SitemapBuilder } from './SitemapBuilder.js';
 
 export function getSitemapServerSideProps(
     options: { additionalPaths?: string[]; pinning?: boolean } = {},

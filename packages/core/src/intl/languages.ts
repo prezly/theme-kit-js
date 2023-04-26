@@ -1,6 +1,6 @@
 import type { CultureRef, NewsroomLanguageSettings, Story } from '@prezly/sdk';
 
-import { LocaleObject } from './localeObject';
+import { LocaleObject } from './localeObject.js';
 
 function isOnlyCulture(culture: CultureRef, languages: NewsroomLanguageSettings[]): boolean {
     const numberOfLanguages = languages.filter(

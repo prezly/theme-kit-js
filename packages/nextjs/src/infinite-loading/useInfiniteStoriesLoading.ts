@@ -2,10 +2,10 @@ import type { Category, Story } from '@prezly/sdk';
 import type { LocaleObject } from '@prezly/theme-kit-core';
 import { useEffect } from 'react';
 
-import { useCurrentLocale } from '../newsroom-context';
+import { useCurrentLocale } from '../newsroom-context/index.js';
 
 import type { PaginationProps } from './types';
-import { useInfiniteLoading } from './useInfiniteLoading';
+import { useInfiniteLoading } from './useInfiniteLoading.js';
 
 async function fetchStories<T extends Story = Story>(
     page: number,

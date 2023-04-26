@@ -1,3 +1,3 @@
-export { PageSeo } from './PageSeo';
-export { StorySeo } from './StorySeo';
-export { PrezlyThemeDocument } from './document';
+export { PageSeo } from './PageSeo/index.js';
+export { StorySeo } from './StorySeo/index.js';
+export { PrezlyThemeDocument } from './document.js';

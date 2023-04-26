@@ -5,12 +5,12 @@ import type {
     GetStaticPropsResult,
 } from 'next';
 
-import { getNextPrezlyApi } from '../../data-fetching';
-import { DUMMY_DEFAULT_LOCALE } from '../../intl';
-import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
-import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
-import { processRequest } from '../processRequest';
-import { processStaticRequest } from '../processStaticRequest';
+import { getNextPrezlyApi } from '../../data-fetching/index.js';
+import { DUMMY_DEFAULT_LOCALE } from '../../intl/index.js';
+import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps.js';
+import { getNewsroomStaticProps } from '../getNewsroomStaticProps.js';
+import { processRequest } from '../processRequest.js';
+import { processStaticRequest } from '../processStaticRequest.js';
 
 import type { PropsFunction } from './lib/types';
 

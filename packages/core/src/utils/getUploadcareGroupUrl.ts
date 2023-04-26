@@ -1,4 +1,4 @@
-import { ASSETS_URL } from './constants';
+import { ASSETS_URL } from './constants.js';
 
 /**
  * This method constructs a URL to download all images in the Gallery as a single archive.

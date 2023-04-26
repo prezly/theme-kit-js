@@ -1,4 +1,4 @@
-export { getAlgoliaSettings } from './getAlgoliaSettings';
-export { getEnvVariables } from './getEnvVariables';
-export { isSdkError } from './isSdkError';
-export { isUuid } from './isUuid';
+export { getAlgoliaSettings } from './getAlgoliaSettings.js';
+export { getEnvVariables } from './getEnvVariables.js';
+export { isSdkError } from './isSdkError.js';
+export { isUuid } from './isUuid.js';

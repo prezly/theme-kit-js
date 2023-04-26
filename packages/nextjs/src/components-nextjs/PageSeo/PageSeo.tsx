@@ -19,9 +19,9 @@ import {
     useGetTranslationUrl,
     useLanguages,
     useNewsroom,
-} from '../../newsroom-context';
+} from '../../newsroom-context/index.js';
 
-import { getAbsoluteUrl } from './lib';
+import { getAbsoluteUrl } from './lib/index.js';
 
 type Props = NextSeoProps & {
     imageUrl?: string;

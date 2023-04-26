@@ -1,1 +1,1 @@
-export { getAbsoluteUrl } from './getAbsoluteUrl';
+export { getAbsoluteUrl } from './getAbsoluteUrl.js';

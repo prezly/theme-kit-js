@@ -2,7 +2,7 @@ import type { IncomingMessage } from 'http';
 
 import type { AlgoliaSettings } from '../types';
 
-import { getEnvVariables } from './getEnvVariables';
+import { getEnvVariables } from './getEnvVariables.js';
 
 export function getAlgoliaSettings(req?: IncomingMessage): AlgoliaSettings {
     if (typeof window !== 'undefined') {

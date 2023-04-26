@@ -1,2 +1,2 @@
-export * from './getPrezlyApi';
-export { PrezlyApi } from './PrezlyApi';
+export * from './getPrezlyApi.js';
+export { PrezlyApi } from './PrezlyApi.js';

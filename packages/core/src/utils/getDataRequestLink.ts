@@ -2,7 +2,7 @@ import type { Newsroom } from '@prezly/sdk';
 
 import type { LocaleObject } from '../intl';
 
-import { getPrivacyPortalUrl } from './getPrivacyPortalUrl';
+import { getPrivacyPortalUrl } from './getPrivacyPortalUrl.js';
 
 export function getDataRequestLink(newsroom: Newsroom, currentLocale: LocaleObject) {
     return (

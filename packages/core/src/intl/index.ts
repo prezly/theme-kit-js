@@ -1,5 +1,5 @@
-export * from './getFallbackLocale';
-export * from './languages';
-export { default as localeConfig } from './localeConfig';
-export * from './locale';
-export * from './localeObject';
+export * from './getFallbackLocale.js';
+export * from './languages.js';
+export { default as localeConfig } from './localeConfig.js';
+export * from './locale.js';
+export * from './localeObject.js';
