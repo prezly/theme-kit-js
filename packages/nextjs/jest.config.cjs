@@ -3,6 +3,7 @@ module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'node',
     collectCoverage: true,
+    resolver: 'jest-ts-webcompat-resolver',
     transform: {
         '^.+\\.tsx?$': [
             'ts-jest',
