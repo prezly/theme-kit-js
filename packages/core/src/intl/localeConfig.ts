@@ -3,7 +3,7 @@
  * Together with permutation performed lower in the code,
  * the exported list represents all of the possible locale codes that a theme application might accept.
  */
-const supportedLocales = require('./localeList.cjs');
+import supportedLocales from './localeList.js';
 
 const lowercaseLocales = supportedLocales.map((l) => l.toLowerCase());
 
@@ -20,4 +20,5 @@ const lowercaseLocalPermutations = Array.from(
     ]),
 ).sort();
 
-module.exports = lowercaseLocalPermutations;
+// eslint-disable-next-line import/no-default-export
+export default lowercaseLocalPermutations;

@@ -1,7 +1,8 @@
 /**
  * This list is pulled from the main Prezly application. The underscores are replaced with dashes.
  */
-module.exports = [
+// eslint-disable-next-line import/no-default-export
+export default [
     'af-ZA',
     'ar',
     'ar-AE',

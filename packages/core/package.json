@@ -12,19 +12,19 @@
       "default": "./build/esm/index.js"
     },
     "./localeConfig": {
-      "import": "./build/esm/intl/localeConfig.cjs",
-      "require": "./build/cjs/intl/localeConfig.cjs",
-      "default": "./build/esm/intl/localeConfig.cjs"
+      "import": "./build/esm/intl/localeConfig.js",
+      "require": "./build/cjs/intl/localeConfig.js",
+      "default": "./build/esm/intl/localeConfig.js"
     },
     "./localeList": {
-      "import": "./build/esm/intl/localeList.cjs",
-      "require": "./build/cjs/intl/localeList.cjs",
-      "default": "./build/esm/intl/localeList.cjs"
+      "import": "./build/esm/intl/localeList.js",
+      "require": "./build/cjs/intl/localeList.js",
+      "default": "./build/esm/intl/localeList.js"
     },
     "./build/intl/localeConfig": {
-      "import": "./build/esm/intl/localeConfig.cjs",
-      "require": "./build/cjs/intl/localeConfig.cjs",
-      "default": "./build/esm/intl/localeConfig.cjs"
+      "import": "./build/esm/intl/localeConfig.js",
+      "require": "./build/cjs/intl/localeConfig.js",
+      "default": "./build/esm/intl/localeConfig.js"
     }
   },
   "files": ["build", "README.md"],
