@@ -30,7 +30,8 @@
   "files": ["build", "README.md"],
   "scripts": {
     "prebuild": "rimraf build/* *.tsbuildinfo",
-    "build:esm": "tsc --project tsconfig.esm.json",
+    "fix-es-imports": "fix-tsc-es-imports -y tsconfig.esm.json",
+    "build:esm": "tsc --project tsconfig.esm.json && npm run fix-es-imports",
     "build:cjs": "tsc --project tsconfig.cjs.json",
     "build": "npm run build:esm && npm run build:cjs",
     "dev": "tsc --watch --preserveWatchOutput --project tsconfig.base.json",
