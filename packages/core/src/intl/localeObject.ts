@@ -1,4 +1,4 @@
-import localeConfig from './localeConfig.js';
+import localeConfig from './localeConfig.cjs';
 
 /**
  * This class is created to simplify working with locales and transforming between different locale code formats.
