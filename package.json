@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@prezly/eslint-config": "4.5.0",
+    "@prezly/sdk": "11.12.0",
     "@types/jest": "29.5.1",
     "@types/node": "17.0.14",
     "@types/react": "18.2.0",

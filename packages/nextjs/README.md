@@ -12,12 +12,13 @@ The package is built with [Typescript] on top of [Prezly SDK].
 ### npm
 
 ```Shell
-npm install --save @prezly/theme-kit-core @prezly/theme-kit-nextjs
+npm install --save @prezly/sdk @prezly/theme-kit-core @prezly/theme-kit-nextjs
 ```
 
 #### peerDependencies
 
-This library depends on `@prezly/theme-kit-core` package, which contains more helpers that are not specific to Next.
+This library depends on `@prezly/theme-kit-core` package, which contains more helpers that are not specific to Next, as well as `@prezly/sdk`, which provides the communication with Prezly API and typings.
+We will occasionally bump the minimum required SDK version to ensure compatibility with latest Prezly features.
 
 This library is intended to be used with [Next.js] applications, so it also requires `next`, `react` and `react-dom` to work. These should already be installed if you have an existing [Next.js] app.
 If you're starting from scratch, use [create-next-app] to quick-start the project.
