@@ -14,7 +14,7 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "@prezly/sdk": ">=11.11.0"
+    "@prezly/sdk": ">=12"
   },
   "dependencies": {
     "@prezly/uploadcare": "^2.3.4",

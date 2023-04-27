@@ -5,7 +5,7 @@ export type EmbargoStory = Omit<Story, 'is_embargo' | 'published_at'> & {
     published_at: string;
 };
 
-export function isEmbargoStory(story: Pick<Story, 'lifecycle_status'>): story is EmbargoStory {
+export function isEmbargoStory(story: Pick<Story, 'status'>): story is EmbargoStory {
     // TODO: This leaks `@prezly/sdk` into client bundle
-    return Story.isScheduledEmbargo(story);
+    return Story.isScheduledEmbargo(story.status);
 }
