@@ -20,7 +20,8 @@
       "import": "./build/esm/server.js",
       "require": "./build/cjs/server.js",
       "default": "./build/esm/server.js"
-    }
+    },
+    "./i18nConfig": "./build/cjs/i18nConfig.cjs"
   },
   "typesVersions": {
     "*": {

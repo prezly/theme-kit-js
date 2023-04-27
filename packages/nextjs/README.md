@@ -71,23 +71,12 @@ module.exports = {
 If you want to support multi-language in your theme, you'll need to make additional changes to the file:
 
 ```js
-const { DUMMY_DEFAULT_LOCALE } = require('@prezly/theme-kit-nextjs');
-const locales = require('@prezly/theme-kit-nextjs/core/localeConfig');
+const i18nConfig = require('@prezly/theme-kit-nextjs/i18nConfig');
 
 module.exports = {
     /* ...your next config... */
 
-    i18n: {
-        // These are all the locales you want to support in
-        // your application
-        locales: [...locales, DUMMY_DEFAULT_LOCALE],
-        // This is the default locale you want to be used when visiting
-        // a non-locale prefixed path e.g. `/media`
-        // We use Pseudo locale used for localization testing, to reliably determine if we need to fallback to the default newsroom language
-        defaultLocale: DUMMY_DEFAULT_LOCALE,
-        // Default locale detection is disabled, since the locales would be determined by Prezly API
-        localeDetection: false,
-    },
+    i18n: i18nConfig,
 };
 ```
 
