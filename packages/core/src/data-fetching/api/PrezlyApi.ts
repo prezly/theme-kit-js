@@ -64,6 +64,7 @@ export class PrezlyApi {
             accessToken,
             baseUrl,
             // This returns stories created by legacy version of the editor in a format that can be displayed by the Prezly Content Renderer.
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             headers: { 'X-Convert-v1-To-v3': 'true' },
         });
         this.newsroomUuid = newsroomUuid;

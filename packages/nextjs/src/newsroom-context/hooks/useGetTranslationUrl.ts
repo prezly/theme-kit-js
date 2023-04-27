@@ -65,10 +65,10 @@ function getTranslationUrl(
         const allowedVisibilityValues = getAllowedTranslationVisibilityValues(currentStory);
 
         const translatedStory = currentStory.translations.find(
-            ({ culture, lifecycle_status, visibility }) =>
+            ({ culture, status, visibility }) =>
                 culture.locale === localeCode &&
                 // TODO: This leaks `@prezly/sdk` dependency into the client bundle
-                Story.isPublished(lifecycle_status) &&
+                Story.isPublished(status) &&
                 allowedVisibilityValues.includes(visibility),
         );
         if (translatedStory) {
