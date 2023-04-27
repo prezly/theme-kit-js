@@ -35,7 +35,7 @@
   },
   "peerDependencies": {
     "@prezly/sdk": "^11.x",
-    "@prezly/theme-kit-core": "^4.0.1-alpha",
+    "@prezly/theme-kit-core": "^4.0.1-alpha || ^5.0.0-alpha",
     "next": "^12.x || ^13.x",
     "react": "^17.x || ^18.x",
     "react-dom": "^17.x || ^18.x"
