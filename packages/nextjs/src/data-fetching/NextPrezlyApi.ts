@@ -34,7 +34,6 @@ export class NextPrezlyApi extends PrezlyApi {
         const { code: localeCode } = currentLanguage || defaultLanguage;
         const locale = LocaleObject.fromAnyCode(localeCode);
 
-        // TODO: if no information given for current language, show boilerplate from default language
         const companyInformation = getCompanyInformation(languages, locale);
 
         const notifications = getNotifications(languages, locale);
