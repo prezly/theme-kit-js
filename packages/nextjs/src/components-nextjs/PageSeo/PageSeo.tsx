@@ -6,7 +6,7 @@ import {
     getUsedLanguages,
 } from '@prezly/theme-kit-core';
 import type { AlternateLanguageLink } from '@prezly/theme-kit-core';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router.js';
 import { NextSeo } from 'next-seo';
 import type { NextSeoProps } from 'next-seo';
 import { useMemo } from 'react';

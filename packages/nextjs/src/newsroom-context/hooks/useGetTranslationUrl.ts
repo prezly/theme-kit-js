@@ -2,7 +2,7 @@ import type { Category, ExtendedStory } from '@prezly/sdk';
 import { Story } from '@prezly/sdk';
 import type { LocaleObject } from '@prezly/theme-kit-core';
 import { getCategoryHasTranslation, getCategoryUrl } from '@prezly/theme-kit-core';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router.js';
 import { useCallback } from 'react';
 
 import { useCurrentCategory } from './useCurrentCategory.js';
