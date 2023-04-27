@@ -19,8 +19,7 @@
     "parse-data-url": "^4.0.1"
   },
   "devDependencies": {
-    "@types/parse-data-url": "3.0.0",
-    "rimraf": "3.0.2"
+    "@types/parse-data-url": "3.0.0"
   },
   "engines": {
     "node": ">= 16.x",
