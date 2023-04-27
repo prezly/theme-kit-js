@@ -3,6 +3,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "composite": true,
+    "checkJs": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

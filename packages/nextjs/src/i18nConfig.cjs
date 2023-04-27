@@ -1,15 +1,12 @@
-import type { NextConfig } from 'next';
-
+// @ts-expect-error
 // eslint-disable-next-line import/no-unresolved
 const locales = require('@prezly/theme-kit-core/localeConfig');
 
 // eslint-disable-next-line import/no-unresolved
 const { DUMMY_DEFAULT_LOCALE } = require('./intl/locale.js');
 
-/**
- * Use this object as
- */
-const i18nConfig: NextConfig['i18n'] = {
+/** @type {import('next').NextConfig['i18n']} */
+const i18nConfig = {
     // These are all the locales you want to support in
     // your application
     locales: [...locales, DUMMY_DEFAULT_LOCALE],
