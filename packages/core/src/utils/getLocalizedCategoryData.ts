@@ -4,15 +4,21 @@ import type { LocaleObject } from '../intl';
 import type { AlgoliaCategoryRef } from '../types';
 
 function isAlgoliaCategory(
-    category: Category | AlgoliaCategoryRef,
+    category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
 ): category is AlgoliaCategoryRef {
     return 'name' in category && 'slug' in category;
 }
 
+interface LocalizedCategoryData {
+    description: string | null;
+    name: string;
+    slug: string | null;
+}
+
 export function getLocalizedCategoryData(
-    category: Category | AlgoliaCategoryRef,
+    category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
     locale: LocaleObject,
-) {
+): LocalizedCategoryData {
     if (isAlgoliaCategory(category)) {
         return {
             description: null,
@@ -34,12 +40,18 @@ export function getLocalizedCategoryData(
     return localizedData;
 }
 
-export function getCategoryUrl(category: Category | AlgoliaCategoryRef, locale: LocaleObject) {
+export function getCategoryUrl(
+    category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
+    locale: LocaleObject,
+): string {
     const { slug } = getLocalizedCategoryData(category, locale);
     return `/category/${slug}`;
 }
 
-export function getCategoryHasTranslation(category: Category, locale: LocaleObject) {
+export function getCategoryHasTranslation(
+    category: Pick<Category, 'i18n'>,
+    locale: LocaleObject,
+): boolean {
     const targetLocaleCode = locale.toUnderscoreCode();
     const { i18n } = category;
     const populatedLocales = Object.keys(i18n).filter((localeCode) => i18n[localeCode].name);

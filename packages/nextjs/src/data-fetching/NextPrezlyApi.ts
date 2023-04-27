@@ -17,7 +17,7 @@ export class NextPrezlyApi extends PrezlyApi {
     async getNewsroomServerSideProps(
         request?: IncomingMessage,
         nextLocaleIsoCode?: string,
-        story?: Story,
+        story?: Pick<Story, 'culture'>,
     ): Promise<PageProps & ServerSidePageProps> {
         const [newsroom, languages, categories, themePreset] = await Promise.all([
             this.getNewsroom(),

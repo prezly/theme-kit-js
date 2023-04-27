@@ -8,7 +8,7 @@ type PrivacyPortalUrlOptions = {
 };
 
 export function getPrivacyPortalUrl(
-    newsroom: Newsroom,
+    newsroom: Pick<Newsroom, 'uuid'>,
     locale: LocaleObject,
     options?: PrivacyPortalUrlOptions,
 ) {

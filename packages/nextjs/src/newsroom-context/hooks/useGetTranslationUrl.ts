@@ -17,7 +17,9 @@ enum Visibility {
     CONFIDENTIAL = 'confidential',
 }
 
-function getAllowedTranslationVisibilityValues(story: ExtendedStory): Visibility[] {
+function getAllowedTranslationVisibilityValues(
+    story: Pick<ExtendedStory, 'visibility'>,
+): Visibility[] {
     const { visibility } = story;
 
     switch (visibility) {
@@ -41,7 +43,7 @@ function getAllowedTranslationVisibilityValues(story: ExtendedStory): Visibility
 function getTranslationUrl(
     locale: LocaleObject,
     path: string,
-    currentCategory?: Category,
+    currentCategory?: Pick<Category, 'i18n' | 'display_name'>,
     currentStory?: ExtendedStory,
     noFallback?: boolean,
 ) {

@@ -1,6 +1,6 @@
 import type { Category, Story } from '@prezly/sdk';
 
-export function createPaths(stories: Story[], categories: Category[]) {
+export function createPaths(stories: Pick<Story, 'slug'>[], categories: Pick<Category, 'i18n'>[]) {
     const storiesUrls = stories.map(({ slug }) => `/${slug}`);
     const categoriesUrls = categories
         .map((category) => {

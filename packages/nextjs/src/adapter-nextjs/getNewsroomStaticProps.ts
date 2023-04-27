@@ -5,7 +5,7 @@ import { getNextPrezlyApi } from '../data-fetching';
 
 interface Options {
     loadHomepageContacts?: boolean;
-    story?: Story;
+    story?: Pick<Story, 'culture'>;
 }
 
 /**
