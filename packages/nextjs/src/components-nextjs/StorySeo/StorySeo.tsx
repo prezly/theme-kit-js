@@ -1,5 +1,5 @@
 import type { ExtendedStory } from '@prezly/sdk';
-import { Story } from '@prezly/sdk';
+import { Visibility } from '@prezly/theme-kit-core';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 
 type Props = {
@@ -35,8 +35,7 @@ export function StorySeo({ story, noindex }: Props) {
         subtitle ||
         summary;
     const canonical = story.seo_settings.canonical_url || oembed.url;
-    // TODO: This causes `@prezly/sdk` to leak into client bundle.
-    const indexable = newsroom.is_indexable && story.visibility === Story.Visibility.PUBLIC;
+    const indexable = newsroom.is_indexable && story.visibility === Visibility.PUBLIC;
 
     return (
         <>

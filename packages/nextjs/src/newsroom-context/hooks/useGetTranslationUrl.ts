@@ -1,21 +1,16 @@
 import type { Category, ExtendedStory } from '@prezly/sdk';
-import { Story } from '@prezly/sdk';
 import type { LocaleObject } from '@prezly/theme-kit-core';
-import { getCategoryHasTranslation, getCategoryUrl } from '@prezly/theme-kit-core';
+import {
+    getCategoryHasTranslation,
+    getCategoryUrl,
+    isStoryPublished,
+    Visibility,
+} from '@prezly/theme-kit-core';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
 import { useCurrentCategory } from './useCurrentCategory';
 import { useCurrentStory } from './useCurrentStory';
-
-// Pulled from SDK types to not leak the `@prezly/sdk` dependency into the client bundle
-// It looks like a hack, but the name of enum must be the same as in SDK
-enum Visibility {
-    PUBLIC = 'public',
-    EMBARGO = 'embargo',
-    PRIVATE = 'private',
-    CONFIDENTIAL = 'confidential',
-}
 
 function getAllowedTranslationVisibilityValues(
     story: Pick<ExtendedStory, 'visibility'>,
@@ -67,8 +62,7 @@ function getTranslationUrl(
         const translatedStory = currentStory.translations.find(
             ({ culture, status, visibility }) =>
                 culture.locale === localeCode &&
-                // TODO: This leaks `@prezly/sdk` dependency into the client bundle
-                Story.isPublished(status) &&
+                isStoryPublished(status) &&
                 allowedVisibilityValues.includes(visibility),
         );
         if (translatedStory) {
