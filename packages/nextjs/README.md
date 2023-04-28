@@ -73,7 +73,7 @@ If you want to support multi-language in your theme, you'll need to make additio
 
 ```js
 const { DUMMY_DEFAULT_LOCALE } = require('@prezly/theme-kit-nextjs');
-const locales = require('@prezly/theme-kit-nextjs/core/intl/localeConfig');
+const locales = require('@prezly/theme-kit-nextjs/localeConfig');
 
 module.exports = {
     /* ...your next config... */
@@ -128,9 +128,10 @@ export default App;
 ### Page files (Server-side rendering)
 
 Every page requires a bit of boilerplate code to set up.
+Note that server-side code should be imported from `@prezly/theme-kit-nextjs/server`. That prevents the server code and dependencies from leaking into the client bundle.
 
 ```tsx
-import { getNewsroomServerSideProps, processRequest } from '@prezly/theme-kit-nextjs';
+import { getNewsroomServerSideProps, processRequest } from '@prezly/theme-kit-nextjs/server';
 import type { GetServerSideProps } from 'next';
 import type { FunctionComponent } from 'react';
 
@@ -190,7 +191,7 @@ To reduce boilerplate for common scenarios, the library provides a collection of
 
 Here's an example of `getServerSideProps` function with no custom props:
 ```ts
-import { getHomepageServerSideProps } from '@prezly/theme-kit-nextjs';
+import { getHomepageServerSideProps } from '@prezly/theme-kit-nextjs/server';
 
 /* ...your page component */
 
@@ -238,7 +239,7 @@ This kit can also help you with building your Sitemap automatically. Here's what
 1. Create a sitemap page file: `/pages/sitemap.xml.ts`
 2. Use this code to display the default Sitemap built with your Newsroom stories:
 ```ts
-import { getSitemapServerSideProps } from '@prezly/theme-kit-nextjs';
+import { getSitemapServerSideProps } from '@prezly/theme-kit-nextjs/server';
 import type { NextPage } from 'next';
 
 const Sitemap: NextPage = () => null;
@@ -267,7 +268,7 @@ For self-hosted applications, we now provide an option to use SSG in your projec
 
 The workflow is pretty much the same as with our default SSR approach. You will need to use the new `getNewsroomStaticProps` and `processStaticRequest` methods. Note that `getNewsroomStaticProps` returns its props in the `staticProps` property. The data is still the same as in the SSR methods, so apart from multi-language, this should be a drop-in replacement for your pages.
 ```tsx
-import { getNewsroomStaticProps, processStaticRequest } from '@prezly/theme-kit-nextjs';
+import { getNewsroomStaticProps, processStaticRequest } from '@prezly/theme-kit-nextjs/server';
 import type { GetStaticProps } from 'next';
 
 /* Your Page component code */
@@ -289,7 +290,7 @@ export const getStaticProps: GetServerSideProps<Props> = async (context) => {
 
 We also have added all of the page helpers (except Story Preview) for SSG prop fetching. Here's an example for the Home page:
 ```ts
-import { getHomepageStaticProps } from '@prezly/theme-kit-nextjs';
+import { getHomepageStaticProps } from '@prezly/theme-kit-nextjs/server';
 
 /* ...your page component */
 
@@ -299,7 +300,7 @@ export const getStaticProps = getHomepageStaticProps({});
 
 For dynamic pages, like `/story/[slug]`, we also provide `getStaticPaths` helper functions:
 ```tsx
-import { getStoryPageStaticPaths, getStoryPageStaticProps } from '@prezly/theme-kit-nextjs';
+import { getStoryPageStaticPaths, getStoryPageStaticProps } from '@prezly/theme-kit-nextjs/server';
 
 /* Your Page component code */
 
