@@ -1,13 +1,12 @@
 import type { Story } from '@prezly/sdk';
 import {
-    getAlgoliaSettings,
     getCompanyInformation,
     getDefaultLanguage,
     getLanguageFromStory,
     getNotifications,
     LocaleObject,
-    PrezlyApi,
 } from '@prezly/theme-kit-core';
+import { getAlgoliaSettings, PrezlyApi } from '@prezly/theme-kit-core/server';
 import type { IncomingMessage } from 'http';
 
 import { getLanguageFromNextLocaleIsoCode } from '../intl';

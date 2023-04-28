@@ -1,10 +1,23 @@
 {
   "name": "@prezly/theme-kit-core",
-  "version": "5.0.0-alpha.3",
+  "version": "5.0.0-alpha.7",
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": ["build", "README.md"],
+  "exports": {
+    ".": "./build/index.js",
+    "./server": "./build/server.js",
+    "./localeConfig": "./build/intl/localeConfig.js",
+    "./localeList": "./build/intl/localeList.js"
+  },
+  "typesVersions": {
+    "*": {
+      "server": ["build/server.d.ts"],
+      "localeConfig": ["build/intl/localeConfig.d.ts"],
+      "localeList": ["build/intl/localeList.d.ts"]
+    }
+  },
   "scripts": {
     "prebuild": "rimraf build/* *.tsbuildinfo",
     "build": "tsc --project .",

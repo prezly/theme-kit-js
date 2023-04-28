@@ -1,12 +1,11 @@
-import { getEnvVariables } from '@prezly/theme-kit-core';
+import { assertServerEnv } from '@prezly/theme-kit-core';
+import { getEnvVariables } from '@prezly/theme-kit-core/server';
 import type { IncomingMessage } from 'http';
 
 import { NextPrezlyApi } from './NextPrezlyApi';
 
 export function getNextPrezlyApi(req?: IncomingMessage): NextPrezlyApi {
-    if (typeof window !== 'undefined') {
-        throw new Error('"getNextPrezlyApi" should only be used on back-end side.');
-    }
+    assertServerEnv('getNextPrezlyApi');
 
     // `getEnvVariables` handles both cases for envs parsing - .env and request headers
     const { PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID, PREZLY_THEME_UUID } = getEnvVariables(req);

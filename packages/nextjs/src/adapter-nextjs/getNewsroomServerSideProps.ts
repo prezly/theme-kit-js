@@ -1,4 +1,5 @@
 import type { Story } from '@prezly/sdk';
+import { assertServerEnv } from '@prezly/theme-kit-core';
 import type { GetServerSidePropsContext } from 'next';
 
 import { getNextPrezlyApi } from '../data-fetching';
@@ -16,6 +17,7 @@ export async function getNewsroomServerSideProps(
     context: GetServerSidePropsContext,
     options: Options = {},
 ) {
+    assertServerEnv('getNewsroomServerSideProps');
     const { req: request, locale } = context;
 
     const api = getNextPrezlyApi(request);

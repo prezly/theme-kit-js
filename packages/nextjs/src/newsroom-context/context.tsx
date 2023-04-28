@@ -8,8 +8,8 @@ import type {
     NewsroomThemePreset,
     Notification,
 } from '@prezly/sdk';
-import type { AlgoliaSettings } from '@prezly/theme-kit-core';
 import { DEFAULT_LOCALE, LocaleObject } from '@prezly/theme-kit-core';
+import type { AlgoliaSettings } from '@prezly/theme-kit-core/server';
 import type { PropsWithChildren } from 'react';
 import { createContext, useMemo } from 'react';
 

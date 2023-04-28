@@ -9,7 +9,7 @@ import type {
 } from '@prezly/sdk';
 
 import { getDefaultLanguage } from '../../intl';
-import { DEFAULT_PAGE_SIZE } from '../../utils';
+import { assertServerEnv, DEFAULT_PAGE_SIZE } from '../../utils';
 import { isUuid } from '../lib';
 
 import { toPaginationParams } from './lib';
@@ -59,6 +59,8 @@ export class PrezlyApi {
     protected readonly themeUuid: string | undefined;
 
     constructor(accessToken: string, newsroomUuid: Newsroom['uuid'], themeUuid?: string) {
+        assertServerEnv('PrezlyApi');
+
         const baseUrl = process.env.API_BASE_URL_OVERRIDE ?? undefined;
         this.sdk = createPrezlyClient({
             accessToken,

@@ -1,6 +1,7 @@
 import type { IncomingMessage } from 'http';
 import parseDataUrl from 'parse-data-url';
 
+import { assertServerEnv } from '../../utils';
 import type { PrezlyEnv } from '../types';
 
 function decodeJson(json: string): Record<string, any> {
@@ -30,9 +31,7 @@ function decodeHttpEnv(header: string): Record<string, any> {
 export function getEnvVariables<EnvType extends PrezlyEnv = PrezlyEnv>(
     req?: IncomingMessage,
 ): NodeJS.ProcessEnv & EnvType {
-    if (typeof window !== 'undefined') {
-        throw new Error('"getEnvVariables" should only be used on back-end side.');
-    }
+    assertServerEnv('getEnvVariables');
 
     const headerName = (process.env.HTTP_ENV_HEADER || '').toLowerCase();
 
