@@ -1,11 +1,9 @@
-import type { NewsroomLanguageSettings } from '@prezly/sdk';
-
 import type { LocaleCode, LocaleObject } from '../intl';
 
 import { getAlternateLanguageLinks } from './getAlternateLanguageLinks';
 
 function lang(code: LocaleCode, isDefault = false) {
-    return { code, is_default: isDefault } as NewsroomLanguageSettings;
+    return { code, is_default: isDefault };
 }
 
 function getTranslationUrl(locale: LocaleObject) {

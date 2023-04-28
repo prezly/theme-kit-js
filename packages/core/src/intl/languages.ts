@@ -2,7 +2,10 @@ import type { CultureRef, NewsroomLanguageSettings, Story } from '@prezly/sdk';
 
 import { LocaleObject } from './localeObject';
 
-function isOnlyCulture(culture: CultureRef, languages: NewsroomLanguageSettings[]): boolean {
+function isOnlyCulture(
+    culture: Pick<CultureRef, 'language_code'>,
+    languages: Pick<NewsroomLanguageSettings, 'locale'>[],
+): boolean {
     const numberOfLanguages = languages.filter(
         ({ locale: { language_code } }) => language_code === culture.language_code,
     ).length;
@@ -23,8 +26,8 @@ function isOnlyCulture(culture: CultureRef, languages: NewsroomLanguageSettings[
  *  - -> English (Global), English (UK), Spanish
  */
 export function getLanguageDisplayName(
-    language: NewsroomLanguageSettings,
-    languages: NewsroomLanguageSettings[],
+    language: Pick<NewsroomLanguageSettings, 'locale'>,
+    languages: Pick<NewsroomLanguageSettings, 'locale'>[],
 ): string {
     const { locale } = language;
 
@@ -42,30 +45,32 @@ export function getLanguageDisplayName(
 /**
  * @returns Language set as default in the Newsroom Settings.
  */
-export function getDefaultLanguage(languages: NewsroomLanguageSettings[]) {
+export function getDefaultLanguage<Language extends Pick<NewsroomLanguageSettings, 'is_default'>>(
+    languages: Language[],
+): Language {
     return languages.find(({ is_default }) => is_default) || languages[0];
 }
 
 /**
  * @returns Only languages having at least one published story
  */
-export function getUsedLanguages(languages: NewsroomLanguageSettings[]) {
+export function getUsedLanguages<
+    Language extends Pick<NewsroomLanguageSettings, 'public_stories_count'>,
+>(languages: Language[]): Language[] {
     return languages.filter((language) => language.public_stories_count > 0);
 }
 
-export function getLanguageByExactLocaleCode(
-    languages: NewsroomLanguageSettings[],
-    locale: LocaleObject,
-) {
+export function getLanguageByExactLocaleCode<
+    Language extends Pick<NewsroomLanguageSettings, 'code'>,
+>(languages: Language[], locale: LocaleObject): Language | undefined {
     const localeCode = locale.toUnderscoreCode();
     return languages.find(({ code }) => code === localeCode);
 }
 
 // See https://github.com/prezly/prezly/blob/master/lib/model/CulturePeer.php#L123
-export function getLanguageByNeutralLocaleCode(
-    languages: NewsroomLanguageSettings[],
-    locale: LocaleObject,
-) {
+export function getLanguageByNeutralLocaleCode<
+    Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
+>(languages: Language[], locale: LocaleObject): Language | undefined {
     const neutralLanguageCode = locale.toNeutralLanguageCode();
 
     // Prefer default language
@@ -93,10 +98,9 @@ export function getLanguageByNeutralLocaleCode(
 }
 
 // See https://github.com/prezly/prezly/blob/master/lib/model/CulturePeer.php#L159
-export function getLanguageByShortRegionCode(
-    languages: NewsroomLanguageSettings[],
-    locale: LocaleObject,
-) {
+export function getLanguageByShortRegionCode<
+    Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
+>(languages: Language[], locale: LocaleObject): Language | undefined {
     const shortRegionCode = locale.toRegionCode();
 
     // Prefer default language
@@ -120,7 +124,10 @@ export function getLanguageByShortRegionCode(
     );
 }
 
-export function getLanguageFromStory(languages: NewsroomLanguageSettings[], story: Story) {
+export function getLanguageFromStory<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
+    languages: Language[],
+    story: Pick<Story, 'culture'>,
+): Language | undefined {
     const { code: storyLocaleCode } = story.culture;
 
     return languages.find(({ code }) => code === storyLocaleCode);
@@ -129,7 +136,9 @@ export function getLanguageFromStory(languages: NewsroomLanguageSettings[], stor
 /**
  * Extracts company information for the selected locale
  */
-export function getCompanyInformation(languages: NewsroomLanguageSettings[], locale: LocaleObject) {
+export function getCompanyInformation<
+    Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'company_information'>,
+>(languages: Language[], locale: LocaleObject): Language['company_information'] {
     const currentLanguage =
         getLanguageByExactLocaleCode(languages, locale) || getDefaultLanguage(languages);
 
@@ -139,7 +148,9 @@ export function getCompanyInformation(languages: NewsroomLanguageSettings[], loc
 /**
  * Get newsroom notifications for the selected locale
  */
-export function getNotifications(languages: NewsroomLanguageSettings[], locale: LocaleObject) {
+export function getNotifications<
+    Language extends Pick<NewsroomLanguageSettings, 'code' | 'is_default' | 'notifications'>,
+>(languages: Language[], locale: LocaleObject): Language['notifications'] {
     const currentLanguage =
         getLanguageByExactLocaleCode(languages, locale) || getDefaultLanguage(languages);
 
@@ -154,10 +165,9 @@ export function getNotifications(languages: NewsroomLanguageSettings[], locale: 
  *
  * @param locale A LocaleObject constructed from FULL locale code (taken straight from the selected language)
  */
-export function getShortestLocaleCode(
-    languages: NewsroomLanguageSettings[],
-    locale: LocaleObject,
-): string | false {
+export function getShortestLocaleCode<
+    Language extends Pick<NewsroomLanguageSettings, 'code' | 'is_default'>,
+>(languages: Language[], locale: LocaleObject): string | false {
     const localeCode = locale.toUnderscoreCode();
     const defaultLanguage = getDefaultLanguage(languages);
     // If it's a default locale, return false (no locale needed in URL)

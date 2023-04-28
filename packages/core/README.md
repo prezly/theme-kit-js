@@ -12,8 +12,12 @@ The package is built with [Typescript] on top of [Prezly SDK].
 ### npm
 
 ```Shell
-npm install --save @prezly/theme-kit-core
+npm install --save @prezly/sdk @prezly/theme-kit-core
 ```
+
+#### peerDependencies
+
+This library depends on `@prezly/sdk`, which provides the communication with Prezly API and typings. We will occasionally bump the minimum required SDK version to ensure compatibility with latest Prezly features.
 
 ### .env
 

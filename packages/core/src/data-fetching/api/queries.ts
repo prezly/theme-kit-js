@@ -1,18 +1,19 @@
 import { SortOrder } from '@prezly/sdk';
 
 const publishedAndAccessible = [
-    { lifecycle_status: { $in: ['published', 'embargo'] } },
+    { status: { $in: ['published', 'embargo'] } },
     { visibility: { $in: ['public', 'private', 'embargo'] } },
 ];
 
 const publishedAndPublic = [
-    { lifecycle_status: { $in: ['published'] } },
+    { status: { $in: ['published'] } },
     { visibility: { $in: ['public'] } },
 ];
 
 export function getSlugQuery(newsroomUuid: string, slug: string) {
     return {
         $and: [
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             { 'newsroom.uuid': { $in: [newsroomUuid] } },
             { slug: { $eq: slug } },
             ...publishedAndAccessible,
@@ -27,10 +28,12 @@ export function getStoriesQuery(
     filterQuery?: Object,
 ) {
     const query: any = {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         $and: [...publishedAndPublic, { 'newsroom.uuid': { $in: [newsroomUuid] } }],
     };
 
     if (categoryId) {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         query.$and.push({ 'category.id': { $any: [categoryId] } });
     }
 

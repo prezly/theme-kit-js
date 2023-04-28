@@ -1,4 +1,4 @@
-import { createPrezlyClient, SortOrder } from '@prezly/sdk';
+import { ApiError, createPrezlyClient, SortOrder } from '@prezly/sdk';
 import type {
     Category,
     Newsroom,
@@ -10,7 +10,7 @@ import type {
 
 import { getDefaultLanguage } from '../../intl';
 import { DEFAULT_PAGE_SIZE } from '../../utils';
-import { isSdkError, isUuid } from '../lib';
+import { isUuid } from '../lib';
 
 import { toPaginationParams } from './lib';
 import {
@@ -64,6 +64,7 @@ export class PrezlyApi {
             accessToken,
             baseUrl,
             // This returns stories created by legacy version of the editor in a format that can be displayed by the Prezly Content Renderer.
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             headers: { 'X-Convert-v1-To-v3': 'true' },
         });
         this.newsroomUuid = newsroomUuid;
@@ -80,7 +81,7 @@ export class PrezlyApi {
             return story;
         } catch (error) {
             if (
-                isSdkError(error) &&
+                error instanceof ApiError &&
                 (error.status === ERROR_CODE_NOT_FOUND ||
                     error.status === ERROR_CODE_GONE ||
                     error.status === ERROR_CODE_FORBIDDEN)
@@ -250,7 +251,7 @@ export class PrezlyApi {
             const gallery = await this.sdk.newsroomGalleries.get(this.newsroomUuid, uuid);
             return gallery;
         } catch (error) {
-            if (isSdkError(error) && error.status === 404) {
+            if (error instanceof ApiError && error.status === 404) {
                 return null;
             }
             throw error;

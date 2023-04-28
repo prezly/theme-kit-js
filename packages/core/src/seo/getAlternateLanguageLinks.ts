@@ -10,8 +10,10 @@ import { bindLanguagesWithLocales, createAlternateLanguageLink } from './utils';
 const ENG_FALLBACK = 'en';
 const DEFAULT_HREF_LANG = 'x-default';
 
-export function getAlternateLanguageLinks(
-    availableLanguages: NewsroomLanguageSettings[],
+export function getAlternateLanguageLinks<
+    Language extends Pick<NewsroomLanguageSettings, 'code' | 'is_default'>,
+>(
+    availableLanguages: Language[],
     generateTranslationUrl: (locale: LocaleObject) => string | undefined,
 ): AlternateLanguageLink[] {
     const languagesWithLocales = bindLanguagesWithLocales(availableLanguages);

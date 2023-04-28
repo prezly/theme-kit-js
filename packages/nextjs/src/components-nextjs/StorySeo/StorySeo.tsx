@@ -3,7 +3,19 @@ import { Story } from '@prezly/sdk';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 
 type Props = {
-    story: ExtendedStory;
+    story: Pick<
+        ExtendedStory,
+        | 'seo_settings'
+        | 'title'
+        | 'subtitle'
+        | 'published_at'
+        | 'updated_at'
+        | 'author'
+        | 'oembed'
+        | 'newsroom'
+        | 'summary'
+        | 'visibility'
+    >;
     noindex?: boolean;
 };
 
@@ -23,6 +35,7 @@ export function StorySeo({ story, noindex }: Props) {
         subtitle ||
         summary;
     const canonical = story.seo_settings.canonical_url || oembed.url;
+    // TODO: This causes `@prezly/sdk` to leak into client bundle.
     const indexable = newsroom.is_indexable && story.visibility === Story.Visibility.PUBLIC;
 
     return (

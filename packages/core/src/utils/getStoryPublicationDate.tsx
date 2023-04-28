@@ -2,7 +2,9 @@ import type { Story } from '@prezly/sdk';
 
 import type { AlgoliaStory } from '../types';
 
-export function getStoryPublicationDate(story: Story | AlgoliaStory): Date | null {
+export function getStoryPublicationDate(
+    story: Pick<Story, 'published_at'> | AlgoliaStory,
+): Date | null {
     const { published_at } = story;
 
     if (!published_at) {

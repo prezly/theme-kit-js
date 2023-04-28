@@ -7,6 +7,13 @@ jobs:
     name: Run TSC type check
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        # The first item in the matrix should be the minimal supported SDK version, the last item should be the latest supported version.
+        # You should include any major releases that could potentially break the compatibility in between.
+        # Please keep this in sync with the peer dependency version and with the test.yml workflow.
+        sdk-version: [ 12, 14, 15 ] # v13 is just an intermediary version, so we skip it.
+
     steps:
     - uses: actions/checkout@v3
 
@@ -16,8 +23,9 @@ jobs:
         cache-name: cache-node-modules
       with:
         path: "**/node_modules"
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.sdk-version }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.sdk-version }}-
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
@@ -28,6 +36,13 @@ jobs:
         node-version-file: '.nvmrc'
 
     - run: npm ci
+
+    - name: Install SDK ${{ matrix.sdk-version }}
+      env:
+        SDK_VERSION: ${{ matrix.sdk-version }}
+      run: |
+        npm remove @prezly/sdk \
+          && npm install @prezly/sdk@${{ matrix.sdk-version }} --save-dev
 
     - run: npm run typecheck
       env:

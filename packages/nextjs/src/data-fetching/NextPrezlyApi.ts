@@ -17,7 +17,7 @@ export class NextPrezlyApi extends PrezlyApi {
     async getNewsroomServerSideProps(
         request?: IncomingMessage,
         nextLocaleIsoCode?: string,
-        story?: Story,
+        story?: Pick<Story, 'culture'>,
     ): Promise<PageProps & ServerSidePageProps> {
         const [newsroom, languages, categories, themePreset] = await Promise.all([
             this.getNewsroom(),
@@ -34,7 +34,6 @@ export class NextPrezlyApi extends PrezlyApi {
         const { code: localeCode } = currentLanguage || defaultLanguage;
         const locale = LocaleObject.fromAnyCode(localeCode);
 
-        // TODO: if no information given for current language, show boilerplate from default language
         const companyInformation = getCompanyInformation(languages, locale);
 
         const notifications = getNotifications(languages, locale);

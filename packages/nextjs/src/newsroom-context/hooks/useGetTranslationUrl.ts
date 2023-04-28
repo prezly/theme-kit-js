@@ -17,7 +17,9 @@ enum Visibility {
     CONFIDENTIAL = 'confidential',
 }
 
-function getAllowedTranslationVisibilityValues(story: ExtendedStory): Visibility[] {
+function getAllowedTranslationVisibilityValues(
+    story: Pick<ExtendedStory, 'visibility'>,
+): Visibility[] {
     const { visibility } = story;
 
     switch (visibility) {
@@ -41,7 +43,7 @@ function getAllowedTranslationVisibilityValues(story: ExtendedStory): Visibility
 function getTranslationUrl(
     locale: LocaleObject,
     path: string,
-    currentCategory?: Category,
+    currentCategory?: Pick<Category, 'i18n' | 'display_name'>,
     currentStory?: ExtendedStory,
     noFallback?: boolean,
 ) {
@@ -63,9 +65,10 @@ function getTranslationUrl(
         const allowedVisibilityValues = getAllowedTranslationVisibilityValues(currentStory);
 
         const translatedStory = currentStory.translations.find(
-            ({ culture, lifecycle_status, visibility }) =>
+            ({ culture, status, visibility }) =>
                 culture.locale === localeCode &&
-                Story.isPublished(lifecycle_status) &&
+                // TODO: This leaks `@prezly/sdk` dependency into the client bundle
+                Story.isPublished(status) &&
                 allowedVisibilityValues.includes(visibility),
         );
         if (translatedStory) {
