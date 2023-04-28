@@ -1,3 +1,4 @@
+import { assertServerEnv } from '@prezly/theme-kit-core';
 import type { GetStaticPropsContext, GetStaticPropsResult } from 'next';
 
 import type { PageProps, ServerSidePageProps } from '../types';
@@ -15,6 +16,7 @@ export function processStaticRequest<Props>(
     props: Props & PageProps & ServerSidePageProps,
     revalidateTimeout?: number,
 ): GetStaticPropsResult<Props> {
+    assertServerEnv('processStaticRequest');
     const { locale: nextLocale } = context;
 
     const { localeResolved, ...pageProps } = props;

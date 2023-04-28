@@ -1,8 +1,11 @@
+import { assertServerEnv } from '@prezly/theme-kit-core';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { getNextPrezlyApi } from '../../data-fetching';
 
 export async function fetchGalleries(req: NextApiRequest, res: NextApiResponse) {
+    assertServerEnv('fetchGalleries');
+
     if (req.method !== 'POST') {
         res.status(405);
         return;
