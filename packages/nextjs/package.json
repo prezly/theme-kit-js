@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "5.0.0-alpha.6",
+  "version": "5.0.0-alpha.7",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -54,7 +54,7 @@
     "next-seo": "^5.4.0"
   },
   "devDependencies": {
-    "@prezly/theme-kit-core": "^5.0.0-alpha.6",
+    "@prezly/theme-kit-core": "^5.0.0-alpha.7",
     "@sentry/nextjs": "7.49.0"
   },
   "publishConfig": {
