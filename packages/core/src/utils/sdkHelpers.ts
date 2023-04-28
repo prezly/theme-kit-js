@@ -20,6 +20,11 @@ export enum Status {
     PUBLISHED = 'published',
 }
 
+export enum FormatVersion {
+    HTML = 1,
+    SLATEJS = 3,
+}
+
 /**
  * @see https://github.com/prezly/javascript-sdk/blob/8c735968415ded334f60635a8cef66f76a20a73f/src/types/Story.ts#L337
  */
