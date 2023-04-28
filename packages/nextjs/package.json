@@ -5,6 +5,15 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": ["build", "README.md"],
+  "exports": {
+    ".": "./build/index.js",
+    "./server": "./build/server.js"
+  },
+  "typesVersions": {
+    "*": {
+      "server": ["build/server.d.ts"]
+    }
+  },
   "engines": {
     "node": ">= 16.x",
     "npm": ">= 8.x"

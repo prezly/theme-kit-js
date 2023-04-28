@@ -1,4 +1,5 @@
-import { assertServerEnv, getEnvVariables } from '@prezly/theme-kit-core';
+import { assertServerEnv } from '@prezly/theme-kit-core';
+import { getEnvVariables } from '@prezly/theme-kit-core/server';
 import type { IncomingMessage } from 'http';
 
 import { NextPrezlyApi } from './NextPrezlyApi';
