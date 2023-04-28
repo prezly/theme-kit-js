@@ -1,4 +1,4 @@
-import { useAsync } from '@react-hookz/web/esm/useAsync/useAsync';
+import { useAsync } from '@react-hookz/web/cjs/useAsync/useAsync';
 import { useCallback, useEffect, useState } from 'react';
 
 import type { PaginationProps } from './types';
