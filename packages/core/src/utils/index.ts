@@ -1,3 +1,4 @@
+export * from './assertServerEnv';
 export * from './boilerplate';
 export * from './constants';
 export * from './getAssetsUrl';
