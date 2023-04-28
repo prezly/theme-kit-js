@@ -1,6 +1,6 @@
-import { useAsync } from '@react-hookz/web/cjs/useAsync/useAsync';
 import { useCallback, useEffect, useState } from 'react';
 
+import { useAsync } from './lib';
 import type { PaginationProps } from './types';
 
 interface Parameters<T> {
