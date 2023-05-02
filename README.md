@@ -36,7 +36,6 @@ GitHub Actions are set up with a version matrix to ensure compatibility with all
 
 ## Before you publish
 
-* Make sure that `@prezly/theme-kit-core` dependency on the `nextjs` package is updated to the earliest supported version
 * Make sure that `@prezly/sdk` peer dependency on all packages is updated to the earliest supported version. This should usually match the version in root `devDependencies`.
 * Make sure that SDK version matrix in GitHub workflows is matching the `@prezly/sdk` peer dependency version range
 
