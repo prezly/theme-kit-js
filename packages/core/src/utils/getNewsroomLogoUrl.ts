@@ -1,6 +1,8 @@
 import type { Newsroom } from '@prezly/sdk';
 import { UploadcareImage } from '@prezly/uploadcare';
 
+import { OG_IMAGE_API_URL } from './constants';
+
 export function getNewsroomLogoUrl(newsroom: Pick<Newsroom, 'newsroom_logo'>): string {
     if (newsroom.newsroom_logo) {
         const image = UploadcareImage.createFromPrezlyStoragePayload(newsroom.newsroom_logo);
@@ -22,4 +24,8 @@ export function getNewsroomFaviconUrl(
     }
 
     return '';
+}
+
+export function getNewsroomOgImageUrl(newsroom: Pick<Newsroom, 'uuid'>): string {
+    return `${OG_IMAGE_API_URL}/${newsroom.uuid}`;
 }
