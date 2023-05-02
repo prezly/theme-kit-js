@@ -3,9 +3,16 @@ import { UploadcareImage } from '@prezly/uploadcare';
 
 import { OG_IMAGE_API_URL } from './constants';
 
-export function getNewsroomLogoUrl(newsroom: Pick<Newsroom, 'newsroom_logo'>): string {
+export function getNewsroomLogoUrl(
+    newsroom: Pick<Newsroom, 'newsroom_logo'>,
+    previewSize?: number,
+): string {
     if (newsroom.newsroom_logo) {
         const image = UploadcareImage.createFromPrezlyStoragePayload(newsroom.newsroom_logo);
+        if (previewSize) {
+            return image.preview(previewSize, previewSize).cdnUrl;
+        }
+
         return image.cdnUrl;
     }
 
