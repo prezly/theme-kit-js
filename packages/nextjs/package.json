@@ -44,16 +44,15 @@
   },
   "peerDependencies": {
     "@prezly/sdk": ">=12 <16",
-    "@prezly/theme-kit-core": "5.0.0-alpha.9 || ^5.x",
     "next": "^12.x || ^13.x",
     "react": "^17.x || ^18.x",
     "react-dom": "^17.x || ^18.x"
   },
   "dependencies": {
+    "@prezly/theme-kit-core": "^5.0.0",
     "next-seo": "^5.4.0"
   },
   "devDependencies": {
-    "@prezly/theme-kit-core": "^5.0.0",
     "@sentry/nextjs": "7.50.0"
   },
   "publishConfig": {
