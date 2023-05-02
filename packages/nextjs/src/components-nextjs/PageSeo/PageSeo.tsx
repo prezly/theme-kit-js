@@ -61,7 +61,7 @@ export function PageSeo({
     const canonicalUrl =
         canonical || getAbsoluteUrl(asPath, site.url, getLinkLocaleSlug(currentLocale));
     const siteName = companyInformation.name;
-    const sharingImageUrl = imageUrl || getNewsroomOgImageUrl(site);
+    const sharingImageUrl = imageUrl || getNewsroomOgImageUrl(site, currentLocale);
 
     const alternateLanguageLinks: AlternateLanguageLink[] = useMemo(() => {
         if (!languages.length) {
