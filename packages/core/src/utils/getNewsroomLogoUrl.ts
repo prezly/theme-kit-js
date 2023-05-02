@@ -1,5 +1,6 @@
 import type { Newsroom } from '@prezly/sdk';
 import { UploadcareImage } from '@prezly/uploadcare';
+
 import type { LocaleObject } from '../intl';
 
 import { OG_IMAGE_API_URL } from './constants';
