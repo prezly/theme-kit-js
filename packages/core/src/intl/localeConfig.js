@@ -18,7 +18,7 @@ const lowercaseLocalPermutations = Array.from(
             // Remove number-only codes from possible permutations (like `419` for `es-419`)
             .filter((code) => Number.isNaN(Number(code)))
             // Remove codes that are too long to be valid standalone codes (like `hant` for `zh-hant`)
-            .filter((code) => code.length > 3),
+            .filter((code) => code.length <= 3),
     ]),
 ).sort();
 
