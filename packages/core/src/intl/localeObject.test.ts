@@ -1,3 +1,4 @@
+import localeConfig from './localeConfig';
 import { LocaleObject } from './localeObject';
 
 it('throws when created from invalid code', () => {
@@ -78,4 +79,10 @@ it('can compare two objects', () => {
     expect(enUsLocaleDuplicate.isEqual(enUsLocale)).toBe(true);
     expect(enUsLocale.isEqual(deDeLocale)).toBe(false);
     expect(deDeLocale.isEqual(enUsLocale)).toBe(false);
+});
+
+it('supports all locales from localeConfig', () => {
+    localeConfig.forEach((localeCode) => {
+        expect(() => LocaleObject.fromAnyCode(localeCode)).not.toThrow();
+    });
 });
