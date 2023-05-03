@@ -2,11 +2,11 @@ import { LocaleObject } from './localeObject';
 
 it('throws when created from invalid code', () => {
     // @ts-expect-error
-    expect(() => new LocaleObject('en_US')).toThrow('Invalid locale code provided!');
+    expect(() => new LocaleObject('en_US')).toThrow('Invalid locale code provided: "en_US"');
     // @ts-expect-error
-    expect(() => new LocaleObject('1234')).toThrow('Invalid locale code provided!');
+    expect(() => new LocaleObject('1234')).toThrow('Invalid locale code provided: "1234"');
     // @ts-expect-error
-    expect(() => new LocaleObject('*!en-US')).toThrow('Invalid locale code provided!');
+    expect(() => new LocaleObject('*!en-US')).toThrow('Invalid locale code provided: "*!en-US"');
 });
 
 it('throws when created with unsupported code', () => {
