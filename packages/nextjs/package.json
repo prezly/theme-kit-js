@@ -7,7 +7,8 @@
   "files": ["build", "README.md"],
   "exports": {
     ".": "./build/index.js",
-    "./server": "./build/server.js"
+    "./server": "./build/server.js",
+    "./playwright": "./build/playwright/index.js"
   },
   "typesVersions": {
     "*": {
@@ -46,7 +47,13 @@
     "@prezly/sdk": ">=12 <16",
     "next": "^12.x || ^13.x",
     "react": "^17.x || ^18.x",
-    "react-dom": "^17.x || ^18.x"
+    "react-dom": "^17.x || ^18.x",
+    "@playwright/test": "1.x"
+  },
+  "peerDependenciesMeta": {
+    "@playwright/test": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@prezly/theme-kit-core": "^5.1.0",
