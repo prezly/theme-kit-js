@@ -7,6 +7,7 @@ import type {
     Stories,
     Story,
 } from '@prezly/sdk';
+import 'isomorphic-fetch';
 
 import { getDefaultLanguage } from '../../intl';
 import { assertServerEnv, DEFAULT_PAGE_SIZE } from '../../utils';
