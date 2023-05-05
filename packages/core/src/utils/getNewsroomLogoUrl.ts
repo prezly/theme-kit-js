@@ -1,9 +1,20 @@
 import type { Newsroom } from '@prezly/sdk';
 import { UploadcareImage } from '@prezly/uploadcare';
 
-export function getNewsroomLogoUrl(newsroom: Pick<Newsroom, 'newsroom_logo'>): string {
+import type { LocaleObject } from '../intl';
+
+import { OG_IMAGE_API_URL } from './constants';
+
+export function getNewsroomLogoUrl(
+    newsroom: Pick<Newsroom, 'newsroom_logo'>,
+    previewSize?: number,
+): string {
     if (newsroom.newsroom_logo) {
         const image = UploadcareImage.createFromPrezlyStoragePayload(newsroom.newsroom_logo);
+        if (previewSize) {
+            return image.preview(previewSize, previewSize).cdnUrl;
+        }
+
         return image.cdnUrl;
     }
 
@@ -22,4 +33,11 @@ export function getNewsroomFaviconUrl(
     }
 
     return '';
+}
+
+export function getNewsroomOgImageUrl(
+    newsroom: Pick<Newsroom, 'uuid'>,
+    locale?: LocaleObject,
+): string {
+    return `${OG_IMAGE_API_URL}/${newsroom.uuid}${locale ? `?locale=${locale.toUrlSlug()}` : ''}`;
 }

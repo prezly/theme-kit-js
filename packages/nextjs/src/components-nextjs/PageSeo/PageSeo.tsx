@@ -1,6 +1,6 @@
 import {
     getAlternateLanguageLinks,
-    getNewsroomLogoUrl,
+    getNewsroomOgImageUrl,
     getUsedLanguages,
 } from '@prezly/theme-kit-core';
 import type { AlternateLanguageLink } from '@prezly/theme-kit-core';
@@ -61,7 +61,7 @@ export function PageSeo({
     const canonicalUrl =
         canonical || getAbsoluteUrl(asPath, site.url, getLinkLocaleSlug(currentLocale));
     const siteName = companyInformation.name;
-    const logoUrl = imageUrl || getNewsroomLogoUrl(site);
+    const sharingImageUrl = imageUrl || getNewsroomOgImageUrl(site, currentLocale);
 
     const alternateLanguageLinks: AlternateLanguageLink[] = useMemo(() => {
         if (!languages.length) {
@@ -99,7 +99,7 @@ export function PageSeo({
                 locale: currentLocale.toUnderscoreCode(),
                 images: [
                     {
-                        url: logoUrl,
+                        url: sharingImageUrl,
                         alt: pageTitle,
                     },
                 ],
@@ -112,7 +112,7 @@ export function PageSeo({
                 ...twitter,
             }}
             additionalMetaTags={[
-                { name: 'twitter:image', content: logoUrl },
+                { name: 'twitter:image', content: sharingImageUrl },
                 site.google_search_console_key && {
                     name: 'google-site-verification',
                     content: site.google_search_console_key,
