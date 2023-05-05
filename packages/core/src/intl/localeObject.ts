@@ -20,7 +20,7 @@ export class LocaleObject {
 
     private constructor(localeCode: string) {
         if (!/^([a-z]{2,3})(-[a-z\d]{1,4})?$/i.test(localeCode)) {
-            throw new Error('Invalid locale code provided!');
+            throw new Error(`Invalid locale code provided: "${localeCode}"`);
         }
 
         const [language, region] = localeCode.split('-');
