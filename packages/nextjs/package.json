@@ -12,7 +12,8 @@
   },
   "typesVersions": {
     "*": {
-      "server": ["build/server.d.ts"]
+      "server": ["build/server.d.ts"],
+      "playwright": ["build/playwright/index.d.ts"]
     }
   },
   "engines": {
