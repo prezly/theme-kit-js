@@ -55,11 +55,16 @@ export const playwrightConfig: PlaywrightTestConfig = {
             },
         },
 
-        {
-            name: 'webkit',
-            use: {
-                ...devices['Desktop Safari'],
-            },
-        },
+        // Safari fails to load localhost pages due to SSL error. We'll only test Webkit on CI, where have an HTTPS server.
+        ...(process.env.CI
+            ? [
+                  {
+                      name: 'webkit',
+                      use: {
+                          ...devices['Desktop Safari'],
+                      },
+                  },
+              ]
+            : []),
     ],
 };
