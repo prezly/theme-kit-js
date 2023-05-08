@@ -61,7 +61,7 @@
     "next-seo": "^5.4.0"
   },
   "devDependencies": {
-    "@sentry/nextjs": "7.51.0"
+    "@sentry/nextjs": "7.51.1"
   },
   "publishConfig": {
     "access": "public"
