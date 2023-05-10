@@ -57,7 +57,9 @@ export function getAlternateLanguageLinks<
             // We try to find fallback from provided translations of current regionIndependentLocaleCode
             // If there is no defined fallback in the list we will use just first translation as a region independent translation
             const fallback =
-                getFallbackLocale(regionIndependentLocaleCode, localesArray) ?? localesArray.at(0);
+                getFallbackLocale(regionIndependentLocaleCode, localesArray) ??
+                // using simple array index as Array.at() is supported only in Safari 15.4 upwards
+                localesArray[0];
 
             if (fallback) {
                 pushLocaleToLinks(fallback, regionIndependentLocaleCode);
