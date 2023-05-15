@@ -43,8 +43,8 @@ export function StorySeo({ story, noindex }: Props) {
                 title={seoTitle}
                 description={seoDescription}
                 canonical={canonical}
-                noindex={noindex ?? !indexable}
-                nofollow={noindex ?? !indexable}
+                noindex={noindex || !indexable}
+                nofollow={noindex || !indexable}
                 openGraph={{
                     title,
                     description: seoDescription,

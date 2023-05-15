@@ -90,8 +90,8 @@ export function PageSeo({
             title={pageTitle}
             description={pageDescription}
             canonical={canonicalUrl}
-            noindex={nextSeoProps.noindex ?? !site.is_indexable}
-            nofollow={nextSeoProps.nofollow ?? !site.is_indexable}
+            noindex={nextSeoProps.noindex || !site.is_indexable}
+            nofollow={nextSeoProps.nofollow || !site.is_indexable}
             openGraph={{
                 url: canonicalUrl,
                 title: pageTitle,
