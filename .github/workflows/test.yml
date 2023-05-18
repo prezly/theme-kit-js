@@ -18,26 +18,13 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v3
 
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Environment
+        uses: prezly/setup-github-actions@v1
         with:
-          node-version-file: '.nvmrc'
-
-      - name: Cache node modules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.sdk-version }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.sdk-version }}-
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            pnpm: "8.4.0"
 
       - name: Install Node.js dependencies
-        run: pnpm ci
+        run: pnpm install
 
       - name: Install SDK ${{ matrix.sdk-version }}
         env:

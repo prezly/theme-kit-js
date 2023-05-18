@@ -21,31 +21,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
+    - name: Check out Git repository
+      uses: actions/checkout@v3
 
-    - uses: pnpm/action-setup@v2
-      name: Install pnpm
-      id: pnpm-install
+    - name: Setup Environment
+      uses: prezly/setup-github-actions@v1
       with:
-          version: 7
-          run_install: false
-
-    - name: Get pnpm store directory
-      id: pnpm-cache
-      shell: bash
-      run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-    - uses: actions/cache@v3
-      name: Setup pnpm cache
-      with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-              ${{ runner.os }}-pnpm-store-
+          pnpm: "8.4.0"
 
     - name: Install dependencies
       run: pnpm install
@@ -58,6 +40,7 @@ jobs:
       env:
         TESTS_BASE_URL: ${{ github.event.deployment_status.target_url }}
         TESTS_NEWSROOM_NAME: ${{ inputs.site-name }}
+
     - uses: actions/upload-artifact@v3
       if: always()
       with:
