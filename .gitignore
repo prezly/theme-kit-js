@@ -43,3 +43,10 @@ build/
 
 # Test
 coverage/
+
+# lock files
+yarn.lock
+package-lock.json
+
+# pnpm
+.pnpm
