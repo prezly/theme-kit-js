@@ -51,3 +51,6 @@ pnpm-lock.yaml
 
 # pnpm
 .pnpm
+
+# turbo
+.turbo

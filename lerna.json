@@ -1,8 +1,5 @@
 {
-  "publishConfig": {
-    "access": "public"
-  },
-  "npmClient": "pnpm",
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "useWorkspaces": true,
-  "version": "5.2.3"
+  "version": "0.83.1"
 }

@@ -3,21 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "pnpm lerna run build",
-    "dev:core": "pnpm lerna run dev --scope=@prezly/theme-kit-core",
-    "dev:nextjs": "pnpm lerna run dev --scope=@prezly/theme-kit-nextjs",
-    "lint": "pnpm lerna run lint",
-    "lint:fix": "pnpm lint -- --fix",
+    "build": "NODE_ENV=production turbo run build",
+    "build:dev": "NODE_ENV=development turbo run build",
+    "watch": "NODE_ENV=development turbo run watch",
+    "lint": "pnpm --recursive lint",
+    "lint:fix": "pnpm --recursive lint --fix",
     "prettier": "prettier --check './packages/**/*.(js|ts|tsx)'",
     "prettier:fix": "pnpm prettier --write --no-list-different",
-    "test": "pnpm lerna run test",
+    "test": "turbo run test",
     "typecheck": "pnpm lerna run typecheck",
     "check": "pnpm lerna run lint,typecheck,test",
     "release": "pnpm release:prepare && pnpm release:publish",
     "release:preview": "pnpm release:prepare && pnpm release:publish:preview",
-    "release:prepare": "pnpm lerna run lint,test,build",
-    "release:publish": "lerna publish --no-private",
-    "release:publish:preview": "lerna publish prerelease --dist-tag preview"
+    "release:build": "pnpm build --force",
+    "release:prepare": "pnpm run clean && pnpm install && pnpm release:build && pnpm check",
+    "release:publish": "lerna publish",
+    "release:publish:preview": "lerna publish prerelease --dist-tag preview",
+    "clean": "pnpm clean:build && pnpm clean:node_modules",
+    "clean:build": "rimraf *.tsbuildinfo && rimraf node_modules/.cache/ && pnpm --recursive run clean:build",
+    "clean:node_modules": "rimraf node_modules/ pnpm-lock.yaml package-lock.json && pnpm --recursive run clean:node_modules"
   },
   "dependencies": {
     "next": "^13.1.1",
@@ -39,6 +43,8 @@
     "prettier": "2.8.8",
     "rimraf": "5.0.1",
     "ts-jest": "29.1.0",
+    "turbo": "^1.9.3",
     "typescript": "4.9.5"
-  }
+  },
+  "packageManager": "pnpm@8.5.0"
 }
