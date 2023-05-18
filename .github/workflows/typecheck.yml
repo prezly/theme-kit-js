@@ -17,33 +17,41 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Cache node modules
-      uses: actions/cache@v3
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: "**/node_modules"
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.sdk-version }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.sdk-version }}-
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
         node-version-file: '.nvmrc'
 
-    - run: npm ci
+    - uses: pnpm/action-setup@v2
+      name: Install pnpm
+      id: pnpm-install
+      with:
+          version: 7
+          run_install: false
+
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      shell: bash
+      run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+    - uses: actions/cache@v3
+      name: Setup pnpm cache
+      with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+              ${{ runner.os }}-pnpm-store-
+
+    - run: pnpm install
 
     - name: Install SDK ${{ matrix.sdk-version }}
       env:
         SDK_VERSION: ${{ matrix.sdk-version }}
       run: |
-        npm remove @prezly/sdk \
-          && npm install @prezly/sdk@${{ matrix.sdk-version }} --save-dev
+        pnpm remove @prezly/sdk \
+          && pnpm add @prezly/sdk@${{ matrix.sdk-version }} --save-dev
 
-    - run: npm run typecheck
+    - run: pnpm typecheck
       env:
         CI: true

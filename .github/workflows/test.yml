@@ -37,14 +37,14 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install Node.js dependencies
-        run: npm ci
+        run: pnpm ci
 
       - name: Install SDK ${{ matrix.sdk-version }}
         env:
           SDK_VERSION: ${{ matrix.sdk-version }}
         run: |
-          npm remove @prezly/sdk \
-            && npm install @prezly/sdk@${{ matrix.sdk-version }} --save-dev
+          pnpm remove @prezly/sdk \
+            && pnpm add @prezly/sdk@${{ matrix.sdk-version }} --save-dev
 
       - name: Run tests
-        run: npm test
+        run: pnpm test

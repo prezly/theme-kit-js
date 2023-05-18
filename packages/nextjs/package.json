@@ -17,12 +17,12 @@
     }
   },
   "engines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
+    "node": ">= 16.13.0",
+    "pnpm": ">= 8.4.0"
   },
   "devEngines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
+    "node": ">= 16.13.0",
+    "pnpm": ">= 8.4.0"
   },
   "repository": {
     "type": "git",
@@ -57,7 +57,7 @@
     }
   },
   "dependencies": {
-    "@prezly/theme-kit-core": "^5.2.2",
+    "@prezly/theme-kit-core": "workspace:*",
     "next-seo": "^5.4.0"
   },
   "devDependencies": {

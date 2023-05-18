@@ -39,12 +39,12 @@
     "@types/parse-data-url": "3.0.0"
   },
   "engines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
+    "node": ">= 16.13.0",
+    "pnpm": ">= 8.4.0"
   },
   "devEngines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
+    "node": ">= 16.13.0",
+    "pnpm": ">= 8.4.0"
   },
   "keywords": ["prezly"],
   "author": "Prezly Team",
