@@ -31,7 +31,7 @@ jobs:
           SDK_VERSION: ${{ matrix.sdk-version }}
         run: |
           pnpm remove @prezly/sdk \
-            && pnpm add @prezly/sdk@${{ matrix.sdk-version }} --save-dev
+            && pnpm add @prezly/sdk@${{ matrix.sdk-version }} --save-dev -w
 
       - name: Run tests
         run: pnpm test
