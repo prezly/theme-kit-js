@@ -23,6 +23,9 @@
     "build": "tsc --project .",
     "watch": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --incremental --project .",
+    "clean": "pnpm clean:build && pnpm clean:node_modules",
+    "clean:node_modules": "rimraf node_modules/",
+    "clean:build": "rimraf ./build ./coverage *.tsbuildinfo .turbo",
     "lint": "eslint src",
     "test": "jest"
   },

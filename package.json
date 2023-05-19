@@ -16,7 +16,7 @@
     "release": "pnpm release:prepare && pnpm release:publish",
     "release:preview": "pnpm release:prepare && pnpm release:publish:preview",
     "release:build": "pnpm build --force",
-    "release:prepare": "pnpm run clean && pnpm install && pnpm release:build && pnpm check",
+    "release:prepare": "pnpm clean && pnpm install && pnpm release:build && pnpm check",
     "release:publish": "lerna publish",
     "release:publish:preview": "lerna publish prerelease --dist-tag preview",
     "clean": "pnpm clean:build && pnpm clean:node_modules",
