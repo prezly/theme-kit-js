@@ -8,7 +8,6 @@ See individual package READMEs for more information:
 - [@prezly/theme-kit-nextjs](./packages/nextjs#readme)
 
 
-
 ## Working with the repo locally
 
 ### Getting started
@@ -23,11 +22,36 @@ npm i pnpm -g
 
 ### Scripts
 
-The repo is designed to run all of the scripts from the root directory with the help of [Lerna] and [Nx].
-This ensures that all tasks are aware of dependencies between packages. Nx also provides caching, which speeds up the repeated tasks.
+The repo is designed to run all of the scripts from the root directory with the help of [Lerna] and [Turbo].
+This ensures that all tasks are aware of dependencies between packages. Turbo also provides caching, which speeds up the repeated tasks.
 You can learn more about task pipeline configuration from [Lerna docs](https://lerna.js.org/docs/concepts/task-pipeline-configuration).
 
-For convenient development of individual packages, you have the `dev:` scripts. Each script will start the selected package in watch mode. Changes to both the package and its dependencies will result in a new build, so you only need to run a single script when working on packages.
+You can start developing packages and watch for changes simultaneously using `watch` command. Changes to both the package and its dependencies will result in a new build.
+
+Below is an overview of the scripts defined in the `scripts` section of the `package.json` file. The table lists each command along with a brief description of its functionality. These scripts can be executed using package managers such as npm or pnpm in the project's root folder.
+
+
+| Command                   | Description                                                                                         |
+|---------------------------|-----------------------------------------------------------------------------------------------------|
+| `build`                   | Runs the production build of the project.                                                           |
+| `build:dev`               | Runs the development build of the project.                                                          |
+| `watch`                   | Starts a development scripts that compiles ts files and watches for file changes.                   |
+| `lint`                    | Runs linting on the project's source code.                                                          |
+| `lint:fix`                | Runs linting on the project's source code and automatically fixes any fixable issues.               |
+| `prettier`                | Checks the project's source code for formatting consistency using Prettier.                         |
+| `prettier:fix`            | Formats the project's source code using Prettier.                                                   |
+| `test`                    | Runs tests for the project.                                                                         |
+| `typecheck`               | Checks the project's TypeScript types.                                                              |
+| `check`                   | Runs linting, type checking, and tests for the project.                                             |
+| `release`                 | Prepares and publishes a new release of the project.                                                |
+| `release:preview`         | Prepares and publishes a preview release of the project.                                            |
+| `release:build`           | Forces a build of the project for the release.                                                      |
+| `release:prepare`         | Cleans the project, installs dependencies, builds the project, and performs a check before release. |
+| `release:publish`         | Publishes a new release using Lerna.                                                                |
+| `release:publish:preview` | Publishes a preview release using Lerna with a prerelease tag.                                      |
+| `clean`                   | Cleans the project's build files and `node_modules` directories.                                    |
+| `clean:build`             | Removes build-related files and directories.                                                        |
+| `clean:node_modules`      | Removes the `node_modules` directory and associated lock files.                                     |
 
 ### Prezly SDK dependency
 
@@ -38,14 +62,14 @@ Prezly SDK has a tendency to introduce major releases that are not necessary bre
 
 GitHub Actions are set up with a version matrix to ensure compatibility with all currently supported versions. Please keep the matrix in sync with the peer dependency version range.
 
-### Publishing new releases
+## Publishing new releases
 
-## Before you publish
+### Before you publish
 
 * Make sure that `@prezly/sdk` peer dependency on all packages is updated to the earliest supported version. This should usually match the version in root `devDependencies`.
 * Make sure that SDK version matrix in GitHub workflows is matching the `@prezly/sdk` peer dependency version range
 
-## Publishing a new version
+### Publishing a new version
 
 To keep versions in sync, releasing new packages should only be done from the root directory.
 
@@ -58,4 +82,4 @@ To publish a preview version (e.g. for testing), run `pnpm release:preview`. Thi
 Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=@prezly/theme-kit).
 
 [Lerna]: https://lerna.js.org/
-[Nx]: https://nx.dev/
+[Turbo]: https://turbo.build/
