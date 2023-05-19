@@ -1,12 +1,4 @@
-const OMIT_DEPENDENCIES = [
-    '@types/react',
-    '@types/react-dom',
-    'react',
-    'react-dom',
-    'next',
-    '@playwright/test',
-    '@prezly/sdk',
-];
+const OMIT_DEPENDENCIES = ['@types/react', '@types/react-dom', 'react', 'react-dom', 'next'];
 
 function readPackage(pkg, context) {
     if (pkg.name === 'theme-kit') {
