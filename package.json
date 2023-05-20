@@ -14,7 +14,7 @@
     "prettier:fix": "npm run prettier -- --write --no-list-different",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "check": "npx lerna run lint,typecheck,test",
+    "check": "turbo run lint typecheck test",
     "release": "npm run release:prepare && npm run release:publish",
     "release:preview": "npm run release:prepare && npm run release:publish:preview",
     "release:prepare": "npx lerna run lint,test,build",
