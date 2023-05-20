@@ -39,7 +39,7 @@
   "scripts": {
     "prebuild": "rimraf build/* *.tsbuildinfo",
     "build": "tsc --project .",
-    "dev": "tsc --watch --preserveWatchOutput --project .",
+    "watch": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
     "test": "jest"

@@ -11,6 +11,9 @@
     "test": {
       "dependsOn": ["^build"],
       "outputs": ["coverage/**"]
+    },
+    "watch": {
+      "dependsOn": ["^build"]
     }
   }
 }
