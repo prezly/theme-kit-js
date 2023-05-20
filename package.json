@@ -12,7 +12,7 @@
     "prettier": "prettier --check './packages/**/*.(js|ts|tsx)'",
     "prettier:fix": "npm run prettier -- --write --no-list-different",
     "test": "npx lerna run test",
-    "typecheck": "npx lerna run typecheck",
+    "typecheck": "turbo run typecheck",
     "check": "npx lerna run lint,typecheck,test",
     "release": "npm run release:prepare && npm run release:publish",
     "release:preview": "npm run release:prepare && npm run release:publish:preview",
