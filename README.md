@@ -17,11 +17,11 @@ After pulling the repo, run `npm i` to install the dependencies. This will insta
 
 ### NPM scripts
 
-The repo is designed to run all of the scripts from the root directory with the help of [Lerna] and [Nx].
-This ensures that all tasks are aware of dependencies between packages. Nx also provides caching, which speeds up the repeated tasks.
-You can learn more about task pipeline configuration from [Lerna docs](https://lerna.js.org/docs/concepts/task-pipeline-configuration).
+The repo is designed to run all of the scripts from the root directory with the help of [Turborepo].
+This ensures that all tasks are aware of dependencies between packages. Turborepo also provides caching, which speeds up the repeated tasks.
+You can learn more about task pipeline configuration from [Turborepo docs](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks).
 
-For convenient development of individual packages, you have the `dev:` npm scripts. Each script will start the selected package in watch mode. Changes to both the package and its dependencies will result in a new build, so you only need to run a single script when working on packages.
+For convenient development of individual packages, you have the `watch:` scripts. Each script will start the selected package in watch mode. Changes to both the package and its dependencies will result in a new build, so you only need to run a single script when working on packages.
 
 ### Prezly SDK dependency
 
@@ -52,4 +52,4 @@ To publish a preview version (e.g. for testing), run `npm run release:preview`. 
 Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=@prezly/theme-kit).
 
 [Lerna]: https://lerna.js.org/
-[Nx]: https://nx.dev/
+[Turborepo]: https://turbo.build/repo/
