@@ -13,6 +13,7 @@
       "outputs": ["coverage/**"]
     },
     "watch": {
+      "cache": false,
       "dependsOn": ["^build"]
     },
     "lint": {
