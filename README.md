@@ -23,6 +23,25 @@ You can learn more about task pipeline configuration from [Turborepo docs](https
 
 For convenient development of individual packages, you have the `watch:` scripts. Each script will start the selected package in watch mode. Changes to both the package and its dependencies will result in a new build, so you only need to run a single script when working on packages.
 
+| Command                 | Description                                                                               |
+|-------------------------|-------------------------------------------------------------------------------------------|
+| build                   | Builds the project for production.                                                        |
+| watch                   | Watches for changes and rebuilds all packages on file change simultaneously.              |
+| watch:core              | Watches only the `@prezly/theme-kit-core` package for changes and rebuilds the project.   |
+| watch:nextjs            | Watches only the `@prezly/theme-kit-nextjs` package for changes and rebuilds the project. |
+| lint                    | Runs the linter across all packages to check for code quality issues.                     |
+| lint:fix                | Runs the linter across all packages and automatically fixes code quality issues.          |
+| prettier                | Checks if code formatting meets the `.prettierrc` rules.                                  |
+| prettier:fix            | Formats the code according to the `.prettierrc` rules.                                    |
+| test                    | Runs the Jest test suite for across all packages.                                         |
+| typecheck               | Checks the TypeScript types issues across all packages.                                   |
+| check                   | Runs `lint`, `typecheck`, and `test` commands concurrently.                               |
+| release                 | Prepares and publishes a **new release** of the project.                                  |
+| release:preview         | Prepares and publishes a **preview release** of the project.                              |
+| release:prepare         | Runs `lint`, `test`, and `build` for release preparation.                                 |
+| release:publish         | Publishes a new release of the project using Lerna.                                       |
+| release:publish:preview | Publishes a preview release of the project using Lerna.                                   |
+
 ### Prezly SDK dependency
 
 We aim to support the broadest range of Prezly SDK version.<br/>
