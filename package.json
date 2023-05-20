@@ -17,7 +17,7 @@
     "check": "turbo run lint typecheck test",
     "release": "npm run release:prepare && npm run release:publish",
     "release:preview": "npm run release:prepare && npm run release:publish:preview",
-    "release:prepare": "npx lerna run lint,test,build",
+    "release:prepare": "turbo run lint test build",
     "release:publish": "lerna publish --no-private",
     "release:publish:preview": "lerna publish prerelease --dist-tag preview"
   },
