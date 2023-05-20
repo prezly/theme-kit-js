@@ -8,10 +8,6 @@
     }
   },
   "targetDefaults": {
-    "test": {
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/coverage"]
-    },
     "dev": {
       "dependsOn": ["^build"]
     }

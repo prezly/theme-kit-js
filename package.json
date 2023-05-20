@@ -11,7 +11,7 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --check './packages/**/*.(js|ts|tsx)'",
     "prettier:fix": "npm run prettier -- --write --no-list-different",
-    "test": "npx lerna run test",
+    "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "check": "npx lerna run lint,typecheck,test",
     "release": "npm run release:prepare && npm run release:publish",
