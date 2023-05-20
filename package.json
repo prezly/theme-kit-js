@@ -2,11 +2,9 @@
   "name": "theme-kit",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "scripts": {
-    "build": "npx lerna run build",
+    "build": "turbo run build",
     "dev:core": "npx lerna run dev --scope=@prezly/theme-kit-core",
     "dev:nextjs": "npx lerna run dev --scope=@prezly/theme-kit-nextjs",
     "lint": "npx lerna run lint",

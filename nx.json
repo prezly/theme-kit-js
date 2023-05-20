@@ -8,10 +8,6 @@
     }
   },
   "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/build", "{projectRoot}/tsconfig.tsbuildinfo"]
-    },
     "typecheck": {
       "dependsOn": ["^build"]
     },
