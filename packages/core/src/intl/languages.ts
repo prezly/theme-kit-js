@@ -193,7 +193,7 @@ export function getShortestLocaleCode<
     );
     // Prevent collision with neutral language codes
     const lowerCasedShortRegionCode = shortRegionCode.toLowerCase();
-    const mathchingNeutralLanguagesByRegionCode = languages.filter(
+    const matchingNeutralLanguagesByRegionCode = languages.filter(
         ({ code }) =>
             LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === lowerCasedShortRegionCode ||
             code === lowerCasedShortRegionCode,
@@ -201,7 +201,7 @@ export function getShortestLocaleCode<
     if (
         matchingLanguagesByRegionCode.length === 1 &&
         // If there are 2 or more matching neutral languages, it means that there are no languages that can be shortened to neutral code
-        mathchingNeutralLanguagesByRegionCode.length !== 1 &&
+        matchingNeutralLanguagesByRegionCode.length !== 1 &&
         // We don't want just numbers in our region code
         Number.isNaN(Number(shortRegionCode))
     ) {

@@ -86,7 +86,7 @@ export class LocaleObject {
     }
 
     /**
-     * @returns Only the culture/regtion part without the language part: `be`, `us`, `fr`
+     * @returns Only the culture/region part without the language part: `BE`, `US`, `FR`
      */
     public toRegionCode(): string {
         const [language, region] = this.localeCode.split('-');
