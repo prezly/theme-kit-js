@@ -26,11 +26,29 @@ export function getLanguageFromNextLocaleIsoCode<
     let targetLanguage: Language | undefined;
 
     if (nextLocaleIsoCode.length >= 2 && nextLocaleIsoCode.length <= 4) {
-        // The order of methods here is reversed from `getShortestLocaleCode`, so that the logic "unwraps" the possible variants with no collisions
-        targetLanguage =
-            getLanguageByExactLocaleCode(languages, locale) ||
-            getLanguageByShortRegionCode(languages, locale) ||
-            getLanguageByNeutralLocaleCode(languages, locale);
+        const languageByExactLocaleCode = getLanguageByExactLocaleCode(languages, locale);
+        const languageByNeutralLocaleCode = getLanguageByNeutralLocaleCode(languages, locale);
+        const languageByShortRegionCode = getLanguageByShortRegionCode(languages, locale);
+
+        if (languageByExactLocaleCode) {
+            targetLanguage = languageByExactLocaleCode;
+        } else if (languageByNeutralLocaleCode && languageByShortRegionCode) {
+            // e.g: nl and nl_NL
+            if (
+                locale.toNeutralLanguageCode() ===
+                LocaleObject.fromAnyCode(languageByShortRegionCode.code).toNeutralLanguageCode()
+            ) {
+                targetLanguage = languageByShortRegionCode;
+            }
+            // e.g: de and en_DE
+            else {
+                targetLanguage = languageByNeutralLocaleCode;
+            }
+        } else if (languageByNeutralLocaleCode && !languageByShortRegionCode) {
+            targetLanguage = languageByNeutralLocaleCode;
+        } else if (languageByShortRegionCode && !languageByNeutralLocaleCode) {
+            targetLanguage = languageByShortRegionCode;
+        }
     } else {
         targetLanguage = getLanguageByExactLocaleCode(languages, locale);
     }
