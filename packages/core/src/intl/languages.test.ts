@@ -1,4 +1,4 @@
-import { LANGUAGES } from '../__mocks__/languages';
+import { LANGUAGES, LANGUAGES_2 } from '../__mocks__/languages';
 import { STORY } from '../__mocks__/story';
 
 import {
@@ -137,6 +137,14 @@ describe('getLanguageByShortRegionCode', () => {
 
         expect(getLanguageByShortRegionCode(languages, LocaleObject.fromAnyCode('be'))).toEqual(
             LANGUAGES.fr_BE,
+        );
+    });
+
+    it('returns correct language with different neutral codes but same region codes', () => {
+        const languages = [LANGUAGES_2.en_DE, LANGUAGES_2.de_DE];
+
+        expect(getLanguageByShortRegionCode(languages, LocaleObject.fromAnyCode('de'))).toEqual(
+            LANGUAGES_2.de_DE,
         );
     });
 });

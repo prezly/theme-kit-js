@@ -102,14 +102,26 @@ export function getLanguageByShortRegionCode<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
 >(languages: Language[], locale: LocaleObject): Language | undefined {
     const shortRegionCode = locale.toRegionCode();
+    const neutralLanguageCode = locale.toNeutralLanguageCode();
 
-    // Prefer default language
+    // 1. Prefer language with same neutral language code
+    const languageWithSameRegionAndNeutralCode = languages.find(({ code }) => {
+        const comparingLocale = LocaleObject.fromAnyCode(code);
+        const hasSameNeutralCode = comparingLocale.toNeutralLanguageCode() === neutralLanguageCode;
+        const hasSameRegionCode = comparingLocale.toRegionCode() === shortRegionCode;
+        return hasSameNeutralCode && hasSameRegionCode;
+    });
+    if (languageWithSameRegionAndNeutralCode) {
+        return languageWithSameRegionAndNeutralCode;
+    }
+
+    // 2. Prefer default language
     const defaultLanguage = getDefaultLanguage(languages);
     if (LocaleObject.fromAnyCode(defaultLanguage.code).toRegionCode() === shortRegionCode) {
         return defaultLanguage;
     }
 
-    // Try to look in used cultures first (giving priority to used ones)
+    // 3. Prefer language that have public stories in it
     const usedLanguages = getUsedLanguages(languages);
     const usedLanguage = usedLanguages.find(
         ({ code }) => LocaleObject.fromAnyCode(code).toRegionCode() === shortRegionCode,
@@ -118,7 +130,7 @@ export function getLanguageByShortRegionCode<
         return usedLanguage;
     }
 
-    // Search in all languages
+    // 4. Search in all languages
     return languages.find(
         ({ code }) => LocaleObject.fromAnyCode(code).toRegionCode() === shortRegionCode,
     );
