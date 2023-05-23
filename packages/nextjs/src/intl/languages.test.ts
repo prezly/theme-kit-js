@@ -20,6 +20,12 @@ describe('getLanguageFromNextLocaleIsoCode', () => {
     it('returns language by neutral code second', () => {
         const languages = [LANGUAGES.en_DE, LANGUAGES.de_DE];
 
+        expect(
+            getLanguageFromNextLocaleIsoCode(
+                ALL_LANGUAGES.filter(({ code }) => code !== 'fr'),
+                'fr',
+            ),
+        ).toEqual(LANGUAGES.fr_BE);
         expect(getLanguageFromNextLocaleIsoCode(languages, 'de')).toEqual(LANGUAGES.de_DE);
         expect(getLanguageFromNextLocaleIsoCode(languages, 'en')).toEqual(LANGUAGES.en_DE);
     });
