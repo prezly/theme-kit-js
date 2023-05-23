@@ -73,13 +73,6 @@ export function getLanguageByNeutralLocaleCode<
 >(languages: Language[], locale: LocaleObject): Language | undefined {
     const neutralLanguageCode = locale.toNeutralLanguageCode();
 
-    // Prefer default language
-    const defaultLanguage = getDefaultLanguage(languages);
-    // TODO: This doesn't align with other methods logic
-    if (defaultLanguage.code === locale.toUnderscoreCode()) {
-        return defaultLanguage;
-    }
-
     // Try to look in used cultures first (giving priority to used ones)
     const usedLanguages = getUsedLanguages(languages);
     const usedLanguage = usedLanguages.find(
@@ -102,12 +95,6 @@ export function getLanguageByShortRegionCode<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
 >(languages: Language[], locale: LocaleObject): Language | undefined {
     const shortRegionCode = locale.toRegionCode();
-
-    // Prefer default language
-    const defaultLanguage = getDefaultLanguage(languages);
-    if (LocaleObject.fromAnyCode(defaultLanguage.code).toRegionCode() === shortRegionCode) {
-        return defaultLanguage;
-    }
 
     // Try to look in used cultures first (giving priority to used ones)
     const usedLanguages = getUsedLanguages(languages);
@@ -208,5 +195,6 @@ export function getShortestLocaleCode<
         return shortRegionCode;
     }
 
+    // Return the original (exact) code if shortening is not possible
     return localeCode;
 }
