@@ -95,6 +95,17 @@ export function getLanguageByShortRegionCode<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
 >(languages: Language[], locale: LocaleObject): Language | undefined {
     const shortRegionCode = locale.toRegionCode();
+    const neutralLanguageCode = locale.toNeutralLanguageCode();
+
+    const languageWithSameRegionAndNeutralCode = languages.find(({ code }) => {
+        const comparingLocale = LocaleObject.fromAnyCode(code);
+        const hasSameNeutralCode = comparingLocale.toNeutralLanguageCode() === neutralLanguageCode;
+        const hasSameRegionCode = comparingLocale.toRegionCode() === shortRegionCode;
+        return hasSameNeutralCode && hasSameRegionCode;
+    });
+    if (languageWithSameRegionAndNeutralCode) {
+        return languageWithSameRegionAndNeutralCode;
+    }
 
     // Try to look in used cultures first (giving priority to used ones)
     const usedLanguages = getUsedLanguages(languages);
