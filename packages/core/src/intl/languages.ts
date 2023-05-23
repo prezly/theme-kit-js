@@ -198,3 +198,44 @@ export function getShortestLocaleCode<
     // Return the original (exact) code if shortening is not possible
     return localeCode;
 }
+
+/**
+ * Get matching language for the requested locale
+ * The logic is reversed from `getShortestLocaleCode`, so that it "unwraps" the possible variants with no collisions
+ *
+ * First: get by exact match
+ * Then: get by matching region code part
+ * Finally: get by matching language code part
+ *
+ * @param locale A LocaleObject constructed from the requested locale code (taken straight from the URL)
+ */
+export function getLanguageFromLocaleIsoCode<
+    Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
+>(languages: Language[], locale: LocaleObject): Language | undefined {
+    // Prefer exact match
+    const exactMatchedLanguage = getLanguageByExactLocaleCode(languages, locale);
+    if (exactMatchedLanguage) {
+        return exactMatchedLanguage;
+    }
+
+    // If locale code is not region independent, it means that it's not a shortened code (consists of two parts).
+    // If it didn't match by exact code, there's no reason to check for region/language code match
+    if (!locale.isRegionIndependent) {
+        return undefined;
+    }
+
+    // We're excluding the default language, since it shouldn't have a URL slug
+    const languagesWithoutDefault = languages.filter(({ is_default }) => !is_default);
+
+    const regionMatchedLanguage = getLanguageByShortRegionCode(languagesWithoutDefault, locale);
+    if (regionMatchedLanguage) {
+        return regionMatchedLanguage;
+    }
+
+    const neutralMatchedLanguage = getLanguageByNeutralLocaleCode(languagesWithoutDefault, locale);
+    if (neutralMatchedLanguage) {
+        return neutralMatchedLanguage;
+    }
+
+    return undefined;
+}
