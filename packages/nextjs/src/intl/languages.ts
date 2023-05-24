@@ -21,19 +21,6 @@ export function getLanguageFromNextLocaleIsoCode<
     }
 
     const locale = LocaleObject.fromAnyCode(nextLocaleIsoCode);
-    const shortRegionCode = locale.toRegionCode();
-    const neutralLanguageCode = locale.toNeutralLanguageCode();
-
-    const languageWithSameRegionAndNeutralCode = languages.find(({ code }) => {
-        const comparingLocale = LocaleObject.fromAnyCode(code);
-        const hasSameNeutralCode = comparingLocale.toNeutralLanguageCode() === neutralLanguageCode;
-        const hasSameRegionCode = comparingLocale.toRegionCode() === shortRegionCode;
-        return hasSameNeutralCode && hasSameRegionCode;
-    });
-
-    if (languageWithSameRegionAndNeutralCode) {
-        return languageWithSameRegionAndNeutralCode;
-    }
 
     return getLanguageFromLocaleIsoCode(languages, locale);
 }
