@@ -1,9 +1,7 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import {
     getDefaultLanguage,
-    getLanguageByExactLocaleCode,
-    getLanguageByNeutralLocaleCode,
-    getLanguageByShortRegionCode,
+    getLanguageFromLocaleIsoCode,
     LocaleObject,
 } from '@prezly/theme-kit-core';
 
@@ -23,17 +21,6 @@ export function getLanguageFromNextLocaleIsoCode<
     }
 
     const locale = LocaleObject.fromAnyCode(nextLocaleIsoCode);
-    let targetLanguage: Language | undefined;
 
-    if (nextLocaleIsoCode.length >= 2 && nextLocaleIsoCode.length <= 4) {
-        // The order of methods here is reversed from `getShortestLocaleCode`, so that the logic "unwraps" the possible variants with no collisions
-        targetLanguage =
-            getLanguageByExactLocaleCode(languages, locale) ||
-            getLanguageByShortRegionCode(languages, locale) ||
-            getLanguageByNeutralLocaleCode(languages, locale);
-    } else {
-        targetLanguage = getLanguageByExactLocaleCode(languages, locale);
-    }
-
-    return targetLanguage;
+    return getLanguageFromLocaleIsoCode(languages, locale);
 }

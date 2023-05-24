@@ -78,14 +78,6 @@ describe('getLanguageByExactLocaleCode', () => {
 });
 
 describe('getLanguageByNeutralLocaleCode', () => {
-    it('prefers default language', () => {
-        const languages = [LANGUAGES.en_US, LANGUAGES.en];
-
-        expect(getLanguageByNeutralLocaleCode(languages, LocaleObject.fromAnyCode('en'))).toEqual(
-            LANGUAGES.en,
-        );
-    });
-
     it('prefers used cultures', () => {
         const languages = [
             LANGUAGES.en,
@@ -112,14 +104,6 @@ describe('getLanguageByNeutralLocaleCode', () => {
 });
 
 describe('getLanguageByShortRegionCode', () => {
-    it('prefers default language', () => {
-        const languages = [LANGUAGES.nl_BE, { ...LANGUAGES.fr_BE, is_default: true }];
-
-        expect(getLanguageByShortRegionCode(languages, LocaleObject.fromAnyCode('be'))).toEqual(
-            languages[1],
-        );
-    });
-
     it('prefers used cultures', () => {
         const languages = [LANGUAGES.en, LANGUAGES.nl_BE, LANGUAGES.fr_BE];
 

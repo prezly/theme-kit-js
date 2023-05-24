@@ -73,13 +73,6 @@ export function getLanguageByNeutralLocaleCode<
 >(languages: Language[], locale: LocaleObject): Language | undefined {
     const neutralLanguageCode = locale.toNeutralLanguageCode();
 
-    // Prefer default language
-    const defaultLanguage = getDefaultLanguage(languages);
-    // TODO: This doesn't align with other methods logic
-    if (defaultLanguage.code === locale.toUnderscoreCode()) {
-        return defaultLanguage;
-    }
-
     // Try to look in used cultures first (giving priority to used ones)
     const usedLanguages = getUsedLanguages(languages);
     const usedLanguage = usedLanguages.find(
@@ -102,12 +95,6 @@ export function getLanguageByShortRegionCode<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
 >(languages: Language[], locale: LocaleObject): Language | undefined {
     const shortRegionCode = locale.toRegionCode();
-
-    // Prefer default language
-    const defaultLanguage = getDefaultLanguage(languages);
-    if (LocaleObject.fromAnyCode(defaultLanguage.code).toRegionCode() === shortRegionCode) {
-        return defaultLanguage;
-    }
 
     // Try to look in used cultures first (giving priority to used ones)
     const usedLanguages = getUsedLanguages(languages);
@@ -193,7 +180,7 @@ export function getShortestLocaleCode<
     );
     // Prevent collision with neutral language codes
     const lowerCasedShortRegionCode = shortRegionCode.toLowerCase();
-    const mathchingNeutralLanguagesByRegionCode = languages.filter(
+    const matchingNeutralLanguagesByRegionCode = languages.filter(
         ({ code }) =>
             LocaleObject.fromAnyCode(code).toNeutralLanguageCode() === lowerCasedShortRegionCode ||
             code === lowerCasedShortRegionCode,
@@ -201,12 +188,68 @@ export function getShortestLocaleCode<
     if (
         matchingLanguagesByRegionCode.length === 1 &&
         // If there are 2 or more matching neutral languages, it means that there are no languages that can be shortened to neutral code
-        mathchingNeutralLanguagesByRegionCode.length !== 1 &&
+        matchingNeutralLanguagesByRegionCode.length !== 1 &&
         // We don't want just numbers in our region code
         Number.isNaN(Number(shortRegionCode))
     ) {
         return shortRegionCode;
     }
 
+    // Return the original (exact) code if shortening is not possible
     return localeCode;
+}
+
+/**
+ * Get matching language for the requested locale
+ * The logic is reversed from `getShortestLocaleCode`, so that it "unwraps" the possible variants with no collisions
+ *
+ * First: get by exact match
+ * Then: get by matching region code part
+ * Finally: get by matching language code part
+ *
+ * @param locale A LocaleObject constructed from the requested locale code (taken straight from the URL)
+ */
+export function getLanguageFromLocaleIsoCode<
+    Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
+>(languages: Language[], locale: LocaleObject): Language | undefined {
+    // Prefer exact match
+    const exactMatchedLanguage = getLanguageByExactLocaleCode(languages, locale);
+    if (exactMatchedLanguage) {
+        return exactMatchedLanguage;
+    }
+
+    // If locale code is not region independent, it means that it's not a shortened code (consists of two parts).
+    // If it didn't match by exact code, there's no reason to check for region/language code match
+    if (!locale.isRegionIndependent) {
+        return undefined;
+    }
+
+    // We're excluding the default language, since it shouldn't have a URL slug
+    const languagesWithoutDefault = languages.filter(({ is_default }) => !is_default);
+
+    const shortRegionCode = locale.toRegionCode();
+    const neutralLanguageCode = locale.toNeutralLanguageCode();
+
+    const languageWithSameRegionAndNeutralCode = languagesWithoutDefault.find(({ code }) => {
+        const comparingLocale = LocaleObject.fromAnyCode(code);
+        const hasSameNeutralCode = comparingLocale.toNeutralLanguageCode() === neutralLanguageCode;
+        const hasSameRegionCode = comparingLocale.toRegionCode() === shortRegionCode;
+        return hasSameNeutralCode && hasSameRegionCode;
+    });
+
+    if (languageWithSameRegionAndNeutralCode) {
+        return languageWithSameRegionAndNeutralCode;
+    }
+
+    const regionMatchedLanguage = getLanguageByShortRegionCode(languagesWithoutDefault, locale);
+    if (regionMatchedLanguage) {
+        return regionMatchedLanguage;
+    }
+
+    const neutralMatchedLanguage = getLanguageByNeutralLocaleCode(languagesWithoutDefault, locale);
+    if (neutralMatchedLanguage) {
+        return neutralMatchedLanguage;
+    }
+
+    return undefined;
 }
