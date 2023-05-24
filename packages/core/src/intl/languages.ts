@@ -227,6 +227,20 @@ export function getLanguageFromLocaleIsoCode<
     // We're excluding the default language, since it shouldn't have a URL slug
     const languagesWithoutDefault = languages.filter(({ is_default }) => !is_default);
 
+    const shortRegionCode = locale.toRegionCode();
+    const neutralLanguageCode = locale.toNeutralLanguageCode();
+
+    const languageWithSameRegionAndNeutralCode = languagesWithoutDefault.find(({ code }) => {
+        const comparingLocale = LocaleObject.fromAnyCode(code);
+        const hasSameNeutralCode = comparingLocale.toNeutralLanguageCode() === neutralLanguageCode;
+        const hasSameRegionCode = comparingLocale.toRegionCode() === shortRegionCode;
+        return hasSameNeutralCode && hasSameRegionCode;
+    });
+
+    if (languageWithSameRegionAndNeutralCode) {
+        return languageWithSameRegionAndNeutralCode;
+    }
+
     const regionMatchedLanguage = getLanguageByShortRegionCode(languagesWithoutDefault, locale);
     if (regionMatchedLanguage) {
         return regionMatchedLanguage;

@@ -21,5 +21,6 @@ export function getLanguageFromNextLocaleIsoCode<
     }
 
     const locale = LocaleObject.fromAnyCode(nextLocaleIsoCode);
+
     return getLanguageFromLocaleIsoCode(languages, locale);
 }
