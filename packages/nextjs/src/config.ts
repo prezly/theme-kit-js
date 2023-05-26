@@ -24,8 +24,7 @@ const DEFAULT_PARAMS: PrezlyConfigParams = {
     recommendedHeaders: true,
 };
 
-// eslint-disable-next-line import/no-default-export
-export default function PrezlyConfig(params?: Partial<PrezlyConfigParams>) {
+export = function PrezlyConfig(params?: Partial<PrezlyConfigParams>) {
     const finalParams = { ...DEFAULT_PARAMS, ...params };
 
     return function withPrezlyConfig(config: NextConfig): NextConfig {
@@ -86,4 +85,4 @@ export default function PrezlyConfig(params?: Partial<PrezlyConfigParams>) {
             }),
         };
     };
-}
+};
