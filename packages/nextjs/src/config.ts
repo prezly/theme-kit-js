@@ -1,7 +1,7 @@
 import locales from '@prezly/theme-kit-core/localeConfig';
 import type { NextConfig } from 'next';
 
-import { DUMMY_DEFAULT_LOCALE } from '../intl';
+import { DUMMY_DEFAULT_LOCALE } from './intl';
 
 interface PrezlyConfigParams {
     /**
