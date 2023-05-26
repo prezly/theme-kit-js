@@ -7,11 +7,13 @@
   "files": ["build", "README.md"],
   "exports": {
     ".": "./build/index.js",
+    "./config": "./build/config.js",
     "./server": "./build/server.js",
     "./playwright": "./build/playwright/index.js"
   },
   "typesVersions": {
     "*": {
+      "config": ["build/config.d.ts"],
       "server": ["build/server.d.ts"],
       "playwright": ["build/playwright/index.d.ts"]
     }
