@@ -1,17 +1,19 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "5.3.0",
+  "version": "5.3.1-alpha.5",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": ["build", "README.md"],
   "exports": {
     ".": "./build/index.js",
+    "./config": "./build/config.js",
     "./server": "./build/server.js",
     "./playwright": "./build/playwright/index.js"
   },
   "typesVersions": {
     "*": {
+      "config": ["build/config.d.ts"],
       "server": ["build/server.d.ts"],
       "playwright": ["build/playwright/index.d.ts"]
     }

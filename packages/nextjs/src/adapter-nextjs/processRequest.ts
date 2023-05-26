@@ -19,7 +19,13 @@ export function processRequest<Props>(
     canonicalUrl?: string,
 ): GetServerSidePropsResult<Props> {
     assertServerEnv('processRequest');
-    const { locale: nextLocale, query } = context;
+    const { locale: nextLocale, query, res } = context;
+
+    if (process.env.NODE_ENV === 'production') {
+        // Since Next 13, Cache-Control header set in `next.config.js` is overwritten by Next in production, effectively bypassing any caching systems setup on top of the theme.
+        // This is a workaround for that issue. See https://nextjs.org/docs/pages/building-your-application/deploying/production-checklist#caching
+        res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    }
 
     const { localeResolved, ...pageProps } = props;
 

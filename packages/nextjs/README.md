@@ -54,6 +54,25 @@ If you don't have these credentials, you can use one of our [testing newsrooms c
 In a base setup, you don't have to make any changes to your config.
 Depending on your use-case, you might need to make some additions to your base config.
 
+#### `withPrezlyConfig` helper
+
+You can add all of the necessary properties to your Next config with a single helper function.
+It adds the required `i18n` config, `images` config if you're using `next/image` to display images served from Prezly, and recommended security headers.
+Apart from several properties in `i18n` config, all of your existing config properties will be preserved and merged with our custom properties.
+You can control each of the config overrides with optional parameters object.
+
+```js
+const withPrezlyConfig = require('@prezly/theme-kit-nextjs/config')(/* Optional parameters for PrezlyConfig */);
+
+const config ={
+    /* ...your next config... */
+};
+
+module.exports = withPrezlyConfig(config);
+```
+
+You can also add the properties manually if you want even more control over the config.
+
 #### Using next/image to display images served from Prezly
 
 We provide `@prezly/uploadcare-image` package to conveniently display images inside Prezly content, and this is the recommended way to display images in your theme.
