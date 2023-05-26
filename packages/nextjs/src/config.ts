@@ -32,6 +32,12 @@ export = function PrezlyConfig(params?: Partial<PrezlyConfigParams>) {
 
         return {
             ...config,
+            env: {
+                ...config.env,
+                ...(finalParams.recommendedHeaders && {
+                    PREZLY_ADD_RECOMMENDED_HEADERS: '1',
+                }),
+            },
             ...(finalParams.recommendedHeaders && {
                 async headers() {
                     return [
