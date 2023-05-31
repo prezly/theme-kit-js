@@ -6,6 +6,11 @@
 
 name: Playwright Tests
 on:
+  push:
+    branches:
+      - '*'
+      # We are explicitly excluding `main` branch from E2E tests: CARE-1683
+      - '!main'
   workflow_call:
     inputs:
       site-name:
