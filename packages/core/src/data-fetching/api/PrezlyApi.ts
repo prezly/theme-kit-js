@@ -1,11 +1,10 @@
-import { ApiError, createPrezlyClient, SortOrder } from '@prezly/sdk';
+import { ApiError, createPrezlyClient, SortOrder, Story } from '@prezly/sdk';
 import type {
     Category,
     Newsroom,
     NewsroomLanguageSettings,
     PrezlyClient,
     Stories,
-    Story,
 } from '@prezly/sdk';
 import 'isomorphic-fetch';
 
@@ -66,9 +65,6 @@ export class PrezlyApi {
         this.sdk = createPrezlyClient({
             accessToken,
             baseUrl,
-            // This returns stories created by legacy version of the editor in a format that can be displayed by the Prezly Content Renderer.
-            // eslint-disable-next-line @typescript-eslint/naming-convention
-            headers: { 'X-Convert-v1-To-v3': 'true' },
         });
         this.newsroomUuid = newsroomUuid;
         this.themeUuid = themeUuid;
@@ -80,7 +76,9 @@ export class PrezlyApi {
         }
 
         try {
-            const story = await this.sdk.stories.get(uuid);
+            const story = await this.sdk.stories.get(uuid, {
+                formats: [Story.FormatVersion.SLATEJS_V4],
+            });
             return story;
         } catch (error) {
             if (
