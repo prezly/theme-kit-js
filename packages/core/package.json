@@ -27,7 +27,7 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "@prezly/sdk": ">=12 <16"
+    "@prezly/sdk": "16"
   },
   "dependencies": {
     "@prezly/uploadcare": "^2.3.4",
