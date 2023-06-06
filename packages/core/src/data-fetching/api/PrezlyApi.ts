@@ -228,7 +228,8 @@ export class PrezlyApi {
         );
     }
 
-    searchStories: Stories.Client['search'] = (options) => this.sdk.stories.search(options);
+    searchStories: Stories.Client['search'] = (options) =>
+        this.sdk.stories.search({ formats: [Story.FormatVersion.SLATEJS_V4], ...options });
 
     async getGalleries({ page, pageSize }: GetGalleriesOptions) {
         const { offset, limit } = toPaginationParams({ page, pageSize });
