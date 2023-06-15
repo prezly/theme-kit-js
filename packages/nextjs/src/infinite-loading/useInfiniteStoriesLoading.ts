@@ -16,7 +16,7 @@ async function fetchStories<T extends Story = Story>(
     include?: (keyof Story.ExtraFields)[],
     pinning?: boolean,
     filterQuery?: Object,
-): Promise<{ stories: T[] }> {
+): Promise<{ stories: T[]; storiesTotal: number }> {
     const result = await fetch('/api/fetch-stories', {
         method: 'POST',
         headers: {
