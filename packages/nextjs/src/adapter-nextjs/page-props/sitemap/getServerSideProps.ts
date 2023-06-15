@@ -6,15 +6,19 @@ import { createPaths } from './createPaths';
 import { SitemapBuilder } from './SitemapBuilder';
 
 function normalizeBaseUrl(baseUrl: string, protocol = 'https') {
-    if (
-        baseUrl === '/' ||
-        baseUrl.startsWith('localhost') ||
-        baseUrl.startsWith(`${protocol}://`)
-    ) {
+    // This regex pattern matches if the `baseUrl`
+    // equals `/`, starts with `localhost`, or starts with `http://` or `https://`.
+    if (/^(\/|localhost|https?:\/\/)/.test(baseUrl)) {
         return baseUrl;
     }
 
-    return `${protocol}://${baseUrl}`;
+    // If it's explicitly defined to be `http` only
+    if (protocol.toLowerCase() === 'http') {
+        return `http://${baseUrl}`;
+    }
+
+    // Prefer https if protocol is `https,http` or `https` or any other unknown value
+    return `https://${baseUrl}`;
 }
 
 export function getSitemapServerSideProps(
