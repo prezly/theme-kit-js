@@ -25,7 +25,7 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
     try {
         const api = getNextPrezlyApi(req);
 
-        const { stories } = await (category
+        const { stories, storiesTotal } = await (category
             ? api.getStoriesFromCategory(category, { page, pageSize, include, localeCode })
             : api.getStories({
                   page,
@@ -37,7 +37,7 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
                   filterQuery,
               }));
 
-        res.status(200).json({ stories });
+        res.status(200).json({ stories, storiesTotal });
     } catch (error) {
         res.status(500).send({
             message: (error as Error).message,
