@@ -1,6 +1,6 @@
 {
     "name": "@prezly/themes-intl-messages",
-    "version": "1.16.0",
+    "version": "1.17.0",
     "description": "Translations for Prezly themes",
     "main": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
