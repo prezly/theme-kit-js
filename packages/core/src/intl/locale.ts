@@ -48,6 +48,7 @@ const SUPPORTED_LOCALES: LocaleCode[] = [
     'ru',
     'sk',
     'sl',
+    'sr',
     'sv',
     'sw',
     'th',
