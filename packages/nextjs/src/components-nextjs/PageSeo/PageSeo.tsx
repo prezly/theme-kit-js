@@ -49,14 +49,14 @@ export function PageSeo({
     const { asPath } = useRouter();
 
     const pageTitle =
+        title ||
         companyInformation.seo_settings.meta_title ||
         companyInformation.seo_settings.default_meta_title ||
-        title ||
         companyInformation.name;
     const pageDescription =
+        description ||
         companyInformation.seo_settings.meta_description ||
         companyInformation.seo_settings.default_meta_description ||
-        description ||
         companyInformation.about_plaintext;
     const canonicalUrl =
         canonical || getAbsoluteUrl(asPath, site.url, getLinkLocaleSlug(currentLocale));
