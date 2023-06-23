@@ -21,7 +21,12 @@ import {
 
 import { getAbsoluteUrl } from './lib';
 
-type Props = NextSeoProps & {
+type Props = Omit<NextSeoProps, 'title'> & {
+    /**
+     * Overrides the title that is used in the `<title>` tag and in the `og:title` meta tag. Defaults to the Site SEO title or Site name.
+     * If a function is provided, it will be called with the Site SEO title as the first argument.
+     */
+    title?: string | ((metaTitle: string) => string);
     imageUrl?: string;
 };
 
@@ -48,16 +53,25 @@ export function PageSeo({
     const currentStory = useCurrentStory();
     const { asPath } = useRouter();
 
-    const pageTitle =
-        title ||
-        companyInformation.seo_settings.meta_title ||
-        companyInformation.seo_settings.default_meta_title ||
-        companyInformation.name;
+    const pageTitle = useMemo(() => {
+        const defaultMetaTitle =
+            companyInformation.seo_settings.meta_title ||
+            companyInformation.seo_settings.default_meta_title ||
+            companyInformation.name;
+
+        if (title && typeof title === 'function') {
+            return title(defaultMetaTitle);
+        }
+
+        return title || defaultMetaTitle;
+    }, [title, companyInformation]);
+
     const pageDescription =
         description ||
         companyInformation.seo_settings.meta_description ||
         companyInformation.seo_settings.default_meta_description ||
         companyInformation.about_plaintext;
+
     const canonicalUrl =
         canonical || getAbsoluteUrl(asPath, site.url, getLinkLocaleSlug(currentLocale));
     const siteName = companyInformation.name;
