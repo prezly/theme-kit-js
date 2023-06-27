@@ -30,7 +30,7 @@
   "devDependencies": {
     "@playwright/test": "1.35.1",
     "@prezly/eslint-config": "4.5.0",
-    "@prezly/sdk": "16.2.0",
+    "@prezly/sdk": "16.2.1",
     "@types/jest": "29.5.2",
     "@types/node": "17.0.45",
     "@types/react": "18.2.14",
