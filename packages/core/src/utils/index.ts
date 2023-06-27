@@ -3,6 +3,7 @@ export * from './boilerplate';
 export * from './constants';
 export * from './getAssetsUrl';
 export * from './getDataRequestLink';
+export * from './getGalleryThumbnail';
 export * from './getLocalizedCategoryData';
 export * from './getNewsroomLogoUrl';
 export * from './getPrivacyPortalUrl';
