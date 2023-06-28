@@ -2,6 +2,7 @@ import { ApiError, createPrezlyClient, SortOrder, Story } from '@prezly/sdk';
 import type {
     Category,
     Newsroom,
+    NewsroomGallery,
     NewsroomLanguageSettings,
     PrezlyClient,
     Stories,
@@ -49,6 +50,7 @@ interface GetStoriesOptions {
 interface GetGalleriesOptions {
     page?: number;
     pageSize?: number;
+    type?: `${NewsroomGallery.Type}`;
 }
 
 export class PrezlyApi {
@@ -231,13 +233,13 @@ export class PrezlyApi {
     searchStories: Stories.Client['search'] = (options) =>
         this.sdk.stories.search({ formats: [Story.FormatVersion.SLATEJS_V4], ...options });
 
-    async getGalleries({ page, pageSize }: GetGalleriesOptions) {
+    async getGalleries({ page, pageSize, type }: GetGalleriesOptions) {
         const { offset, limit } = toPaginationParams({ page, pageSize });
 
         return this.sdk.newsroomGalleries.search(this.newsroomUuid, {
             limit,
             offset,
-            scope: getGalleriesQuery(),
+            scope: getGalleriesQuery(type),
         });
     }
 

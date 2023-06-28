@@ -1,3 +1,4 @@
+import type { NewsroomGallery } from '@prezly/sdk';
 import { SortOrder } from '@prezly/sdk';
 
 const publishedAndAccessible = [
@@ -58,9 +59,15 @@ export function getChronologicalSortOrder(direction: `${SortOrder.Direction}`, p
     return pinning ? SortOrder.combine(pinnedFirst, chronological) : chronological;
 }
 
-export function getGalleriesQuery() {
+export function getGalleriesQuery(type?: `${NewsroomGallery.Type}`) {
+    const conditions: Object[] = [{ status: { $eq: 'public' } }, { is_empty: { $eq: false } }];
+
+    if (type) {
+        conditions.push({ type });
+    }
+
     return {
-        $and: [{ status: { $eq: 'public' } }, { images_number: { $gt: 0 } }],
+        $and: conditions,
     };
 }
 

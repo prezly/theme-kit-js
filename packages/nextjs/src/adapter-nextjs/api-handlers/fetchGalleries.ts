@@ -11,14 +11,14 @@ export async function fetchGalleries(req: NextApiRequest, res: NextApiResponse) 
         return;
     }
 
-    const { page, pageSize } = req.body;
+    const { page, pageSize, type } = req.body;
 
     try {
         const api = getNextPrezlyApi(req);
 
-        const { galleries } = await api.getGalleries({ page, pageSize });
+        const { galleries, pagination } = await api.getGalleries({ page, pageSize, type });
 
-        res.status(200).json({ galleries });
+        res.status(200).json({ galleries, galleriesTotal: pagination.matched_records_number });
     } catch (error) {
         res.status(500).send({
             message: (error as Error).message,
