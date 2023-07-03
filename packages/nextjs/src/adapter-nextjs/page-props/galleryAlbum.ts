@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { NewsroomGallery } from '@prezly/sdk';
 import type {
     GetServerSidePropsContext,
@@ -30,7 +31,7 @@ export function getGalleryAlbumPageServerSideProps<CustomProps extends Record<st
         const { uuid } = context.params as { uuid: string };
         const gallery = await api.getGallery(uuid);
 
-        if (!gallery || !gallery.images_number) {
+        if (!gallery || isGalleryEmpty(gallery)) {
             return { notFound: true };
         }
 
@@ -59,7 +60,7 @@ export function getGalleryAlbumPageStaticProps<CustomProps extends Record<string
         const { uuid } = context.params as { uuid: string };
         const gallery = await api.getGallery(uuid);
 
-        if (!gallery || !gallery.images_number) {
+        if (!gallery || isGalleryEmpty(gallery)) {
             return { notFound: true };
         }
 
@@ -86,4 +87,8 @@ export async function getGalleryAlbumPageStaticPaths(): Promise<GetStaticPathsRe
         paths,
         fallback: 'blocking',
     };
+}
+
+function isGalleryEmpty(gallery: NewsroomGallery) {
+    return gallery.images_number === 0 && gallery.videos_number === 0;
 }
