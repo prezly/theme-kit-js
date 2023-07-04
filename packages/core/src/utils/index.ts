@@ -10,4 +10,5 @@ export * from './getPrivacyPortalUrl';
 export * from './getStoryPublicationDate';
 export * from './getUploadcareGroupUrl';
 export * from './isEmbargoStory';
+export * from './isGalleryEmpty';
 export * from './sdkHelpers';

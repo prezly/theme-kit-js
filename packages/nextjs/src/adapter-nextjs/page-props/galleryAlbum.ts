@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { NewsroomGallery } from '@prezly/sdk';
+import { isGalleryEmpty } from '@prezly/theme-kit-core';
 import type {
     GetServerSidePropsContext,
     GetServerSidePropsResult,
@@ -87,8 +87,4 @@ export async function getGalleryAlbumPageStaticPaths(): Promise<GetStaticPathsRe
         paths,
         fallback: 'blocking',
     };
-}
-
-function isGalleryEmpty(gallery: NewsroomGallery) {
-    return gallery.images_number === 0 && gallery.videos_number === 0;
 }
