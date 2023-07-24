@@ -22,7 +22,7 @@ function normalizeBaseUrl(baseUrl: string, protocol = 'https') {
 }
 
 export function getSitemapServerSideProps(
-    options: { additionalPaths?: string[]; baseUrl?: string; pinning?: boolean } = {},
+    options: { additionalPaths?: string[]; basePath?: string; pinning?: boolean } = {},
 ) {
     return async function getServerSideProps(ctx: NextPageContext) {
         const { res, req } = ctx;
@@ -35,7 +35,7 @@ export function getSitemapServerSideProps(
         }
 
         const baseUrl = normalizeBaseUrl(
-            options.baseUrl || req.headers.host || '/',
+            req.headers.host || '/',
             req.headers['x-forwarded-proto'] as string | undefined,
         );
 
@@ -46,7 +46,7 @@ export function getSitemapServerSideProps(
         const categories = await api.getCategories();
 
         const paths = createPaths(stories, categories);
-        const sitemapBuilder = new SitemapBuilder(baseUrl);
+        const sitemapBuilder = new SitemapBuilder(baseUrl, options.basePath);
 
         sitemapBuilder.addUrl('/');
         paths.forEach((path) => sitemapBuilder.addUrl(path));

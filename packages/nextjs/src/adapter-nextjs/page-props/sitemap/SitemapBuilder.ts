@@ -3,15 +3,28 @@ import type { SitemapUrl } from './types';
 export class SitemapBuilder {
     private baseUrl: string;
 
+    private basePath: string | undefined;
+
     private urls: SitemapUrl[] = [];
 
-    constructor(baseUrl: string) {
+    constructor(baseUrl: string, basePath?: string) {
         this.baseUrl = baseUrl;
+        this.basePath = basePath;
+    }
+
+    private buildPath(location: string) {
+        if (this.basePath) {
+            if (location === '/') return this.basePath;
+
+            return this.basePath + location;
+        }
+
+        return location;
     }
 
     public addUrl(location: string) {
         this.urls.push({
-            location: this.baseUrl + location,
+            location: this.baseUrl + this.buildPath(location),
             changeFrequency: SitemapBuilder.guessFrequency(location),
             priority: SitemapBuilder.guessPriority(location),
         });
