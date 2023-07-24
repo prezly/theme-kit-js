@@ -22,7 +22,7 @@ function normalizeBaseUrl(baseUrl: string, protocol = 'https') {
 }
 
 export function getSitemapServerSideProps(
-    options: { additionalPaths?: string[]; pinning?: boolean } = {},
+    options: { additionalPaths?: string[]; baseUrl?: string; pinning?: boolean } = {},
 ) {
     return async function getServerSideProps(ctx: NextPageContext) {
         const { res, req } = ctx;
@@ -35,7 +35,7 @@ export function getSitemapServerSideProps(
         }
 
         const baseUrl = normalizeBaseUrl(
-            req.headers.host || '/',
+            options.baseUrl || req.headers.host || '/',
             req.headers['x-forwarded-proto'] as string | undefined,
         );
 
