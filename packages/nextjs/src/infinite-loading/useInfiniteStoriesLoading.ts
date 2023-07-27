@@ -3,6 +3,7 @@ import type { LocaleObject } from '@prezly/theme-kit-core';
 import { useEffect } from 'react';
 
 import { useCurrentLocale } from '../newsroom-context';
+import { getResolvedPath } from '../utils';
 
 import type { PaginationProps } from './types';
 import { useInfiniteLoading } from './useInfiniteLoading';
@@ -17,7 +18,7 @@ async function fetchStories<T extends Story = Story>(
     pinning?: boolean,
     filterQuery?: Object,
 ): Promise<{ stories: T[]; storiesTotal: number }> {
-    const result = await fetch('/api/fetch-stories', {
+    const result = await fetch(getResolvedPath('/api/fetch-stories'), {
         method: 'POST',
         headers: {
             // eslint-disable-next-line @typescript-eslint/naming-convention
