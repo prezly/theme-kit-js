@@ -9,10 +9,10 @@ import type { PropsFunction } from './lib/types';
 
 export function getStoryPreviewPageServerSideProps<CustomProps extends Record<string, any>>(
     customProps: CustomProps | PropsFunction<CustomProps>,
+    formats?: Story.FormatVersion[],
 ) {
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
-        formats?: Story.FormatVersion[],
     ): Promise<GetServerSidePropsResult<CustomProps>> {
         const api = getNextPrezlyApi(context.req);
         const { uuid } = context.params as { uuid: string };
