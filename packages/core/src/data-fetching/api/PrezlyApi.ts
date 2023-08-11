@@ -45,10 +45,6 @@ interface GetStoriesOptions {
      * Additional filter to apply to the story query. Note that it will be inserted into the root `$and` query operator along with default filters.
      */
     filterQuery?: Object;
-    /**
-     *
-     */
-    formats?: Story.FormatVersion[];
 }
 
 interface GetGalleriesOptions {
