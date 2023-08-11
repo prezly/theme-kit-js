@@ -72,14 +72,14 @@ export class PrezlyApi {
         this.themeUuid = themeUuid;
     }
 
-    async getStory(uuid: string) {
+    async getStory(uuid: string, formats = [Story.FormatVersion.SLATEJS_V4]) {
         if (!isUuid(uuid)) {
             return undefined;
         }
 
         try {
             const story = await this.sdk.stories.get(uuid, {
-                formats: [Story.FormatVersion.SLATEJS_V4],
+                formats,
             });
             return story;
         } catch (error) {

@@ -55,6 +55,7 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
 
 export function getStoryPageStaticProps<CustomProps extends Record<string, any>>(
     customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
+    formats?: Story.FormatVersion[],
 ) {
     return async function getStaticProps(
         context: GetStaticPropsContext,
@@ -62,7 +63,7 @@ export function getStoryPageStaticProps<CustomProps extends Record<string, any>>
         const api = getNextPrezlyApi();
 
         const { slug } = context.params as { slug?: string };
-        const story = slug ? await api.getStoryBySlug(slug) : null;
+        const story = slug ? await api.getStoryBySlug(slug, formats) : null;
         if (!story) {
             return { notFound: true };
         }
