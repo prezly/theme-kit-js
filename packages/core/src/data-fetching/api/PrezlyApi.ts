@@ -209,7 +209,7 @@ export class PrezlyApi {
         });
 
         if (stories[0]) {
-            return this.getStory(stories[0].uuid);
+            return this.getStory(stories[0].uuid, formats);
         }
 
         return null;
