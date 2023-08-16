@@ -52,7 +52,7 @@ export function PageSeo({
     const getLinkLocaleSlug = useGetLinkLocaleSlug();
     const currentStory = useCurrentStory();
     const { asPath, basePath } = useRouter();
-    const currentPath = `${asPath}${basePath}`;
+    const currentPath = `${basePath}${asPath}`;
 
     const pageTitle = useMemo(() => {
         const defaultMetaTitle =
