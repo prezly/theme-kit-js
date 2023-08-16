@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "6.4.4",
+  "version": "6.4.5-alpha.1",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
