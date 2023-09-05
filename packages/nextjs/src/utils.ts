@@ -15,5 +15,5 @@ export function getResolvedPath(path?: string) {
         return basePath;
     }
 
-    return `${basePath}${path}`;
+    return `${basePath}${prefixedPath}`;
 }
