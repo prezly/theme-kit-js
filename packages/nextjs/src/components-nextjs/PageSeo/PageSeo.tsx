@@ -51,7 +51,8 @@ export function PageSeo({
     const getTranslationUrl = useGetTranslationUrl();
     const getLinkLocaleSlug = useGetLinkLocaleSlug();
     const currentStory = useCurrentStory();
-    const { asPath } = useRouter();
+    const { asPath, basePath } = useRouter();
+    const currentPath = `${basePath}${asPath}`;
 
     const pageTitle = useMemo(() => {
         const defaultMetaTitle =
@@ -73,7 +74,7 @@ export function PageSeo({
         companyInformation.about_plaintext;
 
     const canonicalUrl =
-        canonical || getAbsoluteUrl(asPath, site.url, getLinkLocaleSlug(currentLocale));
+        canonical || getAbsoluteUrl(currentPath, site.url, getLinkLocaleSlug(currentLocale));
     const siteName = companyInformation.name;
     const sharingImageUrl = imageUrl || getNewsroomOgImageUrl(site, currentLocale);
 
@@ -136,7 +137,7 @@ export function PageSeo({
                 {
                     rel: 'alternate',
                     type: 'application/rss+xml',
-                    href: getAbsoluteUrl('/feed', site.url),
+                    href: getAbsoluteUrl(`${basePath}/feed`, site.url),
                 },
             ]}
             languageAlternates={alternateLanguageLinks}

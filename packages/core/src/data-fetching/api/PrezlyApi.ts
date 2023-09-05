@@ -72,14 +72,14 @@ export class PrezlyApi {
         this.themeUuid = themeUuid;
     }
 
-    async getStory(uuid: string) {
+    async getStory(uuid: string, formats = [Story.FormatVersion.SLATEJS_V4]) {
         if (!isUuid(uuid)) {
             return undefined;
         }
 
         try {
             const story = await this.sdk.stories.get(uuid, {
-                formats: [Story.FormatVersion.SLATEJS_V4],
+                formats,
             });
             return story;
         } catch (error) {
@@ -200,15 +200,16 @@ export class PrezlyApi {
         return { stories, storiesTotal };
     }
 
-    async getStoryBySlug(slug: string) {
+    async getStoryBySlug(slug: string, formats = [Story.FormatVersion.SLATEJS_V4]) {
         const query = JSON.stringify(getSlugQuery(this.newsroomUuid, slug));
         const { stories } = await this.searchStories({
             limit: 1,
             query,
+            formats,
         });
 
         if (stories[0]) {
-            return this.getStory(stories[0].uuid);
+            return this.getStory(stories[0].uuid, formats);
         }
 
         return null;
@@ -230,8 +231,11 @@ export class PrezlyApi {
         );
     }
 
-    searchStories: Stories.Client['search'] = (options) =>
-        this.sdk.stories.search({ formats: [Story.FormatVersion.SLATEJS_V4], ...options });
+    searchStories: Stories.Client['search'] = (options) => {
+        const formats = options?.formats ?? [Story.FormatVersion.SLATEJS_V4];
+
+        return this.sdk.stories.search({ ...options, formats });
+    };
 
     async getGalleries({ page, pageSize, type }: GetGalleriesOptions) {
         const { offset, limit } = toPaginationParams({ page, pageSize });

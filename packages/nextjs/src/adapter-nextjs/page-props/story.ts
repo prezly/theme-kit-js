@@ -1,3 +1,4 @@
+import type { Story } from '@prezly/sdk';
 import type {
     GetServerSidePropsContext,
     GetServerSidePropsResult,
@@ -16,6 +17,7 @@ import type { PropsFunction } from './lib/types';
 
 export function getStoryPageServerSideProps<CustomProps extends Record<string, any>>(
     customProps: CustomProps | PropsFunction<CustomProps>,
+    formats?: Story.FormatVersion[],
 ) {
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
@@ -23,7 +25,7 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
         const api = getNextPrezlyApi(context.req);
 
         const { slug } = context.params as { slug?: string };
-        const story = slug ? await api.getStoryBySlug(slug) : null;
+        const story = slug ? await api.getStoryBySlug(slug, formats) : null;
         if (!story) {
             return { notFound: true };
         }
@@ -53,6 +55,7 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
 
 export function getStoryPageStaticProps<CustomProps extends Record<string, any>>(
     customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
+    formats?: Story.FormatVersion[],
 ) {
     return async function getStaticProps(
         context: GetStaticPropsContext,
@@ -60,7 +63,7 @@ export function getStoryPageStaticProps<CustomProps extends Record<string, any>>
         const api = getNextPrezlyApi();
 
         const { slug } = context.params as { slug?: string };
-        const story = slug ? await api.getStoryBySlug(slug) : null;
+        const story = slug ? await api.getStoryBySlug(slug, formats) : null;
         if (!story) {
             return { notFound: true };
         }

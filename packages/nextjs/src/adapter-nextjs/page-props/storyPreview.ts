@@ -1,3 +1,4 @@
+import type { Story } from '@prezly/sdk';
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
 import { getNextPrezlyApi } from '../../data-fetching';
@@ -8,13 +9,14 @@ import type { PropsFunction } from './lib/types';
 
 export function getStoryPreviewPageServerSideProps<CustomProps extends Record<string, any>>(
     customProps: CustomProps | PropsFunction<CustomProps>,
+    formats?: Story.FormatVersion[],
 ) {
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
     ): Promise<GetServerSidePropsResult<CustomProps>> {
         const api = getNextPrezlyApi(context.req);
         const { uuid } = context.params as { uuid: string };
-        const story = await api.getStory(uuid);
+        const story = await api.getStory(uuid, formats);
         if (!story) {
             return { notFound: true };
         }
