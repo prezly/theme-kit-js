@@ -73,6 +73,10 @@ module.exports = withPrezlyConfig(config);
 
 You can also add the properties manually if you want even more control over the config.
 
+#### Usage with `basePath` setting
+
+When using `basePath` setting in your next.config.js, wrapping your config with `withPrezlyConfig` will automatically populate `NEXT_PUBLIC_BASE_PATH` env variable, which will be respected by Theme Kit helpers and hooks (like `useInfiniteStoriesLoading`). We also export `getResolvedPath` helper that can be used to resolve paths with respect to your `basePath` setting.
+
 #### Using next/image to display images served from Prezly
 
 We provide `@prezly/uploadcare-image` package to conveniently display images inside Prezly content, and this is the recommended way to display images in your theme.

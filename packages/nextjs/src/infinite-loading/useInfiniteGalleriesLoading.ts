@@ -1,5 +1,7 @@
 import type { NewsroomGallery } from '@prezly/sdk';
 
+import { getResolvedPath } from '../utils';
+
 import type { PaginationProps } from './types';
 import { useInfiniteLoading } from './useInfiniteLoading';
 
@@ -7,7 +9,7 @@ async function fetchGalleries(
     page: number,
     pageSize: number,
 ): Promise<{ galleries: NewsroomGallery[] }> {
-    const result = await fetch('/api/fetch-galleries', {
+    const result = await fetch(getResolvedPath('/api/fetch-galleries'), {
         method: 'POST',
         headers: {
             // eslint-disable-next-line @typescript-eslint/naming-convention

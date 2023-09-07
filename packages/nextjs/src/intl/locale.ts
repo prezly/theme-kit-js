@@ -3,6 +3,8 @@ import type { Redirect } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import { stringify } from 'querystring';
 
+import { getResolvedPath } from '../utils';
+
 // We use pseudo locale used for localization testing, to reliably determine if we need to fallback to the default newsroom language
 export const DUMMY_DEFAULT_LOCALE = 'qps-ploc';
 
@@ -24,13 +26,14 @@ export function getRedirectToCanonicalLocale(
     if (shortestLocaleSlug !== nextLocaleIsoCode) {
         const prefixedPath =
             redirectPath && !redirectPath.startsWith('/') ? `/${redirectPath}` : redirectPath;
+        const finalPath = shortestLocaleSlug
+            ? `/${shortestLocaleSlug}${prefixedPath}`
+            : prefixedPath;
 
         const urlQuery = query ? `?${stringify(query)}` : '';
 
         return {
-            destination: shortestLocaleSlug
-                ? `/${shortestLocaleSlug}${prefixedPath}${urlQuery}`
-                : `${prefixedPath}${urlQuery}`,
+            destination: `${getResolvedPath(finalPath)}${urlQuery}`,
             permanent: false,
         };
     }

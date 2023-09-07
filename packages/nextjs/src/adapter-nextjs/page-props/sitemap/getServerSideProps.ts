@@ -46,7 +46,10 @@ export function getSitemapServerSideProps(
         const categories = await api.getCategories();
 
         const paths = createPaths(stories, categories);
-        const sitemapBuilder = new SitemapBuilder(baseUrl, options.basePath);
+        const sitemapBuilder = new SitemapBuilder(
+            baseUrl,
+            options.basePath || process.env.NEXT_PUBLIC_BASE_PATH,
+        );
 
         sitemapBuilder.addUrl('/');
         paths.forEach((path) => sitemapBuilder.addUrl(path));
