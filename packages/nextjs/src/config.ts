@@ -28,7 +28,7 @@ export = function PrezlyConfig(params?: Partial<PrezlyConfigParams>) {
     const finalParams = { ...DEFAULT_PARAMS, ...params };
 
     return function withPrezlyConfig(config: NextConfig): NextConfig {
-        const { headers } = config;
+        const { headers, basePath } = config;
 
         return {
             ...config,
@@ -81,6 +81,12 @@ export = function PrezlyConfig(params?: Partial<PrezlyConfigParams>) {
                     defaultLocale: DUMMY_DEFAULT_LOCALE,
                     // Default locale detection is disabled, since the locales would be determined by Prezly API
                     localeDetection: false,
+                },
+            }),
+            ...(basePath && {
+                env: {
+                    ...config.env,
+                    NEXT_PUBLIC_BASE_PATH: basePath,
                 },
             }),
         };
