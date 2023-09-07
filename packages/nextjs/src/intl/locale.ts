@@ -24,7 +24,8 @@ export function getRedirectToCanonicalLocale(
         : shortestLocaleCode;
 
     if (shortestLocaleSlug !== nextLocaleIsoCode) {
-        const prefixedPath = redirectPath.startsWith('/') ? redirectPath : `/${redirectPath}`;
+        const prefixedPath =
+            redirectPath && !redirectPath.startsWith('/') ? `/${redirectPath}` : redirectPath;
         const finalPath = shortestLocaleSlug
             ? `/${shortestLocaleSlug}${prefixedPath}`
             : prefixedPath;
