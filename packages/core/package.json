@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-core",
-  "version": "6.4.6-alpha.0",
+  "version": "6.5.0",
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
   "main": "build/index.js",
   "types": "build/index.d.ts",
