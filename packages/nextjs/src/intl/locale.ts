@@ -24,14 +24,14 @@ export function getRedirectToCanonicalLocale(
         : shortestLocaleCode;
 
     if (shortestLocaleSlug !== nextLocaleIsoCode) {
-        const prefixedPath = getResolvedPath(redirectPath);
+        const prefixedPath = shortestLocaleSlug
+            ? `/${shortestLocaleSlug}${redirectPath}`
+            : redirectPath;
 
         const urlQuery = query ? `?${stringify(query)}` : '';
 
         return {
-            destination: shortestLocaleSlug
-                ? `/${shortestLocaleSlug}${prefixedPath}${urlQuery}`
-                : `${prefixedPath}${urlQuery}`,
+            destination: `${getResolvedPath(prefixedPath)}${urlQuery}`,
             permanent: false,
         };
     }
