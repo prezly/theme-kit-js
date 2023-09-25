@@ -45,7 +45,7 @@
     "message": "Contact"
   },
   "boilerplate.title": {
-    "message": "A propos de {companyName}"
+    "message": "À propos de {companyName}"
   },
   "categories.title": {
     "message": "Catégories"
