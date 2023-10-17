@@ -163,7 +163,7 @@
     "message": "Something went wrong..."
   },
   "subscription.disclaimer": {
-    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` i18n along with a link to the privacy policy.",
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
     "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
   },
   "subscription.formTitle": {
