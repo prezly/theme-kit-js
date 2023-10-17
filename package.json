@@ -30,10 +30,8 @@
         "build:esm": "tsc --project tsconfig.esm.json",
         "build:cjs": "tsc --project tsconfig.cjs.json",
         "build": "npm run build:esm && npm run build:cjs",
-        "copy-messages": "cp -r src/messageFiles/compiled dist/messages",
-        "build:pnpm": "npm run build && npm run intl:compile && npm run postbuild",
+        "build:pnpm": "npm run build && npm run intl:compile",
         "watch": "tsc --watch --preserveWatchOutput --project .",
-        "postbuild": "npm run copy-messages",
         "prerelease": "npm run build",
         "lint": "eslint src",
         "prettier:check": "prettier --check './src/**/*.{ts,js}'",
@@ -41,8 +39,8 @@
         "release": "np",
         "release:preview": "npm run release -- --any-branch --tag preview --no-release-draft",
         "test": "echo \"Tests? maybe next time ;)\" && exit 0",
-        "intl:extract": "formatjs extract 'src/messageDescriptors/**/*.ts' --out-file src/messageFiles/source/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
-        "intl:compile": "formatjs compile-folder --ast --format crowdin src/messageFiles/source src/messageFiles/compiled"
+        "intl:extract": "formatjs extract 'src/messages/**/*.ts' --out-file i18n/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
+        "intl:compile": "formatjs compile-folder --ast --format crowdin i18n dist/messages"
     },
     "np": {
         "yarn": false
