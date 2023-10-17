@@ -62,11 +62,8 @@
     },
     "homepage": "https://github.com/prezly/themes-intl-messages#readme",
     "devDependencies": {
-        "@babel/core": "^7.16.0",
-        "@babel/preset-env": "^7.16.4",
         "@formatjs/cli": "^4.4.0",
         "@prezly/eslint-config": "^4.0.0",
-        "babel-plugin-formatjs": "^10.3.11",
         "eslint": "^8.8.0",
         "np": "^8.0.4",
         "prettier": "^2.4.1",
