@@ -1,0 +1,19 @@
+{
+  "name": "ui",
+  "version": "0.0.1",
+  "description": "UI components for Prezly themes",
+  "keywords": ["prezly", "themes", "ui"],
+  "author": "Prezly Team",
+  "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/ui#readme",
+  "license": "MIT",
+  "main": "build/index.js",
+  "files": ["build", "README.md"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prezly/theme-kit-js.git"
+  },
+  "scripts": {},
+  "bugs": {
+    "url": "https://github.com/prezly/theme-kit-js/issues"
+  }
+}
