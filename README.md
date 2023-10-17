@@ -15,7 +15,7 @@ It has two main exports:
 
 ### npm
 ```Shell
-npm install react-intl @prezly/themes-intl-i18n
+npm install react-intl @prezly/themes-intl-messages
 ```
 
 ### Usage in the application
@@ -38,7 +38,7 @@ const messages = await import(`@prezly/themes-intl-messages/messages/${localeIso
 
 3) Use the message descriptor to render the message in your component. Your IDE should give hints on the messages structure.
 ```tsx
-import translations from '@prezly/themes-intl-i18n';
+import translations from '@prezly/themes-intl-messages';
 import { FormattedMessage } from 'react-intl';
 
 function Component() {
