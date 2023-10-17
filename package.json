@@ -2,13 +2,14 @@
     "name": "@prezly/themes-intl-messages",
     "version": "1.17.1",
     "description": "Translations for Prezly themes",
-    "main": "dist/esm/index.js",
-    "types": "dist/types/index.d.ts",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.mjs",
+    "types": "dist/esm/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/esm/index.js",
+            "import": "./dist/esm/index.mjs",
             "require": "./dist/cjs/index.js",
-            "default": "./dist/esm/index.js"
+            "default": "./dist/cjs/index.js"
         },
         "./messages": "./dist/messages"
     },
@@ -27,22 +28,24 @@
     "scripts": {
         "clean": "rimraf dist/* *.tsbuildinfo",
         "prebuild": "npm run clean && npm run prettier:check && npm run intl:compile",
-        "build:esm": "tsc --project tsconfig.esm.json",
-        "build:cjs": "tsc --project tsconfig.cjs.json",
         "build": "npm run build:esm && npm run build:cjs",
-        "copy-messages": "cp -r src/messageFiles/compiled dist/messages",
-        "build:pnpm": "npm run build && npm run intl:compile && npm run postbuild",
+        "build:esm": "tsc --project tsconfig.esm.json && babel --config-file=./babel.esm.js src/ --extensions=.ts --out-dir=dist/esm/ --out-file-extension=.mjs",
+        "build:cjs": "tsc --project tsconfig.cjs.json && babel --config-file=./babel.cjs.js src/ --extensions=.ts --out-dir=dist/cjs/",
         "watch": "tsc --watch --preserveWatchOutput --project .",
-        "postbuild": "npm run copy-messages",
         "prerelease": "npm run build",
         "lint": "eslint src",
         "prettier:check": "prettier --check './src/**/*.{ts,js}'",
         "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
         "release": "np",
         "release:preview": "npm run release -- --any-branch --tag preview --no-release-draft",
-        "test": "echo \"Tests? maybe next time ;)\" && exit 0",
-        "intl:extract": "formatjs extract 'src/messageDescriptors/**/*.ts' --out-file src/messageFiles/source/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
-        "intl:compile": "formatjs compile-folder --ast --format crowdin src/messageFiles/source src/messageFiles/compiled"
+        "test": "npm run test:build",
+        "test:build": "npm run test:build:messages && npm run test:build:cjs && npm run test:build:esm && npm run test:build:dts",
+        "test:build:cjs": "node test/test-build.cjs",
+        "test:build:esm": "node test/test-build.mjs",
+        "test:build:dts": "tsc --noEmit dist/cjs/index.d.ts && tsc --noEmit dist/esm/index.d.ts",
+        "test:build:messages": "echo 'Checking if the dist/messages directory contains 49 files' && ls dist/messages/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
+        "intl:extract": "formatjs extract 'src/messages/**/*.ts' --out-file i18n/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
+        "intl:compile": "formatjs compile-folder --ast --format crowdin i18n dist/messages"
     },
     "np": {
         "yarn": false
@@ -59,11 +62,14 @@
     },
     "homepage": "https://github.com/prezly/themes-intl-messages#readme",
     "devDependencies": {
-        "@babel/core": "^7.16.0",
-        "@babel/preset-env": "^7.16.4",
+        "@babel/cli": "^7.23.0",
+        "@babel/core": "^7.23.2",
+        "@babel/plugin-transform-modules-commonjs": "^7.23.0",
+        "@babel/preset-env": "^7.23.2",
+        "@babel/preset-typescript": "^7.23.2",
         "@formatjs/cli": "^4.4.0",
         "@prezly/eslint-config": "^4.0.0",
-        "babel-plugin-formatjs": "^10.3.11",
+        "babel-plugin-add-import-extension": "^1.6.0",
         "eslint": "^8.8.0",
         "np": "^8.0.4",
         "prettier": "^2.4.1",

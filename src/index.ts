@@ -1,5 +1,4 @@
-import translations from './messageDescriptors';
+import * as translations from './messages/index.js';
 
 // eslint-disable-next-line import/no-default-export
-export default translations;
 export { translations };
