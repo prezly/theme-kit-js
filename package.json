@@ -39,9 +39,10 @@
         "release": "np",
         "release:preview": "npm run release -- --any-branch --tag preview --no-release-draft",
         "test": "npm run test:build",
-        "test:build": "npm run test:build:messages && npm run test:build:cjs && npm run test:build:esm",
+        "test:build": "npm run test:build:messages && npm run test:build:cjs && npm run test:build:esm && npm run test:build:dts",
         "test:build:cjs": "node test/test-build.cjs",
         "test:build:esm": "node test/test-build.mjs",
+        "test:build:dts": "tsc --noEmit dist/cjs/index.d.ts && tsc --noEmit dist/esm/index.d.ts",
         "test:build:messages": "echo 'Checking if the dist/messages directory contains 49 files' && ls dist/messages/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
         "intl:extract": "formatjs extract 'src/messages/**/*.ts' --out-file i18n/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
         "intl:compile": "formatjs compile-folder --ast --format crowdin i18n dist/messages"
