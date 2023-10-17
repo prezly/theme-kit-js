@@ -14,7 +14,7 @@ export const subscription = defineMessages({
         defaultMessage:
             'By clicking "{subscribe}" I confirm I have read and agree to the {privacyPolicyLink}.',
         description:
-            'The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` i18n along with a link to the privacy policy.',
+            'The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.',
     },
     privacyPolicy: {
         id: 'subscription.privacyPolicy',
