@@ -9,7 +9,7 @@
         ".": {
             "import": "./dist/esm/index.mjs",
             "require": "./dist/cjs/index.js",
-            "default": "./dist/esm/index.mjs"
+            "default": "./dist/cjs/index.js"
         },
         "./messages": "./dist/messages"
     },
