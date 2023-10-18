@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Bumalik sa homepage"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopyahin ang URL"
+  },
+  "actions.download": {
+    "message": "Mag-download"
+  },
+  "actions.loadMore": {
+    "message": "Mag-load pa"
+  },
+  "actions.more": {
+    "message": "Higit pa"
+  },
+  "actions.privacyRequests": {
+    "message": "Mga kahilingan sa pagkapribado"
+  },
+  "actions.readMore": {
+    "message": "Magbasa pa"
+  },
+  "actions.reload": {
+    "message": "Mag-reload"
+  },
+  "actions.share": {
+    "message": "Ibahagi:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Magsimulang gumamit ng mga cookie"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Huminto sa paggamit ng mga cookie"
+  },
+  "actions.subscribe": {
+    "message": "Mag-subscribe"
+  },
+  "actions.toggleFilters": {
+    "message": "Toggle ng paghahanap ng mga filter"
+  },
+  "actions.unsubscribe": {
+    "message": "Mag-unsubscribe"
+  },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
+  "boilerplate.title": {
+    "message": "Tungkol sa {companyName}"
+  },
+  "categories.title": {
+    "message": "Mga kategorya"
+  },
+  "contacts.title": {
+    "message": "Makipag-ugnayan sa amin"
+  },
+  "cookieConsent.accept": {
+    "message": "Oo, maaari kayong gumamit ng mga cookie"
+  },
+  "cookieConsent.notice": {
+    "message": "Maaari mong ipawalang-bisa ang mga cookie sa anumang oras sa ibaba ng page."
+  },
+  "cookieConsent.reject": {
+    "message": "Hindi, huwag gumamit ng mga cookie"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Gumagamit kami ng mga cookie sa aming website. Tinutulungan kami ng mga ito na makilala ka nang kaunti at kung paano mo ginagamit ang aming website. Tinutulungan kami nito na makapagbigay ng mas mahalaga at iniakmang karanasan para sa iyo at iba pa."
+  },
+  "cookieConsent.title": {
+    "message": "Gusto naming gumamit ng mga cookie"
+  },
+  "errors.emailInvalid": {
+    "message": "Ipakilala ang tamang email address"
+  },
+  "errors.fieldRequired": {
+    "message": "Kailangan ang field na ito"
+  },
+  "errors.unknown": {
+    "message": "Nagkaproblema. Pakisumitengmuli ang form"
+  },
+  "mediaGallery.title": {
+    "message": "Mga gallery ng media"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Hindi pa pwede hanggang {date}"
+  },
+  "misc.loading": {
+    "message": "Naglo-load..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "Nakopya na ag URL!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Nabigasyon ng toggle"
+  },
+  "newsroom.title": {
+    "message": "Site"
+  },
+  "noStories.subtitle": {
+    "message": "Bumalik sa ibang pagkakataon para makita ang mga bagong kwento."
+  },
+  "noStories.title": {
+    "message": "Welcome sa {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Kung ikaw mismo ang nag-type ng URL, tingnan ang baybay sa address bar."
+  },
+  "notFound.title": {
+    "message": "Walang ganitong page na hinahanap mo..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Maghanap"
+  },
+  "search.facets.category": {
+    "message": "Kategorya"
+  },
+  "search.facets.month": {
+    "message": "Buwan"
+  },
+  "search.facets.year": {
+    "message": "Taon"
+  },
+  "search.filters": {
+    "message": "Mga Filter"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Nahanap namin {resultsCount} ang mga resulta para sa {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Mga resulta ng paghahanap"
+  },
+  "search.inputHint": {
+    "message": "I-type kung ano ang hahanapin"
+  },
+  "search.inputLabel": {
+    "message": "Maghanap"
+  },
+  "search.noResults": {
+    "message": "Walang nahanap. Sumubok ng ibang termino sa paghahanap!"
+  },
+  "search.resultsTitle": {
+    "message": "Agarang mga resulta"
+  },
+  "search.showAllResults": {
+    "message": "Ipakita ang lahat ng mga resulta"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Maghanap"
+  },
+  "search.viewLess": {
+    "message": "Bawasan ang tinitignan"
+  },
+  "search.viewMore": {
+    "message": "Tingnan ang higit pa"
+  },
+  "serverError.subtitle": {
+    "message": "Subukang i-refresh ang page o bumalik pagkaraan ng ilang saglit."
+  },
+  "serverError.title": {
+    "message": "May nangyaring hindi tama..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Sa pamamagitan ng pag-click ng \"{subscribe}\" kinukumpirma ko na nabasa ko at sumasang-ayon ako sa {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Makatanggap ng mga update sa mailbox mo"
+  },
+  "subscription.labelEmail": {
+    "message": "Email address mo"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Patakaran ng Pagkapribado"
+  }
+}

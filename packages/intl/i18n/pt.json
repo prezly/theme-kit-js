@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Voltar à página inicial"
+  },
+  "actions.copyShareUrl": {
+    "message": "Copiar URL"
+  },
+  "actions.download": {
+    "message": "Download"
+  },
+  "actions.loadMore": {
+    "message": "Carregar mais"
+  },
+  "actions.more": {
+    "message": "Mais"
+  },
+  "actions.privacyRequests": {
+    "message": "Solicitações de privacidade"
+  },
+  "actions.readMore": {
+    "message": "Saiba mais"
+  },
+  "actions.reload": {
+    "message": "Voltar a carregar"
+  },
+  "actions.share": {
+    "message": "Partilhar:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Comece a usar 'cookies'"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Pare de usar 'cookies'"
+  },
+  "actions.subscribe": {
+    "message": "Inscrever-se"
+  },
+  "actions.toggleFilters": {
+    "message": "Ativar os filtros de pesquisa"
+  },
+  "actions.unsubscribe": {
+    "message": "Cancelar"
+  },
+  "boilerplate.contact": {
+    "message": "Contacto"
+  },
+  "boilerplate.title": {
+    "message": "Sobre a {companyName}"
+  },
+  "categories.title": {
+    "message": "Categorias"
+  },
+  "contacts.title": {
+    "message": "Contacte-nos"
+  },
+  "cookieConsent.accept": {
+    "message": "Sim, podem usar 'cookies'"
+  },
+  "cookieConsent.notice": {
+    "message": "Pode revogar os 'cookies' a qualquer momento no fundo da página."
+  },
+  "cookieConsent.reject": {
+    "message": "Não, não usem 'cookies'"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Utilizamos 'cookies' no nosso 'website'. Ajudam-nos a saber um pouco de si e como utiliza o nosso 'website'. Isto ajuda-nos a fornecer uma experiência mais valiosa e personalizada para si e os outros."
+  },
+  "cookieConsent.title": {
+    "message": "Gostaríamos de usar 'cookies'"
+  },
+  "errors.emailInvalid": {
+    "message": "Introduza um endereço de e-mail válido"
+  },
+  "errors.fieldRequired": {
+    "message": "Este campo é obrigatório"
+  },
+  "errors.unknown": {
+    "message": "Algo correu mal. Por favor, experimente submeter o formulário novamente"
+  },
+  "mediaGallery.title": {
+    "message": "Galerias de 'media'"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo até {date}"
+  },
+  "misc.loading": {
+    "message": "A carregar..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL copiado!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Ativar a navegação"
+  },
+  "newsroom.title": {
+    "message": "Site"
+  },
+  "noStories.subtitle": {
+    "message": "Volte mais tarde para ver novas histórias."
+  },
+  "noStories.title": {
+    "message": "Bem-vindo à {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Se escreveu o URL, verifique a ortografia na barra de endereço."
+  },
+  "notFound.title": {
+    "message": "A página que procura não existe..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Pesquisar"
+  },
+  "search.facets.category": {
+    "message": "Categoria"
+  },
+  "search.facets.month": {
+    "message": "Mês"
+  },
+  "search.facets.year": {
+    "message": "Ano"
+  },
+  "search.filters": {
+    "message": "Filtros"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Encontrámos {resultsCount} resultados para {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Resultados da Pesquisa"
+  },
+  "search.inputHint": {
+    "message": "Digite a sua pesquisa"
+  },
+  "search.inputLabel": {
+    "message": "Pesquisar"
+  },
+  "search.noResults": {
+    "message": "Não encontrámos nada! Por favor, tente outro termo de pesquisa!"
+  },
+  "search.resultsTitle": {
+    "message": "Resultados rápidos"
+  },
+  "search.showAllResults": {
+    "message": "Mostrar todos os resultados"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Pesquisa"
+  },
+  "search.viewLess": {
+    "message": "Ver menos"
+  },
+  "search.viewMore": {
+    "message": "Ver mais"
+  },
+  "serverError.subtitle": {
+    "message": "Tente atualizar a página ou voltar um pouco mais tarde."
+  },
+  "serverError.title": {
+    "message": "Alguma coisa correu mal..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Ao clicar em \"{subscribe}\", confirmo que li e concordo com a {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Receba atualizações na sua caixa de correio"
+  },
+  "subscription.labelEmail": {
+    "message": "O seu endereço de correio eletrónico"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Política de Privacidade"
+  }
+}

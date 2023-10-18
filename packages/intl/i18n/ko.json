@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "홈페이지로 돌아가기"
+  },
+  "actions.copyShareUrl": {
+    "message": "URL 복사"
+  },
+  "actions.download": {
+    "message": "다운로드"
+  },
+  "actions.loadMore": {
+    "message": "추가 로드하기"
+  },
+  "actions.more": {
+    "message": "기타"
+  },
+  "actions.privacyRequests": {
+    "message": "개인정보 요청"
+  },
+  "actions.readMore": {
+    "message": "더 보기"
+  },
+  "actions.reload": {
+    "message": "다시 로드하기"
+  },
+  "actions.share": {
+    "message": "공유:"
+  },
+  "actions.startUsingCookies": {
+    "message": "쿠키 사용 시작"
+  },
+  "actions.stopUsingCookies": {
+    "message": "쿠키 사용 중지"
+  },
+  "actions.subscribe": {
+    "message": "구독"
+  },
+  "actions.toggleFilters": {
+    "message": "검색 필터 토글"
+  },
+  "actions.unsubscribe": {
+    "message": "구독 해제"
+  },
+  "boilerplate.contact": {
+    "message": "연락처"
+  },
+  "boilerplate.title": {
+    "message": "{companyName} 소개"
+  },
+  "categories.title": {
+    "message": "카테고리"
+  },
+  "contacts.title": {
+    "message": "문의하기"
+  },
+  "cookieConsent.accept": {
+    "message": "네, 쿠키를 사용하세요"
+  },
+  "cookieConsent.notice": {
+    "message": "페이지 하단에서 언제라도 쿠키 사용을 취소하실 수 있습니다."
+  },
+  "cookieConsent.reject": {
+    "message": "아니오, 쿠키를 사용하지 마세요"
+  },
+  "cookieConsent.subtitle": {
+    "message": "저희 웹사이트는 쿠키를 사용합니다. 쿠키는 귀하에 대한 약간의 정보와 귀하께서 저희 웹사이트를 사용하는 방식들을 저희가 알 수 있도록 도와줍니다. 이를 통해 저희가 귀하와 다른 분들께 더욱 가치있는 맞춤형 경험을 제공드릴 수 있습니다."
+  },
+  "cookieConsent.title": {
+    "message": "저희는 쿠키를 사용하고자 합니다"
+  },
+  "errors.emailInvalid": {
+    "message": "유효한 이메일 주소를 제시하세요."
+  },
+  "errors.fieldRequired": {
+    "message": "이 필드는 필수 항목입니다."
+  },
+  "errors.unknown": {
+    "message": "뭔가 잘 되었습니다. 양식을 다시 제출하세요"
+  },
+  "mediaGallery.title": {
+    "message": "미디어 갤러리"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "{date}일까지 통상 금지"
+  },
+  "misc.loading": {
+    "message": "불러오는 중..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL 복사함!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "토글 내비게이션"
+  },
+  "newsroom.title": {
+    "message": "사이트"
+  },
+  "noStories.subtitle": {
+    "message": "새로운 이야기를 보려면 나중에 다시 확인하세요."
+  },
+  "noStories.title": {
+    "message": "{newsroom}에 오신 것을 환영합니다!"
+  },
+  "notFound.subtitle": {
+    "message": "URL을 직접 입력한 경우 주소 표시줄에서 철자를 확인하세요."
+  },
+  "notFound.title": {
+    "message": "찾는 페이지가 존재하지 않습니다..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "검색"
+  },
+  "search.facets.category": {
+    "message": "카테고리"
+  },
+  "search.facets.month": {
+    "message": "월"
+  },
+  "search.facets.year": {
+    "message": "년"
+  },
+  "search.filters": {
+    "message": "필터"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "{searchQuery}에 대한 결과를 {resultsCount}개 찾았습니다"
+  },
+  "search.fullResultsTitle": {
+    "message": "검색 결과"
+  },
+  "search.inputHint": {
+    "message": "검색어 입력"
+  },
+  "search.inputLabel": {
+    "message": "검색"
+  },
+  "search.noResults": {
+    "message": "검색 결과가 없습니다! 다른 검색어를 사용하세요!"
+  },
+  "search.resultsTitle": {
+    "message": "빠른 결과"
+  },
+  "search.showAllResults": {
+    "message": "모든 결과 보기"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "검색"
+  },
+  "search.viewLess": {
+    "message": "줄이기"
+  },
+  "search.viewMore": {
+    "message": "더 보기"
+  },
+  "serverError.subtitle": {
+    "message": "페이지를 새로고침하거나 잠시 후에 다시 시도하세요."
+  },
+  "serverError.title": {
+    "message": "문제가 발생했음..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "\"{subscribe}\"을 클릭함으로 {privacyPolicyLink}을 읽고 동의함을 확인합니다."
+  },
+  "subscription.formTitle": {
+    "message": "메일박스에서 업데이트 가져오기"
+  },
+  "subscription.labelEmail": {
+    "message": "사용자 이메일 주소"
+  },
+  "subscription.privacyPolicy": {
+    "message": "개인정보 보호 정책"
+  }
+}

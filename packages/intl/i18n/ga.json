@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Back to homepage"
+  },
+  "actions.copyShareUrl": {
+    "message": "Copy URL"
+  },
+  "actions.download": {
+    "message": "Download"
+  },
+  "actions.loadMore": {
+    "message": "Load more"
+  },
+  "actions.more": {
+    "message": "Tuilleadh"
+  },
+  "actions.privacyRequests": {
+    "message": "Privacy requests"
+  },
+  "actions.readMore": {
+    "message": "Read more"
+  },
+  "actions.reload": {
+    "message": "Reload"
+  },
+  "actions.share": {
+    "message": "Share:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Start using cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Stop using cookies"
+  },
+  "actions.subscribe": {
+    "message": "Liostáil"
+  },
+  "actions.toggleFilters": {
+    "message": "Toggle search filters"
+  },
+  "actions.unsubscribe": {
+    "message": "Díliostáil"
+  },
+  "boilerplate.contact": {
+    "message": "Teagmhálaí"
+  },
+  "boilerplate.title": {
+    "message": "Eolas faoi {companyName}"
+  },
+  "categories.title": {
+    "message": "Categories"
+  },
+  "contacts.title": {
+    "message": "Déan teagmháil linn"
+  },
+  "cookieConsent.accept": {
+    "message": "Is féidir fianáin a úsáid"
+  },
+  "cookieConsent.notice": {
+    "message": "Is féidir leat fianáin a chúlghairm am ar bith ag bun an leathanaigh seo."
+  },
+  "cookieConsent.reject": {
+    "message": "Ná húsáidtear fianáin"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Bainimid úsáid as fianáin ar ár láithreán gréasáin. Tá siad ina gcuidiú linn aithne a chur ort agus insint dúinn conas a úsáideann tú ár láithreán gréasáin. Cuidíonn sé sin linn eispéireas níos luachmhaire, saincheaptha a thabhairt duit agus do dhaoine eile."
+  },
+  "cookieConsent.title": {
+    "message": "Ba mhaith linn fianáin a úsáid"
+  },
+  "errors.emailInvalid": {
+    "message": "Cuir isteach seoladh ríomhphoist atá bailí"
+  },
+  "errors.fieldRequired": {
+    "message": "Tá an réimse seo riachtanach"
+  },
+  "errors.unknown": {
+    "message": "Something went wrong. Please try submitting the form again"
+  },
+  "mediaGallery.title": {
+    "message": "Media galleries"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo until {date}"
+  },
+  "misc.loading": {
+    "message": "Loading..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL copied!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Toggle navigation"
+  },
+  "newsroom.title": {
+    "message": "Site"
+  },
+  "noStories.subtitle": {
+    "message": "Come back later to see new stories."
+  },
+  "noStories.title": {
+    "message": "Welcome to {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "If you typed the URL yourself, check the spelling in the address bar."
+  },
+  "notFound.title": {
+    "message": "The page you’re looking for doesn’t exist..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Search"
+  },
+  "search.facets.category": {
+    "message": "Category"
+  },
+  "search.facets.month": {
+    "message": "Mí"
+  },
+  "search.facets.year": {
+    "message": "Bliain"
+  },
+  "search.filters": {
+    "message": "Filters"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "We found {resultsCount} results for {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Torthaí cuardaigh"
+  },
+  "search.inputHint": {
+    "message": "Type your search"
+  },
+  "search.inputLabel": {
+    "message": "Search"
+  },
+  "search.noResults": {
+    "message": "Nothing found! Please try another search term!"
+  },
+  "search.resultsTitle": {
+    "message": "Quick results"
+  },
+  "search.showAllResults": {
+    "message": "Show all results"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Search"
+  },
+  "search.viewLess": {
+    "message": "View less"
+  },
+  "search.viewMore": {
+    "message": "View more"
+  },
+  "serverError.subtitle": {
+    "message": "Try refreshing the page or coming back a bit later."
+  },
+  "serverError.title": {
+    "message": "Bhí rud éigean contráilte..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Faigh nuashonraithe i do bhosca poist"
+  },
+  "subscription.labelEmail": {
+    "message": "Do sheoladh ríomhphoist"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Privacy Policy"
+  }
+}

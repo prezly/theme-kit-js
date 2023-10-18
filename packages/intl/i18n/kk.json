@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Негізгі бетке қайту"
+  },
+  "actions.copyShareUrl": {
+    "message": "URL-ді көшіру"
+  },
+  "actions.download": {
+    "message": "Жүктеп алу"
+  },
+  "actions.loadMore": {
+    "message": "Басқаларын жүктеу"
+  },
+  "actions.more": {
+    "message": "Толығырақ"
+  },
+  "actions.privacyRequests": {
+    "message": "Құпиялылыққа қатысты талаптар"
+  },
+  "actions.readMore": {
+    "message": "Ары қарай оқу"
+  },
+  "actions.reload": {
+    "message": "Қайта жүктеу"
+  },
+  "actions.share": {
+    "message": "Бөлісу:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Кукилерді қолдану"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Кукилерді қолдануды тоқтату"
+  },
+  "actions.subscribe": {
+    "message": "Жазылу"
+  },
+  "actions.toggleFilters": {
+    "message": "Іздеу сүзгілерін ауыстыру"
+  },
+  "actions.unsubscribe": {
+    "message": "Жазылымнан бас тарту"
+  },
+  "boilerplate.contact": {
+    "message": "Контакт"
+  },
+  "boilerplate.title": {
+    "message": "{companyName} Туралы"
+  },
+  "categories.title": {
+    "message": "Санаттар"
+  },
+  "contacts.title": {
+    "message": "Бізбен хабарласу"
+  },
+  "cookieConsent.accept": {
+    "message": "Иә, кукилерді пайдаланылады"
+  },
+  "cookieConsent.notice": {
+    "message": "Беттің соңында куки файлдарын кез келген уақытта кері қайтара аласыз."
+  },
+  "cookieConsent.reject": {
+    "message": "Жоқ, кукилерді пайдаланылмайды"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Біз веб-сайттарда кукилер пайдаланамыз. Олар сіз туралы және веб-сайтымызды қалай қолданатыныңыз туралы кішкене білуімізге көмектеседі. Бұл барлығымыз үшін анағұрлым пайдалы интерфейс және талғамға сай параметрлер жасауға көмектеседі."
+  },
+  "cookieConsent.title": {
+    "message": "Біз куки файлдарын пайдаланғымыз келеді"
+  },
+  "errors.emailInvalid": {
+    "message": "Жарамды электрондық пошта беріңіз"
+  },
+  "errors.fieldRequired": {
+    "message": "Бұл жол міндетті"
+  },
+  "errors.unknown": {
+    "message": "Бірдеңе дұрыс болмады. Пішінді қайтадан жіберіп көріңіз"
+  },
+  "mediaGallery.title": {
+    "message": "Мультимедиа галереялары"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Эмбарга мына күнге дейін: {date}"
+  },
+  "misc.loading": {
+    "message": "Жүктелуде..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL көшірілді!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Навигацияны ауыстыру"
+  },
+  "newsroom.title": {
+    "message": "Сайт"
+  },
+  "noStories.subtitle": {
+    "message": "Жаңа оқиғаларды көру үшін кейінірек қайта ашыңыз."
+  },
+  "noStories.title": {
+    "message": "{newsroom} бөлмесіне қош келдіңіз!"
+  },
+  "notFound.subtitle": {
+    "message": "URL-ді өзіңіз терсеңіз, мекенжайдың дұрыс жазылғанын тексеріңіз."
+  },
+  "notFound.title": {
+    "message": "Сіз іздеген бет жоқ..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Іздеу"
+  },
+  "search.facets.category": {
+    "message": "Санат"
+  },
+  "search.facets.month": {
+    "message": "Ай"
+  },
+  "search.facets.year": {
+    "message": "Жыл"
+  },
+  "search.filters": {
+    "message": "Сүзгілер"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Біз {searchQuery} бойынша {resultsCount} нәтиже таптық"
+  },
+  "search.fullResultsTitle": {
+    "message": "Іздеу нәтижелері"
+  },
+  "search.inputHint": {
+    "message": "Іздеген нәрсеңізді теріңіз"
+  },
+  "search.inputLabel": {
+    "message": "Іздеу"
+  },
+  "search.noResults": {
+    "message": "Ештеңе табылмады! Ізделетін сөзді өзгертіп көріңіз!"
+  },
+  "search.resultsTitle": {
+    "message": "Жылдам нәтижелер"
+  },
+  "search.showAllResults": {
+    "message": "Барлық нәтижені көрсету"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Іздеу"
+  },
+  "search.viewLess": {
+    "message": "Жию"
+  },
+  "search.viewMore": {
+    "message": "Жаю"
+  },
+  "serverError.subtitle": {
+    "message": "Бетті жаңартып көріңіз немесе кейінірек ашыңыз."
+  },
+  "serverError.title": {
+    "message": "Бірнәрсе дұрыс болмады..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "\"{subscribe}\" түймесін басу арқылы {privacyPolicyLink} талаптарын оқығанымды және оларға келісетінімді растаймын."
+  },
+  "subscription.formTitle": {
+    "message": "Пошта жәшігімен жаңалықтар алу"
+  },
+  "subscription.labelEmail": {
+    "message": "Эл.пошта мекенжайы"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Құпиялылық саясаты"
+  }
+}

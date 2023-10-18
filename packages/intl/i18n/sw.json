@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Rudi kwa Ukurasa wa Nyumbani"
+  },
+  "actions.copyShareUrl": {
+    "message": "Nakili Kiunganishi"
+  },
+  "actions.download": {
+    "message": "Pakua"
+  },
+  "actions.loadMore": {
+    "message": "Pakia zaidi"
+  },
+  "actions.more": {
+    "message": "Zaidi"
+  },
+  "actions.privacyRequests": {
+    "message": "Maombi ya faragha"
+  },
+  "actions.readMore": {
+    "message": "Soma mengi"
+  },
+  "actions.reload": {
+    "message": "Pakua tena"
+  },
+  "actions.share": {
+    "message": "Shiriki:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Anza kutumia vidakuzi"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Acha kutumia vidakuzi"
+  },
+  "actions.subscribe": {
+    "message": "Jisajili"
+  },
+  "actions.toggleFilters": {
+    "message": "Geuza vichujio vya utafutaji"
+  },
+  "actions.unsubscribe": {
+    "message": "Jiondoe"
+  },
+  "boilerplate.contact": {
+    "message": "Mawasiliano"
+  },
+  "boilerplate.title": {
+    "message": "Kuhusu {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategoria"
+  },
+  "contacts.title": {
+    "message": "Wasiliana nasi"
+  },
+  "cookieConsent.accept": {
+    "message": "Ndio, unaweza kutumia vidakuzi"
+  },
+  "cookieConsent.notice": {
+    "message": "Unaweza kubatilisha vidakuzi wakati wowote chini ya ukurasa."
+  },
+  "cookieConsent.reject": {
+    "message": "Hapana, usitumie vidakuzi"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Tunatumia vidakuzi kwenye tovuti yetu. Zinatusaidia kukufahamu kidogo na jinsi unavyotumia tovuti yetu. Hii hutusaidia kukupa hali ya utumiaji yenye thamani zaidi na iliyoundwa mahsusi kwako na kwa wengine."
+  },
+  "cookieConsent.title": {
+    "message": "Tungependa kutumia vidakuzi"
+  },
+  "errors.emailInvalid": {
+    "message": "Tambulisha barua pepe halali"
+  },
+  "errors.fieldRequired": {
+    "message": "Hii sehemu inahitajika"
+  },
+  "errors.unknown": {
+    "message": "Hitilafu fulani imetokea. Tafadhali jaribu kuwasilisha fomu tena"
+  },
+  "mediaGallery.title": {
+    "message": "Hifadhi ya Midia"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo mpaka {date}"
+  },
+  "misc.loading": {
+    "message": "Inapakia..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL imenakiliwa!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Geuza urambazaji"
+  },
+  "newsroom.title": {
+    "message": "Tovuti"
+  },
+  "noStories.subtitle": {
+    "message": "Rudi baadaye ili kuona hadithi mpya."
+  },
+  "noStories.title": {
+    "message": "Karibu kwa {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Ikiwa uliandika URL mwenyewe, angalia tahajia kwenye upau wa anwani."
+  },
+  "notFound.title": {
+    "message": "Ukurasa unaotafuta haupo..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Tafuta"
+  },
+  "search.facets.category": {
+    "message": "Kategoria"
+  },
+  "search.facets.month": {
+    "message": "Mwezi"
+  },
+  "search.facets.year": {
+    "message": "Mwaka"
+  },
+  "search.filters": {
+    "message": "Vichujio"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Tumepata matokeo {resultsCount} kwa {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Matokeo ya utafutaji"
+  },
+  "search.inputHint": {
+    "message": "Andika utafutaji wako"
+  },
+  "search.inputLabel": {
+    "message": "Tafuta"
+  },
+  "search.noResults": {
+    "message": "Hakuna kilichopatikana! Tafadhali jaribu neno lingine la utafutaji!"
+  },
+  "search.resultsTitle": {
+    "message": "Matokeo ya haraka"
+  },
+  "search.showAllResults": {
+    "message": "Onyesha matokeo yote"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Tafuta"
+  },
+  "search.viewLess": {
+    "message": "Angalia machache"
+  },
+  "search.viewMore": {
+    "message": "Tazama mengi"
+  },
+  "serverError.subtitle": {
+    "message": "Jaribu kuonyesha upya ukurasa au urudi baadaye kidogo."
+  },
+  "serverError.title": {
+    "message": "Hitilafu fulani imetokea..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Kwa kubonyeza \"{subscribe}\" Ninathibitisha kuwa nimesoma na kukubaliana na {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Pata masasisho kwenye kisanduku chako cha barua pepe"
+  },
+  "subscription.labelEmail": {
+    "message": "Anwani yako ya barua pepe"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Sera ya Faragha"
+  }
+}

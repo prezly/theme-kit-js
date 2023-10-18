@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "होमपेज पर वापस जाएं"
+  },
+  "actions.copyShareUrl": {
+    "message": "यूआरएल कापी करें"
+  },
+  "actions.download": {
+    "message": "डाउनलोड करें"
+  },
+  "actions.loadMore": {
+    "message": "और लोड करें"
+  },
+  "actions.more": {
+    "message": "और ज्यादा"
+  },
+  "actions.privacyRequests": {
+    "message": "गोपनीयता के अनुरोध"
+  },
+  "actions.readMore": {
+    "message": "और पढ़ें"
+  },
+  "actions.reload": {
+    "message": "फिर से लोड करें"
+  },
+  "actions.share": {
+    "message": "साझा करें:"
+  },
+  "actions.startUsingCookies": {
+    "message": "कुकीज़ का उपयोग करना शुरू करें"
+  },
+  "actions.stopUsingCookies": {
+    "message": "कुकीज़ का उपयोग करना बंद करें"
+  },
+  "actions.subscribe": {
+    "message": "सब्सक्राइब करें"
+  },
+  "actions.toggleFilters": {
+    "message": "सर्च फिल्टर टॉगल करें"
+  },
+  "actions.unsubscribe": {
+    "message": "अनसब्सक्राइब करें"
+  },
+  "boilerplate.contact": {
+    "message": "संपर्क"
+  },
+  "boilerplate.title": {
+    "message": "{companyName} के बारे में"
+  },
+  "categories.title": {
+    "message": "श्रेणियाँ"
+  },
+  "contacts.title": {
+    "message": "हमसे संपर्क करें"
+  },
+  "cookieConsent.accept": {
+    "message": "हाँ, आप कुकीज़ का प्रयोग कर सकते हैं"
+  },
+  "cookieConsent.notice": {
+    "message": "आप पेज के निचले भाग पर जाकर किसी भी समय कुकीज़ हेतु अनुमति को रद्द कर सकते हैं।"
+  },
+  "cookieConsent.reject": {
+    "message": "नहीं, कुकीज़ का प्रयोग नहीं करें"
+  },
+  "cookieConsent.subtitle": {
+    "message": "हम अपनी वेबसाइट पर कुकीज़ का प्रयोग करते हैं। वे आपके बारे में थोड़ा जानने में और आप हमारी वेबसाइट का प्रयोग किस प्रकार करते हैं इस बारे में जानने में हमारी सहायता करती हैं। इससे हमें आपके और अन्य लोगों हेतु अधिक मूल्यवान और रुचि अनुरूप अनुभव प्रदान करने में मदद मिलती है।"
+  },
+  "cookieConsent.title": {
+    "message": "हम कुकीज़ का प्रयोग करना चाहेंगे"
+  },
+  "errors.emailInvalid": {
+    "message": "एक वैध ईमेल पता दर्ज करें"
+  },
+  "errors.fieldRequired": {
+    "message": "यह फ़ील्ड आवश्यक है"
+  },
+  "errors.unknown": {
+    "message": "कुछ गलत हो गया है। कृपया फॉर्म को फिर से जमा करने का प्रयास करें।"
+  },
+  "mediaGallery.title": {
+    "message": "मीडिया गैलरी"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "{date} तक प्रतिबंध"
+  },
+  "misc.loading": {
+    "message": "लोड हो रहा है..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "यूआरएल कॉपी किया गया!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "नैविगेशन टॉगल करें"
+  },
+  "newsroom.title": {
+    "message": "साइट"
+  },
+  "noStories.subtitle": {
+    "message": "नई कहानियाँ देखने के लिए बाद में वापस आएँ।"
+  },
+  "noStories.title": {
+    "message": "{newsroom} में आपका स्वागत है!"
+  },
+  "notFound.subtitle": {
+    "message": "यदि आपने स्वयं यूआरएल टाइप किया है, तो पता बार में अक्षर विन्यास की जाँच करें।"
+  },
+  "notFound.title": {
+    "message": "आप जो पेज खोज रहे हैं वह मौजूद नहीं है..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "खोजें"
+  },
+  "search.facets.category": {
+    "message": "वर्ग"
+  },
+  "search.facets.month": {
+    "message": "महिना"
+  },
+  "search.facets.year": {
+    "message": "साल"
+  },
+  "search.filters": {
+    "message": "फिल्टर"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "हमें {searchQuery} के लिए {resultsCount} परिणाम मिले"
+  },
+  "search.fullResultsTitle": {
+    "message": "खोजे नतीजे"
+  },
+  "search.inputHint": {
+    "message": "अपनी खोज लिखें"
+  },
+  "search.inputLabel": {
+    "message": "खोजें"
+  },
+  "search.noResults": {
+    "message": "कुछ नहीं मिला। कोई दूसरा खोज शब्द लिखकर प्रयास करें।"
+  },
+  "search.resultsTitle": {
+    "message": "त्वरित परिणाम"
+  },
+  "search.showAllResults": {
+    "message": "सभी परिणाम दिखाएं"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "खोजें"
+  },
+  "search.viewLess": {
+    "message": "कम देखें"
+  },
+  "search.viewMore": {
+    "message": "अधिक देखें"
+  },
+  "serverError.subtitle": {
+    "message": "पृष्ठ को रीफ्रेश करने का प्रयास करें या थोड़ी देर बाद वापस आएं।"
+  },
+  "serverError.title": {
+    "message": "कुछ गलत हो गया"
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "\"{subscribe}\" पर क्लिक करके मैं पुष्टि करता हूं कि मैंने {privacyPolicyLink} को पढ़ लिया है और इससे सहमत हूं।"
+  },
+  "subscription.formTitle": {
+    "message": "अपने मेलबॉक्स में नई जानकारी प्राप्त करें"
+  },
+  "subscription.labelEmail": {
+    "message": "आपका ईमेल पता"
+  },
+  "subscription.privacyPolicy": {
+    "message": "गोपनीयता नीति"
+  }
+}

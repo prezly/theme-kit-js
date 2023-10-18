@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Vissza a kezdőlapra"
+  },
+  "actions.copyShareUrl": {
+    "message": "URL másolása"
+  },
+  "actions.download": {
+    "message": "Letöltés"
+  },
+  "actions.loadMore": {
+    "message": "Továbbiak betöltése"
+  },
+  "actions.more": {
+    "message": "Tovább"
+  },
+  "actions.privacyRequests": {
+    "message": "Adatvédelmi kérések"
+  },
+  "actions.readMore": {
+    "message": "Olvass tovább"
+  },
+  "actions.reload": {
+    "message": "Újratöltés"
+  },
+  "actions.share": {
+    "message": "Megosztás:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Sütik használatának elkezdése"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Sütik használatának befejezése"
+  },
+  "actions.subscribe": {
+    "message": "Feliratkozás"
+  },
+  "actions.toggleFilters": {
+    "message": "Keresési szűrők váltása"
+  },
+  "actions.unsubscribe": {
+    "message": "Leiratkozás"
+  },
+  "boilerplate.contact": {
+    "message": "Kapcsolat"
+  },
+  "boilerplate.title": {
+    "message": "A(z) {companyName} cégről"
+  },
+  "categories.title": {
+    "message": "Kategóriák"
+  },
+  "contacts.title": {
+    "message": "Lépjen kapcsolatba velünk"
+  },
+  "cookieConsent.accept": {
+    "message": "Igen, használhat cookie-kat"
+  },
+  "cookieConsent.notice": {
+    "message": "A cookie-kat bármikor visszavonhatja az oldal alján."
+  },
+  "cookieConsent.reject": {
+    "message": "Nem, ne használjon cookie-kat"
+  },
+  "cookieConsent.subtitle": {
+    "message": "A weboldalunkon cookie-kat használunk. Segítenek nekünk egy kicsit jobban megismerni önt, és azt, hogyan használja a honlapunkat. Ez segít nekünk értékesebb és személyre szabott élményt nyújtani önnek és másoknak."
+  },
+  "cookieConsent.title": {
+    "message": "Szeretnénk cookie-kat használni"
+  },
+  "errors.emailInvalid": {
+    "message": "Mutass be egy létező e-mail-címet"
+  },
+  "errors.fieldRequired": {
+    "message": "Ez a mező kötelező"
+  },
+  "errors.unknown": {
+    "message": "Valami hiba történt. Kérjük, próbáld meg újra beküldeni a nyomtatványt"
+  },
+  "mediaGallery.title": {
+    "message": "Médiagalériák"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargó eddig: {date}"
+  },
+  "misc.loading": {
+    "message": "Betöltés..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL másolva!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Navigáció váltása"
+  },
+  "newsroom.title": {
+    "message": "Telephely"
+  },
+  "noStories.subtitle": {
+    "message": "Térj vissza később az újabb történetekért."
+  },
+  "noStories.title": {
+    "message": "Üdv a következőben: {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Amennyiben gépelted a linket, ellenőrizd helyesírását a címsorban."
+  },
+  "notFound.title": {
+    "message": "A keresett oldal nem található..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Keresés"
+  },
+  "search.facets.category": {
+    "message": "Kategória"
+  },
+  "search.facets.month": {
+    "message": "Hónap"
+  },
+  "search.facets.year": {
+    "message": "Év"
+  },
+  "search.filters": {
+    "message": "Szűrők"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "{resultsCount} eredményt találtunk a(z) {searchQuery} keresésre"
+  },
+  "search.fullResultsTitle": {
+    "message": "Keresési találatok"
+  },
+  "search.inputHint": {
+    "message": "Kezdjen gépelni a kereséshez"
+  },
+  "search.inputLabel": {
+    "message": "Keresés"
+  },
+  "search.noResults": {
+    "message": "Nincs találat. Próbálkozzon másik keresőszóval!"
+  },
+  "search.resultsTitle": {
+    "message": "Gyorseredmények"
+  },
+  "search.showAllResults": {
+    "message": "Összes eredmény mutatása"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Keresés"
+  },
+  "search.viewLess": {
+    "message": "Kevesebb mutatása"
+  },
+  "search.viewMore": {
+    "message": "Több mutatása"
+  },
+  "serverError.subtitle": {
+    "message": "Próbáld meg frissíteni az oldalt, vagy nézz vissza kicsit később."
+  },
+  "serverError.title": {
+    "message": "Valami hiba történt..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "A \"{subscribe}\" gombra kattintással megerősítem, hogy elolvastam és elfogadtam a következőt: {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Kapj híreket a postafiókodba"
+  },
+  "subscription.labelEmail": {
+    "message": "A te e-mail címed"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Adatvédelmi politikája"
+  }
+}

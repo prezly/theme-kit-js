@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "الرجوع إلى الصفحة الرئيسية"
+  },
+  "actions.copyShareUrl": {
+    "message": "نسخ رابط URL"
+  },
+  "actions.download": {
+    "message": "تنزيل"
+  },
+  "actions.loadMore": {
+    "message": "تحميل المزيد"
+  },
+  "actions.more": {
+    "message": "المزيد"
+  },
+  "actions.privacyRequests": {
+    "message": "طلبات الخصوصية"
+  },
+  "actions.readMore": {
+    "message": "اقرأ المزيد"
+  },
+  "actions.reload": {
+    "message": "إعادة التحميل"
+  },
+  "actions.share": {
+    "message": "مشاركة:"
+  },
+  "actions.startUsingCookies": {
+    "message": "ابدأ باستخدام ملفات تعريف الارتباط"
+  },
+  "actions.stopUsingCookies": {
+    "message": "توقف عن استخدام ملفات تعريف الارتباط"
+  },
+  "actions.subscribe": {
+    "message": "اشترك"
+  },
+  "actions.toggleFilters": {
+    "message": "تبديل حالة عناصر تصفية البحث"
+  },
+  "actions.unsubscribe": {
+    "message": "Unsubscribe"
+  },
+  "boilerplate.contact": {
+    "message": "اتصل"
+  },
+  "boilerplate.title": {
+    "message": "About {companyName}"
+  },
+  "categories.title": {
+    "message": "الفئات"
+  },
+  "contacts.title": {
+    "message": "الاتصال بنا"
+  },
+  "cookieConsent.accept": {
+    "message": "نعم، يمكنكم استخدام ملفات تعريف الارتباط"
+  },
+  "cookieConsent.notice": {
+    "message": "يمكنك إلغاء ملفات تعريف الارتباط في أي وقت في الجزء السفلي من الصفحة."
+  },
+  "cookieConsent.reject": {
+    "message": "لا، لا تستخدموا ملفات تعريف الارتباط"
+  },
+  "cookieConsent.subtitle": {
+    "message": "نحن نستخدم ملفات تعريف الارتباط في موقعنا الإلكتروني، فهي تساعدنا على التعرف عليك قليلاً وعلى كيفية استخدامك لموقعنا الإلكتروني. يساعدنا هذا في إمدادك أنت والآخرين بتجربة ثرية ومخصصة."
+  },
+  "cookieConsent.title": {
+    "message": "نود استخدام ملفات تعريف الارتباط"
+  },
+  "errors.emailInvalid": {
+    "message": "أدخل عنوان بريد إلكتروني صالح"
+  },
+  "errors.fieldRequired": {
+    "message": "هذا الحقل مطلوب"
+  },
+  "errors.unknown": {
+    "message": "حدث خطأ ما. يُرجى تجربة إرسال النموذج مُجددًا"
+  },
+  "mediaGallery.title": {
+    "message": "معرض الوسائط"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "حظر حتى {date}"
+  },
+  "misc.loading": {
+    "message": "جارٍ التحميل..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "تم نسخ الرابط!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "تبديل الملاحة"
+  },
+  "newsroom.title": {
+    "message": "الموقع"
+  },
+  "noStories.subtitle": {
+    "message": "عُد لاحقًا لمشاهدة القصص الجديدة."
+  },
+  "noStories.title": {
+    "message": "مرحبًا بك في {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "إذا كنت كتبت رابط URL بنفسك، فتحقق مما كتبته في شريط العنوان."
+  },
+  "notFound.title": {
+    "message": "الصفحة التي تبحث عنها غير موجودة..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "بحث"
+  },
+  "search.facets.category": {
+    "message": "الفئة"
+  },
+  "search.facets.month": {
+    "message": "شهر"
+  },
+  "search.facets.year": {
+    "message": "سنة"
+  },
+  "search.filters": {
+    "message": "مرشحات"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "عثرنا على {resultsCount} من نتائج البحث عن {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "نتائج البحث"
+  },
+  "search.inputHint": {
+    "message": "اكتب مصطلح البحث"
+  },
+  "search.inputLabel": {
+    "message": "بحث"
+  },
+  "search.noResults": {
+    "message": "لم يتم العثور على شيء. يرجى تجربة مصطلح بحث آخر!"
+  },
+  "search.resultsTitle": {
+    "message": "نتائج سريعة"
+  },
+  "search.showAllResults": {
+    "message": "عرض جميع النتائج"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "بحث"
+  },
+  "search.viewLess": {
+    "message": "عرض أقل"
+  },
+  "search.viewMore": {
+    "message": "عرض المزيد"
+  },
+  "serverError.subtitle": {
+    "message": "حاول تحديث الصفحة أو العودة بعد قليل."
+  },
+  "serverError.title": {
+    "message": "حدث خطأ ما..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "بالنقر على \"{subscribe}\"، أؤكد أنني قرأت ووافقت على {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "تلق التحديثات في صندوق بريدك"
+  },
+  "subscription.labelEmail": {
+    "message": "عنوان بريدك الإلكتروني"
+  },
+  "subscription.privacyPolicy": {
+    "message": "سياسة الخصوصية"
+  }
+}

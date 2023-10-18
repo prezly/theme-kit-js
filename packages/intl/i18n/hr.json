@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Natrag na početnu stranicu"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopiraj URL"
+  },
+  "actions.download": {
+    "message": "Preuzimanje"
+  },
+  "actions.loadMore": {
+    "message": "Učitaj više"
+  },
+  "actions.more": {
+    "message": "Više"
+  },
+  "actions.privacyRequests": {
+    "message": "Zahtjevi privatnosti"
+  },
+  "actions.readMore": {
+    "message": "Pročitajte više"
+  },
+  "actions.reload": {
+    "message": "Ponovno učitaj"
+  },
+  "actions.share": {
+    "message": "Podijeli:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Započni koristiti kolačiće"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Prestani koristiti kolačiće"
+  },
+  "actions.subscribe": {
+    "message": "Pretplatite se"
+  },
+  "actions.toggleFilters": {
+    "message": "Prebaci filtre pretraživanja"
+  },
+  "actions.unsubscribe": {
+    "message": "Raskini pretplatu"
+  },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
+  "boilerplate.title": {
+    "message": "O {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategorije"
+  },
+  "contacts.title": {
+    "message": "Kontaktirajte nas"
+  },
+  "cookieConsent.accept": {
+    "message": "Da, možete koristiti kolačiće"
+  },
+  "cookieConsent.notice": {
+    "message": "Privolu za kolačiće možete na dnu stranice povući u svakom trenutku."
+  },
+  "cookieConsent.reject": {
+    "message": "Ne, nemojte koristiti kolačiće"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Mi na našim internetskim stranicama koristimo kolačiće. Oni nam pomažu da vas bolje upoznamo i da više znamo o tome kako koristite naše stranice. To nam pomaže u pružanju sadržaja koji će biti bolji i prilagođeniji vama i drugima."
+  },
+  "cookieConsent.title": {
+    "message": "Željeli bismo koristiti kolačiće"
+  },
+  "errors.emailInvalid": {
+    "message": "Unesite valjanu e-mail adresu"
+  },
+  "errors.fieldRequired": {
+    "message": "Ovo polje je obvezno"
+  },
+  "errors.unknown": {
+    "message": "Nešto je pošlo po krivu. Pokušajte ponovno poslati zahtjev"
+  },
+  "mediaGallery.title": {
+    "message": "Medijske galerije"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo do {date}"
+  },
+  "misc.loading": {
+    "message": "Učitavanje..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL kopiran!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Uključi/isključi navigaciju"
+  },
+  "newsroom.title": {
+    "message": "Web-mjesto"
+  },
+  "noStories.subtitle": {
+    "message": "Vratite se kasnije kako biste vidjeli nove priče."
+  },
+  "noStories.title": {
+    "message": "Dobro došli u {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Ako ste sami upisali URL, provjerite pravopis u adresnoj traci."
+  },
+  "notFound.title": {
+    "message": "Stranica koju tražite ne postoji..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Pretraživanje"
+  },
+  "search.facets.category": {
+    "message": "Kategorija"
+  },
+  "search.facets.month": {
+    "message": "Mjesec"
+  },
+  "search.facets.year": {
+    "message": "Godina"
+  },
+  "search.filters": {
+    "message": "Filtri"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Pronašli smo {resultsCount} rezultata za {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Rezultati pretraživanja"
+  },
+  "search.inputHint": {
+    "message": "Upišite svoje pretraživanje"
+  },
+  "search.inputLabel": {
+    "message": "Pretraživanje"
+  },
+  "search.noResults": {
+    "message": "Ništa nije pronađeno. Pokušajte s drugim pojmom za pretraživanje!"
+  },
+  "search.resultsTitle": {
+    "message": "Brzi rezultati"
+  },
+  "search.showAllResults": {
+    "message": "Prikaži sve rezultate"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Pretraživanje"
+  },
+  "search.viewLess": {
+    "message": "Prikaži manje"
+  },
+  "search.viewMore": {
+    "message": "Prikaži više"
+  },
+  "serverError.subtitle": {
+    "message": "Pokušajte osvježiti stranicu ili se vratiti malo kasnije."
+  },
+  "serverError.title": {
+    "message": "Nešto je pošlo krivo..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Klikom na \"{subscribe}\" potvrđujem da sam pročitao/la i složio/la se s {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Primajte najnovije vijesti u vaš sandučić"
+  },
+  "subscription.labelEmail": {
+    "message": "Vaša adresa elektroničke pošte"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Politika privatnosti"
+  }
+}
