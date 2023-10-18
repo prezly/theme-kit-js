@@ -1,5 +1,5 @@
 {
-    "name": "@prezly/themes-intl-messages",
+    "name": "@prezly/theme-kit-intl",
     "version": "1.17.1",
     "description": "Translations for Prezly themes",
     "main": "dist/cjs/index.js",
@@ -53,15 +53,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/prezly/themes-intl-messages.git"
+        "url": "git+https://github.com/prezly/theme-kit-js.git"
     },
     "keywords": [],
     "author": "Prezly Team <hello@prezly.com> (https://www.prezly.com)",
     "license": "GNU GPL v3",
     "bugs": {
-        "url": "https://github.com/prezly/themes-intl-messages/issues"
+        "url": "https://github.com/prezly/theme-kit-js/issues"
     },
-    "homepage": "https://github.com/prezly/themes-intl-messages#readme",
+    "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/intl#readme",
     "devDependencies": {
         "@babel/cli": "^7.23.0",
         "@babel/core": "^7.23.2",

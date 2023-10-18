@@ -1,7 +1,7 @@
 # Translations for Prezly Themes
 
-![Version](https://img.shields.io/npm/v/@prezly/themes-intl-messages)
-![License](https://img.shields.io/npm/l/@prezly/themes-intl-messages)
+![Version](https://img.shields.io/npm/v/@prezly/theme-kit-intl)
+![License](https://img.shields.io/npm/l/@prezly/theme-kit-intl)
 [![Crowdin](https://badges.crowdin.net/prezly-themes/localized.svg)](https://crowdin.com)
 
 This repo is a supplementary package for Prezly themes that need multi-language support.
@@ -15,14 +15,14 @@ It has two main exports:
 
 ### npm
 ```Shell
-npm install react-intl @prezly/themes-intl-messages
+npm install react-intl @prezly/theme-kit-intl
 ```
 
 ### Usage in the application
 
 1) Import the messages for your desired locale. `localeIsoCode` refers to a ISO hyphen-code. You can check which locale codes are supported in the [theme-kit-nextjs](https://github.com/prezly/theme-kit-nextjs/blob/main/src/intl/locale.ts#L10-L57) repo.
 ```ts
-const messages = await import(`@prezly/themes-intl-messages/messages/${localeIsoCode}.json`);
+const messages = await import(`@prezly/theme-kit-intl/messages/${localeIsoCode}.json`);
 ```
 
 2) Pass the messages to the `IntlProvider` wrapper component. It should be at the top of your component tree to work properly.
@@ -38,7 +38,7 @@ const messages = await import(`@prezly/themes-intl-messages/messages/${localeIso
 
 3) Use the message descriptor to render the message in your component. Your IDE should give hints on the messages structure.
 ```tsx
-import { translations } from '@prezly/themes-intl-messages';
+import { translations } from '@prezly/theme-kit-intl';
 import { FormattedMessage } from 'react-intl';
 
 function Component() {
@@ -65,6 +65,6 @@ The process of adding new translations to Prezly Themes is described in the [Not
 
 ----
 
-Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=@prezly/themes-intl-messages).
+Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=@prezly/theme-kit-js/packages/intl).
 
 [react-intl]: https://formatjs.io/docs/react-intl
