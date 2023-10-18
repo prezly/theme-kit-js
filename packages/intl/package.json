@@ -1,86 +1,80 @@
 {
-    "name": "@prezly/theme-kit-intl",
-    "version": "1.17.1",
-    "description": "Translations for Prezly themes",
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.mjs",
-    "types": "dist/esm/index.d.ts",
-    "exports": {
-        ".": {
-            "import": "./dist/esm/index.mjs",
-            "require": "./dist/cjs/index.js",
-            "default": "./dist/cjs/index.js"
-        },
-        "./messages": "./dist/messages"
+  "name": "@prezly/theme-kit-intl",
+  "version": "1.17.1",
+  "description": "Translations for Prezly themes",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
     },
-    "files": [
-        "dist",
-        "README.md"
-    ],
-    "engines": {
-        "node": ">= 14.x",
-        "npm": ">= 7.x"
-    },
-    "devEngines": {
-        "node": ">= 14.x",
-        "npm": ">= 7.x"
-    },
-    "scripts": {
-        "clean": "rimraf dist/* *.tsbuildinfo",
-        "prebuild": "npm run clean && npm run build:locales && npm run prettier:check",
-        "build": "npm run intl:compile && npm run build:esm && npm run build:cjs",
-        "build:locales": "node ./build-locales.js > ./src/locales.ts && prettier --write ./src/locales.ts",
-        "build:esm": "tsc --project tsconfig.esm.json && babel --config-file=./babel.esm.js src/ --extensions=.ts --out-dir=dist/esm/ --out-file-extension=.mjs",
-        "build:cjs": "tsc --project tsconfig.cjs.json && babel --config-file=./babel.cjs.js src/ --extensions=.ts --out-dir=dist/cjs/",
-        "watch": "tsc --watch --preserveWatchOutput --project .",
-        "prerelease": "npm run build",
-        "lint": "eslint src",
-        "prettier:check": "prettier --check './src/**/*.{ts,js}'",
-        "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
-        "release": "np",
-        "release:preview": "npm run release -- --any-branch --tag preview --no-release-draft",
-        "test": "npm run test:build",
-        "test:build": "npm run test:build:messages && npm run test:build:cjs && npm run test:build:esm && npm run test:build:dts",
-        "test:build:cjs": "node test/test-build.cjs",
-        "test:build:esm": "node test/test-build.mjs",
-        "test:build:dts": "tsc --noEmit dist/cjs/index.d.ts && tsc --noEmit dist/esm/index.d.ts",
-        "test:build:messages": "echo 'Checking if the dist/messages directory contains 49 files' && ls dist/messages/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
-        "intl:extract": "formatjs extract 'src/messages/**/*.ts' --out-file i18n/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
-        "intl:compile": "formatjs compile-folder --ast --format crowdin i18n dist/messages"
-    },
-    "np": {
-        "yarn": false
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/prezly/theme-kit-js.git"
-    },
-    "keywords": [],
-    "author": "Prezly Team <hello@prezly.com> (https://www.prezly.com)",
-    "license": "GNU GPL v3",
-    "bugs": {
-        "url": "https://github.com/prezly/theme-kit-js/issues"
-    },
-    "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/intl#readme",
-    "devDependencies": {
-        "@babel/cli": "^7.23.0",
-        "@babel/core": "^7.23.2",
-        "@babel/plugin-transform-modules-commonjs": "^7.23.0",
-        "@babel/preset-env": "^7.23.2",
-        "@babel/preset-typescript": "^7.23.2",
-        "@formatjs/cli": "^4.4.0",
-        "@prezly/eslint-config": "^4.0.0",
-        "babel-plugin-add-import-extension": "^1.6.0",
-        "eslint": "^8.8.0",
-        "np": "^8.0.4",
-        "prettier": "^2.4.1",
-        "rimraf": "^3.0.2",
-        "typescript": "^4.4.3"
-    },
-    "dependencies": {
-        "@formatjs/intl": "^1.16.0"
-    },
-    "publishConfig": {
-        "access": "public"
-    }
+    "./messages": "./dist/messages"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">= 14.x",
+    "npm": ">= 7.x"
+  },
+  "devEngines": {
+    "node": ">= 14.x",
+    "npm": ">= 7.x"
+  },
+  "scripts": {
+    "clean": "rimraf dist/* *.tsbuildinfo",
+    "prebuild": "npm run clean && npm run build:locales && npm run prettier:check",
+    "build": "npm run intl:compile && npm run build:esm && npm run build:cjs",
+    "build:locales": "node ./build-locales.js > ./src/locales.ts && prettier --write ./src/locales.ts",
+    "build:esm": "tsc --project tsconfig.esm.json && babel --config-file=./babel.esm.js src/ --extensions=.ts --out-dir=dist/esm/ --out-file-extension=.mjs",
+    "build:cjs": "tsc --project tsconfig.cjs.json && babel --config-file=./babel.cjs.js src/ --extensions=.ts --out-dir=dist/cjs/",
+    "watch": "tsc --watch --preserveWatchOutput --project .",
+    "prerelease": "npm run build",
+    "lint": "eslint src",
+    "prettier:check": "prettier --check './src/**/*.{ts,js}'",
+    "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
+    "release": "np",
+    "release:preview": "npm run release -- --any-branch --tag preview --no-release-draft",
+    "test": "npm run test:build",
+    "test:build": "npm run test:build:messages && npm run test:build:cjs && npm run test:build:esm && npm run test:build:dts",
+    "test:build:cjs": "node test/test-build.cjs",
+    "test:build:esm": "node test/test-build.mjs",
+    "test:build:dts": "tsc --noEmit dist/cjs/index.d.ts && tsc --noEmit dist/esm/index.d.ts",
+    "test:build:messages": "echo 'Checking if the dist/messages directory contains 49 files' && ls dist/messages/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
+    "intl:extract": "formatjs extract 'src/messages/**/*.ts' --out-file i18n/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
+    "intl:compile": "formatjs compile-folder --ast --format crowdin i18n dist/messages"
+  },
+  "np": {
+    "yarn": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prezly/theme-kit-js.git"
+  },
+  "keywords": [],
+  "author": "Prezly Team <hello@prezly.com> (https://www.prezly.com)",
+  "license": "GNU GPL v3",
+  "bugs": {
+    "url": "https://github.com/prezly/theme-kit-js/issues"
+  },
+  "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/intl#readme",
+  "dependencies": {
+    "@formatjs/intl": "^1.16.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.23.0",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2",
+    "@formatjs/cli": "^4.4.0",
+    "babel-plugin-add-import-extension": "^1.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
