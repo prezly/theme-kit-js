@@ -2,19 +2,19 @@
   "name": "@prezly/theme-kit-intl",
   "version": "1.17.1",
   "description": "Translations for Prezly themes",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.mjs",
-  "types": "dist/esm/index.d.ts",
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.mjs",
+  "types": "build/esm/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "default": "./dist/cjs/index.js"
+      "import": "./build/esm/index.mjs",
+      "require": "./build/cjs/index.js",
+      "default": "./build/cjs/index.js"
     },
-    "./messages": "./dist/messages"
+    "./messages": "./build/messages"
   },
   "files": [
-    "dist",
+    "build",
     "README.md"
   ],
   "engines": {
@@ -26,15 +26,15 @@
     "npm": ">= 7.x"
   },
   "scripts": {
-    "clean": "rimraf dist/* *.tsbuildinfo",
+    "clean": "rimraf build/* *.tsbuildinfo",
     "prebuild": "npm run clean && npm run build:locales && npm run prettier:check",
     "build": "npm run intl:compile && npm run build:esm && npm run build:cjs",
     "build:locales": "node ./build-locales.js > ./src/locales.ts && prettier --write ./src/locales.ts",
-    "build:esm": "tsc --project tsconfig.esm.json && babel --config-file=./babel.esm.js src/ --extensions=.ts --out-dir=dist/esm/ --out-file-extension=.mjs",
-    "build:cjs": "tsc --project tsconfig.cjs.json && babel --config-file=./babel.cjs.js src/ --extensions=.ts --out-dir=dist/cjs/",
+    "build:esm": "tsc --project tsconfig.esm.json && babel --config-file=./babel.esm.js src/ --extensions=.ts --out-dir=build/esm/ --out-file-extension=.mjs",
+    "build:cjs": "tsc --project tsconfig.cjs.json && babel --config-file=./babel.cjs.js src/ --extensions=.ts --out-dir=build/cjs/",
     "watch": "tsc --watch --preserveWatchOutput --project .",
     "prerelease": "npm run build",
-    "lint": "eslint src",
+    "lint": "eslint ./src/",
     "prettier:check": "prettier --check './src/**/*.{ts,js}'",
     "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
     "release": "np",
@@ -43,10 +43,10 @@
     "test:build": "npm run test:build:messages && npm run test:build:cjs && npm run test:build:esm && npm run test:build:dts",
     "test:build:cjs": "node test/test-build.cjs",
     "test:build:esm": "node test/test-build.mjs",
-    "test:build:dts": "tsc --noEmit dist/cjs/index.d.ts && tsc --noEmit dist/esm/index.d.ts",
-    "test:build:messages": "echo 'Checking if the dist/messages directory contains 49 files' && ls dist/messages/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
+    "test:build:dts": "tsc --noEmit build/cjs/index.d.ts && tsc --noEmit build/esm/index.d.ts",
+    "test:build:messages": "echo 'Checking if the build/messages directory contains 49 files' && ls build/messages/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
     "intl:extract": "formatjs extract 'src/messages/**/*.ts' --out-file i18n/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
-    "intl:compile": "formatjs compile-folder --ast --format crowdin i18n dist/messages"
+    "intl:compile": "formatjs compile-folder --ast --format crowdin i18n build/messages"
   },
   "np": {
     "yarn": false

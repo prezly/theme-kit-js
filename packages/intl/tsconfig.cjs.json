@@ -4,6 +4,6 @@
         "module": "CommonJS",
         "emitDeclarationOnly": true,
         "declaration": true,
-        "declarationDir": "./dist/cjs"
+        "declarationDir": "./build/cjs"
     }
 }
