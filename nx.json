@@ -10,7 +10,7 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build", "prebuild"],
-      "outputs": ["{projectRoot}/build", "{projectRoot}/tsconfig.tsbuildinfo"]
+      "outputs": ["{projectRoot}/build", "{projectRoot}/tsconfig*.tsbuildinfo"]
     },
     "typecheck": {
       "dependsOn": ["^build"]
