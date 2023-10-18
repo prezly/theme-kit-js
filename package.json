@@ -7,6 +7,7 @@
     "build": "npx lerna run build",
     "dev:core": "npx lerna run dev --scope=@prezly/theme-kit-core",
     "dev:nextjs": "npx lerna run dev --scope=@prezly/theme-kit-nextjs",
+    "dev:ui": "npx lerna run dev --scope=@prezly/theme-kit-ui",
     "lint": "npx lerna run lint",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --check './packages/**/*.(js|ts|tsx)'",
