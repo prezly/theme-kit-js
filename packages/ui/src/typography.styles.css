@@ -1,0 +1,63 @@
+body {
+    @apply font-poppins;
+}
+
+.title-x-large {
+    @apply text-gray-800 sm:font-bold sm:text-[40px] sm:leading-[120%] text-4xl leading-[140%];
+}
+
+.title-large {
+    @apply text-[32px] font-bold leading-[120%] text-gray-800 sm:text-4xl;
+}
+
+.title-medium {
+    @apply text-[28px] font-bold leading-[140%] text-gray-800 sm:text-[32px] sm:leading-[120%];
+}
+
+.title-small {
+    @apply text-2xl font-bold leading-[140%] text-gray-800 sm:text-[28px] sm:leading-[120%];
+}
+
+.title-x-small {
+    @apply text-[22px] font-bold leading-[120%] text-gray-800 sm:text-2xl sm:leading-[120%];
+}
+
+.title-xx-small {
+    @apply text-lg font-bold leading-[140%] text-gray-800 sm:text-xl sm:leading-[140%];
+}
+
+.subtitle-large {
+    @apply text-xl font-medium leading-[160%] text-gray-800 sm:text-[22px] sm:leading-[160%];
+}
+
+.subtitle-medium {
+    @apply text-lg font-medium leading-[160%] text-gray-800 sm:text-xl sm:leading-[160%];
+}
+
+.subtitle-small {
+    @apply text-base font-medium leading-[160%] text-gray-800 sm:text-lg sm:leading-[160%];
+}
+
+.text-large {
+    @apply text-base font-normal leading-[160%] text-gray-800 sm:text-lg sm:leading-[160%];
+}
+
+.text-medium {
+    @apply text-base font-normal leading-[160%] text-gray-800;
+}
+
+.text-small {
+    @apply text-sm font-normal leading-[160%] text-gray-800;
+}
+
+.label-large {
+    @apply text-sm font-normal leading-[160%] text-gray-800 sm:text-base sm:font-medium sm:leading-[124%];
+}
+
+.label-medium {
+    @apply text-sm font-medium leading-[120%] text-gray-800;
+}
+
+.label-small {
+    @apply text-xs font-medium leading-[120%] text-gray-800;
+}

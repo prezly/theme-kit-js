@@ -9,6 +9,9 @@ module.exports = {
                 warning: '#FDB022',
                 error: '#F04438',
             },
+            fontFamily: {
+                poppins: ['Poppins', 'sans-serif'],
+            },
         },
     },
     plugins: [],

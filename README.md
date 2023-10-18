@@ -6,8 +6,7 @@ See individual package READMEs for more information:
 
 - [@prezly/theme-kit-core](./packages/core#readme)
 - [@prezly/theme-kit-nextjs](./packages/nextjs#readme)
-
-
+- [@prezly/theme-kit-ui](./packages/ui#readme)
 
 ## Working with the repo locally
 
