@@ -148,7 +148,7 @@
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Pesquisar"
+    "message": "Pesquisa"
   },
   "search.viewLess": {
     "message": "Ver menos"
