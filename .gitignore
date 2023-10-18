@@ -41,5 +41,8 @@ node_modules/
 # Build output
 build/
 
+# storybook build output
+storybook-static/
+
 # Test
 coverage/
