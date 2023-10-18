@@ -9,6 +9,6 @@
 
 import assert from 'assert';
 
-import { translations } from '@prezly/themes-intl-messages';
+import { translations } from '@prezly/theme-kit-intl';
 
 assert(translations.actions.backToHomePage.id === 'actions.backToHomepage');
