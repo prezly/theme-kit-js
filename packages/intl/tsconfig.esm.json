@@ -1,9 +1,10 @@
 {
-    "extends": "./tsconfig.base.json",
+    "extends": "./tsconfig.json",
     "compilerOptions": {
         "module": "esnext",
+        "noEmit": false,
         "emitDeclarationOnly": true,
         "declaration": true,
-        "declarationDir": "./dist/esm"
+        "declarationDir": "./build/esm"
     }
 }

@@ -4,6 +4,6 @@
 
 const assert = require('assert');
 
-const { translations } = require('@prezly/themes-intl-messages');
+const { translations } = require('@prezly/theme-kit-intl');
 
 assert(translations.actions.backToHomePage.id === 'actions.backToHomepage');
