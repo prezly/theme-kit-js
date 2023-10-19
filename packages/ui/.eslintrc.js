@@ -19,5 +19,11 @@ module.exports = {
                 '@typescript-eslint/naming-convention': 'off',
             },
         },
+        {
+            files: ['**/*.stories.*'],
+            rules: {
+                'import/no-default-export': 'off',
+            },
+        },
     ],
 };
