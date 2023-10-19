@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Takaisin kotisivulle"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopioi URL"
+  },
+  "actions.download": {
+    "message": "Lataa"
+  },
+  "actions.loadMore": {
+    "message": "Lataa lisää"
+  },
+  "actions.more": {
+    "message": "Mer"
+  },
+  "actions.privacyRequests": {
+    "message": "Tietosuojapyynnöt"
+  },
+  "actions.readMore": {
+    "message": "Lue lisää"
+  },
+  "actions.reload": {
+    "message": "Lataa uudelleen"
+  },
+  "actions.share": {
+    "message": "Jaa:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Aloita evästeiden käyttö"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Lopeta evästeiden käyttö"
+  },
+  "actions.subscribe": {
+    "message": "Tilaa"
+  },
+  "actions.toggleFilters": {
+    "message": "Vaihda hakusuodattimet"
+  },
+  "actions.unsubscribe": {
+    "message": "Peru tilaus"
+  },
+  "boilerplate.contact": {
+    "message": "Ota yhteyttä"
+  },
+  "boilerplate.title": {
+    "message": "Tietoja yrityksestä {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategoriat"
+  },
+  "contacts.title": {
+    "message": "Ota meihin yhteyttä"
+  },
+  "cookieConsent.accept": {
+    "message": "Kyllä, voitte käyttää evästeitä"
+  },
+  "cookieConsent.notice": {
+    "message": "Voit peruuttaa evästeet milloin tahansa sivun alalaidasta."
+  },
+  "cookieConsent.reject": {
+    "message": "Ei, älkää käyttäkö evästeitä"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Käytämme sivustollamme evästeitä. Niiden avulla tutustumme sinuun ja tapoihisi käyttää sivustoa. Näin pystymme tarjoamaan arvokkaamman ja yksilöllisemmän kokemuksen sinulle ja muille käyttäjille."
+  },
+  "cookieConsent.title": {
+    "message": "Käyttäisimme mielellämme evästeitä"
+  },
+  "errors.emailInvalid": {
+    "message": "Syötä voimassaoleva sähköpostiosoite"
+  },
+  "errors.fieldRequired": {
+    "message": "Tämä kenttä on pakollinen"
+  },
+  "errors.unknown": {
+    "message": "Jotain meni pieleen. Yritä lähettää lomake uudelleen"
+  },
+  "mediaGallery.title": {
+    "message": "Mediagalleriat"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo päivään {date}"
+  },
+  "misc.loading": {
+    "message": "Ladataan..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL kopioitu!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Vaihda navigointi"
+  },
+  "newsroom.title": {
+    "message": "Sivusto"
+  },
+  "noStories.subtitle": {
+    "message": "Palaa takaisin myöhemmin nähdäksesi uusia tarinoita."
+  },
+  "noStories.title": {
+    "message": "Tervetuloa {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Jos kirjoitit URL-osoitteen itse, tarkista oikeinkirjoitus osoitepalkista."
+  },
+  "notFound.title": {
+    "message": "Etsimääsi sivua ei ole olemassa..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Etsi"
+  },
+  "search.facets.category": {
+    "message": "Kategoria"
+  },
+  "search.facets.month": {
+    "message": "Kuukausi"
+  },
+  "search.facets.year": {
+    "message": "Vuosi"
+  },
+  "search.filters": {
+    "message": "Suodattimet"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Löysimme {resultsCount} tulosta haulle {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Hakutulokset"
+  },
+  "search.inputHint": {
+    "message": "Kirjoita hakusi"
+  },
+  "search.inputLabel": {
+    "message": "Etsi"
+  },
+  "search.noResults": {
+    "message": "Mitään ei löytynyt. Kokeile toisella hakuehdolla!"
+  },
+  "search.resultsTitle": {
+    "message": "Nopeat tulokset"
+  },
+  "search.showAllResults": {
+    "message": "Näytä kaikki tulokset"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Etsi"
+  },
+  "search.viewLess": {
+    "message": "Näytä vähemmän"
+  },
+  "search.viewMore": {
+    "message": "Näytä enemmän"
+  },
+  "serverError.subtitle": {
+    "message": "Yritä päivittää sivu tai palaa takaisin myöhemmin."
+  },
+  "serverError.title": {
+    "message": "Jokin meni vikaan..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Napsauttamalla \"{subscribe}\" vahvistan, että olen lukenut ja hyväksyn {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Ota vastaan päivityksiä sähköpostiisi"
+  },
+  "subscription.labelEmail": {
+    "message": "Sähköpostiosoitteesi"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Tietosuojakäytännöt"
+  }
+}

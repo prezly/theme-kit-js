@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Tilbake til startsiden"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopier nettadressen"
+  },
+  "actions.download": {
+    "message": "Last ned"
+  },
+  "actions.loadMore": {
+    "message": "Last inn mer"
+  },
+  "actions.more": {
+    "message": "Mer"
+  },
+  "actions.privacyRequests": {
+    "message": "Personvernhenvendelser"
+  },
+  "actions.readMore": {
+    "message": "Les mer"
+  },
+  "actions.reload": {
+    "message": "Last inn på nytt"
+  },
+  "actions.share": {
+    "message": "Del:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Start å bruke informasjonskapsler"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Slutt å bruke informasjonskapsler"
+  },
+  "actions.subscribe": {
+    "message": "Abonner"
+  },
+  "actions.toggleFilters": {
+    "message": "Skift mellom søkefiltrene"
+  },
+  "actions.unsubscribe": {
+    "message": "Avslutt abonnementet"
+  },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
+  "boilerplate.title": {
+    "message": "Om {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategorier"
+  },
+  "contacts.title": {
+    "message": "Kontakt oss"
+  },
+  "cookieConsent.accept": {
+    "message": "Ja, dere kan benytte informasjonskapsler"
+  },
+  "cookieConsent.notice": {
+    "message": "Du kan kansellere bruk av informasjonskapsler når som helst nederst på siden."
+  },
+  "cookieConsent.reject": {
+    "message": "Nei, ikke benytt informasjonskapsler"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Vi benytter informasjonskapsler på vårt nettsted. De hjelper oss med å lære deg litt å kjenne, og hvordan du bruker vårt nettsted. Dette hjelper oss med å tilby en mer verdifull og skreddersydd opplevelse for deg og andre."
+  },
+  "cookieConsent.title": {
+    "message": "Vi ønsker også å benytte informasjonskapsler"
+  },
+  "errors.emailInvalid": {
+    "message": "Legg til en gyldig e-postadresse"
+  },
+  "errors.fieldRequired": {
+    "message": "Dette feltet er obligatorisk"
+  },
+  "errors.unknown": {
+    "message": "Det har oppstått en feil. Prøv å sende skjemaet på nytt"
+  },
+  "mediaGallery.title": {
+    "message": "Mediagallerier"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo til {date}"
+  },
+  "misc.loading": {
+    "message": "Laster inn …"
+  },
+  "misc.shareUrlCopied": {
+    "message": "Nettadresen er kopiert."
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Slå navigasjon av/på"
+  },
+  "newsroom.title": {
+    "message": "Nettsted"
+  },
+  "noStories.subtitle": {
+    "message": "Kom tilbake senere for å se nye historier."
+  },
+  "noStories.title": {
+    "message": "Velkommen til {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Sjekk at du har stavet nettadressen riktig."
+  },
+  "notFound.title": {
+    "message": "Siden du leter etter finnes ikke …"
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Søk"
+  },
+  "search.facets.category": {
+    "message": "Kategori"
+  },
+  "search.facets.month": {
+    "message": "Måned"
+  },
+  "search.facets.year": {
+    "message": "År"
+  },
+  "search.filters": {
+    "message": "Filtre"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Vi fant {resultsCount} resultater for {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Søkeresultater"
+  },
+  "search.inputHint": {
+    "message": "Angi søket ditt"
+  },
+  "search.inputLabel": {
+    "message": "Søk"
+  },
+  "search.noResults": {
+    "message": "Fant ikke noe. Prøv et annet søkebegrep."
+  },
+  "search.resultsTitle": {
+    "message": "Raske resultater"
+  },
+  "search.showAllResults": {
+    "message": "Vis alle resultater"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Søk"
+  },
+  "search.viewLess": {
+    "message": "Se mindre"
+  },
+  "search.viewMore": {
+    "message": "Se mer"
+  },
+  "serverError.subtitle": {
+    "message": "Du må enten oppdatere siden eller prøve igjen senere."
+  },
+  "serverError.title": {
+    "message": "Noe gikk galt..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Når jeg klikker på «{subscribe}», bekrefter jeg å ha lest og forstått {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Få oppdateringer i innboksen din"
+  },
+  "subscription.labelEmail": {
+    "message": "Din e-postadresse"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Personvernregler"
+  }
+}

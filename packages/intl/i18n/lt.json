@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Grįžti į pagrindinį puslapį"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopijuoti URL"
+  },
+  "actions.download": {
+    "message": "Parsisiųsti"
+  },
+  "actions.loadMore": {
+    "message": "Įkelti daugiau"
+  },
+  "actions.more": {
+    "message": "Daugiau"
+  },
+  "actions.privacyRequests": {
+    "message": "Privatumo reikalavimai"
+  },
+  "actions.readMore": {
+    "message": "Skaityti daugiau"
+  },
+  "actions.reload": {
+    "message": "Įkelti iš naujo"
+  },
+  "actions.share": {
+    "message": "Dalintis:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Pradėti naudoti slapukus"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Nustoti naudoti slapukus"
+  },
+  "actions.subscribe": {
+    "message": "Prenumeruoti"
+  },
+  "actions.toggleFilters": {
+    "message": "Perjungti paieškos filtrus"
+  },
+  "actions.unsubscribe": {
+    "message": "Atsisakyti prenumeratos"
+  },
+  "boilerplate.contact": {
+    "message": "Kontaktai"
+  },
+  "boilerplate.title": {
+    "message": "Apie {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategorijos"
+  },
+  "contacts.title": {
+    "message": "Kreipkitės į mus"
+  },
+  "cookieConsent.accept": {
+    "message": "Taip, galite naudoti slapukus"
+  },
+  "cookieConsent.notice": {
+    "message": "Puslapio apačioje galite bet kada atšaukti slapukus."
+  },
+  "cookieConsent.reject": {
+    "message": "Ne, nenaudokite slapukų"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Savo svetainėje naudojame slapukus. Jie padeda mums kiek pažinti jus ir sužinoti, kaip naudojatės mūsų svetaine. Tai padeda mums suteikti labiau vertingą ir pritaikytą patirtį jums ir kitiems."
+  },
+  "cookieConsent.title": {
+    "message": "Norėtume naudoti slapukus"
+  },
+  "errors.emailInvalid": {
+    "message": "Nurodykite galiojantį el. pašto adresą"
+  },
+  "errors.fieldRequired": {
+    "message": "Būtina užpildyti šį laukelį"
+  },
+  "errors.unknown": {
+    "message": "Kažkas nepavyko. Bandykite dar kartą pateikti formą"
+  },
+  "mediaGallery.title": {
+    "message": "Medijos galerijos"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargas iki {date}"
+  },
+  "misc.loading": {
+    "message": "Įkeliama..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL nukopijuotas!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Perjungti naršymą"
+  },
+  "newsroom.title": {
+    "message": "Svetainė"
+  },
+  "noStories.subtitle": {
+    "message": "Grįžkite vėliau, norėdami pamatyti naujų istorijų."
+  },
+  "noStories.title": {
+    "message": "Sveiki atvykę į {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Jei URL įvedėte patys, patikrinkite rašybą adreso juostoje."
+  },
+  "notFound.title": {
+    "message": "Puslapis, kurio ieškote, neegzistuoja..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Ieška"
+  },
+  "search.facets.category": {
+    "message": "Kategorija"
+  },
+  "search.facets.month": {
+    "message": "Mėnuo"
+  },
+  "search.facets.year": {
+    "message": "Metai"
+  },
+  "search.filters": {
+    "message": "Filtrai"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Radome {resultsCount} rezultatų {searchQuery} paieškoje"
+  },
+  "search.fullResultsTitle": {
+    "message": "Paieškos rezultatai"
+  },
+  "search.inputHint": {
+    "message": "Įrašyti savo iešką"
+  },
+  "search.inputLabel": {
+    "message": "Ieška"
+  },
+  "search.noResults": {
+    "message": "Nieko nerasta! Prašome išbandyti kitą paieškos terminą!"
+  },
+  "search.resultsTitle": {
+    "message": "Greiti rezultatai"
+  },
+  "search.showAllResults": {
+    "message": "Rodyti visus rezultatus"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Ieškoti"
+  },
+  "search.viewLess": {
+    "message": "Rodyti mažiau"
+  },
+  "search.viewMore": {
+    "message": "Rodyti daugiau"
+  },
+  "serverError.subtitle": {
+    "message": "Pabandykite atnaujinti puslapį arba grįžti šiek tiek vėliau."
+  },
+  "serverError.title": {
+    "message": "Kažkas ne taip..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Spustelėdama(s) \"{subscribe}\" patvirtinu, kad perskaičiau ir sutinku su {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Gaukite naujinimus savo el. pašto dėžutėje"
+  },
+  "subscription.labelEmail": {
+    "message": "Jūsų el. pašto adresas"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Privatumo politika"
+  }
+}

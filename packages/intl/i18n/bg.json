@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Обратно към началната страница"
+  },
+  "actions.copyShareUrl": {
+    "message": "Копирай URL адреса"
+  },
+  "actions.download": {
+    "message": "Изтегли"
+  },
+  "actions.loadMore": {
+    "message": "Зареди повече"
+  },
+  "actions.more": {
+    "message": "Повече"
+  },
+  "actions.privacyRequests": {
+    "message": "Заявки за достъп до лична информация"
+  },
+  "actions.readMore": {
+    "message": "Прочетете повече"
+  },
+  "actions.reload": {
+    "message": "Презареди"
+  },
+  "actions.share": {
+    "message": "Споделяне:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Начало на използването на \"бисквитки\""
+  },
+  "actions.stopUsingCookies": {
+    "message": "Край на използването на \"бисквитки\""
+  },
+  "actions.subscribe": {
+    "message": "Абонирайте се"
+  },
+  "actions.toggleFilters": {
+    "message": "Вкл./изкл. филтрите за търсене"
+  },
+  "actions.unsubscribe": {
+    "message": "Отпишете се"
+  },
+  "boilerplate.contact": {
+    "message": "Контакт"
+  },
+  "boilerplate.title": {
+    "message": "Относно {companyName}"
+  },
+  "categories.title": {
+    "message": "Категории"
+  },
+  "contacts.title": {
+    "message": "Контакт с нас"
+  },
+  "cookieConsent.accept": {
+    "message": "Да, можете да използвате „бисквитки“"
+  },
+  "cookieConsent.notice": {
+    "message": "Можете да отмените „бисквитките“ по всяко време в долната част на страницата."
+  },
+  "cookieConsent.reject": {
+    "message": "Не, не използвайте „бисквитки“"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Ние използваме „бисквитки“ на нашия уеб сайт. Те ни помагат да ви опознаем малко и това, как използвате нашия уебсайт. Това ни помага да осигурим по-ценно и съобразено с вас и останалите преживяване."
+  },
+  "cookieConsent.title": {
+    "message": "Искаме да използваме бисквитки"
+  },
+  "errors.emailInvalid": {
+    "message": "Въведете валиден имейл адрес"
+  },
+  "errors.fieldRequired": {
+    "message": "Това поле е задължително"
+  },
+  "errors.unknown": {
+    "message": "Възникна грешка. Пробвайте да подадете формуляра отново"
+  },
+  "mediaGallery.title": {
+    "message": "Мултимедийни галерии"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Ембарго до {date}"
+  },
+  "misc.loading": {
+    "message": "Зареждане..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL копиран!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Превключване навигация"
+  },
+  "newsroom.title": {
+    "message": "Сайт"
+  },
+  "noStories.subtitle": {
+    "message": "Върнете се по-късно, за да видите нови истории."
+  },
+  "noStories.title": {
+    "message": "Добре дошли в {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Ако сте въвели URL адреса на ръка, проверете дали сте го изписали правилно."
+  },
+  "notFound.title": {
+    "message": "Страницата, която търсите, не съществува..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Търсене"
+  },
+  "search.facets.category": {
+    "message": "Категория"
+  },
+  "search.facets.month": {
+    "message": "Месец"
+  },
+  "search.facets.year": {
+    "message": "Година"
+  },
+  "search.filters": {
+    "message": "Филтри"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Намерихме {resultsCount} резултата за {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Резултати от търсенето"
+  },
+  "search.inputHint": {
+    "message": "Напишете търсенето си"
+  },
+  "search.inputLabel": {
+    "message": "Търсене"
+  },
+  "search.noResults": {
+    "message": "Нищо не е открито. Опитайте с друг термин за търсене!"
+  },
+  "search.resultsTitle": {
+    "message": "Бързи резултати"
+  },
+  "search.showAllResults": {
+    "message": "Покажи всички резултати"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Търсене"
+  },
+  "search.viewLess": {
+    "message": "Виж по-малко"
+  },
+  "search.viewMore": {
+    "message": "Виж повече"
+  },
+  "serverError.subtitle": {
+    "message": "Опитайте да презаредите страницата или се върнете малко по-късно."
+  },
+  "serverError.title": {
+    "message": "Възникна грешка..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "С кликването си върху бутона \"{subscribe}\" потвърждавам, че съм прочел(а) и приемам {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Получавайте актуална информация в пощенската си кутия"
+  },
+  "subscription.labelEmail": {
+    "message": "Вашият имейл адрес"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Политика за поверителност"
+  }
+}

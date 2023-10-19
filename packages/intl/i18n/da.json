@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Tilbage til startsiden"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopier URL"
+  },
+  "actions.download": {
+    "message": "Download"
+  },
+  "actions.loadMore": {
+    "message": "Indlæs mere"
+  },
+  "actions.more": {
+    "message": "Mere"
+  },
+  "actions.privacyRequests": {
+    "message": "Fortrolighedsanmodninger"
+  },
+  "actions.readMore": {
+    "message": "Læs mere"
+  },
+  "actions.reload": {
+    "message": "Genindlæs"
+  },
+  "actions.share": {
+    "message": "Del:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Begynd at bruge cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Stop med at bruge cookies"
+  },
+  "actions.subscribe": {
+    "message": "Tilmeld"
+  },
+  "actions.toggleFilters": {
+    "message": "Skift søgefiltre"
+  },
+  "actions.unsubscribe": {
+    "message": "Frameld"
+  },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
+  "boilerplate.title": {
+    "message": "Om {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategorier"
+  },
+  "contacts.title": {
+    "message": "Kontakt os"
+  },
+  "cookieConsent.accept": {
+    "message": "Ja, cookies må anvendes"
+  },
+  "cookieConsent.notice": {
+    "message": "Du kan afvise cookies når som helst nederst på siden."
+  },
+  "cookieConsent.reject": {
+    "message": "Nej, cookies må ikke anvendes"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Vi bruger cookies på vores hjemmeside. De hjælper os med at lære lidt om dig og hvordan du bruger vores hjemmeside. Dette hjælper os til at give dig og andre brugere end mere værdifuld og personlig oplevelse."
+  },
+  "cookieConsent.title": {
+    "message": "Vi vil gerne anvende cookies"
+  },
+  "errors.emailInvalid": {
+    "message": "Opgiv en gyldig e-mailadresse"
+  },
+  "errors.fieldRequired": {
+    "message": "Dette felt er obligatorisk"
+  },
+  "errors.unknown": {
+    "message": "Noget gik galt. Prøv at indsende formularen igen"
+  },
+  "mediaGallery.title": {
+    "message": "Mediegallerier"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo indtil {date}"
+  },
+  "misc.loading": {
+    "message": "Indlæser..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL kopieret!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Skift navigation"
+  },
+  "newsroom.title": {
+    "message": "Websted"
+  },
+  "noStories.subtitle": {
+    "message": "Kom tilbage senere for at se nye historier."
+  },
+  "noStories.title": {
+    "message": "Velkommen til {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Hvis du selv har skrevet denne URL, bedes du kontrollere stavningen i adresselinjen."
+  },
+  "notFound.title": {
+    "message": "Den side, du ledere efter, eksisterer ikke..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Søg"
+  },
+  "search.facets.category": {
+    "message": "Kategori"
+  },
+  "search.facets.month": {
+    "message": "Måned"
+  },
+  "search.facets.year": {
+    "message": "År"
+  },
+  "search.filters": {
+    "message": "Filtre"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Vi fandt {resultsCount} resultater for {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Søgeresultater"
+  },
+  "search.inputHint": {
+    "message": "Indtast dit søgeord"
+  },
+  "search.inputLabel": {
+    "message": "Søg"
+  },
+  "search.noResults": {
+    "message": "Intet fundet! Prøv et andet søgeord!"
+  },
+  "search.resultsTitle": {
+    "message": "Hurtige resultater"
+  },
+  "search.showAllResults": {
+    "message": "Vis alle resultater"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Søg"
+  },
+  "search.viewLess": {
+    "message": "Se mindre"
+  },
+  "search.viewMore": {
+    "message": "Se mere"
+  },
+  "serverError.subtitle": {
+    "message": "Prøv at genindlæse siden eller at komme tilbage om nogen tid."
+  },
+  "serverError.title": {
+    "message": "Noget er gået galt..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Ved at klikke på \"{subscribe}\" bekræfter jeg, at jeg har læst og accepterer denne {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Få opdateringer i din indbakke"
+  },
+  "subscription.labelEmail": {
+    "message": "Din e-mail-adresse"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Privatlivspolitik"
+  }
+}

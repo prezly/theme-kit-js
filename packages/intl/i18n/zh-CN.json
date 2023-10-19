@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "返回首页"
+  },
+  "actions.copyShareUrl": {
+    "message": "复制网址"
+  },
+  "actions.download": {
+    "message": "下载"
+  },
+  "actions.loadMore": {
+    "message": "加载更多"
+  },
+  "actions.more": {
+    "message": "更多"
+  },
+  "actions.privacyRequests": {
+    "message": "隐私请求"
+  },
+  "actions.readMore": {
+    "message": "阅读更多"
+  },
+  "actions.reload": {
+    "message": "重新加载"
+  },
+  "actions.share": {
+    "message": "共享："
+  },
+  "actions.startUsingCookies": {
+    "message": "开始使用Cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "停止使用Cookies"
+  },
+  "actions.subscribe": {
+    "message": "订阅"
+  },
+  "actions.toggleFilters": {
+    "message": "切换搜索过滤器"
+  },
+  "actions.unsubscribe": {
+    "message": "退订"
+  },
+  "boilerplate.contact": {
+    "message": "联系"
+  },
+  "boilerplate.title": {
+    "message": "关于{companyName}"
+  },
+  "categories.title": {
+    "message": "类别"
+  },
+  "contacts.title": {
+    "message": "联系我们"
+  },
+  "cookieConsent.accept": {
+    "message": "好的，你可以使用信息记录程序（cookies）"
+  },
+  "cookieConsent.notice": {
+    "message": "您可以随时在页面下方取消信息记录程序（cookies）。"
+  },
+  "cookieConsent.reject": {
+    "message": "不好，不要使用信息记录程序（cookies）"
+  },
+  "cookieConsent.subtitle": {
+    "message": "我们在网站上使用信息记录程序（cookies）。他们帮助我们了解到您的一些信息和您如何使用我们的网站。这能帮助我们给您和其他人提供一个更加实用和个性化的体验。"
+  },
+  "cookieConsent.title": {
+    "message": "我们想要使用cookies"
+  },
+  "errors.emailInvalid": {
+    "message": "提供一个有效的电子邮件地址"
+  },
+  "errors.fieldRequired": {
+    "message": "此字段为必填项"
+  },
+  "errors.unknown": {
+    "message": "出问题了。请再次尝试提交表格。"
+  },
+  "mediaGallery.title": {
+    "message": "媒体画廊"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "禁运直至{date}"
+  },
+  "misc.loading": {
+    "message": "加载中..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "已复制URL！"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "切换导航"
+  },
+  "newsroom.title": {
+    "message": "网站"
+  },
+  "noStories.subtitle": {
+    "message": "稍后再回来查看新故事。"
+  },
+  "noStories.title": {
+    "message": "欢迎来到{newsroom}！"
+  },
+  "notFound.subtitle": {
+    "message": "如果您自己输入网址，请检查地址栏中的拼写。"
+  },
+  "notFound.title": {
+    "message": "您要找的页面不存在..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "搜索"
+  },
+  "search.facets.category": {
+    "message": "类别"
+  },
+  "search.facets.month": {
+    "message": "月"
+  },
+  "search.facets.year": {
+    "message": "年"
+  },
+  "search.filters": {
+    "message": "过滤器/滤镜"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "我们找到{resultsCount} 个{searchQuery} 的结果"
+  },
+  "search.fullResultsTitle": {
+    "message": "搜索结果"
+  },
+  "search.inputHint": {
+    "message": "输入您的搜索"
+  },
+  "search.inputLabel": {
+    "message": "搜索"
+  },
+  "search.noResults": {
+    "message": "未找到任何內容。请尝试另一个搜索词！"
+  },
+  "search.resultsTitle": {
+    "message": "快速结果"
+  },
+  "search.showAllResults": {
+    "message": "显示全部结果"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "搜索"
+  },
+  "search.viewLess": {
+    "message": "查看更少"
+  },
+  "search.viewMore": {
+    "message": "查看更多"
+  },
+  "serverError.subtitle": {
+    "message": "尝试刷新页面或稍后再回来。"
+  },
+  "serverError.title": {
+    "message": "出了一些错误..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "点击\"{subscribe}\"，即为确认我已阅读并同意{privacyPolicyLink}。"
+  },
+  "subscription.formTitle": {
+    "message": "在您邮箱中获得更新"
+  },
+  "subscription.labelEmail": {
+    "message": "您的邮箱地址"
+  },
+  "subscription.privacyPolicy": {
+    "message": "隐私政策"
+  }
+}

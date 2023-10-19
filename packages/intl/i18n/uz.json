@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Orqaga bosh sahifaga"
+  },
+  "actions.copyShareUrl": {
+    "message": "URL dan nusxa ko‘chirish"
+  },
+  "actions.download": {
+    "message": "Yuklab olish"
+  },
+  "actions.loadMore": {
+    "message": "Ko‘proq yuklash"
+  },
+  "actions.more": {
+    "message": "Yana"
+  },
+  "actions.privacyRequests": {
+    "message": "Maxfiylik talablari"
+  },
+  "actions.readMore": {
+    "message": "Batafsil"
+  },
+  "actions.reload": {
+    "message": "Qayta yuklash"
+  },
+  "actions.share": {
+    "message": "Ulashish:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Cookie fayllardan foydalanish"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Cookie fayllardan foydalanishni toʻxtatish"
+  },
+  "actions.subscribe": {
+    "message": "Obuna"
+  },
+  "actions.toggleFilters": {
+    "message": "Qidiruv filtrlarini yoqish/oʻchirish"
+  },
+  "actions.unsubscribe": {
+    "message": "Obunani bekor qilish"
+  },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
+  "boilerplate.title": {
+    "message": "{companyName} Haqida"
+  },
+  "categories.title": {
+    "message": "Toifalar"
+  },
+  "contacts.title": {
+    "message": "Biz bilan bog‘lanish"
+  },
+  "cookieConsent.accept": {
+    "message": "Ha, cookie fayllardan foydalanishingiz mumkin"
+  },
+  "cookieConsent.notice": {
+    "message": "Cookie fayllarni istalgan vaqt sahifaning pastki qismida bekor qilishingiz mumkin."
+  },
+  "cookieConsent.reject": {
+    "message": "Yoʻq, cookie fayllardan foydalanmang"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Veb-saytimizda cookie fayllardan foydalanamiz. Ular bizga siz haqingizda ozroq bilishga va veb-saytimizdan qanday foydalanishingizda yordam beradi. Bu biz uchun yanada qimmatli va mos tajribalarni siz va boshqalarga taqdim qilishimizda yordam beradi."
+  },
+  "cookieConsent.title": {
+    "message": "Biz cookie fayllardan foydalanmoqchimiz"
+  },
+  "errors.emailInvalid": {
+    "message": "Mavjud email manzilni kiriting"
+  },
+  "errors.fieldRequired": {
+    "message": "Bu maydon toʻldirilishi kerak"
+  },
+  "errors.unknown": {
+    "message": "Nimadir xato ketdi. Shaklni qaytadan yuborishga urinib ko‘ring"
+  },
+  "mediaGallery.title": {
+    "message": "Media galereyalar"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "{date} sanasigcha embargo"
+  },
+  "misc.loading": {
+    "message": "Yuklanayapti..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL dan nusxa olindi!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Navigatsiyani o‘tkazish"
+  },
+  "newsroom.title": {
+    "message": "Sayt"
+  },
+  "noStories.subtitle": {
+    "message": "Yangi hikoyalarni ko‘rish uchun keyinroq qaytib o‘ting."
+  },
+  "noStories.title": {
+    "message": "{newsroom} xonasiga xush kelibsiz!"
+  },
+  "notFound.subtitle": {
+    "message": "Agar siz URL ni o‘zingiz kiritgan bo‘lsangiz, manzillar satrida imlo xatolar yo‘qligini tekshiring."
+  },
+  "notFound.title": {
+    "message": "Siz qidirayotgan sahifa mavjud emas..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Qidirish"
+  },
+  "search.facets.category": {
+    "message": "Turkum"
+  },
+  "search.facets.month": {
+    "message": "Oy"
+  },
+  "search.facets.year": {
+    "message": "Yil"
+  },
+  "search.filters": {
+    "message": "Filtrlar"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "{searchQuery} uchun {resultsCount} natija topdik"
+  },
+  "search.fullResultsTitle": {
+    "message": "Natijalarni qidirish"
+  },
+  "search.inputHint": {
+    "message": "Qidiriladigan jumlani yozing"
+  },
+  "search.inputLabel": {
+    "message": "Qidirish"
+  },
+  "search.noResults": {
+    "message": "Hech nima topilmadi! Boshqa qidiruv termini bilan urining!"
+  },
+  "search.resultsTitle": {
+    "message": "Tezkor natijalar"
+  },
+  "search.showAllResults": {
+    "message": "Barcha natijalarni ko‘rsatish"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Qidirish"
+  },
+  "search.viewLess": {
+    "message": "Kamroq ko‘rsatish"
+  },
+  "search.viewMore": {
+    "message": "Ko‘proq ko‘rsatish"
+  },
+  "serverError.subtitle": {
+    "message": "Sahifani yangidan yuklab ko‘ring yoki biroz keyinroq qayta kiring."
+  },
+  "serverError.title": {
+    "message": "Nimadir xatolik yuz berdi..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "{subscribe} ustiga bosish orqali {privacyPolicyLink}ni oʻqib chiqqanim va shartlarga roz ekanimni tasdiqlayman."
+  },
+  "subscription.formTitle": {
+    "message": "Yangiliklarni elektron pochta orqali oling"
+  },
+  "subscription.labelEmail": {
+    "message": "Email manzilingiz"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Maxfiylik siyosati"
+  }
+}

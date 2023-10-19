@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Lura għall-paġna prinċipali"
+  },
+  "actions.copyShareUrl": {
+    "message": "Ikkopja l-URL"
+  },
+  "actions.download": {
+    "message": "Niżżel"
+  },
+  "actions.loadMore": {
+    "message": "Tella' aktar"
+  },
+  "actions.more": {
+    "message": "Aktar"
+  },
+  "actions.privacyRequests": {
+    "message": "Talbiet tal-privatezza"
+  },
+  "actions.readMore": {
+    "message": "Aqra aktar"
+  },
+  "actions.reload": {
+    "message": "Erġa' tella'"
+  },
+  "actions.share": {
+    "message": "Aqsam:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Ibda uża l-cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Ieqaf uża l-cookies"
+  },
+  "actions.subscribe": {
+    "message": "Abbona"
+  },
+  "actions.toggleFilters": {
+    "message": "Għażliet ta' tfittxija toggle"
+  },
+  "actions.unsubscribe": {
+    "message": "Temm l-abbonament"
+  },
+  "boilerplate.contact": {
+    "message": "Ikkuntattja"
+  },
+  "boilerplate.title": {
+    "message": "Dwar {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategoriji"
+  },
+  "contacts.title": {
+    "message": "Ikkuntattjana"
+  },
+  "cookieConsent.accept": {
+    "message": "Iva, tistgħu tużaw il-cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Meta trid tista' tneħħi l-permess għall-cookies minn qiegħ il-paġna."
+  },
+  "cookieConsent.reject": {
+    "message": "Le, tużawx il-cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Aħna nużaw il-cookies fuq is-sit tagħna. Dawn jgħinuna nsiru nafuk aħjar filwaqt li nifhmu kif tuża s-sit tagħna. B'hekk inkunu nistgħu noffru lilek u lill-utenti l-oħra esperjenza aqwa u iktar personalizzata."
+  },
+  "cookieConsent.title": {
+    "message": "Nixtiequ nużaw il-cookies"
+  },
+  "errors.emailInvalid": {
+    "message": "Introduċilna indirizz tal-email tajjeb"
+  },
+  "errors.fieldRequired": {
+    "message": "Dit-taqsima hija meħtieġa"
+  },
+  "errors.unknown": {
+    "message": "Marret xi ħaġa ħażin. Jekk jogħġbok erġa' ibgħat il-formola mill-ġdid"
+  },
+  "mediaGallery.title": {
+    "message": "Gallariji tal-midja"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo sa(l-) {date}"
+  },
+  "misc.loading": {
+    "message": "Qed itella'..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL ikkuppjat!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Navigazzjoni tat-Toggle"
+  },
+  "newsroom.title": {
+    "message": "Sit"
+  },
+  "noStories.subtitle": {
+    "message": "Ejja lura aktar tard biex tara stejjer ġodda."
+  },
+  "noStories.title": {
+    "message": "Merħba fi {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Jekk ittajpjajt il-URL inti stess, iċċekkja kif ktibtu fil-faxxa tal-indirizz."
+  },
+  "notFound.title": {
+    "message": "Il-paġna li qed tfittex ma teżistix..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Fittex"
+  },
+  "search.facets.category": {
+    "message": "Kategorija"
+  },
+  "search.facets.month": {
+    "message": "Xahar"
+  },
+  "search.facets.year": {
+    "message": "Sena"
+  },
+  "search.filters": {
+    "message": "Filtri"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Sibna {resultsCount} riżultati għal {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Riżultati tat-tiftix"
+  },
+  "search.inputHint": {
+    "message": "Ittajpja t-tfittxija tiegħek"
+  },
+  "search.inputLabel": {
+    "message": "Fittex"
+  },
+  "search.noResults": {
+    "message": "Ma nstab xejn. Ipprova terminu ieħor xi tfittex!"
+  },
+  "search.resultsTitle": {
+    "message": "Riżultati malajr"
+  },
+  "search.showAllResults": {
+    "message": "Uri r-riżultati kollha"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Fittex"
+  },
+  "search.viewLess": {
+    "message": "Ara inqas"
+  },
+  "search.viewMore": {
+    "message": "Ara aktar"
+  },
+  "serverError.subtitle": {
+    "message": "Ipprova ġedded il-paġna jew erġa' ejja lura aktar tard."
+  },
+  "serverError.title": {
+    "message": "Gara xi ħaġa..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Meta nagħfas \"{subscribe}\" inkun qed nikkonferma li qrajt u naqbel mal-{privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Ikseb aġġornamenti fil-indirizz tal-post tiegħek"
+  },
+  "subscription.labelEmail": {
+    "message": "L-indirizz tal-emajl tiegħek"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Politika tal-Privatezza"
+  }
+}

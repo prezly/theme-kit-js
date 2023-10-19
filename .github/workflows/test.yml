@@ -48,3 +48,14 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Check modified intl artifacts
+        run: |
+          files=$(git status --porcelain packages/intl/{i18n,src}/)
+          if [[ $? != 0 ]]; then
+            echo "Command failed." && false
+          elif [[ $files ]]; then
+            echo "Modified files detected." && false
+          else
+            echo "All good."
+          fi
