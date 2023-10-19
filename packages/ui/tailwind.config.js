@@ -10,7 +10,7 @@ module.exports = {
                 error: '#F04438',
             },
             fontFamily: {
-                poppins: ['Poppins', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
             },
         },
     },
