@@ -9,7 +9,7 @@ import { getAlgoliaSettings, PrezlyApi } from '@prezly/theme-kit-core/server';
 import { Locale } from '@prezly/theme-kit-intl';
 import type { IncomingMessage } from 'http';
 
-import { getLanguageFromNextLocaleSlug } from '../intl';
+import { matchLanguageByRequestedLocaleSlug } from '../intl';
 import type { PageProps, ServerSidePageProps } from '../types';
 
 export class NextPrezlyApi extends PrezlyApi {
@@ -27,7 +27,7 @@ export class NextPrezlyApi extends PrezlyApi {
 
         const currentLanguage = story
             ? getLanguageFromStory(languages, story)
-            : getLanguageFromNextLocaleSlug(languages, localeSlug);
+            : matchLanguageByRequestedLocaleSlug(languages, localeSlug);
         const defaultLanguage = getDefaultLanguage(languages);
 
         const { code: localeCode } = currentLanguage || defaultLanguage;

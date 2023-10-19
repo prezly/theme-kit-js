@@ -196,24 +196,29 @@ function getUnambiguousRegionCode<Language extends Pick<NewsroomLanguageSettings
  * - match language code across all languages
  * - match region code across all languages
  */
-export function getLanguageFromLocaleSlug<
+export function matchLanguageByLocaleSlug<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
 >(languages: Language[], slug: Locale.AnySlug): Language | undefined {
-    const nonDefaultLanguages = languages.filter((lang) => !lang.is_default);
+    const defaultLanguage = languages.filter((lang) => lang.is_default);
+    const usedLanguages = languages.filter((lang) => lang.public_stories_count > 0);
+    const otherLanguages = languages.filter((lang) => lang.public_stories_count === 0);
 
     return (
+        // 1) Exact match
         getLanguageByExactLocaleCode(languages, slug) ??
-        // Prefer non-default languages, as the default one should not be accessed with a URL slug.
-        getUnambiguousLanguageByLangSlug(nonDefaultLanguages, slug) ??
-        getUnambiguousLanguageByRegionSlug(nonDefaultLanguages, slug) ??
-        // Fallback to all languages, including default ones, if nothing has matched yet
-        getUnambiguousLanguageByLangSlug(languages, slug) ??
-        getUnambiguousLanguageByRegionSlug(languages, slug) ??
+        // 2) Match lang code
+        matchLanguageByLangSlug(defaultLanguage, slug) ?? // prefer default language
+        matchLanguageByLangSlug(usedLanguages, slug) ?? // then used languages
+        matchLanguageByLangSlug(otherLanguages, slug) ?? // then any enabled language
+        // 3) Match region code
+        matchLanguageByRegionSlug(defaultLanguage, slug) ?? // prefer default language
+        matchLanguageByRegionSlug(usedLanguages, slug) ?? // then used languages
+        matchLanguageByRegionSlug(otherLanguages, slug) ?? // then any enabled language
         undefined
     );
 }
 
-function getUnambiguousLanguageByLangSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
+function matchLanguageByLangSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
     languages: Language[],
     langSlug: Locale.AnySlug,
 ) {
@@ -226,9 +231,10 @@ function getUnambiguousLanguageByLangSlug<Language extends Pick<NewsroomLanguage
     return undefined;
 }
 
-function getUnambiguousLanguageByRegionSlug<
-    Language extends Pick<NewsroomLanguageSettings, 'code'>,
->(languages: Language[], regionSlug: Locale.AnySlug | undefined) {
+function matchLanguageByRegionSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
+    languages: Language[],
+    regionSlug: Locale.AnySlug | undefined,
+) {
     if (!regionSlug || isNumberCode(regionSlug)) {
         return undefined;
     }
