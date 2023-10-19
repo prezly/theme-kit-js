@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Terug na tuisblad"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopieer URL"
+  },
+  "actions.download": {
+    "message": "Aflaai"
+  },
+  "actions.loadMore": {
+    "message": "Laai meer"
+  },
+  "actions.more": {
+    "message": "Meer"
+  },
+  "actions.privacyRequests": {
+    "message": "Privaatheid versoeke"
+  },
+  "actions.readMore": {
+    "message": "Lees meer"
+  },
+  "actions.reload": {
+    "message": "Herlaai"
+  },
+  "actions.share": {
+    "message": "Deel:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Begin om koekies te gebruik"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Hou op om koekies te gebruik"
+  },
+  "actions.subscribe": {
+    "message": "Teken in"
+  },
+  "actions.toggleFilters": {
+    "message": "Wissel soekfilters"
+  },
+  "actions.unsubscribe": {
+    "message": "Teken uit"
+  },
+  "boilerplate.contact": {
+    "message": "Kontak"
+  },
+  "boilerplate.title": {
+    "message": "Omtrent {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategorieë"
+  },
+  "contacts.title": {
+    "message": "Kontak ons"
+  },
+  "cookieConsent.accept": {
+    "message": "Ja, julle kan koekies gebruik"
+  },
+  "cookieConsent.notice": {
+    "message": "Jy kan koekies enige tyd onder aan die bladsy herroep."
+  },
+  "cookieConsent.reject": {
+    "message": "Nee, moenie koekies gebruik nie"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Ons gebruik koekies op ons webwerf. Hulle help ons om ’n bietjie meer oor jou en hoe jy ons webwerf gebruik, uit te vind. Dit help ons om ’n waardevoller en persoonlike ondervinding aan jou en ander te verskaf."
+  },
+  "cookieConsent.title": {
+    "message": "Ons wil graag koekies gebruik"
+  },
+  "errors.emailInvalid": {
+    "message": "Stel 'n geldige e -posadres bekend"
+  },
+  "errors.fieldRequired": {
+    "message": "Hierdie veld word vereis"
+  },
+  "errors.unknown": {
+    "message": "Lets het verkeerd geloop. Probeer die vorm weer indien"
+  },
+  "mediaGallery.title": {
+    "message": "Media galerye"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "In beslag lê tot {date}"
+  },
+  "misc.loading": {
+    "message": "Laai..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL gekopieer!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Wissel navigasie"
+  },
+  "newsroom.title": {
+    "message": "Werf"
+  },
+  "noStories.subtitle": {
+    "message": "Kom later terug om nuwe stories te sien."
+  },
+  "noStories.title": {
+    "message": "Welkom by {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "As jy self die URL ingetik het, gaan die spelling na in die adresbalk."
+  },
+  "notFound.title": {
+    "message": "Die bladsy waarna jy soek bestaan ​​nie..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Soek"
+  },
+  "search.facets.category": {
+    "message": "Kategorie"
+  },
+  "search.facets.month": {
+    "message": "Maand"
+  },
+  "search.facets.year": {
+    "message": "Jaar"
+  },
+  "search.filters": {
+    "message": "Filters"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Ons het {resultsCount} resultate gevind vir {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Soekresultate"
+  },
+  "search.inputHint": {
+    "message": "Tik jou soektog"
+  },
+  "search.inputLabel": {
+    "message": "Soek"
+  },
+  "search.noResults": {
+    "message": "Niks gevind! Probeer asseblief 'n ander soekterm!"
+  },
+  "search.resultsTitle": {
+    "message": "Vinnige resultate"
+  },
+  "search.showAllResults": {
+    "message": "Wys alle resultate"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Soek"
+  },
+  "search.viewLess": {
+    "message": "Sien minder"
+  },
+  "search.viewMore": {
+    "message": "Sien meer"
+  },
+  "serverError.subtitle": {
+    "message": "Probeer om die bladsy te verfris of kom 'n bietjie later terug."
+  },
+  "serverError.title": {
+    "message": "Lets het verkeerd geloop..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Deur te klik op \"{subscribe}\", bevestig ek dat die {privacyPolicyLink} gelees het en daartoe instem."
+  },
+  "subscription.formTitle": {
+    "message": "Kry nuus in jou posbus"
+  },
+  "subscription.labelEmail": {
+    "message": "Jou e-posadres"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Privaatheidsbeleid"
+  }
+}

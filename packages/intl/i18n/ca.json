@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Torna a la pàgina d'inici"
+  },
+  "actions.copyShareUrl": {
+    "message": "Copia la URL"
+  },
+  "actions.download": {
+    "message": "Descarrega"
+  },
+  "actions.loadMore": {
+    "message": "Carrega més"
+  },
+  "actions.more": {
+    "message": "Més"
+  },
+  "actions.privacyRequests": {
+    "message": "Sol·licituds de privadesa"
+  },
+  "actions.readMore": {
+    "message": "Llegeix-ne més"
+  },
+  "actions.reload": {
+    "message": "Recarrega"
+  },
+  "actions.share": {
+    "message": "Comparteix:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Comença a utilitzar galetes"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Deixa d'utilitzar galetes"
+  },
+  "actions.subscribe": {
+    "message": "Subscriviu-vos"
+  },
+  "actions.toggleFilters": {
+    "message": "Commuteu els filtres de cerca"
+  },
+  "actions.unsubscribe": {
+    "message": "Cancel·la subscripció"
+  },
+  "boilerplate.contact": {
+    "message": "Contacta"
+  },
+  "boilerplate.title": {
+    "message": "Sobre {companyName}"
+  },
+  "categories.title": {
+    "message": "Categories"
+  },
+  "contacts.title": {
+    "message": "Contacta'ns"
+  },
+  "cookieConsent.accept": {
+    "message": "Sí, podeu utilitzar galetes"
+  },
+  "cookieConsent.notice": {
+    "message": "Podeu revocar les galetes en qualsevol moment a la part inferior de la pàgina."
+  },
+  "cookieConsent.reject": {
+    "message": "No, no utilitzeu galetes"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Utilitzem galetes en el nostre lloc web. Ens ajuden a conèixer-vos una mica i a saber com utilitzeu la nostra web. Això ens ajuda a oferir una experiència més valuosa i a mida per a tu i per als altres."
+  },
+  "cookieConsent.title": {
+    "message": "Ens agradaria utilitzar galetes"
+  },
+  "errors.emailInvalid": {
+    "message": "Introdueix una adreça de correu electrònic vàlida"
+  },
+  "errors.fieldRequired": {
+    "message": "Aquest camp és obligatori"
+  },
+  "errors.unknown": {
+    "message": "Alguna cosa ha anat malament. Torna a enviar el formulari"
+  },
+  "mediaGallery.title": {
+    "message": "Mediateques"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargament fins al {date}"
+  },
+  "misc.loading": {
+    "message": "Carregant..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "S'ha copiat l'URL!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Canvia la navegació"
+  },
+  "newsroom.title": {
+    "message": "Lloc"
+  },
+  "noStories.subtitle": {
+    "message": "Torna més endavant per veure noves històries."
+  },
+  "noStories.title": {
+    "message": "Et donem la benvinguda a {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Si heu escrit l'URL vosaltres mateixos, comproveu l'ortografia a la barra d'adreces."
+  },
+  "notFound.title": {
+    "message": "La pàgina que esteu buscant no existeix..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Cerca"
+  },
+  "search.facets.category": {
+    "message": "Categoria"
+  },
+  "search.facets.month": {
+    "message": "Mes"
+  },
+  "search.facets.year": {
+    "message": "Any"
+  },
+  "search.filters": {
+    "message": "Filtres"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Hem trobat {resultsCount} resultats per a {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Resultats de la cerca"
+  },
+  "search.inputHint": {
+    "message": "Escriure text a cercar"
+  },
+  "search.inputLabel": {
+    "message": "Cerca"
+  },
+  "search.noResults": {
+    "message": "No hem trobat res! Si us plau, prova un altre terme de cerca!"
+  },
+  "search.resultsTitle": {
+    "message": "Resultats ràpids"
+  },
+  "search.showAllResults": {
+    "message": "Mostra tots els resultats"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Cerca"
+  },
+  "search.viewLess": {
+    "message": "Veure'n menys"
+  },
+  "search.viewMore": {
+    "message": "Visualitza'n més"
+  },
+  "serverError.subtitle": {
+    "message": "Intenta actualitzar la pàgina o torna una mica més tard."
+  },
+  "serverError.title": {
+    "message": "Alguna cosa ha anat malament..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "En fer clic a \"{subscribe}\", confirmo que he llegit i accepto el {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Obteniu actualitzacions a la vostra bústia"
+  },
+  "subscription.labelEmail": {
+    "message": "La vostra adreça electrònica"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Política de privadesa"
+  }
+}

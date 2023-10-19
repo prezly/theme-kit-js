@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Ana sayfaya geri dön"
+  },
+  "actions.copyShareUrl": {
+    "message": "URL adresini kopyala"
+  },
+  "actions.download": {
+    "message": "İndir"
+  },
+  "actions.loadMore": {
+    "message": "Daha fazlasını yükle"
+  },
+  "actions.more": {
+    "message": "Daha fazla"
+  },
+  "actions.privacyRequests": {
+    "message": "Gizlilik talepleri"
+  },
+  "actions.readMore": {
+    "message": "Devamını oku"
+  },
+  "actions.reload": {
+    "message": "Tekrar Yükle"
+  },
+  "actions.share": {
+    "message": "Paylaş:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Çerezleri kullanmaya başla"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Çerezleri kullanmayı bırak"
+  },
+  "actions.subscribe": {
+    "message": "Abone ol"
+  },
+  "actions.toggleFilters": {
+    "message": "Arama filtrelerini değiştir"
+  },
+  "actions.unsubscribe": {
+    "message": "Abonelikten çık - "
+  },
+  "boilerplate.contact": {
+    "message": "Iletişim"
+  },
+  "boilerplate.title": {
+    "message": "{companyName} Hakkında"
+  },
+  "categories.title": {
+    "message": "Kategoriler"
+  },
+  "contacts.title": {
+    "message": "Bizimle iletişim kur"
+  },
+  "cookieConsent.accept": {
+    "message": "Evet, çerezleri kullanabilirsiniz"
+  },
+  "cookieConsent.notice": {
+    "message": "Çerezleri istediğiniz zaman bu sayfanın altından iptal edebilirsiniz."
+  },
+  "cookieConsent.reject": {
+    "message": "Hayır, çerezleri kullanmayın"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Web sitemizde çerez kullanıyoruz. Çerezler sizi biraz tanımamıza ve web sitemizi nasıl kullandığınızı öğrenmemize yardımcı olur. Böylece çerezler, siz ve diğer kullanıcılar için daha değerli ve daha uygun hâle getirilmiş bir deneyim sunmamıza yardım eder."
+  },
+  "cookieConsent.title": {
+    "message": "Çerezler kullanmak istiyoruz"
+  },
+  "errors.emailInvalid": {
+    "message": "Geçerli bir e-posta adresi girin"
+  },
+  "errors.fieldRequired": {
+    "message": "Bu alan zorunludur"
+  },
+  "errors.unknown": {
+    "message": "Bir şeyler yanlış gitti. Lütfen formu tekrar göndermeyi dene"
+  },
+  "mediaGallery.title": {
+    "message": "Medya galerileri"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "{date} tarihine kadar ambargo"
+  },
+  "misc.loading": {
+    "message": "Yükleniyor..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL kopyalandı!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Gezinti menüsünü değiştir"
+  },
+  "newsroom.title": {
+    "message": "Site"
+  },
+  "noStories.subtitle": {
+    "message": "Yeni hikayeleri görmek için daha sonra tekrar gel."
+  },
+  "noStories.title": {
+    "message": "{newsroom} alanına hoş geldin!"
+  },
+  "notFound.subtitle": {
+    "message": "URL adresini kendin yazdıysan adres çubuğunda yazımı kontrol et."
+  },
+  "notFound.title": {
+    "message": "Aradığın sayfa mevcut değil..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Ara"
+  },
+  "search.facets.category": {
+    "message": "Kategori"
+  },
+  "search.facets.month": {
+    "message": "Ay"
+  },
+  "search.facets.year": {
+    "message": "Yıl"
+  },
+  "search.filters": {
+    "message": "Filtreler"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "{searchQuery} için {resultsCount} sonuç bulduk"
+  },
+  "search.fullResultsTitle": {
+    "message": "Arama sonuçları"
+  },
+  "search.inputHint": {
+    "message": "Aramanı gir"
+  },
+  "search.inputLabel": {
+    "message": "Ara"
+  },
+  "search.noResults": {
+    "message": "Hiçbir şey bulunamadı! Lütfen başka bir arama terimi dene!"
+  },
+  "search.resultsTitle": {
+    "message": "Hızlı sonuçlar"
+  },
+  "search.showAllResults": {
+    "message": "Tüm sonuçları göster"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Ara"
+  },
+  "search.viewLess": {
+    "message": "Daha azını göster"
+  },
+  "search.viewMore": {
+    "message": "Daha fazlasını görüntüle"
+  },
+  "serverError.subtitle": {
+    "message": "Sayfayı yenilemeyi veya bir süre sonra tekrar gelmeyi dene."
+  },
+  "serverError.title": {
+    "message": "Birşey ters gitti..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "\"{subscribe}\" düğmesine tıklayarak {privacyPolicyLink} kısmını okuyup anladığımı onaylarım."
+  },
+  "subscription.formTitle": {
+    "message": "Güncellemeleri posta kutunuzda alın"
+  },
+  "subscription.labelEmail": {
+    "message": "E-posta adresiniz"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Gizlilik Politikası"
+  }
+}

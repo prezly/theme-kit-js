@@ -7,7 +7,7 @@ export type RegionCode = string;
 export type LocaleCode = string;
 
 /**
- * This a list of locales that Prezly has translations for. Each code represents a language file in the `@prezly/themes-intl-messages` package.
+ * This a list of locales that Prezly has translations for. Each code represents a language file in the `@prezly/theme-kit-intl` package.
  * See https://github.com/prezly/themes-intl-messages for more info.
  */
 const SUPPORTED_LOCALES: LocaleCode[] = [
@@ -62,7 +62,7 @@ const SUPPORTED_LOCALES: LocaleCode[] = [
 ];
 
 /**
- * Use this function to determine which translations file you should load from `@prezly/themes-intl-mesages` package.
+ * Use this function to determine which translations file you should load from `@prezly/theme-kit-intl` package.
  * See https://github.com/prezly/theme-nextjs-bea/blob/main/utils/lang.ts for a usage example.
  */
 export function getSupportedLocaleIsoCode(locale: LocaleObject): string {

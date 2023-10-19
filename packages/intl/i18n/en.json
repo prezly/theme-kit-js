@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Back to homepage"
+  },
+  "actions.copyShareUrl": {
+    "message": "Copy URL"
+  },
+  "actions.download": {
+    "message": "Download"
+  },
+  "actions.loadMore": {
+    "message": "Load more"
+  },
+  "actions.more": {
+    "message": "More"
+  },
+  "actions.privacyRequests": {
+    "message": "Privacy requests"
+  },
+  "actions.readMore": {
+    "message": "Read more"
+  },
+  "actions.reload": {
+    "message": "Reload"
+  },
+  "actions.share": {
+    "message": "Share:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Start using cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Stop using cookies"
+  },
+  "actions.subscribe": {
+    "message": "Subscribe"
+  },
+  "actions.toggleFilters": {
+    "message": "Toggle search filters"
+  },
+  "actions.unsubscribe": {
+    "message": "Unsubscribe"
+  },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
+  "boilerplate.title": {
+    "message": "About {companyName}"
+  },
+  "categories.title": {
+    "message": "Categories"
+  },
+  "contacts.title": {
+    "message": "Contact us"
+  },
+  "cookieConsent.accept": {
+    "message": "Yes, you can use cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "You can revoke cookies at anytime at the bottom of the page."
+  },
+  "cookieConsent.reject": {
+    "message": "No, do not use cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others."
+  },
+  "cookieConsent.title": {
+    "message": "We would like to use cookies"
+  },
+  "errors.emailInvalid": {
+    "message": "Introduce a valid email address"
+  },
+  "errors.fieldRequired": {
+    "message": "This field is required"
+  },
+  "errors.unknown": {
+    "message": "Something went wrong. Please try submitting the form again"
+  },
+  "mediaGallery.title": {
+    "message": "Media galleries"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo until {date}"
+  },
+  "misc.loading": {
+    "message": "Loading..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL copied!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Toggle navigation"
+  },
+  "newsroom.title": {
+    "message": "Site"
+  },
+  "noStories.subtitle": {
+    "message": "Come back later to see new stories."
+  },
+  "noStories.title": {
+    "message": "Welcome to {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "If you typed the URL yourself, check the spelling in the address bar."
+  },
+  "notFound.title": {
+    "message": "The page you’re looking for doesn’t exist..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Search"
+  },
+  "search.facets.category": {
+    "message": "Category"
+  },
+  "search.facets.month": {
+    "message": "Month"
+  },
+  "search.facets.year": {
+    "message": "Year"
+  },
+  "search.filters": {
+    "message": "Filters"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "We found {resultsCount} results for {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Search results"
+  },
+  "search.inputHint": {
+    "message": "Type your search"
+  },
+  "search.inputLabel": {
+    "message": "Search"
+  },
+  "search.noResults": {
+    "message": "Nothing found! Please try another search term!"
+  },
+  "search.resultsTitle": {
+    "message": "Quick results"
+  },
+  "search.showAllResults": {
+    "message": "Show all results"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Search"
+  },
+  "search.viewLess": {
+    "message": "View less"
+  },
+  "search.viewMore": {
+    "message": "View more"
+  },
+  "serverError.subtitle": {
+    "message": "Try refreshing the page or coming back a bit later."
+  },
+  "serverError.title": {
+    "message": "Something went wrong..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Get updates in your mailbox"
+  },
+  "subscription.labelEmail": {
+    "message": "Your email address"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Privacy Policy"
+  }
+}

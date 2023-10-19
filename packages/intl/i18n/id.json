@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Kembali ke beranda"
+  },
+  "actions.copyShareUrl": {
+    "message": "Salin URL"
+  },
+  "actions.download": {
+    "message": "Unduh"
+  },
+  "actions.loadMore": {
+    "message": "Muat lebih banyak"
+  },
+  "actions.more": {
+    "message": "Lainnya"
+  },
+  "actions.privacyRequests": {
+    "message": "Permintaan privasi"
+  },
+  "actions.readMore": {
+    "message": "Baca selengkapnya"
+  },
+  "actions.reload": {
+    "message": "Muat ulang"
+  },
+  "actions.share": {
+    "message": "Bagikan:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Mulai gunakan kuki"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Berhenti menggunakan kuki"
+  },
+  "actions.subscribe": {
+    "message": "Berlangganan"
+  },
+  "actions.toggleFilters": {
+    "message": "Alihkan filter pencarian"
+  },
+  "actions.unsubscribe": {
+    "message": "Berhenti Berlangganan"
+  },
+  "boilerplate.contact": {
+    "message": "Kontak"
+  },
+  "boilerplate.title": {
+    "message": "Tentang {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategori"
+  },
+  "contacts.title": {
+    "message": "Hubungi kami"
+  },
+  "cookieConsent.accept": {
+    "message": "Ya, Anda dapat menggunakan kuki."
+  },
+  "cookieConsent.notice": {
+    "message": "Anda dapat mencabut kuki kapan saja pada bagian bawah halaman."
+  },
+  "cookieConsent.reject": {
+    "message": "Tidak, jangan menggunakan kuki."
+  },
+  "cookieConsent.subtitle": {
+    "message": "Kami menggunakan kuki di situs web kami. Kuki membantu untuk mengetahui sedikit tentang Anda dan bagaimana Anda menggunakan situs web kami. Hal ini membantu kami menyediakan pengalaman yang lebih berharga dan disesuaikan untuk Anda dan orang lain."
+  },
+  "cookieConsent.title": {
+    "message": "Kami ingin menggunakan cookie"
+  },
+  "errors.emailInvalid": {
+    "message": "Perkenalkan alamat surel yang valid"
+  },
+  "errors.fieldRequired": {
+    "message": "Bagian ini diperlukan"
+  },
+  "errors.unknown": {
+    "message": "Terjadi kesalahan. Mohon coba kirimkan kembali formulirnya"
+  },
+  "mediaGallery.title": {
+    "message": "Galeri media"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo hingga {date}"
+  },
+  "misc.loading": {
+    "message": "Memuat..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL disalin!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Alihkan navigasi"
+  },
+  "newsroom.title": {
+    "message": "Situs"
+  },
+  "noStories.subtitle": {
+    "message": "Kembali lagi nanti untuk melihat cerita baru."
+  },
+  "noStories.title": {
+    "message": "Selamat datang di {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Jika Anda mengetik sendiri URL-nya, periksa ejaan di bilah alamat."
+  },
+  "notFound.title": {
+    "message": "Halaman yang Anda cari tidak ada..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Cari"
+  },
+  "search.facets.category": {
+    "message": "Kategori"
+  },
+  "search.facets.month": {
+    "message": "Bulan"
+  },
+  "search.facets.year": {
+    "message": "Tahun"
+  },
+  "search.filters": {
+    "message": "Filter"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "{resultsCount} hasil ditemukan untuk {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Hasil pencarian"
+  },
+  "search.inputHint": {
+    "message": "Ketik pencarian Anda"
+  },
+  "search.inputLabel": {
+    "message": "Cari"
+  },
+  "search.noResults": {
+    "message": "Tidak ada yang ditemukan! Coba istilah pencarian lain!"
+  },
+  "search.resultsTitle": {
+    "message": "Hasil cepat"
+  },
+  "search.showAllResults": {
+    "message": "Tampilkan semua hasil"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Pencarian"
+  },
+  "search.viewLess": {
+    "message": "Lihat lebih sedikit"
+  },
+  "search.viewMore": {
+    "message": "Lihat lebih banyak"
+  },
+  "serverError.subtitle": {
+    "message": "Cobalah untuk menyegarkan halaman atau kembali lagi nanti."
+  },
+  "serverError.title": {
+    "message": "Terjadi kesalahan..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Dengan mengeklik \"{subscribe}\", saya mengonfirmasikan bahwa saya telah membaca dan menyetujui {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Dapatkan pembaruan di kotak surat Anda"
+  },
+  "subscription.labelEmail": {
+    "message": "Alamat email Anda"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Kebijakan Privasi"
+  }
+}

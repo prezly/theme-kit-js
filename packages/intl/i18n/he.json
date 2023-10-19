@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "חזרה לעמוד הבית"
+  },
+  "actions.copyShareUrl": {
+    "message": "העתקת כתובת URL"
+  },
+  "actions.download": {
+    "message": "הורדה"
+  },
+  "actions.loadMore": {
+    "message": "לטעון עוד"
+  },
+  "actions.more": {
+    "message": "עוד"
+  },
+  "actions.privacyRequests": {
+    "message": "בקשות פרטיות"
+  },
+  "actions.readMore": {
+    "message": "קרא עוד"
+  },
+  "actions.reload": {
+    "message": "טעינה מחדש"
+  },
+  "actions.share": {
+    "message": "שיתוף:"
+  },
+  "actions.startUsingCookies": {
+    "message": "התחל להשתמש בקוקיות"
+  },
+  "actions.stopUsingCookies": {
+    "message": "הפסק להשתמש בקוקיות"
+  },
+  "actions.subscribe": {
+    "message": "הרשמה"
+  },
+  "actions.toggleFilters": {
+    "message": "הפעילו/כבו מסנני חיפוש"
+  },
+  "actions.unsubscribe": {
+    "message": "ביטול הרשמה"
+  },
+  "boilerplate.contact": {
+    "message": "צור קשר"
+  },
+  "boilerplate.title": {
+    "message": "אודות {companyName}"
+  },
+  "categories.title": {
+    "message": "קטגוריות"
+  },
+  "contacts.title": {
+    "message": "צור קשר אתנו"
+  },
+  "cookieConsent.accept": {
+    "message": "כן, ניתן להשתמש בקוקיות"
+  },
+  "cookieConsent.notice": {
+    "message": "ניתן לבטל את ההסכמה לקוקיות בכל עת, בתחתית הדף."
+  },
+  "cookieConsent.reject": {
+    "message": "לא, אל תשתמשו בקוקיות"
+  },
+  "cookieConsent.subtitle": {
+    "message": "אנו משתמשים בקוקיות באתר האינטרנט שלנו. הן עוזרות לנו להכיר אותך קצת יותר טוב וללמוד על אופן השימוש שלך באתר. זה עוזר לנו להעניק לך ולאחרים חוויית שימוש מלאה יותר ומותאמת אישית."
+  },
+  "cookieConsent.title": {
+    "message": "אנו מבקשים להשתמש בקוקיות"
+  },
+  "errors.emailInvalid": {
+    "message": "הזינו כתובת אימייל חוקית"
+  },
+  "errors.fieldRequired": {
+    "message": "זהו שדה חובה"
+  },
+  "errors.unknown": {
+    "message": "משהו השתבש. נא לנסות לשלוח את הטופס מחדש"
+  },
+  "mediaGallery.title": {
+    "message": "גלריות מדיה"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "אסור לפרסום עד {date}"
+  },
+  "misc.loading": {
+    "message": "בטעינה..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "כתובת ה-URL הועתקה!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "מתג תפריט"
+  },
+  "newsroom.title": {
+    "message": "אתר"
+  },
+  "noStories.subtitle": {
+    "message": "חזרו מאוחר יותר כדי לראות סיפורים חדשים."
+  },
+  "noStories.title": {
+    "message": "ברוכים הבאים אל {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "אם הזנתם את כתובת ה-URL בעצמכם, בדקו את האיות בשורת הכתובת."
+  },
+  "notFound.title": {
+    "message": "העמוד שחיפשתם אינו קיים..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "חיפוש"
+  },
+  "search.facets.category": {
+    "message": "קטגוריה"
+  },
+  "search.facets.month": {
+    "message": "חודש"
+  },
+  "search.facets.year": {
+    "message": "שנה"
+  },
+  "search.filters": {
+    "message": "מסננים"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "מצאנו {resultsCount} תוצאות עבור {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "תוצאות החיפוש"
+  },
+  "search.inputHint": {
+    "message": "נא להזין תוכן חיפוש"
+  },
+  "search.inputLabel": {
+    "message": "חיפוש"
+  },
+  "search.noResults": {
+    "message": "לא נמצא כלום! נא לנסות קריטריון חיפוש אחר!"
+  },
+  "search.resultsTitle": {
+    "message": "תוצאות מהירות"
+  },
+  "search.showAllResults": {
+    "message": "תצוגת כל התוצאות"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "חיפוש"
+  },
+  "search.viewLess": {
+    "message": "הצג פחות"
+  },
+  "search.viewMore": {
+    "message": "הצג יותר"
+  },
+  "serverError.subtitle": {
+    "message": "נסו לרענן את העמוד, או חזרו מאוחר יותר."
+  },
+  "serverError.title": {
+    "message": "משהו השתבש..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "לחיצה על \"{subscribe}\" מהווה אישור לכך שקראתי את {privacyPolicyLink} והסכמתי אתה."
+  },
+  "subscription.formTitle": {
+    "message": "קבל עדכונים לתיבת האימייל"
+  },
+  "subscription.labelEmail": {
+    "message": "כתובת האימייל שלך"
+  },
+  "subscription.privacyPolicy": {
+    "message": "מדיניות הפרטיות"
+  }
+}

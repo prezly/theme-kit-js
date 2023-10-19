@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Tillbaka till hemsida"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopiera URL"
+  },
+  "actions.download": {
+    "message": "Ladda ner"
+  },
+  "actions.loadMore": {
+    "message": "Ladda fler"
+  },
+  "actions.more": {
+    "message": "Mer"
+  },
+  "actions.privacyRequests": {
+    "message": "Sekretessförfrågningar"
+  },
+  "actions.readMore": {
+    "message": "Läs mer"
+  },
+  "actions.reload": {
+    "message": "Uppdatera"
+  },
+  "actions.share": {
+    "message": "Dela:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Börja använda cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Sluta använda cookies"
+  },
+  "actions.subscribe": {
+    "message": "Prenumerera"
+  },
+  "actions.toggleFilters": {
+    "message": "Växla mellan sökfilter"
+  },
+  "actions.unsubscribe": {
+    "message": "Avregistrera"
+  },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
+  "boilerplate.title": {
+    "message": "Om {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategorier"
+  },
+  "contacts.title": {
+    "message": "Kontakta oss"
+  },
+  "cookieConsent.accept": {
+    "message": "Ja, ni kan använda cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Du kan återkalla cookies när som helst längst ner på sidan."
+  },
+  "cookieConsent.reject": {
+    "message": "Nej, använd inte cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Vi använder cookies på vår hemsida. De hjälper oss att lära känna dig lite och hur du använder vår hemsida. Detta hjälper oss att ge en mer värdefull och skräddarsydd upplevelse för dig och andra."
+  },
+  "cookieConsent.title": {
+    "message": "Vi vill använda cookies"
+  },
+  "errors.emailInvalid": {
+    "message": "Inför en giltig e-postadress"
+  },
+  "errors.fieldRequired": {
+    "message": "Detta fält krävs"
+  },
+  "errors.unknown": {
+    "message": "Något blev fel. Var god försök sända formuläret igen"
+  },
+  "mediaGallery.title": {
+    "message": "Mediegallerier"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Parkera till {date}"
+  },
+  "misc.loading": {
+    "message": "Laddar..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL-kopierad!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Växla navigering"
+  },
+  "newsroom.title": {
+    "message": "Sida"
+  },
+  "noStories.subtitle": {
+    "message": "Kom igen senare och läs nya berättelser."
+  },
+  "noStories.title": {
+    "message": "Välkommen till {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Om du har lagt in URL:en själv, kontrollera gärna stavningen igen i adressfältet."
+  },
+  "notFound.title": {
+    "message": "Sidan du söker efter, finns inte..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Sök"
+  },
+  "search.facets.category": {
+    "message": "Kategori"
+  },
+  "search.facets.month": {
+    "message": "Månad"
+  },
+  "search.facets.year": {
+    "message": "År"
+  },
+  "search.filters": {
+    "message": "Filter"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Vi hittade {resultsCount} resultat för {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Sökresultat"
+  },
+  "search.inputHint": {
+    "message": "Ange din sökning"
+  },
+  "search.inputLabel": {
+    "message": "Sök"
+  },
+  "search.noResults": {
+    "message": "Inget hittat! Vänligen testa ett annat sökord!"
+  },
+  "search.resultsTitle": {
+    "message": "Snabbresultat"
+  },
+  "search.showAllResults": {
+    "message": "Visa alla resultat"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Sök"
+  },
+  "search.viewLess": {
+    "message": "Visa mindre"
+  },
+  "search.viewMore": {
+    "message": "Visa mer"
+  },
+  "serverError.subtitle": {
+    "message": "Testa att uppdatera sidan, eller återkom lite senare."
+  },
+  "serverError.title": {
+    "message": "Någonting gick fel..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Genom att klicka på \"{subscribe}\" bekräftar jag att jag har läst och samtycker till {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Få uppdateringar i din brevlåda"
+  },
+  "subscription.labelEmail": {
+    "message": "Din epostadress"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Integritetspolicy"
+  }
+}

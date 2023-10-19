@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Volver a la página de inicio"
+  },
+  "actions.copyShareUrl": {
+    "message": "Copiar URL"
+  },
+  "actions.download": {
+    "message": "Descargar"
+  },
+  "actions.loadMore": {
+    "message": "Cargar más"
+  },
+  "actions.more": {
+    "message": "Más"
+  },
+  "actions.privacyRequests": {
+    "message": "Solicitudes de privacidad"
+  },
+  "actions.readMore": {
+    "message": "Más información"
+  },
+  "actions.reload": {
+    "message": "Volver a cargar"
+  },
+  "actions.share": {
+    "message": "Compartir:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Empezar a usar cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Dejar de usar cookies"
+  },
+  "actions.subscribe": {
+    "message": "Suscribirse"
+  },
+  "actions.toggleFilters": {
+    "message": "Alternar filtros de búsqueda"
+  },
+  "actions.unsubscribe": {
+    "message": "Cancelar la suscripción"
+  },
+  "boilerplate.contact": {
+    "message": "Contactar"
+  },
+  "boilerplate.title": {
+    "message": "Sobre {companyName}"
+  },
+  "categories.title": {
+    "message": "Categorías"
+  },
+  "contacts.title": {
+    "message": "Contacte con nosotros"
+  },
+  "cookieConsent.accept": {
+    "message": "Sí, pueden usar cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Puede anular las cookies en cualquier momento al final de la página."
+  },
+  "cookieConsent.reject": {
+    "message": "No, no utilicen cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Utilizamos cookies en nuestro sitio web. Nos ayudan a conocerle un poco y saber cómo usa nuestro sitio web, lo que nos sirve para proporcionarle a usted y a los demás una experiencia más valiosa y personalizada."
+  },
+  "cookieConsent.title": {
+    "message": "Nos gustaría usar cookies"
+  },
+  "errors.emailInvalid": {
+    "message": "Introduce un correo electrónico válido"
+  },
+  "errors.fieldRequired": {
+    "message": "Este campo es obligatorio"
+  },
+  "errors.unknown": {
+    "message": "Ha habido un error. Intenta volver a enviar el formulario"
+  },
+  "mediaGallery.title": {
+    "message": "Galerías multimedia"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo hasta el {date}"
+  },
+  "misc.loading": {
+    "message": "Cargando..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "¡URL copiada!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Activar/desactivar navegación"
+  },
+  "newsroom.title": {
+    "message": "Sitio"
+  },
+  "noStories.subtitle": {
+    "message": "Regresa más tarde para ver nuevas historias."
+  },
+  "noStories.title": {
+    "message": "¡Te damos la bienvenida a {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Si has escrito tú mismo la URL, revisa que esté bien escrita en la barra de direcciones."
+  },
+  "notFound.title": {
+    "message": "La página que buscas no existe..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Buscar"
+  },
+  "search.facets.category": {
+    "message": "Categoría"
+  },
+  "search.facets.month": {
+    "message": "Mes"
+  },
+  "search.facets.year": {
+    "message": "Año"
+  },
+  "search.filters": {
+    "message": "Filtros"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Encontramos {resultsCount} resultados para {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Resultados de búsqueda"
+  },
+  "search.inputHint": {
+    "message": "Introduce tu búsqueda"
+  },
+  "search.inputLabel": {
+    "message": "Buscar"
+  },
+  "search.noResults": {
+    "message": "No se encontró nada. Por favor, prueba con otro término de búsqueda."
+  },
+  "search.resultsTitle": {
+    "message": "Resultados rápidos"
+  },
+  "search.showAllResults": {
+    "message": "Mostrar todos los resultados"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Búsqueda"
+  },
+  "search.viewLess": {
+    "message": "Mostrar menos"
+  },
+  "search.viewMore": {
+    "message": "Mostrar más"
+  },
+  "serverError.subtitle": {
+    "message": "Intenta actualizar la página o vuelve un poco más tarde."
+  },
+  "serverError.title": {
+    "message": "Algo ha ido mal..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Al hacer clic en \"{subscribe}\", confirmo que he leído y acepto la {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Consigue actualizaciones en tu bandeja de correo"
+  },
+  "subscription.labelEmail": {
+    "message": "Tu dirección de email"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Política de Privacidad"
+  }
+}

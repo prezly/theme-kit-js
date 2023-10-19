@@ -19,12 +19,16 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "removeComments": false,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "outDir": "./build"
   },
   "include": [".prettierrc.js"],
-  "references": [{ "path": "./packages/nextjs" }, { "path": "./packages/core" }]
+  "references": [
+    { "path": "./packages/nextjs" },
+    { "path": "./packages/core" },
+    { "path": "./packages/intl" }
+  ]
 }

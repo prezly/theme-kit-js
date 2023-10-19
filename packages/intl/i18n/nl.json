@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Terug naar de startpagina"
+  },
+  "actions.copyShareUrl": {
+    "message": "URL kopiëren"
+  },
+  "actions.download": {
+    "message": "Downloaden"
+  },
+  "actions.loadMore": {
+    "message": "Meer laden"
+  },
+  "actions.more": {
+    "message": "Meer"
+  },
+  "actions.privacyRequests": {
+    "message": "Privacyverzoeken"
+  },
+  "actions.readMore": {
+    "message": "Lees meer"
+  },
+  "actions.reload": {
+    "message": "Opnieuw laden"
+  },
+  "actions.share": {
+    "message": "Delen:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Start met het gebruik van cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Stop met het gebruik van cookies"
+  },
+  "actions.subscribe": {
+    "message": "Inschrijven"
+  },
+  "actions.toggleFilters": {
+    "message": "Zoekfilters wijzigen"
+  },
+  "actions.unsubscribe": {
+    "message": "Schrijf je uit"
+  },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
+  "boilerplate.title": {
+    "message": "Over {companyName}"
+  },
+  "categories.title": {
+    "message": "Categorieën"
+  },
+  "contacts.title": {
+    "message": "Contacteer ons"
+  },
+  "cookieConsent.accept": {
+    "message": "Ja, u kunt cookies gebruiken"
+  },
+  "cookieConsent.notice": {
+    "message": "U kunt cookies op elk moment onderaan de pagina intrekken."
+  },
+  "cookieConsent.reject": {
+    "message": "Nee, gebruik geen cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "We maken gebruik van cookies op onze website. Deze helpen ons om u iets beter te leren kennen en te zien hoe u onze website gebruikt. \nDit helpt ons een waardevollere en op maat gemaakte ervaring te bieden voor u en anderen."
+  },
+  "cookieConsent.title": {
+    "message": "We willen graag cookies gebruiken"
+  },
+  "errors.emailInvalid": {
+    "message": "Voer een geldig e-mailadres in"
+  },
+  "errors.fieldRequired": {
+    "message": "Dit veld is vereist"
+  },
+  "errors.unknown": {
+    "message": "Er is iets fout gegaan. Probeer het formulier opnieuw te verzenden"
+  },
+  "mediaGallery.title": {
+    "message": "Mediagalerijen"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo tot {date}"
+  },
+  "misc.loading": {
+    "message": "Laden..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL gekopieerd!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Toggle-navigatie"
+  },
+  "newsroom.title": {
+    "message": "Site"
+  },
+  "noStories.subtitle": {
+    "message": "Kom later nog eens terug om nieuwe verhalen te zien."
+  },
+  "noStories.title": {
+    "message": "Welkom bij {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Als je de URL zelf getypt hebt, controleer dan de spelling in de adresbalk."
+  },
+  "notFound.title": {
+    "message": "De pagina die je zoekt bestaat niet..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Zoeken"
+  },
+  "search.facets.category": {
+    "message": "Categorie"
+  },
+  "search.facets.month": {
+    "message": "Maand"
+  },
+  "search.facets.year": {
+    "message": "Jaar"
+  },
+  "search.filters": {
+    "message": "Filters"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "We hebben {resultsCount} resultaten voor {searchQuery} gevonden"
+  },
+  "search.fullResultsTitle": {
+    "message": "Zoekresultaten"
+  },
+  "search.inputHint": {
+    "message": "Typ uw zoekopdracht"
+  },
+  "search.inputLabel": {
+    "message": "Zoeken"
+  },
+  "search.noResults": {
+    "message": "Niets gevonden! Probeer een andere zoekterm!"
+  },
+  "search.resultsTitle": {
+    "message": "Snelle resultaten"
+  },
+  "search.showAllResults": {
+    "message": "Alle resultaten weergeven"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Zoeken"
+  },
+  "search.viewLess": {
+    "message": "Minder weergeven"
+  },
+  "search.viewMore": {
+    "message": "Meer weergeven"
+  },
+  "serverError.subtitle": {
+    "message": "Probeer de pagina te verversen of kom later nog eens terug."
+  },
+  "serverError.title": {
+    "message": "Er liep iets mis..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Door op \"{subscribe}\" te klikken, bevestig ik dat ik het {privacyPolicyLink} gelezen heb en ermee akkoord ga."
+  },
+  "subscription.formTitle": {
+    "message": "Persberichten in je mailbox"
+  },
+  "subscription.labelEmail": {
+    "message": "E-mailadres"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Privacybeleid"
+  }
+}
