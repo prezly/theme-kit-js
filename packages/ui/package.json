@@ -2,14 +2,21 @@
   "name": "@prezly/theme-kit-ui",
   "version": "0.0.1",
   "description": "UI components for Prezly themes",
-  "keywords": ["prezly", "themes", "ui"],
+  "keywords": [
+    "prezly",
+    "themes",
+    "ui"
+  ],
   "author": {
     "name": "Prezly Team"
   },
   "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/ui#readme",
   "license": "MIT",
   "main": "build/index.js",
-  "files": ["build", "README.md"],
+  "files": [
+    "build",
+    "README.md"
+  ],
   "types": "build/index.d.ts",
   "repository": {
     "type": "git",
@@ -41,7 +48,6 @@
     "@storybook/testing-library": "^0.2.2",
     "@types/tinycolor2": "^1.4.4",
     "autoprefixer": "^10.4.16",
-    "chromatic": "^7.4.0",
     "microbundle": "^0.15.1",
     "postcss": "^8.4.31",
     "prop-types": "^15.8.1",
