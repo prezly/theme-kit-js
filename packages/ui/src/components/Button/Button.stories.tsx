@@ -75,7 +75,7 @@ export const AllVariations: StoryFn<typeof Button> = (args) => {
 AllVariations.parameters = {
     design: {
         type: 'figma',
-        url: 'https://www.figma.com/file/1SanFzRVKNgTBe9tqcYqX0/00--%3E-Design-System?node-id=2559:701&t=mXR59UuA6bXmcs1h-0',
+        url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=601-3728&mode=dev',
     },
 };
 
