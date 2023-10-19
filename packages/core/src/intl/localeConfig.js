@@ -8,9 +8,9 @@ const { Locale } = require('@prezly/theme-kit-intl');
 
 const { isNumberCode } = require('./languages');
 /**
- * @type {string[]}
+ * @type {Locale[]}
  */
-const locales = require('./localeList');
+const locales = require('./localeList').map((code) => Locale.from(code));
 
 /**
  * All permutations for the shorter locale codes supported by Prezly (e.g. short region codes and neutral language codes)
@@ -18,10 +18,10 @@ const locales = require('./localeList');
  */
 const permutations = Array.from(
     new Set([
-        ...locales.map((locale) => Locale.toUrlSlug(locale)),
-        ...locales.map((locale) => Locale.toNeutralLanguageCode(locale)),
+        ...locales.map((locale) => locale.slug),
+        ...locales.map((locale) => locale.lang),
         ...locales
-            .map((locale) => Locale.toRegionCode(locale)?.toLowerCase())
+            .map((locale) => locale.region?.toLowerCase())
             .filter(Boolean)
             // Remove number-only codes from possible permutations (like `419` for `es-419`)
             .filter((code) => !isNumberCode(code))

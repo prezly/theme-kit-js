@@ -150,9 +150,7 @@ function getUnambiguousLangCode<Language extends Pick<NewsroomLanguageSettings, 
     languages: Language[],
     langCode: Locale.LanguageCode,
 ) {
-    const candidates = languages.filter(
-        (lang) => Locale.toNeutralLanguageCode(lang.code) === langCode,
-    );
+    const candidates = languages.filter((lang) => Locale.isLanguageCode(lang.code, langCode));
 
     if (candidates.length === 1) {
         return langCode;
@@ -176,8 +174,8 @@ function getUnambiguousRegionCode<Language extends Pick<NewsroomLanguageSettings
 
     const candidates = languages.filter((lang) => Locale.isRegionCode(lang.code, regionCode));
     // Prevent collision with neutral language codes
-    const collisions = languages.filter(
-        (lang) => Locale.toNeutralLanguageCode(lang.code) === regionCode.toLowerCase(),
+    const collisions = languages.filter((lang) =>
+        Locale.isLanguageCode(lang.code, regionCode.toLowerCase()),
     );
 
     if (candidates.length === 1 && collisions.length === 0) {
@@ -210,9 +208,7 @@ function getUnambiguousLanguageByLangSlug<Language extends Pick<NewsroomLanguage
     languages: Language[],
     langSlug: Locale.AnySlug,
 ) {
-    const candidates = languages.filter(
-        (lang) => Locale.toNeutralLanguageCode(lang.code) === langSlug,
-    );
+    const candidates = languages.filter((lang) => Locale.isLanguageCode(lang.code, langSlug));
 
     if (candidates.length === 1) {
         return candidates[0];

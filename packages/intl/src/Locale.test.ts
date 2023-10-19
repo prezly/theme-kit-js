@@ -127,34 +127,14 @@ describe('Locale', () => {
         expect(Locale.isSameRegion('en_US', 'fr')).toBe(false);
     });
 
-    it('should tell if it is an RTL language', () => {
-        expect(Locale.isRtl('ar_AR')).toBe(true);
-        expect(Locale.isRtl('he')).toBe(true);
-        expect(Locale.isRtl('ur-pk')).toBe(true);
-
-        expect(Locale.isRtl('en_GB')).toBe(false);
-        expect(Locale.isRtl('fr')).toBe(false);
-        expect(Locale.isRtl('zh_Hant')).toBe(false);
-    });
-
-    it('should tell if it is an LTR language', () => {
-        expect(Locale.isLtr('ar_AR')).toBe(false);
-        expect(Locale.isLtr('he')).toBe(false);
-        expect(Locale.isLtr('ur-pk')).toBe(false);
-
-        expect(Locale.isLtr('en_GB')).toBe(true);
-        expect(Locale.isLtr('fr')).toBe(true);
-        expect(Locale.isLtr('zh_Hant')).toBe(true);
-    });
-
     it('should tell language direction', () => {
-        expect(Locale.direction('ar_AR')).toBe('rtl');
-        expect(Locale.direction('he')).toBe('rtl');
-        expect(Locale.direction('ur-pk')).toBe('rtl');
+        expect(Locale.from('ar_AR').direction).toBe('rtl');
+        expect(Locale.from('he').direction).toBe('rtl');
+        expect(Locale.from('ur-pk').direction).toBe('rtl');
 
-        expect(Locale.direction('en_GB')).toBe('ltr');
-        expect(Locale.direction('fr')).toBe('ltr');
-        expect(Locale.direction('zh_Hant')).toBe('ltr');
+        expect(Locale.from('en_GB').direction).toBe('ltr');
+        expect(Locale.from('fr').direction).toBe('ltr');
+        expect(Locale.from('zh_Hant').direction).toBe('ltr');
     });
 
     it('should work for all supported locales', () => {

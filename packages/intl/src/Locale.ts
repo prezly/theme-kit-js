@@ -30,7 +30,7 @@ export interface Locale {
     /**
      * Text direction for the locale.
      */
-    dir: 'ltr' | 'rtl';
+    direction: 'ltr' | 'rtl';
 
     /**
      * Locale region code.
@@ -117,7 +117,7 @@ export namespace Locale {
             code: isoCode.replace('-', '_'),
             isoCode,
             slug: isoCode.toLowerCase(),
-            dir: KNOWN_RTL_LANGUAGES.includes(lang) ? 'rtl' : 'ltr',
+            direction: KNOWN_RTL_LANGUAGES.includes(lang) ? 'rtl' : 'ltr',
             lang,
             region: region ? region.toUpperCase() : undefined,
             script: script ? toPascalCase(script) : undefined,
@@ -130,43 +130,15 @@ export namespace Locale {
         return obj;
     }
 
-    export function toIsoCode(locale: AnyCode | Locale): HyphenCode {
-        return Locale.from(locale).isoCode;
-    }
-
-    export function toUnderscoreCode(locale: AnyCode | Locale): UnderscoreCode {
-        return Locale.from(locale).code;
-    }
-
-    export function toUrlSlug(locale: AnyCode | Locale): UrlSlug {
-        return Locale.from(locale).slug;
-    }
-
-    export function toNeutralLanguageCode(locale: AnyCode | Locale): LanguageCode {
-        return Locale.from(locale).lang;
-    }
-
-    export function toRegionCode(locale: AnyCode | Locale): RegionCode | undefined {
-        return Locale.from(locale).region;
+    export function isLanguageCode(locale: AnyCode | Locale, langCode: LanguageCode): boolean {
+        return Locale.from(locale).lang === langCode;
     }
 
     export function isRegionCode(
         locale: AnyCode | Locale,
         regionCode: Locale.RegionCode | LowercaseRegionCode,
-    ) {
-        return Locale.toRegionCode(locale) === regionCode.toUpperCase();
-    }
-
-    export function direction(locale: AnyCode | Locale): 'rtl' | 'ltr' {
-        return Locale.from(locale).dir;
-    }
-
-    export function isLtr(locale: AnyCode | Locale): boolean {
-        return Locale.from(locale).dir === 'ltr';
-    }
-
-    export function isRtl(locale: AnyCode | Locale): boolean {
-        return Locale.from(locale).dir === 'rtl';
+    ): boolean {
+        return Locale.from(locale).region === regionCode.toUpperCase();
     }
 
     export function isRegionIndependent(locale: AnyCode | Locale): boolean {

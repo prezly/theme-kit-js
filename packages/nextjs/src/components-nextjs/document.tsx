@@ -22,7 +22,7 @@ export class PrezlyThemeDocument extends Document {
         const locale = Locale.from(this.getLocaleCode());
 
         return (
-            <Html lang={locale.isoCode} dir={locale.dir}>
+            <Html lang={locale.isoCode} dir={locale.direction}>
                 <Head>
                     <meta name="og:locale" content={locale.isoCode} />
                 </Head>
