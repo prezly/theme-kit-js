@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "مرکزی صفحہ پر واپس"
+  },
+  "actions.copyShareUrl": {
+    "message": "URL نقل کریں"
+  },
+  "actions.download": {
+    "message": "ڈاؤن لوڈ کریں"
+  },
+  "actions.loadMore": {
+    "message": "مزید لوڈ کریں"
+  },
+  "actions.more": {
+    "message": "مزید"
+  },
+  "actions.privacyRequests": {
+    "message": "پرائیویسی درخواستیں"
+  },
+  "actions.readMore": {
+    "message": "مزید پڑھیں"
+  },
+  "actions.reload": {
+    "message": "دوبارہ لوڈ کریں"
+  },
+  "actions.share": {
+    "message": "اشتراک کریں:"
+  },
+  "actions.startUsingCookies": {
+    "message": "کوکیز کا استعمال شروع کریں"
+  },
+  "actions.stopUsingCookies": {
+    "message": "کوکیز کا استعمال بند کریں"
+  },
+  "actions.subscribe": {
+    "message": "سبسکرائب کریں"
+  },
+  "actions.toggleFilters": {
+    "message": "تلاش کے فلٹرز تبدیل کریں"
+  },
+  "actions.unsubscribe": {
+    "message": "ان سبسکرائب کریں"
+  },
+  "boilerplate.contact": {
+    "message": "رابطہ"
+  },
+  "boilerplate.title": {
+    "message": "کے بارے میں {companyName}"
+  },
+  "categories.title": {
+    "message": "زمرہ جات"
+  },
+  "contacts.title": {
+    "message": "ہم سے رابطہ کریں"
+  },
+  "cookieConsent.accept": {
+    "message": "جی ہاں، آپ کوکیز استعمال کر سکتے ہیں"
+  },
+  "cookieConsent.notice": {
+    "message": "آپ صفحے کے نچلے حصے میں کسی بھی وقت کوکیز کو کالعدم کر سکتے ہیں۔"
+  },
+  "cookieConsent.reject": {
+    "message": "نہیں، کوکیز استعمال نہ کریں"
+  },
+  "cookieConsent.subtitle": {
+    "message": "ہم اپنی ویب سائٹ پر کوکیز کا استعمال کرتے ہیں۔ یہ ہمیں آپ کو تھوڑا جاننے میں مدد دیتے ہیں اور یہ بتاتے ہیں کہ آپ ہماری ویب سائٹ کا استعمال کیسے کرتے ہیں۔ اس سے ہمیں آپ اور دوسروں کے لئے زیادہ قیمتی اور مناسب تجربہ فراہم کرنے میں مدد ملتی ہے۔"
+  },
+  "cookieConsent.title": {
+    "message": "ہم کوکیز استعمال کرنا چاہیں گے"
+  },
+  "errors.emailInvalid": {
+    "message": "ایک درست ای میل پتہ متعارف کریں"
+  },
+  "errors.fieldRequired": {
+    "message": "یہ خانہ درکار ہے"
+  },
+  "errors.unknown": {
+    "message": "کوئی مسئلہ پیش آ گیا۔ براہ مہربانی فارم دوبارہ جمع کرانے کی کوشش کریں۔"
+  },
+  "mediaGallery.title": {
+    "message": "میڈیا گیلریز"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "{date} تک پابندی"
+  },
+  "misc.loading": {
+    "message": "لوڈنگ جاری..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "یو آر ایل کاپی ہو گیا!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "نیویگیشن تبدیل کریں"
+  },
+  "newsroom.title": {
+    "message": "سائٹ"
+  },
+  "noStories.subtitle": {
+    "message": "نئی سٹوریز دیکھنے کے لیے بعد میں واپس آئیں۔"
+  },
+  "noStories.title": {
+    "message": "{newsroom} میں خوش آمدید!"
+  },
+  "notFound.subtitle": {
+    "message": "اگر آپ نے خود ہی URL ٹائپ کیا تھا تو ایڈریس پٹی پر سپیلنگ (حروف) کی جانچ کریں۔"
+  },
+  "notFound.title": {
+    "message": "آپ جس صفحے کی تلاش کر رہے ہیں، وہ موجود نہیں ہے..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "تلاش"
+  },
+  "search.facets.category": {
+    "message": "زمرہ"
+  },
+  "search.facets.month": {
+    "message": "مہینہ"
+  },
+  "search.facets.year": {
+    "message": "سال"
+  },
+  "search.filters": {
+    "message": "فلٹرز"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "ہمیں {searchQuery} کے لئے {resultsCount} نتائج ملے"
+  },
+  "search.fullResultsTitle": {
+    "message": "تلاش کے نتائج"
+  },
+  "search.inputHint": {
+    "message": "تلاش کے لئے الفاظ درج کریں"
+  },
+  "search.inputLabel": {
+    "message": "تلاش"
+  },
+  "search.noResults": {
+    "message": "کچھ نہیں ملا۔ تلاش کے لئے کوئی اور الفاظ آزمائیں!"
+  },
+  "search.resultsTitle": {
+    "message": "فوری نتائج"
+  },
+  "search.showAllResults": {
+    "message": "تمام نتائج دکھائیں"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "تلاش"
+  },
+  "search.viewLess": {
+    "message": "کم دیکھیں"
+  },
+  "search.viewMore": {
+    "message": "مزید دیکھیں"
+  },
+  "serverError.subtitle": {
+    "message": "صفحے کو ریفریش کرنے کی کوشش کریں یا تھوڑی دیر بعد واپس آئیں۔"
+  },
+  "serverError.title": {
+    "message": "کچھ غلط ہو گیا..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "\"{subscribe}\" پر کلک کر کے میں تصدیق کرتا ہوں کہ میں نے {privacyPolicyLink} کو پڑھ لیا ہے اور اس سے اتفاق کرتا ہوں۔"
+  },
+  "subscription.formTitle": {
+    "message": "آپنے میل باکس میں اپ ڈیٹس حاصل کریں"
+  },
+  "subscription.labelEmail": {
+    "message": "آپ کا ای میل ایڈریس"
+  },
+  "subscription.privacyPolicy": {
+    "message": "رازداری پالیسی"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Επιστροφή στην αρχική σελίδα"
+  },
+  "actions.copyShareUrl": {
+    "message": "Αντιγραφή της διεύθυνσης URL"
+  },
+  "actions.download": {
+    "message": "Λήψη"
+  },
+  "actions.loadMore": {
+    "message": "Φορτώστε περισσότερα"
+  },
+  "actions.more": {
+    "message": "Περισσότερα"
+  },
+  "actions.privacyRequests": {
+    "message": "Αιτήματα απορρήτου"
+  },
+  "actions.readMore": {
+    "message": "Διαβάστε περισσότερα"
+  },
+  "actions.reload": {
+    "message": "Επαναφόρτωση"
+  },
+  "actions.share": {
+    "message": "Κοινοποίηση:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Έναρξη χρήσης cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Παύση χρήσης cookies"
+  },
+  "actions.subscribe": {
+    "message": "Εγγραφή"
+  },
+  "actions.toggleFilters": {
+    "message": "Εναλλαγή φίλτρων αναζήτησης"
+  },
+  "actions.unsubscribe": {
+    "message": "Κατάργηση εγγραφής"
+  },
+  "boilerplate.contact": {
+    "message": "Επαφή"
+  },
+  "boilerplate.title": {
+    "message": "Σχετικά με την {companyName}"
+  },
+  "categories.title": {
+    "message": "Κατηγορίες"
+  },
+  "contacts.title": {
+    "message": "Επικοινωνήστε μαζί μας"
+  },
+  "cookieConsent.accept": {
+    "message": "Ναι, μπορείτε να χρησιμοποιείτε cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Μπορείτε να ανακαλέσετε τα cookies οποιαδήποτε στιγμή, στο κάτω μέρος της σελίδας."
+  },
+  "cookieConsent.reject": {
+    "message": "Όχι, μην χρησιμοποιείτε cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Χρησιμοποιούμε cookies στην ιστοσελίδα μας. Μας βοηθούν να σας γνωρίσουμε και πώς χρησιμοποιείτε την ιστοσελίδα μας. Μπορούμε έτσι να παρέχουμε πιο αξιόλογο περιεχόμενο και εμπειρία προσαρμοσμένη στα μέτρα σας."
+  },
+  "cookieConsent.title": {
+    "message": "Θα θέλαμε να χρησιμοποιήσουμε cookies"
+  },
+  "errors.emailInvalid": {
+    "message": "Εισαγάγετε μια έγκυρη διεύθυνση email"
+  },
+  "errors.fieldRequired": {
+    "message": "Αυτό το πεδίο απαιτείται"
+  },
+  "errors.unknown": {
+    "message": "Κάτι πήγε στραβά. Παρακαλούμε προσπαθήστε να υποβάλλετε ξανά τη φόρμα"
+  },
+  "mediaGallery.title": {
+    "message": "Γκαλερί Μέσων"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Εμπάργκο έως {date}"
+  },
+  "misc.loading": {
+    "message": "Φόρτωση..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "Η διεύθυνση URL αντιγράφηκε!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Εναλλαγή πλοήγησης"
+  },
+  "newsroom.title": {
+    "message": "Χώρος"
+  },
+  "noStories.subtitle": {
+    "message": "Επιστρέψτε αργότερα για να δείτε νέες ιστορίες."
+  },
+  "noStories.title": {
+    "message": "Καλώς ήρθατε στο {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Εάν πληκτρολογήσατε μόνοι σας τη διεύθυνση URL, ελέγξτε την ορθογραφία στη γραμμή διευθύνσεων."
+  },
+  "notFound.title": {
+    "message": "Η σελίδα που αναζητάτε δεν υπάρχει..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Αναζήτηση"
+  },
+  "search.facets.category": {
+    "message": "Κατηγορία"
+  },
+  "search.facets.month": {
+    "message": "Μήνας"
+  },
+  "search.facets.year": {
+    "message": "Έτος"
+  },
+  "search.filters": {
+    "message": "Φίλτρα"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Βρήκαμε {resultsCount} αποτελέσματα για {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Αποτελέσματα αναζήτησης"
+  },
+  "search.inputHint": {
+    "message": "Πληκτρολογήστε την αναζήτησή σας"
+  },
+  "search.inputLabel": {
+    "message": "Αναζήτηση"
+  },
+  "search.noResults": {
+    "message": "Δεν βρέθηκε τίποτα. Παρακαλούμε δοκιμάστε έναν άλλο όρο αναζήτησης!"
+  },
+  "search.resultsTitle": {
+    "message": "Γρήγορα αποτελέσματα"
+  },
+  "search.showAllResults": {
+    "message": "Εμφάνιση όλων των αποτελεσμάτων"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Αναζήτηση"
+  },
+  "search.viewLess": {
+    "message": "Προβολή λιγότερων"
+  },
+  "search.viewMore": {
+    "message": "Προβολή περισσότερων"
+  },
+  "serverError.subtitle": {
+    "message": "Δοκιμάστε να ανανεώσετε τη σελίδα ή επιστρέψτε λίγο αργότερα."
+  },
+  "serverError.title": {
+    "message": "Κάτι δεν πήγε καλά..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Πατώντας «{subscribe}» επιβεβαιώνω ότι έχω διαβάσει και συμφωνώ με την {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Λάβετε ενημερώσεις στη θυρίδα σας"
+  },
+  "subscription.labelEmail": {
+    "message": "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Πολιτική Απορρήτου"
+  }
+}

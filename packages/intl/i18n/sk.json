@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Späť na domovskú stránku"
+  },
+  "actions.copyShareUrl": {
+    "message": "Skopírovať URL"
+  },
+  "actions.download": {
+    "message": "Stiahnuť"
+  },
+  "actions.loadMore": {
+    "message": "Načítať viac"
+  },
+  "actions.more": {
+    "message": "Viac"
+  },
+  "actions.privacyRequests": {
+    "message": "Žiadosti o ochranu osobných údajov"
+  },
+  "actions.readMore": {
+    "message": "Prečítajte si viac"
+  },
+  "actions.reload": {
+    "message": "Obnoviť"
+  },
+  "actions.share": {
+    "message": "Zdieľať:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Začnite používať súbory cookie"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Prestaňte používať súbory cookies"
+  },
+  "actions.subscribe": {
+    "message": "Prihlásiť sa na odber"
+  },
+  "actions.toggleFilters": {
+    "message": "Prepnúť filtre vyhľadávania"
+  },
+  "actions.unsubscribe": {
+    "message": "Zrušiť odber"
+  },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
+  "boilerplate.title": {
+    "message": "O {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategórie"
+  },
+  "contacts.title": {
+    "message": "Kontaktujte nás"
+  },
+  "cookieConsent.accept": {
+    "message": "Môžete používať súbory cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "Súbory cookies môžete kedykoľvek zrušiť v spodnej časti stránky."
+  },
+  "cookieConsent.reject": {
+    "message": "Nepoužívajte súbory cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Na našej webstránke používame súbory cookies. Pomáhajú nám o niečo viac vás spoznať a tiež zistiť, akým spôsobom používate našu webstránku. Vďaka nim vám môžeme poskytnúť hodnotnejší zážitok šitý na mieru vám aj ostatným."
+  },
+  "cookieConsent.title": {
+    "message": "Radi by sme používali súbory cookies"
+  },
+  "errors.emailInvalid": {
+    "message": "Zadajte platnú e-mailovú adresu"
+  },
+  "errors.fieldRequired": {
+    "message": "Toto pole je povinné"
+  },
+  "errors.unknown": {
+    "message": "Čosi sa pokazilo. Skúste znova odoslať formulár"
+  },
+  "mediaGallery.title": {
+    "message": "Galérie médií"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo do {date}"
+  },
+  "misc.loading": {
+    "message": "Nahrávanie..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL skopírovaná!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Tlačidlo prepnutia"
+  },
+  "newsroom.title": {
+    "message": "Stránka"
+  },
+  "noStories.subtitle": {
+    "message": "Ak si chcete pozrieť nové príbehy, vráťte sa neskôr."
+  },
+  "noStories.title": {
+    "message": "Vitajte v {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Ak ste sami vpísali URL, skontrolujte jeho správnosť."
+  },
+  "notFound.title": {
+    "message": "Stránka, ktorú hľadáte, neexistuje..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Vyhľadávanie"
+  },
+  "search.facets.category": {
+    "message": "Kategória"
+  },
+  "search.facets.month": {
+    "message": "Mesiac"
+  },
+  "search.facets.year": {
+    "message": "Rok"
+  },
+  "search.filters": {
+    "message": "Filtre"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Našli sme {resultsCount} výsledky / výsledkov pre {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Výsledok vyhľadávania"
+  },
+  "search.inputHint": {
+    "message": "Zadajte vaše vyhľadávanie"
+  },
+  "search.inputLabel": {
+    "message": "Vyhľadávanie"
+  },
+  "search.noResults": {
+    "message": "Nič sa nenašlo. Skúste vyhľadať iný výraz!"
+  },
+  "search.resultsTitle": {
+    "message": "Rýchle výsledky"
+  },
+  "search.showAllResults": {
+    "message": "Ukázať všetky výsledky"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Vyhľadávanie"
+  },
+  "search.viewLess": {
+    "message": "Zobraziť menej"
+  },
+  "search.viewMore": {
+    "message": "Zobraziť viac"
+  },
+  "serverError.subtitle": {
+    "message": "Skúste obnoviť stránku alebo sa vráťte trošku neskôr."
+  },
+  "serverError.title": {
+    "message": "Nastal problém..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Kliknutím na \"{subscribe}\" potvrdzujem, že som si prečítal/-a a súhlasím s {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Dostávajte správy do vašej schránky"
+  },
+  "subscription.labelEmail": {
+    "message": "Vaša e-mailová adresa"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Zásady ochrany osobných údajov"
+  }
+}

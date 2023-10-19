@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "返回主頁"
+  },
+  "actions.copyShareUrl": {
+    "message": "複製網址"
+  },
+  "actions.download": {
+    "message": "下載"
+  },
+  "actions.loadMore": {
+    "message": "加載更多"
+  },
+  "actions.more": {
+    "message": "更多"
+  },
+  "actions.privacyRequests": {
+    "message": "私隱要求"
+  },
+  "actions.readMore": {
+    "message": "閱讀更多"
+  },
+  "actions.reload": {
+    "message": "重新加載"
+  },
+  "actions.share": {
+    "message": "分享"
+  },
+  "actions.startUsingCookies": {
+    "message": "開始使用Cookie"
+  },
+  "actions.stopUsingCookies": {
+    "message": "停止使用Cookie"
+  },
+  "actions.subscribe": {
+    "message": "訂閱"
+  },
+  "actions.toggleFilters": {
+    "message": "切換搜索過濾器"
+  },
+  "actions.unsubscribe": {
+    "message": "取消訂閱"
+  },
+  "boilerplate.contact": {
+    "message": "聯繫"
+  },
+  "boilerplate.title": {
+    "message": "關於 {companyName}"
+  },
+  "categories.title": {
+    "message": "類別"
+  },
+  "contacts.title": {
+    "message": "聯絡我們"
+  },
+  "cookieConsent.accept": {
+    "message": "是的，您可以使用 cookies"
+  },
+  "cookieConsent.notice": {
+    "message": "您可以隨時在網頁底部撤銷 cookies 。"
+  },
+  "cookieConsent.reject": {
+    "message": "不，不要使用 cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "我們的網站使用 cookies 。 它們幫助我們稍微了解您，以及您如何使用我們的網站。 這有助於我們為您和其他人提供更有價值和量身定制的體驗。"
+  },
+  "cookieConsent.title": {
+    "message": "我們想使用 cookies"
+  },
+  "errors.emailInvalid": {
+    "message": "介紹一個有效的電郵地址"
+  },
+  "errors.fieldRequired": {
+    "message": "此字段為必填項"
+  },
+  "errors.unknown": {
+    "message": "出了點問題。請再嘗試提交表格。"
+  },
+  "mediaGallery.title": {
+    "message": "媒體畫廊"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "禁止直至{date}"
+  },
+  "misc.loading": {
+    "message": "正在加載…"
+  },
+  "misc.shareUrlCopied": {
+    "message": "網址已複製！"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "切換導航"
+  },
+  "newsroom.title": {
+    "message": "網站"
+  },
+  "noStories.subtitle": {
+    "message": "稍後回來看新的故事。"
+  },
+  "noStories.title": {
+    "message": "歡迎來到{newsroom}！"
+  },
+  "notFound.subtitle": {
+    "message": "如果您自行輸入網址，請檢查地址欄中的拼寫。"
+  },
+  "notFound.title": {
+    "message": "您要找的頁面不存在…"
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "搜尋"
+  },
+  "search.facets.category": {
+    "message": "類別"
+  },
+  "search.facets.month": {
+    "message": "月"
+  },
+  "search.facets.year": {
+    "message": "年"
+  },
+  "search.filters": {
+    "message": "過濾器"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "我們找到了{searchQuery} 的{resultsCount} 結果"
+  },
+  "search.fullResultsTitle": {
+    "message": "搜尋結果"
+  },
+  "search.inputHint": {
+    "message": "輸入您的搜尋"
+  },
+  "search.inputLabel": {
+    "message": "搜尋"
+  },
+  "search.noResults": {
+    "message": "無法找到相關內容，請嘗試輸入其他關鍵字。"
+  },
+  "search.resultsTitle": {
+    "message": "快速結果"
+  },
+  "search.showAllResults": {
+    "message": "顯示所有結果"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "搜尋"
+  },
+  "search.viewLess": {
+    "message": "查看更少"
+  },
+  "search.viewMore": {
+    "message": "查看更多"
+  },
+  "serverError.subtitle": {
+    "message": "嘗試刷新頁面或稍後再嘗試。"
+  },
+  "serverError.title": {
+    "message": "發生錯誤..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "點擊「{subscribe}」，我確認我已詳閱並同意{privacyPolicyLink}。"
+  },
+  "subscription.formTitle": {
+    "message": "在您的收件匣中取得更新"
+  },
+  "subscription.labelEmail": {
+    "message": "您的電子郵件地址"
+  },
+  "subscription.privacyPolicy": {
+    "message": "私隱政策"
+  }
+}

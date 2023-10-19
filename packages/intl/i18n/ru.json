@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Назад на главную страницу"
+  },
+  "actions.copyShareUrl": {
+    "message": "Копировать URL-адрес"
+  },
+  "actions.download": {
+    "message": "Скачать"
+  },
+  "actions.loadMore": {
+    "message": "Загрузить еще"
+  },
+  "actions.more": {
+    "message": "Еще"
+  },
+  "actions.privacyRequests": {
+    "message": "Запрос персональных данных"
+  },
+  "actions.readMore": {
+    "message": "Подробнее"
+  },
+  "actions.reload": {
+    "message": "Перезагрузить"
+  },
+  "actions.share": {
+    "message": "Поделиться:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Разрешить использование cookie-файлов"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Прекратить использование cookie-файлов"
+  },
+  "actions.subscribe": {
+    "message": "Подписаться"
+  },
+  "actions.toggleFilters": {
+    "message": "Переключить фильтры поиска"
+  },
+  "actions.unsubscribe": {
+    "message": "Oтписаться"
+  },
+  "boilerplate.contact": {
+    "message": "контакт"
+  },
+  "boilerplate.title": {
+    "message": "О {companyName}"
+  },
+  "categories.title": {
+    "message": "Категории"
+  },
+  "contacts.title": {
+    "message": "Свяжитесь с нами"
+  },
+  "cookieConsent.accept": {
+    "message": "Да, вы можете использовать куки-файлы"
+  },
+  "cookieConsent.notice": {
+    "message": "Вы можете отозвать куки-файлы в любое время в нижней части страницы."
+  },
+  "cookieConsent.reject": {
+    "message": "Нет, не нужно использовать куки-файлы"
+  },
+  "cookieConsent.subtitle": {
+    "message": "На нашем веб-сайте мы используем куки-файлы. Они помогают нам немного узнать о вас и о том, как вы используете наш веб-сайт. Это помогает нам обеспечить более полезный пользовательский интерфейс с индивидуальными настройками."
+  },
+  "cookieConsent.title": {
+    "message": "Мы хотим воспользоваться файлами куки"
+  },
+  "errors.emailInvalid": {
+    "message": "Укажите действительный адрес электронной почты"
+  },
+  "errors.fieldRequired": {
+    "message": "Это поле необходимо заполнить"
+  },
+  "errors.unknown": {
+    "message": "Что-то пошло не так. Попробуйте отправить форму снова"
+  },
+  "mediaGallery.title": {
+    "message": "Медиагалереи"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Запрет публикации до {date}"
+  },
+  "misc.loading": {
+    "message": "Загрузка..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL скопирован!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Переключить навигацию"
+  },
+  "newsroom.title": {
+    "message": "Сайт"
+  },
+  "noStories.subtitle": {
+    "message": "Заходите позже, чтобы увидеть новые истории."
+  },
+  "noStories.title": {
+    "message": "Добро пожаловать в {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Если вы набрали URL-адрес самостоятельно, проверьте еще раз в адресной строке."
+  },
+  "notFound.title": {
+    "message": "Страница, которую вы ищете, не существует..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Поиск"
+  },
+  "search.facets.category": {
+    "message": "Категория"
+  },
+  "search.facets.month": {
+    "message": "Месяц"
+  },
+  "search.facets.year": {
+    "message": "Год"
+  },
+  "search.filters": {
+    "message": "Фильтры"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Мы нашили {resultsCount} результата(-ов) для {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Результаты поиска"
+  },
+  "search.inputHint": {
+    "message": "Введите свой поисковый запрос"
+  },
+  "search.inputLabel": {
+    "message": "Поиск"
+  },
+  "search.noResults": {
+    "message": "Ничего не найдено. Попробуйте изменить условия поиска!"
+  },
+  "search.resultsTitle": {
+    "message": "Быстрые результаты"
+  },
+  "search.showAllResults": {
+    "message": "Показать все результаты"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Поиск"
+  },
+  "search.viewLess": {
+    "message": "Показать меньше"
+  },
+  "search.viewMore": {
+    "message": "Показать больше"
+  },
+  "serverError.subtitle": {
+    "message": "Попробуйте обновить страницу или зайти немного позже."
+  },
+  "serverError.title": {
+    "message": "Что-то пошло не так..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Нажимая \"{subscribe}\", я подтверждаю, что прочитал(-ла) {privacyPolicyLink} и согласился(-ась) с нею."
+  },
+  "subscription.formTitle": {
+    "message": "Получайте обновления на ваш почтовый ящик"
+  },
+  "subscription.labelEmail": {
+    "message": "Ваш электронный адрес"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Политика конфиденциальности"
+  }
+}

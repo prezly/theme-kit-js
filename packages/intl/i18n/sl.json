@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Nazaj domov"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopiraj URL"
+  },
+  "actions.download": {
+    "message": "Prenesi"
+  },
+  "actions.loadMore": {
+    "message": "Naloži več"
+  },
+  "actions.more": {
+    "message": "Več"
+  },
+  "actions.privacyRequests": {
+    "message": "Zahteve glede zasebnosti"
+  },
+  "actions.readMore": {
+    "message": "Preberi več"
+  },
+  "actions.reload": {
+    "message": "Ponovno naloži"
+  },
+  "actions.share": {
+    "message": "Deli:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Začni uporabljati piškotke"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Ustavi uporabo piškotkov"
+  },
+  "actions.subscribe": {
+    "message": "Naročite se"
+  },
+  "actions.toggleFilters": {
+    "message": "Preklop iskalnih filtrov"
+  },
+  "actions.unsubscribe": {
+    "message": "Odjavite se"
+  },
+  "boilerplate.contact": {
+    "message": "Kontat"
+  },
+  "boilerplate.title": {
+    "message": "O {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategorije"
+  },
+  "contacts.title": {
+    "message": "Kontaktiraj nas"
+  },
+  "cookieConsent.accept": {
+    "message": "Da, lahko uporabljate piškotke"
+  },
+  "cookieConsent.notice": {
+    "message": "Piškotke lahko kadarkoli prekličete na dnu strani."
+  },
+  "cookieConsent.reject": {
+    "message": "Ne, ne uporabljajte piškotkov"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Na našem spletnem mestu uporabljamo piškotke. Pomagajo nam, da vas malce bolje spoznamo in razumemo, kako uporabljate naše spletno mesto. To nam omogoča, da lahko zagotovimo bolj prilagojeno izkušnjo za vas in za druge."
+  },
+  "cookieConsent.title": {
+    "message": "Želimo uporabljati piškotke"
+  },
+  "errors.emailInvalid": {
+    "message": "Napišite veljaven e-poštni naslov"
+  },
+  "errors.fieldRequired": {
+    "message": "To polje je obvezno"
+  },
+  "errors.unknown": {
+    "message": "Nekaj je šlo narobe. Pošljite obrazec znova"
+  },
+  "mediaGallery.title": {
+    "message": "Medijske galerije"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo pomeni, da zgodbe ni dovoljeno deliti pred določenim datumom"
+  },
+  "misc.loading": {
+    "message": "Loading..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL kopiran!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Mobilna navigacija"
+  },
+  "newsroom.title": {
+    "message": "Spletišče"
+  },
+  "noStories.subtitle": {
+    "message": "Vrnite se pozneje in si oglejte nove zgodbe."
+  },
+  "noStories.title": {
+    "message": "Dobrodošli v {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Če ste URL vnesli sami, preverite črkovanje v naslovni vrstici."
+  },
+  "notFound.title": {
+    "message": "Stran, ki jo iščete, ne obstaja..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Iskanje"
+  },
+  "search.facets.category": {
+    "message": "Kategorija"
+  },
+  "search.facets.month": {
+    "message": "Mesec"
+  },
+  "search.facets.year": {
+    "message": "Leto"
+  },
+  "search.filters": {
+    "message": "Filtri"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Našli smo {resultsCount} rezultatov za {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Rezultati iskanja"
+  },
+  "search.inputHint": {
+    "message": "Vnesite svoje iskanje"
+  },
+  "search.inputLabel": {
+    "message": "Iskanje"
+  },
+  "search.noResults": {
+    "message": "Ni rezultatov iskanja! Prosimo, poskusite z drugim iskalnim pojmom!"
+  },
+  "search.resultsTitle": {
+    "message": "Hitri rezultati"
+  },
+  "search.showAllResults": {
+    "message": "Prikaži vse rezultate"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Iskanje"
+  },
+  "search.viewLess": {
+    "message": "Ogled manj"
+  },
+  "search.viewMore": {
+    "message": "Ogled več"
+  },
+  "serverError.subtitle": {
+    "message": "Poskusite osvežiti stran ali se vrnite nekoliko kasneje."
+  },
+  "serverError.title": {
+    "message": "Nekaj je bilo narobe..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "S klikom na \"{subscribe}\" potrjujem, da sem prebral/a in se strinjam z {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Prejmite posodobitve v vaš poštni nabiralnik"
+  },
+  "subscription.labelEmail": {
+    "message": "Vaš elektronski naslov"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Pravilnik o zasebnosti"
+  }
+}

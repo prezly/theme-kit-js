@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Zurück zur Startseite"
+  },
+  "actions.copyShareUrl": {
+    "message": "URL kopieren"
+  },
+  "actions.download": {
+    "message": "Herunterladen"
+  },
+  "actions.loadMore": {
+    "message": "Mehr laden"
+  },
+  "actions.more": {
+    "message": "Mehr"
+  },
+  "actions.privacyRequests": {
+    "message": "Datenschutzanfragen"
+  },
+  "actions.readMore": {
+    "message": "Mehr lesen"
+  },
+  "actions.reload": {
+    "message": "Neu laden"
+  },
+  "actions.share": {
+    "message": "Teilen:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Cookies verwenden"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Keine Cookies verwenden"
+  },
+  "actions.subscribe": {
+    "message": "Abonnieren"
+  },
+  "actions.toggleFilters": {
+    "message": "Suchfilter umschalten"
+  },
+  "actions.unsubscribe": {
+    "message": "Abbestellen"
+  },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
+  "boilerplate.title": {
+    "message": "Über {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategorien"
+  },
+  "contacts.title": {
+    "message": "Kontaktiere uns"
+  },
+  "cookieConsent.accept": {
+    "message": "Ja, Sie dürfen Cookies verwenden"
+  },
+  "cookieConsent.notice": {
+    "message": "Sie können Cookies jederzeit auf der Seite unten widerrufen."
+  },
+  "cookieConsent.reject": {
+    "message": "Nein, verwenden Sie keine Cookies"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Wir verwenden auf unserer Website Cookies. Diese helfen uns dabei, Sie ein wenig kennenzulernen und zu sehen, wie Sie unsere Website nutzen. Dadurch können wir Ihnen und anderen ein wertvolleres und auf Sie zugeschnittenes Erlebnis bieten."
+  },
+  "cookieConsent.title": {
+    "message": "Wir möchten Cookies verwenden"
+  },
+  "errors.emailInvalid": {
+    "message": "Geben Sie eine gültige E-Mail-Adresse an"
+  },
+  "errors.fieldRequired": {
+    "message": "Dies ist ein Pflichtfeld"
+  },
+  "errors.unknown": {
+    "message": "Etwas ist schief gelaufen. Bitte versuchen Sie erneut, das Formular abzusenden"
+  },
+  "mediaGallery.title": {
+    "message": "Mediengalerien"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Sperre bis {date}"
+  },
+  "misc.loading": {
+    "message": "Wird geladen ..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL wurde kopiert!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Navigation umschalten"
+  },
+  "newsroom.title": {
+    "message": "Seite"
+  },
+  "noStories.subtitle": {
+    "message": "Kommen Sie später wieder, um neue Stories zu sehen."
+  },
+  "noStories.title": {
+    "message": "Willkommen bei {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Wenn Sie die URL selbst eingegeben haben, überprüfen Sie die Schreibweise in der Adressleiste."
+  },
+  "notFound.title": {
+    "message": "Die gesuchte Seite existiert nicht …"
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Suchen"
+  },
+  "search.facets.category": {
+    "message": "Kategorie"
+  },
+  "search.facets.month": {
+    "message": "Monat"
+  },
+  "search.facets.year": {
+    "message": "Jahr"
+  },
+  "search.filters": {
+    "message": "Filter"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Wir haben {resultsCount} Ergebnisse für {searchQuery} gefunden"
+  },
+  "search.fullResultsTitle": {
+    "message": "Suchergebnisse"
+  },
+  "search.inputHint": {
+    "message": "Suche eingeben"
+  },
+  "search.inputLabel": {
+    "message": "Suchen"
+  },
+  "search.noResults": {
+    "message": "Nichts gefunden! Probieren Sie es bitte mit einem anderen Suchbegriff!"
+  },
+  "search.resultsTitle": {
+    "message": "Schnellergebnisse"
+  },
+  "search.showAllResults": {
+    "message": "Aller Ergebnisse anzeigen"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Suchen"
+  },
+  "search.viewLess": {
+    "message": "Weniger anzeigen"
+  },
+  "search.viewMore": {
+    "message": "Mehr anzeigen"
+  },
+  "serverError.subtitle": {
+    "message": "Versuchen Sie, die Seite zu aktualisieren oder etwas später wiederzukommen."
+  },
+  "serverError.title": {
+    "message": "Etwas schief gelaufen ist..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Mit Klick auf „{subscribe}“ bestätige ich, dass ich die {privacyPolicyLink} gelesen habe und damit einverstanden bin."
+  },
+  "subscription.formTitle": {
+    "message": "Erhalten Sie Updates in Ihrem Postfach"
+  },
+  "subscription.labelEmail": {
+    "message": "Ihre E-Mail Adresse"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Datenschutzrichtlinie"
+  }
+}

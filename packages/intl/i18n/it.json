@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Torna alla homepage"
+  },
+  "actions.copyShareUrl": {
+    "message": "Copia URL"
+  },
+  "actions.download": {
+    "message": "Scarica"
+  },
+  "actions.loadMore": {
+    "message": "Carica altri"
+  },
+  "actions.more": {
+    "message": "Altro"
+  },
+  "actions.privacyRequests": {
+    "message": "Richieste di privacy"
+  },
+  "actions.readMore": {
+    "message": "Leggi di più"
+  },
+  "actions.reload": {
+    "message": "Ricarica"
+  },
+  "actions.share": {
+    "message": "Condividi:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Inizia a utilizzare i cookie"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Smetti di utilizzare i cookie"
+  },
+  "actions.subscribe": {
+    "message": "Iscriviti"
+  },
+  "actions.toggleFilters": {
+    "message": "Attiva/disattiva i filtri di ricerca"
+  },
+  "actions.unsubscribe": {
+    "message": "Disiscriviti"
+  },
+  "boilerplate.contact": {
+    "message": "Contatto"
+  },
+  "boilerplate.title": {
+    "message": "Maggiori informazioni su {companyName}"
+  },
+  "categories.title": {
+    "message": "Categorie"
+  },
+  "contacts.title": {
+    "message": "Contattaci"
+  },
+  "cookieConsent.accept": {
+    "message": "Sì, potete utilizzare i cookie"
+  },
+  "cookieConsent.notice": {
+    "message": "Puoi revocare i cookie in qualsiasi momento in fondo a questa pagina."
+  },
+  "cookieConsent.reject": {
+    "message": "No, non utilizzate i cookie"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Utilizziamo i cookie sul nostro sito web. Ci aiutano a conoscere qualcosa di più su di te e sul modo in cui usi il nostro sito. Questo ci consente di fornire un'esperienza di qualità e personalizzata per te e per gli altri."
+  },
+  "cookieConsent.title": {
+    "message": "Vorremmo utilizzare i cookie"
+  },
+  "errors.emailInvalid": {
+    "message": "Inserisci un indirizzo email valido"
+  },
+  "errors.fieldRequired": {
+    "message": "Questo campo è obbligatorio"
+  },
+  "errors.unknown": {
+    "message": "Qualcosa è andato storto. Prova a inviare nuovamente il modulo"
+  },
+  "mediaGallery.title": {
+    "message": "Gallerie multimediali"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo fino al {date}"
+  },
+  "misc.loading": {
+    "message": "Caricamento in corso..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL copiato!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Attiva/disattiva navigazione"
+  },
+  "newsroom.title": {
+    "message": "Sito"
+  },
+  "noStories.subtitle": {
+    "message": "Torna più tardi per vedere nuove storie."
+  },
+  "noStories.title": {
+    "message": "Benvenuto/a in {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Se hai digitato l'URL manualmente, verificane l'ortografia nella barra degli indirizzi."
+  },
+  "notFound.title": {
+    "message": "La pagina che stai cercando non esiste..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Cerca"
+  },
+  "search.facets.category": {
+    "message": "Categoria"
+  },
+  "search.facets.month": {
+    "message": "Mese"
+  },
+  "search.facets.year": {
+    "message": "Anno"
+  },
+  "search.filters": {
+    "message": "Filtri"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Abbiamo trovato {resultsCount} risultati per {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Risultati di ricerca"
+  },
+  "search.inputHint": {
+    "message": "Digita la tua ricerca"
+  },
+  "search.inputLabel": {
+    "message": "Cerca"
+  },
+  "search.noResults": {
+    "message": "Non abbiamo trovato nulla! Prova un altro termine di ricerca!"
+  },
+  "search.resultsTitle": {
+    "message": "Risultati rapidi"
+  },
+  "search.showAllResults": {
+    "message": "Mostra tutti i risultati"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Cerca"
+  },
+  "search.viewLess": {
+    "message": "Visualizza meno"
+  },
+  "search.viewMore": {
+    "message": "Visualizza di più"
+  },
+  "serverError.subtitle": {
+    "message": "Prova ad aggiornare la pagina oppure torna più tardi."
+  },
+  "serverError.title": {
+    "message": "Qualcosa è andato storto..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Cliccando su \"{subscribe}\" l'utente conferma di aver letto l'{privacyPolicyLink} e di accettarla."
+  },
+  "subscription.formTitle": {
+    "message": "Ottieni gli aggiornamenti nella tua casella di posta"
+  },
+  "subscription.labelEmail": {
+    "message": "Il tuo indirizzo e-mail"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Informativa sulla privacy"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "กลับสู่หน้าแรก"
+  },
+  "actions.copyShareUrl": {
+    "message": "คัดลอก URL"
+  },
+  "actions.download": {
+    "message": "ดาวน์โหลด"
+  },
+  "actions.loadMore": {
+    "message": "โหลดเพิ่ม"
+  },
+  "actions.more": {
+    "message": "เพิ่มเติม"
+  },
+  "actions.privacyRequests": {
+    "message": "คำขอความเป็นส่วนตัว"
+  },
+  "actions.readMore": {
+    "message": "อ่านเพิ่มเติม"
+  },
+  "actions.reload": {
+    "message": "โหลดซ้ำ"
+  },
+  "actions.share": {
+    "message": "แชร์:"
+  },
+  "actions.startUsingCookies": {
+    "message": "เริ่มการใช้คุกกี้"
+  },
+  "actions.stopUsingCookies": {
+    "message": "หยุดการใช้คุกกี้"
+  },
+  "actions.subscribe": {
+    "message": "สมัคร"
+  },
+  "actions.toggleFilters": {
+    "message": "สลับตัวกรองการค้นหา"
+  },
+  "actions.unsubscribe": {
+    "message": "ยกเลิกการสมัคร"
+  },
+  "boilerplate.contact": {
+    "message": "ติดต่อ"
+  },
+  "boilerplate.title": {
+    "message": "เกี่ยวกับ {companyName}"
+  },
+  "categories.title": {
+    "message": "หมวดหมู่"
+  },
+  "contacts.title": {
+    "message": "ติดต่อเรา"
+  },
+  "cookieConsent.accept": {
+    "message": "ได้ คุณสามารถใช้คุกกี้"
+  },
+  "cookieConsent.notice": {
+    "message": "คุณสามารถยกเลิกคุกกี้ได้ตลอดเวลาที่ด้านล่างของหน้า"
+  },
+  "cookieConsent.reject": {
+    "message": "ไม่ได้ ไม่ให้ใช้คุกกี้"
+  },
+  "cookieConsent.subtitle": {
+    "message": "เราใช้คุกกี้บนเว็บไซต์ของเรา เพราะคุ้กกี้ช่วยให้ได้รู้จักคุณเล็กน้อยรวมไปถึงวิธีการที่คุณใช้เว็บไซต์ของเรา ซึ่งจะช่วยให้เราส่งมอบประสบการณ์ที่มีคุณค่าและเหมาะสมสำหรับคุณและคนอื่น ๆ"
+  },
+  "cookieConsent.title": {
+    "message": "เราอยากจะขอใช้คุกกี้"
+  },
+  "errors.emailInvalid": {
+    "message": "แนะนำที่อยู่อีเมลที่ถูกต้อง"
+  },
+  "errors.fieldRequired": {
+    "message": "ต้องกรอกข้อมูลในช่องนี้"
+  },
+  "errors.unknown": {
+    "message": "อะไรบางอย่างผิดปกติ โปรดลองส่งแบบฟอร์มอีกครั้ง"
+  },
+  "mediaGallery.title": {
+    "message": "แกลลอรี่สื่อ"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "ห้ามส่งสินค้าจนกว่า {date}"
+  },
+  "misc.loading": {
+    "message": "กำลังโหลด"
+  },
+  "misc.shareUrlCopied": {
+    "message": "คัดลอก URL"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "ไม่ต้องสลับช่องทาง"
+  },
+  "newsroom.title": {
+    "message": "ไซต์"
+  },
+  "noStories.subtitle": {
+    "message": "กลับมาใหม่ภายหลังเพื่อดูเรื่องราวใหม่ๆ"
+  },
+  "noStories.title": {
+    "message": "ยินดีต้อนรับสู่ {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "ถ้าหากคุณพิมพ์ URL ด้วยตัวคุณเอง, ตรวจสอบการสะกดในช่องแสตงที่อยู่เว็ปไซต์"
+  },
+  "notFound.title": {
+    "message": "ไม่มีหน้าที่คุณกำลังค้นหา"
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "ค้นหา"
+  },
+  "search.facets.category": {
+    "message": "หมวดหมู่"
+  },
+  "search.facets.month": {
+    "message": "เดือน"
+  },
+  "search.facets.year": {
+    "message": "ปี"
+  },
+  "search.filters": {
+    "message": "ตัวกรอง"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "เราพบ {resultsCount} ผลลัพธ์สำหรับ {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "ผลการค้นหา"
+  },
+  "search.inputHint": {
+    "message": "พิมพ์การค้นหาของคุณ"
+  },
+  "search.inputLabel": {
+    "message": "ค้นหา"
+  },
+  "search.noResults": {
+    "message": "ไม่พบสิ่งใด! โปรดลองใช้คำค้นหาอื่น!"
+  },
+  "search.resultsTitle": {
+    "message": "ผลลัพธ์ที่รวดเร็ว"
+  },
+  "search.showAllResults": {
+    "message": "แสดงผลลัพธ์ทั้งหมด"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "ค้นหา"
+  },
+  "search.viewLess": {
+    "message": "ดูน้อยลง"
+  },
+  "search.viewMore": {
+    "message": "ดูเพิ่มเติม"
+  },
+  "serverError.subtitle": {
+    "message": "ลองรีเฟรชหน้าเพจใหม่หรือกลับมาใหม่ในภายหลัง"
+  },
+  "serverError.title": {
+    "message": "มีบางอย่างผิดปกติ"
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "โดยการคลิก \"{subscribe}\" ข้าพเจ้ายืนยันและยอมรับที่จะ {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "รับอัพเดทในกล่องจดหมายของคุณ"
+  },
+  "subscription.labelEmail": {
+    "message": "ที่อยู่อีเมลของคุณ"
+  },
+  "subscription.privacyPolicy": {
+    "message": "นโยบายความเป็นส่วนตัว"
+  }
+}

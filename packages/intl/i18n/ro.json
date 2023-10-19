@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Înapoi la pagina principală"
+  },
+  "actions.copyShareUrl": {
+    "message": "Copiați URL-ul"
+  },
+  "actions.download": {
+    "message": "Descărcare"
+  },
+  "actions.loadMore": {
+    "message": "Încarcă mai mult"
+  },
+  "actions.more": {
+    "message": "Mai multe"
+  },
+  "actions.privacyRequests": {
+    "message": "Cereri de confidențialitate"
+  },
+  "actions.readMore": {
+    "message": "Citiți mai multe"
+  },
+  "actions.reload": {
+    "message": "Reîncarcă"
+  },
+  "actions.share": {
+    "message": "Distribuiți:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Începe să folosești module cookie"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Nu mai folosi module cookie"
+  },
+  "actions.subscribe": {
+    "message": "Abonare"
+  },
+  "actions.toggleFilters": {
+    "message": "Comutați filtrele de căutare"
+  },
+  "actions.unsubscribe": {
+    "message": "Dezabonare"
+  },
+  "boilerplate.contact": {
+    "message": "Contact"
+  },
+  "boilerplate.title": {
+    "message": "Despre {companyName}"
+  },
+  "categories.title": {
+    "message": "Categorii"
+  },
+  "contacts.title": {
+    "message": "Contactați-ne"
+  },
+  "cookieConsent.accept": {
+    "message": "Da, puteți utiliza cookie-uri"
+  },
+  "cookieConsent.notice": {
+    "message": "Puteți revoca oricând cookie-urile în partea de jos a ecranului."
+  },
+  "cookieConsent.reject": {
+    "message": "Nu, nu utilizați cookie-uri"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Utilizăm cookie-uri pe site-ul nostru. Acestea ne ajută să ne familiarizăm puțin cu dvs. și cu modul în care folosiți site-ul nostru. Acest lucru ne ajută să oferim, dvs. și altora, o experiență mai valoroasă și mai personalizată."
+  },
+  "cookieConsent.title": {
+    "message": "Am dori să utilizăm cookie-uri"
+  },
+  "errors.emailInvalid": {
+    "message": "Introdu o adresă de e-mail validă"
+  },
+  "errors.fieldRequired": {
+    "message": "Câmpul este obligatoriu"
+  },
+  "errors.unknown": {
+    "message": "Ceva nu este în regulă. Încercați să trimiteți formularul din nou"
+  },
+  "mediaGallery.title": {
+    "message": "Galerii media"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargou până pe {date}"
+  },
+  "misc.loading": {
+    "message": "Se încarcă..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL copiat!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Comutare navigație"
+  },
+  "newsroom.title": {
+    "message": "Site"
+  },
+  "noStories.subtitle": {
+    "message": "Reveniți mai târziu pentru a vedea articole noi."
+  },
+  "noStories.title": {
+    "message": "Bun venit la {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Dacă dvs. ați scris URL-ul, verificați ortografia în bara de adrese."
+  },
+  "notFound.title": {
+    "message": "Pagina pe care o căutați nu există..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Căutare"
+  },
+  "search.facets.category": {
+    "message": "Categorie"
+  },
+  "search.facets.month": {
+    "message": "Lună"
+  },
+  "search.facets.year": {
+    "message": "An"
+  },
+  "search.filters": {
+    "message": "Filtre"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Am găsit {resultsCount} (de) rezultate pentru {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Rezultate căutare"
+  },
+  "search.inputHint": {
+    "message": "Tastați termenul căutat"
+  },
+  "search.inputLabel": {
+    "message": "Căutare"
+  },
+  "search.noResults": {
+    "message": "Nu s-a găsit nimic! Încercați să căutați un alt termen!"
+  },
+  "search.resultsTitle": {
+    "message": "Rezultate rapide"
+  },
+  "search.showAllResults": {
+    "message": "Afișare toate rezultatele"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Căutare"
+  },
+  "search.viewLess": {
+    "message": "Mai puțin"
+  },
+  "search.viewMore": {
+    "message": "Mai mult"
+  },
+  "serverError.subtitle": {
+    "message": "Încercați să reîmprospătați pagina sau să reveniți puțin mai târziu."
+  },
+  "serverError.title": {
+    "message": "Ceva nu a funcționat cum trebuie..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Dând clic pe \"{subscribe}\", confirm că am citit și sunt de acord cu {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Primire actualizări în căsuța poștală"
+  },
+  "subscription.labelEmail": {
+    "message": "Adresa dvs. de e-mail"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Politica de confidențialitate"
+  }
+}

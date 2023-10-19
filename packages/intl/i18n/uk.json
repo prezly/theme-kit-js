@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Повернутися на головну"
+  },
+  "actions.copyShareUrl": {
+    "message": "Скопіювати URL-адресу"
+  },
+  "actions.download": {
+    "message": "Завантажити"
+  },
+  "actions.loadMore": {
+    "message": "Завантажити більще"
+  },
+  "actions.more": {
+    "message": "Більше"
+  },
+  "actions.privacyRequests": {
+    "message": "Запити про конфіденційність"
+  },
+  "actions.readMore": {
+    "message": "Читати далі"
+  },
+  "actions.reload": {
+    "message": "Перезавантажити"
+  },
+  "actions.share": {
+    "message": "Поділитися:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Дозволити файли cookies"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Припинити використовувати файли cookies"
+  },
+  "actions.subscribe": {
+    "message": "Підписатися"
+  },
+  "actions.toggleFilters": {
+    "message": "Перемкнути пошуковий фільтр"
+  },
+  "actions.unsubscribe": {
+    "message": "Відписатися"
+  },
+  "boilerplate.contact": {
+    "message": "Контакти"
+  },
+  "boilerplate.title": {
+    "message": "Про {companyName}"
+  },
+  "categories.title": {
+    "message": "Категорії"
+  },
+  "contacts.title": {
+    "message": "Наші контакти"
+  },
+  "cookieConsent.accept": {
+    "message": "Так, ви можете використовувати кукіз"
+  },
+  "cookieConsent.notice": {
+    "message": "Ви можете відкликати кукіз у будь-який час внизу сторінки."
+  },
+  "cookieConsent.reject": {
+    "message": "Ні, не використовуйте кукіз"
+  },
+  "cookieConsent.subtitle": {
+    "message": "На нашому сайті ми використовуємо кукіз. Вони допомагають нам трохи дізнатись про вас та про те, як ви користуєтесь нашим сайтом. Це допомагає нам забезпечити для вас та інших більш цінний та індивідуально налаштований досвід."
+  },
+  "cookieConsent.title": {
+    "message": "Ми хотіли б використовувати файли cookie"
+  },
+  "errors.emailInvalid": {
+    "message": "Введіть дійсну адресу ел. пошти"
+  },
+  "errors.fieldRequired": {
+    "message": "Це поле є обов'язковим"
+  },
+  "errors.unknown": {
+    "message": "Сталася помилка. Спробуйте надіслати форму повторно"
+  },
+  "mediaGallery.title": {
+    "message": "Медіа-галереї"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Ембарго до {date}"
+  },
+  "misc.loading": {
+    "message": "Завантаження..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL-адресу скопійовано!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Переключити навігацію"
+  },
+  "newsroom.title": {
+    "message": "Сайт"
+  },
+  "noStories.subtitle": {
+    "message": "Повертайтеся пізніше та переглядайте нові історії."
+  },
+  "noStories.title": {
+    "message": "Вітаємо у {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Якщо ви набрали URL-адресу самостійно, перевірте написання ще раз в адресному рядку."
+  },
+  "notFound.title": {
+    "message": "Сторінка, яку ви шукаєте, не існує..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Пошук"
+  },
+  "search.facets.category": {
+    "message": "Категорія"
+  },
+  "search.facets.month": {
+    "message": "Місяць"
+  },
+  "search.facets.year": {
+    "message": "Рік"
+  },
+  "search.filters": {
+    "message": "Фільтри"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Ми знайшли {resultsCount} результати(-ів) для {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Результати пошуку"
+  },
+  "search.inputHint": {
+    "message": "Введіть пошуковий запит"
+  },
+  "search.inputLabel": {
+    "message": "Пошук"
+  },
+  "search.noResults": {
+    "message": "Нічого не знайдено! Спробуйте інший пошуковий запит!"
+  },
+  "search.resultsTitle": {
+    "message": "Швидкі результати"
+  },
+  "search.showAllResults": {
+    "message": "Показати усі результати"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Пошук"
+  },
+  "search.viewLess": {
+    "message": "Переглянути менше"
+  },
+  "search.viewMore": {
+    "message": "Переглянути більше"
+  },
+  "serverError.subtitle": {
+    "message": "Спробуйте перезавантажити сторінку, або поверніться трохи згодом."
+  },
+  "serverError.title": {
+    "message": "Щось пішло не так..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Натискаючи \"{subscribe}\", я підтверджую, що прочитав(-ла) та погоджуюся з {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Отримайте оновлення у свою поштову скриньку"
+  },
+  "subscription.labelEmail": {
+    "message": "Ваша електронна адреса"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Політика конфіденційності"
+  }
+}

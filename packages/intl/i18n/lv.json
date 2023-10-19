@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Atgriezties uz sākumlapu"
+  },
+  "actions.copyShareUrl": {
+    "message": "Kopēt URL"
+  },
+  "actions.download": {
+    "message": "Lejupielādēt"
+  },
+  "actions.loadMore": {
+    "message": "Ielādēt vairāk"
+  },
+  "actions.more": {
+    "message": "Vairāk"
+  },
+  "actions.privacyRequests": {
+    "message": "Privātuma pieprasījumi"
+  },
+  "actions.readMore": {
+    "message": "Lasīt vairāk"
+  },
+  "actions.reload": {
+    "message": "Pārlādēt"
+  },
+  "actions.share": {
+    "message": "Kopīgot:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Sākt izmantot sīkdatnes"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Pārtraukt sīkdatņu izmantošanu"
+  },
+  "actions.subscribe": {
+    "message": "Pieteikties"
+  },
+  "actions.toggleFilters": {
+    "message": "Pārslēgt meklēšanas filtrus"
+  },
+  "actions.unsubscribe": {
+    "message": "Atteikties"
+  },
+  "boilerplate.contact": {
+    "message": "Kontakts"
+  },
+  "boilerplate.title": {
+    "message": "Par {companyName}"
+  },
+  "categories.title": {
+    "message": "Kategorijas"
+  },
+  "contacts.title": {
+    "message": "Sazinieties ar mums"
+  },
+  "cookieConsent.accept": {
+    "message": "Jā, jūs varat izmantot sīkdatnes"
+  },
+  "cookieConsent.notice": {
+    "message": "Sīkdatnes varat atcelt jebkurā laikā lapas apakšdaļā."
+  },
+  "cookieConsent.reject": {
+    "message": "Nē, neizmantojiet sīkdatnes"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Mēs savā vietnē izmantojam sīkdatnes. Tās palīdz mums iepazīt jūs un to, kā jūs izmantojat mūsu vietni. Tas palīdz mums sniegt vērtīgāku un pielāgotu pieredzi gan jums, gan citiem."
+  },
+  "cookieConsent.title": {
+    "message": "Mēs vēlētos izmantot sīkdatnes"
+  },
+  "errors.emailInvalid": {
+    "message": "Ievadiet derīgu e -pasta adresi"
+  },
+  "errors.fieldRequired": {
+    "message": "Šis lauks ir obligāts"
+  },
+  "errors.unknown": {
+    "message": "Kaut kas nogāja greizi. Lūdzu, mēģiniet vēlreiz iesniegt veidlapu"
+  },
+  "mediaGallery.title": {
+    "message": "Mediju galerijas"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Embargo līdz {date}"
+  },
+  "misc.loading": {
+    "message": "Notiek ielāde..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL nokopēta!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Pārslēgt navigāciju"
+  },
+  "newsroom.title": {
+    "message": "Vietne"
+  },
+  "noStories.subtitle": {
+    "message": "Atgriezieties vēlāk, lai skatītu pēdējos jaunumus."
+  },
+  "noStories.title": {
+    "message": "Laipni lūgti {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Ja URL ievadījāt pats, pārbaudiet pareizrakstību adreses joslā."
+  },
+  "notFound.title": {
+    "message": "Lapa, kuru meklējat, neeksistē..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Meklēt"
+  },
+  "search.facets.category": {
+    "message": "Kategorija"
+  },
+  "search.facets.month": {
+    "message": "Mēnesis"
+  },
+  "search.facets.year": {
+    "message": "Gads"
+  },
+  "search.filters": {
+    "message": "Filtri"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Mēs atradām {resultsCount} rezultātus vaicājumam {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Meklēšanas rezultāti"
+  },
+  "search.inputHint": {
+    "message": "Ierakstiet meklēšanas vaicājumu"
+  },
+  "search.inputLabel": {
+    "message": "Meklēt"
+  },
+  "search.noResults": {
+    "message": "Nekas netika atrasts! Lūdzu, mēģiniet lietot citu meklēšanas terminu!"
+  },
+  "search.resultsTitle": {
+    "message": "Ātrie rezultāti"
+  },
+  "search.showAllResults": {
+    "message": "Rādīt visus rezultātus"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Meklēšana"
+  },
+  "search.viewLess": {
+    "message": "Skatīt mazāk"
+  },
+  "search.viewMore": {
+    "message": "Skatīt vairāk"
+  },
+  "serverError.subtitle": {
+    "message": "Mēģiniet atsvaidzināt lapu vai atgriezties vēlāk."
+  },
+  "serverError.title": {
+    "message": "Kaut kas nogāja greizi..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Noklikšķinot uz \"{subscribe}\", es apstiprinu, ka esmu izlasījis un piekrītu {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Saņemiet atjauninājumus jūsu pastkastē"
+  },
+  "subscription.labelEmail": {
+    "message": "Jūsu e-pasta adrese"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Privātuma politika"
+  }
+}

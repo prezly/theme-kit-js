@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Quay lại trang chủ"
+  },
+  "actions.copyShareUrl": {
+    "message": "Sao chép URL"
+  },
+  "actions.download": {
+    "message": "Tải về"
+  },
+  "actions.loadMore": {
+    "message": "Tải thêm"
+  },
+  "actions.more": {
+    "message": "Thêm"
+  },
+  "actions.privacyRequests": {
+    "message": "Yêu cầu quyền riêng tư"
+  },
+  "actions.readMore": {
+    "message": "Đọc thêm"
+  },
+  "actions.reload": {
+    "message": "Tải lại"
+  },
+  "actions.share": {
+    "message": "Chia sẻ:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Bắt đầu sử dụng cookie"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Ngừng sử dụng cookie"
+  },
+  "actions.subscribe": {
+    "message": "Đăng ký"
+  },
+  "actions.toggleFilters": {
+    "message": "Bật/tắt bộ lọc tìm kiếm"
+  },
+  "actions.unsubscribe": {
+    "message": "Hủy đăng ký"
+  },
+  "boilerplate.contact": {
+    "message": "Liên hệ"
+  },
+  "boilerplate.title": {
+    "message": "Giới thiệu về {companyName}"
+  },
+  "categories.title": {
+    "message": "Danh mục"
+  },
+  "contacts.title": {
+    "message": "Liên hệ với chúng tôi"
+  },
+  "cookieConsent.accept": {
+    "message": "Vâng, bạn có thể sử dụng cookie"
+  },
+  "cookieConsent.notice": {
+    "message": "Bạn có thể thu hồi cookie bất kỳ lúc nào ở cuối trang."
+  },
+  "cookieConsent.reject": {
+    "message": "Không, đừng sử dụng cookie"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Chúng tôi sử dụng cookie trên trang web của chúng tôi. Chúng giúp chúng tôi hiểu chút ít về bạn và cách bạn sử dụng trang web của chúng tôi. Điều này giúp chúng tôi đem lại trải nghiệm đáng giá và phù hợp với bạn và những người khác."
+  },
+  "cookieConsent.title": {
+    "message": "Chúng tôi muốn sử dụng cookie"
+  },
+  "errors.emailInvalid": {
+    "message": "Giới thiệu một địa chỉ email hợp lệ"
+  },
+  "errors.fieldRequired": {
+    "message": "Đây là trường bắt buộc"
+  },
+  "errors.unknown": {
+    "message": "Đã xảy ra sự cố. Vui lòng gửi lại mẫu đơn"
+  },
+  "mediaGallery.title": {
+    "message": "Thư viện đa phương tiện"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Cấm chia sẻ cho đến ngày {date}"
+  },
+  "misc.loading": {
+    "message": "Đang tải..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "Đã sao chép URL!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Bật/tắt điều hướng"
+  },
+  "newsroom.title": {
+    "message": "Trang web"
+  },
+  "noStories.subtitle": {
+    "message": "Quay lại sau để xem những câu chuyện mới."
+  },
+  "noStories.title": {
+    "message": "Chào mừng đến với {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Nếu bạn tự nhập URL, hãy kiểm tra chính tả trên thanh địa chỉ."
+  },
+  "notFound.title": {
+    "message": "Trang bạn đang tìm kiếm không tồn tại..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Tìm kiếm"
+  },
+  "search.facets.category": {
+    "message": "Danh mục"
+  },
+  "search.facets.month": {
+    "message": "Tháng"
+  },
+  "search.facets.year": {
+    "message": "Năm"
+  },
+  "search.filters": {
+    "message": "Bộ lọc"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Chúng tôi tìm thấy {resultsCount} kết quả cho {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Kết quả tìm kiếm"
+  },
+  "search.inputHint": {
+    "message": "Nhập nội dung tìm kiếm"
+  },
+  "search.inputLabel": {
+    "message": "Tìm kiếm"
+  },
+  "search.noResults": {
+    "message": "Không có kết quả. Vui lòng thử từ khóa tìm kiếm khác!"
+  },
+  "search.resultsTitle": {
+    "message": "Kết quả nhanh"
+  },
+  "search.showAllResults": {
+    "message": "Hiển thị tất cả kết quả"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Tìm kiếm"
+  },
+  "search.viewLess": {
+    "message": "Xem giản lược"
+  },
+  "search.viewMore": {
+    "message": "Xem chi tiết"
+  },
+  "serverError.subtitle": {
+    "message": "Hãy thử làm mới trang hoặc quay lại sau chốc lát."
+  },
+  "serverError.title": {
+    "message": "Đã xảy ra vấn đề..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Bằng cách nhấn \"{subscribe}\", tôi xác nhận đã đọc và đồng ý với {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Nhận thông tin cập nhật trong hộp thư của bạn"
+  },
+  "subscription.labelEmail": {
+    "message": "Địa chỉ email của bạn"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Chính sách Quyền Riêng tư"
+  }
+}

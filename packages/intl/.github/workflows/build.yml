@@ -1,0 +1,47 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - run: npm ci
+
+      - run: npm run build
+        env:
+          CI: true
+
+      - name: Test build artifacts
+        run:  npm run test:build
+
+      - name: Check modified i18n artifacts
+        run: |
+          files=$(git status --porcelain {i18n,src}/)
+          if [[ $? != 0 ]]; then
+            echo "Command failed." && false
+          elif [[ $files ]]; then
+            echo "Modified files detected." && false
+          else
+            echo "All good."
+          fi

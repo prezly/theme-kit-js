@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Назад на галоўную старонку"
+  },
+  "actions.copyShareUrl": {
+    "message": "Капіяваць URL-адрас"
+  },
+  "actions.download": {
+    "message": "Спампаваць"
+  },
+  "actions.loadMore": {
+    "message": "Загрузіць яшчэ"
+  },
+  "actions.more": {
+    "message": "Больш"
+  },
+  "actions.privacyRequests": {
+    "message": "Запыты аб канфiдэнцыяльнасцi"
+  },
+  "actions.readMore": {
+    "message": "Чытаць больш"
+  },
+  "actions.reload": {
+    "message": "Перазагрузіць"
+  },
+  "actions.share": {
+    "message": "Падзяліцца:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Пачаць выкарыстанне кукі-файлаў"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Спыніць выкарыстанне кукі-файлаў"
+  },
+  "actions.subscribe": {
+    "message": "Падпісацца"
+  },
+  "actions.toggleFilters": {
+    "message": "Пераключыць фільтры пошуку"
+  },
+  "actions.unsubscribe": {
+    "message": "Адмовіцца ад падпіскі"
+  },
+  "boilerplate.contact": {
+    "message": "Кантакт"
+  },
+  "boilerplate.title": {
+    "message": "Пра {companyName}"
+  },
+  "categories.title": {
+    "message": "Катэгорыі"
+  },
+  "contacts.title": {
+    "message": "Зв'яжіться з намі"
+  },
+  "cookieConsent.accept": {
+    "message": "Так, вы можаце выкарыстоўваць кукі-файлы"
+  },
+  "cookieConsent.notice": {
+    "message": "Вы можаце адклікаць кукі-файлы ў любы час у ніжняй частцы старонкі."
+  },
+  "cookieConsent.reject": {
+    "message": "Не, не трэба выкарыстоўваць кукі-файлы"
+  },
+  "cookieConsent.subtitle": {
+    "message": "На нашым сайце мы выкарыстоўваем кукі-файлы. Яны дапамагаюць нам крыху даведацца пра вас і пра тое, як вы карыстаецеся нашым сайтам. Гэта дапамагае нам забяспечыць вам больш карысны карыстацкі інтэрфейс з індывідуальнымі настройкамі."
+  },
+  "cookieConsent.title": {
+    "message": "Мы хочам выкарыстоўваць кукі-файлы"
+  },
+  "errors.emailInvalid": {
+    "message": "Пакажыце сапраўдны адрас электроннай пошты"
+  },
+  "errors.fieldRequired": {
+    "message": "Гэта поле неабходна запоўніць"
+  },
+  "errors.unknown": {
+    "message": "Нешта пайшло не так. Калі ласка, паспрабуйце адправіць форму яшчэ раз"
+  },
+  "mediaGallery.title": {
+    "message": "Медыягалерэі"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Забарона публікацыі да {date}"
+  },
+  "misc.loading": {
+    "message": "Загрузка..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL скапіяваны!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Пераключыць навігацыю"
+  },
+  "newsroom.title": {
+    "message": "Сайт"
+  },
+  "noStories.subtitle": {
+    "message": "Заходзьце пазней, каб убачыць новыя гісторыі."
+  },
+  "noStories.title": {
+    "message": "Сардэчна запрашаем у {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Калі вы набралі URL-адрас самастойна, праверце яго правапіс у адраснам радку."
+  },
+  "notFound.title": {
+    "message": "Старонкі, якую вы шукаеце, не існуе..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Пошук"
+  },
+  "search.facets.category": {
+    "message": "Катэгорыя"
+  },
+  "search.facets.month": {
+    "message": "Месяц"
+  },
+  "search.facets.year": {
+    "message": "Год"
+  },
+  "search.filters": {
+    "message": "Фільтры"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Мы знайшлі {resultsCount} выніку(аў) для {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Вынікі пошуку"
+  },
+  "search.inputHint": {
+    "message": "Увядзіце свой пошукавы запыт"
+  },
+  "search.inputLabel": {
+    "message": "Пошук"
+  },
+  "search.noResults": {
+    "message": "Нічога не знойдзена. Паспрабуйце змяніць умовы пошуку!"
+  },
+  "search.resultsTitle": {
+    "message": "Хуткія вынікі"
+  },
+  "search.showAllResults": {
+    "message": "Паказаць усе вынікі"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Пошук"
+  },
+  "search.viewLess": {
+    "message": "Паказаць менш"
+  },
+  "search.viewMore": {
+    "message": "Паказаць больш"
+  },
+  "serverError.subtitle": {
+    "message": "Паспрабуйце абнавіць старонку або зайсці трохі пазней."
+  },
+  "serverError.title": {
+    "message": "Нешта пайшло не так..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Націскаючы \"{subscribe}\", я пацвярджаю, што прачытаў(-ла) {privacyPolicyLink} і пагадзілся(-ась) з ёю."
+  },
+  "subscription.formTitle": {
+    "message": "Атрымлівайце навіны ў сваю паштовую скрыню"
+  },
+  "subscription.labelEmail": {
+    "message": "Ваш электронны адрас"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Палітыка прыватнасці"
+  }
+}

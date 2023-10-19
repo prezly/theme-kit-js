@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "Əsas səhifəyə qayıt"
+  },
+  "actions.copyShareUrl": {
+    "message": "Linki kopyala"
+  },
+  "actions.download": {
+    "message": "Yüklə"
+  },
+  "actions.loadMore": {
+    "message": "Daha çox yüklə"
+  },
+  "actions.more": {
+    "message": "Ətraflı"
+  },
+  "actions.privacyRequests": {
+    "message": "Məxfilik tələbləri"
+  },
+  "actions.readMore": {
+    "message": "Daha ətraflı oxuyun"
+  },
+  "actions.reload": {
+    "message": "Yenidən yüklə"
+  },
+  "actions.share": {
+    "message": "Paylaş:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Kukilərdən istifadə etməyə başla"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Kukilərdən istifadəni dayandır"
+  },
+  "actions.subscribe": {
+    "message": "Abunə olun"
+  },
+  "actions.toggleFilters": {
+    "message": "Axtarış filtrlərini dəyişin"
+  },
+  "actions.unsubscribe": {
+    "message": "Abunəliyi dayandırın"
+  },
+  "boilerplate.contact": {
+    "message": "Kontakt"
+  },
+  "boilerplate.title": {
+    "message": "{companyName} Haqqında"
+  },
+  "categories.title": {
+    "message": "Kateqoriyalar"
+  },
+  "contacts.title": {
+    "message": "Bizimlə əlaqə"
+  },
+  "cookieConsent.accept": {
+    "message": "Bəli, kukilərdən istifadə edə bilərsiniz"
+  },
+  "cookieConsent.notice": {
+    "message": "Kukiləri istənilən vaxt səhifənin alt hissəsindən ləğv edə bilərsiniz."
+  },
+  "cookieConsent.reject": {
+    "message": "Xeyr, kukilərdən istifadə etməyin"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Veb saytımızda kukilərdən istifadə edirik. Sizi bir az tanımağımıza və veb saytımızı necə istifadə etdiyinizə kömək edirlər. Bu, sizin və başqaları üçün daha dəyərli və uyğun bir təcrübə təmin etməyimizə kömək edir."
+  },
+  "cookieConsent.title": {
+    "message": "Kukilərdən istifadə etmək istərdik"
+  },
+  "errors.emailInvalid": {
+    "message": "Etibarlı bir e-poçt ünvanı təqdim edin"
+  },
+  "errors.fieldRequired": {
+    "message": "Bu xananın doldurulması məcburidir"
+  },
+  "errors.unknown": {
+    "message": "Xəta baş verdi. Xahiş olunur formanı yenidən daxil etməyə çalışın"
+  },
+  "mediaGallery.title": {
+    "message": "Media qalereyaları"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "{date} tarixinədək embarqo"
+  },
+  "misc.loading": {
+    "message": "Yüklənir..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL-in surəti yazıldı!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Naviqasiyanı dəyiş"
+  },
+  "newsroom.title": {
+    "message": "Sayt"
+  },
+  "noStories.subtitle": {
+    "message": "Yeni hekayələrə baxmaq üçün daha sonra qayıt."
+  },
+  "noStories.title": {
+    "message": "{newsroom}-a xoş gəlmisiniz!"
+  },
+  "notFound.subtitle": {
+    "message": "Əgər linki özünüz yazmısınızsa, adres çubuğunda yazılanları yoxlayın."
+  },
+  "notFound.title": {
+    "message": "Axtardığınız səhifə mövcud deyil..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Axtar"
+  },
+  "search.facets.category": {
+    "message": "Kateqoriya"
+  },
+  "search.facets.month": {
+    "message": "Ay"
+  },
+  "search.facets.year": {
+    "message": "Il"
+  },
+  "search.filters": {
+    "message": "Filtrlər"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Biz {searchQuery} üçün {resultsCount} nəticə tapdıq"
+  },
+  "search.fullResultsTitle": {
+    "message": "Axtarış nəticələri"
+  },
+  "search.inputHint": {
+    "message": "Axtarışınızı yazın"
+  },
+  "search.inputLabel": {
+    "message": "Axtar"
+  },
+  "search.noResults": {
+    "message": "Heç nə tapılmadı! Zəhmət olmasa, başqa axtarış sorğusunu cəhd edinn!"
+  },
+  "search.resultsTitle": {
+    "message": "Tez nəticələr"
+  },
+  "search.showAllResults": {
+    "message": "Bütün nəticələri göstər"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Axtar"
+  },
+  "search.viewLess": {
+    "message": "Daha az baxın"
+  },
+  "search.viewMore": {
+    "message": "Daha çox baxın"
+  },
+  "serverError.subtitle": {
+    "message": "Səhifəni yeniləməyə və ya bir qədər sonra geri qayıtmağa cəhd edin."
+  },
+  "serverError.title": {
+    "message": "Bir xəta baş verdi..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "\"{subscribe}\" seçiminə klikləməklə, mən {privacyPolicyLink}-i oxuduğumu və onunla razılaşdığımı təsdiq edirəm."
+  },
+  "subscription.formTitle": {
+    "message": "Məktub qutunuza yenilikləri alın"
+  },
+  "subscription.labelEmail": {
+    "message": "Sizin e-poçt ünvanınız"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Məxfilik Siyasəti"
+  }
+}

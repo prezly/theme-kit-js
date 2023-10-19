@@ -1,0 +1,178 @@
+{
+  "actions.backToHomepage": {
+    "message": "ホームページに戻る"
+  },
+  "actions.copyShareUrl": {
+    "message": "URLをコピー"
+  },
+  "actions.download": {
+    "message": "ダウンロード"
+  },
+  "actions.loadMore": {
+    "message": "続きを読み込む"
+  },
+  "actions.more": {
+    "message": "詳細"
+  },
+  "actions.privacyRequests": {
+    "message": "プライバシーに関するリクエスト"
+  },
+  "actions.readMore": {
+    "message": "続きを読む"
+  },
+  "actions.reload": {
+    "message": "再読み込み"
+  },
+  "actions.share": {
+    "message": "共有"
+  },
+  "actions.startUsingCookies": {
+    "message": "Cookieの使用を開始"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Cookieの使用を停止"
+  },
+  "actions.subscribe": {
+    "message": "購読"
+  },
+  "actions.toggleFilters": {
+    "message": "検索フィルタを切り替える"
+  },
+  "actions.unsubscribe": {
+    "message": "登録解除"
+  },
+  "boilerplate.contact": {
+    "message": "コンタクト"
+  },
+  "boilerplate.title": {
+    "message": "{companyName}について"
+  },
+  "categories.title": {
+    "message": "カテゴリー"
+  },
+  "contacts.title": {
+    "message": "お問い合わせ先"
+  },
+  "cookieConsent.accept": {
+    "message": "はい、クッキーの使用を許可します"
+  },
+  "cookieConsent.notice": {
+    "message": "クッキーはページの下部からいつでも無効にできます。"
+  },
+  "cookieConsent.reject": {
+    "message": "いいえ、クッキーを使用しないでください"
+  },
+  "cookieConsent.subtitle": {
+    "message": "弊ウェブサイトではクッキーを使用します。これは弊社が、お客様について、またお客様による弊ウェブサイトの使い方について知るのに役立ちます。これにより弊社はお客様方に対してより有益で的確な体験を提供することができます。"
+  },
+  "cookieConsent.title": {
+    "message": "弊社はCookieを使用します。"
+  },
+  "errors.emailInvalid": {
+    "message": "有効なメールアドレスを紹介"
+  },
+  "errors.fieldRequired": {
+    "message": "この項目は必須です"
+  },
+  "errors.unknown": {
+    "message": "エラーが発生しました。もう一度フォームを送信してください。"
+  },
+  "mediaGallery.title": {
+    "message": "メディアギャラリー"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "{date}までエンバーゴ"
+  },
+  "misc.loading": {
+    "message": "読み込み中..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URLがコピーされました！"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "ナビゲーションを切り替える"
+  },
+  "newsroom.title": {
+    "message": "サイト"
+  },
+  "noStories.subtitle": {
+    "message": "後ほど再度アクセスし、新しいストーリーをご覧ください。"
+  },
+  "noStories.title": {
+    "message": "{newsroom} へようこそ！"
+  },
+  "notFound.subtitle": {
+    "message": "ご自身で URL を入力した場合は、アドレスバーのスペルを確認してください。"
+  },
+  "notFound.title": {
+    "message": "お探しのページは存在しません..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "検索"
+  },
+  "search.facets.category": {
+    "message": "カテゴリー"
+  },
+  "search.facets.month": {
+    "message": "月"
+  },
+  "search.facets.year": {
+    "message": "年"
+  },
+  "search.filters": {
+    "message": "フィルター"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "{searchQuery}で{resultsCount}の結果を見つけました"
+  },
+  "search.fullResultsTitle": {
+    "message": "検索結果"
+  },
+  "search.inputHint": {
+    "message": "検索を入力し"
+  },
+  "search.inputLabel": {
+    "message": "検索"
+  },
+  "search.noResults": {
+    "message": "何も見つかりませんでした！別の検索語でお試しください。"
+  },
+  "search.resultsTitle": {
+    "message": "クイック結果"
+  },
+  "search.showAllResults": {
+    "message": "すべての結果を表示"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "検索"
+  },
+  "search.viewLess": {
+    "message": "表示を減らす"
+  },
+  "search.viewMore": {
+    "message": "表示を増やす"
+  },
+  "serverError.subtitle": {
+    "message": "ページを再読み込みするか、少ししてから再度ご確認ください。"
+  },
+  "serverError.title": {
+    "message": "エラーが発生しました..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "[{subscribe}]をクリックすることで、{privacyPolicyLink}を読んで同意したことを確認します。"
+  },
+  "subscription.formTitle": {
+    "message": "受信トレイを更新"
+  },
+  "subscription.labelEmail": {
+    "message": "あなたのメールアドレス"
+  },
+  "subscription.privacyPolicy": {
+    "message": "プライバシーポリシー"
+  }
+}
