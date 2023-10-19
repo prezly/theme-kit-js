@@ -1,4 +1,4 @@
-import { assertServerEnv, getShortestLocaleCode, LocaleObject } from '@prezly/theme-kit-core';
+import { assertServerEnv, getShortestLocaleSlug, LocaleObject } from '@prezly/theme-kit-core';
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
 import { getRedirectToCanonicalLocale } from '../intl';
@@ -38,7 +38,7 @@ export function processRequest<Props>(
     if (canonicalUrl) {
         const { languages, localeCode } = pageProps.newsroomContextProps;
         const currentLocale = LocaleObject.fromAnyCode(localeCode);
-        const shortestLocaleCode = getShortestLocaleCode(languages, currentLocale);
+        const shortestLocaleCode = getShortestLocaleSlug(languages, currentLocale);
 
         const redirect = getRedirectToCanonicalLocale(
             shortestLocaleCode,

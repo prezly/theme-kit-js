@@ -9,10 +9,9 @@ import {
     getLanguageByShortRegionCode,
     getLanguageDisplayName,
     getLanguageFromStory,
-    getShortestLocaleCode,
+    getShortestLocaleSlug,
     getUsedLanguages,
 } from './languages';
-import { LocaleObject } from './localeObject';
 
 const ALL_LANGUAGES = Object.values(LANGUAGES);
 
@@ -62,18 +61,12 @@ describe('getLanguageByExactLocaleCode', () => {
     const languages = [LANGUAGES.nl_BE, LANGUAGES.en];
 
     it('returns a languages by its exact locale code', () => {
-        expect(getLanguageByExactLocaleCode(languages, LocaleObject.fromAnyCode('nl-BE'))).toEqual(
-            LANGUAGES.nl_BE,
-        );
-        expect(getLanguageByExactLocaleCode(languages, LocaleObject.fromAnyCode('en'))).toEqual(
-            LANGUAGES.en,
-        );
+        expect(getLanguageByExactLocaleCode(languages, 'nl-BE')).toEqual(LANGUAGES.nl_BE);
+        expect(getLanguageByExactLocaleCode(languages, 'en')).toEqual(LANGUAGES.en);
     });
 
     it('returns undefined when there is no langauge with exact locale code', () => {
-        expect(getLanguageByExactLocaleCode(languages, LocaleObject.fromAnyCode('nl'))).toBe(
-            undefined,
-        );
+        expect(getLanguageByExactLocaleCode(languages, 'nl')).toBe(undefined);
     });
 });
 
@@ -85,9 +78,7 @@ describe('getLanguageByNeutralLocaleCode', () => {
             LANGUAGES.nl_NL,
         ];
 
-        expect(getLanguageByNeutralLocaleCode(languages, LocaleObject.fromAnyCode('nl'))).toEqual(
-            LANGUAGES.nl_NL,
-        );
+        expect(getLanguageByNeutralLocaleCode(languages, 'nl')).toEqual(LANGUAGES.nl_NL);
     });
 
     it('returns first fitting culture from unused cultures', () => {
@@ -97,9 +88,7 @@ describe('getLanguageByNeutralLocaleCode', () => {
             { ...LANGUAGES.nl_NL, public_stories_count: 0, stories_count: 0 },
         ];
 
-        expect(getLanguageByNeutralLocaleCode(languages, LocaleObject.fromAnyCode('nl'))).toEqual(
-            languages[1],
-        );
+        expect(getLanguageByNeutralLocaleCode(languages, 'nl')).toEqual(languages[1]);
     });
 });
 
@@ -107,9 +96,7 @@ describe('getLanguageByShortRegionCode', () => {
     it('prefers used cultures', () => {
         const languages = [LANGUAGES.en, LANGUAGES.nl_BE, LANGUAGES.fr_BE];
 
-        expect(getLanguageByShortRegionCode(languages, LocaleObject.fromAnyCode('be'))).toEqual(
-            LANGUAGES.nl_BE,
-        );
+        expect(getLanguageByShortRegionCode(languages, 'be')).toEqual(LANGUAGES.nl_BE);
     });
 
     it('returns first fitting culture from unused cultures', () => {
@@ -119,9 +106,7 @@ describe('getLanguageByShortRegionCode', () => {
             { ...LANGUAGES.nl_BE, public_stories_count: 0, stories_count: 0 },
         ];
 
-        expect(getLanguageByShortRegionCode(languages, LocaleObject.fromAnyCode('be'))).toEqual(
-            LANGUAGES.fr_BE,
-        );
+        expect(getLanguageByShortRegionCode(languages, 'be')).toEqual(LANGUAGES.fr_BE);
     });
 });
 
@@ -133,51 +118,45 @@ describe('getLanguageFromStory', () => {
 
 describe('getCompanyInformation', () => {
     it('returns company information from target language', () => {
-        expect(getCompanyInformation(ALL_LANGUAGES, LocaleObject.fromAnyCode('nl-BE'))).toEqual(
+        expect(getCompanyInformation(ALL_LANGUAGES, 'nl-BE')).toEqual(
             LANGUAGES.nl_BE.company_information,
         );
     });
 
     it('returns company information from default language if target not found', () => {
-        expect(getCompanyInformation(ALL_LANGUAGES, LocaleObject.fromAnyCode('de-DE'))).toEqual(
+        expect(getCompanyInformation(ALL_LANGUAGES, 'de-DE')).toEqual(
             LANGUAGES.en.company_information,
         );
     });
 });
 
-describe('getShortestLocaleCode', () => {
+describe('getShortestLocaleSlug', () => {
     it('returns false for default language', () => {
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('en'))).toBe(false);
+        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'en')).toBe(false);
     });
 
     it('returns neutral language code if it is the only culture with that language', () => {
         expect(
-            getShortestLocaleCode(
+            getShortestLocaleSlug(
                 ALL_LANGUAGES.filter(({ code }) => code !== 'es_419'),
-                LocaleObject.fromAnyCode('es-ES'),
+                'es-ES',
             ),
         ).toBe('es');
     });
 
     it('returns region code if it is the only culture with that region', () => {
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('en-US'))).toBe('US');
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('en-GB'))).toBe('GB');
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('nl-NL'))).toBe('NL');
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('fr'))).toBe('FR');
+        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'en-US')).toBe('us');
+        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'en-GB')).toBe('gb');
+        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'nl-NL')).toBe('nl-nl'); // cannot use `nl`, as it collides with language code
+        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'fr')).toBe('fr');
     });
 
     it('returns full code if it can not be shortened', () => {
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('fr-BE'))).toBe(
-            'fr_BE',
-        );
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('nl-BE'))).toBe(
-            'nl_BE',
-        );
+        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'fr-BE')).toBe('fr-be');
+        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'nl-BE')).toBe('nl-be');
     });
 
     it('returns full code when trying to shorten to region code for es-419', () => {
-        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('es-419'))).toBe(
-            'es_419',
-        );
+        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'es-419')).toBe('es-419');
     });
 });

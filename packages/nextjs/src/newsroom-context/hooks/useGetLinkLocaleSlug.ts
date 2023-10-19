@@ -1,5 +1,5 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
-import { getShortestLocaleCode, LocaleObject } from '@prezly/theme-kit-core';
+import { getShortestLocaleSlug, LocaleObject } from '@prezly/theme-kit-core';
 import { useCallback } from 'react';
 
 import { useCurrentLocale } from './useCurrentLocale';
@@ -15,7 +15,7 @@ function getLinkLocaleSlug(
     languages: NewsroomLanguageSettings[],
     locale: LocaleObject,
 ): string | false {
-    const shortestLocaleCode = getShortestLocaleCode(languages, locale);
+    const shortestLocaleCode = getShortestLocaleSlug(languages, locale);
     // When navigating to default language, we don't append the locale to the URL.
     if (!shortestLocaleCode) {
         return shortestLocaleCode;

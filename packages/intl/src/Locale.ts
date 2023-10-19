@@ -63,6 +63,8 @@ export namespace Locale {
     export type RegionCode = string;
     export type ScriptCode = string;
 
+    type LowercaseRegionCode = string;
+
     export function from(locale: AnyCode | Locale): Locale {
         if (typeof locale === 'object') {
             return locale;
@@ -142,6 +144,13 @@ export namespace Locale {
 
     export function toRegionCode(locale: AnyCode | Locale): RegionCode | undefined {
         return Locale.from(locale).region;
+    }
+
+    export function isRegionCode(
+        locale: AnyCode | Locale,
+        regionCode: Locale.RegionCode | LowercaseRegionCode,
+    ) {
+        return Locale.toRegionCode(locale) === regionCode.toUpperCase();
     }
 
     export function direction(locale: AnyCode | Locale): 'rtl' | 'ltr' {

@@ -1,9 +1,8 @@
-import type { LangCode } from './locale';
-import { LocaleObject } from './localeObject';
+import { Locale } from '@prezly/theme-kit-intl';
 
-const localeFallback: Record<LangCode, LocaleObject[]> = {
-    en: [LocaleObject.fromAnyCode('en-US'), LocaleObject.fromAnyCode('en-GB')],
-    fr: [LocaleObject.fromAnyCode('fr-FR'), LocaleObject.fromAnyCode('fr-CA')],
+const fallbacks: Record<Locale.LanguageCode, Locale.Code[]> = {
+    en: ['en-US', 'en-GB'],
+    fr: ['fr-FR', 'fr-CA'],
 };
 
 /**
@@ -14,16 +13,12 @@ const localeFallback: Record<LangCode, LocaleObject[]> = {
  * If the list will be en-CA en-AU and en-US then the result will be en-US since it is the first one and hence takes precedence.
  */
 export function getFallbackLocale(
-    langCode: LangCode,
-    availableLocales: LocaleObject[],
-): LocaleObject | undefined {
-    const fallbacks = localeFallback[langCode];
-
-    if (!fallbacks) {
-        return undefined;
-    }
-
-    return fallbacks.find((fallback) =>
-        Boolean(availableLocales.find((available) => available.isEqual(fallback))),
+    langCode: Locale.LanguageCode,
+    availableLocales: (Locale | Locale.Code)[],
+): Locale | undefined {
+    const code = fallbacks[langCode]?.find((fallback) =>
+        Boolean(availableLocales.find((available) => Locale.isEqual(available, fallback))),
     );
+
+    return code ? Locale.from(code) : undefined;
 }
