@@ -1,8 +1,8 @@
-import type { LocaleObject } from '../../intl';
+import type { Locale } from '@prezly/theme-kit-intl';
 
 export function createAlternateLanguageLink(
-    locale: LocaleObject,
-    generateTranslationUrl: (locale: LocaleObject) => string | undefined,
+    locale: Locale,
+    generateTranslationUrl: (locale: Locale) => string | undefined,
 ) {
     const translationUrl = generateTranslationUrl(locale);
 
@@ -11,7 +11,7 @@ export function createAlternateLanguageLink(
     }
 
     return {
-        hrefLang: locale.toHyphenCode(),
+        hrefLang: locale.isoCode,
         href: translationUrl,
     };
 }

@@ -1,6 +1,6 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
+import { Locale } from '@prezly/theme-kit-intl';
 
-import type { LocaleObject } from '../intl';
 import { getFallbackLocale } from '../intl';
 
 import type { AlternateLanguageLink } from './types';
@@ -14,12 +14,12 @@ export function getAlternateLanguageLinks<
     Language extends Pick<NewsroomLanguageSettings, 'code' | 'is_default'>,
 >(
     availableLanguages: Language[],
-    generateTranslationUrl: (locale: LocaleObject) => string | undefined,
+    generateTranslationUrl: (locale: Locale) => string | undefined,
 ): AlternateLanguageLink[] {
     const languagesWithLocales = bindLanguagesWithLocales(availableLanguages);
     const hrefLangLinks: Array<AlternateLanguageLink> = [];
 
-    function pushLocaleToLinks(locale: LocaleObject, hrefLang?: string) {
+    function pushLocaleToLinks(locale: Locale, hrefLang?: string) {
         const link = createAlternateLanguageLink(locale, generateTranslationUrl);
 
         if (!link) {
@@ -45,8 +45,8 @@ export function getAlternateLanguageLinks<
             // we still need something as a region independent locale
             const localesArray = Array.from(binds.values()).map(({ locale }) => locale);
 
-            const hasRegionIndependentLocale = localesArray.some(
-                (locale) => locale.isRegionIndependent,
+            const hasRegionIndependentLocale = localesArray.some((locale) =>
+                Locale.isRegionIndependent(locale),
             );
 
             if (hasRegionIndependentLocale) {
@@ -74,7 +74,7 @@ export function getAlternateLanguageLinks<
         // If the story has just region independent `en` translation we will use it as default hreflang
         languagesWithLocales.forEach((binds) =>
             binds.forEach(({ locale }) => {
-                if (locale.isRegionIndependent && locale.toNeutralLanguageCode() === ENG_FALLBACK) {
+                if (Locale.isRegionIndependent(locale) && locale.lang === ENG_FALLBACK) {
                     pushLocaleToLinks(locale, DEFAULT_HREF_LANG);
                     isDefaultAddedToLinks = true;
                 }
