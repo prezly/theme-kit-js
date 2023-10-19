@@ -5,7 +5,7 @@ import { DUMMY_DEFAULT_LOCALE } from './locale';
 
 const ALL_LANGUAGES = Object.values(LANGUAGES);
 
-describe('getLanguageFromNextLocaleIsoCode', () => {
+describe('getLanguageFromNextLocaleSlug', () => {
     it('returns default language when no locale code provided or when dummy locale provided', () => {
         expect(getLanguageFromNextLocaleSlug(ALL_LANGUAGES)).toEqual(LANGUAGES.en);
         expect(getLanguageFromNextLocaleSlug(ALL_LANGUAGES, DUMMY_DEFAULT_LOCALE)).toEqual(
@@ -19,7 +19,7 @@ describe('getLanguageFromNextLocaleIsoCode', () => {
 
     it('returns language by region code second', () => {
         expect(getLanguageFromNextLocaleSlug(ALL_LANGUAGES, 'be')).toEqual(LANGUAGES.nl_BE);
-        expect(getLanguageFromNextLocaleSlug(ALL_LANGUAGES, 'nl')).toEqual(LANGUAGES.nl_NL);
+        expect(getLanguageFromNextLocaleSlug(ALL_LANGUAGES, 'gb')).toEqual(LANGUAGES.en_GB);
     });
 
     it('returns language by neutral code third', () => {

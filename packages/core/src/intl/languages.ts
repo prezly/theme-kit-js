@@ -189,15 +189,24 @@ function getUnambiguousRegionCode<Language extends Pick<NewsroomLanguageSettings
  * Get matching language for the requested locale slug.
  * The logic is reversed from `getShortestLocaleSlug`, so that it "unwraps" the possible variants with no collisions
  *
- * First:   get by exact match
- * Then:    get by matching region code part
- * Finally: get by matching language code part
+ * The order of checks is:
+ * - exact locale slug match
+ * - match language code, preferring non-default languages
+ * - match region code, preferring non-default languages
+ * - match language code across all languages
+ * - match region code across all languages
  */
 export function getLanguageFromLocaleSlug<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
 >(languages: Language[], slug: Locale.AnySlug): Language | undefined {
+    const nonDefaultLanguages = languages.filter((lang) => !lang.is_default);
+
     return (
         getLanguageByExactLocaleCode(languages, slug) ??
+        // Prefer non-default languages, as the default one should not be accessed with a URL slug.
+        getUnambiguousLanguageByLangSlug(nonDefaultLanguages, slug) ??
+        getUnambiguousLanguageByRegionSlug(nonDefaultLanguages, slug) ??
+        // Fallback to all languages, including default ones, if nothing has matched yet
         getUnambiguousLanguageByLangSlug(languages, slug) ??
         getUnambiguousLanguageByRegionSlug(languages, slug) ??
         undefined
