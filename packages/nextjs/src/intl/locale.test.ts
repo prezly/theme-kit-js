@@ -8,7 +8,7 @@ describe('getRedirectToCanonicalLocale', () => {
 
     it('returns undefined when locale is already canonical', () => {
         expect(getRedirectToCanonicalLocaleUrl('en', 'en', '/')).toBe(undefined);
-        expect(getRedirectToCanonicalLocaleUrl('nl_BE', 'nl-be', '/')).toBe(undefined);
+        expect(getRedirectToCanonicalLocaleUrl('nl-be', 'nl-be', '/')).toBe(undefined);
     });
 
     it('returns a redirect object when requested locale is not canonical', () => {
