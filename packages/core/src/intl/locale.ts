@@ -25,6 +25,7 @@ export function getSupportedLocaleIsoCode(locale: Locale | Locale.Code): Locale.
         return 'zh-CN';
     }
 
+    // eslint-disable-next-line no-console
     console.warn(
         `Unsupported locale provided: "${typeof locale === 'string' ? locale : isoCode}".`,
     );

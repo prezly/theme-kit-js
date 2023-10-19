@@ -1,8 +1,8 @@
 import type { Newsroom } from '@prezly/sdk';
+import type { Locale } from '@prezly/theme-kit-intl';
 import { UploadcareImage } from '@prezly/uploadcare';
 
 import { OG_IMAGE_API_URL } from './constants';
-import type { Locale } from '@prezly/theme-kit-intl';
 
 export function getNewsroomLogoUrl(
     newsroom: Pick<Newsroom, 'newsroom_logo'>,
