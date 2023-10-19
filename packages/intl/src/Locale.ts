@@ -1,10 +1,34 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
+
 export interface Locale {
+    /**
+     * Full locale code with underscores.
+     * Example: 'nl_BE'
+     */
+    code: Locale.Code;
+
+    /**
+     * Full locale code in ISO format (with dashes instead of underscores)
+     * Example: 'nl-BE'
+     */
+    isoCode: Locale.IsoCode;
+
+    /**
+     * URL-friendly case-insensitive locale code.
+     * Example: 'nl-be'
+     */
+    slug: Locale.UrlSlug;
+
     /**
      * Language code.
      * Examples: `nl`, `en`, `fr`.
      */
     lang: Locale.LanguageCode;
+
+    /**
+     * Text direction for the locale.
+     */
+    dir: 'ltr' | 'rtl';
 
     /**
      * Locale region code.
@@ -19,18 +43,22 @@ export interface Locale {
     script: Locale.ScriptCode | undefined;
 }
 
-type AnyCode = HyphenCode | UnderscoreCode | UrlSlug;
-
-type HyphenCode = string;
-type UnderscoreCode = string;
-type UrlSlug = string;
-
 const KNOWN_SCRIPTS = ['hant', 'hans'];
 const KNOWN_RTL_LANGUAGES = ['ar', 'he', 'ur'];
 const LANG_CODE_REGEX = /^[a-z]{2,3}$/;
 
+const CACHE = new Map<Locale.AnyCode, Locale>();
+
 export namespace Locale {
-    export type Code = string;
+    export type AnyCode = Code | IsoCode | UrlSlug;
+
+    type HyphenCode = string;
+    type UnderscoreCode = string;
+
+    export type Code = UnderscoreCode;
+    export type IsoCode = HyphenCode;
+    export type UrlSlug = string;
+
     export type LanguageCode = string;
     export type RegionCode = string;
     export type ScriptCode = string;
@@ -38,6 +66,11 @@ export namespace Locale {
     export function from(locale: AnyCode | Locale): Locale {
         if (typeof locale === 'object') {
             return locale;
+        }
+
+        const cached = CACHE.get(locale);
+        if (cached) {
+            return cached;
         }
 
         const [lang, ...rest] = locale.split(/[_-]/g).map((part) => part.toLowerCase());
@@ -62,37 +95,45 @@ export namespace Locale {
 
         const script: string | undefined = scripts[0];
         const region: string | undefined = regions[0];
-
-        return {
-            lang,
-            region: region ? region.toUpperCase() : undefined,
-            script: script ? toPascalCase(script) : undefined,
-        };
-    }
-
-    export function toHyphenCode(locale: AnyCode | Locale): HyphenCode {
-        const { lang, region, script } = Locale.from(locale);
-
-        return [
+        const isoCode = [
             lang.toLowerCase(),
             region?.toUpperCase(),
             script ? toPascalCase(script) : undefined,
         ]
             .filter(isNotUndefined)
             .join('-');
+
+        const obj: Locale = {
+            code: isoCode.replace('-', '_'),
+            isoCode,
+            slug: isoCode.toLowerCase(),
+            dir: KNOWN_RTL_LANGUAGES.includes(lang) ? 'rtl' : 'ltr',
+            lang,
+            region: region ? region.toUpperCase() : undefined,
+            script: script ? toPascalCase(script) : undefined,
+        };
+
+        CACHE.set(obj.code, obj);
+        CACHE.set(obj.isoCode, obj);
+        CACHE.set(obj.slug, obj);
+
+        return obj;
+    }
+
+    export function toIsoCode(locale: AnyCode | Locale): HyphenCode {
+        return Locale.from(locale).isoCode;
+    }
+
+    export function toHyphenCode(locale: AnyCode | Locale): HyphenCode {
+        return Locale.from(locale).isoCode;
     }
 
     export function toUnderscoreCode(locale: AnyCode | Locale): UnderscoreCode {
-        return Locale.toHyphenCode(locale).replace('-', '_');
+        return Locale.from(locale).code;
     }
 
     export function toUrlSlug(locale: AnyCode | Locale): UrlSlug {
-        const { lang, region, script } = Locale.from(locale);
-
-        return [lang, region, script]
-            .filter(isNotUndefined)
-            .map((part) => part.toLowerCase())
-            .join('-');
+        return Locale.from(locale).slug;
     }
 
     export function toNeutralLanguageCode(locale: AnyCode | Locale): LanguageCode {
@@ -100,19 +141,19 @@ export namespace Locale {
     }
 
     export function toRegionCode(locale: AnyCode | Locale): RegionCode | undefined {
-        return Locale.from(locale).region || undefined;
+        return Locale.from(locale).region;
     }
 
     export function direction(locale: AnyCode | Locale): 'rtl' | 'ltr' {
-        return Locale.isRtl(locale) ? 'rtl' : 'ltr';
-    }
-
-    export function isRtl(locale: AnyCode | Locale): boolean {
-        return KNOWN_RTL_LANGUAGES.includes(Locale.from(locale).lang);
+        return Locale.from(locale).dir;
     }
 
     export function isLtr(locale: AnyCode | Locale): boolean {
-        return !Locale.isRtl(locale);
+        return Locale.from(locale).dir === 'ltr';
+    }
+
+    export function isRtl(locale: AnyCode | Locale): boolean {
+        return Locale.from(locale).dir === 'rtl';
     }
 
     export function isRegionIndependent(locale: AnyCode | Locale): boolean {
@@ -127,10 +168,19 @@ export namespace Locale {
     }
 
     export function isSameLang(a: Locale | AnyCode, b: Locale | AnyCode): boolean {
+        return Locale.from(a).lang === Locale.from(b).lang;
+    }
+
+    export function isSameRegion(a: Locale | AnyCode, b: Locale | AnyCode): boolean {
         const al = Locale.from(a);
         const bl = Locale.from(b);
 
-        return al.lang === bl.lang;
+        if (!al.region || !bl.region) {
+            // It's never the same region, if it's not defined.
+            return false;
+        }
+
+        return al.region === bl.region;
     }
 }
 

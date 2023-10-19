@@ -15,73 +15,77 @@ describe('Locale', () => {
         );
     });
 
-    it('should accept any valid code', () => {
-        expect(Locale.from('en')).toEqual({ lang: 'en', region: undefined, script: undefined });
-        expect(Locale.from('en-us')).toEqual({ lang: 'en', region: 'US', script: undefined });
-        expect(Locale.from('en-US')).toEqual({ lang: 'en', region: 'US', script: undefined });
-        expect(Locale.from('EN-US')).toEqual({ lang: 'en', region: 'US', script: undefined });
-        expect(Locale.from('en_us')).toEqual({ lang: 'en', region: 'US', script: undefined });
-        expect(Locale.from('en_US')).toEqual({ lang: 'en', region: 'US', script: undefined });
-        expect(Locale.from('EN_US')).toEqual({ lang: 'en', region: 'US', script: undefined });
+    it('should accept valid codes', () => {
+        expect(() => Locale.from('en')).not.toThrow();
+        expect(() => Locale.from('en-us')).not.toThrow();
+        expect(() => Locale.from('en-US')).not.toThrow();
+        expect(() => Locale.from('EN-US')).not.toThrow();
+        expect(() => Locale.from('en_us')).not.toThrow();
+        expect(() => Locale.from('en_US')).not.toThrow();
+        expect(() => Locale.from('EN_US')).not.toThrow();
 
-        expect(Locale.from('zh-Hant')).toEqual({ lang: 'zh', region: undefined, script: 'Hant' });
-        expect(Locale.from('zh-Hans')).toEqual({ lang: 'zh', region: undefined, script: 'Hans' });
+        expect(() => Locale.from('zh-Hant')).not.toThrow();
+        expect(() => Locale.from('zh-Hans')).not.toThrow();
 
-        expect(Locale.from('es-419')).toEqual({ lang: 'es', region: '419', script: undefined });
-        expect(Locale.from('es_419')).toEqual({ lang: 'es', region: '419', script: undefined });
+        expect(() => Locale.from('es-419')).not.toThrow();
+        expect(() => Locale.from('es_419')).not.toThrow();
     });
 
-    it('should get hyphen code consistently', () => {
-        expect(Locale.toHyphenCode('en')).toBe('en');
-        expect(Locale.toHyphenCode('en-us')).toBe('en-US');
-        expect(Locale.toHyphenCode('en-US')).toBe('en-US');
-        expect(Locale.toHyphenCode('EN-US')).toBe('en-US');
-        expect(Locale.toHyphenCode('en_us')).toBe('en-US');
-        expect(Locale.toHyphenCode('en_US')).toBe('en-US');
-        expect(Locale.toHyphenCode('EN_US')).toBe('en-US');
+    it('should cache created locale objects', () => {
+        expect(Locale.from('en_US')).toBe(Locale.from('en-us'));
     });
 
-    it('should get underscore code consistently', () => {
-        expect(Locale.toUnderscoreCode('en')).toBe('en');
-        expect(Locale.toUnderscoreCode('en-us')).toBe('en_US');
-        expect(Locale.toUnderscoreCode('en-US')).toBe('en_US');
-        expect(Locale.toUnderscoreCode('EN-US')).toBe('en_US');
-        expect(Locale.toUnderscoreCode('en_us')).toBe('en_US');
-        expect(Locale.toUnderscoreCode('en_US')).toBe('en_US');
-        expect(Locale.toUnderscoreCode('EN_US')).toBe('en_US');
+    it('should provide underscore code', () => {
+        expect(Locale.from('en').code).toBe('en');
+        expect(Locale.from('en-us').code).toBe('en_US');
+        expect(Locale.from('en-US').code).toBe('en_US');
+        expect(Locale.from('EN-US').code).toBe('en_US');
+        expect(Locale.from('en_us').code).toBe('en_US');
+        expect(Locale.from('en_US').code).toBe('en_US');
+        expect(Locale.from('EN_US').code).toBe('en_US');
     });
 
-    it('should get URL slug consistently', () => {
-        expect(Locale.toUrlSlug('en')).toBe('en');
-        expect(Locale.toUrlSlug('en-us')).toBe('en-us');
-        expect(Locale.toUrlSlug('en-US')).toBe('en-us');
-        expect(Locale.toUrlSlug('EN-US')).toBe('en-us');
-        expect(Locale.toUrlSlug('en_us')).toBe('en-us');
-        expect(Locale.toUrlSlug('en_US')).toBe('en-us');
-        expect(Locale.toUrlSlug('EN_US')).toBe('en-us');
+    it('should provide ISO code', () => {
+        expect(Locale.from('en').isoCode).toBe('en');
+        expect(Locale.from('en-us').isoCode).toBe('en-US');
+        expect(Locale.from('en-US').isoCode).toBe('en-US');
+        expect(Locale.from('EN-US').isoCode).toBe('en-US');
+        expect(Locale.from('en_us').isoCode).toBe('en-US');
+        expect(Locale.from('en_US').isoCode).toBe('en-US');
+        expect(Locale.from('EN_US').isoCode).toBe('en-US');
     });
 
-    it('should get neutral language code consistently', () => {
-        expect(Locale.toNeutralLanguageCode('en')).toBe('en');
-        expect(Locale.toNeutralLanguageCode('en-us')).toBe('en');
-        expect(Locale.toNeutralLanguageCode('en-US')).toBe('en');
-        expect(Locale.toNeutralLanguageCode('EN-US')).toBe('en');
-        expect(Locale.toNeutralLanguageCode('en_us')).toBe('en');
-        expect(Locale.toNeutralLanguageCode('en_US')).toBe('en');
-        expect(Locale.toNeutralLanguageCode('EN_US')).toBe('en');
+    it('should provide URL slug', () => {
+        expect(Locale.from('en').slug).toBe('en');
+        expect(Locale.from('en-us').slug).toBe('en-us');
+        expect(Locale.from('en-US').slug).toBe('en-us');
+        expect(Locale.from('EN-US').slug).toBe('en-us');
+        expect(Locale.from('en_us').slug).toBe('en-us');
+        expect(Locale.from('en_US').slug).toBe('en-us');
+        expect(Locale.from('EN_US').slug).toBe('en-us');
     });
 
-    it('should get region code consistently', () => {
-        expect(Locale.toRegionCode('en')).toBe(undefined);
-        expect(Locale.toRegionCode('en-us')).toBe('US');
-        expect(Locale.toRegionCode('en-US')).toBe('US');
-        expect(Locale.toRegionCode('EN-US')).toBe('US');
-        expect(Locale.toRegionCode('en_us')).toBe('US');
-        expect(Locale.toRegionCode('en_US')).toBe('US');
-        expect(Locale.toRegionCode('EN_US')).toBe('US');
+    it('should provide language code', () => {
+        expect(Locale.from('en').lang).toBe('en');
+        expect(Locale.from('en-us').lang).toBe('en');
+        expect(Locale.from('en-US').lang).toBe('en');
+        expect(Locale.from('EN-US').lang).toBe('en');
+        expect(Locale.from('en_us').lang).toBe('en');
+        expect(Locale.from('en_US').lang).toBe('en');
+        expect(Locale.from('EN_US').lang).toBe('en');
     });
 
-    it('should check if two locales are equal supporting multiple input formats', () => {
+    it('should provide region code', () => {
+        expect(Locale.from('en').region).toBe(undefined);
+        expect(Locale.from('en-us').region).toBe('US');
+        expect(Locale.from('en-US').region).toBe('US');
+        expect(Locale.from('EN-US').region).toBe('US');
+        expect(Locale.from('en_us').region).toBe('US');
+        expect(Locale.from('en_US').region).toBe('US');
+        expect(Locale.from('EN_US').region).toBe('US');
+    });
+
+    it('should check if two locales are equal', () => {
         // eslint-disable-next-line @typescript-eslint/naming-convention
         const en_US = Locale.from('en-US');
         // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -95,7 +99,32 @@ describe('Locale', () => {
         expect(Locale.isEqual(de_DE, en_US)).toBe(false);
 
         expect(Locale.isEqual('en_US', 'en-us')).toBe(true);
-        expect(Locale.isEqual('en_US', { lang: 'en', region: 'US', script: undefined })).toBe(true);
+        expect(Locale.isEqual('en_US', Locale.from('en_US'))).toBe(true);
+    });
+
+    it('should check if two locales are of the same language', () => {
+        expect(Locale.isSameLang(Locale.from('en-US'), Locale.from('en-GB'))).toBe(true);
+        expect(Locale.isSameLang('en-US', Locale.from('en-GB'))).toBe(true);
+        expect(Locale.isSameLang('en-us', 'en_GB')).toBe(true);
+        expect(Locale.isSameLang('en-FR', 'en')).toBe(true);
+
+        expect(Locale.isSameLang('zh_Hant', 'zh_Hans')).toBe(true);
+
+        expect(Locale.isSameLang('en_US', 'de_DE')).toBe(false);
+        expect(Locale.isSameLang('en_US', 'fr')).toBe(false);
+    });
+
+    it('should check if two locales are of the same region', () => {
+        expect(Locale.isSameRegion(Locale.from('en-US'), Locale.from('es-US'))).toBe(true);
+        expect(Locale.isSameRegion('en-US', Locale.from('es-US'))).toBe(true);
+        expect(Locale.isSameRegion('en-us', 'es_US')).toBe(true);
+
+        // Region-independent locales (with no region) are never considered of the same region.
+        expect(Locale.isSameRegion('en', 'en')).toBe(false);
+
+        expect(Locale.isSameRegion('en-US', 'es_ES')).toBe(false);
+        expect(Locale.isSameRegion('en_US', 'de_DE')).toBe(false);
+        expect(Locale.isSameRegion('en_US', 'fr')).toBe(false);
     });
 
     it('should tell if it is an RTL language', () => {
