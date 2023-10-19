@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
+import { isNotUndefined } from '@technically/is-not-undefined';
+
 export interface Locale {
     /**
      * Full locale code with underscores.
@@ -51,6 +53,12 @@ const CACHE = new Map<Locale.AnyCode, Locale>();
 
 export namespace Locale {
     export type AnyCode = Code | IsoCode | UrlSlug;
+    /**
+     * Shortest possible slug that can identify a locale for the given newsroom.
+     * This can be full language code or lowercase region code if they're unanbiguously identify a locale
+     * or full locale slug if nothing else applies.
+     */
+    export type AnySlug = UrlSlug | LanguageCode | LowercaseRegionCode;
 
     type HyphenCode = string;
     type UnderscoreCode = string;
@@ -126,10 +134,6 @@ export namespace Locale {
         return Locale.from(locale).isoCode;
     }
 
-    export function toHyphenCode(locale: AnyCode | Locale): HyphenCode {
-        return Locale.from(locale).isoCode;
-    }
-
     export function toUnderscoreCode(locale: AnyCode | Locale): UnderscoreCode {
         return Locale.from(locale).code;
     }
@@ -191,10 +195,6 @@ export namespace Locale {
 
         return al.region === bl.region;
     }
-}
-
-function isNotUndefined<T>(input: T | undefined): input is T {
-    return typeof input !== 'undefined';
 }
 
 function toPascalCase(input: string) {

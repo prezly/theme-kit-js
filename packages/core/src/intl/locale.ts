@@ -6,7 +6,7 @@ export const DEFAULT_LOCALE = 'en';
  * Use this function to determine which translations file you should load from `@prezly/theme-kit-intl` package.
  * See https://github.com/prezly/theme-nextjs-bea/blob/main/utils/lang.ts for a usage example.
  */
-export function getSupportedLocaleIsoCode(locale: Locale | Locale.Code): string {
+export function getSupportedLocaleIsoCode(locale: Locale | Locale.Code): Locale.IsoCode {
     const { isoCode, lang } = Locale.from(locale);
 
     if (isLocaleSupported(locale)) {

@@ -4,18 +4,18 @@ import {
     getDefaultLanguage,
     getLanguageFromStory,
     getNotifications,
-    LocaleObject,
 } from '@prezly/theme-kit-core';
 import { getAlgoliaSettings, PrezlyApi } from '@prezly/theme-kit-core/server';
+import { Locale } from '@prezly/theme-kit-intl';
 import type { IncomingMessage } from 'http';
 
-import { getLanguageFromNextLocaleIsoCode } from '../intl';
+import { getLanguageFromNextLocaleSlug } from '../intl';
 import type { PageProps, ServerSidePageProps } from '../types';
 
 export class NextPrezlyApi extends PrezlyApi {
     async getNewsroomServerSideProps(
         request?: IncomingMessage,
-        nextLocaleIsoCode?: string,
+        localeSlug?: string,
         story?: Pick<Story, 'culture'>,
     ): Promise<PageProps & ServerSidePageProps> {
         const [newsroom, languages, categories, themePreset] = await Promise.all([
@@ -27,11 +27,11 @@ export class NextPrezlyApi extends PrezlyApi {
 
         const currentLanguage = story
             ? getLanguageFromStory(languages, story)
-            : getLanguageFromNextLocaleIsoCode(languages, nextLocaleIsoCode);
+            : getLanguageFromNextLocaleSlug(languages, localeSlug);
         const defaultLanguage = getDefaultLanguage(languages);
 
         const { code: localeCode } = currentLanguage || defaultLanguage;
-        const locale = LocaleObject.fromAnyCode(localeCode);
+        const locale = Locale.from(localeCode);
 
         const companyInformation = getCompanyInformation(languages, locale);
 

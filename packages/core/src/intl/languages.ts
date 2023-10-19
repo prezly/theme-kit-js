@@ -120,15 +120,13 @@ export function getNotifications<
  */
 export function getShortestLocaleSlug<
     Language extends Pick<NewsroomLanguageSettings, 'code' | 'is_default'>,
->(languages: Language[], locale: Locale | Locale.AnyCode): string | false {
+>(languages: Language[], locale: Locale | Locale.AnyCode): Locale.AnySlug | false {
     const {
         code: localeCode,
         lang: langCode,
         region: regionCode,
         slug: localeSlug,
     } = Locale.from(locale);
-
-    console.log({ localeCode, langCode, regionCode });
 
     const defaultLanguage = getDefaultLanguage(languages);
     // If it's a default locale, return false (no locale needed in URL)
@@ -171,7 +169,7 @@ function getUnambiguousRegionCode<Language extends Pick<NewsroomLanguageSettings
         return undefined;
     }
 
-    if (!Number.isNaN(Number(regionCode))) {
+    if (isNumberCode(regionCode)) {
         // We don't want just numbers in our region code
         return undefined;
     }
@@ -190,32 +188,30 @@ function getUnambiguousRegionCode<Language extends Pick<NewsroomLanguageSettings
 }
 
 /**
- * Get matching language for the requested locale
- * The logic is reversed from `getShortestLocaleCode`, so that it "unwraps" the possible variants with no collisions
+ * Get matching language for the requested locale slug.
+ * The logic is reversed from `getShortestLocaleSlug`, so that it "unwraps" the possible variants with no collisions
  *
  * First:   get by exact match
  * Then:    get by matching region code part
  * Finally: get by matching language code part
  */
-export function getLanguageFromLocaleIsoCode<
+export function getLanguageFromLocaleSlug<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
->(languages: Language[], locale: Locale | Locale.AnyCode): Language | undefined {
-    const { code: localeCode, lang: langCode, region: regionCode } = Locale.from(locale);
-
+>(languages: Language[], slug: Locale.AnySlug): Language | undefined {
     return (
-        getLanguageByExactLocaleCode(languages, localeCode) ??
-        getUnambiguousLanguageByLangCode(languages, langCode) ??
-        getUnambiguousLanguageByRegionCode(languages, regionCode) ??
+        getLanguageByExactLocaleCode(languages, slug) ??
+        getUnambiguousLanguageByLangSlug(languages, slug) ??
+        getUnambiguousLanguageByRegionSlug(languages, slug) ??
         undefined
     );
 }
 
-function getUnambiguousLanguageByLangCode<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
+function getUnambiguousLanguageByLangSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
     languages: Language[],
-    langCode: Locale.LanguageCode,
+    langSlug: Locale.AnySlug,
 ) {
     const candidates = languages.filter(
-        (lang) => Locale.toNeutralLanguageCode(lang.code) === langCode,
+        (lang) => Locale.toNeutralLanguageCode(lang.code) === langSlug,
     );
 
     if (candidates.length === 1) {
@@ -225,18 +221,22 @@ function getUnambiguousLanguageByLangCode<Language extends Pick<NewsroomLanguage
     return undefined;
 }
 
-function getUnambiguousLanguageByRegionCode<
+function getUnambiguousLanguageByRegionSlug<
     Language extends Pick<NewsroomLanguageSettings, 'code'>,
->(languages: Language[], regionCode: Locale.RegionCode | undefined) {
-    if (!regionCode) {
+>(languages: Language[], regionSlug: Locale.AnySlug | undefined) {
+    if (!regionSlug || isNumberCode(regionSlug)) {
         return undefined;
     }
 
-    const candidates = languages.filter((lang) => Locale.isRegionCode(lang.code, regionCode));
+    const candidates = languages.filter((lang) => Locale.isRegionCode(lang.code, regionSlug));
 
     if (candidates.length === 1) {
         return candidates[0];
     }
 
     return undefined;
+}
+
+export function isNumberCode(code: string) {
+    return !Number.isNaN(Number(code));
 }

@@ -1,5 +1,5 @@
 import type { Category, Story } from '@prezly/sdk';
-import type { LocaleObject } from '@prezly/theme-kit-core';
+import type { Locale } from '@prezly/theme-kit-intl';
 import { useEffect } from 'react';
 
 import { useCurrentLocale } from '../newsroom-context';
@@ -13,7 +13,7 @@ async function fetchStories<T extends Story = Story>(
     pageSize: number,
     withHighlightedStory: boolean,
     category?: Category,
-    locale?: LocaleObject,
+    locale?: Locale,
     include?: (keyof Story.ExtraFields)[],
     pinning?: boolean,
     filterQuery?: Object,
@@ -32,7 +32,7 @@ async function fetchStories<T extends Story = Story>(
             include,
             pinning,
             ...(locale && {
-                localeCode: locale.toUnderscoreCode(),
+                localeCode: locale.code,
             }),
             filterQuery,
         }),

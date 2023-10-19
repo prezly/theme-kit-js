@@ -1,7 +1,7 @@
 import type { Category } from '@prezly/sdk';
+import { Locale } from '@prezly/theme-kit-intl';
 
 import type { AlgoliaCategoryRef } from '../types';
-import type { Locale } from '@prezly/theme-kit-intl';
 
 function isAlgoliaCategory(
     category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
@@ -17,7 +17,7 @@ interface LocalizedCategoryData {
 
 export function getLocalizedCategoryData(
     category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
-    locale: Locale,
+    locale: Locale | Locale.AnyCode,
 ): LocalizedCategoryData {
     if (isAlgoliaCategory(category)) {
         return {
@@ -27,11 +27,13 @@ export function getLocalizedCategoryData(
         };
     }
 
+    const { code } = Locale.from(locale);
+
     const { i18n } = category;
     const populatedLocales = Object.keys(i18n).filter((localeCode) => i18n[localeCode].name);
     const targetLocale =
-        populatedLocales.find((localeCode) => localeCode === locale.code) ||
-        populatedLocales.find((localeCode) => i18n[localeCode].name === category.display_name) ||
+        populatedLocales.find((localeCode) => localeCode === code) ??
+        populatedLocales.find((localeCode) => i18n[localeCode].name === category.display_name) ??
         populatedLocales[0];
 
     const { locale: _, ...localizedData } = i18n[targetLocale];

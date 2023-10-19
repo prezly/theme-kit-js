@@ -111,7 +111,7 @@ export function PageSeo({
                 url: canonicalUrl,
                 title: pageTitle,
                 description: pageDescription,
-                locale: currentLocale.toUnderscoreCode(),
+                locale: currentLocale.code,
                 images: [
                     {
                         url: sharingImageUrl,
