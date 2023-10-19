@@ -4,7 +4,7 @@ module.exports = {
         project: ['./tsconfig.eslint.json'],
         tsconfigRootDir: __dirname,
     },
-    rules: {},
+    rules: { 'func-style': 'off' },
     ignorePatterns: ['next-env.d.ts', 'build/', 'tailwind.config.js', 'postcss.config.js'],
     overrides: [
         {
