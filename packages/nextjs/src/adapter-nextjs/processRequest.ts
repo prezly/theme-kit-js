@@ -1,7 +1,7 @@
-import { assertServerEnv, getShortestLocaleCode, LocaleObject } from '@prezly/theme-kit-core';
+import { assertServerEnv, getShortestLocaleSlug } from '@prezly/theme-kit-core';
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
-import { getRedirectToCanonicalLocale } from '../intl';
+import { getRedirectToCanonicalLocaleUrl } from '../intl';
 import type { PageProps, ServerSidePageProps } from '../types';
 
 /**
@@ -19,7 +19,7 @@ export function processRequest<Props>(
     canonicalUrl?: string,
 ): GetServerSidePropsResult<Props> {
     assertServerEnv('processRequest');
-    const { locale: nextLocale, query, res } = context;
+    const { locale: requestedLocaleSlug, query, res } = context;
 
     if (process.env.NODE_ENV === 'production') {
         // Since Next 13, Cache-Control header set in `next.config.js` is overwritten by Next in production, effectively bypassing any caching systems setup on top of the theme.
@@ -31,18 +31,17 @@ export function processRequest<Props>(
 
     // If no locale was provided by Next, it most likely means that the theme is not supporting multi-language.
     // In that case we won't show 404 page.
-    if (!localeResolved && nextLocale) {
+    if (!localeResolved && requestedLocaleSlug) {
         return { notFound: true };
     }
 
     if (canonicalUrl) {
         const { languages, localeCode } = pageProps.newsroomContextProps;
-        const currentLocale = LocaleObject.fromAnyCode(localeCode);
-        const shortestLocaleCode = getShortestLocaleCode(languages, currentLocale);
+        const shortestLocaleSlug = getShortestLocaleSlug(languages, localeCode);
 
-        const redirect = getRedirectToCanonicalLocale(
-            shortestLocaleCode,
-            nextLocale,
+        const redirect = getRedirectToCanonicalLocaleUrl(
+            shortestLocaleSlug,
+            requestedLocaleSlug,
             canonicalUrl,
             query,
         );

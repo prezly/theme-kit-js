@@ -3,13 +3,7 @@ import { Culture, type NewsroomLanguageSettings } from '@prezly/sdk';
 /**
  * This data is pulled from The Good Newsroom (with some extra cultures) and reduced to only fields required by tests.
  */
-export const LANGUAGES: Record<
-    string,
-    Pick<
-        NewsroomLanguageSettings,
-        'locale' | 'is_default' | 'public_stories_count' | 'code' | 'company_information'
-    >
-> = {
+export const LANGUAGES = {
     nl_BE: {
         code: 'nl_BE',
         locale: {
@@ -401,4 +395,10 @@ export const LANGUAGES: Record<
             },
         },
     },
-};
+} satisfies Record<
+    string,
+    Pick<
+        NewsroomLanguageSettings,
+        'locale' | 'is_default' | 'public_stories_count' | 'code' | 'company_information'
+    >
+>;

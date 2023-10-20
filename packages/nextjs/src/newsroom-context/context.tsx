@@ -8,8 +8,9 @@ import type {
     NewsroomThemePreset,
     Notification,
 } from '@prezly/sdk';
-import { DEFAULT_LOCALE, LocaleObject } from '@prezly/theme-kit-core';
+import { DEFAULT_LOCALE } from '@prezly/theme-kit-core';
 import type { AlgoliaSettings } from '@prezly/theme-kit-core/server';
+import { Locale } from '@prezly/theme-kit-intl';
 import type { PropsWithChildren } from 'react';
 import { createContext, useMemo } from 'react';
 
@@ -46,7 +47,7 @@ export interface NewsroomContextType {
     /**
      * Currently chosen locale
      */
-    locale: LocaleObject;
+    locale: Locale;
     /**
      * Newsroom user-facing notifications (usually displayed as top-edge banners)
      */
@@ -87,10 +88,7 @@ export function NewsroomContextProvider({
     algoliaSettings,
     children,
 }: PropsWithChildren<NewsroomContextProps>) {
-    const locale = useMemo(
-        () => LocaleObject.fromAnyCode(localeCode || DEFAULT_LOCALE),
-        [localeCode],
-    );
+    const locale = useMemo(() => Locale.from(localeCode || DEFAULT_LOCALE), [localeCode]);
 
     return (
         <NewsroomContext.Provider

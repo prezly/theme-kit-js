@@ -1,11 +1,9 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
-
-import type { LangCode, LocaleCode } from '../../intl';
-import { LocaleObject } from '../../intl';
+import { Locale } from '@prezly/theme-kit-intl';
 
 interface LocaleWithLanguage<Language> {
     language: Language;
-    locale: LocaleObject;
+    locale: Locale;
 }
 
 /**
@@ -14,19 +12,21 @@ interface LocaleWithLanguage<Language> {
 export function bindLanguagesWithLocales<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
     languages: Language[],
 ) {
-    const localesByLangCode = new Map<LangCode, Map<LocaleCode, LocaleWithLanguage<Language>>>();
+    const localesByLangCode = new Map<
+        Locale.LanguageCode,
+        Map<Locale.Code, LocaleWithLanguage<Language>>
+    >();
 
     languages.forEach((language) => {
-        const languageLocale = LocaleObject.fromAnyCode(language.code);
-        const regionIndependentLanguageCode = languageLocale.toNeutralLanguageCode();
-        let currentLocale = localesByLangCode.get(regionIndependentLanguageCode);
+        const locale = Locale.from(language.code);
+        let currentLocale = localesByLangCode.get(locale.lang);
 
         if (!currentLocale) {
             currentLocale = new Map();
-            localesByLangCode.set(regionIndependentLanguageCode, currentLocale);
+            localesByLangCode.set(locale.lang, currentLocale);
         }
 
-        currentLocale.set(languageLocale.toHyphenCode(), { language, locale: languageLocale });
+        currentLocale.set(locale.isoCode, { language, locale });
     });
 
     return localesByLangCode;

@@ -1,6 +1,6 @@
 import type { Category } from '@prezly/sdk';
+import { Locale } from '@prezly/theme-kit-intl';
 
-import type { LocaleObject } from '../intl';
 import type { AlgoliaCategoryRef } from '../types';
 
 function isAlgoliaCategory(
@@ -17,7 +17,7 @@ interface LocalizedCategoryData {
 
 export function getLocalizedCategoryData(
     category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
-    locale: LocaleObject,
+    locale: Locale | Locale.AnyCode,
 ): LocalizedCategoryData {
     if (isAlgoliaCategory(category)) {
         return {
@@ -27,12 +27,13 @@ export function getLocalizedCategoryData(
         };
     }
 
-    const targetLocaleCode = locale.toUnderscoreCode();
+    const { code } = Locale.from(locale);
+
     const { i18n } = category;
     const populatedLocales = Object.keys(i18n).filter((localeCode) => i18n[localeCode].name);
     const targetLocale =
-        populatedLocales.find((localeCode) => localeCode === targetLocaleCode) ||
-        populatedLocales.find((localeCode) => i18n[localeCode].name === category.display_name) ||
+        populatedLocales.find((localeCode) => localeCode === code) ??
+        populatedLocales.find((localeCode) => i18n[localeCode].name === category.display_name) ??
         populatedLocales[0];
 
     const { locale: _, ...localizedData } = i18n[targetLocale];
@@ -42,7 +43,7 @@ export function getLocalizedCategoryData(
 
 export function getCategoryUrl(
     category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
-    locale: LocaleObject,
+    locale: Locale,
 ): string {
     const { slug } = getLocalizedCategoryData(category, locale);
     return `/category/${slug}`;
@@ -50,10 +51,9 @@ export function getCategoryUrl(
 
 export function getCategoryHasTranslation(
     category: Pick<Category, 'i18n'>,
-    locale: LocaleObject,
+    locale: Locale,
 ): boolean {
-    const targetLocaleCode = locale.toUnderscoreCode();
     const { i18n } = category;
     const populatedLocales = Object.keys(i18n).filter((localeCode) => i18n[localeCode].name);
-    return Boolean(populatedLocales.find((localeCode) => localeCode === targetLocaleCode));
+    return Boolean(populatedLocales.find((localeCode) => localeCode === locale.code));
 }

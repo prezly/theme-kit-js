@@ -1,19 +1,19 @@
-import type { LocaleCode, LocaleObject } from '../intl';
+import { Locale } from '@prezly/theme-kit-intl';
 
 import { getAlternateLanguageLinks } from './getAlternateLanguageLinks';
 
-function lang(code: LocaleCode, isDefault = false) {
+function lang(code: Locale.Code, isDefault = false) {
     return { code, is_default: isDefault };
 }
 
-function getTranslationUrl(locale: LocaleObject) {
-    return `translationUrl/${locale.toHyphenCode()}`;
+function getTranslationUrl(locale: Locale) {
+    return `translationUrl/${locale.isoCode}`;
 }
 
-function generateTranslationUrl(locale: LocaleObject) {
+function generateTranslationUrl(locale: Locale) {
     const translationUrl = getTranslationUrl(locale);
 
-    return `http://localhost:3000/${locale.toNeutralLanguageCode()}/${translationUrl}`;
+    return `http://localhost:3000/${locale.lang}/${translationUrl}`;
 }
 
 describe('getAlternateLanguageLinks', () => {
@@ -130,8 +130,9 @@ describe('getAlternateLanguageLinks', () => {
         const links = getAlternateLanguageLinks(
             [lang('en-US'), lang('fr'), lang('fr-FR', true)],
             (locale) => {
-                const translationUrl =
-                    locale.toHyphenCode() === 'en-US' ? undefined : getTranslationUrl(locale);
+                const translationUrl = Locale.isEqual(locale, 'en-US')
+                    ? undefined
+                    : getTranslationUrl(locale);
 
                 if (translationUrl) {
                     return generateTranslationUrl(locale);

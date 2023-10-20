@@ -1,5 +1,5 @@
 import type { Story } from '@prezly/sdk';
-import { DEFAULT_PAGE_SIZE, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
+import { DEFAULT_PAGE_SIZE, getLocalizedCategoryData } from '@prezly/theme-kit-core';
 import type {
     GetServerSidePropsContext,
     GetServerSidePropsResult,
@@ -136,11 +136,9 @@ export async function getCategoryPageStaticPaths(): Promise<GetStaticPathsResult
         api.getCategories(),
         api.getNewsroomDefaultLanguage(),
     ]);
-    const locale = LocaleObject.fromAnyCode(defaultLanguage.code);
-
     const paths = categories
         .map((category) => {
-            const { slug } = getLocalizedCategoryData(category, locale);
+            const { slug } = getLocalizedCategoryData(category, defaultLanguage.code);
             if (!slug) {
                 return undefined;
             }

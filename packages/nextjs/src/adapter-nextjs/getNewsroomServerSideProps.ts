@@ -18,10 +18,14 @@ export async function getNewsroomServerSideProps(
     options: Options = {},
 ) {
     assertServerEnv('getNewsroomServerSideProps');
-    const { req: request, locale } = context;
+    const { req: request, locale: localeSlug } = context;
 
     const api = getNextPrezlyApi(request);
-    const serverSideProps = await api.getNewsroomServerSideProps(request, locale, options.story);
+    const serverSideProps = await api.getNewsroomServerSideProps(
+        request,
+        localeSlug,
+        options.story,
+    );
 
     if (options.loadHomepageContacts) {
         serverSideProps.newsroomContextProps.contacts = await api.getNewsroomContacts();

@@ -1,4 +1,5 @@
-import { DEFAULT_LOCALE, getLocaleDirection, LocaleObject } from '@prezly/theme-kit-core';
+import { DEFAULT_LOCALE } from '@prezly/theme-kit-core';
+import { Locale } from '@prezly/theme-kit-intl';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 import type { PageProps } from '../types';
@@ -8,7 +9,7 @@ export class PrezlyThemeDocument extends Document {
         const {
             newsroomContextProps,
             // eslint-disable-next-line no-underscore-dangle
-        } = this.props.__NEXT_DATA__.props.pageProps as PageProps;
+        } = this.props.__NEXT_DATA__.props.pageProps as Partial<PageProps>;
 
         // In some cases (like server errors) the newsroom context props will not be loaded.
         // We need to fall back to default locale to keep the app working.
@@ -18,14 +19,12 @@ export class PrezlyThemeDocument extends Document {
     }
 
     render() {
-        const locale = LocaleObject.fromAnyCode(this.getLocaleCode());
-        // TODO: The direction can be pulled from the Language object
-        const direction = getLocaleDirection(locale);
+        const locale = Locale.from(this.getLocaleCode());
 
         return (
-            <Html lang={locale.toHyphenCode()} dir={direction}>
+            <Html lang={locale.isoCode} dir={locale.direction}>
                 <Head>
-                    <meta name="og:locale" content={locale.toHyphenCode()} />
+                    <meta name="og:locale" content={locale.isoCode} />
                 </Head>
                 <body>
                     <Main />
