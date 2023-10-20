@@ -73,4 +73,36 @@ describe('matchLanguageByLocaleSlug', () => {
             matchLanguageByLocaleSlug(Object.values(languages), 'en'),
         );
     });
+
+    it('should prefer default language if multiple languages match against shortened region code', () => {
+        const languages = {
+            nl_BE: { ...LANGUAGES.nl_BE, is_default: true },
+            fr_BE: { ...LANGUAGES.fr_BE, is_default: false },
+            en_GB: { ...LANGUAGES.en_GB, is_default: false },
+        };
+
+        expect(matchLanguageByLocaleSlug(Object.values(languages), 'be')).toBe(languages.nl_BE);
+    });
+
+    it('should prefer used languages if multiple non-default languages match against shortened region code', () => {
+        const languages = {
+            en_GB: { ...LANGUAGES.en_GB, is_default: true },
+            nl_BE: { ...LANGUAGES.nl_BE, is_default: false, public_stories_count: 0 },
+            fr_BE: { ...LANGUAGES.fr_BE, is_default: false, public_stories_count: 1 },
+        };
+
+        expect(matchLanguageByLocaleSlug(Object.values(languages), 'be')).toBe(languages.fr_BE);
+    });
+
+    it('should pick any languages if multiple non-default non-used languages match against shortened region code', () => {
+        const languages = {
+            en_GB: { ...LANGUAGES.en_GB, is_default: true },
+            nl_BE: { ...LANGUAGES.nl_BE, is_default: false, public_stories_count: 0 },
+            fr_BE: { ...LANGUAGES.fr_BE, is_default: false, public_stories_count: 1 },
+        };
+
+        expect([languages.nl_BE, languages.fr_BE]).toContain(
+            matchLanguageByLocaleSlug(Object.values(languages), 'be'),
+        );
+    });
 });
