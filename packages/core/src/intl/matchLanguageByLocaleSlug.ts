@@ -21,7 +21,8 @@ export function matchLanguageByLocaleSlug<
     const prioritizedLanguages = [...languages].sort(
         (a, b) =>
             -cmp(a.is_default, b.is_default) || // prefer default language
-            -cmp(a.public_stories_count, b.public_stories_count), // then used languages
+            -cmp(a.public_stories_count, b.public_stories_count) || // then used languages
+            -cmp(a.code, b.code), // then alphabetically by language code (for deterministic results)
     );
 
     return (
@@ -50,7 +51,10 @@ function matchLanguageByRegionSlug<Language extends Pick<NewsroomLanguageSetting
     return languages.find((lang) => Locale.isRegionCode(lang.code, regionSlug));
 }
 
-function cmp<T extends boolean | number>(a: T, b: T) {
+function cmp(a: boolean, b: boolean): number;
+function cmp(a: number, b: number): number;
+function cmp(a: string, b: string): number;
+function cmp<T extends boolean | number | string>(a: T, b: T) {
     if (a === b) return 0;
-    return Number(a) < Number(b) ? -1 : 1;
+    return a < b ? -1 : 1;
 }
