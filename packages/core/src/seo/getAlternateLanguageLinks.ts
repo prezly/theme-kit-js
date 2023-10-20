@@ -1,8 +1,7 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
 
-import { getFallbackLocale } from '../intl';
-
+import { getFallbackLocale } from './getFallbackLocale';
 import type { AlternateLanguageLink } from './types';
 import { bindLanguagesWithLocales, createAlternateLanguageLink } from './utils';
 

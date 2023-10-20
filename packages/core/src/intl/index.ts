@@ -1,4 +1,3 @@
-export { getFallbackLocale } from './getFallbackLocale';
 export { getLanguageDisplayName } from './getLanguageDisplayName';
 export {
     getCompanyInformation,
