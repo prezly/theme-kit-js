@@ -51,9 +51,6 @@ function matchLanguageByRegionSlug<Language extends Pick<NewsroomLanguageSetting
 }
 
 function cmp<T extends boolean | number>(a: T, b: T) {
-    const an = Number(a);
-    const bn = Number(b);
-
-    if (an === bn) return 0;
-    return an < bn ? -1 : 1;
+    if (a === b) return 0;
+    return Number(a) < Number(b) ? -1 : 1;
 }
