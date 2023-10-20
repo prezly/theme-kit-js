@@ -1,3 +1,4 @@
+/* eslint-disable func-style */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { PlusIcon } from '@heroicons/react/24/solid';
 import type { Meta, StoryFn } from '@storybook/react';

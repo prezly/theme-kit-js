@@ -7,8 +7,6 @@ import type { BaseProps } from './types';
 
 export interface ButtonProps extends BaseProps, ButtonHTMLAttributes<HTMLButtonElement> {
     isLoading?: boolean;
-    isDisabled?: boolean;
-    onClick?: () => void;
     contentClassName?: string;
 }
 
@@ -25,8 +23,7 @@ export const Button = forwardRef<
             icon,
             iconPlacement = 'left',
             isLoading,
-            isDisabled,
-            onClick,
+            disabled,
             children,
             contentClassName,
             ...buttonProps
@@ -38,15 +35,14 @@ export const Button = forwardRef<
             // eslint-disable-next-line react/button-has-type
             type={type}
             className={twMerge(
-                'rounded-[4px] flex items-center justify-center border-[1px] border-transparent bg-transparent',
-                className,
+                'rounded flex items-center justify-center border border-transparent bg-transparent',
                 size === 'small' ? `p-3 label-medium` : `p-4 label-large`,
                 variation === 'primary' &&
                     `
                 bg-[color:var(--prezly-accent-color)] border-[color:var(--prezly-accent-color)] text-[color:var(--prezly-accent-color-button-text)]
                 hover:bg-[color:var(--prezly-accent-color-dark)] hover:border-[color:var(--prezly-accent-color-dark)] 
-                focus:bg-[color:var(--prezly-accent-color-dark)] focus:border-2 focus:border-[color:var(--prezly-accent-color-lighter)]
-                focus-within:bg-[color:var(--prezly-accent-color-dark)] focus-within:border-2 focus-within:border-[color:var(--prezly-accent-color-lighter)]
+                focus:bg-[color:var(--prezly-accent-color-dark)] focus:border-transparent focus:shadow-[0_0_0_2px_var(--prezly-accent-color-lighter)]
+                focus-within:bg-[color:var(--prezly-accent-color-dark)] focus-within:border-transparent focus-within:shadow-[0_0_0_2px_var(--prezly-accent-color-lighter)]
                 active:bg-[color:var(--prezly-accent-color-darker)] active:border-[color:var(--prezly-accent-color-darker)]
                 disabled:bg-[color:var(--prezly-accent-color-lighter)] disabled:border-transparent
                 `,
@@ -54,23 +50,21 @@ export const Button = forwardRef<
                     `
                     bg-white border-gray-200 text-gray-800
                 hover:border-gray-300 hover:bg-gray-50
-                focus:bg-gray-50 focus:border-2 focus:border-[color:var(--prezly-accent-color-lighter)]
-                focus-within:bg-gray-50 focus-within:border-2 focus-within:border-[color:var(--prezly-accent-color-lighter)]
+                focus:bg-gray-50 focus:border-transparent focus:shadow-[0_0_0_2px_var(--prezly-accent-color-lighter)]
+                focus-within:bg-gray-50  focus-within:border-transparent focus-within:shadow-[0_0_0_2px_var(--prezly-accent-color-lighter)]
                 active:bg-gray-100 active:border-gray-400
                 disabled:bg-white disabled:border-transparent disabled:text-gray-400
                 `,
-                Boolean(icon) && !children && `ml-0 mr-0`,
+                Boolean(Icon) && Boolean(children) && `gap-2`,
+                className,
             )}
-            onClick={onClick}
-            disabled={isDisabled || isLoading}
+            disabled={disabled || isLoading}
             {...buttonProps}
         >
-            {iconPlacement === 'left' && <Icon icon={icon} iconOnly={!children} placement="left" />}
+            {iconPlacement === 'left' && <Icon icon={icon} />}
             {/* If there are no children, we insert a zero-width space to preserve the line-height */}
             <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
-            {iconPlacement === 'right' && (
-                <Icon icon={icon} iconOnly={!children} placement="right" />
-            )}
+            {iconPlacement === 'right' && <Icon icon={icon} />}
         </button>
     ),
 );
