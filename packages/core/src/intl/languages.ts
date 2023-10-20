@@ -47,6 +47,12 @@ export function getUsedLanguages<
     return languages.filter((lang) => lang.public_stories_count > 0);
 }
 
+export function getUnusedLanguages<
+    Language extends Pick<NewsroomLanguageSettings, 'public_stories_count'>,
+>(languages: Language[]): Language[] {
+    return languages.filter((lang) => lang.public_stories_count === 0);
+}
+
 export function getLanguageByExactLocaleCode<
     Language extends Pick<NewsroomLanguageSettings, 'code'>,
 >(languages: Language[], locale: Locale | Locale.AnyCode): Language | undefined {
@@ -200,8 +206,8 @@ export function matchLanguageByLocaleSlug<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
 >(languages: Language[], slug: Locale.AnySlug): Language | undefined {
     const defaultLanguage = languages.filter((lang) => lang.is_default);
-    const usedLanguages = languages.filter((lang) => lang.public_stories_count > 0);
-    const otherLanguages = languages.filter((lang) => lang.public_stories_count === 0);
+    const usedLanguages = getUsedLanguages(languages);
+    const otherLanguages = getUnusedLanguages(languages);
 
     return (
         // 1) Exact match
