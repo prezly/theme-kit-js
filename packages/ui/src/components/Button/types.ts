@@ -1,6 +1,6 @@
-import type { FunctionComponent, SVGProps } from 'react';
+import type { FunctionComponent, Ref, SVGProps } from 'react';
 
-export enum ButtonVariants {
+export enum ButtonVariant {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
 }
@@ -11,9 +11,10 @@ export enum ButtonSize {
 }
 
 export interface BaseProps {
-    variation?: `${ButtonVariants}`;
+    variation?: `${ButtonVariant}`;
     size?: `${ButtonSize}`;
     className?: string;
     icon?: FunctionComponent<Omit<SVGProps<SVGElement>, 'ref'>>;
     iconPlacement?: 'left' | 'right';
+    forwardRef?: Ref<HTMLButtonElement>;
 }

@@ -1,38 +1,26 @@
-import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
-import { forwardRef } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Icon } from './Icon';
-import type { BaseProps } from './types';
+import { type BaseProps, ButtonSize, ButtonVariant } from './types';
 
-export interface ButtonProps extends BaseProps, ButtonHTMLAttributes<HTMLButtonElement> {
-    isLoading?: boolean;
-    contentClassName?: string;
-}
-
-export const Button = forwardRef<
-    HTMLButtonElement,
-    Omit<PropsWithChildren<ButtonProps>, 'onResize' | 'onResizeCapture'>
->(
-    (
-        {
-            variation = 'primary',
-            className,
-            type = 'button',
-            size = 'default',
-            icon,
-            iconPlacement = 'left',
-            isLoading,
-            disabled,
-            children,
-            contentClassName,
-            ...buttonProps
-        },
-        ref,
-    ) => (
+export function Button({
+    variation = 'primary',
+    className,
+    forwardRef,
+    type = 'button',
+    size = 'default',
+    icon,
+    iconPlacement = 'left',
+    isLoading,
+    disabled,
+    children,
+    contentClassName,
+    ...buttonProps
+}: Button.Props) {
+    return (
         <button
-            ref={ref}
-            // eslint-disable-next-line react/button-has-type
+            ref={forwardRef}
             type={type}
             className={twMerge(
                 'rounded flex items-center justify-center border border-transparent bg-transparent',
@@ -66,7 +54,19 @@ export const Button = forwardRef<
             <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
             {iconPlacement === 'right' && <Icon icon={icon} />}
         </button>
-    ),
-);
+    );
+}
 
-Button.displayName = 'Button';
+export namespace Button {
+    export type Props = BaseProps &
+        ButtonHTMLAttributes<HTMLButtonElement> & {
+            isLoading?: boolean;
+            contentClassName?: string;
+        };
+
+    export type Variant = ButtonVariant;
+    export const Variant = ButtonVariant;
+
+    export type Size = ButtonSize;
+    export const Size = ButtonSize;
+}

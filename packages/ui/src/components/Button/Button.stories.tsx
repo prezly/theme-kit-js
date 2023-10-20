@@ -40,7 +40,7 @@ PrimaryWithIconRight.args = {
 };
 
 export const SecondaryWithIconLeft = ButtonTemplateWithChild.bind({});
-PrimaryWithIconRight.args = {
+SecondaryWithIconLeft.args = {
     ...Secondary.args,
     icon: Icon,
     iconPlacement: 'left',
