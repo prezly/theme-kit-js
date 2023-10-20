@@ -130,6 +130,16 @@ export namespace Locale {
         return obj;
     }
 
+    export function isValid(locale: AnyCode | string): boolean {
+        try {
+            Locale.from(locale);
+        } catch {
+            return false;
+        }
+
+        return true;
+    }
+
     export function isLanguageCode(locale: AnyCode | Locale, langCode: LanguageCode): boolean {
         return Locale.from(locale).lang === langCode;
     }

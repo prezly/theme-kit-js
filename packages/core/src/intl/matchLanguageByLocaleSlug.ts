@@ -2,12 +2,7 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
 
-import {
-    getLanguageByExactLocaleCode,
-    getUnusedLanguages,
-    getUsedLanguages,
-    isNumberCode,
-} from './languages';
+import { getLanguageByExactLocaleCode, isNumberCode } from './languages';
 
 /**
  * Get matching language for the requested locale slug.
@@ -23,21 +18,16 @@ import {
 export function matchLanguageByLocaleSlug<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
 >(languages: Language[], slug: Locale.AnySlug): Language | undefined {
-    const defaultLanguage = languages.filter((lang) => lang.is_default);
-    const usedLanguages = getUsedLanguages(languages);
-    const otherLanguages = getUnusedLanguages(languages);
+    const prioritizedLanguages = [...languages].sort(
+        (a, b) =>
+            -cmp(a.is_default, b.is_default) || // prefer default language
+            -cmp(a.public_stories_count, b.public_stories_count), // then used languages
+    );
 
     return (
-        // 1) Exact match
         getLanguageByExactLocaleCode(languages, slug) ??
-        // 2) Match lang code
-        matchLanguageByLangSlug(defaultLanguage, slug) ?? // prefer default language
-        matchLanguageByLangSlug(usedLanguages, slug) ?? // then used languages
-        matchLanguageByLangSlug(otherLanguages, slug) ?? // then any enabled language
-        // 3) Match region code
-        matchLanguageByRegionSlug(defaultLanguage, slug) ?? // prefer default language
-        matchLanguageByRegionSlug(usedLanguages, slug) ?? // then used languages
-        matchLanguageByRegionSlug(otherLanguages, slug) ?? // then any enabled language
+        matchLanguageByLangSlug(prioritizedLanguages, slug) ??
+        matchLanguageByRegionSlug(prioritizedLanguages, slug) ??
         undefined
     );
 }
@@ -46,13 +36,7 @@ function matchLanguageByLangSlug<Language extends Pick<NewsroomLanguageSettings,
     languages: Language[],
     langSlug: Locale.AnySlug,
 ) {
-    const candidates = languages.filter((lang) => Locale.isLanguageCode(lang.code, langSlug));
-
-    if (candidates.length === 1) {
-        return candidates[0];
-    }
-
-    return undefined;
+    return languages.find((lang) => Locale.isLanguageCode(lang.code, langSlug));
 }
 
 function matchLanguageByRegionSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
@@ -63,11 +47,13 @@ function matchLanguageByRegionSlug<Language extends Pick<NewsroomLanguageSetting
         return undefined;
     }
 
-    const candidates = languages.filter((lang) => Locale.isRegionCode(lang.code, regionSlug));
+    return languages.find((lang) => Locale.isRegionCode(lang.code, regionSlug));
+}
 
-    if (candidates.length === 1) {
-        return candidates[0];
-    }
+function cmp<T extends boolean | number>(a: T, b: T) {
+    const an = Number(a);
+    const bn = Number(b);
 
-    return undefined;
+    if (an === bn) return 0;
+    return an < bn ? -1 : 1;
 }

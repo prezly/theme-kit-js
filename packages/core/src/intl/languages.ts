@@ -20,15 +20,12 @@ export function getUsedLanguages<
     return languages.filter((lang) => lang.public_stories_count > 0);
 }
 
-export function getUnusedLanguages<
-    Language extends Pick<NewsroomLanguageSettings, 'public_stories_count'>,
->(languages: Language[]): Language[] {
-    return languages.filter((lang) => lang.public_stories_count === 0);
-}
-
 export function getLanguageByExactLocaleCode<
     Language extends Pick<NewsroomLanguageSettings, 'code'>,
 >(languages: Language[], locale: Locale | Locale.AnyCode): Language | undefined {
+    if (typeof locale === 'string' && !Locale.isValid(locale)) {
+        return undefined;
+    }
     return languages.find((lang) => Locale.isEqual(lang.code, locale));
 }
 

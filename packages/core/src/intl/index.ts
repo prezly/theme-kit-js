@@ -8,7 +8,6 @@ export {
     getLanguageByShortRegionCode,
     getLanguageFromStory,
     getNotifications,
-    getUnusedLanguages,
     getUsedLanguages,
     isNumberCode,
 } from './languages';
