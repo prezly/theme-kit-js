@@ -1,6 +1,4 @@
 import { expect } from '@playwright/test';
-import type { CultureRef } from '@prezly/sdk';
-import { Culture } from '@prezly/sdk';
 
 import { LANGUAGES } from '../__mocks__/languages';
 import { STORY } from '../__mocks__/story';
@@ -11,46 +9,11 @@ import {
     getLanguageByExactLocaleCode,
     getLanguageByNeutralLocaleCode,
     getLanguageByShortRegionCode,
-    getLanguageDisplayName,
     getLanguageFromStory,
-    getShortestLocaleSlug,
     getUsedLanguages,
 } from './languages';
 
 const ALL_LANGUAGES = Object.values(LANGUAGES);
-
-describe('getLanguageDisplayName', () => {
-    it('should return shortened name when language is the only culture', () => {
-        const languages = [LANGUAGES.en, LANGUAGES.fr];
-
-        expect(getLanguageDisplayName(LANGUAGES.en, languages)).toBe('English');
-        expect(getLanguageDisplayName(LANGUAGES.fr, languages)).toBe('Français');
-    });
-
-    it('should return full name when language is NOT the only culture', () => {
-        const languages = [LANGUAGES.nl_BE, LANGUAGES.nl_NL];
-
-        expect(getLanguageDisplayName(LANGUAGES.nl_BE, languages)).toBe('Nederlands (België)');
-        expect(getLanguageDisplayName(LANGUAGES.nl_NL, languages)).toBe('Nederlands (Nederland)');
-    });
-
-    it('should properly cut region from an RTL language name', () => {
-        const languages = [
-            {
-                locale: {
-                    code: 'ar_AE',
-                    locale: 'ar_AE',
-                    language_code: 'ar',
-                    name: 'Arabic (UAE)',
-                    native_name: 'العربية (الإمارات العربية المتحدة)',
-                    direction: Culture.TextDirection.RTL,
-                } satisfies CultureRef,
-            },
-        ];
-
-        expect(getLanguageDisplayName(languages[0], languages)).toBe('العربية');
-    });
-});
 
 describe('getDefaultLanguage', () => {
     it('returns the actual default language', () => {
@@ -148,36 +111,5 @@ describe('getCompanyInformation', () => {
         expect(getCompanyInformation(ALL_LANGUAGES, 'de-DE')).toEqual(
             LANGUAGES.en.company_information,
         );
-    });
-});
-
-describe('getShortestLocaleSlug', () => {
-    it('returns false for default language', () => {
-        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'en')).toBe(false);
-    });
-
-    it('returns neutral language code if it is the only culture with that language', () => {
-        expect(
-            getShortestLocaleSlug(
-                ALL_LANGUAGES.filter(({ code }) => code !== 'es_419'),
-                'es-ES',
-            ),
-        ).toBe('es');
-    });
-
-    it('returns region code if it is the only culture with that region', () => {
-        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'en-US')).toBe('us');
-        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'en-GB')).toBe('gb');
-        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'nl-NL')).toBe('nl-nl'); // cannot use `nl`, as it collides with language code
-        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'fr')).toBe('fr');
-    });
-
-    it('returns full code if it can not be shortened', () => {
-        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'fr-BE')).toBe('fr-be');
-        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'nl-BE')).toBe('nl-be');
-    });
-
-    it('returns full code when trying to shorten to region code for es-419', () => {
-        expect(getShortestLocaleSlug(ALL_LANGUAGES, 'es-419')).toBe('es-419');
     });
 });
