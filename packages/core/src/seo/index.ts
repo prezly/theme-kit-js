@@ -1,2 +1,2 @@
-export * from './getAlternateLanguageLinks';
-export * from './types';
+export { getAlternateLanguageLinks } from './getAlternateLanguageLinks';
+export type { AlternateLanguageLink } from './types';
