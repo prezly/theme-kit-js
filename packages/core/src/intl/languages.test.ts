@@ -1,5 +1,3 @@
-import { expect } from '@playwright/test';
-
 import { LANGUAGES } from '../__mocks__/languages';
 import { STORY } from '../__mocks__/story';
 
