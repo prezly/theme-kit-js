@@ -1,3 +1,4 @@
+import type { Locale } from '@prezly/theme-kit-intl';
 import type { Redirect } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import { stringify } from 'querystring';
@@ -8,8 +9,8 @@ import { getResolvedPath } from '../utils';
 export const DUMMY_DEFAULT_LOCALE = 'qps-ploc';
 
 export function getRedirectToCanonicalLocaleUrl(
-    shortestLocaleSlug: string | false,
-    requestedLocaleSlug: string | undefined,
+    shortestLocaleSlug: Locale.AnySlug | false,
+    requestedLocaleSlug: Locale.AnySlug | undefined,
     redirectPath: string,
     query?: ParsedUrlQuery,
 ): Redirect | undefined {
