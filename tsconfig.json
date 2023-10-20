@@ -7,6 +7,7 @@
     "downlevelIteration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "ignoreDeprecations": "5.0",
     "isolatedModules": true,
     "importsNotUsedAsValues": "error",
     "jsx": "react-jsx",
@@ -29,6 +30,7 @@
   "references": [
     { "path": "./packages/nextjs" },
     { "path": "./packages/core" },
+    { "path": "./packages/ui" },
     { "path": "./packages/intl" }
   ]
 }

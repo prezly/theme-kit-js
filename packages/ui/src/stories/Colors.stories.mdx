@@ -1,0 +1,111 @@
+import { Meta } from '@storybook/addon-docs';
+import colors from 'tailwindcss/colors';
+
+import { ColorPalette, Title } from './_components';
+
+<Meta title="Design Tokens/Colors" />
+
+# Color Palette
+
+This design system leverages a purposeful set of color styles as the perfect starting point for any newsroom.
+
+<a
+    className="sb-unstyled text-indigo-600"
+    href="https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=607-13157&mode=design&t=Ir87ygVLMpgNnBbO-4"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    See in Figma Design System
+</a>
+
+<br />
+<br />
+
+<Title
+    title="Primary Colors"
+    description="These are the main colors that make up the majority of the colors used in themes."
+/>
+
+<ColorPalette
+    title="Gray"
+    description="Gray is a neutral color and is the foundation of the color system. Almost everything — text, form fields, backgrounds, dividers — are usually gray."
+    colors={[
+        { name: 'Gray-50', hex: colors.gray[50] },
+        { name: 'Gray-100', hex: colors.gray[100] },
+        { name: 'Gray-200', hex: colors.gray[200] },
+        { name: 'Gray-300', hex: colors.gray[300] },
+        { name: 'Gray-400', hex: colors.gray[400] },
+        { name: 'Gray-500', hex: colors.gray[500] },
+        { name: 'Gray-600', hex: colors.gray[600] },
+        { name: 'Gray-700', hex: colors.gray[700] },
+        { name: 'Gray-800', hex: colors.gray[800] },
+        { name: 'Gray-900', hex: colors.gray[900] },
+        { name: 'Gray-950', hex: colors.gray[950] },
+    ]}
+/>
+
+<ColorPalette
+    title="Accent"
+    description={`The accent color is the brand’s "primary" color, and is used across all interactive elements such as buttons, links, inputs, etc.`}
+    colors={[
+        { name: 'Lighter (+12 light)', hex: '#5B8AF0' },
+        { name: 'Light (+6 light)', hex: '#3F76ED' },
+        { name: 'Base', hex: '#2563EB' },
+        { name: 'Dark (-6 light)', hex: '#1453DC' },
+        { name: 'Darker (-12 light)', hex: '#1453DC' },
+    ]}
+/>
+
+<ColorPalette
+    title="Status"
+    description="Status colors are used when there’s a need to inform users about some actions they’ve performed. For example, wrong email format in the subscription form."
+    colors={[
+        { name: 'Success', hex: '#12B76A' },
+        { name: 'Warning', hex: '#FDB022' },
+        { name: 'Error', hex: '#F04438' },
+    ]}
+/>
+
+<br />
+<br />
+
+<Title
+    title="Shades of Gray"
+    description="Along with our primary Gray color, it’s helpful to offer users the ability to change the tone to better fit on their own brand. These are some of the predefined tones."
+/>
+
+<ColorPalette
+    title="Zinc"
+    description="Zinc is another neutral color and can be used as an alternative to Gray."
+    colors={[
+        { name: 'Zinc-50', hex: colors.zinc[50] },
+        { name: 'Zinc-100', hex: colors.zinc[100] },
+        { name: 'Zinc-200', hex: colors.zinc[200] },
+        { name: 'Zinc-300', hex: colors.zinc[300] },
+        { name: 'Zinc-400', hex: colors.zinc[400] },
+        { name: 'Zinc-500', hex: colors.zinc[500] },
+        { name: 'Zinc-600', hex: colors.zinc[600] },
+        { name: 'Zinc-700', hex: colors.zinc[700] },
+        { name: 'Zinc-800', hex: colors.zinc[800] },
+        { name: 'Zinc-900', hex: colors.zinc[900] },
+        { name: 'Zinc-950', hex: colors.zinc[950] },
+    ]}
+/>
+
+<ColorPalette
+    title="Neutral"
+    description="Neutral is another neutral color and can be used as an alternative to Gray."
+    colors={[
+        { name: 'Neutral-50', hex: colors.neutral[50] },
+        { name: 'Neutral-100', hex: colors.neutral[100] },
+        { name: 'Neutral-200', hex: colors.neutral[200] },
+        { name: 'Neutral-300', hex: colors.neutral[300] },
+        { name: 'Neutral-400', hex: colors.neutral[400] },
+        { name: 'Neutral-500', hex: colors.neutral[500] },
+        { name: 'Neutral-600', hex: colors.neutral[600] },
+        { name: 'Neutral-700', hex: colors.neutral[700] },
+        { name: 'Neutral-800', hex: colors.neutral[800] },
+        { name: 'Neutral-900', hex: colors.neutral[900] },
+        { name: 'Neutral-950', hex: colors.neutral[950] },
+    ]}
+/>

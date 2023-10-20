@@ -1,0 +1,47 @@
+# Workflow name
+name: 'Chromatic Publish'
+
+# Event for the workflow
+on: push
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+# List of jobs
+jobs:
+    chromatic:
+        # Operating System
+        runs-on: ubuntu-latest
+
+        defaults:
+          run:
+            working-directory: ./packages/ui
+
+        # Job steps
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0 # 👈 Required to retrieve git history
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Install Chromatic
+              run: npm install --save-dev chromatic
+
+            #👇 Adds Chromatic as a step in the workflow
+            - uses: chromaui/action@v1
+              name: Run Chromatic
+              # Options required for Chromatic's GitHub Action
+              with:
+                  #👇 Chromatic projectToken,
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  workingDir: ./packages/ui # 👈 Working directory for the Chromatic CLI
+                  exitZeroOnChanges: true # 👈 Option to prevent the workflow from failing
+                  skip: '@(renovate/**|dependabot/**)' # 👈 Option to skip Chromatic builds for PRs created by Renovate and Dependabot
+                  onlyChanged: true # 👈 Enable TurboSnap (only update snapshots for changed files)
+                  externals: |
+                      - '/styles/**'
+
