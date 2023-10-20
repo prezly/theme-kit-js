@@ -10,10 +10,8 @@ import { getLanguageByExactLocaleCode, isNumberCode } from './languages';
  *
  * The order of checks is:
  * - exact locale slug match
- * - match language code, preferring non-default languages
- * - match region code, preferring non-default languages
- * - match language code across all languages
- * - match region code across all languages
+ * - match language code (preferring default, then used languages, then the rest)
+ * - match region code (preferring default, then used languages, then the rest)
  */
 export function matchLanguageByLocaleSlug<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
