@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.37",
-    "@types/parse-data-url": "3.0.0"
+    "@types/parse-data-url": "3.0.1"
   },
   "engines": {
     "node": ">= 16.x",
