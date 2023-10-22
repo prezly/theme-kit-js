@@ -27,19 +27,19 @@ export function Button({
                 size === 'small' ? `p-3 label-medium` : `p-4 label-large`,
                 variation === 'primary' &&
                     `
-                bg-[color:var(--prezly-accent-color)] border-[color:var(--prezly-accent-color)] text-[color:var(--prezly-accent-color-button-text)]
-                hover:bg-[color:var(--prezly-accent-color-dark)] hover:border-[color:var(--prezly-accent-color-dark)] 
-                focus:bg-[color:var(--prezly-accent-color-dark)] focus:border-transparent focus:ring-2 focus:ring-[color:var(--prezly-accent-color-lighter)]
-                focus-within:bg-[color:var(--prezly-accent-color-dark)] focus-within:border-transparent focus-within:ring-2 focus-within:ring-[color:var(--prezly-accent-color-lighter)]
-                active:bg-[color:var(--prezly-accent-color-darker)] active:border-[color:var(--prezly-accent-color-darker)]
-                disabled:bg-[color:var(--prezly-accent-color-lighter)] disabled:border-transparent
+                bg-accent border-accent text-accent-button-text
+                hover:bg-accent-dark hover:border-accent-dark 
+                focus:bg-accent-dark focus:border-transparent focus:ring-2 focus:ring-accent-lighter
+                focus-within:bg-accent-dark focus-within:border-transparent focus-within:ring-2 focus-within:ring-accent-lighter
+                active:bg-accent-dark active:border-accent-dark
+                disabled:bg-accent-lighter disabled:border-transparent
                 `,
                 variation === 'secondary' &&
                     `
                     bg-white border-gray-200 text-gray-800
                 hover:border-gray-300 hover:bg-gray-50
-                focus:bg-gray-50 focus:border-transparent focus:ring-2 focus:ring-[color:var(--prezly-accent-color-lighter)]
-                focus-within:bg-gray-50 focus-within:border-transparent focus-within:ring-2 focus-within:ring-[color:var(--prezly-accent-color-lighter)]
+                focus:bg-gray-50 focus:border-transparent focus:ring-2 focus:ring-accent-lighter
+                focus-within:bg-gray-50 focus-within:border-transparent focus-within:ring-2 focus-within:ring-accent-lighter
                 active:bg-gray-100 active:border-gray-400
                 disabled:bg-white disabled:border-transparent disabled:text-gray-400
                 `,

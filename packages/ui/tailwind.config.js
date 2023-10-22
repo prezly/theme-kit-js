@@ -8,6 +8,14 @@ module.exports = {
                 success: '#12B76A',
                 warning: '#FDB022',
                 error: '#F04438',
+                accent: {
+                    DEFAULT: 'var(--prezly-accent-color)',
+                    dark: 'var(--prezly-accent-color-dark)',
+                    darker: 'var(--prezly-accent-color-darker)',
+                    light: 'var(--prezly-accent-color-light)',
+                    lighter: 'var(--prezly-accent-color-lighter)',
+                    'button-text': 'var(--prezly-accent-color-button-text)',
+                },
             },
             fontFamily: {
                 inter: ['Inter', 'sans-serif'],
