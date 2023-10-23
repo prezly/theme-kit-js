@@ -18,6 +18,8 @@ export function Button({
     contentClassName,
     ...buttonProps
 }: Button.Props) {
+    const isIconOnly = Boolean(Icon) && !children;
+
     return (
         <button
             ref={forwardRef}
@@ -44,7 +46,7 @@ export function Button({
                 disabled:bg-white disabled:border-transparent disabled:text-gray-400
                 `,
                 Boolean(Icon) && Boolean(children) && `gap-2`,
-                Boolean(Icon) && !children && `px-[1.125rem] py-4`,
+                isIconOnly && (size === 'small' ? `px-[0.84rem] py-3` : `px-[1.125rem] py-4`),
                 className,
             )}
             disabled={disabled || isLoading}
