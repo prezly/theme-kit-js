@@ -44,6 +44,7 @@ export function Button({
                 disabled:bg-white disabled:border-transparent disabled:text-gray-400
                 `,
                 Boolean(Icon) && Boolean(children) && `gap-2`,
+                Boolean(Icon) && !children && `px-4 py-3`,
                 className,
             )}
             disabled={disabled || isLoading}
