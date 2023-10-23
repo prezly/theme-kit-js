@@ -44,13 +44,15 @@ export function Button({
                 disabled:bg-white disabled:border-transparent disabled:text-gray-400
                 `,
                 Boolean(Icon) && Boolean(children) && `gap-2`,
+                Boolean(Icon) && !children && `px-[1.125rem] py-4`,
                 className,
             )}
             disabled={disabled || isLoading}
             {...buttonProps}
         >
             {iconPlacement === 'left' && <Icon icon={icon} />}
-            <span className={contentClassName}>{children}</span>
+            {/* If there are no children, we insert a zero-width space to preserve the line-height */}
+            <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
             {iconPlacement === 'right' && <Icon icon={icon} />}
         </button>
     );
