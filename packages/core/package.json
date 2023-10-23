@@ -30,13 +30,14 @@
     "@prezly/sdk": "^16.1"
   },
   "dependencies": {
+    "@prezly/theme-kit-intl": "^6.6.0",
     "@prezly/uploadcare": "^2.3.4",
     "isomorphic-fetch": "^3.0.0",
     "parse-data-url": "^4.0.1"
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.37",
-    "@types/parse-data-url": "3.0.0"
+    "@types/parse-data-url": "3.0.1"
   },
   "engines": {
     "node": ">= 16.x",

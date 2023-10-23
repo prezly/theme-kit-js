@@ -1,3 +1,5 @@
+import { isLocaleSupported } from '@prezly/theme-kit-intl';
+
 import type { LocaleObject } from './localeObject';
 
 export const DEFAULT_LOCALE = 'en';
@@ -7,76 +9,19 @@ export type RegionCode = string;
 export type LocaleCode = string;
 
 /**
- * This a list of locales that Prezly has translations for. Each code represents a language file in the `@prezly/theme-kit-intl` package.
- * See https://github.com/prezly/themes-intl-messages for more info.
- */
-const SUPPORTED_LOCALES: LocaleCode[] = [
-    'af',
-    'ar',
-    'az',
-    'be',
-    'bg',
-    'cs',
-    'da',
-    'de',
-    'el',
-    'en',
-    'es',
-    'et',
-    'fi',
-    'fil',
-    'fr',
-    'ga',
-    'he',
-    'hi',
-    'hr',
-    'hu',
-    'id',
-    'it',
-    'ja',
-    'kk',
-    'ko',
-    'lt',
-    'lv',
-    'mt',
-    'nl',
-    'no',
-    'pl',
-    'pt-BR',
-    'pt',
-    'ro',
-    'ru',
-    'sk',
-    'sl',
-    'sr',
-    'sv',
-    'sw',
-    'th',
-    'tr',
-    'uk',
-    'ur',
-    'uz',
-    'vi',
-    'zh-CN',
-    'zh-TW',
-];
-
-/**
  * Use this function to determine which translations file you should load from `@prezly/theme-kit-intl` package.
  * See https://github.com/prezly/theme-nextjs-bea/blob/main/utils/lang.ts for a usage example.
  */
 export function getSupportedLocaleIsoCode(locale: LocaleObject): string {
     const localeIsoCode = locale.toHyphenCode();
 
-    const isSupportedLocale =
-        localeIsoCode.length >= 2 && SUPPORTED_LOCALES.includes(localeIsoCode);
+    const isSupportedLocale = localeIsoCode.length >= 2 && isLocaleSupported(localeIsoCode);
     if (isSupportedLocale) {
         return localeIsoCode;
     }
 
     const language = locale.toNeutralLanguageCode();
-    const isSupportedLanguage = SUPPORTED_LOCALES.includes(language);
-    if (isSupportedLanguage) {
+    if (isLocaleSupported(language)) {
         return language;
     }
 
