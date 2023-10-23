@@ -4,3 +4,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --prezly-accent-color: #2563eb;
+        --prezly-accent-color-dark: #1453dc;
+        --prezly-accent-color-darker: #1248bf;
+        --prezly-accent-color-light: #3f76ed;
+        --prezly-accent-color-lighter: #5b8af0;
+        --prezly-accent-color-button-text: #ffffff;
+    }
+}

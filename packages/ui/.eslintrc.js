@@ -4,11 +4,10 @@ module.exports = {
         project: ['./tsconfig.eslint.json'],
         tsconfigRootDir: __dirname,
     },
-    rules: {},
     ignorePatterns: ['next-env.d.ts', 'build/', 'tailwind.config.js', 'postcss.config.js'],
     overrides: [
         {
-            files: ['**/*.test.*'],
+            files: ['**/*.test.*', '**/*.stories.*'],
             rules: {
                 'import/no-extraneous-dependencies': 'off',
             },
