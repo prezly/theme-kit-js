@@ -299,3 +299,11 @@ Default.args = {
     newsroomName: 'Test newsroom',
     locale: 'en',
 };
+
+export const WithoutThumbnailImage = HeroTemplate.bind({});
+WithoutThumbnailImage.args = {
+    story: { ...TEST_STORY, thumbnail_image: null } as any,
+    showDate: true,
+    newsroomName: 'Test newsroom',
+    locale: 'en',
+};
