@@ -27,14 +27,14 @@ const config = {
     docs: {
         autodocs: true,
     },
-    viteFinal(config, { configType }) {
+    viteFinal(config) {
         return mergeConfig(config, {
             plugins: [tsconfigPaths()],
             define: {
                 'process.env': {},
             },
             resolve: {
-                preserveSymlinks: configType === 'DEVELOPMENT' ? true : false,
+                preserveSymlinks: true,
             },
         });
     },
