@@ -13,5 +13,8 @@
         --prezly-accent-color-light: #3f76ed;
         --prezly-accent-color-lighter: #5b8af0;
         --prezly-accent-color-button-text: #ffffff;
+        --prezly-header-link-color: #374151;
+        --prezly-header-link-hover-color: #374151;
+        --prezly-placeholder-background-color: #dbeafe;
     }
 }

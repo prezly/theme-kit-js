@@ -16,6 +16,13 @@ module.exports = {
                     lighter: 'var(--prezly-accent-color-lighter)',
                     'button-text': 'var(--prezly-accent-color-button-text)',
                 },
+                header: {
+                    link: 'var(--prezly-header-link-color)',
+                    'link-hover': 'var(--prezly-header-link-color-hover)',
+                },
+                placeholder: {
+                    DEFAULT: 'var(--prezly-placeholder-background-color)',
+                },
             },
             fontFamily: {
                 inter: ['Inter', 'sans-serif'],
