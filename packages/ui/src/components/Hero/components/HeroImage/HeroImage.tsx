@@ -50,6 +50,7 @@ export function HeroImage({
         <span
             className={twMerge(
                 `h-full flex items-center justify-center p-6 bg-placeholder text-center text-large font-bold md:rounded text-header-link`,
+                `transition-transform ease-out duration-[250ms] group-hover:transform group-hover:scale-[1.05]`,
                 placeholderClassName,
             )}
         >
@@ -59,11 +60,7 @@ export function HeroImage({
                     layout="fill"
                     objectFit="contain"
                     alt="No image"
-                    className={twMerge(
-                        `block h-full w-full md:rounded transition-transform ease-out duration-[250ms] group-hover:transform group-hover:scale-[1.05]`,
-                        `bg-gray-100`,
-                        className,
-                    )}
+                    className={twMerge(`block h-full w-full md:rounded`, `bg-gray-100`, className)}
                     sizes={{ default: 256 }}
                 />
             )}
