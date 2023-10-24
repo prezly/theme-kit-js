@@ -2,13 +2,21 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declarationDir": "./build",
+    "allowJs": true,
     "jsx": "react-jsx",
     "module": "commonjs",
     "noEmit": false,
     "outDir": "./build",
     "rootDir": ".",
     "target": "esnext",
-    "typeRoots": ["../../node_modules/@types"]
+    "typeRoots": ["../../node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/components": ["src/components/"],
+      "@/components/*": ["src/components/*"],
+      "@/lib": ["src/lib/"],
+      "@/types": ["src/types.ts"]
+    }
   },
   "exclude": ["node_modules"],
   "include": ["./src", "next-env.d.ts", "tailwind.config.js"]
