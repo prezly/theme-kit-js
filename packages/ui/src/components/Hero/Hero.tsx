@@ -19,6 +19,7 @@ export interface Props {
     logo?: UploadedImage | null;
     showDate?: boolean;
     hideSubtitle?: boolean;
+    className?: string;
 }
 
 export function Hero({
@@ -29,6 +30,7 @@ export function Hero({
     logo,
     size = 'default',
     hideSubtitle,
+    className,
 }: Props) {
     const { slug, categories, title, subtitle } = story;
 
@@ -37,6 +39,7 @@ export function Hero({
             className={twMerge(
                 'flex flex-col items-center p-0 bg-white gap-0 md:gap-12 group',
                 size === 'large' ? `md:flex-row-reverse` : `md:flex-row md:p-12`,
+                className,
             )}
         >
             <Link href={`/${slug}`} locale={false} legacyBehavior>

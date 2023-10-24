@@ -17,6 +17,7 @@ export interface Props {
     logo?: UploadedImage | null;
     showDate?: boolean;
     hideSubtitle?: boolean;
+    className?: string;
 }
 
 export function StoryCard({
@@ -27,6 +28,7 @@ export function StoryCard({
     logo,
     size = 'large',
     hideSubtitle,
+    className,
 }: Props) {
     const { slug, categories, title, subtitle } = story;
 
@@ -35,6 +37,7 @@ export function StoryCard({
             className={twMerge(
                 'flex flex-row items-center p-0 bg-white group sm:max-w-[530px]',
                 size === 'large' ? `flex-col gap-0` : `md:flex-row items-start gap-4`,
+                className,
             )}
         >
             <Link href={`/${slug}`} locale={false} legacyBehavior>
