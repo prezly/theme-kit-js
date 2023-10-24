@@ -5,7 +5,7 @@ function getDesktopImageSize(heroSize: HeroImageSize) {
         case 'default':
             return 380;
         default:
-            return 520;
+            return 600;
     }
 }
 

@@ -1,8 +1,11 @@
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { Culture, UploadedImage } from '@prezly/sdk';
 import Link from 'next/link';
+import { twMerge } from 'tailwind-merge';
 
 import type { StoryWithImage } from '@/types';
 
+import { ButtonLink } from '../Button';
 import { CategoriesList } from '../CategoriesList';
 import { StoryPublicationDate } from '../StoryPublicationDate';
 
@@ -30,9 +33,19 @@ export function Hero({
     const { slug, categories, title, subtitle } = story;
 
     return (
-        <div className="flex flex-col md:flex-row items-center p-0 md:p-12 bg-white gap-0 md:gap-12 group">
+        <div
+            className={twMerge(
+                'flex flex-col items-center p-0 bg-white gap-0 md:gap-12 group',
+                size === 'large' ? `md:flex-row-reverse` : `md:flex-row md:p-12`,
+            )}
+        >
             <Link href={`/${slug}`} locale={false} legacyBehavior>
-                <div className="w-full md:w-1/2">
+                <div
+                    className={twMerge(
+                        'w-full md:w-1/2',
+                        size === 'large' ? 'aspect-[30/30]' : 'aspect-[27/17]',
+                    )}
+                >
                     <HeroImage
                         className="cursor-pointer"
                         logo={logo}
@@ -43,10 +56,15 @@ export function Hero({
                     />
                 </div>
             </Link>
-            <div className="w-full md:w-1/2 p-6 md:p-0">
-                <div className="flex items-center gap-1">
+            <div
+                className={twMerge(
+                    'w-full md:w-1/2',
+                    size === 'large' ? `p-6 md:px-12 md:py-20` : `p-6 md:p-0`,
+                )}
+            >
+                <div className="flex flex-wrap items-center gap-1">
                     {showDate && (
-                        <span className="label-large text-gray-500">
+                        <span className="label-large text-gray-500 shrink-0">
                             <StoryPublicationDate locale={locale} story={story} />
                         </span>
                     )}
@@ -66,6 +84,17 @@ export function Hero({
                             {subtitle}
                         </p>
                     )}
+                    <ButtonLink
+                        className={twMerge('mt-6 w-max', size === 'default' && `md:hidden`)}
+                        href={`/${slug}`}
+                        localeCode={false}
+                        icon={ArrowRightIcon}
+                        iconPlacement="right"
+                        size="small"
+                        variation="primary"
+                    >
+                        Read more
+                    </ButtonLink>
                 </div>
             </div>
         </div>

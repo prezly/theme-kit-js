@@ -13,7 +13,7 @@ export function CategoriesList({ categories, locale }: Props) {
         <div className="flex items-center">
             {categories.map((category, index) => (
                 <Fragment key={category.id}>
-                    {index !== 0 && <span className="label-large text-gray-500 mr-1">·</span>}
+                    {index !== 0 && <span className="label-large text-gray-500 mx-1">·</span>}
                     <CategoryLink category={category} locale={locale} />
                 </Fragment>
             ))}
