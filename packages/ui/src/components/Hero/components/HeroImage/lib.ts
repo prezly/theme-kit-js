@@ -17,10 +17,3 @@ export function getHeroImageSizes(desiredSize: HeroImageSize) {
         default: 600,
     };
 }
-
-export function getStoryImageSizes() {
-    return {
-        mobile: 420,
-        default: 720,
-    };
-}
