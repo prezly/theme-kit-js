@@ -1,10 +1,15 @@
 import type { Category, Culture } from '@prezly/sdk';
-import { getCategoryUrl, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
+import {
+    type AlgoliaCategoryRef,
+    getCategoryUrl,
+    getLocalizedCategoryData,
+    LocaleObject,
+} from '@prezly/theme-kit-core';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
 interface Props {
-    category: Category;
+    category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef;
     locale: Culture['code'];
     className?: string;
 }

@@ -43,9 +43,8 @@ export function StoryCard({
             <Link href={`/${slug}`} locale={false} legacyBehavior>
                 <div
                     className={twMerge(
-                        size === 'large'
-                            ? 'w-full aspect-[20/14] md:aspect-[27/17]'
-                            : 'w-1/3 aspect-[10/7] hidden md:block',
+                        'aspect-[10/7]',
+                        size === 'large' ? 'w-full md:aspect-[27/17]' : 'w-1/3 hidden md:block',
                     )}
                 >
                     <StoryImage
