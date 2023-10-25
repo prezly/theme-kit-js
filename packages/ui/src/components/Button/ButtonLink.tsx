@@ -64,7 +64,7 @@ export function ButtonLink({
     }
 
     if (forceRefresh) {
-        const hrefWithLocale = localeCode ? `/${localeCode}${href.toString()}` : href.toString();
+        const hrefWithLocale = localeCode ? `/${localeCode}/${href.toString()}` : href.toString();
 
         return renderAnchorTag(hrefWithLocale);
     }
