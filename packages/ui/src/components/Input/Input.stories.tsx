@@ -4,7 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 import { Input } from '.';
 
 export default {
-    title: 'Components/Input',
+    title: 'Forms/Input',
     component: Input,
     decorators: [
         (Story) => (

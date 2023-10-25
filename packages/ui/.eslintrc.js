@@ -24,5 +24,11 @@ module.exports = {
                 'import/no-default-export': 'off',
             },
         },
+        {
+            files: ['**/src/@/**/*.*'],
+            rules: {
+                'func-style': 'off',
+            },
+        },
     ],
 };

@@ -15,7 +15,8 @@
       "@/components": ["src/components/"],
       "@/components/*": ["src/components/*"],
       "@/lib": ["src/lib/"],
-      "@/types": ["src/types.ts"]
+      "@/types": ["src/types.ts"],
+      "@/shadcn/*": ["src/@/*"]
     }
   },
   "exclude": ["node_modules"],
