@@ -26,16 +26,15 @@ export function getShortestLocaleSlug<
         return false;
     }
 
-    return (
+    const shortened =
         // Try shortening to neutral language code
-        (
-            getUnambiguousLangCode(languages, langCode) ??
-            // Try shortening to region code
-            getUnambiguousRegionCode(languages, regionCode) ??
-            // Return the original (exact) code if shortening is not possible
-            localeSlug
-        ).toLowerCase()
-    );
+        getUnambiguousLangCode(languages, langCode) ??
+        // Try shortening to region code
+        getUnambiguousRegionCode(languages, regionCode) ??
+        // Return the original (exact) code if shortening is not possible
+        localeSlug;
+
+    return shortened.toLowerCase();
 }
 
 function getUnambiguousLangCode<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
