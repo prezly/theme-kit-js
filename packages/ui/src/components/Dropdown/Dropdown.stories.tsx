@@ -28,12 +28,7 @@ const DropdownTemplate: StoryFn<typeof Dropdown> = (args) => (
     <Dropdown {...args}>
         <Dropdown.Group>
             {ITEMS.map((item) => (
-                <Dropdown.Item
-                    className="label-medium px-4 py-0 mb-4 hover:bg-transparent focus:bg-transparent cursor-pointer"
-                    key={item}
-                >
-                    {item}
-                </Dropdown.Item>
+                <Dropdown.Item key={item}>{item}</Dropdown.Item>
             ))}
         </Dropdown.Group>
     </Dropdown>
