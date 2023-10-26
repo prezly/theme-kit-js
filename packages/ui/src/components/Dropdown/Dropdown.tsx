@@ -14,12 +14,24 @@ import {
 
 export interface Props {
     label: ReactNode;
+    className?: string;
+    contentClassName?: string;
 }
 
-function DropdownComponent({ children, label }: PropsWithChildren<Props>) {
+function DropdownComponent({
+    children,
+    label,
+    className,
+    contentClassName,
+}: PropsWithChildren<Props>) {
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger className="w-60 p-4 bg-white flex items-center justify-between rounded border border-gray-200 outline-none label-large group">
+            <DropdownMenuTrigger
+                className={twMerge(
+                    'w-60 p-4 bg-white flex items-center justify-between rounded border border-gray-200 outline-none label-large group',
+                    className,
+                )}
+            >
                 {label}
                 <ChevronDownIcon
                     className={twMerge(
@@ -28,7 +40,9 @@ function DropdownComponent({ children, label }: PropsWithChildren<Props>) {
                     )}
                 />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-60 -mt-[6px] border-t-0 rounded-t-none">
+            <DropdownMenuContent
+                className={twMerge('w-60 -mt-[6px] border-t-0 rounded-t-none', contentClassName)}
+            >
                 {children}
             </DropdownMenuContent>
         </DropdownMenu>
