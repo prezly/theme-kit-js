@@ -1,4 +1,6 @@
 import { join, dirname } from 'path';
+import { mergeConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -25,5 +27,17 @@ const config = {
     docs: {
         autodocs: true,
     },
+    viteFinal(config) {
+        return mergeConfig(config, {
+            plugins: [tsconfigPaths()],
+            define: {
+                'process.env': {},
+            },
+            resolve: {
+                preserveSymlinks: true,
+            },
+        });
+    },
 };
+
 export default config;

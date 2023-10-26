@@ -24,5 +24,11 @@ module.exports = {
                 'import/no-default-export': 'off',
             },
         },
+        {
+            files: ['**/*.stories.*'],
+            rules: {
+                'func-style': 'off',
+            },
+        },
     ],
 };
