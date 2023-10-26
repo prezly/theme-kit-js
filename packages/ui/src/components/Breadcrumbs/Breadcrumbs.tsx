@@ -2,11 +2,12 @@ import { Breadcrumb, type BreadcrumbItem } from './components';
 
 export interface Props {
     items: BreadcrumbItem[];
+    className?: string;
 }
 
-export function Breadcrumbs({ items }: Props) {
+export function Breadcrumbs({ items, className }: Props) {
     return (
-        <nav>
+        <nav className={className}>
             <ol className="flex items-center gap-2">
                 {items.map((item, index) => (
                     <Breadcrumb key={item.url} item={item} isLast={index === items.length - 1} />
