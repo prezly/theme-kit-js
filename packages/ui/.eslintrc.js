@@ -25,7 +25,7 @@ module.exports = {
             },
         },
         {
-            files: ['**/src/@/**/*.*', '**/*.stories.*'],
+            files: ['**/*.stories.*'],
             rules: {
                 'func-style': 'off',
             },

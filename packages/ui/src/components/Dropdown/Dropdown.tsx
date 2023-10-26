@@ -1,7 +1,4 @@
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import type { PropsWithChildren, ReactNode } from 'react';
-import { twMerge } from 'tailwind-merge';
-
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -10,7 +7,9 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from '@/shadcn/components/ui/dropdown-menu';
+} from '@radix-ui/react-dropdown-menu';
+import type { PropsWithChildren, ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export interface Props {
     label: ReactNode;
