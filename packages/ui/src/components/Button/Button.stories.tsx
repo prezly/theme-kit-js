@@ -1,4 +1,3 @@
-/* eslint-disable func-style */
 import { PlusIcon } from '@heroicons/react/24/solid';
 import type { Meta, StoryFn } from '@storybook/react';
 

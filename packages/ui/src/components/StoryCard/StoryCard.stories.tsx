@@ -1,4 +1,3 @@
-/* eslint-disable func-style */
 import type { Meta, StoryFn } from '@storybook/react';
 
 import { StoryCard } from '.';
