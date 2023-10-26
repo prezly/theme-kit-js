@@ -1,3 +1,4 @@
+export { Breadcrumbs } from './Breadcrumbs';
 export { Button, ButtonLink } from './Button';
 export { CategoriesList } from './CategoriesList';
 export { CategoryLink } from './CategoryLink';
