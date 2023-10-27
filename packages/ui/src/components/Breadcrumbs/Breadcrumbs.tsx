@@ -6,6 +6,10 @@ export interface Props {
 }
 
 export function Breadcrumbs({ items, className }: Props) {
+    if (items.length === 0) {
+        return null;
+    }
+
     return (
         <nav className={className}>
             <ol className="flex items-center gap-2">
