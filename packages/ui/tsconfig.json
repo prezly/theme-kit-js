@@ -9,15 +9,15 @@
     "outDir": "./build",
     "rootDir": ".",
     "target": "esnext",
-    "typeRoots": ["../../node_modules/@types"],
     "baseUrl": ".",
     "paths": {
       "@/components": ["src/components/"],
       "@/components/*": ["src/components/*"],
+      "@/icons": ["src/icons/"],
       "@/lib": ["src/lib/"],
       "@/types": ["src/types.ts"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["./src", "next-env.d.ts", "tailwind.config.js"]
+  "include": ["./src", "./@types/*", "next-env.d.ts", "tailwind.config.js"]
 }
