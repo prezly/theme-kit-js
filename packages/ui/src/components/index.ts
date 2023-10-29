@@ -5,6 +5,7 @@ export { CategoryLink } from './CategoryLink';
 export { Dropdown } from './Dropdown';
 export { Hero } from './Hero';
 export { Input } from './Input';
+export { SocialMedia } from './SocialMedia';
 export { StoryCard } from './StoryCard';
 export { StoryPublicationDate } from './StoryPublicationDate';
 export { SectionTitle } from './SectionTitle';
