@@ -12,12 +12,19 @@
   },
   "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/ui#readme",
   "license": "MIT",
-  "main": "build/index.js",
+  "main": "./build/index.umd.js",
+  "module": "./build/index.es.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+        "import": "./build/index.es.js",
+        "require": "./build/index.umd.js"
+    }
+  },
   "files": [
     "build",
     "README.md"
   ],
-  "types": "build/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/prezly/theme-kit-js.git"
