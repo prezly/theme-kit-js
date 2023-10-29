@@ -24,8 +24,9 @@
   },
   "scripts": {
     "prebuild": "rimraf build/*",
-    "build": "microbundle build --tsconfig ./tsconfig.json --compress --format modern,cjs src/index.ts",
-    "dev": "microbundle watch --tsconfig ./tsconfig.json --format modern,cjs src/index.ts",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006"
   },
@@ -49,13 +50,15 @@
     "@storybook/react-vite": "^7.5.0",
     "@storybook/testing-library": "^0.2.2",
     "@types/tinycolor2": "^1.4.4",
+    "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.16",
-    "microbundle": "^0.15.1",
     "postcss": "^8.4.31",
     "prop-types": "^15.8.1",
     "storybook": "^7.5.0",
     "storybook-addon-designs": "^6.3.1",
     "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.6.2",
     "vite-plugin-svgr": "^4.1.0",
     "vite-tsconfig-paths": "^4.2.1"
   },
