@@ -1,1 +1,0 @@
-export { SocialMedia } from './SocialMedia';
