@@ -2,9 +2,8 @@ import { ArrowUpIcon, LinkIcon } from '@heroicons/react/24/outline';
 import { type MouseEvent as ReactMouseEvent, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { FacebookIcon, InstagramIcon, LinkedinIcon } from '@/icons';
-
-import { getSocialShareUrl } from './utils';
+import { ShareButton } from './ShareButton';
+import type { StoryShareLinksLayout } from './types';
 
 export interface Props {
     shareUrl: string | null;
@@ -12,7 +11,7 @@ export interface Props {
     showScrollToTopButton?: boolean;
     className?: string;
     iconClassName?: string;
-    layout?: 'vertical' | 'horizontal';
+    layout?: StoryShareLinksLayout;
 }
 
 const SCROLL_TOP_MIN_HEIGHT = 300;
@@ -75,51 +74,24 @@ export function StoryShareLinks({
                 className,
             )}
         >
-            <a
-                href={getSocialShareUrl('facebook', shareUrl)}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Facebook"
-                aria-label="Facebook"
-                className={twMerge(
-                    'p-3 border-gray-200',
-                    layout === 'vertical'
-                        ? `border-b  last:border-b-0`
-                        : `border-r last:border-r-0`,
-                )}
-            >
-                <FacebookIcon className={twMerge('text-gray-800 w-5', iconClassName)} />
-            </a>
-            <a
-                href={getSocialShareUrl('twitter', shareUrl)}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Instagram"
-                aria-label="Instagram"
-                className={twMerge(
-                    'p-3 border-gray-200',
-                    layout === 'vertical'
-                        ? `border-b  last:border-b-0`
-                        : `border-r last:border-r-0`,
-                )}
-            >
-                <InstagramIcon className={twMerge('text-gray-800 w-5', iconClassName)} />
-            </a>
-            <a
-                href={getSocialShareUrl('linkedin', shareUrl)}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="LinkedIn"
-                aria-label="LinkedIn"
-                className={twMerge(
-                    'p-3 border-gray-200',
-                    layout === 'vertical'
-                        ? `border-b  last:border-b-0`
-                        : `border-r last:border-r-0`,
-                )}
-            >
-                <LinkedinIcon className={twMerge('text-gray-800 w-5', iconClassName)} />
-            </a>
+            <ShareButton
+                network="facebook"
+                shareUrl={shareUrl}
+                iconClassName={iconClassName}
+                layout={layout}
+            />
+            <ShareButton
+                network="twitter"
+                shareUrl={shareUrl}
+                iconClassName={iconClassName}
+                layout={layout}
+            />
+            <ShareButton
+                network="linkedin"
+                shareUrl={shareUrl}
+                iconClassName={iconClassName}
+                layout={layout}
+            />
             <a
                 href="#"
                 target="_blank"
