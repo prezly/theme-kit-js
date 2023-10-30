@@ -2,11 +2,7 @@
   "name": "@prezly/theme-kit-ui",
   "version": "0.0.1",
   "description": "UI components for Prezly themes",
-  "keywords": [
-    "prezly",
-    "themes",
-    "ui"
-  ],
+  "keywords": ["prezly", "themes", "ui"],
   "author": {
     "name": "Prezly Team"
   },
@@ -17,14 +13,11 @@
   "types": "./build/index.d.ts",
   "exports": {
     ".": {
-        "import": "./build/index.es.js",
-        "require": "./build/index.umd.js"
+      "import": "./build/index.es.js",
+      "require": "./build/index.umd.js"
     }
   },
-  "files": [
-    "build",
-    "README.md"
-  ],
+  "files": ["build", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/prezly/theme-kit-js.git"
@@ -35,7 +28,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "build-storybook": "storybook build",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "lint": "eslint src"
   },
   "bugs": {
     "url": "https://github.com/prezly/theme-kit-js/issues"
