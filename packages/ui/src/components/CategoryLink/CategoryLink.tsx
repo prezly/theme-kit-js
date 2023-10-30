@@ -19,10 +19,12 @@ export function CategoryLink({ category, locale, className }: Props) {
     const { name } = getLocalizedCategoryData(category, localeObj);
 
     return (
-        <Link href={getCategoryUrl(category, localeObj)} locale={locale} passHref legacyBehavior>
-            <a className={twMerge(`label-large text-accent`, className)}>
-                <span>{name}</span>
-            </a>
+        <Link
+            className={twMerge(`label-large text-accent`, className)}
+            href={getCategoryUrl(category, localeObj)}
+            locale={locale}
+        >
+            <span>{name}</span>
         </Link>
     );
 }

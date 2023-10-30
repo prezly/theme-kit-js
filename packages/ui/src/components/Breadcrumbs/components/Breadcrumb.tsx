@@ -22,9 +22,7 @@ export function Breadcrumb({ item, isLast, className }: Props) {
                 className,
             )}
         >
-            <Link href={item.url} passHref legacyBehavior>
-                <a>{item.name}</a>
-            </Link>
+            <Link href={item.url}>{item.name}</Link>
             {!isLast && <ChevronRightIcon className="w-3 h-3" />}
         </li>
     );

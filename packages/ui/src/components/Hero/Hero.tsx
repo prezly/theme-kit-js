@@ -42,22 +42,22 @@ export function Hero({
                 className,
             )}
         >
-            <Link href={`/${slug}`} locale={false} legacyBehavior>
-                <div
-                    className={twMerge(
-                        'w-full md:w-1/2',
-                        size === 'large' ? 'aspect-[30/30]' : 'aspect-[27/17]',
-                    )}
-                >
-                    <HeroImage
-                        className="cursor-pointer"
-                        logo={logo}
-                        newsroomName={newsroomName}
-                        placeholderClassName=""
-                        size={size}
-                        story={story}
-                    />
-                </div>
+            <Link
+                className={twMerge(
+                    'w-full md:w-1/2',
+                    size === 'large' ? 'aspect-[30/30]' : 'aspect-[27/17]',
+                )}
+                href={`/${slug}`}
+                locale={false}
+            >
+                <HeroImage
+                    className="cursor-pointer"
+                    logo={logo}
+                    newsroomName={newsroomName}
+                    placeholderClassName=""
+                    size={size}
+                    story={story}
+                />
             </Link>
             <div
                 className={twMerge(
@@ -79,7 +79,7 @@ export function Hero({
                     )}
                 </div>
                 <div className="mt-4">
-                    <Link href={`/${slug}`} locale={false} legacyBehavior>
+                    <Link href={`/${slug}`} locale={false}>
                         <h2 className="title-medium cursor-pointer">{title}</h2>
                     </Link>
                     {Boolean(!hideSubtitle && subtitle) && (
