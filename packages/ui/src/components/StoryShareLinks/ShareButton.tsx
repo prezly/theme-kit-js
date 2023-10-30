@@ -1,7 +1,7 @@
 import type { FunctionComponent, SVGProps } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { FacebookIcon, LinkedinIcon, PinterestIcon, TwitterIcon } from '@/icons';
+import { Icons } from '@/icons';
 
 import type { ShareableSocialNetwork, StoryShareLinksLayout } from './types';
 import { getSocialShareUrl } from './utils';
@@ -14,10 +14,10 @@ export interface Props {
 }
 
 const IconsMap: Record<ShareableSocialNetwork, FunctionComponent<SVGProps<SVGSVGElement>>> = {
-    facebook: FacebookIcon,
-    linkedin: LinkedinIcon,
-    pinterest: PinterestIcon,
-    twitter: TwitterIcon,
+    facebook: Icons.Facebook,
+    linkedin: Icons.Linkedin,
+    pinterest: Icons.Pinterest,
+    twitter: Icons.Twitter,
 };
 
 export function ShareButton({ network, shareUrl, layout, iconClassName }: Props) {
