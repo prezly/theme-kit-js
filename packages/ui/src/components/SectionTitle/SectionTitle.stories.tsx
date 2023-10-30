@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
-import { SectionTitle } from '.';
+import { SectionTitle } from './SectionTitle';
 
 export default {
     title: 'Components/SectionTitle',

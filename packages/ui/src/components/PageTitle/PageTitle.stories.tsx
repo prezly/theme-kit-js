@@ -2,7 +2,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import type { BreadcrumbItem } from '../Breadcrumbs';
 
-import { PageTitle } from '.';
+import { PageTitle } from './PageTitle';
 
 export default {
     title: 'Components/PageTitle',

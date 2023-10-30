@@ -1,6 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
-import { type BreadcrumbItem, Breadcrumbs } from '.';
+import { Breadcrumbs } from './Breadcrumbs';
+import type { BreadcrumbItem } from './components';
 
 export default {
     title: 'Components/Breadcrumbs',

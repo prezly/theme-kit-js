@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
-import { GalleryTitle } from '.';
+import { GalleryTitle } from './GalleryTitle';
 
 export default {
     title: 'Components/GalleryTitle',
