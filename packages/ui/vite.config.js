@@ -25,7 +25,7 @@ export default defineConfig({
         lib: {
             entry: path.resolve(__dirname, 'src/index.ts'),
             name: 'theme-kit-ui',
-            formats: ['es', 'umd'],
+            formats: ['es', 'cjs'],
             fileName: (format) => `index.${format}.js`,
         },
         rollupOptions: {
