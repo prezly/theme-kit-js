@@ -1,5 +1,5 @@
 import type { Newsroom } from '@prezly/sdk';
-import type { Locale } from '@prezly/theme-kit-intl';
+import { Locale } from '@prezly/theme-kit-intl';
 
 type PrivacyPortalUrlOptions = {
     email?: string;
@@ -8,13 +8,14 @@ type PrivacyPortalUrlOptions = {
 
 export function getPrivacyPortalUrl(
     newsroom: Pick<Newsroom, 'uuid'>,
-    locale: Locale,
+    locale: Locale | Locale.AnyCode,
     options?: PrivacyPortalUrlOptions,
 ) {
     const { email, action = 'subscribe' } = options || {};
+    const { slug } = Locale.from(locale);
 
     const url = new URL(
-        `/${locale.slug}/newsroom/${newsroom.uuid}/${action}`,
+        `/${slug}/newsroom/${newsroom.uuid}/${action}`,
         'https://privacy.prezly.com',
     );
     if (email) {

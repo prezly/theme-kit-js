@@ -5,7 +5,7 @@ import {
     isStoryPublished,
     Visibility,
 } from '@prezly/theme-kit-core';
-import type { Locale } from '@prezly/theme-kit-intl';
+import { Locale } from '@prezly/theme-kit-intl';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
@@ -36,12 +36,14 @@ function getAllowedTranslationVisibilityValues(
  * or empty string, if `noFallback` is set to `true` (this is useful for alternate locale links).
  */
 function getTranslationUrl(
-    locale: Locale,
+    locale: Locale | Locale.AnyCode,
     path: string,
     currentCategory?: Pick<Category, 'i18n' | 'display_name'>,
     currentStory?: ExtendedStory,
     noFallback?: boolean,
 ) {
+    const { code: localeCode } = Locale.from(locale);
+
     if (currentCategory) {
         if (getCategoryHasTranslation(currentCategory, locale)) {
             return getCategoryUrl(currentCategory, locale);
@@ -54,12 +56,12 @@ function getTranslationUrl(
         return '/';
     }
 
-    if (currentStory && currentStory.culture.locale !== locale.code) {
+    if (currentStory && currentStory.culture.locale !== localeCode) {
         const allowedVisibilityValues = getAllowedTranslationVisibilityValues(currentStory);
 
         const translatedStory = currentStory.translations.find(
             ({ culture, status, visibility }) =>
-                culture.locale === locale.code &&
+                culture.locale === localeCode &&
                 isStoryPublished(status) &&
                 allowedVisibilityValues.includes(visibility),
         );
@@ -87,7 +89,7 @@ export function useGetTranslationUrl() {
     const currentStory = useCurrentStory();
 
     return useCallback(
-        (locale: Locale, noFallback?: boolean) =>
+        (locale: Locale | Locale.AnyCode, noFallback?: boolean) =>
             getTranslationUrl(locale, asPath, currentCategory, currentStory, noFallback),
         [asPath, currentCategory, currentStory],
     );

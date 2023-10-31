@@ -43,7 +43,7 @@ export function getLocalizedCategoryData(
 
 export function getCategoryUrl(
     category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
-    locale: Locale,
+    locale: Locale | Locale.AnyCode,
 ): string {
     const { slug } = getLocalizedCategoryData(category, locale);
     return `/category/${slug}`;
@@ -51,9 +51,10 @@ export function getCategoryUrl(
 
 export function getCategoryHasTranslation(
     category: Pick<Category, 'i18n'>,
-    locale: Locale,
+    locale: Locale | Locale.AnyCode,
 ): boolean {
+    const { code } = Locale.from(locale);
     const { i18n } = category;
     const populatedLocales = Object.keys(i18n).filter((localeCode) => i18n[localeCode].name);
-    return Boolean(populatedLocales.find((localeCode) => localeCode === locale.code));
+    return Boolean(populatedLocales.find((localeCode) => localeCode === code));
 }

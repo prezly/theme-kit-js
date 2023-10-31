@@ -6,14 +6,16 @@ function lang(code: Locale.Code, isDefault = false) {
     return { code, is_default: isDefault };
 }
 
-function getTranslationUrl(locale: Locale) {
-    return `translationUrl/${locale.isoCode}`;
+function getTranslationUrl(locale: Locale | Locale.AnyCode) {
+    const { isoCode } = Locale.from(locale);
+    return `translationUrl/${isoCode}`;
 }
 
-function generateTranslationUrl(locale: Locale) {
+function generateTranslationUrl(locale: Locale | Locale.AnyCode) {
     const translationUrl = getTranslationUrl(locale);
+    const { lang: langCode } = Locale.from(locale);
 
-    return `http://localhost:3000/${locale.lang}/${translationUrl}`;
+    return `http://localhost:3000/${langCode}/${translationUrl}`;
 }
 
 describe('getAlternateLanguageLinks', () => {
