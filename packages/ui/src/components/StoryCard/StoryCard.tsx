@@ -40,22 +40,22 @@ export function StoryCard({
                 className,
             )}
         >
-            <Link href={`/${slug}`} locale={false} legacyBehavior>
-                <div
-                    className={twMerge(
-                        'aspect-[10/7]',
-                        size === 'large' ? 'w-full md:aspect-[27/17]' : 'w-1/3 hidden md:block',
-                    )}
-                >
-                    <StoryImage
-                        className="cursor-pointer"
-                        logo={logo}
-                        newsroomName={newsroomName}
-                        placeholderClassName=""
-                        size={size}
-                        story={story}
-                    />
-                </div>
+            <Link
+                className={twMerge(
+                    'aspect-[10/7]',
+                    size === 'large' ? 'w-full md:aspect-[27/17]' : 'w-1/3 hidden md:block',
+                )}
+                href={`/${slug}`}
+                locale={false}
+            >
+                <StoryImage
+                    className="cursor-pointer"
+                    logo={logo}
+                    newsroomName={newsroomName}
+                    placeholderClassName=""
+                    size={size}
+                    story={story}
+                />
             </Link>
             <div
                 className={twMerge(
@@ -76,7 +76,7 @@ export function StoryCard({
                     )}
                 </div>
                 <div className="mt-4">
-                    <Link href={`/${slug}`} locale={false} legacyBehavior>
+                    <Link href={`/${slug}`} locale={false}>
                         <h2
                             className={twMerge(
                                 'cursor-pointer',

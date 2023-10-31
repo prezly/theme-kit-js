@@ -1,8 +1,12 @@
+export { Breadcrumbs } from './Breadcrumbs';
 export { Button, ButtonLink } from './Button';
 export { CategoriesList } from './CategoriesList';
 export { CategoryLink } from './CategoryLink';
 export { Dropdown } from './Dropdown';
+export { GalleryTitle } from './GalleryTitle';
 export { Hero } from './Hero';
 export { Input } from './Input';
+export { SectionTitle } from './SectionTitle';
 export { StoryCard } from './StoryCard';
 export { StoryPublicationDate } from './StoryPublicationDate';
+export { StoryShareLinks } from './StoryShareLinks';
