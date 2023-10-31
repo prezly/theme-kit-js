@@ -8,7 +8,7 @@ export type SocialNetwork =
     | 'youtube';
 
 /**
- * Instagram, TikTok and YouTube don't provide URL sharing to their networks as of July 2022
+ * Instagram, TikTok and YouTube don't provide URL sharing to their networks as of October 2023
  */
 export type ShareableSocialNetwork = Exclude<SocialNetwork, 'instagram' | 'tiktok' | 'youtube'>;
 
