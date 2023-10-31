@@ -36,9 +36,9 @@ export function getLocalizedCategoryData(
         populatedLocales.find((localeCode) => i18n[localeCode].name === category.display_name) ??
         populatedLocales[0];
 
-    const { locale: _, ...localizedData } = i18n[targetLocale];
+    const { name, slug, description } = i18n[targetLocale];
 
-    return localizedData;
+    return { name, slug, description };
 }
 
 export function getCategoryUrl(
