@@ -27,7 +27,7 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "@prezly/sdk": "^17.0"
+    "@prezly/sdk": "^16.0 || ^17.0"
   },
   "dependencies": {
     "@prezly/theme-kit-intl": "*",
