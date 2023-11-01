@@ -2,6 +2,7 @@ import {
     ArrowUpRightIcon,
     Bars3BottomRightIcon,
     MagnifyingGlassIcon,
+    XMarkIcon,
 } from '@heroicons/react/24/outline';
 import type { Category, Culture, NewsroomLanguageSettings, UploadedImage } from '@prezly/sdk';
 import Image from '@prezly/uploadcare-image';
@@ -31,6 +32,7 @@ export interface Props {
     locale: Culture['code'];
     hasStandaloneAboutPage?: boolean;
     hasStandaloneContactsPage?: boolean;
+    hasError?: boolean;
 }
 
 export function Navigation({
@@ -47,6 +49,7 @@ export function Navigation({
     locale,
     hasStandaloneAboutPage,
     hasStandaloneContactsPage,
+    hasError,
 }: Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const { isTablet } = useDevice();
@@ -140,9 +143,13 @@ export function Navigation({
                                 <MagnifyingGlassIcon className="w-[20px] h-[20px]" />
                             </a>
                         )}
-                        <div className="flex items-center flex-row-reverse md:flex-row bg-gray-50 md:bg-transparent p-6 md:p-0 gap-4 justify-between md:justify-start">
+                        <div className="flex items-start md:items-center flex-row-reverse md:flex-row bg-gray-50 md:bg-transparent p-6 md:p-0 gap-4 justify-between md:justify-start">
                             {languages.length > 0 && (
-                                <LanguagesDropdown languages={languages} locale={locale} />
+                                <LanguagesDropdown
+                                    hasError={hasError}
+                                    languages={languages}
+                                    locale={locale}
+                                />
                             )}
                             {externalSiteLink && (
                                 <a
@@ -171,7 +178,7 @@ export function Navigation({
                     <Button
                         className="p-0"
                         variation="navigation"
-                        icon={Bars3BottomRightIcon}
+                        icon={openMobileNav ? XMarkIcon : Bars3BottomRightIcon}
                         iconClassName="w-6 h-6"
                         onClick={toggleMobileNav}
                     />
