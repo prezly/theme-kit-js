@@ -39,7 +39,7 @@ export function LanguagesDropdown({
 
     return (
         <Dropdown
-            className="border-0 w-max p-0 bg-transparent"
+            className="border-0 w-max p-0 bg-transparent text-gray-600 hover:text-gray-800"
             contentClassName="border mt-2 p-0"
             label={<GlobeAltIcon className="w-[20px] h-[20px]" />}
         >
