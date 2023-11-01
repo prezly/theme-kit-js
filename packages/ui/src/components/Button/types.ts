@@ -3,6 +3,7 @@ import type { FunctionComponent, Ref, SVGProps } from 'react';
 export enum ButtonVariant {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
+    NAVIGATION = 'navigation',
 }
 
 export enum ButtonSize {
@@ -16,5 +17,6 @@ export interface BaseProps {
     className?: string;
     icon?: FunctionComponent<Omit<SVGProps<SVGElement>, 'ref'>>;
     iconPlacement?: 'left' | 'right';
+    iconClassName?: string;
     forwardRef?: Ref<HTMLButtonElement>;
 }

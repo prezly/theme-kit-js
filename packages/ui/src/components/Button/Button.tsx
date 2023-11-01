@@ -12,6 +12,7 @@ export function Button({
     size = 'default',
     icon,
     iconPlacement = 'left',
+    iconClassName,
     isLoading,
     disabled,
     children,
@@ -45,6 +46,11 @@ export function Button({
                 active:bg-gray-100 active:border-gray-400
                 disabled:bg-white disabled:border-transparent disabled:text-gray-400
                 `,
+                variation === 'navigation' &&
+                    `
+                bg-white text-gray-800 hover:text-gray-900
+                focus:text-gray-950
+                disabled:bg-white disabled:text-gray-400`,
                 Boolean(Icon) && Boolean(children) && `gap-2`,
                 isIconOnly && (size === 'small' ? `px-[0.84rem] py-3` : `px-[1.125rem] py-4`),
                 className,
@@ -52,10 +58,10 @@ export function Button({
             disabled={disabled || isLoading}
             {...buttonProps}
         >
-            {iconPlacement === 'left' && <Icon icon={icon} />}
+            {iconPlacement === 'left' && <Icon icon={icon} className={iconClassName} />}
             {/* If there are no children, we insert a zero-width space to preserve the line-height */}
             <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
-            {iconPlacement === 'right' && <Icon icon={icon} />}
+            {iconPlacement === 'right' && <Icon icon={icon} className={iconClassName} />}
         </button>
     );
 }
