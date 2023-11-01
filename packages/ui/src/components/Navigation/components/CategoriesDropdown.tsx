@@ -1,8 +1,13 @@
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import type { Category, Culture } from '@prezly/sdk';
 import { getCategoryUrl, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
 import Link from 'next/link';
+import { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
+import { Button } from '@/components/Button';
 import { Dropdown } from '@/components/Dropdown';
+import { useDevice } from '@/hooks';
 
 export interface Props {
     categories: Category[];
@@ -10,6 +15,52 @@ export interface Props {
 }
 
 export function CategoriesDropdown({ categories, locale }: Props) {
+    const { isTablet } = useDevice();
+    const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+
+    function toggleDropdown() {
+        setMobileDropdownOpen(!mobileDropdownOpen);
+    }
+
+    if (isTablet) {
+        return (
+            <div>
+                <Button
+                    className="p-0 text-lg font-bold"
+                    icon={ChevronDownIcon}
+                    iconClassName={twMerge(
+                        `transition-transform`,
+                        mobileDropdownOpen && `-rotate-180`,
+                    )}
+                    iconPlacement="right"
+                    onClick={toggleDropdown}
+                    variation="navigation"
+                >
+                    Categories
+                </Button>
+                <div
+                    className={twMerge(`hidden`, mobileDropdownOpen && `flex flex-col gap-6 mt-6`)}
+                >
+                    {categories.map((category) => {
+                        const categoryData = getLocalizedCategoryData(
+                            category,
+                            LocaleObject.fromAnyCode(locale),
+                        );
+                        return (
+                            <Link
+                                className="gap-2 label-large text-gray-600"
+                                href={getCategoryUrl(category, LocaleObject.fromAnyCode(locale))}
+                                key={category.id}
+                            >
+                                {categoryData.name}
+                            </Link>
+                        );
+                    })}
+                </div>
+            </div>
+        );
+    }
+
     return (
         <Dropdown
             className="border-0 w-max p-0"
