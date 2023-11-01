@@ -14,7 +14,6 @@ export function Link({
     icon,
     iconPlacement = 'left',
     disabled,
-    isLoading,
     children,
     contentClassName,
     localeCode,
@@ -63,7 +62,6 @@ export function Link({
 export namespace Link {
     export type Props = Omit<BaseProps, 'forwardRef'> &
         Omit<HTMLProps<HTMLAnchorElement>, 'size' | 'type'> & {
-            isLoading?: boolean;
             contentClassName?: string;
             href: string;
             localeCode?: LinkProps['locale'];
