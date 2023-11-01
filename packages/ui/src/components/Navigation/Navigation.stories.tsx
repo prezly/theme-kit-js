@@ -8,6 +8,7 @@ import { Navigation } from './Navigation';
 export default {
     title: 'Components/Navigation',
     component: Navigation,
+    parameters: { layout: 'fullscreen' },
 } as Meta<typeof Navigation>;
 
 const NavigationTemplate: StoryFn<typeof Navigation> = (args) => <Navigation {...args} />;

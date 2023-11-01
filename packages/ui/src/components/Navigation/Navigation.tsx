@@ -1,9 +1,17 @@
-import { ArrowUpRightIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import {
+    ArrowUpRightIcon,
+    Bars3BottomRightIcon,
+    MagnifyingGlassIcon,
+} from '@heroicons/react/24/outline';
 import type { Category, Culture, NewsroomLanguageSettings, UploadedImage } from '@prezly/sdk';
 import Image from '@prezly/uploadcare-image';
 import Link from 'next/link';
-import type { MouseEvent as ReactMouseEvent } from 'react';
+import { type MouseEvent as ReactMouseEvent, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+
+import { useDevice } from '@/hooks';
+
+import { Button } from '../Button';
 
 import { CategoriesDropdown, LanguagesDropdown } from './components';
 import type { NavigationLayout } from './types';
@@ -40,6 +48,13 @@ export function Navigation({
     hasStandaloneAboutPage,
     hasStandaloneContactsPage,
 }: Props) {
+    const [openMobileNav, setOpenMobileNav] = useState(false);
+    const { isTablet } = useDevice();
+
+    function toggleMobileNav() {
+        setOpenMobileNav(!openMobileNav);
+    }
+
     function handleSearch(event?: ReactMouseEvent<HTMLAnchorElement, MouseEvent>) {
         event?.preventDefault();
 
@@ -47,7 +62,7 @@ export function Navigation({
     }
 
     return (
-        <header className={twMerge('p-6 lg:px-12 border-b border-gray-200', className)}>
+        <header className={twMerge('p-6 lg:px-12 border-b border-gray-200 relative', className)}>
             <nav className="flex items-center justify-between">
                 <Link className="flex items-center gap-2" href="/" locale={locale}>
                     <h1 className={twMerge(`subtitle-medium`, Boolean(logo) && `hidden`)}>
@@ -55,7 +70,7 @@ export function Navigation({
                     </h1>
                     {logo && (
                         <Image
-                            className="w-auto max-h-12"
+                            className="w-auto min-w-[80px] max-w-[120px] md:max-w-none max-h-12"
                             layout="fill"
                             objectFit="contain"
                             imageDetails={logo}
@@ -68,17 +83,22 @@ export function Navigation({
                 </Link>
                 <div
                     className={twMerge(
-                        'flex items-center justify-between gap-4',
+                        'md:items-center justify-between gap-12 md:gap-4 hidden md:flex',
+                        openMobileNav &&
+                            `flex flex-col w-screen absolute top-24 left-0 z-10 bg-white pt-6 border-b border-gray-200`,
                         layout === 'centered' ? `md:w-2/3` : 'w-max',
                     )}
                 >
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4 px-6 md:px-0">
                         {categories.length && (
                             <CategoriesDropdown categories={categories} locale={locale} />
                         )}
                         {publicGalleriesCount > 0 && (
                             <Link
-                                className="label-large hover:font-semibold shrink-0"
+                                className={twMerge(
+                                    'label-large hover:font-semibold shrink-0',
+                                    isTablet && `text-lg font-bold`,
+                                )}
                                 href="/media"
                                 locale={locale ?? false}
                             >
@@ -88,7 +108,10 @@ export function Navigation({
                         )}
                         {hasStandaloneAboutPage && (
                             <Link
-                                className="label-large hover:font-semibold shrink-0"
+                                className={twMerge(
+                                    'label-large hover:font-semibold shrink-0',
+                                    isTablet && `text-lg font-bold`,
+                                )}
                                 href="/about"
                                 locale={locale ?? false}
                             >
@@ -98,7 +121,10 @@ export function Navigation({
                         )}
                         {hasStandaloneContactsPage && (
                             <Link
-                                className="label-large hover:font-semibold shrink-0"
+                                className={twMerge(
+                                    'label-large hover:font-semibold shrink-0',
+                                    isTablet && `text-lg font-bold`,
+                                )}
                                 href="/contacts"
                                 locale={locale}
                             >
@@ -108,27 +134,47 @@ export function Navigation({
                         )}
                     </div>
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4">
                         {Boolean(isSearchEnabled && onSearch) && (
-                            <a href="#" onClick={handleSearch}>
+                            <a className="hidden md:flex" href="#" onClick={handleSearch}>
                                 <MagnifyingGlassIcon className="w-[20px] h-[20px]" />
                             </a>
                         )}
-                        {languages.length > 0 && (
-                            <LanguagesDropdown languages={languages} locale={locale} />
-                        )}
-                        {externalSiteLink && (
-                            <a
-                                className="label-large hover:font-semibold flex items-center shrink-0"
-                                href={externalSiteLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {extractDomainFromUrl(externalSiteLink)}
-                                <ArrowUpRightIcon className="ml-1 w-2 h-2" />
-                            </a>
-                        )}
+                        <div className="flex items-center flex-row-reverse md:flex-row bg-gray-50 md:bg-transparent p-6 md:p-0 gap-4 justify-between md:justify-start">
+                            {languages.length > 0 && (
+                                <LanguagesDropdown languages={languages} locale={locale} />
+                            )}
+                            {externalSiteLink && (
+                                <a
+                                    className="label-large hover:font-semibold flex items-center shrink-0"
+                                    href={externalSiteLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {extractDomainFromUrl(externalSiteLink)}
+                                    <ArrowUpRightIcon className="ml-1 w-2 h-2" />
+                                </a>
+                            )}
+                        </div>
                     </div>
+                </div>
+                <div className="flex items-center gap-4 md:hidden">
+                    {Boolean(isSearchEnabled && onSearch) && (
+                        <Button
+                            className="p-0"
+                            variation="navigation"
+                            icon={MagnifyingGlassIcon}
+                            iconClassName="w-6 h-6"
+                            onClick={onSearch}
+                        />
+                    )}
+                    <Button
+                        className="p-0"
+                        variation="navigation"
+                        icon={Bars3BottomRightIcon}
+                        iconClassName="w-6 h-6"
+                        onClick={toggleMobileNav}
+                    />
                 </div>
             </nav>
         </header>
