@@ -1,5 +1,5 @@
 import { CheckIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
-import type { Culture, NewsroomLanguageSettings } from '@prezly/sdk';
+import type { Category, Culture, ExtendedStory, NewsroomLanguageSettings } from '@prezly/sdk';
 import { getLanguageDisplayName, getUsedLanguages, LocaleObject } from '@prezly/theme-kit-core';
 import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -11,10 +11,18 @@ import { getTranslationUrl } from '../util';
 export interface Props {
     languages: NewsroomLanguageSettings[];
     locale: Culture['code'];
+    currentStory?: ExtendedStory;
+    currentCategory?: Pick<Category, 'i18n' | 'display_name'>;
     hasError?: boolean;
 }
 
-export function LanguagesDropdown({ languages, locale, hasError }: Props) {
+export function LanguagesDropdown({
+    languages,
+    locale,
+    hasError,
+    currentCategory,
+    currentStory,
+}: Props) {
     const currentLanguage = languages.find((language) => language.locale.code === locale);
 
     const displayedLanguages = useMemo(() => {
@@ -39,7 +47,16 @@ export function LanguagesDropdown({ languages, locale, hasError }: Props) {
                 {displayedLanguages.map((language, index) => {
                     const translationLink = hasError
                         ? '/'
-                        : getTranslationUrl(LocaleObject.fromAnyCode(language.code));
+                        : getTranslationUrl(
+                              LocaleObject.fromAnyCode(language.code),
+                              currentCategory,
+                              currentStory,
+                          );
+
+                    const link =
+                        currentStory && translationLink !== '/'
+                            ? translationLink
+                            : `/${language.code}${translationLink}`;
 
                     return (
                         <Dropdown.Item
@@ -49,10 +66,7 @@ export function LanguagesDropdown({ languages, locale, hasError }: Props) {
                             )}
                             key={language.code}
                         >
-                            <a
-                                className="px-6 py-4 flex items-center justify-between"
-                                href={translationLink}
-                            >
+                            <a className="px-6 py-4 flex items-center justify-between" href={link}>
                                 <span>{getLanguageDisplayName(language, languages)}</span>
                                 {language.code === currentLanguage?.code && (
                                     <CheckIcon className="w-[20px] h-[20px]" />

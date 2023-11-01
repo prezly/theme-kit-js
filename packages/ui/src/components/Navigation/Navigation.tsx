@@ -4,7 +4,13 @@ import {
     MagnifyingGlassIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline';
-import type { Category, Culture, NewsroomLanguageSettings, UploadedImage } from '@prezly/sdk';
+import type {
+    Category,
+    Culture,
+    ExtendedStory,
+    NewsroomLanguageSettings,
+    UploadedImage,
+} from '@prezly/sdk';
 import Image from '@prezly/uploadcare-image';
 import Link from 'next/link';
 import { type MouseEvent as ReactMouseEvent, useState } from 'react';
@@ -33,6 +39,8 @@ export interface Props {
     hasStandaloneAboutPage?: boolean;
     hasStandaloneContactsPage?: boolean;
     hasError?: boolean;
+    currentStory?: ExtendedStory;
+    currentCategory?: Pick<Category, 'i18n' | 'display_name'>;
 }
 
 export function Navigation({
@@ -50,6 +58,8 @@ export function Navigation({
     hasStandaloneAboutPage,
     hasStandaloneContactsPage,
     hasError,
+    currentCategory,
+    currentStory,
 }: Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const { isTablet } = useDevice();
@@ -149,6 +159,8 @@ export function Navigation({
                                     hasError={hasError}
                                     languages={languages}
                                     locale={locale}
+                                    currentCategory={currentCategory}
+                                    currentStory={currentStory}
                                 />
                             )}
                             {externalSiteLink && (
