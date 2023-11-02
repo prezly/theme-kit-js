@@ -107,7 +107,7 @@ export function Navigation({
                     )}
                 >
                     <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4 px-6 md:px-0">
-                        {categories.length && (
+                        {categories.length > 0 && (
                             <CategoriesDropdown categories={categories} locale={locale} />
                         )}
                         {publicGalleriesCount > 0 && (
