@@ -1,3 +1,5 @@
+'use client';
+
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import type { Category, Culture } from '@prezly/sdk';
 import { getCategoryUrl, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
@@ -28,10 +30,6 @@ export function CategoriesDropdown({ categories, locale }: Props) {
                 <Button
                     className="p-0 text-lg font-bold"
                     icon={ChevronDownIcon}
-                    iconClassName={twMerge(
-                        `transition-transform`,
-                        mobileDropdownOpen && `-rotate-180`,
-                    )}
                     iconPlacement="right"
                     onClick={toggleDropdown}
                     variation="navigation"

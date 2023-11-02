@@ -1,3 +1,5 @@
+'use client';
+
 import { CheckIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import type { Category, Culture, ExtendedStory, NewsroomLanguageSettings } from '@prezly/sdk';
 import { getLanguageDisplayName, getUsedLanguages, LocaleObject } from '@prezly/theme-kit-core';

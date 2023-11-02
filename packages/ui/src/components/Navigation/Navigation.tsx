@@ -1,3 +1,5 @@
+'use client';
+
 import {
     ArrowUpRightIcon,
     Bars3BottomRightIcon,
@@ -29,6 +31,7 @@ export interface Props {
     languages: NewsroomLanguageSettings[];
     layout?: NavigationLayout;
     logo?: UploadedImage | null;
+    showNewsroomLabelAsideLogo?: boolean;
     siteName: string;
     publicGalleriesCount: number;
     externalSiteLink?: string;
@@ -48,6 +51,7 @@ export function Navigation({
     languages,
     layout = 'default',
     logo,
+    showNewsroomLabelAsideLogo,
     siteName,
     publicGalleriesCount,
     externalSiteLink,
@@ -89,9 +93,11 @@ export function Navigation({
                             alt={siteName}
                         />
                     )}
-                    <p className="label-large pl-2 border-l border-gray-400 text-gray-400">
-                        Newsroom
-                    </p>
+                    {showNewsroomLabelAsideLogo && (
+                        <p className="label-large pl-2 border-l border-gray-400 text-gray-400">
+                            Newsroom
+                        </p>
+                    )}
                 </Link>
                 <div
                     className={twMerge(
@@ -168,12 +174,6 @@ export function Navigation({
                                     href={externalSiteLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    data-title={
-                                        <>
-                                            {new URL(externalSiteLink).hostname}
-                                            <ArrowUpRightIcon className="ml-1 w-2 h-2" />
-                                        </>
-                                    }
                                 >
                                     {new URL(externalSiteLink).hostname}
                                     <ArrowUpRightIcon className="ml-1 w-2 h-2" />
@@ -185,18 +185,14 @@ export function Navigation({
                 <div className="flex items-center gap-4 md:hidden">
                     {Boolean(isSearchEnabled && onSearch) && (
                         <Button
-                            className="p-0"
                             variation="navigation"
                             icon={MagnifyingGlassIcon}
-                            iconClassName="w-6 h-6"
                             onClick={onSearch}
                         />
                     )}
                     <Button
-                        className="p-0"
                         variation="navigation"
                         icon={openMobileNav ? XMarkIcon : Bars3BottomRightIcon}
-                        iconClassName="w-6 h-6"
                         onClick={toggleMobileNav}
                     />
                 </div>

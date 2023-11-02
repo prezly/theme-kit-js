@@ -17,6 +17,5 @@ export interface BaseProps {
     className?: string;
     icon?: FunctionComponent<Omit<SVGProps<SVGElement>, 'ref'>>;
     iconPlacement?: 'left' | 'right';
-    iconClassName?: string;
     forwardRef?: Ref<HTMLButtonElement>;
 }
