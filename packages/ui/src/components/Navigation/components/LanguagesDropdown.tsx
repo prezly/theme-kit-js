@@ -7,6 +7,7 @@ import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Dropdown } from '@/components/Dropdown';
+import { useDevice } from '@/hooks';
 
 import { getTranslationUrl } from '../util';
 
@@ -25,6 +26,7 @@ export function LanguagesDropdown({
     currentCategory,
     currentStory,
 }: Props) {
+    const { isSm } = useDevice();
     const currentLanguage = languages.find((language) => language.locale.code === locale);
 
     const displayedLanguages = useMemo(() => {
@@ -42,7 +44,10 @@ export function LanguagesDropdown({
     return (
         <Dropdown
             className="border-0 w-max p-0 bg-transparent text-gray-600 hover:text-gray-800"
-            contentClassName="border mt-2 p-0"
+            contentProps={{
+                className: 'border mt-2 p-0 mb-5 overflow-auto',
+                side: isSm ? 'bottom' : 'left',
+            }}
             label={<GlobeAltIcon className="w-[20px] h-[20px]" />}
         >
             <Dropdown.Group>

@@ -10,8 +10,8 @@ import type {
     Category,
     Culture,
     ExtendedStory,
+    Newsroom,
     NewsroomLanguageSettings,
-    UploadedImage,
 } from '@prezly/sdk';
 import Image from '@prezly/uploadcare-image';
 import Link from 'next/link';
@@ -30,18 +30,16 @@ export interface Props {
     categories: Category[];
     languages: NewsroomLanguageSettings[];
     layout?: NavigationLayout;
-    logo?: UploadedImage | null;
     showNewsroomLabelAsideLogo?: boolean;
-    siteName: string;
-    publicGalleriesCount: number;
     externalSiteLink?: string;
     onSearch?: () => void;
     locale: Culture['code'];
     hasStandaloneAboutPage?: boolean;
     hasStandaloneContactsPage?: boolean;
     hasError?: boolean;
-    currentStory?: ExtendedStory;
-    currentCategory?: Pick<Category, 'i18n' | 'display_name'>;
+    currentStory: ExtendedStory | undefined;
+    currentCategory: Pick<Category, 'i18n' | 'display_name'> | undefined;
+    newsroom: Pick<Newsroom, 'display_name' | 'public_galleries_number' | 'newsroom_logo'>;
 }
 
 export function Navigation({
@@ -49,10 +47,8 @@ export function Navigation({
     categories,
     languages,
     layout = 'default',
-    logo,
+    newsroom,
     showNewsroomLabelAsideLogo,
-    siteName,
-    publicGalleriesCount,
     externalSiteLink,
     onSearch,
     locale,
@@ -64,6 +60,11 @@ export function Navigation({
 }: Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const { isSm } = useDevice();
+    const {
+        display_name: siteName,
+        public_galleries_number: publicGalleriesCount,
+        newsroom_logo: logo,
+    } = newsroom;
 
     function toggleMobileNav() {
         setOpenMobileNav(!openMobileNav);

@@ -62,7 +62,7 @@ export function CategoriesDropdown({ categories, locale }: Props) {
     return (
         <Dropdown
             className="border-0 w-max p-0 text-gray-600 hover:text-gray-800"
-            contentClassName="w-screen mt-10 grid grid-cols-4 p-12 gap-y-8"
+            contentProps={{ className: 'w-screen mt-10 grid grid-cols-4 p-12 gap-y-8' }}
             // TODO: Add translations
             label="Categories"
         >
