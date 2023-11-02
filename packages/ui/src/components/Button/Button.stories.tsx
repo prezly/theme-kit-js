@@ -64,3 +64,33 @@ LoadingButton.args = {
     icon: Icon,
     isLoading: true,
 };
+
+export const Badge = ButtonTemplateWithChild.bind({});
+Badge.args = {
+    icon: Icon,
+    rounded: true,
+    iconPlacement: 'right',
+};
+
+export const SecondaryBadge = ButtonTemplateWithChild.bind({});
+SecondaryBadge.decorators = [
+    (Story) => (
+        <div className="bg-gray-100 p-10">
+            <Story />
+        </div>
+    ),
+];
+SecondaryBadge.args = {
+    icon: Icon,
+    rounded: true,
+    variation: 'secondary',
+    iconPlacement: 'right',
+};
+
+export const SmallBadge = ButtonTemplateWithChild.bind({});
+SmallBadge.args = {
+    icon: Icon,
+    rounded: true,
+    size: 'small',
+    iconPlacement: 'right',
+};
