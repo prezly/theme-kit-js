@@ -22,7 +22,6 @@ import { Button } from '../Button';
 
 import { CategoriesDropdown, LanguagesDropdown } from './components';
 import type { NavigationLayout } from './types';
-import { extractDomainFromUrl } from './util';
 
 export interface Props {
     className?: string;
@@ -171,12 +170,12 @@ export function Navigation({
                                     rel="noopener noreferrer"
                                     data-title={
                                         <>
-                                            {extractDomainFromUrl(externalSiteLink)}
+                                            {new URL(externalSiteLink).hostname}
                                             <ArrowUpRightIcon className="ml-1 w-2 h-2" />
                                         </>
                                     }
                                 >
-                                    {extractDomainFromUrl(externalSiteLink)}
+                                    {new URL(externalSiteLink).hostname}
                                     <ArrowUpRightIcon className="ml-1 w-2 h-2" />
                                 </a>
                             )}
