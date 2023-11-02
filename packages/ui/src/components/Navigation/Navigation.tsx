@@ -65,6 +65,14 @@ export function Navigation({
         public_galleries_number: publicGalleriesCount,
         newsroom_logo: logo,
     } = newsroom;
+    const hasExtraLinks = Boolean(
+        categories.length ||
+            languages.length ||
+            publicGalleriesCount ||
+            hasStandaloneAboutPage ||
+            hasStandaloneContactsPage ||
+            externalSiteLink,
+    );
 
     function toggleMobileNav() {
         setOpenMobileNav(!openMobileNav);
@@ -102,54 +110,61 @@ export function Navigation({
                     className={twMerge(
                         'md:items-center justify-between gap-12 md:gap-4 hidden md:flex',
                         Boolean(openMobileNav && !isSm) &&
-                            `flex flex-col w-screen absolute top-24 left-0 z-10 bg-white pt-6 border-b border-gray-200`,
-                        layout === 'centered' ? `md:w-2/3` : 'md:w-max',
+                            `flex flex-col w-screen absolute top-24 left-0 z-10 bg-white border-b border-gray-200`,
+                        layout === 'centered' ? `lg:w-2/3` : 'md:w-max',
                     )}
                 >
-                    <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4 px-6 md:px-0">
-                        {categories.length > 0 && (
-                            <CategoriesDropdown categories={categories} locale={locale} />
-                        )}
-                        {publicGalleriesCount > 0 && (
-                            <Link
-                                className={twMerge(
-                                    'label-large text-gray-600 hover:text-gray-800 shrink-0',
-                                    !isSm && `text-lg font-bold`,
-                                )}
-                                href="/media"
-                                locale={locale ?? false}
-                            >
-                                {/* TODO: Use translations */}
-                                Media
-                            </Link>
-                        )}
-                        {hasStandaloneAboutPage && (
-                            <Link
-                                className={twMerge(
-                                    'label-large text-gray-600 hover:text-gray-800 shrink-0',
-                                    !isSm && `text-lg font-bold`,
-                                )}
-                                href="/about"
-                                locale={locale ?? false}
-                            >
-                                {/* TODO: Use translations */}
-                                About
-                            </Link>
-                        )}
-                        {hasStandaloneContactsPage && (
-                            <Link
-                                className={twMerge(
-                                    'label-large text-gray-600 hover:text-gray-800 shrink-0',
-                                    !isSm && `text-lg font-bold`,
-                                )}
-                                href="/contacts"
-                                locale={locale}
-                            >
-                                {/* TODO: Use translations */}
-                                Contacts
-                            </Link>
-                        )}
-                    </div>
+                    {Boolean(
+                        categories.length ||
+                            hasStandaloneAboutPage ||
+                            hasStandaloneContactsPage ||
+                            publicGalleriesCount,
+                    ) && (
+                        <div className="pt-6 md:pt-0 flex flex-col md:flex-row md:items-center gap-12 md:gap-4 px-6 md:px-0">
+                            {categories.length > 0 && (
+                                <CategoriesDropdown categories={categories} locale={locale} />
+                            )}
+                            {publicGalleriesCount > 0 && (
+                                <Link
+                                    className={twMerge(
+                                        'label-large text-gray-600 hover:text-gray-800 shrink-0',
+                                        !isSm && `text-lg font-bold`,
+                                    )}
+                                    href="/media"
+                                    locale={locale ?? false}
+                                >
+                                    {/* TODO: Use translations */}
+                                    Media
+                                </Link>
+                            )}
+                            {hasStandaloneAboutPage && (
+                                <Link
+                                    className={twMerge(
+                                        'label-large text-gray-600 hover:text-gray-800 shrink-0',
+                                        !isSm && `text-lg font-bold`,
+                                    )}
+                                    href="/about"
+                                    locale={locale ?? false}
+                                >
+                                    {/* TODO: Use translations */}
+                                    About
+                                </Link>
+                            )}
+                            {hasStandaloneContactsPage && (
+                                <Link
+                                    className={twMerge(
+                                        'label-large text-gray-600 hover:text-gray-800 shrink-0',
+                                        !isSm && `text-lg font-bold`,
+                                    )}
+                                    href="/contacts"
+                                    locale={locale}
+                                >
+                                    {/* TODO: Use translations */}
+                                    Contacts
+                                </Link>
+                            )}
+                        </div>
+                    )}
 
                     <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4">
                         {Boolean(onSearch) && (
@@ -157,28 +172,30 @@ export function Navigation({
                                 <MagnifyingGlassIcon className="w-[20px] h-[20px] text-gray-600 hover:text-gray-800" />
                             </a>
                         )}
-                        <div className="flex items-start md:items-center flex-row-reverse md:flex-row bg-gray-50 md:bg-transparent p-6 md:p-0 gap-4 justify-between md:justify-start">
-                            {languages.length > 0 && (
-                                <LanguagesDropdown
-                                    hasError={hasError}
-                                    languages={languages}
-                                    locale={locale}
-                                    currentCategory={currentCategory}
-                                    currentStory={currentStory}
-                                />
-                            )}
-                            {externalSiteLink && (
-                                <a
-                                    className="label-large text-gray-600 hover:text-gray-800 flex items-center shrink-0"
-                                    href={externalSiteLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {new URL(externalSiteLink).hostname}
-                                    <ArrowUpRightIcon className="ml-1 w-2 h-2" />
-                                </a>
-                            )}
-                        </div>
+                        {Boolean(languages.length || externalSiteLink) && (
+                            <div className="flex items-start md:items-center flex-row-reverse md:flex-row bg-gray-50 md:bg-transparent p-6 md:p-0 gap-4 justify-between md:justify-start">
+                                {languages.length > 0 && (
+                                    <LanguagesDropdown
+                                        hasError={hasError}
+                                        languages={languages}
+                                        locale={locale}
+                                        currentCategory={currentCategory}
+                                        currentStory={currentStory}
+                                    />
+                                )}
+                                {externalSiteLink && (
+                                    <a
+                                        className="label-large text-gray-600 hover:text-gray-800 flex items-center shrink-0"
+                                        href={externalSiteLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {new URL(externalSiteLink).hostname}
+                                        <ArrowUpRightIcon className="ml-1 w-2 h-2" />
+                                    </a>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="flex items-center gap-4 md:hidden">
@@ -189,11 +206,13 @@ export function Navigation({
                             onClick={onSearch}
                         />
                     )}
-                    <Button
-                        variation="navigation"
-                        icon={openMobileNav ? XMarkIcon : Bars3BottomRightIcon}
-                        onClick={toggleMobileNav}
-                    />
+                    {hasExtraLinks && (
+                        <Button
+                            variation="navigation"
+                            icon={openMobileNav ? XMarkIcon : Bars3BottomRightIcon}
+                            onClick={toggleMobileNav}
+                        />
+                    )}
                 </div>
             </nav>
         </header>
