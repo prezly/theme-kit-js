@@ -40,7 +40,7 @@ export function ButtonLink({
   focus:bg-accent-dark focus:border-transparent focus:ring-2 focus:ring-accent-lighter
   focus-within:bg-accent-dark focus-within:border-transparent focus-within:ring-2 focus-within:ring-accent-lighter
   active:bg-accent-dark active:border-accent-dark
-  ${disabled && `bg-accent-lighter border-transparent pointer-events-none opacity-50`}
+  ${disabled && 'bg-accent-lighter border-transparent pointer-events-none opacity-50'}
   `,
                 variation === 'secondary' &&
                     `
@@ -49,7 +49,7 @@ export function ButtonLink({
   focus:bg-gray-50 focus:border-transparent focus:ring-2 focus:ring-accent-lighter
   focus-within:bg-gray-50 focus-within:border-transparent focus-within:ring-2 focus-within:ring-accent-lighter
   active:bg-gray-100 active:border-gray-400
-  ${disabled && `bg-white border-transparent text-gray-400 pointer-events-none opacity-50`}
+  ${disabled && 'bg-white border-transparent text-gray-400 pointer-events-none opacity-50'}
   `,
                 Boolean(Icon) && Boolean(children) && `gap-2`,
                 isIconOnly && (size === 'small' ? `px-[0.84rem] py-3` : `px-[1.125rem] py-4`),
