@@ -35,7 +35,6 @@ export interface Props {
     siteName: string;
     publicGalleriesCount: number;
     externalSiteLink?: string;
-    isSearchEnabled?: boolean;
     onSearch?: () => void;
     locale: Culture['code'];
     hasStandaloneAboutPage?: boolean;
@@ -55,7 +54,6 @@ export function Navigation({
     siteName,
     publicGalleriesCount,
     externalSiteLink,
-    isSearchEnabled,
     onSearch,
     locale,
     hasStandaloneAboutPage,
@@ -153,7 +151,7 @@ export function Navigation({
                     </div>
 
                     <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4">
-                        {Boolean(isSearchEnabled && onSearch) && (
+                        {Boolean(onSearch) && (
                             <a className="hidden md:flex" href="#" onClick={handleSearch}>
                                 <MagnifyingGlassIcon className="w-[20px] h-[20px] text-gray-600 hover:text-gray-800" />
                             </a>
@@ -183,7 +181,7 @@ export function Navigation({
                     </div>
                 </div>
                 <div className="flex items-center gap-4 md:hidden">
-                    {Boolean(isSearchEnabled && onSearch) && (
+                    {Boolean(onSearch) && (
                         <Button
                             variation="navigation"
                             icon={MagnifyingGlassIcon}

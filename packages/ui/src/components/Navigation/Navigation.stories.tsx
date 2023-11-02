@@ -872,7 +872,6 @@ Default.args = {
         original_height: 331,
         effects: [],
     },
-    isSearchEnabled: true,
     onSearch: () => {},
     hasStandaloneAboutPage: true,
     hasStandaloneContactsPage: true,
