@@ -17,14 +17,14 @@ export interface Props {
 }
 
 export function CategoriesDropdown({ categories, locale }: Props) {
-    const { isTablet } = useDevice();
+    const { isSm } = useDevice();
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
 
     function toggleDropdown() {
         setMobileDropdownOpen(!mobileDropdownOpen);
     }
 
-    if (isTablet) {
+    if (!isSm) {
         return (
             <div>
                 <Button

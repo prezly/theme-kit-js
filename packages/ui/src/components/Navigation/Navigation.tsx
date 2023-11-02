@@ -65,7 +65,7 @@ export function Navigation({
     currentStory,
 }: Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
-    const { isTablet } = useDevice();
+    const { isSm } = useDevice();
 
     function toggleMobileNav() {
         setOpenMobileNav(!openMobileNav);
@@ -102,7 +102,7 @@ export function Navigation({
                 <div
                     className={twMerge(
                         'md:items-center justify-between gap-12 md:gap-4 hidden md:flex',
-                        Boolean(openMobileNav && isTablet) &&
+                        Boolean(openMobileNav && !isSm) &&
                             `flex flex-col w-screen absolute top-24 left-0 z-10 bg-white pt-6 border-b border-gray-200`,
                         layout === 'centered' ? `md:w-2/3` : 'md:w-max',
                     )}
@@ -115,7 +115,7 @@ export function Navigation({
                             <Link
                                 className={twMerge(
                                     'label-large text-gray-600 hover:text-gray-800 shrink-0',
-                                    isTablet && `text-lg font-bold`,
+                                    !isSm && `text-lg font-bold`,
                                 )}
                                 href="/media"
                                 locale={locale ?? false}
@@ -128,7 +128,7 @@ export function Navigation({
                             <Link
                                 className={twMerge(
                                     'label-large text-gray-600 hover:text-gray-800 shrink-0',
-                                    isTablet && `text-lg font-bold`,
+                                    !isSm && `text-lg font-bold`,
                                 )}
                                 href="/about"
                                 locale={locale ?? false}
@@ -141,7 +141,7 @@ export function Navigation({
                             <Link
                                 className={twMerge(
                                     'label-large text-gray-600 hover:text-gray-800 shrink-0',
-                                    isTablet && `text-lg font-bold`,
+                                    !isSm && `text-lg font-bold`,
                                 )}
                                 href="/contacts"
                                 locale={locale}
