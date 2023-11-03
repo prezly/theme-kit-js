@@ -50,8 +50,7 @@ export function Link({
             {...linkProps}
         >
             {iconPlacement === 'left' && <Icon icon={icon} />}
-            {/* If there are no children, we insert a zero-width space to preserve the line-height */}
-            <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
+            <span className={contentClassName}>{children}</span>
             {iconPlacement === 'right' && <Icon icon={icon} />}
         </Element>
     );
