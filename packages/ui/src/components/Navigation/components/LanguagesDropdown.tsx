@@ -2,7 +2,8 @@
 
 import { CheckIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import type { Category, Culture, ExtendedStory, NewsroomLanguageSettings } from '@prezly/sdk';
-import { getLanguageDisplayName, getUsedLanguages, LocaleObject } from '@prezly/theme-kit-core';
+import { getLanguageDisplayName, getUsedLanguages } from '@prezly/theme-kit-core';
+import { Locale } from '@prezly/theme-kit-intl';
 import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -14,8 +15,8 @@ import { getTranslationUrl } from '../util';
 export interface Props {
     languages: NewsroomLanguageSettings[];
     locale: Culture['code'];
-    currentStory?: ExtendedStory;
-    currentCategory?: Pick<Category, 'i18n' | 'display_name'>;
+    currentStory: ExtendedStory | undefined;
+    currentCategory: Pick<Category, 'i18n' | 'display_name'> | undefined;
     hasError?: boolean;
 }
 
@@ -54,11 +55,7 @@ export function LanguagesDropdown({
                 {displayedLanguages.map((language, index) => {
                     const translationLink = hasError
                         ? '/'
-                        : getTranslationUrl(
-                              LocaleObject.fromAnyCode(language.code),
-                              currentCategory,
-                              currentStory,
-                          );
+                        : getTranslationUrl(Locale.from(locale), currentCategory, currentStory);
 
                     const link =
                         currentStory && translationLink !== '/'

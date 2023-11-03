@@ -2,7 +2,8 @@
 
 import { ArrowRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid';
 import type { Category, Culture } from '@prezly/sdk';
-import { getCategoryUrl, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
+import { getCategoryUrl, getLocalizedCategoryData } from '@prezly/theme-kit-core';
+import { Locale } from '@prezly/theme-kit-intl';
 import Link from 'next/link';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -42,12 +43,12 @@ export function CategoriesDropdown({ categories, locale }: Props) {
                     {categories.map((category) => {
                         const categoryData = getLocalizedCategoryData(
                             category,
-                            LocaleObject.fromAnyCode(locale),
+                            Locale.from(locale),
                         );
                         return (
                             <Link
                                 className="gap-2 label-large text-gray-600"
-                                href={getCategoryUrl(category, LocaleObject.fromAnyCode(locale))}
+                                href={getCategoryUrl(category, Locale.from(locale))}
                                 key={category.id}
                             >
                                 {categoryData.name}
@@ -73,16 +74,13 @@ export function CategoriesDropdown({ categories, locale }: Props) {
                     {categories.map((category) => {
                         const categoryData = getLocalizedCategoryData(
                             category,
-                            LocaleObject.fromAnyCode(locale),
+                            Locale.from(locale),
                         );
                         return (
                             <div key={category.id}>
                                 <Link
                                     className="gap-2 group"
-                                    href={getCategoryUrl(
-                                        category,
-                                        LocaleObject.fromAnyCode(locale),
-                                    )}
+                                    href={getCategoryUrl(category, Locale.from(locale))}
                                     locale={locale}
                                 >
                                     <h3 className="title-xx-small group-hover:underline">
@@ -92,10 +90,7 @@ export function CategoriesDropdown({ categories, locale }: Props) {
                                 </Link>
                                 <Link
                                     className="w-max mt-3 label-medium flex items-center gap-2 text-accent hover:underline"
-                                    href={getCategoryUrl(
-                                        category,
-                                        LocaleObject.fromAnyCode(locale),
-                                    )}
+                                    href={getCategoryUrl(category, Locale.from(locale))}
                                     locale={locale}
                                 >
                                     View all
