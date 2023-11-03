@@ -11,3 +11,4 @@ export { SectionTitle } from './SectionTitle';
 export { StoryCard } from './StoryCard';
 export { StoryPublicationDate } from './StoryPublicationDate';
 export { StoryShareLinks } from './StoryShareLinks';
+export { SubscriptionCta } from './SubscriptionCta';
