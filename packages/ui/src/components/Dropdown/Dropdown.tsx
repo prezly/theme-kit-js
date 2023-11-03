@@ -2,6 +2,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import {
     DropdownMenu,
     DropdownMenuContent,
+    type DropdownMenuContentProps,
     DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuLabel,
@@ -15,15 +16,10 @@ import { twMerge } from 'tailwind-merge';
 export interface Props {
     label: ReactNode;
     className?: string;
-    contentClassName?: string;
+    contentProps?: DropdownMenuContentProps;
 }
 
-function DropdownComponent({
-    children,
-    label,
-    className,
-    contentClassName,
-}: PropsWithChildren<Props>) {
+function DropdownComponent({ children, label, className, contentProps }: PropsWithChildren<Props>) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger
@@ -41,9 +37,10 @@ function DropdownComponent({
                 />
             </DropdownMenuTrigger>
             <DropdownMenuContent
+                {...contentProps}
                 className={twMerge(
                     'w-60 px-1 pb-2 -mt-1 rounded-t-none bg-white border border-gray-200 border-t-0 rounded-b',
-                    contentClassName,
+                    contentProps?.className,
                 )}
             >
                 {children}

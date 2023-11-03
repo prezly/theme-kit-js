@@ -12,6 +12,12 @@ export default {
             </div>
         ),
     ],
+    parameters: {
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=633-23947&mode=dev',
+        },
+    },
 } as Meta<typeof Dropdown>;
 
 const ITEMS = [

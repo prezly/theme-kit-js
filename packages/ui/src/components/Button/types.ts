@@ -3,6 +3,7 @@ import type { FunctionComponent, Ref, SVGProps } from 'react';
 export enum ButtonVariant {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
+    NAVIGATION = 'navigation',
 }
 
 export enum ButtonSize {

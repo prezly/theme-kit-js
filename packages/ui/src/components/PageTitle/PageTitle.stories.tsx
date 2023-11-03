@@ -7,6 +7,12 @@ import { PageTitle } from './PageTitle';
 export default {
     title: 'Components/PageTitle',
     component: PageTitle,
+    parameters: {
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=660-16925&mode=dev',
+        },
+    },
 } as Meta<typeof PageTitle>;
 
 const PageTitleTemplate: StoryFn<typeof PageTitle> = (args) => <PageTitle {...args} />;

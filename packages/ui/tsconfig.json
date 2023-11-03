@@ -15,7 +15,8 @@
       "@/components/*": ["src/components/*"],
       "@/icons": ["src/icons/"],
       "@/lib": ["src/lib/"],
-      "@/types": ["src/types.ts"]
+      "@/types": ["src/types.ts"],
+      "@/hooks": ["src/hooks/"]
     }
   },
   "exclude": ["node_modules"],

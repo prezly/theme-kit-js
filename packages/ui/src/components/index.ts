@@ -7,6 +7,7 @@ export { GalleryTitle } from './GalleryTitle';
 export { Hero } from './Hero';
 export { Input } from './Input';
 export { Link } from './Link';
+export { Navigation } from './Navigation';
 export { SectionTitle } from './SectionTitle';
 export { StoryCard } from './StoryCard';
 export { StoryPublicationDate } from './StoryPublicationDate';
