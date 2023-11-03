@@ -19,8 +19,6 @@ export function Button({
     rounded,
     ...buttonProps
 }: Button.Props) {
-    const isIconOnly = Boolean(Icon) && !children;
-
     return (
         <button
             ref={forwardRef}
@@ -28,33 +26,23 @@ export function Button({
             className={twMerge(
                 `${
                     rounded ? 'rounded-full' : 'rounded'
-                } flex items-center justify-center border border-transparent bg-transparent`,
-                size === 'small'
-                    ? `${rounded ? 'py-2 px-3' : 'p-3'} label-medium`
-                    : `${rounded ? 'py-3 px-4' : 'p-4'} label-large`,
+                } flex items-center justify-center border border-transparent bg-transparent focus:ring-4 focus-within:ring-4 focus:ring-accent-lighter focus-within:ring-accent-lighter`,
+                size === 'small' ? 'py-2 px-3 label-medium' : ' py-3 px-4 label-large',
                 variation === 'primary' &&
                     `
                 bg-accent border-accent text-accent-button-text
                 hover:bg-accent-dark hover:border-accent-dark 
-                focus:bg-accent-dark focus:border-transparent ${
-                    rounded
-                        ? 'focus:ring-4 focus-within:ring-4'
-                        : 'focus:ring-2 focus-within:ring-2'
-                }  focus:ring-accent-lighter
-                focus-within:bg-accent-dark focus-within:border-transparent focus-within:ring-accent-lighter
+                focus:bg-accent-dark focus:border-transparent
+                focus-within:bg-accent-dark focus-within:border-transparent
                 active:bg-accent-dark active:border-accent-dark
                 disabled:bg-accent-lighter disabled:border-transparent disabled:opacity-50
                 `,
                 variation === 'secondary' &&
                     `
-                    bg-white ${rounded ? 'border-transparent' : 'border-gray-200'} text-gray-800
+                    bg-white border-gray-200 text-gray-800
                 hover:border-gray-300 hover:bg-gray-50
-                focus:bg-gray-50 focus:border-transparent ${
-                    rounded
-                        ? 'focus:ring-4 focus-within:ring-4'
-                        : 'focus:ring-2 focus-within:ring-2'
-                } focus:ring-accent-lighter
-                focus-within:bg-gray-50 focus-within:border-transparent focus-within:ring-accent-lighter
+                focus:bg-gray-50 focus:border-transparent 
+                focus-within:bg-gray-50 focus-within:border-transparent
                 active:bg-gray-100 active:border-gray-400
                 disabled:bg-white disabled:border-transparent disabled:text-gray-400
                 `,
@@ -69,12 +57,7 @@ export function Button({
             disabled={disabled || isLoading}
             {...buttonProps}
         >
-            {iconPlacement === 'left' && (
-                <Icon
-                    icon={icon}
-                    className={twMerge(isIconOnly && (size === 'small' ? `w-4 h-4` : `w-6 h-6`))}
-                />
-            )}
+            {iconPlacement === 'left' && <Icon icon={icon} className="w-4 h-6" />}
             {/* If there are no children, we insert a zero-width space to preserve the line-height */}
             <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
             {iconPlacement === 'right' && <Icon icon={icon} />}
