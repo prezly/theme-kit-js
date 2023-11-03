@@ -6,6 +6,12 @@ import { Link } from './Link';
 export default {
     title: 'Components/Link',
     component: Link,
+    parameters: {
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=1128-37111&mode=dev',
+        },
+    },
 } as Meta<typeof Link>;
 
 const LinkTemplateWithChild: StoryFn<typeof Link> = (args) => (

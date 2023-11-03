@@ -72,6 +72,12 @@ LoadingButton.args = {
 };
 
 export const Rounded = ButtonTemplateWithChild.bind({});
+Rounded.parameters = {
+    design: {
+        type: 'figma',
+        url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=1128-39276&mode=dev',
+    },
+};
 Rounded.args = {
     icon: Icon,
     rounded: true,
@@ -79,6 +85,7 @@ Rounded.args = {
 };
 
 export const SecondaryRounded = ButtonTemplateWithChild.bind({});
+SecondaryRounded.parameters = Rounded.parameters;
 SecondaryRounded.args = {
     icon: Icon,
     rounded: true,
@@ -87,6 +94,7 @@ SecondaryRounded.args = {
 };
 
 export const SmallRounded = ButtonTemplateWithChild.bind({});
+SmallRounded.parameters = Rounded.parameters;
 SmallRounded.args = {
     icon: Icon,
     rounded: true,
