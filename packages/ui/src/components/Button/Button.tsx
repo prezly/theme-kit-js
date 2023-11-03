@@ -45,14 +45,23 @@ export function Button({
                 active:bg-gray-100 active:border-gray-400
                 disabled:bg-white disabled:border-transparent disabled:text-gray-400
                 `,
+                variation === 'navigation' &&
+                    `
+                p-0 bg-white text-gray-800 hover:text-gray-900
+                focus:text-gray-950
+                disabled:bg-white disabled:text-gray-400`,
                 Boolean(Icon) && Boolean(children) && `gap-2`,
-                isIconOnly && (size === 'small' ? `px-[0.84rem] py-3` : `px-[1.125rem] py-4`),
                 className,
             )}
             disabled={disabled || isLoading}
             {...buttonProps}
         >
-            {iconPlacement === 'left' && <Icon icon={icon} />}
+            {iconPlacement === 'left' && (
+                <Icon
+                    icon={icon}
+                    className={twMerge(isIconOnly && (size === 'small' ? `w-4 h-4` : `w-6 h-6`))}
+                />
+            )}
             {/* If there are no children, we insert a zero-width space to preserve the line-height */}
             <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
             {iconPlacement === 'right' && <Icon icon={icon} />}

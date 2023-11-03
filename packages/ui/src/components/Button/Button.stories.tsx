@@ -8,6 +8,12 @@ const Icon = PlusIcon;
 export default {
     title: 'Buttons/Button',
     component: Button,
+    parameters: {
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=599-24589&mode=dev',
+        },
+    },
 } as Meta<typeof Button>;
 
 const ButtonTemplateWithChild: StoryFn<typeof Button> = (args) => <Button {...args}>Button</Button>;

@@ -6,6 +6,7 @@ export { Dropdown } from './Dropdown';
 export { GalleryTitle } from './GalleryTitle';
 export { Hero } from './Hero';
 export { Input } from './Input';
+export { Navigation } from './Navigation';
 export { SectionTitle } from './SectionTitle';
 export { StoryCard } from './StoryCard';
 export { StoryPublicationDate } from './StoryPublicationDate';

@@ -5,6 +5,12 @@ import { Hero } from '.';
 export default {
     title: 'Components/Hero',
     component: Hero,
+    parameters: {
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=649-13479&mode=dev',
+        },
+    },
 } as Meta<typeof Hero>;
 
 const TEST_STORY = {
