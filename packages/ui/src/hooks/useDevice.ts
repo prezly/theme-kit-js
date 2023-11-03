@@ -1,5 +1,8 @@
 import { useMediaQuery } from '@react-hookz/web';
 
+/**
+ * Values kept in sync with tailwindcss breakpoints
+ */
 const BREAKPOINT_SM = 640;
 const BREAKPOINT_MD = 768;
 const BREAKPOINT_LG = 1024;
