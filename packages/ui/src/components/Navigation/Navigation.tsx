@@ -149,7 +149,11 @@ export function Navigation({
                                 </Link>
                             )}
                             {hasStandaloneContactsPage && (
-                                <Link className={linkClassName} href="/contacts" locale={locale}>
+                                <Link
+                                    className={linkClassName}
+                                    href="/contacts"
+                                    locale={locale ?? false}
+                                >
                                     {/* TODO: Use translations */}
                                     Contacts
                                 </Link>
