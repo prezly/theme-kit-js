@@ -6,6 +6,12 @@ import type { BreadcrumbItem } from './components';
 export default {
     title: 'Components/Breadcrumbs',
     component: Breadcrumbs,
+    parameters: {
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=649-13409&mode=dev',
+        },
+    },
 } as Meta<typeof Breadcrumbs>;
 
 const ITEMS: BreadcrumbItem[] = [

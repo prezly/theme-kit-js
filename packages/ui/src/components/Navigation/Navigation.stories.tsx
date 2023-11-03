@@ -8,7 +8,13 @@ import { Navigation } from './Navigation';
 export default {
     title: 'Components/Navigation',
     component: Navigation,
-    parameters: { layout: 'fullscreen' },
+    parameters: {
+        layout: 'fullscreen',
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=649-3016&mode=dev',
+        },
+    },
 } as Meta<typeof Navigation>;
 
 const NavigationTemplate: StoryFn<typeof Navigation> = (args) => <Navigation {...args} />;

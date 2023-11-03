@@ -5,6 +5,12 @@ import { StoryCard } from '.';
 export default {
     title: 'Components/StoryCard',
     component: StoryCard,
+    parameters: {
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=633-34801&mode=dev',
+        },
+    },
 } as Meta<typeof StoryCard>;
 
 const TEST_STORY = {
