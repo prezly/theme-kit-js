@@ -57,10 +57,17 @@ export function Button({
             disabled={disabled || isLoading}
             {...buttonProps}
         >
-            {iconPlacement === 'left' && <Icon icon={icon} className="w-4 h-6" />}
+            {iconPlacement === 'left' && (
+                <Icon
+                    icon={icon}
+                    className={twMerge(
+                        !children && variation !== 'navigation' ? 'w-4 h-6' : 'w-6 h-6',
+                    )}
+                />
+            )}
             {/* If there are no children, we insert a zero-width space to preserve the line-height */}
             <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
-            {iconPlacement === 'right' && <Icon icon={icon} />}
+            {iconPlacement === 'right' && <Icon icon={icon} className="w-4 h-6" />}
         </button>
     );
 }
