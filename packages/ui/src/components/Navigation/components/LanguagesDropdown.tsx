@@ -2,8 +2,7 @@
 
 import { CheckIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import type { Category, Culture, ExtendedStory, NewsroomLanguageSettings } from '@prezly/sdk';
-import { getLanguageDisplayName, getUsedLanguages } from '@prezly/theme-kit-core';
-import { Locale } from '@prezly/theme-kit-intl';
+import { getLanguageDisplayName, getUsedLanguages, LocaleObject } from '@prezly/theme-kit-core';
 import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -55,7 +54,11 @@ export function LanguagesDropdown({
                 {displayedLanguages.map((language, index) => {
                     const translationLink = hasError
                         ? '/'
-                        : getTranslationUrl(Locale.from(locale), currentCategory, currentStory);
+                        : getTranslationUrl(
+                              LocaleObject.fromAnyCode(locale),
+                              currentCategory,
+                              currentStory,
+                          );
 
                     const link =
                         currentStory && translationLink !== '/'

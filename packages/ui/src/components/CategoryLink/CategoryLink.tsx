@@ -3,8 +3,8 @@ import {
     type AlgoliaCategoryRef,
     getCategoryUrl,
     getLocalizedCategoryData,
+    LocaleObject,
 } from '@prezly/theme-kit-core';
-import { Locale } from '@prezly/theme-kit-intl';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
@@ -15,7 +15,7 @@ interface Props {
 }
 
 export function CategoryLink({ category, locale, className }: Props) {
-    const localeObj = Locale.from(locale);
+    const localeObj = LocaleObject.fromAnyCode(locale);
     const { name } = getLocalizedCategoryData(category, localeObj);
 
     return (
