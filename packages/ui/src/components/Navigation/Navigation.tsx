@@ -73,12 +73,16 @@ export function Navigation({
             hasStandaloneContactsPage ||
             externalSiteLink,
     );
+    const linkClassName = twMerge(
+        'label-large text-gray-600 hover:text-gray-800 shrink-0',
+        !isSm && `text-lg font-bold`,
+    );
 
     function toggleMobileNav() {
         setOpenMobileNav(!openMobileNav);
     }
 
-    function handleSearch(event?: ReactMouseEvent<HTMLAnchorElement, MouseEvent>) {
+    function handleSearch(event?: ReactMouseEvent<HTMLButtonElement, MouseEvent>) {
         event?.preventDefault();
 
         onSearch?.();
@@ -126,10 +130,7 @@ export function Navigation({
                             )}
                             {publicGalleriesCount > 0 && (
                                 <Link
-                                    className={twMerge(
-                                        'label-large text-gray-600 hover:text-gray-800 shrink-0',
-                                        !isSm && `text-lg font-bold`,
-                                    )}
+                                    className={linkClassName}
                                     href="/media"
                                     locale={locale ?? false}
                                 >
@@ -139,10 +140,7 @@ export function Navigation({
                             )}
                             {hasStandaloneAboutPage && (
                                 <Link
-                                    className={twMerge(
-                                        'label-large text-gray-600 hover:text-gray-800 shrink-0',
-                                        !isSm && `text-lg font-bold`,
-                                    )}
+                                    className={linkClassName}
                                     href="/about"
                                     locale={locale ?? false}
                                 >
@@ -151,14 +149,7 @@ export function Navigation({
                                 </Link>
                             )}
                             {hasStandaloneContactsPage && (
-                                <Link
-                                    className={twMerge(
-                                        'label-large text-gray-600 hover:text-gray-800 shrink-0',
-                                        !isSm && `text-lg font-bold`,
-                                    )}
-                                    href="/contacts"
-                                    locale={locale}
-                                >
+                                <Link className={linkClassName} href="/contacts" locale={locale}>
                                     {/* TODO: Use translations */}
                                     Contacts
                                 </Link>
@@ -168,9 +159,11 @@ export function Navigation({
 
                     <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4">
                         {Boolean(onSearch) && (
-                            <a className="hidden md:flex" href="#" onClick={handleSearch}>
-                                <MagnifyingGlassIcon className="w-[20px] h-[20px] text-gray-600 hover:text-gray-800" />
-                            </a>
+                            <Button
+                                variation="navigation"
+                                icon={MagnifyingGlassIcon}
+                                onClick={handleSearch}
+                            />
                         )}
                         {Boolean(languages.length || externalSiteLink) && (
                             <div className="flex items-start md:items-center flex-row-reverse md:flex-row bg-gray-50 md:bg-transparent p-6 md:p-0 gap-4 justify-between md:justify-start">
@@ -203,7 +196,7 @@ export function Navigation({
                         <Button
                             variation="navigation"
                             icon={MagnifyingGlassIcon}
-                            onClick={onSearch}
+                            onClick={handleSearch}
                         />
                     )}
                     {hasExtraLinks && (

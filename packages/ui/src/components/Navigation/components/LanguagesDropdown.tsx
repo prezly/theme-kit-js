@@ -48,7 +48,7 @@ export function LanguagesDropdown({
                 className: 'border mt-2 p-0 mb-5 overflow-auto',
                 side: isSm ? 'bottom' : 'left',
             }}
-            label={<GlobeAltIcon className="w-[20px] h-[20px]" />}
+            label={<GlobeAltIcon className="w-6 h-6" />}
         >
             <Dropdown.Group>
                 {displayedLanguages.map((language, index) => {
