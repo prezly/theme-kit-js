@@ -81,7 +81,7 @@ export namespace Locale {
             return cached;
         }
 
-        const [lang, ...rest] = locale.split(/[_-]/g).map((part) => part.toLowerCase());
+        const [lang, ...rest] = locale.toLowerCase().split(/[_-]/g);
 
         if (!lang.match(LANG_CODE_REGEX)) {
             throw new Error(`Invalid locale code provided: "${locale}".`);
