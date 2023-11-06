@@ -9,7 +9,7 @@ import type { AlternateLanguageLink } from './types';
 const EN = 'en';
 const X_DEFAULT = 'x-default';
 
-const ALLOWED_FALLBACKS: Record<Locale.LangCode, Locale.Code[]> = {
+const ALLOWED_FALLBACKS: Record<Locale.LanguageCode, Locale.Code[]> = {
     en: ['en_US', 'en_GB'],
     fr: ['fr_FR', 'fr_CA'],
 };
