@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
+import type { Culture } from '@prezly/sdk';
 import { isNotUndefined } from '@technically/is-not-undefined';
 
 export interface Locale {
@@ -25,7 +26,7 @@ export interface Locale {
      * Language code.
      * Examples: `nl`, `en`, `fr`.
      */
-    lang: Locale.LanguageCode;
+    lang: Locale.LangCode;
 
     /**
      * Text direction for the locale.
@@ -58,20 +59,17 @@ export namespace Locale {
      * This can be full language code or lowercase region code if they're unanbiguously identify a locale
      * or full locale slug if nothing else applies.
      */
-    export type AnySlug = UrlSlug | LanguageCode | LowercaseRegionCode;
+    export type AnySlug = UrlSlug | LangCode | LowercaseRegionCode;
 
-    type HyphenCode = string;
-    type UnderscoreCode = string;
+    type LowercaseRegionCode = `${Lowercase<string>}`;
 
-    export type Code = UnderscoreCode;
-    export type IsoCode = HyphenCode;
+    export type Code = Culture.Code;
+    export type IsoCode = Culture.IsoCode;
     export type UrlSlug = string;
 
-    export type LanguageCode = string;
-    export type RegionCode = string;
-    export type ScriptCode = string;
-
-    type LowercaseRegionCode = string;
+    export type LangCode = Culture.LangCode;
+    export type RegionCode = Culture.RegionCode;
+    export type ScriptCode = Culture.ScriptCode;
 
     export function from(locale: AnyCode | Locale): Locale {
         if (typeof locale === 'object') {
@@ -140,7 +138,7 @@ export namespace Locale {
         return true;
     }
 
-    export function isLanguageCode(locale: AnyCode | Locale, langCode: LanguageCode): boolean {
+    export function isLanguageCode(locale: AnyCode | Locale, langCode: LangCode): boolean {
         return Locale.from(locale).lang === langCode;
     }
 
