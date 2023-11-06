@@ -35,5 +35,11 @@ export function getNewsroomFaviconUrl(
 }
 
 export function getNewsroomOgImageUrl(newsroom: Pick<Newsroom, 'uuid'>, locale?: Locale): string {
-    return `${OG_IMAGE_API_URL}/${newsroom.uuid}${locale ? `?locale=${locale.slug}` : ''}`;
+    const url = `${OG_IMAGE_API_URL}/${newsroom.uuid}`;
+
+    if (locale) {
+        return `${url}?locale=${locale.slug}`;
+    }
+
+    return url;
 }
