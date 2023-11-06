@@ -8,11 +8,11 @@ export interface Props extends InputHTMLAttributes<HTMLInputElement> {
 
 export function Input({ className, inputClassName, error, ...inputProps }: Props) {
     return (
-        <div className={twMerge(`flex flex-col`, className)}>
+        <div className={twMerge(`flex flex-col w-max`, className)}>
             <input
                 {...inputProps}
                 className={twMerge(
-                    `flex rounded bg-white items-center justify-center w-max p-4 
+                    `flex rounded bg-white items-center justify-center w-full p-4 
                     focus:outline-accent-lighter focus-within:outline-accent-lighter label-large`,
                     error && `border border-error`,
                     inputClassName,

@@ -7,11 +7,12 @@ import { Input } from '../Input';
 export interface Props {
     className?: string;
     value: string;
+    error?: string;
     onChange: (value: string) => void;
     onSubmit: () => void;
 }
 
-export function SubscriptionCta({ className, value, onChange, onSubmit }: Props) {
+export function SubscriptionCta({ className, error, value, onChange, onSubmit }: Props) {
     function handleSubmit(event?: FormEvent<HTMLFormElement>) {
         event?.preventDefault();
 
@@ -33,7 +34,7 @@ export function SubscriptionCta({ className, value, onChange, onSubmit }: Props)
             >
                 <Input
                     className="w-full"
-                    inputClassName="w-full"
+                    error={error}
                     //  TODO: add translations
                     placeholder="Enter your email"
                     value={value}
