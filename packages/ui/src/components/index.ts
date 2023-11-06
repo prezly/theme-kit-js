@@ -10,6 +10,7 @@ export { GalleryTitle } from './GalleryTitle';
 export { Hero } from './Hero';
 export { Input } from './Input';
 export { Link } from './Link';
+export { MadeWithPrezly } from './MadeWithPrezly';
 export { Navigation } from './Navigation';
 export { PageTitle } from './PageTitle';
 export { SectionTitle } from './SectionTitle';
