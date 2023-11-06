@@ -22,14 +22,14 @@ export function SubscriptionCta({ className, error, value, onChange, onSubmit }:
     return (
         <div
             className={twMerge(
-                'flex flex-col md:flex-row items-center py-12 md:py-24 px-6 md:px-20 gap-8 bg-gray-700',
+                'flex flex-col md:flex-row items-start py-12 md:py-24 px-6 md:px-20 gap-8 bg-gray-700',
                 className,
             )}
         >
             {/* TODO: add translations */}
             <h3 className="title-large w-full md:w-1/2 text-white">Get updates in your inbox</h3>
             <form
-                className="flex flex-col sm:flex-row items-center w-full md:w-1/2 gap-4"
+                className="flex flex-col sm:flex-row items-start w-full md:w-1/2 gap-4"
                 onSubmit={handleSubmit}
             >
                 <Input

@@ -20,3 +20,8 @@ const SubscriptionCtaTemplate: StoryFn<typeof SubscriptionCta> = (args) => (
 
 export const Default = SubscriptionCtaTemplate.bind({});
 Default.args = {};
+
+export const WithError = SubscriptionCtaTemplate.bind({});
+WithError.args = {
+    error: 'Invalid email',
+};
