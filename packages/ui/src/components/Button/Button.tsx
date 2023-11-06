@@ -19,7 +19,12 @@ export function Button({
     rounded,
     ...buttonProps
 }: Button.Props) {
-    const iconClassName = twMerge(!children && variation !== 'navigation' ? 'w-4 h-6' : 'w-6 h-6');
+    const iconClassName = twMerge(
+        !children && variation !== 'navigation'
+            ? // Adjusted icon height for square buttons
+              'w-4 h-6'
+            : 'w-6 h-6',
+    );
 
     return (
         <button
