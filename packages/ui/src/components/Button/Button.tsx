@@ -19,14 +19,15 @@ export function Button({
     rounded,
     ...buttonProps
 }: Button.Props) {
+    const iconClassName = twMerge(!children && variation !== 'navigation' ? 'w-4 h-6' : 'w-6 h-6');
+
     return (
         <button
             ref={forwardRef}
             type={type}
             className={twMerge(
-                `${
-                    rounded ? 'rounded-full' : 'rounded'
-                } flex items-center justify-center border border-transparent bg-transparent focus:ring-4 focus-within:ring-4 focus:ring-accent-lighter focus-within:ring-accent-lighter`,
+                rounded ? 'rounded-full' : 'rounded',
+                `flex items-center justify-center border border-transparent bg-transparent focus:ring-4 focus-within:ring-4 focus:ring-accent-lighter focus-within:ring-accent-lighter`,
                 size === 'small' ? 'py-2 px-3 label-medium' : ' py-3 px-4 label-large',
                 variation === 'primary' &&
                     `
@@ -57,17 +58,10 @@ export function Button({
             disabled={disabled || isLoading}
             {...buttonProps}
         >
-            {iconPlacement === 'left' && (
-                <Icon
-                    icon={icon}
-                    className={twMerge(
-                        !children && variation !== 'navigation' ? 'w-4 h-6' : 'w-6 h-6',
-                    )}
-                />
-            )}
+            {iconPlacement === 'left' && <Icon icon={icon} className={iconClassName} />}
             {/* If there are no children, we insert a zero-width space to preserve the line-height */}
             <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
-            {iconPlacement === 'right' && <Icon icon={icon} className="w-4 h-6" />}
+            {iconPlacement === 'right' && <Icon icon={icon} className={iconClassName} />}
         </button>
     );
 }
