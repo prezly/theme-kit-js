@@ -164,6 +164,7 @@ export function Navigation({
                     <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4">
                         {Boolean(onSearch) && (
                             <Button
+                                className="hidden md:flex"
                                 variation="navigation"
                                 icon={MagnifyingGlassIcon}
                                 onClick={handleSearch}

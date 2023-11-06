@@ -70,3 +70,34 @@ LoadingButton.args = {
     icon: Icon,
     isLoading: true,
 };
+
+export const Rounded = ButtonTemplateWithChild.bind({});
+Rounded.parameters = {
+    design: {
+        type: 'figma',
+        url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=1128-39276&mode=dev',
+    },
+};
+Rounded.args = {
+    icon: Icon,
+    rounded: true,
+    iconPlacement: 'right',
+};
+
+export const SecondaryRounded = ButtonTemplateWithChild.bind({});
+SecondaryRounded.parameters = Rounded.parameters;
+SecondaryRounded.args = {
+    icon: Icon,
+    rounded: true,
+    variation: 'secondary',
+    iconPlacement: 'right',
+};
+
+export const SmallRounded = ButtonTemplateWithChild.bind({});
+SmallRounded.parameters = Rounded.parameters;
+SmallRounded.args = {
+    icon: Icon,
+    rounded: true,
+    size: 'small',
+    iconPlacement: 'right',
+};
