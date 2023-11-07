@@ -2,10 +2,7 @@ import { Locale } from '@prezly/theme-kit-intl';
 
 import { getAlternateLanguageLinks } from './getAlternateLanguageLinks';
 
-// TODO: Replace this with strictly typed locale codes from https://github.com/prezly/javascript-sdk/pull/258
-type LocaleCode = `${Lowercase<string>}` | `${Lowercase<string>}_${string}`;
-
-function lang(code: LocaleCode, isDefault = false) {
+function lang(code: Locale.Code, isDefault = false) {
     return { code, is_default: isDefault };
 }
 
