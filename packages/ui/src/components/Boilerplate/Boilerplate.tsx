@@ -68,10 +68,10 @@ export function Boilerplate({ className, companyInformation, externalSiteLink }:
                         </div>
                     )}
                     {address && (
-                        <div className="p-6 border-b border-gray-700 last:border-b-0 gap-4 flex items-center">
+                        <address className="p-6 border-b border-gray-700 last:border-b-0 gap-4 flex items-center">
                             <MapPinIcon className="w-4 h-4 text-white" />
                             <p className="label-large text-white">{address}</p>
-                        </div>
+                        </address>
                     )}
                 </div>
             </div>
