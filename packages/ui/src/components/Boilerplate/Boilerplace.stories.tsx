@@ -20,5 +20,20 @@ const BoilerplateTemplate: StoryFn<typeof Boilerplate> = (args) => <Boilerplate 
 export const Default = BoilerplateTemplate.bind({});
 Default.args = {
     companyInformation: COMPANY_INFORMATION,
-    externalSiteLink: 'https://test-site.com',
+};
+
+export const WithoutAboutInformation = BoilerplateTemplate.bind({});
+WithoutAboutInformation.args = {
+    companyInformation: { ...COMPANY_INFORMATION, about: '' },
+};
+
+export const WithoutContactSection = BoilerplateTemplate.bind({});
+WithoutContactSection.args = {
+    companyInformation: {
+        ...COMPANY_INFORMATION,
+        phone: null,
+        email: null,
+        address: null,
+        website: null,
+    },
 };
