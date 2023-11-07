@@ -1,13 +1,23 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
+import { isNotUndefined } from '@technically/is-not-undefined';
 
-import { getFallbackLocale } from './getFallbackLocale';
 import type { AlternateLanguageLink } from './types';
-import { bindLanguagesWithLocales, createAlternateLanguageLink } from './utils';
 
 // We use english locale as fallback since English is the most common language
-const ENG_FALLBACK = 'en';
-const DEFAULT_HREF_LANG = 'x-default';
+const EN = 'en';
+const X_DEFAULT = 'x-default';
+
+const ALLOWED_FALLBACKS: Record<Locale.Code, Locale.LangCode> = {
+    [`en_US`]: 'en',
+    [`en_GB`]: 'en',
+    [`fr_FR`]: 'fr',
+    [`fr_CA`]: 'fr',
+};
+
+type HrefKey = Locale.Code | typeof X_DEFAULT;
+type Url = string;
 
 export function getAlternateLanguageLinks<
     Language extends Pick<NewsroomLanguageSettings, 'code' | 'is_default'>,
@@ -15,103 +25,47 @@ export function getAlternateLanguageLinks<
     availableLanguages: Language[],
     generateTranslationUrl: (locale: Locale) => string | undefined,
 ): AlternateLanguageLink[] {
-    const languagesWithLocales = bindLanguagesWithLocales(availableLanguages);
-    const hrefLangLinks: Array<AlternateLanguageLink> = [];
+    const defaultLanguage = availableLanguages.find((lang) => lang.is_default);
 
-    function pushLocaleToLinks(locale: Locale, hrefLang?: string) {
-        const link = createAlternateLanguageLink(locale, generateTranslationUrl);
+    // Generate the map translation URLs for the exact locale codes
+    const links = Object.fromEntries(
+        availableLanguages.map((lang) => [
+            lang.code,
+            generateTranslationUrl(Locale.from(lang.code)),
+        ]),
+    ) as Record<HrefKey, Url | undefined>;
 
-        if (!link) {
-            return;
-        }
+    // Add selected languages as possible region-independent translations, if not present yet.
+    Object.entries(ALLOWED_FALLBACKS).forEach(([preferredFallbackLocale, langCode]) => {
+        links[langCode] = links[langCode] ?? links[preferredFallbackLocale as Locale.Code];
+    });
 
-        if (hrefLang) {
-            hrefLangLinks.push({ ...link, hrefLang });
-        } else {
-            hrefLangLinks.push(link);
-        }
-    }
+    // Add any same-language version as region-independent fallback, if not present yet.
+    availableLanguages.forEach((lang) => {
+        const { code: localeCode, lang: langCode } = Locale.from(lang.code);
+        links[langCode] = links[langCode] ?? links[localeCode];
+    });
 
-    function populateDirectLinks() {
-        languagesWithLocales.forEach((binds) =>
-            binds.forEach(({ locale }) => pushLocaleToLinks(locale)),
-        );
-    }
-
-    function populateRegionIndependentLinks() {
-        languagesWithLocales.forEach((binds, regionIndependentLocaleCode) => {
-            // When there is no region independent locale of provided locales
-            // we still need something as a region independent locale
-            const localesArray = Array.from(binds.values()).map(({ locale }) => locale);
-
-            const hasRegionIndependentLocale = localesArray.some((locale) =>
-                Locale.isRegionIndependent(locale),
-            );
-
-            if (hasRegionIndependentLocale) {
-                return;
-            }
-
-            // Try to find some possible fallback for the regionIndependentLocaleCode from hardcoded list
-            // We try to find fallback from provided translations of current regionIndependentLocaleCode
-            // If there is no defined fallback in the list we will use just first translation as a region independent translation
-            const fallback =
-                getFallbackLocale(regionIndependentLocaleCode, localesArray) ??
-                // using simple array index as Array.at() is supported only in Safari 15.4 upwards
-                localesArray[0];
-
-            if (fallback) {
-                pushLocaleToLinks(fallback, regionIndependentLocaleCode);
-            }
-        });
-    }
-
-    function populateDefault() {
-        let isDefaultAddedToLinks = false;
-
-        // First we try to find region independent english locale (en)
+    // Determine `x-default` version
+    links[X_DEFAULT] =
+        // First we try to find region independent English locale (en)
         // If the story has just region independent `en` translation we will use it as default hreflang
-        languagesWithLocales.forEach((binds) =>
-            binds.forEach(({ locale }) => {
-                if (Locale.isRegionIndependent(locale) && locale.lang === ENG_FALLBACK) {
-                    pushLocaleToLinks(locale, DEFAULT_HREF_LANG);
-                    isDefaultAddedToLinks = true;
-                }
-            }),
-        );
+        links[EN] ??
+        // If there are no English translations at all we will use the default language (provided by the server)
+        (defaultLanguage ? links[defaultLanguage.code] : undefined);
 
-        if (!isDefaultAddedToLinks) {
-            // If there is no explicit region independent `en` translation for this story
-            // we will try to find some link that already has `en` fallback
-            const fallbackFromRegionIndependentLocales = hrefLangLinks.find(
-                (alternate) => alternate.hrefLang === ENG_FALLBACK,
-            );
-
-            if (fallbackFromRegionIndependentLocales) {
-                hrefLangLinks.push({
-                    ...fallbackFromRegionIndependentLocales,
-                    hrefLang: DEFAULT_HREF_LANG,
-                });
-                isDefaultAddedToLinks = true;
+    return Object.entries(links)
+        .map(([hrefLang, href]) => {
+            if (!href) {
+                // some of the fallbacks logic above can result in undefined Urls present in the map
+                return undefined;
             }
-        }
-
-        if (!isDefaultAddedToLinks) {
-            // If there is no english locale at all we will use is_default language (provided from server)
-            languagesWithLocales.forEach((binds) =>
-                binds.forEach(({ locale, language }) => {
-                    if (language.is_default) {
-                        pushLocaleToLinks(locale, DEFAULT_HREF_LANG);
-                        isDefaultAddedToLinks = true;
-                    }
-                }),
-            );
-        }
-    }
-
-    populateDirectLinks();
-    populateRegionIndependentLinks();
-    populateDefault();
-
-    return hrefLangLinks.sort((a, b) => a.hrefLang.localeCompare(b.hrefLang));
+            if (hrefLang === X_DEFAULT) {
+                // `x-default` is not a valid locale code, so we can't pass it to the `Locale.from()` call.
+                return { hrefLang: X_DEFAULT, href };
+            }
+            return { hrefLang: Locale.from(hrefLang).isoCode, href };
+        })
+        .filter(isNotUndefined)
+        .sort((a, b) => a.hrefLang.localeCompare(b.hrefLang));
 }
