@@ -9,11 +9,11 @@ import type { AlternateLanguageLink } from './types';
 const EN = 'en';
 const X_DEFAULT = 'x-default';
 
-const ALLOWED_FALLBACKS: Record<Locale.Code, Locale.LanguageCode> = {
-    en_US: 'en',
-    en_GB: 'en',
-    fr_FR: 'fr',
-    fr_CA: 'fr',
+const ALLOWED_FALLBACKS: Record<Locale.Code, Locale.LangCode> = {
+    [`en_US`]: 'en',
+    [`en_GB`]: 'en',
+    [`fr_FR`]: 'fr',
+    [`fr_CA`]: 'fr',
 };
 
 type HrefKey = Locale.Code | typeof X_DEFAULT;
@@ -28,22 +28,22 @@ export function getAlternateLanguageLinks<
     const defaultLanguage = availableLanguages.find((lang) => lang.is_default);
 
     // Generate the map translation URLs for the exact locale codes
-    const links: Record<HrefKey, Url | undefined> = Object.fromEntries(
+    const links = Object.fromEntries(
         availableLanguages.map((lang) => [
             lang.code,
             generateTranslationUrl(Locale.from(lang.code)),
         ]),
-    );
+    ) as Record<HrefKey, Url | undefined>;
 
     // Add selected languages as possible region-independent translations, if not present yet.
     Object.entries(ALLOWED_FALLBACKS).forEach(([preferredFallbackLocale, langCode]) => {
-        links[langCode] = links[langCode] ?? links[preferredFallbackLocale];
+        links[langCode] = links[langCode] ?? links[preferredFallbackLocale as Locale.Code];
     });
 
     // Add any same-language version as region-independent fallback, if not present yet.
     availableLanguages.forEach((lang) => {
-        const locale = Locale.from(lang.code);
-        links[locale.lang] = links[locale.lang] ?? links[locale.code];
+        const { code: localeCode, lang: langCode } = Locale.from(lang.code);
+        links[langCode] = links[langCode] ?? links[localeCode];
     });
 
     // Determine `x-default` version
