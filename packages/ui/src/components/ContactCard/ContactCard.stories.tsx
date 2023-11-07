@@ -20,3 +20,28 @@ export const Default = ContactCardTemplate.bind({});
 Default.args = {
     contactInfo: CONTACT_INFO,
 };
+
+export const WithoutAvatar = ContactCardTemplate.bind({});
+WithoutAvatar.args = {
+    contactInfo: { ...CONTACT_INFO, avatar_image: null },
+};
+
+export const WithoutSocials = ContactCardTemplate.bind({});
+WithoutSocials.args = {
+    contactInfo: {
+        ...CONTACT_INFO,
+        email: null,
+        phone: null,
+        mobile: null,
+        facebook: null,
+        twitter: null,
+    },
+};
+
+export const WithoutRole = ContactCardTemplate.bind({});
+WithoutRole.args = {
+    contactInfo: {
+        ...CONTACT_INFO,
+        description: null,
+    },
+};
