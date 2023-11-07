@@ -12,7 +12,7 @@ jobs:
         # The first item in the matrix should be the minimal supported SDK version, the last item should be the latest supported version.
         # You should include any major releases that could potentially break the compatibility in between.
         # Please keep this in sync with the peer dependency version and with the typecheck.yml workflow.
-        sdk-version: [ 16, 17 ]
+        sdk-version: [ 18 ]
 
     steps:
       - name: Check out Git repository

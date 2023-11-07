@@ -46,7 +46,10 @@ export function getLanguageByNeutralLocaleCode<
 // See https://github.com/prezly/prezly/blob/master/lib/model/CulturePeer.php#L159
 export function getLanguageByShortRegionCode<
     Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
->(languages: Language[], regionCode: Locale.RegionCode): Language | undefined {
+>(
+    languages: Language[],
+    regionCode: Locale.RegionCode | `${Lowercase<Locale.RegionCode>}`,
+): Language | undefined {
     const usedLanguages = getUsedLanguages(languages);
 
     return (
