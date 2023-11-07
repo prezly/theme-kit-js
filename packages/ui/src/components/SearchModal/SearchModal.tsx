@@ -1,6 +1,6 @@
 'use client';
 
-import type { Culture } from '@prezly/sdk';
+import type { Category, Culture } from '@prezly/sdk';
 import * as Dialog from '@radix-ui/react-dialog';
 import algoliasearch from 'algoliasearch/lite';
 import { useMemo } from 'react';
@@ -16,18 +16,20 @@ export interface Props {
     overlayClassName?: string;
     onOpenChange: (open: boolean) => void;
     algoliaConfig: AlgoliaConfig;
-    locale?: Culture['code'];
-    newsroom: string;
+    locale: Culture['code'];
+    newsroomName: string;
+    categories: Category[];
 }
 
 export function SearchModal({
     isOpen,
+    categories,
     className,
     overlayClassName,
     onOpenChange,
     algoliaConfig,
     locale,
-    newsroom,
+    newsroomName,
 }: Props) {
     const { ALGOLIA_API_KEY, ALGOLIA_APP_ID, ALGOLIA_INDEX } = algoliaConfig;
 
@@ -44,14 +46,18 @@ export function SearchModal({
                 />
                 <Dialog.Content
                     className={twMerge(
-                        'fixed top-1/2 left-1/2 max-h-[70vh] w-[90vw] max-w-[880px] bg-white -translate-x-1/2 -translate-y-1/2 rounded',
+                        'fixed top-1/2 left-1/2 w-full h-screen md:max-h-[70vh] md:h-max max-w-[680px] bg-white -translate-x-1/2 -translate-y-1/2 rounded',
                         className,
                     )}
                 >
                     <InstantSearch searchClient={searchClient} indexName={ALGOLIA_INDEX}>
                         <Configure hitsPerPage={3} filters={`attributes.culture.code:${locale}`} />
-                        <SearchBar locale={locale} newsroom={newsroom} />
-                        <MainPanel />
+                        <SearchBar locale={locale} newsroomName={newsroomName} />
+                        <MainPanel
+                            categories={categories}
+                            locale={locale}
+                            newsroomName={newsroomName}
+                        />
                     </InstantSearch>
                 </Dialog.Content>
             </Dialog.Portal>
