@@ -39,7 +39,7 @@ export function Footer({
                 <div className="flex flex-col gap-6">
                     {hasSocialMedia && (
                         <SocialMedia
-                            iconClassName="text-white"
+                            iconClassName="text-white hover:text-gray-400"
                             companyInformation={companyInformation}
                         />
                     )}
