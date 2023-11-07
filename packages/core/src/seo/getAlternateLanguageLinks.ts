@@ -27,13 +27,18 @@ export function getAlternateLanguageLinks<
 ): AlternateLanguageLink[] {
     const defaultLanguage = availableLanguages.find((lang) => lang.is_default);
 
-    // Generate the map translation URLs for the exact locale codes
-    const links = Object.fromEntries(
+    // Generate the translation URLs map for the exact locale codes
+    const translations = Object.fromEntries(
         availableLanguages.map((lang) => [
             lang.code,
             generateTranslationUrl(Locale.from(lang.code)),
         ]),
     ) as Record<HrefKey, Url | undefined>;
+
+    // Initialize the links map with the existing translations
+    const links = {
+        ...translations,
+    };
 
     // Add selected languages as possible region-independent translations, if not present yet.
     Object.entries(ALLOWED_FALLBACKS).forEach(([preferredFallbackLocale, langCode]) => {
@@ -55,16 +60,24 @@ export function getAlternateLanguageLinks<
         (defaultLanguage ? links[defaultLanguage.code] : undefined);
 
     return Object.entries(links)
-        .map(([hrefLang, href]) => {
+        .map(([hrefLang, href]): AlternateLanguageLink | undefined => {
             if (!href) {
                 // some of the fallbacks logic above can result in undefined Urls present in the map
                 return undefined;
             }
             if (hrefLang === X_DEFAULT) {
                 // `x-default` is not a valid locale code, so we can't pass it to the `Locale.from()` call.
-                return { hrefLang: X_DEFAULT, href };
+                return {
+                    hrefLang: X_DEFAULT,
+                    href,
+                    type: 'x-default',
+                };
             }
-            return { hrefLang: Locale.from(hrefLang).isoCode, href };
+            return {
+                hrefLang: Locale.from(hrefLang).isoCode,
+                href,
+                type: translations[hrefLang as HrefKey] ? 'exact' : 'alias',
+            };
         })
         .filter(isNotUndefined)
         .sort((a, b) => a.hrefLang.localeCompare(b.hrefLang));
