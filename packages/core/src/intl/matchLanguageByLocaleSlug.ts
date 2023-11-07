@@ -35,7 +35,9 @@ function matchLanguageByLangSlug<Language extends Pick<NewsroomLanguageSettings,
     languages: Language[],
     langSlug: Locale.AnySlug,
 ) {
-    return languages.find((lang) => Locale.isLanguageCode(lang.code, langSlug));
+    return languages.find((lang) =>
+        Locale.isLanguageCode(lang.code, langSlug.toLowerCase() as Locale.LangCode),
+    );
 }
 
 function matchLanguageByRegionSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
@@ -46,7 +48,9 @@ function matchLanguageByRegionSlug<Language extends Pick<NewsroomLanguageSetting
         return undefined;
     }
 
-    return languages.find((lang) => Locale.isRegionCode(lang.code, regionSlug));
+    return languages.find((lang) =>
+        Locale.isRegionCode(lang.code, regionSlug.toUpperCase() as Locale.RegionCode),
+    );
 }
 
 function cmp(a: boolean, b: boolean): number;
