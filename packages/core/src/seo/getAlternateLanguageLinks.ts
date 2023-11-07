@@ -9,9 +9,11 @@ import type { AlternateLanguageLink } from './types';
 const EN = 'en';
 const X_DEFAULT = 'x-default';
 
-const ALLOWED_FALLBACKS: Record<Locale.LanguageCode, Locale.Code[]> = {
-    en: ['en_US', 'en_GB'],
-    fr: ['fr_FR', 'fr_CA'],
+const ALLOWED_FALLBACKS: Record<Locale.Code, Locale.LanguageCode> = {
+    en_US: 'en',
+    en_GB: 'en',
+    fr_FR: 'fr',
+    fr_CA: 'fr',
 };
 
 type HrefKey = Locale.Code | typeof X_DEFAULT;
@@ -34,10 +36,8 @@ export function getAlternateLanguageLinks<
     );
 
     // Add selected languages as possible region-independent translations, if not present yet.
-    Object.entries(ALLOWED_FALLBACKS).forEach(([langCode, fallbacks]) => {
-        fallbacks.forEach((preferredFallbackLocale) => {
-            links[langCode] = links[langCode] ?? links[preferredFallbackLocale];
-        });
+    Object.entries(ALLOWED_FALLBACKS).forEach(([preferredFallbackLocale, langCode]) => {
+        links[langCode] = links[langCode] ?? links[preferredFallbackLocale];
     });
 
     // Add any same-language version as region-independent fallback, if not present yet.
