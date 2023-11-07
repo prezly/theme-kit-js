@@ -4,6 +4,8 @@ import { twMerge } from 'tailwind-merge';
 
 import { Icons } from '@/icons';
 
+import { Link } from '../Link';
+
 import type { ContactInfo } from './type';
 import { getSocialHandles } from './utils';
 
@@ -39,53 +41,41 @@ export function ContactCard({ contactInfo, className }: Props) {
             </div>
             <div className="flex items-center flex-wrap gap-4">
                 {email && (
-                    <a
-                        className="label-large text-accent flex items-center gap-1"
-                        href={`mailto:${email}`}
-                    >
-                        <EnvelopeIcon className="w-4 h-4" />
-                        <span>{email}</span>
-                    </a>
+                    <Link forceRefresh href={`mailto:${email}`} icon={EnvelopeIcon}>
+                        {email}
+                    </Link>
                 )}
                 {phone && (
-                    <a
-                        className="label-large text-accent flex items-center gap-1"
-                        href={`tel:${phone}`}
-                    >
-                        <PhoneIcon className="w-4 h-4" />
-                        <span>{phone}</span>
-                    </a>
+                    <Link forceRefresh href={`tel:${phone}`} icon={PhoneIcon}>
+                        {phone}
+                    </Link>
                 )}
                 {mobile && (
-                    <a
-                        className="label-large text-accent flex items-center gap-1"
-                        href={`tel:${mobile}`}
-                    >
-                        <DevicePhoneMobileIcon className="w-4 h-4" />
-                        <span>{mobile}</span>
-                    </a>
+                    <Link forceRefresh href={`tel:${mobile}`} icon={DevicePhoneMobileIcon}>
+                        {mobile}
+                    </Link>
                 )}
                 {facebook && (
-                    <a
-                        className="label-large text-accent flex items-center gap-1"
+                    <Link
+                        forceRefresh
                         href={`https://facebook.com/${facebook}`}
+                        icon={Icons.Facebook}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Icons.Facebook className="w-4 h-4" />
-                        <span>{facebook}</span>
-                    </a>
+                        {facebook}
+                    </Link>
                 )}
                 {twitter && (
-                    <a
-                        className="label-large text-accent flex items-center gap-1"
+                    <Link
+                        forceRefresh
                         href={`https://x.com/${twitter}`}
+                        icon={Icons.Twitter}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Icons.Twitter className="w-4 h-4" />
-                        <span>@{twitter}</span>
-                    </a>
+                        @{twitter}
+                    </Link>
                 )}
             </div>
         </div>
