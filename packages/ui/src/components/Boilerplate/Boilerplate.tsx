@@ -6,7 +6,7 @@ import {
     MapPinIcon,
 } from '@heroicons/react/24/outline';
 import type { NewsroomCompanyInformation } from '@prezly/sdk';
-import { hasAnyContactInformation } from '@prezly/theme-kit-core';
+import { hasAnyAboutInformation, hasAnyContactInformation } from '@prezly/theme-kit-core';
 import { twMerge } from 'tailwind-merge';
 
 import { Link } from '../Link';
@@ -19,6 +19,11 @@ export interface Props {
 export function Boilerplate({ className, companyInformation }: Props) {
     const { about, phone, email, address, website } = companyInformation;
     const hasContactInformation = hasAnyContactInformation(companyInformation);
+    const hasAboutInformation = hasAnyAboutInformation(companyInformation);
+
+    if (!hasAboutInformation && !hasContactInformation) {
+        return null;
+    }
 
     return (
         <div className={twMerge('py-12 px-6 md:p-12 bg-gray-800', className)}>
