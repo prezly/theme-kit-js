@@ -154,11 +154,11 @@ export namespace Locale {
         return true;
     }
 
-    export function isMatchingLanguageCode(locale: AnyCode | Locale, langCode: LangCode): boolean {
+    export function isLanguageCode(locale: AnyCode | Locale, langCode: LangCode): boolean {
         return Locale.from(locale).lang === langCode.toLowerCase();
     }
 
-    export function isMatchingRegionCode(
+    export function isRegionCode(
         locale: AnyCode | Locale,
         regionCode: Locale.RegionCode | LowercaseRegionCode,
     ): boolean {

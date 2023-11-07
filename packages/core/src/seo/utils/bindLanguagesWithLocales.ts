@@ -13,8 +13,8 @@ export function bindLanguagesWithLocales<Language extends Pick<NewsroomLanguageS
     languages: Language[],
 ) {
     const localesByLangCode = new Map<
-        Locale.LanguageCode,
-        Map<Locale.Code, LocaleWithLanguage<Language>>
+        Locale.LangCode,
+        Map<Locale.IsoCode, LocaleWithLanguage<Language>>
     >();
 
     languages.forEach((language) => {

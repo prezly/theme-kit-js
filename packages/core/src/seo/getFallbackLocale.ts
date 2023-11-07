@@ -1,8 +1,8 @@
 import { Locale } from '@prezly/theme-kit-intl';
 
-const fallbacks: Record<Locale.LanguageCode, Locale.Code[]> = {
-    en: ['en-US', 'en-GB'],
-    fr: ['fr-FR', 'fr-CA'],
+const fallbacks: Record<Locale.LangCode, Locale.Code[]> = {
+    en: ['en_US', 'en_GB'],
+    fr: ['fr_FR', 'fr_CA'],
 };
 
 /**
@@ -13,7 +13,7 @@ const fallbacks: Record<Locale.LanguageCode, Locale.Code[]> = {
  * If the list will be en-CA en-AU and en-US then the result will be en-US since it is the first one and hence takes precedence.
  */
 export function getFallbackLocale(
-    langCode: Locale.LanguageCode,
+    langCode: Locale.LangCode,
     availableLocales: (Locale | Locale.Code)[],
 ): Locale | undefined {
     const code = fallbacks[langCode]?.find((fallback) =>

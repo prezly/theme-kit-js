@@ -39,7 +39,7 @@ export function getShortestLocaleSlug<
 
 function getUnambiguousLangCode<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
     languages: Language[],
-    langCode: Locale.LanguageCode,
+    langCode: Locale.LangCode,
 ) {
     const candidates = languages.filter((lang) => Locale.isLanguageCode(lang.code, langCode));
 
@@ -66,7 +66,7 @@ function getUnambiguousRegionCode<Language extends Pick<NewsroomLanguageSettings
     const candidates = languages.filter((lang) => Locale.isRegionCode(lang.code, regionCode));
     // Prevent collision with neutral language codes
     const collisions = languages.filter((lang) =>
-        Locale.isLanguageCode(lang.code, regionCode.toLowerCase()),
+        Locale.isLanguageCode(lang.code, regionCode.toLowerCase() as Locale.LangCode),
     );
 
     if (candidates.length === 1 && collisions.length === 0) {
