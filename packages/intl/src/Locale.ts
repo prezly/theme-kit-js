@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
-import type { Culture } from '@prezly/sdk';
 import { isNotUndefined } from '@technically/is-not-undefined';
 
 export interface Locale {
@@ -63,13 +62,23 @@ export namespace Locale {
 
     type LowercaseRegionCode = `${Lowercase<string>}`;
 
-    export type Code = Culture.Code;
-    export type IsoCode = Culture.IsoCode;
+    export type Code =
+        | `${LangCode}`
+        | `${LangCode}_${RegionCode}`
+        | `${LangCode}_${ScriptCode}`
+        | `${LangCode}_${ScriptCode}_${RegionCode}`;
+
+    export type IsoCode =
+        | `${LangCode}`
+        | `${LangCode}-${RegionCode}`
+        | `${LangCode}-${ScriptCode}`
+        | `${LangCode}-${ScriptCode}-${RegionCode}`;
+
     export type UrlSlug = string;
 
-    export type LangCode = Culture.LangCode;
-    export type RegionCode = Culture.RegionCode;
-    export type ScriptCode = Culture.ScriptCode;
+    export type LangCode = `${Lowercase<string>}`;
+    export type RegionCode = `${Uppercase<string>}`;
+    export type ScriptCode = string;
 
     export function from(locale: AnyCode | Locale): Locale {
         if (typeof locale === 'object') {
@@ -81,14 +90,19 @@ export namespace Locale {
             return cached;
         }
 
-        const [lang, ...rest] = locale.toLowerCase().split(/[_-]/g);
+        const [lang, ...rest] = locale.toLowerCase().split(/[_-]/g) as [
+            LangCode,
+            ...(RegionCode | ScriptCode)[],
+        ];
 
         if (!lang.match(LANG_CODE_REGEX)) {
             throw new Error(`Invalid locale code provided: "${locale}".`);
         }
 
-        const scripts = rest.filter((s) => KNOWN_SCRIPTS.includes(s));
-        const regions = rest.filter((s) => !KNOWN_SCRIPTS.includes(s));
+        const scripts = rest.filter((s) => KNOWN_SCRIPTS.includes(s)) as Locale.ScriptCode[];
+        const regions = rest
+            .filter((s) => !KNOWN_SCRIPTS.includes(s))
+            .map((region) => region.toUpperCase()) as Locale.RegionCode[];
 
         if (scripts.length > 1) {
             throw new Error(
@@ -101,24 +115,26 @@ export namespace Locale {
             );
         }
 
-        const script: string | undefined = scripts[0];
-        const region: string | undefined = regions[0];
-        const isoCode = [
+        const scriptCode: Locale.ScriptCode | undefined = scripts[0];
+        const regionCode: Locale.RegionCode | undefined = regions[0];
+        const code = [
             lang.toLowerCase(),
-            region?.toUpperCase(),
-            script ? toPascalCase(script) : undefined,
+            regionCode,
+            scriptCode ? toPascalCase(scriptCode) : undefined,
         ]
             .filter(isNotUndefined)
-            .join('-');
+            .join('_') as Locale.Code;
+
+        const isoCode = code.replace('_', '-') as IsoCode;
 
         const obj: Locale = {
-            code: isoCode.replace('-', '_'),
+            code,
             isoCode,
             slug: isoCode.toLowerCase(),
             direction: KNOWN_RTL_LANGUAGES.includes(lang) ? 'rtl' : 'ltr',
             lang,
-            region: region ? region.toUpperCase() : undefined,
-            script: script ? toPascalCase(script) : undefined,
+            region: regionCode,
+            script: scriptCode ? toPascalCase(scriptCode) : undefined,
         };
 
         CACHE.set(obj.code, obj);
@@ -138,11 +154,11 @@ export namespace Locale {
         return true;
     }
 
-    export function isLanguageCode(locale: AnyCode | Locale, langCode: LangCode): boolean {
-        return Locale.from(locale).lang === langCode;
+    export function isMatchingLanguageCode(locale: AnyCode | Locale, langCode: LangCode): boolean {
+        return Locale.from(locale).lang === langCode.toLowerCase();
     }
 
-    export function isRegionCode(
+    export function isMatchingRegionCode(
         locale: AnyCode | Locale,
         regionCode: Locale.RegionCode | LowercaseRegionCode,
     ): boolean {
