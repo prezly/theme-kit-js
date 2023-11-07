@@ -1,4 +1,5 @@
 import type { Culture, UploadedImage } from '@prezly/sdk';
+import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
@@ -10,7 +11,7 @@ import { StoryPublicationDate } from '../StoryPublicationDate';
 import { StoryImage, type StoryImageSize } from './components';
 
 export interface Props {
-    story: StoryWithImage;
+    story: StoryWithImage | AlgoliaStory;
     locale: Culture['code'];
     size?: StoryImageSize;
     newsroomName: string;
@@ -36,14 +37,16 @@ export function StoryCard({
         <div
             className={twMerge(
                 'flex flex-row items-center p-0 bg-white group sm:max-w-[530px]',
-                size === 'large' ? `flex-col gap-0` : `md:flex-row items-start gap-4`,
+                size === 'large' ? `flex-col gap-0` : `md:flex-row sm:max-w-none items-start gap-4`,
                 className,
             )}
         >
             <Link
                 className={twMerge(
                     'aspect-[10/7]',
-                    size === 'large' ? 'w-full md:aspect-[27/17]' : 'w-1/3 hidden md:block',
+                    size === 'large'
+                        ? 'w-full md:aspect-[27/17]'
+                        : 'w-1/3 hidden md:block md:max-w-[200px]',
                 )}
                 href={`/${slug}`}
                 locale={false}
@@ -59,7 +62,9 @@ export function StoryCard({
             </Link>
             <div
                 className={twMerge(
-                    size === 'large' ? `p-6 md:py-6 md:px-0 w-full` : `py-1 md:p-0 w-full md:w-2/3`,
+                    size === 'large'
+                        ? `p-6 md:py-6 md:px-0 w-full`
+                        : `py-1 md:py-1 w-full md:w-2/3`,
                 )}
             >
                 <div className="flex flex-wrap items-center gap-1">
