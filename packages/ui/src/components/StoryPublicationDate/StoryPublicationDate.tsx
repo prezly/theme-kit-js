@@ -10,7 +10,7 @@ interface Props {
 
 export function StoryPublicationDate({ story, locale: currentLocale }: Props) {
     const date = getStoryPublicationDate(story);
-    let dateFormat = 'D/M/YY';
+    let dateFormat = 'd/MM/YY';
 
     if ((story as Story).newsroom?.date_format) {
         dateFormat = (story as Story).newsroom.date_format;
@@ -22,5 +22,5 @@ export function StoryPublicationDate({ story, locale: currentLocale }: Props) {
 
     const locale: Locale = currentLocale ? (locales as any)[currentLocale] : undefined;
 
-    return <>{format(date, dateFormat.toLowerCase(), { locale })}</>;
+    return <>{format(date, dateFormat.replace('D', 'd').replace('YY', 'yy'), { locale })}</>;
 }
