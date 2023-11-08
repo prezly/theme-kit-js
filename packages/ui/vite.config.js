@@ -14,9 +14,6 @@ export default defineConfig({
         tsconfigPaths(),
         svgr(),
     ],
-    define: {
-        'process.env': {},
-    },
     resolve: {
         preserveSymlinks: true,
     },
