@@ -1,6 +1,6 @@
 'use client';
 
-import type { Category, Culture } from '@prezly/sdk';
+import type { Category, Culture, UploadedImage } from '@prezly/sdk';
 import * as Dialog from '@radix-ui/react-dialog';
 import algoliasearch from 'algoliasearch/lite';
 import { useMemo } from 'react';
@@ -19,6 +19,9 @@ export interface Props {
     locale: Culture['code'];
     newsroomName: string;
     categories: Category[];
+    hideSubtitle: boolean;
+    showDate: boolean;
+    logo: UploadedImage | null;
 }
 
 export function SearchModal({
@@ -30,6 +33,9 @@ export function SearchModal({
     algoliaConfig,
     locale,
     newsroomName,
+    logo,
+    hideSubtitle,
+    showDate,
 }: Props) {
     const { ALGOLIA_API_KEY, ALGOLIA_APP_ID, ALGOLIA_INDEX } = algoliaConfig;
 
@@ -47,6 +53,7 @@ export function SearchModal({
                 <Dialog.Content
                     className={twMerge(
                         'fixed top-1/2 left-1/2 w-full h-screen md:max-h-[70vh] md:h-max max-w-[680px] bg-white -translate-x-1/2 -translate-y-1/2 rounded',
+                        'overflow-auto',
                         className,
                     )}
                 >
@@ -56,6 +63,9 @@ export function SearchModal({
                         <MainPanel
                             categories={categories}
                             locale={locale}
+                            logo={logo}
+                            hideSubtitle={hideSubtitle}
+                            showDate={showDate}
                             newsroomName={newsroomName}
                         />
                     </InstantSearch>

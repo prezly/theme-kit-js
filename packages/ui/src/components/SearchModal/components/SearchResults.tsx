@@ -1,6 +1,6 @@
 'use client';
 
-import type { Culture } from '@prezly/sdk';
+import type { Culture, UploadedImage } from '@prezly/sdk';
 import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import { Hits, useInstantSearch, useSearchBox } from 'react-instantsearch';
 
@@ -11,9 +11,12 @@ import { Hit } from './Hit';
 export interface Props {
     locale: Culture['code'];
     newsroomName: string;
+    logo: UploadedImage | null;
+    hideSubtitle: boolean;
+    showDate: boolean;
 }
 
-export function SearchResults({ locale, newsroomName }: Props) {
+export function SearchResults({ locale, newsroomName, logo, hideSubtitle, showDate }: Props) {
     const { results } = useInstantSearch();
     const { query } = useSearchBox();
     const totalResults = results?.nbHits ?? 0;
@@ -29,13 +32,20 @@ export function SearchResults({ locale, newsroomName }: Props) {
 
             <Hits<{ attributes: AlgoliaStory }>
                 hitComponent={({ hit }) => (
-                    <Hit hit={hit} locale={locale} newsroomName={newsroomName} />
+                    <Hit
+                        hit={hit}
+                        locale={locale}
+                        logo={logo}
+                        showDate={showDate}
+                        hideSubtitle={hideSubtitle}
+                        newsroomName={newsroomName}
+                    />
                 )}
             />
 
             {totalResults > 3 && (
                 <ButtonLink
-                    className="mt-6"
+                    className="mt-6 w-max"
                     href={`/search?query=${query}`}
                     variation="secondary"
                     forceRefresh={isOnSearchPage}

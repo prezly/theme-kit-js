@@ -1,4 +1,4 @@
-import type { Category, Culture } from '@prezly/sdk';
+import type { Category, Culture, UploadedImage } from '@prezly/sdk';
 import { useSearchBox } from 'react-instantsearch';
 
 import { CategoriesList } from './CategoriesList';
@@ -8,9 +8,19 @@ export interface Props {
     categories: Category[];
     locale: Culture['code'];
     newsroomName: string;
+    logo: UploadedImage | null;
+    showDate: boolean;
+    hideSubtitle: boolean;
 }
 
-export function MainPanel({ categories, locale, newsroomName }: Props) {
+export function MainPanel({
+    categories,
+    locale,
+    newsroomName,
+    logo,
+    showDate,
+    hideSubtitle,
+}: Props) {
     const { query } = useSearchBox();
     const isQuerySet = Boolean(query?.length);
 
@@ -21,7 +31,13 @@ export function MainPanel({ categories, locale, newsroomName }: Props) {
     return (
         <div className="pt-3 pb-12 px-6">
             {isQuerySet ? (
-                <SearchResults locale={locale} newsroomName={newsroomName} />
+                <SearchResults
+                    locale={locale}
+                    newsroomName={newsroomName}
+                    logo={logo}
+                    showDate={showDate}
+                    hideSubtitle={hideSubtitle}
+                />
             ) : (
                 <CategoriesList categories={categories} locale={locale} />
             )}
