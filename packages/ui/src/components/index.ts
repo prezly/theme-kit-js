@@ -13,6 +13,7 @@ export { Link } from './Link';
 export { MadeWithPrezly } from './MadeWithPrezly';
 export { Navigation } from './Navigation';
 export { PageTitle } from './PageTitle';
+export { SearchModal } from './SearchModal';
 export { SectionTitle } from './SectionTitle';
 export { StoryCard } from './StoryCard';
 export { StoryPublicationDate } from './StoryPublicationDate';
