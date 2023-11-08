@@ -39,12 +39,17 @@ const SearchModalTemplate: StoryFn<typeof SearchModal> = (args) => {
 
 export const Default = SearchModalTemplate.bind({});
 Default.args = {
+    // using config values for The Goodnewsroom
     algoliaConfig: {
-        ALGOLIA_API_KEY: '',
-        ALGOLIA_APP_ID: '',
-        ALGOLIA_INDEX: '',
+        ALGOLIA_API_KEY:
+            'NTI4YjFkN2RhNjU0NzIxOGUzMjQzMmQ0MTgwNjk1OWNjMmUzZTQzMTQ1ZWMzNjhlZDNhN2ExMGI2OTIzMDZmNXRhZ0ZpbHRlcnM9JTVCJTIybGljZW5zZV82MzM3JTIyJTJDJTIybmV3c3Jvb21fMTI2OTglMjIlNUQ=',
+        ALGOLIA_APP_ID: 'UI4CNRAHQB',
+        ALGOLIA_INDEX: 'public_stories_prod',
     },
     newsroomName: 'Test site',
     locale: 'en',
     categories: CATEGORIES,
+    logo: null,
+    hideSubtitle: false,
+    showDate: true,
 };
