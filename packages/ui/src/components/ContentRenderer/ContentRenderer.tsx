@@ -27,7 +27,14 @@ import { ContactCard } from '../ContactCard';
 import {
     Attachment,
     Gallery,
+    Heading,
     Image,
+    Link,
+    List,
+    ListItem,
+    ListItemText,
+    Paragraph,
+    Quote,
     StoryBookmark,
     StoryBookmarkContextProvider,
     Variable,
@@ -45,11 +52,11 @@ export function ContentRenderer({ nodes, story }: PropsWithChildren<Props>) {
         <StoryBookmarkContextProvider referencedStories={story.referenced_entities.stories}>
             <VariableContextProvider value={{ story }}>
                 <Renderer nodes={nodes} defaultComponents>
-                    <Component match={ListNode.isListNode} component={Elements.List} />
-                    <Component match={ListItemNode.isListItemNode} component={Elements.ListItem} />
+                    <Component match={ListNode.isListNode} component={List} />
+                    <Component match={ListItemNode.isListItemNode} component={ListItem} />
                     <Component
                         match={ListItemTextNode.isListItemTextNode}
-                        component={Elements.ListItemText}
+                        component={ListItemText}
                     />
                     {/* Title and Subtitle heading rules must be defined above the general Heading */}
                     <Component match={HeadingNode.isTitleHeadingNode} component={Elements.Ignore} />
@@ -57,11 +64,8 @@ export function ContentRenderer({ nodes, story }: PropsWithChildren<Props>) {
                         match={HeadingNode.isSubtitleHeadingNode}
                         component={Elements.Ignore}
                     />
-                    <Component match={HeadingNode.isHeadingNode} component={Elements.Heading} />
-                    <Component
-                        match={ParagraphNode.isParagraphNode}
-                        component={Elements.Paragraph}
-                    />
+                    <Component match={HeadingNode.isHeadingNode} component={Heading} />
+                    <Component match={ParagraphNode.isParagraphNode} component={Paragraph} />
                     <Component match={ImageNode.isImageNode} component={Image} />
                     <Component match={GalleryNode.isGalleryNode} component={Gallery} />
                     <Component
@@ -78,8 +82,8 @@ export function ContentRenderer({ nodes, story }: PropsWithChildren<Props>) {
                         match={ButtonBlockNode.isButtonBlockNode}
                         component={Elements.ButtonBlock}
                     />
-                    <Component match={QuoteNode.isQuoteNode} component={Elements.Quote} />
-                    <Component match={LinkNode.isLinkNode} component={Elements.Link} />
+                    <Component match={QuoteNode.isQuoteNode} component={Quote} />
+                    <Component match={LinkNode.isLinkNode} component={Link} />
                     <Component match={DividerNode.isDividerNode} component={Elements.Divider} />
                     <Component
                         match={StoryBookmarkNode.isStoryBookmarkNode}
