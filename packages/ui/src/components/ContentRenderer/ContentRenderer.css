@@ -1,0 +1,89 @@
+.prezly-slate-document {
+    @apply text-inherit;
+}
+
+.prezly-slate-document > *:last-child {
+    @apply mb-0 !important;
+}
+
+.prezly-slate-image,
+.prezly-slate-gallery,
+.prezly-slate-embed {
+    @apply my-10;
+}
+
+.prezly-slate-image-rollover {
+    @apply w-full z-0;
+}
+
+.prezly-slate-image-rollover__dim,
+.prezly-slate-image-rollover__caption-text {
+    @apply hidden;
+}
+
+.prezly-slate-image-rollover__caption-icon-container {
+    @apply rounded bg-gray-900 bg-opacity-30;
+}
+
+.prezly-slate-image-rollover__caption:not(.prezly-slate-image-rollover__caption--empty)
+    .prezly-slate-image-rollover__caption-icon-container {
+    @apply mt-0;
+}
+
+.prezly-slate-iframely-embed iframe {
+    @apply border-red-200 !important;
+}
+
+.prezly-slate-image__caption {
+    @apply text-base;
+}
+
+.prezly-slate-contact__wrapper {
+    @apply gap-3;
+}
+
+.prezly-slate-contact__name {
+    @apply text-2xl font-bold leading-[140%] text-gray-800 sm:text-[28px] sm:leading-[120%];
+}
+
+.prezly-slate-contact__job-description {
+    @apply text-sm font-normal leading-[160%] sm:text-base sm:font-medium sm:leading-[125%] text-gray-600;
+}
+
+.prezly-slate-contact__avatar {
+    @apply w-16 h-16 rounded;
+}
+
+.prezly-slate-social-fields--card {
+    @apply gap-5;
+}
+
+.prezly-slate-social-field__link {
+    @apply text-base text-accent font-bold;
+}
+
+.prezly-slate-button-block {
+    @apply bg-accent text-white hover:bg-accent-darker active:bg-accent-darker;
+}
+
+.prezly-slate-button-block--outlined {
+    @apply bg-white text-gray-600 hover:bg-gray-50 hover:border-gray-200 active:bg-gray-50 active:border-gray-200;
+}
+
+/* Lightbox styles overrides */
+.ReactModal__Overlay {
+    @apply z-[999];
+}
+
+.prezly-slate-lightbox__close {
+    @apply text-accent no-underline font-bold hover:text-accent-darker hover:underline active:text-accent;
+}
+
+.prezly-slate-lightbox__download {
+    @apply bg-accent border-accent text-white hover:bg-accent-darker hover:border-accent-darker focus:bg-accent-darker focus:border-accent-darker;
+    @apply active:bg-accent-darker active:border-accent-darker;
+}
+
+.prezly-slate-lightbox__pinterest {
+    @apply hidden;
+}
