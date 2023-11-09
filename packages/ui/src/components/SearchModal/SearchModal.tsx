@@ -44,6 +44,10 @@ export function SearchModal({
         [ALGOLIA_API_KEY, ALGOLIA_APP_ID],
     );
 
+    function handleClose() {
+        onOpenChange(false);
+    }
+
     return (
         <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
             <Dialog.Portal>
@@ -59,7 +63,11 @@ export function SearchModal({
                 >
                     <InstantSearch searchClient={searchClient} indexName={ALGOLIA_INDEX}>
                         <Configure hitsPerPage={3} filters={`attributes.culture.code:${locale}`} />
-                        <SearchBar locale={locale} newsroomName={newsroomName} />
+                        <SearchBar
+                            locale={locale}
+                            newsroomName={newsroomName}
+                            onClose={handleClose}
+                        />
                         <MainPanel
                             categories={categories}
                             locale={locale}
