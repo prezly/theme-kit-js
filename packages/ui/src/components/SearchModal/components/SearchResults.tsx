@@ -47,7 +47,7 @@ export function SearchResults({ locale, newsroomName, logo, hideSubtitle, showDa
                 <ButtonLink
                     className="mt-6 w-max"
                     href={`/search?query=${query}`}
-                    variation="secondary"
+                    variation="primary"
                     forceRefresh={isOnSearchPage}
                 >
                     View all {totalResults} results
