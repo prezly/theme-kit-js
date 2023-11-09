@@ -24,6 +24,7 @@ export function CategoriesList({ categories, locale }: Props) {
                             href={getCategoryUrl(category, localeObj)}
                             localeCode={locale}
                             variation="secondary"
+                            rounded
                         >
                             {name}
                         </ButtonLink>
