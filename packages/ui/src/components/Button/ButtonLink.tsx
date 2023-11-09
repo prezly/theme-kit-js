@@ -18,49 +18,61 @@ export function ButtonLink({
     children,
     contentClassName,
     localeCode,
+    rounded,
     href,
     ...linkProps
 }: ButtonLink.Props) {
     const Element = forceRefresh ? 'a' : NextLink;
 
-    const isIconOnly = Boolean(Icon) && !children;
     const hrefWithLocale = localeCode ? `/${localeCode}/${href.toString()}` : href.toString();
+
+    const iconClassName = twMerge(
+        !children && variation !== 'navigation'
+            ? // Adjusted icon height for square buttons
+              'w-4 h-6'
+            : 'w-6 h-6',
+    );
 
     return (
         <Element
             href={forceRefresh ? hrefWithLocale : href}
             ref={forwardRef as any}
             className={twMerge(
-                'rounded flex items-center justify-center border border-transparent bg-transparent',
-                size === 'small' ? `p-3 label-medium` : `p-4 label-large`,
+                rounded ? 'rounded-full' : 'rounded',
+                `flex items-center justify-center border border-transparent bg-transparent focus:ring-4 focus-within:ring-4 focus:ring-accent-lighter focus-within:ring-accent-lighter`,
+                size === 'small' ? 'py-2 px-3 label-medium' : ' py-3 px-4 label-large',
                 variation === 'primary' &&
                     `
-  bg-accent border-accent text-accent-button-text
-  hover:bg-accent-dark hover:border-accent-dark 
-  focus:bg-accent-dark focus:border-transparent focus:ring-2 focus:ring-accent-lighter
-  focus-within:bg-accent-dark focus-within:border-transparent focus-within:ring-2 focus-within:ring-accent-lighter
-  active:bg-accent-dark active:border-accent-dark
-  ${disabled && 'bg-accent-lighter border-transparent pointer-events-none opacity-50'}
-  `,
+                bg-accent border-accent text-accent-button-text
+                hover:bg-accent-dark hover:border-accent-dark 
+                focus:bg-accent-dark focus:border-transparent
+                focus-within:bg-accent-dark focus-within:border-transparent
+                active:bg-accent-dark active:border-accent-dark
+                disabled:bg-accent-lighter disabled:border-transparent disabled:opacity-50
+                `,
                 variation === 'secondary' &&
                     `
-      bg-white border-gray-200 text-gray-800
-  hover:border-gray-300 hover:bg-gray-50
-  focus:bg-gray-50 focus:border-transparent focus:ring-2 focus:ring-accent-lighter
-  focus-within:bg-gray-50 focus-within:border-transparent focus-within:ring-2 focus-within:ring-accent-lighter
-  active:bg-gray-100 active:border-gray-400
-  ${disabled && 'bg-white border-transparent text-gray-400 pointer-events-none opacity-50'}
-  `,
+                    bg-white border-gray-200 text-gray-800
+                hover:border-gray-300 hover:bg-gray-50
+                focus:bg-gray-50 focus:border-transparent 
+                focus-within:bg-gray-50 focus-within:border-transparent
+                active:bg-gray-100 active:border-gray-400
+                disabled:bg-white disabled:border-transparent disabled:text-gray-400
+                `,
+                variation === 'navigation' &&
+                    `
+                p-0 bg-white text-gray-800 hover:text-gray-900
+                focus:text-gray-950
+                disabled:bg-white disabled:text-gray-400`,
                 Boolean(Icon) && Boolean(children) && `gap-2`,
-                isIconOnly && (size === 'small' ? `px-[0.84rem] py-3` : `px-[1.125rem] py-4`),
                 className,
             )}
             {...linkProps}
         >
-            {iconPlacement === 'left' && <Icon icon={icon} />}
+            {iconPlacement === 'left' && <Icon icon={icon} className={iconClassName} />}
             {/* If there are no children, we insert a zero-width space to preserve the line-height */}
             <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
-            {iconPlacement === 'right' && <Icon icon={icon} />}
+            {iconPlacement === 'right' && <Icon icon={icon} className={iconClassName} />}
         </Element>
     );
 }
