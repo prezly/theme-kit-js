@@ -50,12 +50,32 @@
     @apply m-2 !important;
 }
 
+.prezly-slate-contact--card {
+    @apply shadow-none;
+}
+
 .prezly-slate-contact__wrapper {
-    @apply gap-3;
+    @apply flex p-6 border border-gray-200 flex-col gap-4 max-w-xl rounded;
 }
 
 .prezly-slate-contact__name {
     @apply text-2xl font-bold leading-[140%] text-gray-800 sm:text-[28px] sm:leading-[120%];
+}
+
+.prezly-slate-bookmark-card-component__details {
+    @apply p-6;
+}
+
+.prezly-slate-bookmark-card-component__title {
+    @apply text-lg font-bold leading-[140%] text-gray-800 sm:text-xl sm:leading-[140%];
+}
+
+.prezly-slate-bookmark-card-component__description {
+    @apply text-sm font-normal leading-[160%] text-gray-600;
+}
+
+.prezly-slate-bookmark-card-component__provider {
+    @apply text-sm font-medium leading-[120%] text-gray-800;
 }
 
 .prezly-slate-contact__job-description {

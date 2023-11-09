@@ -21,7 +21,8 @@ import {
 import type { PropsWithChildren } from 'react';
 
 import '@prezly/content-renderer-react-js/styles.css';
-import './ContentRenderer.css';
+
+import { ContactCard } from '../ContactCard';
 
 import {
     Attachment,
@@ -32,6 +33,7 @@ import {
     Variable,
     VariableContextProvider,
 } from './components';
+import './ContentRenderer.css';
 
 export interface Props {
     story: ExtendedStory;
@@ -62,7 +64,15 @@ export function ContentRenderer({ nodes, story }: PropsWithChildren<Props>) {
                     />
                     <Component match={ImageNode.isImageNode} component={Image} />
                     <Component match={GalleryNode.isGalleryNode} component={Gallery} />
-                    <Component match={ContactNode.isContactNode} component={Elements.Contact} />
+                    <Component
+                        match={ContactNode.isContactNode}
+                        component={({ node }) => (
+                            <ContactCard
+                                className="max-w-full"
+                                contactInfo={{ ...node.contact, avatar_image: null }}
+                            />
+                        )}
+                    />
                     <Component match={AttachmentNode.isAttachmentNode} component={Attachment} />
                     <Component
                         match={ButtonBlockNode.isButtonBlockNode}

@@ -12,4 +12,4 @@ export type ContactInfo = Pick<
     | 'website'
     | 'facebook'
     | 'twitter'
->;
+> & { avatar_url?: string | null };

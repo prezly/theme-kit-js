@@ -27,7 +27,7 @@ export function Attachment({ node }: Props) {
     return (
         <a
             id={`attachment-${file.uuid}`}
-            className="flex items-center justify-between p-6 rounded border border-gray-200 my-10 mx-auto"
+            className="flex flex-col md:flex-row md:items-center justify-between p-6 rounded border border-gray-200 my-10 mx-auto gap-4"
             href={downloadUrl}
             onClick={handleClick}
         >

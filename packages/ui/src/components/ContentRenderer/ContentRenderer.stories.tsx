@@ -18,7 +18,7 @@ export default {
     },
     decorators: [
         (Story) => (
-            <p className="max-w-3xl mx-auto">
+            <p className="max-w-3xl p-10 mx-auto">
                 <AnalyticsContextProvider>
                     <Story />
                 </AnalyticsContextProvider>
