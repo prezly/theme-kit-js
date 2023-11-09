@@ -12,6 +12,14 @@
     @apply my-10;
 }
 
+.prezly-slate-media {
+    @apply rounded !important;
+}
+
+.prezly-slate-video iframe {
+    @apply rounded !important;
+}
+
 .prezly-slate-image-rollover {
     @apply w-full z-0;
 }
@@ -35,7 +43,11 @@
 }
 
 .prezly-slate-image__caption {
-    @apply text-base;
+    @apply text-sm not-italic p-0 mt-1.5 text-center text-gray-800;
+}
+
+.prezly-slate-gallery-image {
+    @apply m-2 !important;
 }
 
 .prezly-slate-contact__wrapper {
