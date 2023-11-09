@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-
 import { AnalyticsContextProvider } from '@prezly/analytics-nextjs';
 import type { Meta, StoryFn } from '@storybook/react';
 
