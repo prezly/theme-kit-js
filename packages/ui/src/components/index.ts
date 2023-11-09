@@ -4,6 +4,7 @@ export { Button, ButtonLink } from './Button';
 export { CategoriesList } from './CategoriesList';
 export { CategoryLink } from './CategoryLink';
 export { ContactCard } from './ContactCard';
+export { ContentRenderer } from './ContentRenderer';
 export { Dropdown } from './Dropdown';
 export { Footer } from './Footer';
 export { GalleryTitle } from './GalleryTitle';
