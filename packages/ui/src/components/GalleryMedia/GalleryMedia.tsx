@@ -26,7 +26,7 @@ export function GalleryMedia({ className, gallery, locale }: Props) {
             {cover && (
                 <UploadcareImage
                     className={twMerge(
-                        'aspect-[17/12] md:aspect-[6/7] w-full max-w-full md:max-w-[258px]',
+                        'aspect-[17/12] md:aspect-[6/7] w-full max-w-full md:max-w-[256px]',
                         'transition-transform group-hover:transform group-hover:scale-[1.05]',
                     )}
                     lazy

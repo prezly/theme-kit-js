@@ -22,7 +22,7 @@ export function CategoryBlock({ className, category, locale }: Props) {
                 className,
             )}
         >
-            <p className="subtitle-small">{name}</p>
+            <h3 className="subtitle-small">{name}</h3>
             {description && <p className="mt-1 text-small">{description}</p>}
 
             <Link
