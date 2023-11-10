@@ -9,7 +9,7 @@ export default {
     parameters: {
         design: {
             type: 'figma',
-            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=705-25691&mode=dev',
+            url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=1361-46136&mode=dev',
         },
     },
 } as Meta<typeof GalleryMedia>;
