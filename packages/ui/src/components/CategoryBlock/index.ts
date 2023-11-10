@@ -1,0 +1,1 @@
+export { CategoryBlock } from './CategoryBlock';

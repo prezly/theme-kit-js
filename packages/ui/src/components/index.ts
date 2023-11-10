@@ -2,6 +2,7 @@ export { Boilerplate } from './Boilerplate';
 export { Breadcrumbs } from './Breadcrumbs';
 export { Button, ButtonLink } from './Button';
 export { CategoriesList } from './CategoriesList';
+export { CategoryBlock } from './CategoryBlock';
 export { CategoryLink } from './CategoryLink';
 export { ContactCard } from './ContactCard';
 export { Dropdown } from './Dropdown';
