@@ -6,6 +6,7 @@ export { CategoryLink } from './CategoryLink';
 export { ContactCard } from './ContactCard';
 export { Dropdown } from './Dropdown';
 export { Footer } from './Footer';
+export { GalleryMedia } from './GalleryMedia';
 export { GalleryTitle } from './GalleryTitle';
 export { Hero } from './Hero';
 export { Input } from './Input';
