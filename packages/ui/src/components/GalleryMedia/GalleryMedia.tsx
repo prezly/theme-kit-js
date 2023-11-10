@@ -45,22 +45,28 @@ export function GalleryMedia({ className, gallery, locale }: Props) {
             >
                 <p className="title-x-small text-gray-100">{name}</p>
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        {Boolean(images_number) && (
-                            <span className="flex text-gray-100">
-                                <PhotoIcon className="w-5 h-5 mr-2" />
-                                {/* TODO: Add translations */}
-                                {videos_number === 0 ? `${images_number} Images` : images_number}
-                            </span>
-                        )}
-                        {Boolean(videos_number) && (
-                            <span className="flex text-gray-100">
-                                <VideoCameraIcon className="w-5 h-5 mr-2" />
-                                {/* TODO: Add translations */}
-                                {images_number === 0 ? `${videos_number} Videos` : videos_number}
-                            </span>
-                        )}
-                    </div>
+                    {Boolean(images_number || videos_number) && (
+                        <div className="flex items-center gap-3">
+                            {Boolean(images_number) && (
+                                <span className="flex text-gray-100">
+                                    <PhotoIcon className="w-5 h-5 mr-2" />
+                                    {/* TODO: Add translations */}
+                                    {videos_number === 0
+                                        ? `${images_number} Images`
+                                        : images_number}
+                                </span>
+                            )}
+                            {Boolean(videos_number) && (
+                                <span className="flex text-gray-100">
+                                    <VideoCameraIcon className="w-5 h-5 mr-2" />
+                                    {/* TODO: Add translations */}
+                                    {images_number === 0
+                                        ? `${videos_number} Videos`
+                                        : videos_number}
+                                </span>
+                            )}
+                        </div>
+                    )}
 
                     <ArrowRightIcon className="w-5 h-5 text-white" />
                 </div>
