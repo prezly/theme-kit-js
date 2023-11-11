@@ -31,7 +31,7 @@
     "@prezly/eslint-config": "4.5.0",
     "@prezly/sdk": "16.9.0",
     "@types/jest": "29.5.8",
-    "@types/node": "20.8.10",
+    "@types/node": "20.9.0",
     "@types/react": "18.2.37",
     "@types/react-dom": "18.2.15",
     "concurrently": "7.6.0",
