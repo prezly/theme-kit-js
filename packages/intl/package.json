@@ -18,17 +18,17 @@
         "README.md"
     ],
     "engines": {
-        "node": ">= 14.x",
-        "npm": ">= 7.x"
+        "node": ">= 16.15.1",
+        "pnpm": ">= 8.10.3"
     },
     "devEngines": {
-        "node": ">= 14.x",
-        "npm": ">= 7.x"
+        "node": ">= 16.15.1",
+        "pnpm": ">= 8.10.3"
     },
     "scripts": {
         "clean": "rimraf build/* *.tsbuildinfo",
-        "prebuild": "npm run clean && npm run build:locales && npm run prettier:check",
-        "build": "npm run intl:compile && npm run build:esm && npm run build:cjs",
+        "prebuild": "pnpm clean && pnpm build:locales && pnpm prettier:check",
+        "build": "pnpm intl:compile && pnpm build:esm && pnpm build:cjs",
         "build:locales": "node ./build-locales.js > ./src/locales.ts && prettier --write ./src/locales.ts",
         "build:esm": "tsc --project tsconfig.esm.json && babel --config-file=./babel.esm.js src/ --extensions=.ts --out-dir=build/esm/ --out-file-extension=.mjs",
         "build:cjs": "tsc --project tsconfig.cjs.json && babel --config-file=./babel.cjs.js src/ --extensions=.ts --out-dir=build/cjs/",
@@ -36,8 +36,8 @@
         "lint": "eslint ./src/",
         "prettier:check": "prettier --check './src/**/*.{ts,js}'",
         "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
-        "test": "npm run test:build",
-        "test:build": "npm run test:build:messages && npm run test:build:cjs && npm run test:build:esm && npm run test:build:dts",
+        "test": "pnpm test:build",
+        "test:build": "pnpm test:build:messages && pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:dts",
         "test:build:cjs": "node test/test-build.cjs",
         "test:build:esm": "node test/test-build.mjs",
         "test:build:dts": "tsc --noEmit build/cjs/index.d.ts && tsc --noEmit build/esm/index.d.ts",
