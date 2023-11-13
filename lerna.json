@@ -2,6 +2,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "npmClient": "pnpm",
   "useWorkspaces": true,
   "version": "6.6.0"
 }
