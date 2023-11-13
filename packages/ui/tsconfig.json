@@ -10,6 +10,7 @@
     "rootDir": ".",
     "target": "esnext",
     "baseUrl": ".",
+    "preserveSymlinks": true,
     "paths": {
       "@/components": ["src/components/"],
       "@/components/*": ["src/components/*"],
