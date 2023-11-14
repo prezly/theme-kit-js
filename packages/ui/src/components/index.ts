@@ -5,6 +5,7 @@ export { CategoriesList } from './CategoriesList';
 export { CategoryBlock } from './CategoryBlock';
 export { CategoryLink } from './CategoryLink';
 export { ContactCard } from './ContactCard';
+export { ContentRenderer } from './ContentRenderer';
 export { Dropdown } from './Dropdown';
 export { Footer } from './Footer';
 export { GalleryMedia } from './GalleryMedia';

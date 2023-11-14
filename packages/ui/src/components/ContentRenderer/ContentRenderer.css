@@ -1,0 +1,174 @@
+.prezly-slate-document {
+    @apply text-inherit;
+}
+
+.prezly-slate-document > *:last-child {
+    @apply mb-0 !important;
+}
+
+.prezly-slate-image,
+.prezly-slate-gallery,
+.prezly-slate-embed {
+    @apply my-10;
+}
+
+.prezly-slate-media {
+    @apply rounded !important;
+}
+
+.prezly-slate-video iframe {
+    @apply rounded !important;
+}
+
+.prezly-slate-image-rollover {
+    @apply w-full z-0;
+}
+
+.prezly-slate-image-rollover__dim,
+.prezly-slate-image-rollover__caption-text {
+    @apply hidden;
+}
+
+.prezly-slate-image-rollover__caption-icon-container {
+    @apply rounded bg-gray-900 bg-opacity-30;
+}
+
+.prezly-slate-image-rollover__caption:not(.prezly-slate-image-rollover__caption--empty)
+    .prezly-slate-image-rollover__caption-icon-container {
+    @apply mt-0;
+}
+
+.prezly-slate-iframely-embed iframe {
+    @apply border-red-200 !important;
+}
+
+.prezly-slate-image__caption {
+    @apply text-sm not-italic p-0 mt-1.5 text-center text-gray-800;
+}
+
+.prezly-slate-gallery-image {
+    @apply m-2 !important;
+}
+
+.prezly-slate-contact--card {
+    @apply shadow-none;
+}
+
+.prezly-slate-contact__wrapper {
+    @apply flex p-6 border border-gray-200 flex-col gap-4 max-w-xl rounded;
+}
+
+.prezly-slate-contact__name {
+    @apply text-2xl font-bold leading-[140%] text-gray-800 sm:text-[28px] sm:leading-[120%];
+}
+
+.prezly-slate-bookmark-card-component__details {
+    @apply p-6;
+}
+
+.prezly-slate-bookmark-card-component__title {
+    @apply text-lg font-bold leading-[140%] text-gray-800 sm:text-xl sm:leading-[140%];
+}
+
+.prezly-slate-bookmark-card-component__description {
+    @apply text-sm font-normal leading-[160%] text-gray-600;
+}
+
+.prezly-slate-bookmark-card-component__provider {
+    @apply text-sm font-medium leading-[120%] text-gray-800;
+}
+
+.prezly-slate-contact__job-description {
+    @apply text-sm font-normal leading-[160%] sm:text-base sm:font-medium sm:leading-[125%] text-gray-600;
+}
+
+.prezly-slate-contact__avatar {
+    @apply w-16 h-16 rounded;
+}
+
+.prezly-slate-social-fields--card {
+    @apply gap-5;
+}
+
+.prezly-slate-social-field__link {
+    @apply text-base text-accent font-bold;
+}
+
+.prezly-slate-button-block {
+    @apply bg-accent text-white hover:bg-accent-darker active:bg-accent-darker;
+}
+
+.prezly-slate-button-block--outlined {
+    @apply bg-white text-gray-600 hover:bg-gray-50 hover:border-gray-200 active:bg-gray-50 active:border-gray-200;
+}
+
+/* Lightbox styles overrides */
+.ReactModal__Overlay {
+    @apply z-[999];
+}
+
+.prezly-slate-lightbox__close {
+    @apply text-accent no-underline font-bold hover:text-accent-darker hover:underline active:text-accent;
+}
+
+.prezly-slate-lightbox__download {
+    @apply bg-accent border-accent text-white hover:bg-accent-darker hover:border-accent-darker focus:bg-accent-darker focus:border-accent-darker;
+    @apply active:bg-accent-darker active:border-accent-darker;
+}
+
+.prezly-slate-lightbox__pinterest {
+    @apply hidden;
+}
+
+.html-content h1 {
+    @apply text-gray-800 sm:font-bold sm:text-[40px] sm:leading-[120%] text-4xl leading-[140%];
+}
+
+.html-content h2 {
+    @apply text-[32px] font-bold leading-[120%] text-gray-800 sm:text-4xl;
+}
+
+.html-content h3 {
+    @apply text-[28px] font-bold leading-[140%] text-gray-800 sm:text-[32px] sm:leading-[120%];
+}
+
+.html-content a {
+    @apply text-accent hover:text-accent-dark active:text-accent-dark focus:text-accent-dark focus-within:text-accent-dark;
+}
+
+.html-content p {
+    @apply text-base font-normal leading-[160%] text-gray-800 sm:text-lg sm:leading-[160%];
+}
+
+.html-content blockquote {
+    @apply p-5 relative before:content-[''] before:border-l-4 before:border-l-gray-200 before:absolute before:left-0 before:top-0 before:bottom-0;
+    @apply text-base font-medium leading-[160%] text-gray-800 sm:text-lg sm:leading-[160%];
+}
+
+.html-content li {
+    @apply text-base font-normal leading-[160%] text-gray-800 sm:text-lg sm:leading-[160%];
+}
+
+.html-content ul {
+    @apply list-disc;
+}
+
+.html-content ol {
+    @apply list-decimal;
+}
+
+.html-content ol ol {
+    @apply list-[lower-latin];
+}
+
+.html-content ol ol ol {
+    @apply list-[lower-roman];
+}
+
+.html-content ol ol ol ol {
+    @apply list-decimal;
+}
+
+.html-content table {
+    @apply w-full indent-0 border-collapse border-inherit;
+}
