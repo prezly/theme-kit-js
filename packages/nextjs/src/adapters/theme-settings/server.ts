@@ -1,4 +1,4 @@
-import { type AsyncResolvable, resolveAsync, withoutUndefined } from '../../utils';
+import { type AsyncResolvable, resolveAsync, withoutUndefined } from '#utils';
 
 export namespace ThemeSettingsAdapter {
     export interface Configuration<T> {

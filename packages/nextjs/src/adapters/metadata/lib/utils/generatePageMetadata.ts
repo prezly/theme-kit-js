@@ -3,7 +3,8 @@ import { getNewsroomOgImageUrl } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
-import { resolveAsync } from '../../../../utils';
+import { resolveAsync } from '#utils';
+
 import type { PageUrlGenerator, Prerequisites } from '../types';
 
 import { generateAlternateLanguageLinks } from './generateAlternateLanguageLinks';

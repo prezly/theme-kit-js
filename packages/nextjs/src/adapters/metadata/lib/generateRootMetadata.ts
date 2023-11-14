@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { resolveAsync } from '../../../utils';
+import { resolveAsync } from '#utils';
 
 import type { PageUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';

@@ -2,9 +2,10 @@ import 'server-only';
 import type { Newsroom, NewsroomTheme, Story } from '@prezly/sdk';
 import { createPrezlyClient } from '@prezly/sdk';
 
+import { type Resolvable, resolve } from '#utils';
+
 import { ContentDelivery } from '../../content-delivery';
 import { CachedFetch } from '../../http';
-import { type Resolvable, resolve } from '../../utils';
 
 export namespace PrezlyAdapter {
     export interface Configuration {

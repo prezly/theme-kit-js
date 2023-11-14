@@ -3,7 +3,7 @@ import { getSupportedLocaleIsoCode } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { ReactElement } from 'react';
 
-import { type AsyncResolvable, type Resolvable, resolve, resolveAsync } from '../../utils';
+import { type AsyncResolvable, type Resolvable, resolve, resolveAsync } from '#utils';
 
 import {
     FormattedDate as BaseFormattedDate,

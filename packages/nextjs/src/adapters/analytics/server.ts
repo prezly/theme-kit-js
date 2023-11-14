@@ -1,4 +1,4 @@
-import { type AsyncResolvable, resolveAsync } from '../../utils';
+import { type AsyncResolvable, resolveAsync } from '#utils';
 
 export namespace AnalyticsAdapter {
     export interface Configuration {
