@@ -15,7 +15,8 @@ export interface Props {
 }
 
 export function ContactCard({ contactInfo, className }: Props) {
-    const { avatar_image, description, company, name, email, phone, mobile } = contactInfo;
+    const { avatar_image, avatar_url, description, company, name, email, phone, mobile } =
+        contactInfo;
     const subtitle = description && company ? `${description}, ${company}` : description;
     const { facebook, twitter } = getSocialHandles(contactInfo);
 
@@ -27,12 +28,20 @@ export function ContactCard({ contactInfo, className }: Props) {
             )}
         >
             <div className="flex items-center gap-4">
-                {avatar_image && (
+                {avatar_image ? (
                     <UploadcareImage
                         className="w-16 h-16 rounded"
                         layout="fixed"
                         imageDetails={avatar_image}
                     />
+                ) : (
+                    avatar_url && (
+                        <UploadcareImage
+                            className="w-16 h-16 rounded"
+                            layout="fixed"
+                            src={avatar_url}
+                        />
+                    )
                 )}
                 <div className="flex flex-col gap-1">
                     <h4 className="title-x-small">{name}</h4>
