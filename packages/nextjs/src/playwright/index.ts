@@ -1,1 +1,1 @@
-export { playwrightConfig } from './config';
+export { createPlaywrightConfig } from './config';
