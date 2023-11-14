@@ -11,21 +11,19 @@ import { withoutUndefined } from '../../../utils';
 import { normalizeUrl } from './normalizeUrl';
 import type { Router, RoutesMap, UrlGenerator } from './types';
 
+interface Context<T extends RoutesMap> {
+    routes: {
+        [RouteName in keyof T]: T[RouteName]['pattern'];
+    };
+    locales: Locale.Code[];
+    defaultLocale: Locale.Code;
+}
+
 export namespace RoutingAdapter {
     export function connect<Routes extends RoutesMap>() {
-        type AppRoutesMap = {
-            [RouteName in keyof Routes]: Routes[RouteName]['pattern'];
-        };
+        const context = createContext<Context<Routes> | undefined>(undefined);
 
-        interface Context {
-            routes: AppRoutesMap;
-            locales: Locale.Code[];
-            defaultLocale: Locale.Code;
-        }
-
-        const context = createContext<Context | undefined>(undefined);
-
-        function RoutingContextProvider(props: Context & { children: ReactNode }) {
+        function RoutingContextProvider(props: Context<Routes> & { children: ReactNode }) {
             const { children, ...value } = props;
             return <context.Provider value={value}>{props.children}</context.Provider>;
         }
