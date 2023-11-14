@@ -1,8 +1,12 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type { Category, Culture, Newsroom, NewsroomTheme, PrezlyClient } from '@prezly/sdk';
-import { ApiError, NewsroomGallery, SortOrder, Stories, Story } from '@prezly/sdk';
-
-import { categoryTranslations, type TranslatedCategory } from '@/theme-kit/domain';
+import type {
+    Culture,
+    Newsroom,
+    NewsroomTheme,
+    PrezlyClient,
+    TranslatedCategory,
+} from '@prezly/sdk';
+import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '@prezly/sdk';
 
 interface Params {
     formats?: Story.FormatVersion[];
@@ -94,7 +98,7 @@ export function createContentDeliveryClient(
             locale: Culture['code'],
             categories?: Category[],
         ): Promise<TranslatedCategory[]> {
-            return categoryTranslations(
+            return Category.translations(
                 categories ?? (await contentDeliveryClient.categories()),
                 locale,
             );

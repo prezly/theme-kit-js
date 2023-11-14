@@ -1,3 +1,3 @@
 export { ContentDelivery } from './content-delivery';
 export { HttpClient, CachedFetch } from './http';
-export * from './integrations/server';
+export * from './adapters/server';
