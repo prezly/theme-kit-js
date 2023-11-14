@@ -1,5 +1,4 @@
-import { LANGUAGES } from '../__mocks__/languages';
-
+import { LANGUAGES } from './__mocks__/languages';
 import { matchLanguageByRequestedLocaleSlug } from './languages';
 import { DUMMY_DEFAULT_LOCALE } from './locale';
 

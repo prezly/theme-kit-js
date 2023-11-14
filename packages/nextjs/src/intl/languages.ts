@@ -3,6 +3,8 @@ import { getDefaultLanguage, matchLanguageByLocaleSlug } from '@prezly/theme-kit
 
 import { DUMMY_DEFAULT_LOCALE } from './locale';
 
+// FIXME: Eliminate this function, migrate tests to the core package's `matchLanguageByLocaleSlug` func
+
 /**
  * Retrieve a culture with fallback to legacy codes support.
  * Pulled from https://github.com/prezly/prezly/blob/de9900d9890a33502780494aa3fb85c9a732b3c3/lib/model/CulturePeer.php#L91-L114
