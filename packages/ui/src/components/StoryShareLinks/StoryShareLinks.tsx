@@ -69,7 +69,7 @@ export function StoryShareLinks({
     return (
         <div
             className={twMerge(
-                `flex items-center rounded border border-gray-200 w-max`,
+                `flex items-center rounded border border-gray-200 w-max overflow-hidden`,
                 layout === 'vertical' && `flex-col h-max`,
                 className,
             )}

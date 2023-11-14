@@ -19,16 +19,16 @@ export function GalleryMedia({ className, gallery, locale }: Props) {
     return (
         <Link
             href={`/media/album/${uuid}`}
-            className={twMerge('relative w-full md:w-max group', className)}
+            className={twMerge(
+                'relative w-full md:w-max transition-transform duration-300 hover:scale-[1.02] hover:shadow-xLarge',
+                className,
+            )}
             contentClassName="p-0"
             localeCode={locale}
         >
             {cover && (
                 <UploadcareImage
-                    className={twMerge(
-                        'aspect-[17/12] md:aspect-[6/7] w-full max-w-full md:max-w-[256px]',
-                        'transition-transform group-hover:transform group-hover:scale-[1.05]',
-                    )}
+                    className="aspect-[17/12] md:aspect-[6/7] w-full max-w-full md:max-w-[256px]"
                     lazy
                     layout="fill"
                     objectFit="cover"
