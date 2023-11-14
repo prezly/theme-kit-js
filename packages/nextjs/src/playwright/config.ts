@@ -4,7 +4,8 @@ import { devices } from '@playwright/test';
 
 interface Configuration {
     testDir: string;
-    baseURL?: string;
+    baseUrl?: string;
+    ci?: boolean;
 }
 
 const DEFAULT_BASE_URL = 'http://localhost:3000';
@@ -14,7 +15,8 @@ const DEFAULT_BASE_URL = 'http://localhost:3000';
  */
 export function createPlaywrightConfig({
     testDir,
-    baseURL = DEFAULT_BASE_URL,
+    baseUrl = DEFAULT_BASE_URL,
+    ci = false,
 }: Configuration): PlaywrightTestConfig {
     return {
         testDir,
@@ -30,11 +32,11 @@ export function createPlaywrightConfig({
         /* Run tests in files in parallel */
         fullyParallel: true,
         /* Fail the build on CI if you accidentally left test.only in the source code. */
-        forbidOnly: !!process.env.CI,
+        forbidOnly: ci,
         /* Retry on CI only */
-        retries: process.env.CI ? 2 : 0,
+        retries: ci ? 2 : 0,
         /* Opt out of parallel tests on CI. */
-        workers: process.env.CI ? 1 : undefined,
+        workers: ci ? 1 : undefined,
         /* Reporter to use. See https://playwright.dev/docs/test-reporters */
         reporter: 'html',
         /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -43,11 +45,11 @@ export function createPlaywrightConfig({
             actionTimeout: 0,
             /* Base URL to use in actions like `await page.goto('/')`. */
             // eslint-disable-next-line @typescript-eslint/naming-convention
-            baseURL,
+            baseURL: baseUrl,
 
             /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
             trace: 'on-first-retry',
-            video: process.env.CI ? 'retain-on-failure' : 'on',
+            video: ci ? 'retain-on-failure' : 'on',
         },
 
         /* Configure projects for major browsers */
@@ -67,7 +69,7 @@ export function createPlaywrightConfig({
             },
 
             // Safari fails to load localhost pages due to SSL error. We'll only test Webkit on CI, where have an HTTPS server.
-            ...(process.env.CI
+            ...(ci
                 ? [
                       {
                           name: 'webkit',

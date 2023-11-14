@@ -85,12 +85,12 @@ export namespace IntlAdapter {
 
         return { useIntl, FormattedMessage, FormattedDate, FormattedTime };
     }
+}
 
-    async function importThemeKitDictionary(localeCode: Locale.Code): Promise<IntlDictionary> {
-        const fileCode = getSupportedLocaleIsoCode(localeCode);
+async function importThemeKitDictionary(localeCode: Locale.Code): Promise<IntlDictionary> {
+    const fileCode = getSupportedLocaleIsoCode(localeCode);
 
-        const messages = await import(`@prezly/theme-kit-intl/messages/${fileCode}.json`);
+    const messages = await import(`@prezly/theme-kit-intl/messages/${fileCode}.json`);
 
-        return { ...messages };
-    }
+    return { ...messages };
 }

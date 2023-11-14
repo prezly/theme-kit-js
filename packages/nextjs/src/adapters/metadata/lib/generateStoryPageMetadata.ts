@@ -66,7 +66,7 @@ export async function generateStoryPageMetadata(
             alternates: {
                 canonical,
                 types: Story.isPublished(story)
-                    ? { 'application/json': `${oembed.url}.json` }
+                    ? { [`application/json`]: `${oembed.url}.json` }
                     : undefined,
             },
             robots: isPreview || isSecret ? { index: false, follow: false } : undefined,

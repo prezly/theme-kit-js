@@ -153,11 +153,11 @@ export namespace ContentDelivery {
                     offset,
                     search,
                     query: {
-                        'category.id': category ? { $any: [category.id] } : undefined,
-                        'newsroom.uuid': { $in: [newsroomUuid] },
-                        locale: locale ? { $in: [locale.code] } : undefined,
-                        status: { $in: [Story.Status.PUBLISHED] },
-                        visibility: { $in: [Story.Visibility.PUBLIC] },
+                        [`category.id`]: category ? { $any: [category.id] } : undefined,
+                        [`newsroom.uuid`]: { $in: [newsroomUuid] },
+                        [`locale`]: locale ? { $in: [locale.code] } : undefined,
+                        [`status`]: { $in: [Story.Status.PUBLISHED] },
+                        [`visibility`]: { $in: [Story.Visibility.PUBLIC] },
                     },
                     include: ['thumbnail_image'],
                 });
@@ -215,12 +215,12 @@ export namespace ContentDelivery {
                     formats,
                     limit: 1,
                     query: {
-                        slug: params.slug,
-                        'newsroom.uuid': { $in: [newsroomUuid] },
-                        status: {
+                        [`slug`]: params.slug,
+                        [`newsroom.uuid`]: { $in: [newsroomUuid] },
+                        [`status`]: {
                             $in: [Story.Status.PUBLISHED, Story.Status.EMBARGO],
                         },
-                        visibility: {
+                        [`visibility`]: {
                             $in: [
                                 Story.Visibility.PUBLIC,
                                 Story.Visibility.PRIVATE,

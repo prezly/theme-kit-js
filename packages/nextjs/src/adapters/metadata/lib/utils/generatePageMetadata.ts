@@ -39,7 +39,7 @@ export async function generatePageMetadata(
             alternates: {
                 canonical: generateUrl?.(locale),
                 types: {
-                    'application/rss+xml': '/feed', // TODO: Check if it's fine using a relative URL
+                    [`application/rss+xml`]: '/feed', // TODO: Check if it's fine using a relative URL
                 },
                 languages: generateUrl
                     ? generateAlternateLanguageLinks(languages, generateUrl)
