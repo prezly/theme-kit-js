@@ -41,7 +41,7 @@ function shouldExceptionBeIgnored(exception: Exception) {
     return false;
 }
 
-export function getCommonClientOptions(
+export function buildSentryConfig(
     dsn: string,
     themeName: string | null,
 ): Parameters<typeof init>[0] {

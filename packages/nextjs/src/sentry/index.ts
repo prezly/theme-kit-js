@@ -1,2 +1,2 @@
-export { getSentryClientOptions } from './client';
-export { getSentryServerOptions } from './server';
+export { buildSentryClientConfig } from './client';
+export { buildSentryServerConfig } from './server';
