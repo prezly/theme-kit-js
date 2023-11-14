@@ -41,7 +41,7 @@ export function SearchBar({ locale, newsroomName, onClose }: Props) {
                 autoComplete="off"
                 className="w-full border border-gray-200 rounded px-3 py-2"
                 icon={isMd ? MagnifyingGlassIcon : undefined}
-                inputClassName="p-1 focus:outline-transparent focus-within:outline-transparent"
+                inputClassName="p-1 focus:outline-transparent focus-within:outline-transparent focus-visible:outline-0"
                 name="query"
                 onChange={(event) => setQuery(event.currentTarget.value)}
                 // TODO: add translations
