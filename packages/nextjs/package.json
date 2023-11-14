@@ -68,7 +68,7 @@
     "dev": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "echo 'No tests at the moment'"
   },
   "peerDependencies": {
     "@playwright/test": "1.x",
