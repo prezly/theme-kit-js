@@ -1,4 +1,7 @@
 import { join, dirname } from 'path';
+import { mergeConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import svgr from 'vite-plugin-svgr';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -16,13 +19,26 @@ const config = {
         getAbsolutePath('@storybook/addon-essentials'),
         getAbsolutePath('@storybook/addon-onboarding'),
         getAbsolutePath('@storybook/addon-interactions'),
+        getAbsolutePath('@storybook/addon-designs'),
     ],
     framework: {
         name: getAbsolutePath('@storybook/react-vite'),
         options: {},
     },
     docs: {
-        autodocs: 'tag',
+        autodocs: true,
+    },
+    viteFinal(config) {
+        return mergeConfig(config, {
+            plugins: [tsconfigPaths(), svgr()],
+            define: {
+                'process.env': {},
+            },
+            resolve: {
+                preserveSymlinks: true,
+            },
+        });
     },
 };
+
 export default config;

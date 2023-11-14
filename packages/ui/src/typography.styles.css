@@ -51,7 +51,7 @@ body {
 }
 
 .label-large {
-    @apply text-sm font-normal leading-[160%] text-gray-800 sm:text-base sm:font-medium sm:leading-[124%];
+    @apply text-sm font-normal leading-[160%] text-gray-800 sm:text-base sm:font-medium sm:leading-[125%];
 }
 
 .label-medium {
