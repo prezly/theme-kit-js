@@ -30,10 +30,6 @@
       "types": "./build/middleware/server.d.ts",
       "default": "./build/middleware/server.js"
     },
-    "./server": {
-      "types": "./build/server.d.ts",
-      "default": "./build/server.js"
-    },
     "./sentry": {
       "types": "./build/sentry/index.d.ts",
       "default": "./build/sentry/index.js"
