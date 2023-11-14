@@ -1,5 +1,5 @@
 import type { Culture, Newsroom } from '@prezly/sdk';
-import { getDataRequestLink, LocaleObject } from '@prezly/theme-kit-core';
+import { getDataRequestLink } from '@prezly/theme-kit-core';
 
 interface Props {
     className?: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function DataRequestLink({ className, newsroom, locale }: Props) {
-    const href = getDataRequestLink(newsroom, LocaleObject.fromAnyCode(locale));
+    const href = getDataRequestLink(newsroom, locale);
 
     return (
         <a href={href} className={className}>

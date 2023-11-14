@@ -1,5 +1,5 @@
 import type { Category, Culture } from '@prezly/sdk';
-import { getCategoryUrl, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
+import { getCategoryUrl, getLocalizedCategoryData } from '@prezly/theme-kit-core';
 
 import { ButtonLink } from '@/components/Button';
 
@@ -15,13 +15,12 @@ export function CategoriesList({ categories, locale }: Props) {
             <p className="subtitle-small text-gray-600">Categories</p>
             <div className="mt-6 flex items-center gap-3 flex-wrap">
                 {categories.map((category) => {
-                    const localeObj = LocaleObject.fromAnyCode(locale);
-                    const { name } = getLocalizedCategoryData(category, localeObj);
+                    const { name } = getLocalizedCategoryData(category, locale);
 
                     return (
                         <ButtonLink
                             key={category.id}
-                            href={getCategoryUrl(category, localeObj)}
+                            href={getCategoryUrl(category, locale)}
                             localeCode={locale}
                             variation="secondary"
                             rounded

@@ -3,9 +3,9 @@ import {
     getCategoryHasTranslation,
     getCategoryUrl,
     isStoryPublished,
-    type LocaleObject,
     Visibility,
 } from '@prezly/theme-kit-core';
+import type { Locale } from '@prezly/theme-kit-intl';
 
 function getAllowedTranslationVisibilityValues(
     story: Pick<ExtendedStory, 'visibility'>,
@@ -25,7 +25,7 @@ function getAllowedTranslationVisibilityValues(
 }
 
 export function getTranslationUrl(
-    locale: LocaleObject,
+    locale: Locale.Code,
     currentCategory?: Pick<Category, 'i18n' | 'display_name'>,
     currentStory?: ExtendedStory,
     noFallback?: boolean,
@@ -44,14 +44,12 @@ export function getTranslationUrl(
         return '/';
     }
 
-    const localeCode = locale.toUnderscoreCode();
-
-    if (currentStory && currentStory.culture.locale !== localeCode) {
+    if (currentStory && currentStory.culture.locale !== locale) {
         const allowedVisibilityValues = getAllowedTranslationVisibilityValues(currentStory);
 
         const translatedStory = currentStory.translations.find(
             ({ culture, status, visibility }) =>
-                culture.locale === localeCode &&
+                culture.locale === locale &&
                 isStoryPublished(status) &&
                 allowedVisibilityValues.includes(visibility),
         );

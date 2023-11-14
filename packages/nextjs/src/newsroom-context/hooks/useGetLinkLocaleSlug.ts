@@ -11,7 +11,7 @@ export function useGetLinkLocaleSlug() {
 
     // The `locale` parameter is mainly used for Language Dropdown
     return useCallback(
-        (locale?: Locale) => getShortestLocaleSlug(languages, locale ?? currentLocale),
+        (locale?: Locale.Code) => getShortestLocaleSlug(languages, locale ?? currentLocale.code),
         [languages, currentLocale],
     );
 }

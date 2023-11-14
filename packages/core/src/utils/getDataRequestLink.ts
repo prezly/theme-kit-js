@@ -5,11 +5,11 @@ import { getPrivacyPortalUrl } from './getPrivacyPortalUrl';
 
 export function getDataRequestLink(
     newsroom: Pick<Newsroom, 'custom_data_request_link' | 'uuid'>,
-    currentLocale: Locale,
+    locale: Locale.Code,
 ) {
     return (
         newsroom.custom_data_request_link ||
-        getPrivacyPortalUrl(newsroom, currentLocale, {
+        getPrivacyPortalUrl(newsroom, locale, {
             action: 'data-request',
         })
     );

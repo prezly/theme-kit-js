@@ -74,7 +74,7 @@ export function PageSeo({
         companyInformation.about_plaintext;
 
     const canonicalUrl =
-        canonical || getAbsoluteUrl(currentPath, site.url, getLinkLocaleSlug(currentLocale));
+        canonical || getAbsoluteUrl(currentPath, site.url, getLinkLocaleSlug(currentLocale.code));
     const siteName = companyInformation.name;
     const sharingImageUrl = imageUrl || getNewsroomOgImageUrl(site, currentLocale);
 

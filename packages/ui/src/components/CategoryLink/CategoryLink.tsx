@@ -3,7 +3,6 @@ import {
     type AlgoliaCategoryRef,
     getCategoryUrl,
     getLocalizedCategoryData,
-    LocaleObject,
 } from '@prezly/theme-kit-core';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
@@ -15,13 +14,12 @@ interface Props {
 }
 
 export function CategoryLink({ category, locale, className }: Props) {
-    const localeObj = LocaleObject.fromAnyCode(locale);
-    const { name } = getLocalizedCategoryData(category, localeObj);
+    const { name } = getLocalizedCategoryData(category, locale);
 
     return (
         <Link
             className={twMerge(`label-large text-accent`, className)}
-            href={getCategoryUrl(category, localeObj)}
+            href={getCategoryUrl(category, locale)}
             locale={locale}
         >
             <span>{name}</span>

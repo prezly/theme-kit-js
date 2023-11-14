@@ -1,6 +1,6 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import type { Category, Culture } from '@prezly/sdk';
-import { getCategoryUrl, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
+import { getCategoryUrl, getLocalizedCategoryData } from '@prezly/theme-kit-core';
 import { twMerge } from 'tailwind-merge';
 
 import { Link } from '../Link';
@@ -12,8 +12,7 @@ export interface Props {
 }
 
 export function CategoryBlock({ className, category, locale }: Props) {
-    const localeObj = LocaleObject.fromAnyCode(locale);
-    const { name, description } = getLocalizedCategoryData(category, localeObj);
+    const { name, description } = getLocalizedCategoryData(category, locale);
 
     return (
         <div
@@ -27,7 +26,7 @@ export function CategoryBlock({ className, category, locale }: Props) {
 
             <Link
                 className="label-large text-accent mt-5"
-                href={getCategoryUrl(category, localeObj)}
+                href={getCategoryUrl(category, locale)}
                 localeCode={locale}
                 icon={ArrowRightIcon}
                 iconPlacement="right"
