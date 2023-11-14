@@ -39,7 +39,7 @@
     "@prezly/sdk": "^18.1.0"
   },
   "dependencies": {
-    "@prezly/theme-kit-intl": "*",
+    "@prezly/theme-kit-intl": "0.0.0-next-22e966191ad837b196b46db94834a1eade540e17",
     "@prezly/uploadcare": "^2.3.4",
     "@technically/is-not-undefined": "^1.0.0",
     "isomorphic-fetch": "^3.0.0",

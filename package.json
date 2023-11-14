@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/core",
+    "packages/intl",
+    "packages/nextjs",
+    "packages/ui"
   ],
   "scripts": {
     "build": "npx lerna run build",
@@ -21,7 +24,8 @@
     "release:preview": "npm run release:prepare && npm run release:publish:preview",
     "release:prepare": "npx lerna run lint,test,build",
     "release:publish": "lerna publish --no-private",
-    "release:publish:preview": "lerna publish prerelease --dist-tag preview"
+    "release:publish:preview": "lerna publish prerelease --dist-tag preview",
+    "sync-package-versions": "node ./sync-package-versions.mjs"
   },
   "dependencies": {
     "next": "^13.4.12",
@@ -44,5 +48,9 @@
     "rimraf": "5.0.5",
     "ts-jest": "29.1.1",
     "typescript": "^5.2.2"
+  },
+  "sync-package-versions": {
+    "workspace": true,
+    "packages": ["@prezly/sdk"]
   }
 }
