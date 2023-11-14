@@ -26,6 +26,10 @@
       "types": "./build/http/index.d.ts",
       "default": "./build/http/index.js"
     },
+    "./middleware": {
+      "types": "./build/middleware/server.d.ts",
+      "default": "./build/middleware/server.js"
+    },
     "./server": {
       "types": "./build/server.d.ts",
       "default": "./build/server.js"

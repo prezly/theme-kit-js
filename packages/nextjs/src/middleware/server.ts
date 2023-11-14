@@ -1,0 +1,1 @@
+export { IntlMiddleware } from './IntlMiddleware';
