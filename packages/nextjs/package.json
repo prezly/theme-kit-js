@@ -9,6 +9,7 @@
     ".": "./build/index.js",
     "./config": "./build/config.js",
     "./server": "./build/server.js",
+    "./sentry": "./build/sentry/index.js",
     "./playwright": "./build/playwright/index.js"
   },
   "typesVersions": {
