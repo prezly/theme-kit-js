@@ -21,10 +21,6 @@
       "types":  "./build/adapters/server.d.ts",
       "default": "./build/adapters/server.js"
     },
-    "./config": {
-      "types": "./build/config.d.ts",
-      "default": "./build/config.js"
-    },
     "./http": {
       "types": "./build/http/index.d.ts",
       "default": "./build/http/index.js"
@@ -32,6 +28,10 @@
     "./middleware": {
       "types": "./build/middleware/server.d.ts",
       "default": "./build/middleware/server.js"
+    },
+    "./next-config": {
+      "types": "./build/next-config/index.d.ts",
+      "default": "./build/next-config/index.js"
     },
     "./sentry": {
       "types": "./build/sentry/index.d.ts",
