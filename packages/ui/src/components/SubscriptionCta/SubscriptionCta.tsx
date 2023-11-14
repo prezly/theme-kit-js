@@ -34,6 +34,7 @@ export function SubscriptionCta({ className, error, value, onChange, onSubmit }:
             >
                 <Input
                     className="w-full"
+                    inputClassName="py-3 px-4"
                     error={error}
                     //  TODO: add translations
                     placeholder="Enter your email"
