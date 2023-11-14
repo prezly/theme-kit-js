@@ -25,17 +25,11 @@ Default.args = {
     languages: LANGUAGES,
     newsroom: NEWSROOM,
     externalSiteLink: 'https://hey.test-site.com/testing-1-2-3',
-    layout: 'default',
     onSearch: () => {},
     hasStandaloneAboutPage: true,
     hasStandaloneContactsPage: true,
+    showNewsroomLabelAsideLogo: true,
     locale: 'en',
-};
-
-export const Centered = NavigationTemplate.bind({});
-Centered.args = {
-    ...Default.args,
-    layout: 'centered',
 };
 
 export const WithoutLogo = NavigationTemplate.bind({});
