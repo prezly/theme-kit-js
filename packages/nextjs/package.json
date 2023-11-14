@@ -6,20 +6,37 @@
   "types": "build/index.d.ts",
   "files": ["build", "README.md"],
   "exports": {
-    ".": "./build/index.js",
-    "./config": "./build/config.js",
-    "./http": "./build/http/index.js",
-    "./server": "./build/server.js",
-    "./sentry": "./build/sentry/index.js",
-    "./playwright": "./build/playwright/index.js"
-  },
-  "typesVersions": {
-    "*": {
-      "config": ["build/config.d.ts"],
-      "http": ["build/http/index.d.ts"],
-      "server": ["build/server.d.ts"],
-      "sentry": ["build/sentry/index.d.ts"],
-      "playwright": ["build/playwright/index.d.ts"]
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./adapters/client": {
+      "types": "./build/adapters/client.d.ts",
+      "default": "./build/adapters/client.js"
+    },
+    "./adapters/server": {
+      "types":  "./build/adapters/server.d.ts",
+      "default": "./build/adapters/server.js"
+    },
+    "./config": {
+      "types": "./build/config.d.ts",
+      "default": "./build/config.js"
+    },
+    "./http": {
+      "types": "./build/http/index.d.ts",
+      "default": "./build/http/index.js"
+    },
+    "./server": {
+      "types": "./build/server.d.ts",
+      "default": "./build/server.js"
+    },
+    "./sentry": {
+      "types": "./build/sentry/index.d.ts",
+      "default": "./build/sentry/index.js"
+    },
+    "./playwright": {
+      "types": "./build/playwright/index.d.ts",
+      "default": "./build/playwright/index.js"
     }
   },
   "engines": {
