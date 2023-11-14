@@ -5,18 +5,41 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": ["build", "README.md"],
-  "exports": {
-    ".": "./build/index.js",
-    "./config": "./build/config.js",
-    "./server": "./build/server.js",
-    "./sentry": "./build/sentry/index.js",
-    "./playwright": "./build/playwright/index.js"
+  "imports": {
+    "#utils": "./build/utils/index.js"
   },
-  "typesVersions": {
-    "*": {
-      "config": ["build/config.d.ts"],
-      "server": ["build/server.d.ts"],
-      "playwright": ["build/playwright/index.d.ts"]
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./adapters/client": {
+      "types": "./build/adapters/client.d.ts",
+      "default": "./build/adapters/client.js"
+    },
+    "./adapters/server": {
+      "types":  "./build/adapters/server.d.ts",
+      "default": "./build/adapters/server.js"
+    },
+    "./http": {
+      "types": "./build/http/index.d.ts",
+      "default": "./build/http/index.js"
+    },
+    "./middleware": {
+      "types": "./build/middleware/server.d.ts",
+      "default": "./build/middleware/server.js"
+    },
+    "./next-config": {
+      "types": "./build/next-config/index.d.ts",
+      "default": "./build/next-config/index.js"
+    },
+    "./sentry": {
+      "types": "./build/sentry/index.d.ts",
+      "default": "./build/sentry/index.js"
+    },
+    "./playwright": {
+      "types": "./build/playwright/index.d.ts",
+      "default": "./build/playwright/index.js"
     }
   },
   "engines": {
@@ -45,11 +68,11 @@
     "dev": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "echo 'No tests at the moment'"
   },
   "peerDependencies": {
     "@playwright/test": "1.x",
-    "@prezly/sdk": "^18.1.1",
+    "@prezly/sdk": "^18.2.0",
     "next": "^12.x || ^13.x",
     "react": "^17.x || ^18.x",
     "react-dom": "^17.x || ^18.x"
@@ -60,9 +83,12 @@
     }
   },
   "dependencies": {
+    "@e1himself/cached-fetch": "^1.0.0",
     "@prezly/theme-kit-core": "0.0.0-next-22e966191ad837b196b46db94834a1eade540e17",
     "@prezly/theme-kit-intl": "0.0.0-next-22e966191ad837b196b46db94834a1eade540e17",
-    "next-seo": "^5.4.0"
+    "next-seo": "^5.4.0",
+    "parse-data-url": "^6.0.0",
+    "url-pattern": "^1.0.3"
   },
   "devDependencies": {
     "@sentry/nextjs": "7.80.0"

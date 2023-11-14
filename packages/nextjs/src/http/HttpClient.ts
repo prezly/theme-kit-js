@@ -1,0 +1,79 @@
+'use client';
+
+/* eslint-disable @typescript-eslint/no-use-before-define */
+
+import type { Fetch } from './types';
+
+export interface HttpClient {
+    get<T>(url: string, query?: Record<string, string | number | undefined | null>): Promise<T>;
+    withHeaders(headers: Record<string, string>): HttpClient;
+}
+
+export namespace HttpClient {
+    export interface Options {
+        fetch?: Fetch;
+        headers?: Record<string, string>;
+    }
+
+    export function create(options: Options = {}): HttpClient {
+        const fetchImpl = options.fetch ?? fetch;
+        const headers = options.headers ?? {};
+
+        return {
+            async get(path, query = {}) {
+                const searchParams = Object.entries(query)
+                    .filter(([, value]) => value !== null && value !== undefined)
+                    .reduce<string[]>(
+                        (result, [name, value]) => [
+                            ...result,
+                            `${name}=${encodeURIComponent(value ?? '')}`,
+                        ],
+                        [],
+                    )
+                    .join('&');
+
+                const url = searchParams ? `${path}?${searchParams}` : path;
+
+                const response = await fetchImpl(url, { headers });
+
+                if (!response.ok) {
+                    const status = {
+                        code: response.status,
+                        text: response.statusText,
+                    };
+                    throw new HttpClient.HttpError(status, response.headers, await response.text());
+                }
+
+                return response.json();
+            },
+
+            withHeaders(extraHeaders) {
+                return HttpClient.create({
+                    ...options,
+                    headers: { ...headers, ...extraHeaders },
+                });
+            },
+        };
+    }
+
+    interface Status {
+        code: number;
+        text: string;
+    }
+
+    export class HttpError extends Error {
+        public readonly status: Status;
+
+        public readonly body: string | undefined;
+
+        public readonly headers: Headers;
+
+        constructor(status: Status, headers: Headers, body?: string | undefined) {
+            super(status.text);
+
+            this.status = status;
+            this.headers = headers;
+            this.body = body;
+        }
+    }
+}
