@@ -1,9 +1,12 @@
 {
-  "name": "theme-kit",
+  "name": "@prezly/theme-kit-js-monorepo",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/core",
+    "packages/intl",
+    "packages/nextjs",
+    "packages/ui"
   ],
   "scripts": {
     "build": "npx lerna run build",
@@ -21,7 +24,8 @@
     "release:preview": "npm run release:prepare && npm run release:publish:preview",
     "release:prepare": "npx lerna run lint,test,build",
     "release:publish": "lerna publish --no-private",
-    "release:publish:preview": "lerna publish prerelease --dist-tag preview"
+    "release:publish:preview": "lerna publish prerelease --dist-tag preview",
+    "sync-package-versions": "node ./sync-package-versions.mjs"
   },
   "dependencies": {
     "next": "^13.4.12",
@@ -31,18 +35,22 @@
   "devDependencies": {
     "@playwright/test": "1.39.0",
     "@prezly/eslint-config": "4.5.0",
-    "@prezly/sdk": "^18.0",
-    "@types/jest": "^29.5.6",
-    "@types/node": "^20.8.7",
-    "@types/react": "^18.2.29",
-    "@types/react-dom": "^18.2.13",
+    "@prezly/sdk": "^18.1.1",
+    "@types/jest": "29.5.8",
+    "@types/node": "20.9.0",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
     "concurrently": "7.6.0",
-    "eslint": "8.51.0",
+    "eslint": "8.53.0",
     "jest": "29.7.0",
     "lerna": "6.6.2",
     "prettier": "2.8.8",
     "rimraf": "5.0.5",
     "ts-jest": "29.1.1",
     "typescript": "^5.2.2"
+  },
+  "sync-package-versions": {
+    "workspace": true,
+    "packages": ["@prezly/sdk"]
   }
 }

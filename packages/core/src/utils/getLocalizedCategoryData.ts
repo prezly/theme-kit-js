@@ -1,5 +1,5 @@
 import type { Category } from '@prezly/sdk';
-import { Locale } from '@prezly/theme-kit-intl';
+import type { Locale } from '@prezly/theme-kit-intl';
 
 import type { AlgoliaCategoryRef } from '../types';
 
@@ -17,7 +17,7 @@ interface LocalizedCategoryData {
 
 export function getLocalizedCategoryData(
     category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
-    locale: Locale | Locale.AnyCode,
+    locale: Locale.Code,
 ): LocalizedCategoryData {
     if (isAlgoliaCategory(category)) {
         return {
@@ -27,27 +27,21 @@ export function getLocalizedCategoryData(
         };
     }
 
-    const { code } = Locale.from(locale);
+    const translations = Object.values(category.i18n).filter((translation) => translation.name);
 
-    const { i18n } = category;
-    const populatedLocales = Object.keys(i18n).filter(
-        (localeCode) => i18n[localeCode as Locale.Code].name,
-    );
-    const targetLocale =
-        populatedLocales.find((localeCode) => localeCode === code) ??
-        populatedLocales.find(
-            (localeCode) => i18n[localeCode as Locale.Code].name === category.display_name,
-        ) ??
-        populatedLocales[0];
+    const pickedTranslation =
+        translations.find((translation) => translation.locale.code === locale) ??
+        translations.find((translation) => translation.name === category.display_name) ??
+        translations[0];
 
-    const { name, slug, description } = i18n[targetLocale as Locale.Code];
+    const { name, slug, description } = pickedTranslation;
 
     return { name, slug, description };
 }
 
 export function getCategoryUrl(
     category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
-    locale: Locale | Locale.AnyCode,
+    locale: Locale.Code,
 ): string {
     const { slug } = getLocalizedCategoryData(category, locale);
     return `/category/${slug}`;
@@ -55,12 +49,8 @@ export function getCategoryUrl(
 
 export function getCategoryHasTranslation(
     category: Pick<Category, 'i18n'>,
-    locale: Locale | Locale.AnyCode,
+    locale: Locale.Code,
 ): boolean {
-    const { code } = Locale.from(locale);
-    const { i18n } = category;
-    const populatedLocales = Object.keys(i18n).filter(
-        (localeCode) => i18n[localeCode as Locale.Code].name,
-    );
-    return Boolean(populatedLocales.find((localeCode) => localeCode === code));
+    const translation = category.i18n[locale];
+    return Boolean(translation?.name);
 }

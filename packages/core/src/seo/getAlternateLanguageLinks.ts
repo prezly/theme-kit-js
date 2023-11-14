@@ -23,16 +23,13 @@ export function getAlternateLanguageLinks<
     Language extends Pick<NewsroomLanguageSettings, 'code' | 'is_default'>,
 >(
     availableLanguages: Language[],
-    generateTranslationUrl: (locale: Locale) => string | undefined,
+    generateTranslationUrl: (locale: Locale.Code) => string | undefined,
 ): AlternateLanguageLink[] {
     const defaultLanguage = availableLanguages.find((lang) => lang.is_default);
 
     // Generate the translation URLs map for the exact locale codes
     const translations = Object.fromEntries(
-        availableLanguages.map((lang) => [
-            lang.code,
-            generateTranslationUrl(Locale.from(lang.code)),
-        ]),
+        availableLanguages.map((lang) => [lang.code, generateTranslationUrl(lang.code)]),
     ) as Record<HrefKey, Url | undefined>;
 
     // Initialize the links map with the existing translations

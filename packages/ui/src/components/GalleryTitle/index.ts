@@ -1,0 +1,1 @@
+export { GalleryTitle } from './GalleryTitle';
