@@ -66,7 +66,9 @@
     "@e1himself/cached-fetch": "^1.0.0",
     "@prezly/theme-kit-core": "0.0.0-next-22e966191ad837b196b46db94834a1eade540e17",
     "@prezly/theme-kit-intl": "0.0.0-next-22e966191ad837b196b46db94834a1eade540e17",
-    "next-seo": "^5.4.0"
+    "next-seo": "^5.4.0",
+    "parse-data-url": "^6.0.0",
+    "url-pattern": "^1.0.3"
   },
   "devDependencies": {
     "@sentry/nextjs": "7.80.0"
