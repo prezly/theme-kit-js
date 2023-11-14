@@ -8,6 +8,7 @@
   "exports": {
     ".": "./build/index.js",
     "./config": "./build/config.js",
+    "./http": "./build/http/index.js",
     "./server": "./build/server.js",
     "./sentry": "./build/sentry/index.js",
     "./playwright": "./build/playwright/index.js"
@@ -15,7 +16,9 @@
   "typesVersions": {
     "*": {
       "config": ["build/config.d.ts"],
+      "http": ["build/http/index.d.ts"],
       "server": ["build/server.d.ts"],
+      "sentry": ["build/sentry/index.d.ts"],
       "playwright": ["build/playwright/index.d.ts"]
     }
   },
@@ -60,6 +63,7 @@
     }
   },
   "dependencies": {
+    "@e1himself/cached-fetch": "^1.0.0",
     "@prezly/theme-kit-core": "0.0.0-next-22e966191ad837b196b46db94834a1eade540e17",
     "@prezly/theme-kit-intl": "0.0.0-next-22e966191ad837b196b46db94834a1eade540e17",
     "next-seo": "^5.4.0"
