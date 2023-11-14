@@ -46,7 +46,7 @@ export function LanguagesDropdown({
         <Dropdown
             className="border-0 w-max p-0 bg-transparent text-gray-600 hover:text-gray-800"
             contentProps={{
-                className: 'border mt-2 p-0 mb-5 overflow-auto',
+                className: 'border mt-2 p-0 mb-5 overflow-auto rounded shadow-large',
                 side: isSm ? 'bottom' : 'left',
             }}
             label={<GlobeEuropeAfricaIcon className="w-6 h-6" />}
@@ -75,9 +75,11 @@ export function LanguagesDropdown({
                             key={language.code}
                         >
                             <a className="px-6 py-4 flex items-center justify-between" href={link}>
-                                <span>{getLanguageDisplayName(language, languages)}</span>
+                                <span className="label-medium">
+                                    {getLanguageDisplayName(language, languages)}
+                                </span>
                                 {language.code === currentLanguage?.code && (
-                                    <CheckIcon className="w-[20px] h-[20px]" />
+                                    <CheckIcon className="w-4 h-4" />
                                 )}
                             </a>
                         </Dropdown.Item>
