@@ -1,5 +1,5 @@
 {
-  "name": "theme-kit",
+  "name": "@prezly/theme-kit-js-monorepo",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
