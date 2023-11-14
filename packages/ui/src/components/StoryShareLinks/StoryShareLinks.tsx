@@ -99,7 +99,7 @@ export function StoryShareLinks({
                 title="Copy URL"
                 aria-label="Copy URL"
                 className={twMerge(
-                    'p-3 border-gray-200',
+                    'p-3 border-gray-200 bg-white hover:bg-gray-100 active:bg-gray-200',
                     layout === 'vertical'
                         ? `border-b  last:border-b-0`
                         : `border-r last:border-r-0`,
@@ -116,7 +116,7 @@ export function StoryShareLinks({
                     title="Go to top"
                     aria-label="Go to top"
                     className={twMerge(
-                        'p-3 border-gray-200',
+                        'p-3 border-gray-200 bg-white hover:bg-gray-100 active:bg-gray-200',
                         layout === 'vertical'
                             ? `border-b  last:border-b-0`
                             : `border-r last:border-r-0`,
