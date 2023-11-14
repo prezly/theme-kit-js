@@ -84,8 +84,9 @@ export function StoryCard({
                     <Link href={`/${slug}`} locale={false}>
                         <h2
                             className={twMerge(
-                                'cursor-pointer',
+                                'cursor-pointer hove',
                                 size === 'large' ? 'title-small ' : 'title-xx-small',
+                                'group-hover:text-gray-950',
                             )}
                         >
                             {title}
@@ -98,6 +99,7 @@ export function StoryCard({
                                 size === 'large'
                                     ? 'subtitle-small line-clamp-3'
                                     : 'label-large font-medium text-gray-800 line-clamp-2',
+                                'group-hover:text-gray-950',
                             )}
                         >
                             {subtitle}
