@@ -4,6 +4,12 @@ import { CATEGORIES } from '../Navigation/__mocks__';
 
 import { CategoryBlock } from './CategoryBlock';
 
+const DISPLAYED_CATEGORIES: CategoryBlock.DisplayedCategory[] = CATEGORIES.map((category) => ({
+    name: category.display_name,
+    description: category.display_description,
+    href: `/category/${category.display_name.toLowerCase().replace(' ', '-')}`,
+}));
+
 export default {
     title: 'Components/CategoryBlock',
     component: CategoryBlock,
@@ -19,12 +25,10 @@ const CategoryBlockTemplate: StoryFn<typeof CategoryBlock> = (args) => <Category
 
 export const Default = CategoryBlockTemplate.bind({});
 Default.args = {
-    category: CATEGORIES[2],
-    locale: 'en',
+    category: DISPLAYED_CATEGORIES[2],
 };
 
 export const WithoutDescription = CategoryBlockTemplate.bind({});
 WithoutDescription.args = {
-    category: CATEGORIES[0],
-    locale: 'en',
+    category: DISPLAYED_CATEGORIES[0],
 };
