@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { getShortestLocaleSlug } from '@prezly/theme-kit-core';
+import { Routing } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
 import { headers } from 'next/headers';
 import type { NextRequest } from 'next/server';
@@ -50,7 +50,7 @@ export namespace IntlMiddleware {
                         );
                     }
 
-                    const expectedLocaleSlug = getShortestLocaleSlug(params.localeCode, {
+                    const expectedLocaleSlug = Routing.getShortestLocaleSlug(params.localeCode, {
                         locales,
                         defaultLocale,
                     });

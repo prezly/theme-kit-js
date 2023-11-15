@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define,react/jsx-props-no-spreading */
-import { getSupportedLocaleIsoCode } from '@prezly/theme-kit-core';
-import type { Locale } from '@prezly/theme-kit-intl';
+import { type Locale, pickSupportedLocale } from '@prezly/theme-kit-intl';
 import type { ReactElement } from 'react';
 
 import { type AsyncResolvable, type Resolvable, resolve, resolveAsync } from '#utils';
@@ -88,9 +87,9 @@ export namespace IntlAdapter {
 }
 
 async function importThemeKitDictionary(localeCode: Locale.Code): Promise<IntlDictionary> {
-    const fileCode = getSupportedLocaleIsoCode(localeCode);
+    const isoCode = pickSupportedLocale(localeCode);
 
-    const messages = await import(`@prezly/theme-kit-intl/i18n/${fileCode}.json`);
+    const messages = await import(`@prezly/theme-kit-intl/i18n/${isoCode}.json`);
 
     return { ...messages };
 }

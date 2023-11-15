@@ -1,5 +1,5 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
-import { getAlternateLanguageLinks } from '@prezly/theme-kit-core';
+import { Metadata as MetadataHelper } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
@@ -10,7 +10,7 @@ export function generateAlternateLanguageLinks(
     languages: Pick<NewsroomLanguageSettings, 'code' | 'is_default'>[],
     generateUrl: GenerateUrlFn,
 ): Alternates['languages'] {
-    const links = getAlternateLanguageLinks(languages, generateUrl);
+    const links = MetadataHelper.getAlternateLanguageLinks(languages, generateUrl);
 
     return Object.fromEntries(links.map((link) => [link.hrefLang, link.href]));
 }

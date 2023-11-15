@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { getNewsroomOgImageUrl } from '@prezly/theme-kit-core';
+import { Newsrooms } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
@@ -30,7 +30,7 @@ export async function generatePageMetadata(
 
     const siteName = companyInformation.name || newsroom.display_name;
     const titleString = extractPlaintextTitle(title);
-    const ogImageUrl = imageUrl ?? getNewsroomOgImageUrl(newsroom, Locale.from(locale));
+    const ogImageUrl = imageUrl ?? Newsrooms.getOgImageUrl(newsroom, Locale.from(locale));
 
     return mergePageMetadata(
         {

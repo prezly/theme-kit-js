@@ -1,6 +1,6 @@
 'use client';
 
-import { getShortestLocaleSlug } from '@prezly/theme-kit-core';
+import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { ReactNode } from 'react';
 import { createContext, useCallback, useContext } from 'react';
@@ -46,7 +46,7 @@ export namespace RoutingAdapter {
                     const localeCode: Locale.Code = params.localeCode ?? activeLocale;
                     const localeSlug: Locale.AnySlug =
                         params.localeSlug ??
-                        getShortestLocaleSlug(localeCode, { locales, defaultLocale });
+                        Routing.getShortestLocaleSlug(localeCode, { locales, defaultLocale });
 
                     const href = pattern.stringify({
                         localeCode,
