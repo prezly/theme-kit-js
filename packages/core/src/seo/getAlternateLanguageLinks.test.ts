@@ -1,8 +1,10 @@
-import type { LocaleCode, LocaleObject } from '../intl';
+import type { CultureRef } from '@prezly/sdk';
+
+import type { LocaleObject } from '../intl';
 
 import { getAlternateLanguageLinks } from './getAlternateLanguageLinks';
 
-function lang(code: LocaleCode, isDefault = false) {
+function lang(code: CultureRef['code'], isDefault = false) {
     return { code, is_default: isDefault };
 }
 
@@ -18,7 +20,7 @@ function generateTranslationUrl(locale: LocaleObject) {
 
 describe('getAlternateLanguageLinks', () => {
     it('should handle one en-GB non-default language', () => {
-        const links = getAlternateLanguageLinks([lang('en-GB')], generateTranslationUrl);
+        const links = getAlternateLanguageLinks([lang('en_GB')], generateTranslationUrl);
 
         expect(links).toMatchObject([
             { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
@@ -28,7 +30,7 @@ describe('getAlternateLanguageLinks', () => {
     });
 
     it('should handle one en-GB default language', () => {
-        const links = getAlternateLanguageLinks([lang('en-GB', true)], generateTranslationUrl);
+        const links = getAlternateLanguageLinks([lang('en_GB', true)], generateTranslationUrl);
 
         expect(links).toMatchObject([
             { href: 'http://localhost:3000/en/translationUrl/en-GB', hrefLang: 'en' },
@@ -39,7 +41,7 @@ describe('getAlternateLanguageLinks', () => {
 
     it('should handle two full locales', () => {
         const links = getAlternateLanguageLinks(
-            [lang('en-GB', true), lang('fr-FR')],
+            [lang('en_GB', true), lang('fr_FR')],
             generateTranslationUrl,
         );
 
@@ -54,7 +56,7 @@ describe('getAlternateLanguageLinks', () => {
 
     it('should use en-GB locale as x-default even if other locale is set as default', () => {
         const links = getAlternateLanguageLinks(
-            [lang('en-GB'), lang('fr-FR', true)],
+            [lang('en_GB'), lang('fr_FR', true)],
             generateTranslationUrl,
         );
 
@@ -69,7 +71,7 @@ describe('getAlternateLanguageLinks', () => {
 
     it('should use default locale as x-default when there is eng locale', () => {
         const links = getAlternateLanguageLinks(
-            [lang('ru-RU'), lang('fr-FR', true)],
+            [lang('ru_RU'), lang('fr_FR', true)],
             generateTranslationUrl,
         );
 
@@ -84,7 +86,7 @@ describe('getAlternateLanguageLinks', () => {
 
     it('should include provided region independent locale', () => {
         const links = getAlternateLanguageLinks(
-            [lang('en-US'), lang('fr'), lang('fr-FR', true)],
+            [lang('en_US'), lang('fr'), lang('fr_FR', true)],
             generateTranslationUrl,
         );
 
@@ -99,7 +101,7 @@ describe('getAlternateLanguageLinks', () => {
 
     it('should use provided en region independent locale as x-default', () => {
         const links = getAlternateLanguageLinks(
-            [lang('en'), lang('en-US'), lang('fr'), lang('fr-FR')],
+            [lang('en'), lang('en_US'), lang('fr'), lang('fr_FR')],
             generateTranslationUrl,
         );
 
@@ -114,7 +116,7 @@ describe('getAlternateLanguageLinks', () => {
 
     it('should fallback en link to en-US locale when there is en-GB locale', () => {
         const links = getAlternateLanguageLinks(
-            [lang('en-GB'), lang('en-US')],
+            [lang('en_GB'), lang('en_US')],
             generateTranslationUrl,
         );
 
@@ -128,7 +130,7 @@ describe('getAlternateLanguageLinks', () => {
 
     it('should should omit locales if getTranslationUrl is undefined', () => {
         const links = getAlternateLanguageLinks(
-            [lang('en-US'), lang('fr'), lang('fr-FR', true)],
+            [lang('en_US'), lang('fr'), lang('fr_FR', true)],
             (locale) => {
                 const translationUrl =
                     locale.toHyphenCode() === 'en-US' ? undefined : getTranslationUrl(locale);
@@ -150,7 +152,7 @@ describe('getAlternateLanguageLinks', () => {
 
     it('should should not duplicate links when equal languages passed', () => {
         const links = getAlternateLanguageLinks(
-            [lang('en-GB'), lang('en-GB'), lang('en-US'), lang('en-US')],
+            [lang('en_GB'), lang('en_GB'), lang('en_US'), lang('en_US')],
             generateTranslationUrl,
         );
 
