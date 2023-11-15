@@ -7,7 +7,7 @@ import { NextResponse } from 'next/server';
 
 import { type AsyncResolvable, resolveAsync } from '#utils';
 
-import type { Router, RoutesMap } from '../adapters/types';
+import type { Router, RoutesMap } from '../adapters/server';
 
 export namespace IntlMiddleware {
     export interface Configuration {

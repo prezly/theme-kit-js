@@ -9,6 +9,6 @@
 
 import assert from 'assert';
 
-import { useInfiniteLoading } from '@prezly/theme-kit-nextjs/hooks';
+import { RoutingAdapter } from '@prezly/theme-kit-nextjs/client';
 
-assert(typeof useInfiniteLoading === 'function');
+assert(typeof RoutingAdapter.connect === 'function');

@@ -4,6 +4,6 @@
 
 const assert = require('assert');
 
-const { useInfiniteLoading } = require('@prezly/theme-kit-nextjs/hooks');
+const { RoutingAdapter } = require('@prezly/theme-kit-nextjs/client');
 
-assert(typeof useInfiniteLoading === 'function');
+assert(typeof RoutingAdapter.connect === 'function');

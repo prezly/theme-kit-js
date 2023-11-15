@@ -18,25 +18,15 @@
       "import": "./build/index.mjs",
       "default": "./build/index.js"
     },
-    "./adapters/client": {
-      "types": "./build/adapters/client.d.ts",
-      "import": "./build/adapters/client.mjs",
-      "default": "./build/adapters/client.js"
+    "./client": {
+      "types": "./build/client.d.ts",
+      "import": "./build/client.mjs",
+      "default": "./build/client.js"
     },
-    "./adapters/server": {
-      "types": "./build/adapters/server.d.ts",
-      "import": "./build/adapters/server.mjs",
-      "default": "./build/adapters/server.js"
-    },
-    "./hooks": {
-      "types": "./build/hooks/index.d.ts",
-      "import": "./build/hooks/index.mjs",
-      "default": "./build/hooks/index.js"
-    },
-    "./middleware": {
-      "types": "./build/middleware/server.d.ts",
-      "import": "./build/middleware/server.mjs",
-      "default": "./build/middleware/server.js"
+    "./server": {
+      "types": "./build/server.d.ts",
+      "import": "./build/server.mjs",
+      "default": "./build/server.js"
     },
     "./next-config": {
       "types": "./build/next-config/index.d.ts",
