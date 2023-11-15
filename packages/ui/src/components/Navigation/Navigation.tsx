@@ -6,7 +6,7 @@ import {
     MagnifyingGlassIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline';
-import type { Category, Culture, Newsroom } from '@prezly/sdk';
+import type { Culture, Newsroom } from '@prezly/sdk';
 import Image from '@prezly/uploadcare-image';
 import Link from 'next/link';
 import { type MouseEvent as ReactMouseEvent, useState } from 'react';
@@ -21,8 +21,12 @@ import type { NavigationLayout } from './types';
 
 export interface Props {
     className?: string;
-    categories: Category[];
-    languages?: Navigation.Language[];
+    intl?: Partial<Navigation.Intl>;
+    categories?: {
+        options: Navigation.DisplayedCategory[];
+        indexHref?: CategoriesDropdown.Props['indexHref'];
+    };
+    languages?: Navigation.DisplayedLanguage[];
     layout?: NavigationLayout;
     showNewsroomLabelAsideLogo?: boolean;
     externalSiteLink?: string;
@@ -35,7 +39,8 @@ export interface Props {
 
 export function Navigation({
     className,
-    categories,
+    intl,
+    categories = { options: [] },
     languages = [],
     layout = 'default',
     newsroom,
@@ -54,7 +59,7 @@ export function Navigation({
         newsroom_logo: logo,
     } = newsroom;
     const hasExtraLinks = Boolean(
-        categories.length > 0 ||
+        categories.options.length > 0 ||
             languages.length > 0 ||
             publicGalleriesCount ||
             hasStandaloneAboutPage ||
@@ -110,14 +115,18 @@ export function Navigation({
                     )}
                 >
                     {Boolean(
-                        categories.length ||
+                        categories.options.length > 0 ||
                             hasStandaloneAboutPage ||
                             hasStandaloneContactsPage ||
                             publicGalleriesCount,
                     ) && (
                         <div className="pt-6 md:pt-0 flex flex-col md:flex-row md:items-center gap-12 md:gap-4 px-6 md:px-0">
-                            {categories.length > 0 && (
-                                <CategoriesDropdown categories={categories} locale={locale} />
+                            {categories.options.length > 0 && (
+                                <CategoriesDropdown
+                                    options={categories.options}
+                                    intl={intl}
+                                    indexHref={categories.indexHref}
+                                />
                             )}
                             {publicGalleriesCount > 0 && (
                                 <Link
@@ -206,5 +215,7 @@ export function Navigation({
 }
 
 export namespace Navigation {
-    export type Language = LanguagesDropdown.Option;
+    export type Intl = CategoriesDropdown.Intl;
+    export type DisplayedLanguage = LanguagesDropdown.Option;
+    export type DisplayedCategory = CategoriesDropdown.Option;
 }

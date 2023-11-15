@@ -5,10 +5,17 @@ import type { Meta, StoryFn } from '@storybook/react';
 import { CATEGORIES, LANGUAGES, NEWSROOM } from './__mocks__';
 import { Navigation } from './Navigation';
 
-const DISPLAYED_LANGUAGES: Navigation.Language[] = LANGUAGES.map((lang) => ({
+const DISPLAYED_LANGUAGES: Navigation.DisplayedLanguage[] = LANGUAGES.map((lang) => ({
     code: lang.code,
     name: lang.locale.native_name,
     href: `/${lang.locale.code.toLowerCase().replace('_', '-')}`,
+}));
+
+const DISPLAYED_CATEGORIES: Navigation.DisplayedCategory[] = CATEGORIES.map((category) => ({
+    id: category.id,
+    name: category.display_name,
+    description: category.display_description,
+    href: `/category/${category.display_name.toLowerCase()}`,
 }));
 
 export default {
@@ -27,7 +34,7 @@ const NavigationTemplate: StoryFn<typeof Navigation> = (args) => <Navigation {..
 
 export const Default = NavigationTemplate.bind({});
 Default.args = {
-    categories: CATEGORIES,
+    categories: { options: DISPLAYED_CATEGORIES, indexHref: '/categories' },
     languages: DISPLAYED_LANGUAGES,
     newsroom: NEWSROOM,
     externalSiteLink: 'https://hey.test-site.com/testing-1-2-3',
@@ -56,14 +63,14 @@ WithoutLogo.args = {
 export const WithoutCategoriesAndLanguages = NavigationTemplate.bind({});
 WithoutCategoriesAndLanguages.args = {
     ...Default.args,
-    categories: [],
+    categories: undefined,
     languages: undefined,
 };
 
 export const WithoutExternalLink = NavigationTemplate.bind({});
 WithoutExternalLink.args = {
     ...Default.args,
-    categories: [],
+    categories: undefined,
     languages: undefined,
     externalSiteLink: undefined,
 };
