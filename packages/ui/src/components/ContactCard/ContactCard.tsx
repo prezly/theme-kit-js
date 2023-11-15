@@ -9,12 +9,7 @@ import { Link } from '../Link';
 import type { ContactInfo } from './type';
 import { getSocialHandles } from './utils';
 
-export interface Props {
-    contactInfo: ContactInfo;
-    className?: string;
-}
-
-export function ContactCard({ contactInfo, className }: Props) {
+export function ContactCard({ contactInfo, className }: ContactCard.Props) {
     const { avatar_image, avatar_url, description, company, name, email, phone, mobile } =
         contactInfo;
     const subtitle = description && company ? `${description}, ${company}` : description;
@@ -89,4 +84,11 @@ export function ContactCard({ contactInfo, className }: Props) {
             </div>
         </div>
     );
+}
+
+export namespace ContactCard {
+    export interface Props {
+        contactInfo: ContactInfo;
+        className?: string;
+    }
 }
