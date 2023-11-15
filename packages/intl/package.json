@@ -1,17 +1,18 @@
 {
     "name": "@prezly/theme-kit-intl",
-    "version": "0.0.0-next-94bc3a78727ce6e9dce0389a608eb382987102be",
+    "version": "0.0.0-next-cdfd4c2a8218fedccda0fa9bb036397a33437b89",
     "description": "Translations for Prezly themes",
-    "main": "build/cjs/index.js",
-    "module": "build/esm/index.mjs",
-    "types": "build/esm/index.d.ts",
+    "main": "build/index.js",
+    "module": "build/index.mjs",
+    "types": "build/index.d.ts",
     "exports": {
         ".": {
-            "import": "./build/esm/index.mjs",
-            "require": "./build/cjs/index.js",
-            "default": "./build/cjs/index.js"
+            "types": "./build/index.d.ts",
+            "import": "./build/index.mjs",
+            "require": "./build/index.js",
+            "default": "./build/index.js"
         },
-        "./messages": "./build/messages"
+        "./i18n/*": "./build/i18n/*"
     },
     "files": [
         "build",
@@ -28,23 +29,26 @@
     "scripts": {
         "clean": "rimraf build/* *.tsbuildinfo",
         "prebuild": "npm run clean && npm run build:locales && npm run prettier:check",
-        "build": "npm run intl:compile && npm run build:esm && npm run build:cjs",
+        "build": "npm run intl:compile && npm run build:types && npm run build:esm && npm run build:cjs",
         "build:locales": "node ./build-locales.js > ./src/locales.ts && prettier --write ./src/locales.ts",
-        "build:esm": "tsc --project tsconfig.esm.json && babel --config-file=./babel.esm.js src/ --extensions=.ts --out-dir=build/esm/ --out-file-extension=.mjs",
-        "build:cjs": "tsc --project tsconfig.cjs.json && babel --config-file=./babel.cjs.js src/ --extensions=.ts --out-dir=build/cjs/",
+        "build:types": "tsc --project .",
+        "build:esm": "babel --config-file=../../babel.esm.js src/ --extensions=.ts --out-dir=build/ --out-file-extension=.mjs",
+        "build:cjs": "babel --config-file=../../babel.cjs.js src/ --extensions=.ts --out-dir=build/",
         "watch": "tsc --watch --preserveWatchOutput --project .",
         "lint": "eslint ./src/",
+        "typecheck": "tsc --project . --noEmit --emitDeclarationOnly false",
         "prettier:check": "prettier --check './src/**/*.{ts,js}'",
         "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
         "test": "npm run test:unit && npm run test:build",
         "test:unit": "jest",
-        "test:build": "npm run test:build:messages && npm run test:build:cjs && npm run test:build:esm && npm run test:build:dts",
+        "test:build": "npm run test:build:i18n && npm run test:build:i18n:dist && npm run test:build:cjs && npm run test:build:esm && npm run test:build:dts",
+        "test:build:dts": "tsc --noEmit build/index.d.ts",
+        "test:build:i18n": "node test/test-i18n.mjs",
+        "test:build:i18n:dist": "echo 'Checking if the build/i18n directory contains 49 files' && ls build/i18n/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
         "test:build:cjs": "node test/test-build.cjs",
         "test:build:esm": "node test/test-build.mjs",
-        "test:build:dts": "tsc --noEmit build/cjs/index.d.ts && tsc --noEmit build/esm/index.d.ts",
-        "test:build:messages": "echo 'Checking if the build/messages directory contains 49 files' && ls build/messages/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
         "intl:extract": "formatjs extract 'src/messages/**/*.ts' --out-file i18n/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
-        "intl:compile": "formatjs compile-folder --ast --format crowdin i18n build/messages"
+        "intl:compile": "formatjs compile-folder --ast --format crowdin i18n build/i18n"
     },
     "np": {
         "yarn": false
@@ -65,13 +69,7 @@
         "@technically/is-not-undefined": "^1.0.0"
     },
     "devDependencies": {
-        "@babel/cli": "7.23.0",
-        "@babel/core": "7.23.3",
-        "@babel/plugin-transform-modules-commonjs": "7.23.3",
-        "@babel/preset-env": "7.23.3",
-        "@babel/preset-typescript": "7.23.3",
-        "@formatjs/cli": "4.8.4",
-        "babel-plugin-add-import-extension": "1.6.0"
+        "@formatjs/cli": "4.8.4"
     },
     "publishConfig": {
         "access": "public"
