@@ -26,6 +26,7 @@
     "@prezly/sdk": "^18.2.0"
   },
   "dependencies": {
+    "@e1himself/cached-fetch": "^1.1.2",
     "@prezly/theme-kit-intl": "^0.0.0-next-5cafa5f44882b39a051c5b6eab938bfc236ef573",
     "@prezly/uploadcare": "^2.3.4",
     "@technically/is-not-undefined": "^1.0.0",

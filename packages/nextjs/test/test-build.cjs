@@ -4,6 +4,6 @@
 
 const assert = require('assert');
 
-const { HttpClient } = require('@prezly/theme-kit-nextjs/http');
+const { RoutingAdapter } = require('@prezly/theme-kit-nextjs/client');
 
-assert(typeof HttpClient.create === 'function');
+assert(typeof RoutingAdapter.connect === 'function');

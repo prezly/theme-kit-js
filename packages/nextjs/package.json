@@ -9,34 +9,21 @@
     "build",
     "README.md"
   ],
-  "imports": {
-    "#utils": "./build/utils/index.js"
-  },
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
       "import": "./build/index.mjs",
       "default": "./build/index.js"
     },
-    "./adapters/client": {
-      "types": "./build/adapters/client.d.ts",
-      "import": "./build/adapters/client.mjs",
-      "default": "./build/adapters/client.js"
+    "./client": {
+      "types": "./build/client.d.ts",
+      "import": "./build/client.mjs",
+      "default": "./build/client.js"
     },
-    "./adapters/server": {
-      "types": "./build/adapters/server.d.ts",
-      "import": "./build/adapters/server.mjs",
-      "default": "./build/adapters/server.js"
-    },
-    "./http": {
-      "types": "./build/http/index.d.ts",
-      "import": "./build/http/index.mjs",
-      "default": "./build/http/index.js"
-    },
-    "./middleware": {
-      "types": "./build/middleware/server.d.ts",
-      "import": "./build/middleware/server.mjs",
-      "default": "./build/middleware/server.js"
+    "./server": {
+      "types": "./build/server.d.ts",
+      "import": "./build/server.mjs",
+      "default": "./build/server.js"
     },
     "./next-config": {
       "types": "./build/next-config/index.d.ts",
@@ -102,7 +89,6 @@
     }
   },
   "dependencies": {
-    "@e1himself/cached-fetch": "^1.1.2",
     "@prezly/theme-kit-core": "^0.0.0-next-5cafa5f44882b39a051c5b6eab938bfc236ef573",
     "@prezly/theme-kit-intl": "^0.0.0-next-5cafa5f44882b39a051c5b6eab938bfc236ef573",
     "next-seo": "^5.4.0",

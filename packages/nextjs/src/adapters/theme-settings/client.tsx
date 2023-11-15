@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
 
-import { withoutUndefined } from '#utils';
+import { withoutUndefined } from '../../utils';
 
 export namespace ThemeSettingsAdapter {
     export interface Configuration<T> {

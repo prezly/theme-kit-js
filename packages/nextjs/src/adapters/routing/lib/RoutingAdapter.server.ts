@@ -2,7 +2,7 @@
 import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 
-import { type AsyncResolvable, resolveAsync } from '#utils';
+import { type AsyncResolvable, resolveAsync } from '../../../utils';
 
 import type { Router, RoutesMap, UrlGenerator } from './types';
 

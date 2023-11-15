@@ -9,6 +9,6 @@
 
 import assert from 'assert';
 
-import { HttpClient } from '@prezly/theme-kit-nextjs/http';
+import { RoutingAdapter } from '@prezly/theme-kit-nextjs/client';
 
-assert(typeof HttpClient.create === 'function');
+assert(typeof RoutingAdapter.connect === 'function');

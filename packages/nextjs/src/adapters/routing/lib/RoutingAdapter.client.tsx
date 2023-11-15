@@ -6,7 +6,7 @@ import type { ReactNode } from 'react';
 import { createContext, useCallback, useContext } from 'react';
 import UrlPattern from 'url-pattern';
 
-import { withoutUndefined } from '#utils';
+import { withoutUndefined } from '../../../utils';
 
 import { normalizeUrl } from './normalizeUrl';
 import type { Router, RoutesMap, UrlGenerator } from './types';
