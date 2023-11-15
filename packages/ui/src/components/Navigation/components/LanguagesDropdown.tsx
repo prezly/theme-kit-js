@@ -26,12 +26,9 @@ export function LanguagesDropdown({ selected, options }: LanguagesDropdown.Props
             label={<GlobeAltIcon className="w-6 h-6" />}
         >
             <Dropdown.Group>
-                {displayedOptions.map(({ code, name, href }, index) => (
+                {displayedOptions.map(({ code, name, href }) => (
                     <Dropdown.Item
-                        className={twMerge(
-                            'border-b border-gray-200',
-                            index === displayedOptions.length - 1 && `border-b-0`,
-                        )}
+                        className={twMerge('border-b border-gray-200', 'last:border-b-0')}
                         key={code}
                     >
                         <a className="px-6 py-4 flex items-center justify-between" href={href}>
