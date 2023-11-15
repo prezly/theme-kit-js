@@ -30,11 +30,9 @@
     "@prezly/theme-kit-intl": "0.0.0-next-f7c6109063a909bde7674f598f4ed2309709b312",
     "@prezly/uploadcare": "^2.3.4",
     "@technically/is-not-undefined": "^1.0.0",
-    "isomorphic-fetch": "^3.0.0",
-    "parse-data-url": "^4.0.1"
+    "parse-data-url": "^6.0.0"
   },
   "devDependencies": {
-    "@types/isomorphic-fetch": "0.0.38",
     "@types/parse-data-url": "3.0.2"
   },
   "engines": {

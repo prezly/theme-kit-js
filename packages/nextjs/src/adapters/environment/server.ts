@@ -1,10 +1,12 @@
+import { Environment } from '@prezly/theme-kit-core';
+
 import { type Resolvable, resolve } from '../../utils';
 
-import { collectEnvVariables } from './lib';
+type HttpEnvHeader = string;
 
 export namespace EnvironmentAdapter {
     export interface Configuration {
-        httpEnvHeader?: Resolvable<string | null | undefined>;
+        httpEnvHeader?: Resolvable<HttpEnvHeader | null | undefined>;
     }
 
     export function connect<T>(
@@ -13,7 +15,7 @@ export namespace EnvironmentAdapter {
     ) {
         function useEnvironment(): T {
             const httpEnvHeader = resolve(options.httpEnvHeader);
-            const variables = collectEnvVariables(process.env, httpEnvHeader);
+            const variables = Environment.combine(process.env, httpEnvHeader);
             return validate(variables);
         }
 

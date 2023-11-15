@@ -91,8 +91,6 @@
   "dependencies": {
     "@prezly/theme-kit-core": "0.0.0-next-f7c6109063a909bde7674f598f4ed2309709b312",
     "@prezly/theme-kit-intl": "0.0.0-next-f7c6109063a909bde7674f598f4ed2309709b312",
-    "next-seo": "^5.4.0",
-    "parse-data-url": "^6.0.0",
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
