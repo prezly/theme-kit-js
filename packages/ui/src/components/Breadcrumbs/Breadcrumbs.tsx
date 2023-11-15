@@ -1,11 +1,6 @@
-import { Breadcrumb, type BreadcrumbItem } from './components';
+import { Breadcrumb } from './components';
 
-export interface Props {
-    items: BreadcrumbItem[];
-    className?: string;
-}
-
-export function Breadcrumbs({ items, className }: Props) {
+export function Breadcrumbs({ items, className }: Breadcrumbs.Props) {
     if (items.length === 0) {
         return null;
     }
@@ -19,4 +14,11 @@ export function Breadcrumbs({ items, className }: Props) {
             </ol>
         </nav>
     );
+}
+
+export namespace Breadcrumbs {
+    export interface Props {
+        items: Breadcrumb.BreadcrumbItem[];
+        className?: string;
+    }
 }

@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
 import { Breadcrumbs } from './Breadcrumbs';
-import type { BreadcrumbItem } from './components';
+import type { Breadcrumb } from './components';
 
 export default {
     title: 'Components/Breadcrumbs',
@@ -14,7 +14,7 @@ export default {
     },
 } as Meta<typeof Breadcrumbs>;
 
-const ITEMS: BreadcrumbItem[] = [
+const ITEMS: Breadcrumb.BreadcrumbItem[] = [
     { name: 'Homepage', url: '/' },
     { name: 'Media', url: '/media' },
     { name: 'Galileo Art Collection', url: '/media/galileo-art-collection' },
