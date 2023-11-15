@@ -11,8 +11,8 @@ const defaultLocale = Object.values(LANGUAGES)
 
 const context = { locales, defaultLocale };
 
-function without(locales: Locale.Code[], exclude: Locale.Code) {
-    return locales.filter((code) => code !== exclude);
+function without(codes: Locale.Code[], exclude: Locale.Code) {
+    return codes.filter((code) => code !== exclude);
 }
 
 describe('getShortestLocaleSlug', () => {
