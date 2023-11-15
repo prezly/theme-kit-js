@@ -9,18 +9,9 @@
     "README.md"
   ],
   "exports": {
-    ".": "./build/index.js",
-    "./localeConfig": "./build/intl/localeConfig.js",
-    "./localeList": "./build/intl/localeList.js"
-  },
-  "typesVersions": {
-    "*": {
-      "localeConfig": [
-        "build/intl/localeConfig.d.ts"
-      ],
-      "localeList": [
-        "build/intl/localeList.d.ts"
-      ]
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
     }
   },
   "scripts": {

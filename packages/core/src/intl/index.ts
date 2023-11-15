@@ -1,6 +1,5 @@
 export { getLanguageDisplayName } from './getLanguageDisplayName';
 export { isNumberCode } from './isNumberCode';
-export { default as localeConfig } from './localeConfig';
 
 // shortest locale slug generation and matching
 export { getShortestLocaleSlug } from './getShortestLocaleSlug';
