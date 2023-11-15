@@ -25,13 +25,16 @@ export function getCoverImage(gallery: Pick<NewsroomGallery, 'thumbnail_image' |
 /**
  * This method constructs a URL to download all images in the Gallery as a single archive.
  *
- * @param uuid Gallery UUID
+ * @param uuid Uploadcare files group UUID
  * @param title Filename for the saved archive. Usually it is the Gallery title.
  * @returns URL to an archive containing all of the images in the Gallery.
  */
-export function getArchiveDownloadUrl(uuid: string, title: string) {
-    // UploadCare doesn't like slashes in filenames even in encoded form.
-    return `${ASSETS_CDN_URL}/${uuid}/archive/zip/${encodeURIComponent(
-        title.replace(/\//g, '_'),
-    )}.zip`;
+export function getArchiveDownloadUrl(
+    uuid: NonNullable<NewsroomGallery['uploadcare_group_uuid']>,
+    title: string,
+) {
+    // Uploadcare doesn't like slashes in filenames even in encoded form.
+    const filename = encodeURIComponent(title.replace(/\//g, '_'));
+
+    return `${ASSETS_CDN_URL}/${uuid}/archive/zip/${filename}.zip`;
 }
