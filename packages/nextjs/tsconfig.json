@@ -10,9 +10,6 @@
     "rootDir": "./src",
     "target": "esnext",
     "typeRoots": ["../../node_modules/@types"],
-    "paths": {
-      "#utils": ["./src/utils"]
-    }
   },
   "exclude": [
     "node_modules",

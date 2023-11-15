@@ -1,4 +1,4 @@
-import { type Resolvable, resolve } from '#utils';
+import { type Resolvable, resolve } from '../../utils';
 
 import { collectEnvVariables } from './lib';
 

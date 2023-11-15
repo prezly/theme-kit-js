@@ -9,9 +9,6 @@
     "build",
     "README.md"
   ],
-  "imports": {
-    "#utils": "./build/utils/index.js"
-  },
   "exports": {
     ".": {
       "types": "./build/index.d.ts",

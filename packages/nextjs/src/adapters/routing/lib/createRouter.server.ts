@@ -1,7 +1,7 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { Routing } from '@prezly/theme-kit-core';
 
-import { type AsyncResolvable, resolveAsync } from '#utils';
+import { type AsyncResolvable, resolveAsync } from '../../../utils';
 
 import type { Router, RoutesMap } from './types';
 

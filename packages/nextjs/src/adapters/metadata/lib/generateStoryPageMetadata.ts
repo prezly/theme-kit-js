@@ -3,7 +3,7 @@ import type { StoryRef } from '@prezly/sdk';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
-import { type AsyncResolvable, resolveAsync } from '#utils';
+import { type AsyncResolvable, resolveAsync } from '../../../utils';
 
 import type { Prerequisites, Url } from './types';
 import { generatePageMetadata } from './utils';

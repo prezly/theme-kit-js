@@ -1,4 +1,4 @@
-import { type Resolvable, resolve } from '#utils';
+import { type Resolvable, resolve } from '../../utils';
 
 export namespace AnalyticsAdapter {
     export interface Configuration {
