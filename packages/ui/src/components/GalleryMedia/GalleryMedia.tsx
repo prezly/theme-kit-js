@@ -1,27 +1,24 @@
 import { ArrowRightIcon, PhotoIcon, VideoCameraIcon } from '@heroicons/react/24/outline';
-import type { Culture, NewsroomGallery } from '@prezly/sdk';
-import { getGalleryThumbnail } from '@prezly/theme-kit-core';
+import type { NewsroomGallery } from '@prezly/sdk';
+import type { UploadedImage } from '@prezly/uploadcare';
 import { UploadcareImage } from '@prezly/uploadcare-image';
 import { twMerge } from 'tailwind-merge';
 
 import { Link } from '../Link';
 
-export interface Props {
-    className?: string;
-    gallery: NewsroomGallery;
-    locale?: Culture['code'];
-}
-
-export function GalleryMedia({ className, gallery, locale }: Props) {
-    const { name, images_number, videos_number, uuid } = gallery;
-    const cover = getGalleryThumbnail(gallery);
-
+export function GalleryMedia({
+    className,
+    cover,
+    name,
+    galleryHref,
+    imagesNumber,
+    videosNumber,
+}: GalleryMedia.Props) {
     return (
         <Link
-            href={`/media/album/${uuid}`}
+            href={galleryHref}
             className={twMerge('relative w-full md:w-max group', className)}
             contentClassName="p-0"
-            localeCode={locale}
         >
             {cover && (
                 <UploadcareImage
@@ -45,24 +42,20 @@ export function GalleryMedia({ className, gallery, locale }: Props) {
             >
                 <p className="title-x-small text-gray-100">{name}</p>
                 <div className="flex items-center justify-between">
-                    {Boolean(images_number || videos_number) && (
+                    {Boolean(imagesNumber || videosNumber) && (
                         <div className="flex items-center gap-3">
-                            {Boolean(images_number) && (
+                            {Boolean(imagesNumber) && (
                                 <span className="flex text-gray-100">
                                     <PhotoIcon className="w-5 h-5 mr-2" />
                                     {/* TODO: Add translations */}
-                                    {videos_number === 0
-                                        ? `${images_number} Images`
-                                        : images_number}
+                                    {videosNumber === 0 ? `${imagesNumber} Images` : imagesNumber}
                                 </span>
                             )}
-                            {Boolean(videos_number) && (
+                            {Boolean(videosNumber) && (
                                 <span className="flex text-gray-100">
                                     <VideoCameraIcon className="w-5 h-5 mr-2" />
                                     {/* TODO: Add translations */}
-                                    {images_number === 0
-                                        ? `${videos_number} Videos`
-                                        : videos_number}
+                                    {imagesNumber === 0 ? `${videosNumber} Videos` : videosNumber}
                                 </span>
                             )}
                         </div>
@@ -73,4 +66,15 @@ export function GalleryMedia({ className, gallery, locale }: Props) {
             </div>
         </Link>
     );
+}
+
+export namespace GalleryMedia {
+    export interface Props {
+        galleryHref: `/${string}`;
+        name: NewsroomGallery['name'];
+        className?: string;
+        imagesNumber: NewsroomGallery['images_number'];
+        videosNumber: NewsroomGallery['videos_number'];
+        cover?: UploadedImage | null;
+    }
 }

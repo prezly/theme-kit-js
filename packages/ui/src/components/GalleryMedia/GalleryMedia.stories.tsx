@@ -18,15 +18,21 @@ const GalleryMediaTemplate: StoryFn<typeof GalleryMedia> = (args) => <GalleryMed
 
 export const Default = GalleryMediaTemplate.bind({});
 Default.args = {
-    gallery: { ...GALLERY, videos_number: 2 },
+    name: GALLERY.name,
+    galleryHref: `/media/album/${GALLERY.uuid}`,
+    imagesNumber: 2,
+    videosNumber: 2,
+    cover: JSON.parse(GALLERY.thumbnail_image),
 };
 
 export const WithOnlyImages = GalleryMediaTemplate.bind({});
 WithOnlyImages.args = {
-    gallery: GALLERY,
+    ...Default.args,
+    videosNumber: 0,
 };
 
 export const WithoutImages = GalleryMediaTemplate.bind({});
 WithoutImages.args = {
-    gallery: { ...GALLERY, images_number: 0, videos_number: 0 },
+    ...Default.args,
+    imagesNumber: 0,
 };
