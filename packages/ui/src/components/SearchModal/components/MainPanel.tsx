@@ -4,15 +4,6 @@ import { useSearchBox } from 'react-instantsearch';
 import { CategoriesList } from './CategoriesList';
 import { SearchResults } from './SearchResults';
 
-export interface Props {
-    categories: Category[];
-    locale: Culture['code'];
-    newsroomName: string;
-    logo: UploadedImage | null;
-    showDate: boolean;
-    hideSubtitle: boolean;
-}
-
 export function MainPanel({
     categories,
     locale,
@@ -20,13 +11,19 @@ export function MainPanel({
     logo,
     showDate,
     hideSubtitle,
-}: Props) {
+}: MainPanel.Props) {
     const { query } = useSearchBox();
     const isQuerySet = Boolean(query?.length);
 
     if (!isQuerySet && !categories.length) {
         return null;
     }
+
+    const displayedCategories: CategoriesList.DisplayedCategory[] = categories.map((category) => ({
+        id: category.id,
+        name: category.display_name,
+        href: `/category/${category.display_name.toLowerCase()}`, // TODO: Lift URL generation from here
+    }));
 
     return (
         <div className="pt-3 pb-12 px-6">
@@ -39,8 +36,19 @@ export function MainPanel({
                     hideSubtitle={hideSubtitle}
                 />
             ) : (
-                <CategoriesList categories={categories} locale={locale} />
+                <CategoriesList categories={displayedCategories} />
             )}
         </div>
     );
+}
+
+export namespace MainPanel {
+    export interface Props {
+        categories: Category[];
+        locale: Culture['code'];
+        newsroomName: string;
+        logo: UploadedImage | null;
+        showDate: boolean;
+        hideSubtitle: boolean;
+    }
 }

@@ -8,15 +8,14 @@ import { ButtonLink } from '@/components/Button';
 
 import { Hit } from './Hit';
 
-export interface Props {
-    locale: Culture['code'];
-    newsroomName: string;
-    logo: UploadedImage | null;
-    hideSubtitle: boolean;
-    showDate: boolean;
-}
-
-export function SearchResults({ locale, newsroomName, logo, hideSubtitle, showDate }: Props) {
+export function SearchResults({
+    locale,
+    newsroomName,
+    logo,
+    hideSubtitle,
+    showDate,
+    intl = {},
+}: SearchResults.Props) {
     const { results } = useInstantSearch();
     const { query } = useSearchBox();
     const totalResults = results?.nbHits ?? 0;
@@ -26,8 +25,11 @@ export function SearchResults({ locale, newsroomName, logo, hideSubtitle, showDa
     return (
         <>
             <p className="subtitle-small text-gray-600">
-                {/* TODO: Add translations */}
-                {totalResults ? <span>Quick results</span> : <span>No results found</span>}
+                {totalResults ? (
+                    <span>{intl['search.fullResultsTitle'] ?? 'Quick results'}</span>
+                ) : (
+                    <span>{intl['search.noResults'] ?? 'No results found'}</span>
+                )}
             </p>
 
             <Hits<{ attributes: AlgoliaStory }>
@@ -50,9 +52,26 @@ export function SearchResults({ locale, newsroomName, logo, hideSubtitle, showDa
                     variation="primary"
                     forceRefresh={isOnSearchPage}
                 >
-                    View all {totalResults} results
+                    {intl['search.showAllResults'] ?? `View all ${totalResults} results`}
                 </ButtonLink>
             )}
         </>
     );
+}
+
+export namespace SearchResults {
+    export interface Intl {
+        ['search.fullResultsTitle']: string;
+        ['search.noResults']: string;
+        ['search.showAllResults']: string;
+    }
+
+    export interface Props {
+        locale: Culture['code'];
+        newsroomName: string;
+        logo: UploadedImage | null;
+        hideSubtitle: boolean;
+        showDate: boolean;
+        intl?: Partial<Intl>;
+    }
 }

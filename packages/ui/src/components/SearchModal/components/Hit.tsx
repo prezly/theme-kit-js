@@ -3,16 +3,7 @@ import type { AlgoliaStory } from '@prezly/theme-kit-core';
 
 import { StoryCard } from '@/components/StoryCard';
 
-export interface Props {
-    hit: { attributes: AlgoliaStory };
-    hideSubtitle: boolean;
-    locale: Culture['code'];
-    newsroomName: string;
-    logo: UploadedImage | null;
-    showDate: boolean;
-}
-
-export function Hit({ hit, hideSubtitle, locale, logo, newsroomName, showDate }: Props) {
+export function Hit({ hit, hideSubtitle, locale, logo, newsroomName, showDate }: Hit.Props) {
     const { attributes: story } = hit;
 
     const displayedCategories = story.categories.map(
@@ -36,4 +27,15 @@ export function Hit({ hit, hideSubtitle, locale, logo, newsroomName, showDate }:
             size="tiny"
         />
     );
+}
+
+export namespace Hit {
+    export interface Props {
+        hit: { attributes: AlgoliaStory };
+        hideSubtitle: boolean;
+        locale: Culture['code'];
+        newsroomName: string;
+        logo: UploadedImage | null;
+        showDate: boolean;
+    }
 }

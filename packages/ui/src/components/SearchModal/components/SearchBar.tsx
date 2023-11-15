@@ -9,15 +9,9 @@ import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
 import { useDevice } from '@/hooks';
 
-export interface Props {
-    locale?: Culture['code'];
-    newsroomName: string;
-    onClose: () => void;
-}
-
 const SEARCH_PAGE_URL = 'search';
 
-export function SearchBar({ locale, newsroomName, onClose }: Props) {
+export function SearchBar({ locale, newsroomName, onClose, intl = {} }: SearchBar.Props) {
     const { refine, query } = useSearchBox();
     const [input, setInput] = useState(query);
     const { isMd } = useDevice();
@@ -44,13 +38,25 @@ export function SearchBar({ locale, newsroomName, onClose }: Props) {
                 inputClassName="p-1 focus:outline-transparent focus-within:outline-transparent focus-visible:outline-0"
                 name="query"
                 onChange={(event) => setQuery(event.currentTarget.value)}
-                // TODO: add translations
-                placeholder={`Search ${newsroomName}...`}
+                placeholder={intl['search.inputHint'] ?? `Search ${newsroomName}...`}
                 type="search"
                 value={input}
             />
-            {/* TODO: Add translations */}
-            <Button type="submit">Search</Button>
+            <Button type="submit">{intl['search.action'] ?? 'Search'}</Button>
         </form>
     );
+}
+
+export namespace SearchBar {
+    export interface Intl {
+        ['search.action']: string;
+        ['search.inputHint']: string;
+    }
+
+    export interface Props {
+        locale?: Culture['code'];
+        newsroomName: string;
+        onClose: () => void;
+        intl?: Partial<Intl>;
+    }
 }

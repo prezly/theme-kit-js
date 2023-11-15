@@ -10,20 +10,6 @@ import { twMerge } from 'tailwind-merge';
 import { MainPanel, SearchBar } from './components';
 import type { AlgoliaConfig } from './types';
 
-export interface Props {
-    isOpen: boolean;
-    className?: string;
-    overlayClassName?: string;
-    onOpenChange: (open: boolean) => void;
-    algoliaConfig: AlgoliaConfig;
-    locale: Culture['code'];
-    newsroomName: string;
-    categories: Category[];
-    hideSubtitle: boolean;
-    showDate: boolean;
-    logo: UploadedImage | null;
-}
-
 export function SearchModal({
     isOpen,
     categories,
@@ -36,7 +22,7 @@ export function SearchModal({
     logo,
     hideSubtitle,
     showDate,
-}: Props) {
+}: SearchModal.Props) {
     const { ALGOLIA_API_KEY, ALGOLIA_APP_ID, ALGOLIA_INDEX } = algoliaConfig;
 
     const searchClient = useMemo(
@@ -81,4 +67,20 @@ export function SearchModal({
             </Dialog.Portal>
         </Dialog.Root>
     );
+}
+
+export namespace SearchModal {
+    export interface Props {
+        isOpen: boolean;
+        className?: string;
+        overlayClassName?: string;
+        onOpenChange: (open: boolean) => void;
+        algoliaConfig: AlgoliaConfig;
+        locale: Culture['code'];
+        newsroomName: string;
+        categories: Category[];
+        hideSubtitle: boolean;
+        showDate: boolean;
+        logo: UploadedImage | null;
+    }
 }
