@@ -13,6 +13,7 @@ import { HeroImage, type HeroImageSize } from './components';
 
 export interface Props {
     story: StoryWithImage;
+    categories?: Hero.DisplayedCategory[];
     locale: Culture['code'];
     size?: HeroImageSize;
     newsroomName: string;
@@ -24,6 +25,7 @@ export interface Props {
 
 export function Hero({
     story,
+    categories = [],
     showDate,
     locale,
     newsroomName,
@@ -32,7 +34,7 @@ export function Hero({
     hideSubtitle,
     className,
 }: Props) {
-    const { slug, categories, title, subtitle } = story;
+    const { slug, title, subtitle } = story;
 
     return (
         <div
@@ -71,10 +73,10 @@ export function Hero({
                             <StoryPublicationDate locale={locale} story={story} />
                         </span>
                     )}
-                    {Boolean(categories.length) && (
+                    {categories.length > 0 && (
                         <>
                             <span className="label-large text-gray-500">·</span>
-                            <CategoriesList categories={categories} locale={locale} />
+                            <CategoriesList categories={categories} />
                         </>
                     )}
                 </div>
@@ -102,4 +104,8 @@ export function Hero({
             </div>
         </div>
     );
+}
+
+export namespace Hero {
+    export type DisplayedCategory = CategoriesList.DisplayedCategory;
 }

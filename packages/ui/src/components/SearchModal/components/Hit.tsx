@@ -15,6 +15,14 @@ export interface Props {
 export function Hit({ hit, hideSubtitle, locale, logo, newsroomName, showDate }: Props) {
     const { attributes: story } = hit;
 
+    const displayedCategories = story.categories.map(
+        (category): StoryCard.DisplayedCategory => ({
+            id: category.id,
+            name: category.name,
+            href: `/category/${category.slug}`, // TODO: Lift URL generation from here
+        }),
+    );
+
     return (
         <StoryCard
             className="w-full mt-6"
@@ -24,6 +32,7 @@ export function Hit({ hit, hideSubtitle, locale, logo, newsroomName, showDate }:
             locale={locale}
             newsroomName={newsroomName}
             story={story}
+            categories={displayedCategories}
             size="tiny"
         />
     );

@@ -295,11 +295,25 @@ const TEST_STORY = {
     },
 };
 
+const CATEGORIES: StoryCard.DisplayedCategory[] = [
+    {
+        id: 4876,
+        name: 'Food',
+        href: '/category/food',
+    },
+    {
+        id: 4880,
+        name: 'Environment',
+        href: '/category/environment',
+    },
+];
+
 const StoryCardTemplate: StoryFn<typeof StoryCard> = (args) => <StoryCard {...args} />;
 
 export const Default = StoryCardTemplate.bind({});
 Default.args = {
     story: TEST_STORY as any,
+    categories: CATEGORIES,
     showDate: true,
     newsroomName: 'Test newsroom',
     locale: 'en',
@@ -308,6 +322,7 @@ Default.args = {
 export const WithoutThumbnailImage = StoryCardTemplate.bind({});
 WithoutThumbnailImage.args = {
     story: { ...TEST_STORY, thumbnail_image: null } as any,
+    categories: CATEGORIES,
     showDate: true,
     newsroomName: 'Test newsroom',
     locale: 'en',

@@ -12,6 +12,7 @@ import { StoryImage, type StoryImageSize } from './components';
 
 export interface Props {
     story: StoryWithImage | AlgoliaStory;
+    categories?: StoryCard.DisplayedCategory[];
     locale: Culture['code'];
     size?: StoryImageSize;
     newsroomName: string;
@@ -23,6 +24,7 @@ export interface Props {
 
 export function StoryCard({
     story,
+    categories = [],
     showDate,
     locale,
     newsroomName,
@@ -31,7 +33,7 @@ export function StoryCard({
     hideSubtitle,
     className,
 }: Props) {
-    const { slug, categories, title, subtitle } = story;
+    const { slug, title, subtitle } = story;
 
     return (
         <div
@@ -73,10 +75,10 @@ export function StoryCard({
                             <StoryPublicationDate locale={locale} story={story} />
                         </span>
                     )}
-                    {Boolean(categories.length) && (
+                    {categories.length > 0 && (
                         <>
                             <span className="label-large text-gray-500">·</span>
-                            <CategoriesList categories={categories} locale={locale} />
+                            <CategoriesList categories={categories} />
                         </>
                     )}
                 </div>
@@ -107,4 +109,8 @@ export function StoryCard({
             </div>
         </div>
     );
+}
+
+export namespace StoryCard {
+    export type DisplayedCategory = CategoriesList.DisplayedCategory;
 }
