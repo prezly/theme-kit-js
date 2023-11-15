@@ -84,7 +84,7 @@ export function StoryCard({
                     <Link href={`/${slug}`} locale={false}>
                         <h2
                             className={twMerge(
-                                'cursor-pointer hove',
+                                'cursor-pointer',
                                 size === 'large' ? 'title-small ' : 'title-xx-small',
                                 'group-hover:text-gray-950',
                             )}
