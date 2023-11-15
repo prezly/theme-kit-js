@@ -90,7 +90,7 @@ export namespace IntlAdapter {
 async function importThemeKitDictionary(localeCode: Locale.Code): Promise<IntlDictionary> {
     const fileCode = getSupportedLocaleIsoCode(localeCode);
 
-    const messages = await import(`@prezly/theme-kit-intl/messages/${fileCode}.json`);
+    const messages = await import(`@prezly/theme-kit-intl/i18n/${fileCode}.json`);
 
     return { ...messages };
 }
