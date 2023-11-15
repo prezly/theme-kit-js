@@ -9,6 +9,6 @@
 
 import assert from 'assert';
 
-import { HttpClient } from '@prezly/theme-kit-nextjs/http';
+import { useInfiniteLoading } from '@prezly/theme-kit-nextjs/hooks';
 
-assert(typeof HttpClient.create === 'function');
+assert(typeof useInfiniteLoading === 'function');

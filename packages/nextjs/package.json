@@ -28,10 +28,10 @@
       "import": "./build/adapters/server.mjs",
       "default": "./build/adapters/server.js"
     },
-    "./http": {
-      "types": "./build/http/index.d.ts",
-      "import": "./build/http/index.mjs",
-      "default": "./build/http/index.js"
+    "./hooks": {
+      "types": "./build/hooks/index.d.ts",
+      "import": "./build/hooks/index.mjs",
+      "default": "./build/hooks/index.js"
     },
     "./middleware": {
       "types": "./build/middleware/server.d.ts",
@@ -102,7 +102,6 @@
     }
   },
   "dependencies": {
-    "@e1himself/cached-fetch": "^1.1.2",
     "@prezly/theme-kit-core": "^0.0.0-next-5cafa5f44882b39a051c5b6eab938bfc236ef573",
     "@prezly/theme-kit-intl": "^0.0.0-next-5cafa5f44882b39a051c5b6eab938bfc236ef573",
     "next-seo": "^5.4.0",

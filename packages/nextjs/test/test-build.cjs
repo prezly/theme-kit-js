@@ -4,6 +4,6 @@
 
 const assert = require('assert');
 
-const { HttpClient } = require('@prezly/theme-kit-nextjs/http');
+const { useInfiniteLoading } = require('@prezly/theme-kit-nextjs/hooks');
 
-assert(typeof HttpClient.create === 'function');
+assert(typeof useInfiniteLoading === 'function');
