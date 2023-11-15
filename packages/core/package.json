@@ -1,13 +1,10 @@
 {
   "name": "@prezly/theme-kit-core",
-  "version": "0.0.0-next-f79c80a623a1e7ccbf0be412cc7db58c32da1594",
+  "version": "0.0.0-next-6c5ff60f1be09e250ed89768491cd5e967034b65",
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "files": [
-    "build",
-    "README.md"
-  ],
+  "files": ["build", "README.md"],
   "exports": {
     ".": "./build/index.js",
     "./server": "./build/server.js",
@@ -16,15 +13,9 @@
   },
   "typesVersions": {
     "*": {
-      "server": [
-        "build/server.d.ts"
-      ],
-      "localeConfig": [
-        "build/intl/localeConfig.d.ts"
-      ],
-      "localeList": [
-        "build/intl/localeList.d.ts"
-      ]
+      "server": ["build/server.d.ts"],
+      "localeConfig": ["build/intl/localeConfig.d.ts"],
+      "localeList": ["build/intl/localeList.d.ts"]
     }
   },
   "scripts": {
@@ -39,7 +30,7 @@
     "@prezly/sdk": "^18.2.0"
   },
   "dependencies": {
-    "@prezly/theme-kit-intl": "0.0.0-next-f79c80a623a1e7ccbf0be412cc7db58c32da1594",
+    "@prezly/theme-kit-intl": "^0.0.0-next-6c5ff60f1be09e250ed89768491cd5e967034b65",
     "@prezly/uploadcare": "^2.3.4",
     "@technically/is-not-undefined": "^1.0.0",
     "isomorphic-fetch": "^3.0.0",
@@ -57,9 +48,7 @@
     "node": ">= 16.x",
     "npm": ">= 8.x"
   },
-  "keywords": [
-    "prezly"
-  ],
+  "keywords": ["prezly"],
   "author": "Prezly Team",
   "license": "MIT",
   "bugs": {
