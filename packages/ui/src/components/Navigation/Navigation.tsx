@@ -19,8 +19,6 @@ import { Button } from '../Button';
 import { CategoriesDropdown, LanguagesDropdown } from './components';
 import type { NavigationLayout } from './types';
 
-type Props = Navigation.Props;
-
 export function Navigation({
     className,
     intl,
@@ -34,7 +32,7 @@ export function Navigation({
     locale,
     hasStandaloneAboutPage,
     hasStandaloneContactsPage,
-}: Props) {
+}: Navigation.Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const { isSm } = useDevice();
     const {

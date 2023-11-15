@@ -8,9 +8,7 @@ import { twMerge } from 'tailwind-merge';
 import { Dropdown } from '@/components/Dropdown';
 import { useDevice } from '@/hooks';
 
-type Props = LanguagesDropdown.Props;
-
-export function LanguagesDropdown({ selected, options }: Props) {
+export function LanguagesDropdown({ selected, options }: LanguagesDropdown.Props) {
     const { isSm } = useDevice();
 
     const displayedOptions = useMemo(

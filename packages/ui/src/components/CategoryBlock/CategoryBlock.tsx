@@ -4,9 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { Link } from '../Link';
 
-type Props = CategoryBlock.Props;
-
-export function CategoryBlock({ className, category, intl = {} }: Props) {
+export function CategoryBlock({ className, category, intl = {} }: CategoryBlock.Props) {
     return (
         <div
             className={twMerge(

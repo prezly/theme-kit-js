@@ -6,29 +6,27 @@ import {
     MapPinIcon,
 } from '@heroicons/react/24/outline';
 import type { NewsroomCompanyInformation } from '@prezly/sdk';
-import { hasAnyAboutInformation, hasAnyContactInformation } from '@prezly/theme-kit-core';
 import { twMerge } from 'tailwind-merge';
 
 import { Link } from '../Link';
 
-export interface Props {
-    className?: string;
-    companyInformation: NewsroomCompanyInformation;
-}
-
-export function Boilerplate({ className, companyInformation }: Props) {
+export function Boilerplate({ className, companyInformation, intl = {} }: BoilerPlate.Props) {
     const { about, phone, email, address, website } = companyInformation;
-    const hasContactInformation = hasAnyContactInformation(companyInformation);
-    const hasAboutInformation = hasAnyAboutInformation(companyInformation);
 
-    if (!hasAboutInformation && !hasContactInformation) {
+    const hasContactInformation = Boolean(
+        companyInformation.address ||
+            companyInformation.phone ||
+            companyInformation.email ||
+            companyInformation.website,
+    );
+
+    if (!about && !phone && !email && !address && !website) {
         return null;
     }
 
     return (
         <div className={twMerge('py-12 px-6 md:p-12 bg-gray-800', className)}>
-            {/* TODO: Add translations */}
-            <h2 className="title-medium text-white mb-6">About</h2>
+            <h2 className="title-medium text-white mb-6">{intl['boilerplate.title'] ?? 'About'}</h2>
             <div className="flex flex-col md:grid gap-12 md:grid-cols-[3fr_1fr]">
                 {about && (
                     <div
@@ -87,4 +85,19 @@ export function Boilerplate({ className, companyInformation }: Props) {
             </div>
         </div>
     );
+}
+
+export namespace BoilerPlate {
+    export interface Intl {
+        ['boilerplate.title']: string;
+    }
+
+    export interface Props {
+        className?: string;
+        companyInformation: Pick<
+            NewsroomCompanyInformation,
+            'about' | 'phone' | 'email' | 'address' | 'website'
+        >;
+        intl?: Partial<Intl>;
+    }
 }

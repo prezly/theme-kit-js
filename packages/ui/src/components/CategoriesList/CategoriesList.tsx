@@ -4,9 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { CategoryLink } from '../CategoryLink';
 
-type Props = CategoriesList.Props;
-
-export function CategoriesList({ categories, className }: Props) {
+export function CategoriesList({ categories, className }: CategoriesList.Props) {
     return (
         <div className={twMerge('flex items-center', className)}>
             {categories.map((category, index) => (

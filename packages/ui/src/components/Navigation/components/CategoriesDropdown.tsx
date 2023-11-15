@@ -10,9 +10,7 @@ import { Button } from '@/components/Button';
 import { Dropdown } from '@/components/Dropdown';
 import { useDevice } from '@/hooks';
 
-type Props = CategoriesDropdown.Props;
-
-export function CategoriesDropdown({ options, indexHref, intl = {} }: Props) {
+export function CategoriesDropdown({ options, indexHref, intl = {} }: CategoriesDropdown.Props) {
     const { isSm } = useDevice();
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
 
@@ -87,9 +85,9 @@ export function CategoriesDropdown({ options, indexHref, intl = {} }: Props) {
 
 export namespace CategoriesDropdown {
     export interface Intl {
-        'categories.title': string;
-        'categories.view': string;
-        'categories.viewAll': string;
+        ['categories.title']: string;
+        ['categories.view']: string;
+        ['categories.viewAll']: string;
     }
     export interface Option {
         id: Category['id'];

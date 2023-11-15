@@ -2,9 +2,7 @@ import type { Category } from '@prezly/sdk';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
-type Props = CategoryLink.Props;
-
-export function CategoryLink({ category, className }: Props) {
+export function CategoryLink({ category, className }: CategoryLink.Props) {
     return (
         <Link className={twMerge(`label-large text-accent`, className)} href={category.href}>
             <span>{category.name}</span>
