@@ -15,7 +15,7 @@ interface LocalizedCategoryData {
     slug: string | null;
 }
 
-export function getLocalizedCategoryData(
+export function getLocalizedData(
     category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
     locale: Locale.Code,
 ): LocalizedCategoryData {
@@ -37,20 +37,4 @@ export function getLocalizedCategoryData(
     const { name, slug, description } = pickedTranslation;
 
     return { name, slug, description };
-}
-
-export function getCategoryUrl(
-    category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
-    locale: Locale.Code,
-): string {
-    const { slug } = getLocalizedCategoryData(category, locale);
-    return `/category/${slug}`;
-}
-
-export function getCategoryHasTranslation(
-    category: Pick<Category, 'i18n'>,
-    locale: Locale.Code,
-): boolean {
-    const translation = category.i18n[locale];
-    return Boolean(translation?.name);
 }

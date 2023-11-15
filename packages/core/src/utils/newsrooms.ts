@@ -4,7 +4,7 @@ import { UploadcareImage } from '@prezly/uploadcare';
 
 import { OG_IMAGE_API_URL } from './constants';
 
-export function getNewsroomLogoUrl(
+export function getLogoUrl(
     newsroom: Pick<Newsroom, 'newsroom_logo'>,
     previewSize?: number,
 ): string {
@@ -20,10 +20,10 @@ export function getNewsroomLogoUrl(
     return '';
 }
 
-export function getNewsroomFaviconUrl(
+export function getFaviconUrl(
     newsroom: Pick<Newsroom, 'icon' | 'square_logo'>,
     previewSize = 400,
-): string {
+): string | undefined {
     const imageObject = newsroom.icon || newsroom.square_logo;
 
     if (imageObject) {
@@ -31,10 +31,10 @@ export function getNewsroomFaviconUrl(
         return image.preview(previewSize, previewSize).cdnUrl;
     }
 
-    return '';
+    return undefined;
 }
 
-export function getNewsroomOgImageUrl(newsroom: Pick<Newsroom, 'uuid'>, locale?: Locale): string {
+export function getOgImageUrl(newsroom: Pick<Newsroom, 'uuid'>, locale?: Locale): string {
     const url = `${OG_IMAGE_API_URL}/${newsroom.uuid}`;
 
     if (locale) {

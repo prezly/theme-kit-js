@@ -1,4 +1,3 @@
 export * from './intl';
-export * from './seo';
 export * from './types';
-export * from './utils';
+export * as Utils from './utils';
