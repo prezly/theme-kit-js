@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-ui",
-  "version": "0.0.0-next-ade7b324c1a04bff5733a6a97b36668075a3a9cc",
+  "version": "0.0.0-next-f79c80a623a1e7ccbf0be412cc7db58c32da1594",
   "description": "UI components for Prezly themes",
   "keywords": ["prezly", "themes", "ui"],
   "author": {
@@ -64,7 +64,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@prezly/analytics-nextjs": "^1.12.0",
-    "@prezly/theme-kit-core": "0.0.0-next-ade7b324c1a04bff5733a6a97b36668075a3a9cc",
+    "@prezly/theme-kit-core": "0.0.0-next-f79c80a623a1e7ccbf0be412cc7db58c32da1594",
     "@prezly/uploadcare-image": "^0.3.2",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
