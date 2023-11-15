@@ -1,6 +1,7 @@
 'use client';
 
 /* eslint-disable react/jsx-props-no-spreading */
+
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { ReactElement, ReactNode } from 'react';
 import { createContext, useCallback, useContext } from 'react';

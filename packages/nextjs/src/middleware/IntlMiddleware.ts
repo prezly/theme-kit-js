@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { getShortestLocaleSlug } from '@prezly/theme-kit-core';
+import { Routing } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
 import { headers } from 'next/headers';
 import type { NextRequest } from 'next/server';
@@ -50,11 +50,10 @@ export namespace IntlMiddleware {
                         );
                     }
 
-                    const languages = locales.map((code) => ({
-                        code,
-                        is_default: code === defaultLocale,
-                    }));
-                    const expectedLocaleSlug = getShortestLocaleSlug(languages, params.localeCode);
+                    const expectedLocaleSlug = Routing.getShortestLocaleSlug(params.localeCode, {
+                        locales,
+                        defaultLocale,
+                    });
 
                     // If there is :localeSlug, and it is not matching the expected shortest locale slug -- redirect.
                     if (expectedLocaleSlug && expectedLocaleSlug !== params.localeSlug) {

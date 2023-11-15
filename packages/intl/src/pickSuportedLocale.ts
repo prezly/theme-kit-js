@@ -1,4 +1,5 @@
-import { isLocaleSupported, Locale } from '@prezly/theme-kit-intl';
+import { isLocaleSupported } from './isLocaleSupported';
+import { Locale } from './Locale';
 
 export const DEFAULT_LOCALE = 'en';
 
@@ -6,7 +7,7 @@ export const DEFAULT_LOCALE = 'en';
  * Use this function to determine which translations file you should load from `@prezly/theme-kit-intl` package.
  * See https://github.com/prezly/theme-nextjs-bea/blob/main/utils/lang.ts for a usage example.
  */
-export function getSupportedLocaleIsoCode(locale: Locale | Locale.AnyCode): Locale.IsoCode {
+export function pickSupportedLocale(locale: Locale | Locale.AnyCode): Locale.IsoCode {
     const { isoCode, lang } = Locale.from(locale);
 
     if (isLocaleSupported(locale)) {

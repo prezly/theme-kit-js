@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
 
-import { getDefaultLanguage, isNumberCode } from './languages';
+import { isNumberCode } from '../intl/isNumberCode';
 
 /**
  * Get the shortest locale code possible from full locale code
@@ -10,9 +9,13 @@ import { getDefaultLanguage, isNumberCode } from './languages';
  * Then: try shorting to region code (there should be no locales with the same region code)
  * Finally: return the original locale code (shorting is not possible)
  */
-export function getShortestLocaleSlug<
-    Language extends Pick<NewsroomLanguageSettings, 'code' | 'is_default'>,
->(languages: Language[], locale: Locale | Locale.AnyCode): Locale.AnySlug | false {
+export function getShortestLocaleSlug(
+    locale: Locale.Code,
+    context: {
+        locales: Locale.Code[];
+        defaultLocale: Locale.Code;
+    },
+): Locale.AnySlug | false {
     const {
         code: localeCode,
         lang: langCode,
@@ -20,28 +23,24 @@ export function getShortestLocaleSlug<
         slug: localeSlug,
     } = Locale.from(locale);
 
-    const defaultLanguage = getDefaultLanguage(languages);
     // If it's a default locale, return false (no locale needed in URL)
-    if (localeCode === defaultLanguage.code) {
+    if (localeCode === context.defaultLocale) {
         return false;
     }
 
     const shortened =
         // Try shortening to neutral language code
-        getUnambiguousLangCode(languages, langCode) ??
+        getUnambiguousLangCode(langCode, context) ??
         // Try shortening to region code
-        getUnambiguousRegionCode(languages, regionCode) ??
+        getUnambiguousRegionCode(regionCode, context) ??
         // Return the original (exact) code if shortening is not possible
         localeSlug;
 
     return shortened.toLowerCase();
 }
 
-function getUnambiguousLangCode<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
-    languages: Language[],
-    langCode: Locale.LangCode,
-) {
-    const candidates = languages.filter((lang) => Locale.isLanguageCode(lang.code, langCode));
+function getUnambiguousLangCode(langCode: Locale.LangCode, context: { locales: Locale.Code[] }) {
+    const candidates = context.locales.filter((code) => Locale.isLanguageCode(code, langCode));
 
     if (candidates.length === 1) {
         return langCode;
@@ -50,9 +49,9 @@ function getUnambiguousLangCode<Language extends Pick<NewsroomLanguageSettings, 
     return undefined;
 }
 
-function getUnambiguousRegionCode<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
-    languages: Language[],
+function getUnambiguousRegionCode(
     regionCode: Locale.RegionCode | undefined,
+    context: { locales: Locale.Code[] },
 ) {
     if (!regionCode) {
         return undefined;
@@ -63,10 +62,10 @@ function getUnambiguousRegionCode<Language extends Pick<NewsroomLanguageSettings
         return undefined;
     }
 
-    const candidates = languages.filter((lang) => Locale.isRegionCode(lang.code, regionCode));
+    const candidates = context.locales.filter((locale) => Locale.isRegionCode(locale, regionCode));
     // Prevent collision with neutral language codes
-    const collisions = languages.filter((lang) =>
-        Locale.isLanguageCode(lang.code, regionCode.toLowerCase() as Locale.LangCode),
+    const collisions = context.locales.filter((locale) =>
+        Locale.isLanguageCode(locale, regionCode.toLowerCase() as Locale.LangCode),
     );
 
     if (candidates.length === 1 && collisions.length === 0) {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { getShortestLocaleSlug } from '@prezly/theme-kit-core';
+import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 
 import { type AsyncResolvable, resolveAsync } from '#utils';
@@ -24,16 +24,16 @@ export namespace RoutingAdapter {
             const router = createRouter();
             const { locales, defaultLocale, activeLocale } = await resolveAsync(config);
 
-            const languages = locales.map((code) => ({ code, is_default: code === defaultLocale }));
-
             return {
                 router,
                 generateUrl(routeName: keyof Routes, params = {}) {
                     const localeCode: Locale.Code = (params as any).localeCode ?? activeLocale;
-                    const localeSlug = getShortestLocaleSlug(languages, localeCode) || undefined;
+                    const localeSlug =
+                        Routing.getShortestLocaleSlug(localeCode, { locales, defaultLocale }) ||
+                        undefined;
 
                     // @ts-ignore
-                    return router.generate(routeName, { localeSlug, ...params });
+                    return router.generate(routeName, { localeCode, localeSlug, ...params });
                 },
             };
         }

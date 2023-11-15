@@ -2,7 +2,7 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
 
-import { getLanguageByExactLocaleCode, isNumberCode } from './languages';
+import { isNumberCode } from '../intl/isNumberCode';
 
 /**
  * Get matching language for the requested locale slug.
@@ -24,11 +24,20 @@ export function matchLanguageByLocaleSlug<
     );
 
     return (
-        getLanguageByExactLocaleCode(languages, slug) ??
+        matchLanguageByExactLocaleSlug(languages, slug) ??
         matchLanguageByLangSlug(prioritizedLanguages, slug) ??
         matchLanguageByRegionSlug(prioritizedLanguages, slug) ??
         undefined
     );
+}
+
+function matchLanguageByExactLocaleSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
+    languages: Language[],
+    localeSlug: Locale.AnySlug,
+): Language | undefined {
+    if (!Locale.isValid(localeSlug)) return undefined;
+    const { code } = Locale.from(localeSlug);
+    return languages.find((lang) => lang.code === code);
 }
 
 function matchLanguageByLangSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(

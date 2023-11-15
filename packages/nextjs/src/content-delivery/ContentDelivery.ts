@@ -40,6 +40,11 @@ export namespace ContentDelivery {
                 return prezly.newsroomLanguages.list(newsroomUuid).then((data) => data.languages);
             },
 
+            async usedLanguages() {
+                const languages = await client.languages();
+                return languages.filter((lang) => lang.public_stories_count > 0);
+            },
+
             async locales() {
                 const languages = await client.languages();
                 return languages.map((lang) => lang.code);
@@ -64,6 +69,11 @@ export namespace ContentDelivery {
                     : await client.defaultLanguage();
 
                 return languageSettings.company_information;
+            },
+
+            async notifications(locale: Culture['code']) {
+                const languageSettings = await client.languageOrDefault(locale);
+                return languageSettings.notifications;
             },
 
             async defaultLocale() {

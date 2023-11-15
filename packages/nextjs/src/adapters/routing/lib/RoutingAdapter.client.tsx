@@ -1,9 +1,9 @@
 'use client';
 
-import { getShortestLocaleSlug } from '@prezly/theme-kit-core';
+import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { ReactNode } from 'react';
-import { createContext, useCallback, useContext, useMemo } from 'react';
+import { createContext, useCallback, useContext } from 'react';
 import UrlPattern from 'url-pattern';
 
 import { withoutUndefined } from '#utils';
@@ -39,18 +39,14 @@ export namespace RoutingAdapter {
 
             const { routes, locales, defaultLocale } = value;
 
-            const languages = useMemo(
-                () => locales.map((code) => ({ code, is_default: code === defaultLocale })),
-                [locales, defaultLocale],
-            );
-
             const generateUrl = useCallback(
                 (routeName: keyof Routes, params: any = {}) => {
                     const pattern = new UrlPattern(routes[routeName]);
 
                     const localeCode: Locale.Code = params.localeCode ?? activeLocale;
                     const localeSlug: Locale.AnySlug =
-                        params.localeSlug ?? getShortestLocaleSlug(languages, localeCode);
+                        params.localeSlug ??
+                        Routing.getShortestLocaleSlug(localeCode, { locales, defaultLocale });
 
                     const href = pattern.stringify({
                         localeCode,
@@ -60,7 +56,7 @@ export namespace RoutingAdapter {
 
                     return normalizeUrl(href as `/${string}`);
                 },
-                [routes, languages, activeLocale],
+                [routes, locales, defaultLocale, activeLocale],
             ) as UrlGenerator<Router<Routes>>;
 
             // @ts-ignore
