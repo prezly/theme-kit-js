@@ -24,18 +24,20 @@ export function matchLanguageByLocaleSlug<
     );
 
     return (
-        matchLanguageByLocaleCode(languages, slug) ??
+        matchLanguageByExactLocaleSlug(languages, slug) ??
         matchLanguageByLangSlug(prioritizedLanguages, slug) ??
         matchLanguageByRegionSlug(prioritizedLanguages, slug) ??
         undefined
     );
 }
 
-function matchLanguageByLocaleCode<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
+function matchLanguageByExactLocaleSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
     languages: Language[],
     localeSlug: Locale.AnySlug,
 ): Language | undefined {
-    return languages.find((lang) => lang.code === localeSlug);
+    if (!Locale.isValid(localeSlug)) return undefined;
+    const { code } = Locale.from(localeSlug);
+    return languages.find((lang) => lang.code === code);
 }
 
 function matchLanguageByLangSlug<Language extends Pick<NewsroomLanguageSettings, 'code'>>(

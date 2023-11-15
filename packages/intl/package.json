@@ -12,7 +12,8 @@
             "require": "./build/index.js",
             "default": "./build/index.js"
         },
-        "./i18n": "./build/i18n"
+        "./i18n": "./build/i18n",
+        "./i18n/*": "./build/i18n/*"
     },
     "files": [
         "build",
