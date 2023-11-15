@@ -7,3 +7,8 @@ const assert = require('assert');
 const { RoutingAdapter } = require('@prezly/theme-kit-nextjs/client');
 
 assert(typeof RoutingAdapter.connect === 'function');
+
+// There was an issue with CommonJS build where default imports would not work properly
+const { createRoute } = require('../build/adapters/routing/lib/createRoute.server');
+
+assert(createRoute('/:slug', '/:slug') !== null);
