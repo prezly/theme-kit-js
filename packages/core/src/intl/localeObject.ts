@@ -1,3 +1,5 @@
+import type { Culture } from '@prezly/sdk';
+
 import localeConfig from './localeConfig';
 
 /**
@@ -10,7 +12,7 @@ export class LocaleObject {
      * Hyphen-separated locale code.
      * Examples: `nl-BE`, `en-US`, `fr`, `fil`
      */
-    private localeCode: string;
+    private localeCode: Culture.IsoCode;
 
     /**
      * Whether the locale is region independent (without region/culture part).
@@ -30,10 +32,10 @@ export class LocaleObject {
             // Workaround for `zh-Hant` locale, which is the only locale with non-uppercase region part
             const regionSuffix = region === 'hant' ? 'Hant' : region.toUpperCase();
 
-            this.localeCode = [language, regionSuffix].join('-');
+            this.localeCode = [language, regionSuffix].join('-') as Culture.IsoCode;
         } else {
             this.isRegionIndependent = true;
-            this.localeCode = language;
+            this.localeCode = language as Culture.IsoCode;
         }
     }
 
@@ -58,15 +60,15 @@ export class LocaleObject {
     /**
      * @returns Code formatted into hyphen format: `nl-BE`, `en-US`, `fr`, `fil`
      */
-    public toHyphenCode(): string {
+    public toHyphenCode(): Culture.IsoCode {
         return this.localeCode;
     }
 
     /**
      * @returns Code formatted into underscore format, as expected by Prezly API: `nl_BE`, `en_US`, `fr`, `fil`
      */
-    public toUnderscoreCode(): string {
-        return this.localeCode.replace('-', '_');
+    public toUnderscoreCode(): Culture.Code {
+        return this.localeCode.replace('-', '_') as Culture.Code;
     }
 
     /**
