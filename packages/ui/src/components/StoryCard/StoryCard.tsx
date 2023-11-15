@@ -1,9 +1,8 @@
 import type { Culture, UploadedImage } from '@prezly/sdk';
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
-import type { StoryWithImage } from '@/types';
+import type { AlgoliaStory, StoryWithImage } from '@/types';
 
 import { CategoriesList } from '../CategoriesList';
 import { StoryPublicationDate } from '../StoryPublicationDate';

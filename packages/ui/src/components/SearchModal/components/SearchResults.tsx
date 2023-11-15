@@ -1,10 +1,10 @@
 'use client';
 
 import type { Culture, UploadedImage } from '@prezly/sdk';
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import { Hits, useInstantSearch, useSearchBox } from 'react-instantsearch';
 
 import { ButtonLink } from '@/components/Button';
+import type { AlgoliaStory } from '@/types';
 
 import { Hit } from './Hit';
 

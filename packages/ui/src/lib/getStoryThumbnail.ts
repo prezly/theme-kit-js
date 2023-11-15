@@ -1,7 +1,6 @@
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import type { UploadcareImageDetails } from '@prezly/uploadcare-image/build/types';
 
-import type { StoryWithImage } from '../types';
+import type { AlgoliaStory, StoryWithImage } from '../types';
 
 export function getStoryThumbnail(
     story: StoryWithImage | AlgoliaStory,

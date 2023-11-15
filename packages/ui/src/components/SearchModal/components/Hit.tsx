@@ -1,7 +1,7 @@
 import type { Culture, UploadedImage } from '@prezly/sdk';
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 
 import { StoryCard } from '@/components/StoryCard';
+import type { AlgoliaStory } from '@/types';
 
 export function Hit({ hit, hideSubtitle, locale, logo, newsroomName, showDate }: Hit.Props) {
     const { attributes: story } = hit;

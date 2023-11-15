@@ -1,10 +1,9 @@
 import type { UploadedImage } from '@prezly/sdk';
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import Image from '@prezly/uploadcare-image';
 import { twMerge } from 'tailwind-merge';
 
 import { getStoryThumbnail } from '@/lib';
-import type { StoryWithImage } from '@/types';
+import type { AlgoliaStory, StoryWithImage } from '@/types';
 
 import { getHeroImageSizes } from './lib';
 
