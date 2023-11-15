@@ -1,6 +1,7 @@
 import type { Culture, CultureRef } from '@prezly/sdk';
 
-import { LANGUAGES } from './__mocks__/languages';
+import { LANGUAGES } from '../__mocks__/languages';
+
 import { getLanguageDisplayName } from './getLanguageDisplayName';
 
 describe('getLanguageDisplayName', () => {

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { Locale } from '@prezly/theme-kit-intl';
 
-import { isNumberCode } from './isNumberCode';
+import { isNumberCode } from '../intl/isNumberCode';
 
 /**
  * Get the shortest locale code possible from full locale code
