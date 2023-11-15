@@ -33,6 +33,11 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@playwright/test": "1.39.0",
     "@prezly/eslint-config": "4.5.0",
     "@prezly/sdk": "^18.2.0",
@@ -40,6 +45,7 @@
     "@types/node": "20.9.0",
     "@types/react": "18.2.37",
     "@types/react-dom": "18.2.15",
+    "babel-plugin-add-import-extension": "^1.6.0",
     "concurrently": "7.6.0",
     "eslint": "8.53.0",
     "jest": "29.7.0",
@@ -51,6 +57,8 @@
   },
   "sync-package-versions": {
     "workspace": true,
-    "packages": ["@prezly/sdk"]
+    "packages": [
+      "@prezly/sdk"
+    ]
   }
 }

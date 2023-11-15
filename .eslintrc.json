@@ -3,5 +3,8 @@
   "extends": ["@prezly"],
   "parserOptions": {
     "project": ["./tsconfig.json"]
-  }
+  },
+  "ignorePatterns": [
+    "babel.*.js"
+  ]
 }
