@@ -17,7 +17,7 @@ export namespace PrezlyAdapter {
     }
 
     export interface CacheConfiguration {
-        ttl?: number;
+        ttl?: CachedFetch.Options['ttl'];
     }
 
     export const DEFAULT_REQUEST_CACHE_TTL = 10000;
