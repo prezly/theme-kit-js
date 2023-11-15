@@ -24,13 +24,12 @@ export namespace RoutingAdapter {
             const router = createRouter();
             const { locales, defaultLocale, activeLocale } = await resolveAsync(config);
 
-            const languages = locales.map((code) => ({ code, is_default: code === defaultLocale }));
-
             return {
                 router,
                 generateUrl(routeName: keyof Routes, params = {}) {
                     const localeCode: Locale.Code = (params as any).localeCode ?? activeLocale;
-                    const localeSlug = getShortestLocaleSlug(languages, localeCode) || undefined;
+                    const localeSlug =
+                        getShortestLocaleSlug(localeCode, { locales, defaultLocale }) || undefined;
 
                     // @ts-ignore
                     return router.generate(routeName, { localeSlug, ...params });

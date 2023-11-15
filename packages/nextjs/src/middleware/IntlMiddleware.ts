@@ -50,11 +50,10 @@ export namespace IntlMiddleware {
                         );
                     }
 
-                    const languages = locales.map((code) => ({
-                        code,
-                        is_default: code === defaultLocale,
-                    }));
-                    const expectedLocaleSlug = getShortestLocaleSlug(languages, params.localeCode);
+                    const expectedLocaleSlug = getShortestLocaleSlug(params.localeCode, {
+                        locales,
+                        defaultLocale,
+                    });
 
                     // If there is :localeSlug, and it is not matching the expected shortest locale slug -- redirect.
                     if (expectedLocaleSlug && expectedLocaleSlug !== params.localeSlug) {
