@@ -1,45 +1,22 @@
 'use client';
 
 import { CheckIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
-import type { Category, Culture, ExtendedStory, NewsroomLanguageSettings } from '@prezly/sdk';
-import { getLanguageDisplayName, getUsedLanguages, LocaleObject } from '@prezly/theme-kit-core';
+import type { Culture } from '@prezly/sdk';
 import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Dropdown } from '@/components/Dropdown';
 import { useDevice } from '@/hooks';
 
-import { getTranslationUrl } from '../util';
+type Props = LanguagesDropdown.Props;
 
-export interface Props {
-    languages: NewsroomLanguageSettings[];
-    locale: Culture['code'];
-    currentStory: ExtendedStory | undefined;
-    currentCategory: Pick<Category, 'i18n' | 'display_name'> | undefined;
-    hasError?: boolean;
-}
-
-export function LanguagesDropdown({
-    languages,
-    locale,
-    hasError,
-    currentCategory,
-    currentStory,
-}: Props) {
+export function LanguagesDropdown({ selected, options }: Props) {
     const { isSm } = useDevice();
-    const currentLanguage = languages.find((language) => language.locale.code === locale);
 
-    const displayedLanguages = useMemo(() => {
-        if (!languages.length) {
-            return [];
-        }
-
-        return getUsedLanguages(languages).sort((a, b) =>
-            getLanguageDisplayName(a, languages).localeCompare(
-                getLanguageDisplayName(b, languages),
-            ),
-        );
-    }, [languages]);
+    const displayedOptions = useMemo(
+        () => [...options].sort((a, b) => a.name.localeCompare(b.name)),
+        [options],
+    );
 
     return (
         <Dropdown
@@ -51,38 +28,38 @@ export function LanguagesDropdown({
             label={<GlobeAltIcon className="w-6 h-6" />}
         >
             <Dropdown.Group>
-                {displayedLanguages.map((language, index) => {
-                    const translationLink = hasError
-                        ? '/'
-                        : getTranslationUrl(
-                              LocaleObject.fromAnyCode(locale),
-                              currentCategory,
-                              currentStory,
-                          );
-
-                    const link =
-                        currentStory && translationLink !== '/'
-                            ? translationLink
-                            : `/${language.code}${translationLink}`;
-
-                    return (
-                        <Dropdown.Item
-                            className={twMerge(
-                                'border-b border-gray-200',
-                                index === displayedLanguages.length - 1 && `border-b-0`,
+                {displayedOptions.map(({ code, name, href }, index) => (
+                    <Dropdown.Item
+                        className={twMerge(
+                            'border-b border-gray-200',
+                            index === displayedOptions.length - 1 && `border-b-0`,
+                        )}
+                        key={code}
+                    >
+                        <a className="px-6 py-4 flex items-center justify-between" href={href}>
+                            <span>{name}</span>
+                            {selected && code === selected.code && (
+                                <CheckIcon className="w-[20px] h-[20px]" />
                             )}
-                            key={language.code}
-                        >
-                            <a className="px-6 py-4 flex items-center justify-between" href={link}>
-                                <span>{getLanguageDisplayName(language, languages)}</span>
-                                {language.code === currentLanguage?.code && (
-                                    <CheckIcon className="w-[20px] h-[20px]" />
-                                )}
-                            </a>
-                        </Dropdown.Item>
-                    );
-                })}
+                        </a>
+                    </Dropdown.Item>
+                ))}
             </Dropdown.Group>
         </Dropdown>
     );
+}
+
+export namespace LanguagesDropdown {
+    type WithoutRegion<T> = T;
+
+    export interface Option {
+        code: Culture['code'];
+        name: Culture['native_name'] | WithoutRegion<Culture['native_name']>;
+        href: `/${string}`;
+    }
+
+    export interface Props {
+        selected?: LanguagesDropdown.Option;
+        options: LanguagesDropdown.Option[];
+    }
 }

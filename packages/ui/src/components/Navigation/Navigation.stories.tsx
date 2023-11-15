@@ -5,6 +5,12 @@ import type { Meta, StoryFn } from '@storybook/react';
 import { CATEGORIES, LANGUAGES, NEWSROOM } from './__mocks__';
 import { Navigation } from './Navigation';
 
+const DISPLAYED_LANGUAGES: Navigation.Language[] = LANGUAGES.map((lang) => ({
+    code: lang.code,
+    name: lang.locale.native_name,
+    href: `/${lang.locale.code.toLowerCase().replace('_', '-')}`,
+}));
+
 export default {
     title: 'Components/Navigation',
     component: Navigation,
@@ -22,7 +28,7 @@ const NavigationTemplate: StoryFn<typeof Navigation> = (args) => <Navigation {..
 export const Default = NavigationTemplate.bind({});
 Default.args = {
     categories: CATEGORIES,
-    languages: LANGUAGES,
+    languages: DISPLAYED_LANGUAGES,
     newsroom: NEWSROOM,
     externalSiteLink: 'https://hey.test-site.com/testing-1-2-3',
     layout: 'default',
@@ -51,13 +57,13 @@ export const WithoutCategoriesAndLanguages = NavigationTemplate.bind({});
 WithoutCategoriesAndLanguages.args = {
     ...Default.args,
     categories: [],
-    languages: [],
+    languages: undefined,
 };
 
 export const WithoutExternalLink = NavigationTemplate.bind({});
 WithoutExternalLink.args = {
     ...Default.args,
     categories: [],
-    languages: [],
+    languages: undefined,
     externalSiteLink: undefined,
 };

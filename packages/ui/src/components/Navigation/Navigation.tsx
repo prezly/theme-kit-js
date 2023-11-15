@@ -6,13 +6,7 @@ import {
     MagnifyingGlassIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline';
-import type {
-    Category,
-    Culture,
-    ExtendedStory,
-    Newsroom,
-    NewsroomLanguageSettings,
-} from '@prezly/sdk';
+import type { Category, Culture, Newsroom } from '@prezly/sdk';
 import Image from '@prezly/uploadcare-image';
 import Link from 'next/link';
 import { type MouseEvent as ReactMouseEvent, useState } from 'react';
@@ -28,7 +22,7 @@ import type { NavigationLayout } from './types';
 export interface Props {
     className?: string;
     categories: Category[];
-    languages: NewsroomLanguageSettings[];
+    languages?: Navigation.Language[];
     layout?: NavigationLayout;
     showNewsroomLabelAsideLogo?: boolean;
     externalSiteLink?: string;
@@ -36,16 +30,13 @@ export interface Props {
     locale: Culture['code'];
     hasStandaloneAboutPage?: boolean;
     hasStandaloneContactsPage?: boolean;
-    hasError?: boolean;
-    currentStory: ExtendedStory | undefined;
-    currentCategory: Pick<Category, 'i18n' | 'display_name'> | undefined;
     newsroom: Pick<Newsroom, 'display_name' | 'public_galleries_number' | 'newsroom_logo'>;
 }
 
 export function Navigation({
     className,
     categories,
-    languages,
+    languages = [],
     layout = 'default',
     newsroom,
     showNewsroomLabelAsideLogo,
@@ -54,9 +45,6 @@ export function Navigation({
     locale,
     hasStandaloneAboutPage,
     hasStandaloneContactsPage,
-    hasError,
-    currentCategory,
-    currentStory,
 }: Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const { isSm } = useDevice();
@@ -66,13 +54,16 @@ export function Navigation({
         newsroom_logo: logo,
     } = newsroom;
     const hasExtraLinks = Boolean(
-        categories.length ||
-            languages.length ||
+        categories.length > 0 ||
+            languages.length > 0 ||
             publicGalleriesCount ||
             hasStandaloneAboutPage ||
             hasStandaloneContactsPage ||
             externalSiteLink,
     );
+
+    const selectedLanguage = languages.find((lang) => lang.code === locale);
+
     const linkClassName = twMerge(
         'label-large text-gray-600 hover:text-gray-800 shrink-0',
         !isSm && `text-lg font-bold`,
@@ -174,11 +165,8 @@ export function Navigation({
                             <div className="flex items-start md:items-center flex-row-reverse md:flex-row bg-gray-50 md:bg-transparent p-6 md:p-0 gap-4 justify-between md:justify-start">
                                 {languages.length > 0 && (
                                     <LanguagesDropdown
-                                        hasError={hasError}
-                                        languages={languages}
-                                        locale={locale}
-                                        currentCategory={currentCategory}
-                                        currentStory={currentStory}
+                                        options={languages}
+                                        selected={selectedLanguage}
                                     />
                                 )}
                                 {externalSiteLink && (
@@ -215,4 +203,8 @@ export function Navigation({
             </nav>
         </header>
     );
+}
+
+export namespace Navigation {
+    export type Language = LanguagesDropdown.Option;
 }
