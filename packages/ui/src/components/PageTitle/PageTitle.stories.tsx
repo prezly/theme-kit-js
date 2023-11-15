@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
-import type { BreadcrumbItem } from '../Breadcrumbs';
+import type { Breadcrumb } from '../Breadcrumbs';
 
 import { PageTitle } from './PageTitle';
 
@@ -17,7 +17,7 @@ export default {
 
 const PageTitleTemplate: StoryFn<typeof PageTitle> = (args) => <PageTitle {...args} />;
 
-const ITEMS: BreadcrumbItem[] = [
+const ITEMS: Breadcrumb.BreadcrumbItem[] = [
     { name: 'Homepage', url: '/' },
     { name: 'Media', url: '/media' },
     { name: 'Galileo Art Collection', url: '/media/galileo-art-collection' },

@@ -1,13 +1,6 @@
 import type { FunctionComponent, InputHTMLAttributes, SVGProps } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export interface Props extends InputHTMLAttributes<HTMLInputElement> {
-    error?: string;
-    inputClassName?: string;
-    icon?: FunctionComponent<Omit<SVGProps<SVGElement>, 'ref'>>;
-    iconPlacement?: 'left' | 'right';
-}
-
 export function Input({
     className,
     inputClassName,
@@ -15,7 +8,7 @@ export function Input({
     icon: Icon,
     iconPlacement = 'left',
     ...inputProps
-}: Props) {
+}: Input.Props) {
     return (
         <div className={twMerge(`flex flex-col w-max`, className)}>
             <div className="flex items-center">
@@ -34,4 +27,13 @@ export function Input({
             {error && <span className="text-error label-medium mt-2">{error}</span>}
         </div>
     );
+}
+
+export namespace Input {
+    export interface Props extends InputHTMLAttributes<HTMLInputElement> {
+        error?: string;
+        inputClassName?: string;
+        icon?: FunctionComponent<Omit<SVGProps<SVGElement>, 'ref'>>;
+        iconPlacement?: 'left' | 'right';
+    }
 }
