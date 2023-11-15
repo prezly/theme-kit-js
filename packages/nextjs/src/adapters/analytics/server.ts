@@ -1,14 +1,14 @@
-import { type AsyncResolvable, resolveAsync } from '#utils';
+import { type Resolvable, resolve } from '#utils';
 
 export namespace AnalyticsAdapter {
     export interface Configuration {
-        isTrackingEnabled: AsyncResolvable<boolean>;
+        isTrackingEnabled: Resolvable<boolean>;
     }
 
     export function connect(config: Configuration) {
-        async function useAnalytics() {
+        function useAnalytics() {
             return {
-                isTrackingEnabled: resolveAsync(config.isTrackingEnabled),
+                isTrackingEnabled: resolve(config.isTrackingEnabled),
             };
         }
 
