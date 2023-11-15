@@ -8,11 +8,7 @@ import { DownloadLink } from './DownloadLink';
 import { FileTypeIcon } from './FileTypeIcon';
 import { formatBytes } from './utils';
 
-interface Props {
-    node: AttachmentNode;
-}
-
-export function Attachment({ node }: Props) {
+export function Attachment({ node, intl }: Attachment.Props) {
     const { track } = useAnalytics();
     const { file, description } = node;
     const { downloadUrl } = UploadcareFile.createFromPrezlyStoragePayload(file);
@@ -42,7 +38,18 @@ export function Attachment({ node }: Props) {
                     </h5>
                 </div>
             </div>
-            <DownloadLink />
+            <DownloadLink intl={intl} />
         </a>
     );
+}
+
+export namespace Attachment {
+    export interface Intl {
+        ['actions.download']: string;
+    }
+
+    export interface Props {
+        node: AttachmentNode;
+        intl?: Partial<Intl>;
+    }
 }

@@ -42,12 +42,7 @@ import {
 } from './components';
 import './ContentRenderer.css';
 
-export interface Props {
-    story: ExtendedStory;
-    nodes: Node | Node[];
-}
-
-export function ContentRenderer({ nodes, story }: PropsWithChildren<Props>) {
+export function ContentRenderer({ nodes, story, intl }: ContentRenderer.Props) {
     return (
         <StoryBookmarkContextProvider referencedStories={story.referenced_entities.stories}>
             <VariableContextProvider value={{ story }}>
@@ -77,7 +72,10 @@ export function ContentRenderer({ nodes, story }: PropsWithChildren<Props>) {
                             />
                         )}
                     />
-                    <Component match={AttachmentNode.isAttachmentNode} component={Attachment} />
+                    <Component
+                        match={AttachmentNode.isAttachmentNode}
+                        component={({ node }) => <Attachment node={node} intl={intl} />}
+                    />
                     <Component
                         match={ButtonBlockNode.isButtonBlockNode}
                         component={Elements.ButtonBlock}
@@ -94,4 +92,16 @@ export function ContentRenderer({ nodes, story }: PropsWithChildren<Props>) {
             </VariableContextProvider>
         </StoryBookmarkContextProvider>
     );
+}
+
+export namespace ContentRenderer {
+    export interface Intl {
+        ['actions.download']: string;
+    }
+
+    export type Props = PropsWithChildren<{
+        story: ExtendedStory;
+        nodes: Node | Node[];
+        intl?: Partial<Intl>;
+    }>;
 }
