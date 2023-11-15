@@ -2,7 +2,7 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
 
-import { isNumberCode } from '../intl';
+import { isNumberCode } from './isNumberCode';
 
 /**
  * Get matching language for the requested locale slug.
