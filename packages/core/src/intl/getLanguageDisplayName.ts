@@ -33,7 +33,7 @@ export function getLanguageDisplayName<T extends MinLanguage | MinCulture>(
     );
 
     if (candidates.length === 1) {
-        return locale.native_name.replace(/\s*\(.*/, '');
+        return locale.native_name.replace(/\s*\(.*\)/, '');
     }
 
     return locale.native_name;
