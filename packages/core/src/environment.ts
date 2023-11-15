@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import parseDataUrl from 'parse-data-url';
 
-export function collectEnvVariables(
+export function combine(
     vars: NodeJS.ProcessEnv,
     httpEnvHeader?: string | null | undefined,
 ): Record<string, unknown> {
     if (httpEnvHeader) {
-        const httpEnv = decodeHttpEnv(httpEnvHeader);
+        const httpEnv = decodeHttpEnvHeader(httpEnvHeader);
 
         return { ...vars, ...httpEnv };
     }
@@ -14,7 +14,7 @@ export function collectEnvVariables(
     return { ...vars };
 }
 
-function decodeHttpEnv(header: string): Record<string, any> {
+function decodeHttpEnvHeader(header: string): Record<string, any> {
     if (header.startsWith('data:')) {
         const parsed = parseDataUrl(header);
         if (parsed && parsed.contentType === 'application/json') {

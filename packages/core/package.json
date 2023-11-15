@@ -29,7 +29,8 @@
     "@e1himself/cached-fetch": "^1.1.2",
     "@prezly/theme-kit-intl": "0.0.0-next-f7c6109063a909bde7674f598f4ed2309709b312",
     "@prezly/uploadcare": "^2.3.4",
-    "@technically/is-not-undefined": "^1.0.0"
+    "@technically/is-not-undefined": "^1.0.0",
+    "parse-data-url": "^6.0.0"
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.38",
