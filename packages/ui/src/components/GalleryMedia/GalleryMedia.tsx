@@ -13,6 +13,7 @@ export function GalleryMedia({
     galleryHref,
     imagesNumber,
     videosNumber,
+    intl = {},
 }: GalleryMedia.Props) {
     return (
         <Link
@@ -47,15 +48,17 @@ export function GalleryMedia({
                             {Boolean(imagesNumber) && (
                                 <span className="flex text-gray-100">
                                     <PhotoIcon className="w-5 h-5 mr-2" />
-                                    {/* TODO: Add translations */}
-                                    {videosNumber === 0 ? `${imagesNumber} Images` : imagesNumber}
+                                    {videosNumber === 0
+                                        ? `${imagesNumber} ${intl['images.title'] ?? 'Images'}`
+                                        : imagesNumber}
                                 </span>
                             )}
                             {Boolean(videosNumber) && (
                                 <span className="flex text-gray-100">
                                     <VideoCameraIcon className="w-5 h-5 mr-2" />
-                                    {/* TODO: Add translations */}
-                                    {imagesNumber === 0 ? `${videosNumber} Videos` : videosNumber}
+                                    {imagesNumber === 0
+                                        ? `${videosNumber} ${intl['videos.title'] ?? 'Videos'}`
+                                        : videosNumber}
                                 </span>
                             )}
                         </div>
@@ -69,6 +72,11 @@ export function GalleryMedia({
 }
 
 export namespace GalleryMedia {
+    export interface Intl {
+        ['videos.title']: string;
+        ['images.title']: string;
+    }
+
     export interface Props {
         galleryHref: `/${string}`;
         name: NewsroomGallery['name'];
@@ -76,5 +84,6 @@ export namespace GalleryMedia {
         imagesNumber: NewsroomGallery['images_number'];
         videosNumber: NewsroomGallery['videos_number'];
         cover?: UploadedImage | null;
+        intl?: Partial<Intl>;
     }
 }

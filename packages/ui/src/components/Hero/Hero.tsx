@@ -11,19 +11,18 @@ import { StoryPublicationDate } from '../StoryPublicationDate';
 
 import { HeroImage, type HeroImageSize } from './components';
 
-type Props = Hero.Props;
-
 export function Hero({
     story,
     categories = [],
     showDate,
     locale,
+    dateFormat,
     newsroomName,
     logo,
     size = 'default',
     hideSubtitle,
     className,
-}: Props) {
+}: Hero.Props) {
     const { slug, title, subtitle } = story;
 
     return (
@@ -60,7 +59,7 @@ export function Hero({
                 <div className="flex flex-wrap items-center gap-1">
                     {showDate && (
                         <span className="label-large text-gray-500 shrink-0">
-                            <StoryPublicationDate locale={locale} story={story} />
+                            <StoryPublicationDate dateFormat={dateFormat} locale={locale} />
                         </span>
                     )}
                     {categories.length > 0 && (
@@ -109,5 +108,6 @@ export namespace Hero {
         showDate?: boolean;
         hideSubtitle?: boolean;
         className?: string;
+        dateFormat?: string;
     }
 }
