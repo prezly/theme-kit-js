@@ -1,11 +1,5 @@
 import { LANGUAGES } from './__mocks__/languages';
-import {
-    getDefaultLanguage,
-    getLanguageByExactLocaleCode,
-    getLanguageByNeutralLocaleCode,
-    getLanguageByShortRegionCode,
-    getUsedLanguages,
-} from './languages';
+import { getDefaultLanguage, getLanguageByExactLocaleCode, getUsedLanguages } from './languages';
 
 describe('getDefaultLanguage', () => {
     it('returns the actual default language', () => {
@@ -43,45 +37,5 @@ describe('getLanguageByExactLocaleCode', () => {
 
     it('returns undefined when there is no langauge with exact locale code', () => {
         expect(getLanguageByExactLocaleCode(languages, 'nl')).toBe(undefined);
-    });
-});
-
-describe('getLanguageByNeutralLocaleCode', () => {
-    it('prefers used cultures', () => {
-        const languages = [
-            LANGUAGES.en,
-            { ...LANGUAGES.nl_BE, public_stories_count: 0, stories_count: 0 },
-            LANGUAGES.nl_NL,
-        ];
-
-        expect(getLanguageByNeutralLocaleCode(languages, 'nl')).toEqual(LANGUAGES.nl_NL);
-    });
-
-    it('returns first fitting culture from unused cultures', () => {
-        const languages = [
-            LANGUAGES.en,
-            { ...LANGUAGES.nl_BE, public_stories_count: 0, stories_count: 0 },
-            { ...LANGUAGES.nl_NL, public_stories_count: 0, stories_count: 0 },
-        ];
-
-        expect(getLanguageByNeutralLocaleCode(languages, 'nl')).toEqual(languages[1]);
-    });
-});
-
-describe('getLanguageByShortRegionCode', () => {
-    it('prefers used cultures', () => {
-        const languages = [LANGUAGES.en, LANGUAGES.nl_BE, LANGUAGES.fr_BE];
-
-        expect(getLanguageByShortRegionCode(languages, 'be')).toEqual(LANGUAGES.nl_BE);
-    });
-
-    it('returns first fitting culture from unused cultures', () => {
-        const languages = [
-            LANGUAGES.en,
-            LANGUAGES.fr_BE,
-            { ...LANGUAGES.nl_BE, public_stories_count: 0, stories_count: 0 },
-        ];
-
-        expect(getLanguageByShortRegionCode(languages, 'be')).toEqual(LANGUAGES.fr_BE);
     });
 });

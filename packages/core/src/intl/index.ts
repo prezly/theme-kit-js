@@ -2,8 +2,6 @@ export { getLanguageDisplayName } from './getLanguageDisplayName';
 export {
     getDefaultLanguage,
     getLanguageByExactLocaleCode,
-    getLanguageByNeutralLocaleCode,
-    getLanguageByShortRegionCode,
     getNotifications,
     getUsedLanguages,
     isNumberCode,

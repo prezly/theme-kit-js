@@ -29,37 +29,6 @@ export function getLanguageByExactLocaleCode<
     return languages.find((lang) => Locale.isEqual(lang.code, locale));
 }
 
-// See https://github.com/prezly/prezly/blob/master/lib/model/CulturePeer.php#L123
-export function getLanguageByNeutralLocaleCode<
-    Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
->(languages: Language[], locale: Locale | Locale.AnyCode): Language | undefined {
-    const usedLanguages = getUsedLanguages(languages);
-
-    return (
-        // Try to look in used cultures first (giving priority to used ones)
-        usedLanguages.find((lang) => Locale.isSameLang(lang.code, locale)) ??
-        // Search in all languages
-        languages.find((lang) => Locale.isSameLang(lang.code, locale))
-    );
-}
-
-// See https://github.com/prezly/prezly/blob/master/lib/model/CulturePeer.php#L159
-export function getLanguageByShortRegionCode<
-    Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'public_stories_count'>,
->(
-    languages: Language[],
-    regionCode: Locale.RegionCode | `${Lowercase<Locale.RegionCode>}`,
-): Language | undefined {
-    const usedLanguages = getUsedLanguages(languages);
-
-    return (
-        // Try to look in used cultures first (giving priority to used ones)
-        usedLanguages.find((lang) => Locale.isRegionCode(lang.code, regionCode)) ??
-        // Search in all languages
-        languages.find((lang) => Locale.isRegionCode(lang.code, regionCode))
-    );
-}
-
 /**
  * Get newsroom notifications for the selected locale
  */
