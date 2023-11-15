@@ -10,21 +10,10 @@ import { StoryPublicationDate } from '../StoryPublicationDate';
 
 import { StoryImage, type StoryImageSize } from './components';
 
-export interface Props {
-    story: StoryWithImage | AlgoliaStory;
-    categories?: StoryCard.DisplayedCategory[];
-    locale: Culture['code'];
-    size?: StoryImageSize;
-    newsroomName: string;
-    logo?: UploadedImage | null;
-    showDate?: boolean;
-    hideSubtitle?: boolean;
-    className?: string;
-}
-
 export function StoryCard({
     story,
     categories = [],
+    dateFormat,
     showDate,
     locale,
     newsroomName,
@@ -32,7 +21,7 @@ export function StoryCard({
     size = 'large',
     hideSubtitle,
     className,
-}: Props) {
+}: StoryCard.Props) {
     const { slug, title, subtitle } = story;
 
     return (
@@ -72,7 +61,7 @@ export function StoryCard({
                 <div className="flex flex-wrap items-center gap-1">
                     {showDate && (
                         <span className="label-large text-gray-500 shrink-0">
-                            <StoryPublicationDate locale={locale} story={story} />
+                            <StoryPublicationDate locale={locale} dateFormat={dateFormat} />
                         </span>
                     )}
                     {categories.length > 0 && (
@@ -113,4 +102,17 @@ export function StoryCard({
 
 export namespace StoryCard {
     export type DisplayedCategory = CategoriesList.DisplayedCategory;
+
+    export interface Props {
+        story: StoryWithImage | AlgoliaStory;
+        categories?: StoryCard.DisplayedCategory[];
+        locale: Culture['code'];
+        size?: StoryImageSize;
+        newsroomName: string;
+        logo?: UploadedImage | null;
+        showDate?: boolean;
+        hideSubtitle?: boolean;
+        className?: string;
+        dateFormat?: string;
+    }
 }
