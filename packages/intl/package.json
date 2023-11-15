@@ -36,6 +36,7 @@
         "build:cjs": "babel --config-file=../../babel.cjs.js src/ --extensions=.ts --out-dir=build/",
         "watch": "tsc --watch --preserveWatchOutput --project .",
         "lint": "eslint ./src/",
+        "typecheck": "tsc --project . --noEmit --emitDeclarationOnly false",
         "prettier:check": "prettier --check './src/**/*.{ts,js}'",
         "prettier:fix": "prettier --write './src/**/*.{ts,js}'",
         "test": "npm run test:unit && npm run test:build",
