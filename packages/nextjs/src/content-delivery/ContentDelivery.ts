@@ -40,6 +40,11 @@ export namespace ContentDelivery {
                 return prezly.newsroomLanguages.list(newsroomUuid).then((data) => data.languages);
             },
 
+            async usedLanguages() {
+                const languages = await client.languages();
+                return languages.filter((lang) => lang.public_stories_count > 0);
+            },
+
             async locales() {
                 const languages = await client.languages();
                 return languages.map((lang) => lang.code);

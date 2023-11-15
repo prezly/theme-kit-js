@@ -1,7 +1,7 @@
 import type { Category } from '@prezly/sdk';
 import type { Locale } from '@prezly/theme-kit-intl';
 
-import type { AlgoliaCategoryRef } from '../types';
+import type { AlgoliaCategoryRef } from './types';
 
 function isAlgoliaCategory(
     category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
