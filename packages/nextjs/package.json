@@ -1,11 +1,14 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "0.0.0-next-e1e0d8d3a351c50f0f8faff27484b59942bd7200",
+  "version": "0.0.0-next-5cafa5f44882b39a051c5b6eab938bfc236ef573",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "main": "build/index.js",
   "module": "build/index.mjs",
   "types": "build/index.d.ts",
-  "files": ["build", "README.md"],
+  "files": [
+    "build",
+    "README.md"
+  ],
   "imports": {
     "#utils": "./build/utils/index.js"
   },
@@ -64,7 +67,10 @@
     "url": "git+https://github.com/prezly/theme-kit-js.git",
     "directory": "packages/nextjs"
   },
-  "keywords": ["prezly", "nextjs"],
+  "keywords": [
+    "prezly",
+    "nextjs"
+  ],
   "author": "Prezly Team",
   "license": "MIT",
   "bugs": {
@@ -97,8 +103,8 @@
   },
   "dependencies": {
     "@e1himself/cached-fetch": "^1.1.2",
-    "@prezly/theme-kit-core": "^0.0.0-next-e1e0d8d3a351c50f0f8faff27484b59942bd7200",
-    "@prezly/theme-kit-intl": "^0.0.0-next-e1e0d8d3a351c50f0f8faff27484b59942bd7200",
+    "@prezly/theme-kit-core": "^0.0.0-next-5cafa5f44882b39a051c5b6eab938bfc236ef573",
+    "@prezly/theme-kit-intl": "^0.0.0-next-5cafa5f44882b39a051c5b6eab938bfc236ef573",
     "next-seo": "^5.4.0",
     "parse-data-url": "^6.0.0",
     "url-pattern": "^1.0.3"
