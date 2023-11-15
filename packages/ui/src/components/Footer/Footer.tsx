@@ -1,37 +1,24 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
-import type { Culture, Newsroom, NewsroomCompanyInformation } from '@prezly/sdk';
-import { hasAnySocialMedia } from '@prezly/theme-kit-core';
 
 import { Link } from '../Link';
 import { SocialMedia } from '../StoryShareLinks';
 
 import { SubFooter } from './SubFooter';
-
-export interface Props {
-    className?: string;
-    companyInformation: NewsroomCompanyInformation;
-    externalSiteLink?: string;
-    hasStandaloneAboutPage?: boolean;
-    hasStandaloneContactsPage?: boolean;
-    publicGalleriesCount: number;
-    locale: Culture['code'];
-    newsroom: Pick<
-        Newsroom,
-        'uuid' | 'custom_data_request_link' | 'display_name' | 'is_white_labeled'
-    >;
-}
+import { hasAnySocialMedia } from './util';
 
 export function Footer({
     className,
-    companyInformation,
+    companySocials,
     externalSiteLink,
     hasStandaloneAboutPage,
     hasStandaloneContactsPage,
-    locale,
-    newsroom,
+    newsroomName,
     publicGalleriesCount,
-}: Props) {
-    const hasSocialMedia = hasAnySocialMedia(companyInformation);
+    isWhiteLabeled,
+    intl = {},
+    privacyRequestLink,
+}: Footer.Props) {
+    const hasSocialMedia = hasAnySocialMedia(companySocials);
 
     return (
         <footer className={className}>
@@ -40,7 +27,7 @@ export function Footer({
                     {hasSocialMedia && (
                         <SocialMedia
                             iconClassName="text-white hover:text-gray-400"
-                            companyInformation={companyInformation}
+                            companySocials={companySocials}
                         />
                     )}
                     <div className="hidden md:flex items-center gap-6 mt-auto">
@@ -60,19 +47,16 @@ export function Footer({
                 </div>
                 <div className="flex flex-col md:items-end mt-6 md:mt-0 gap-6">
                     <Link className="text-white hover:text-white hover:underline" href="/stories">
-                        {/* TODO: add translations */}
-                        All stories
+                        {intl['allStories.title'] ?? 'All stories'}
                     </Link>
                     {hasStandaloneAboutPage && (
                         <Link className="text-white hover:text-white hover:underline" href="/about">
-                            {/* TODO: add translations */}
-                            About
+                            {intl['boilerplate.about'] ?? 'About'}
                         </Link>
                     )}
                     {publicGalleriesCount > 0 && (
                         <Link className="text-white hover:text-white hover:underline" href="/media">
-                            {/* TODO: add translations */}
-                            Media
+                            {intl['mediaGallery.title'] ?? 'Media'}
                         </Link>
                     )}
                     {hasStandaloneContactsPage && (
@@ -80,8 +64,7 @@ export function Footer({
                             className="text-white hover:text-white hover:underline"
                             href="/contacts"
                         >
-                            {/* TODO: add translations */}
-                            Contacts
+                            {intl['contacts.title'] ?? 'Contacts'}
                         </Link>
                     )}
                     {externalSiteLink && (
@@ -98,7 +81,34 @@ export function Footer({
                     )}
                 </div>
             </div>
-            <SubFooter newsroom={newsroom} locale={locale} />
+            <SubFooter
+                intl={intl}
+                isWhiteLabeled={isWhiteLabeled}
+                newsroomDisplayName={newsroomName}
+                privacyRequestLink={privacyRequestLink}
+            />
         </footer>
     );
+}
+
+export namespace Footer {
+    export interface Intl extends SubFooter.Intl {
+        ['contacts.title']: string;
+        ['boilerplate.about']: string;
+        ['mediaGallery.title']: string;
+        ['allStories.title']: string;
+    }
+
+    export interface Props {
+        className?: string;
+        isWhiteLabeled?: boolean;
+        companySocials: SocialMedia.CompanySocials;
+        externalSiteLink?: string;
+        hasStandaloneAboutPage?: boolean;
+        hasStandaloneContactsPage?: boolean;
+        publicGalleriesCount: number;
+        newsroomName: string;
+        intl?: Partial<Intl>;
+        privacyRequestLink: string;
+    }
 }

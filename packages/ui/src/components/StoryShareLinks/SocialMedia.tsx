@@ -5,15 +5,9 @@ import { Icons } from '@/icons';
 
 import { getSocialLinks } from './utils';
 
-export interface Props {
-    className?: string;
-    iconClassName?: string;
-    companyInformation: NewsroomCompanyInformation;
-}
-
-export function SocialMedia({ className, companyInformation, iconClassName }: Props) {
+export function SocialMedia({ className, companySocials, iconClassName }: SocialMedia.Props) {
     const { facebook, instagram, linkedin, pinterest, tiktok, twitter, youtube } =
-        getSocialLinks(companyInformation);
+        getSocialLinks(companySocials);
 
     return (
         <div className={twMerge('flex items-center gap-6', className)}>
@@ -103,4 +97,17 @@ export function SocialMedia({ className, companyInformation, iconClassName }: Pr
             )}
         </div>
     );
+}
+
+export namespace SocialMedia {
+    export type CompanySocials = Pick<
+        NewsroomCompanyInformation,
+        'facebook' | 'instagram' | 'linkedin' | 'tiktok' | 'pinterest' | 'twitter' | 'youtube'
+    >;
+
+    export interface Props {
+        className?: string;
+        iconClassName?: string;
+        companySocials: CompanySocials;
+    }
 }

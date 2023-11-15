@@ -5,15 +5,6 @@ import { twMerge } from 'tailwind-merge';
 import { ShareButton } from './ShareButton';
 import type { StoryShareLinksLayout } from './types';
 
-export interface Props {
-    shareUrl: string | null;
-    onUrlCopied?: () => void;
-    showScrollToTopButton?: boolean;
-    className?: string;
-    iconClassName?: string;
-    layout?: StoryShareLinksLayout;
-}
-
 const SCROLL_TOP_MIN_HEIGHT = 300;
 
 export function StoryShareLinks({
@@ -23,7 +14,7 @@ export function StoryShareLinks({
     onUrlCopied,
     showScrollToTopButton,
     layout = 'horizontal',
-}: Props) {
+}: StoryShareLinks.Props) {
     const [isScrollToTopVisible, setIsScrollToTopVisible] = useState(false);
 
     function copyShareUrl(event?: ReactMouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -128,4 +119,15 @@ export function StoryShareLinks({
             )}
         </div>
     );
+}
+
+export namespace StoryShareLinks {
+    export interface Props {
+        shareUrl: string | null;
+        onUrlCopied?: () => void;
+        showScrollToTopButton?: boolean;
+        className?: string;
+        iconClassName?: string;
+        layout?: StoryShareLinksLayout;
+    }
 }
