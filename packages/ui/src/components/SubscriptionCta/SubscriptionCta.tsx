@@ -4,15 +4,14 @@ import { twMerge } from 'tailwind-merge';
 import { Button } from '../Button';
 import { Input } from '../Input';
 
-export interface Props {
-    className?: string;
-    value: string;
-    error?: string;
-    onChange: (value: string) => void;
-    onSubmit: () => void;
-}
-
-export function SubscriptionCta({ className, error, value, onChange, onSubmit }: Props) {
+export function SubscriptionCta({
+    className,
+    error,
+    value,
+    onChange,
+    onSubmit,
+    intl = {},
+}: SubscriptionCta.Props) {
     function handleSubmit(event?: FormEvent<HTMLFormElement>) {
         event?.preventDefault();
 
@@ -26,8 +25,9 @@ export function SubscriptionCta({ className, error, value, onChange, onSubmit }:
                 className,
             )}
         >
-            {/* TODO: add translations */}
-            <h3 className="title-large w-full md:w-1/2 text-white">Get updates in your inbox</h3>
+            <h3 className="title-large w-full md:w-1/2 text-white">
+                {intl['subscription.formTitle'] ?? 'Get updates in your mailbox'}
+            </h3>
             <form
                 className="flex flex-col sm:flex-row items-start w-full md:w-1/2 gap-4"
                 onSubmit={handleSubmit}
@@ -35,15 +35,31 @@ export function SubscriptionCta({ className, error, value, onChange, onSubmit }:
                 <Input
                     className="w-full"
                     error={error}
-                    //  TODO: add translations
-                    placeholder="Enter your email"
+                    placeholder={intl['subscription.labelEmail'] ?? 'Enter your email'}
                     value={value}
                     onChange={(event) => onChange(event.target.value)}
                 />
                 <Button className="shrink-0 w-full sm:w-max" type="submit">
-                    Submit
+                    {intl['actions.subscribe'] ?? 'Subscribe'}
                 </Button>
             </form>
         </div>
     );
+}
+
+export namespace SubscriptionCta {
+    export interface Intl {
+        ['subscription.formTitle']: string;
+        ['subscription.labelEmail']: string;
+        ['actions.subscribe']: string;
+    }
+
+    export interface Props {
+        className?: string;
+        value: string;
+        error?: string;
+        onChange: (value: string) => void;
+        onSubmit: () => void;
+        intl?: Partial<Intl>;
+    }
 }
