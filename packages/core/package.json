@@ -33,7 +33,6 @@
     "parse-data-url": "^6.0.0"
   },
   "devDependencies": {
-    "@types/isomorphic-fetch": "0.0.38",
     "@types/parse-data-url": "3.0.2"
   },
   "engines": {
