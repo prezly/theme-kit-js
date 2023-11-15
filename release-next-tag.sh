@@ -11,6 +11,8 @@ npm run sync-package-versions
 
 npm install
 
+npm run build
+
 git add lerna.json \
         package-lock.json \
         packages/core/package.json \
