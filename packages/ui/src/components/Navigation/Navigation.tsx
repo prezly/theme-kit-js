@@ -1,11 +1,7 @@
 'use client';
 
-import {
-    ArrowUpRightIcon,
-    Bars3BottomRightIcon,
-    MagnifyingGlassIcon,
-    XMarkIcon,
-} from '@heroicons/react/24/outline';
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
+import { Bars3BottomRightIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import type {
     Category,
     Culture,
@@ -179,7 +175,7 @@ export function Navigation({
                     <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4">
                         {Boolean(onSearch) && (
                             <Button
-                                className="hidden md:flex"
+                                className="hidden md:flex p-0"
                                 variation="navigation"
                                 icon={MagnifyingGlassIcon}
                                 onClick={handleSearch}
@@ -204,7 +200,7 @@ export function Navigation({
                                         rel="noopener noreferrer"
                                     >
                                         {externalLinkLabel}
-                                        <ArrowUpRightIcon className="ml-1 w-4 h-4" />
+                                        <ArrowUpRightIcon className="ml-1 w-5 h-5" />
                                     </a>
                                 )}
                             </div>

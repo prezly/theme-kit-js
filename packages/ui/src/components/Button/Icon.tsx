@@ -12,5 +12,5 @@ export function Icon({ icon: IconComponent, className }: Props) {
         return null;
     }
 
-    return <IconComponent className={twMerge('w-5 h-5', className)} />;
+    return <IconComponent className={twMerge('w-6 h-6', className)} />;
 }
