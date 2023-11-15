@@ -24,6 +24,7 @@
     "release:prepare": "npx lerna run lint,test,build",
     "release:publish": "lerna publish --no-private",
     "release:publish:preview": "lerna publish prerelease --dist-tag preview",
+    "release:next-tag": "./release-next-tag.sh",
     "sync-package-versions": "node ./sync-package-versions.mjs"
   },
   "dependencies": {
