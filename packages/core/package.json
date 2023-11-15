@@ -10,15 +10,11 @@
   ],
   "exports": {
     ".": "./build/index.js",
-    "./server": "./build/server.js",
     "./localeConfig": "./build/intl/localeConfig.js",
     "./localeList": "./build/intl/localeList.js"
   },
   "typesVersions": {
     "*": {
-      "server": [
-        "build/server.d.ts"
-      ],
       "localeConfig": [
         "build/intl/localeConfig.d.ts"
       ],
