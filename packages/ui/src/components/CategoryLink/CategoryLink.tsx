@@ -2,10 +2,7 @@ import type { Category } from '@prezly/sdk';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
-interface Props {
-    category: CategoryLink.DisplayedCategory;
-    className?: string;
-}
+type Props = CategoryLink.Props;
 
 export function CategoryLink({ category, className }: Props) {
     return (
@@ -19,5 +16,10 @@ export namespace CategoryLink {
     export interface DisplayedCategory {
         name: Category.Translation['name'];
         href: `/${string}`;
+    }
+
+    export interface Props {
+        category: DisplayedCategory;
+        className?: string;
     }
 }

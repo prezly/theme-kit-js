@@ -19,23 +19,7 @@ import { Button } from '../Button';
 import { CategoriesDropdown, LanguagesDropdown } from './components';
 import type { NavigationLayout } from './types';
 
-export interface Props {
-    className?: string;
-    intl?: Partial<Navigation.Intl>;
-    categories?: {
-        options: Navigation.DisplayedCategory[];
-        indexHref?: CategoriesDropdown.Props['indexHref'];
-    };
-    languages?: Navigation.DisplayedLanguage[];
-    layout?: NavigationLayout;
-    showNewsroomLabelAsideLogo?: boolean;
-    externalSiteLink?: string;
-    onSearch?: () => void;
-    locale: Culture['code'];
-    hasStandaloneAboutPage?: boolean;
-    hasStandaloneContactsPage?: boolean;
-    newsroom: Pick<Newsroom, 'display_name' | 'public_galleries_number' | 'newsroom_logo'>;
-}
+type Props = Navigation.Props;
 
 export function Navigation({
     className,
@@ -218,4 +202,22 @@ export namespace Navigation {
     export type Intl = CategoriesDropdown.Intl;
     export type DisplayedLanguage = LanguagesDropdown.Option;
     export type DisplayedCategory = CategoriesDropdown.Option;
+
+    export interface Props {
+        className?: string;
+        intl?: Partial<Navigation.Intl>;
+        categories?: {
+            options: Navigation.DisplayedCategory[];
+            indexHref?: CategoriesDropdown.Props['indexHref'];
+        };
+        languages?: Navigation.DisplayedLanguage[];
+        layout?: NavigationLayout;
+        showNewsroomLabelAsideLogo?: boolean;
+        externalSiteLink?: string;
+        onSearch?: () => void;
+        locale: Culture['code'];
+        hasStandaloneAboutPage?: boolean;
+        hasStandaloneContactsPage?: boolean;
+        newsroom: Pick<Newsroom, 'display_name' | 'public_galleries_number' | 'newsroom_logo'>;
+    }
 }

@@ -4,10 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { CategoryLink } from '../CategoryLink';
 
-interface Props {
-    categories: CategoriesList.DisplayedCategory[];
-    className?: string;
-}
+type Props = CategoriesList.Props;
 
 export function CategoriesList({ categories, className }: Props) {
     return (
@@ -25,5 +22,10 @@ export function CategoriesList({ categories, className }: Props) {
 export namespace CategoriesList {
     export interface DisplayedCategory extends CategoryLink.DisplayedCategory {
         id: Category['id'];
+    }
+
+    export interface Props {
+        categories: DisplayedCategory[];
+        className?: string;
     }
 }

@@ -11,17 +11,7 @@ import { StoryPublicationDate } from '../StoryPublicationDate';
 
 import { HeroImage, type HeroImageSize } from './components';
 
-export interface Props {
-    story: StoryWithImage;
-    categories?: Hero.DisplayedCategory[];
-    locale: Culture['code'];
-    size?: HeroImageSize;
-    newsroomName: string;
-    logo?: UploadedImage | null;
-    showDate?: boolean;
-    hideSubtitle?: boolean;
-    className?: string;
-}
+type Props = Hero.Props;
 
 export function Hero({
     story,
@@ -108,4 +98,16 @@ export function Hero({
 
 export namespace Hero {
     export type DisplayedCategory = CategoriesList.DisplayedCategory;
+
+    export interface Props {
+        story: StoryWithImage;
+        categories?: Hero.DisplayedCategory[];
+        locale: Culture['code'];
+        size?: HeroImageSize;
+        newsroomName: string;
+        logo?: UploadedImage | null;
+        showDate?: boolean;
+        hideSubtitle?: boolean;
+        className?: string;
+    }
 }
