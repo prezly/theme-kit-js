@@ -37,6 +37,7 @@
     "@babel/core": "^7.23.3",
     "@babel/plugin-transform-modules-commonjs": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
     "@playwright/test": "1.39.0",
     "@prezly/eslint-config": "4.5.0",
