@@ -81,7 +81,7 @@
     "build:cjs": "babel --config-file=../../babel.cjs.js src/ --extensions=.ts --out-dir=build/",
     "build:esm": "babel --config-file=../../babel.esm.js src/ --extensions=.ts --out-dir=build/ --out-file-extension=.mjs",
     "dev": "tsc --watch --preserveWatchOutput --project .",
-    "typecheck": "tsc --noEmit --incremental --project .",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false --incremental --project .",
     "lint": "eslint src",
     "test": "npm run test:build",
     "test:build": "node test/test-build.cjs && node test/test-build.mjs"
