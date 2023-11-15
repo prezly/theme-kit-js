@@ -71,6 +71,11 @@ export namespace ContentDelivery {
                 return languageSettings.company_information;
             },
 
+            async notifications(locale: Culture['code']) {
+                const languageSettings = await client.languageOrDefault(locale);
+                return languageSettings.notifications;
+            },
+
             async defaultLocale() {
                 const defaultLanguage = await client.defaultLanguage();
                 return defaultLanguage.code;

@@ -1,11 +1,5 @@
 export { getLanguageDisplayName } from './getLanguageDisplayName';
-export {
-    getDefaultLanguage,
-    getLanguageByExactLocaleCode,
-    getNotifications,
-    getUsedLanguages,
-    isNumberCode,
-} from './languages';
+export { isNumberCode } from './isNumberCode';
 export { default as localeConfig } from './localeConfig';
 export { DEFAULT_LOCALE, getSupportedLocaleIsoCode } from './locale';
 

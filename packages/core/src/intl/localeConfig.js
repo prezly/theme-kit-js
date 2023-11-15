@@ -6,7 +6,7 @@ const { Locale } = require('@prezly/theme-kit-intl');
  * the exported list represents all possible locale codes that a theme application might accept.
  */
 
-const { isNumberCode } = require('./languages');
+const { isNumberCode } = require('./isNumberCode');
 /**
  * @type {Locale[]}
  */
