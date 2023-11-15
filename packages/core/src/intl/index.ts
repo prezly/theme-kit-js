@@ -1,11 +1,9 @@
 export { getLanguageDisplayName } from './getLanguageDisplayName';
 export {
-    getCompanyInformation,
     getDefaultLanguage,
     getLanguageByExactLocaleCode,
     getLanguageByNeutralLocaleCode,
     getLanguageByShortRegionCode,
-    getLanguageFromStory,
     getNotifications,
     getUsedLanguages,
     isNumberCode,

@@ -1,16 +1,11 @@
 import { LANGUAGES } from './__mocks__/languages';
-import { STORY } from './__mocks__/story';
 import {
-    getCompanyInformation,
     getDefaultLanguage,
     getLanguageByExactLocaleCode,
     getLanguageByNeutralLocaleCode,
     getLanguageByShortRegionCode,
-    getLanguageFromStory,
     getUsedLanguages,
 } from './languages';
-
-const ALL_LANGUAGES = Object.values(LANGUAGES);
 
 describe('getDefaultLanguage', () => {
     it('returns the actual default language', () => {
@@ -88,25 +83,5 @@ describe('getLanguageByShortRegionCode', () => {
         ];
 
         expect(getLanguageByShortRegionCode(languages, 'be')).toEqual(LANGUAGES.fr_BE);
-    });
-});
-
-describe('getLanguageFromStory', () => {
-    it('correctly returns language from a story', () => {
-        expect(getLanguageFromStory(ALL_LANGUAGES, STORY)).toEqual(LANGUAGES.en);
-    });
-});
-
-describe('getCompanyInformation', () => {
-    it('returns company information from target language', () => {
-        expect(getCompanyInformation(ALL_LANGUAGES, 'nl-BE')).toEqual(
-            LANGUAGES.nl_BE.company_information,
-        );
-    });
-
-    it('returns company information from default language if target not found', () => {
-        expect(getCompanyInformation(ALL_LANGUAGES, 'de-DE')).toEqual(
-            LANGUAGES.en.company_information,
-        );
     });
 });

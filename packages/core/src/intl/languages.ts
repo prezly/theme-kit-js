@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type { NewsroomLanguageSettings, Story } from '@prezly/sdk';
+import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
 
 /**
@@ -58,25 +58,6 @@ export function getLanguageByShortRegionCode<
         // Search in all languages
         languages.find((lang) => Locale.isRegionCode(lang.code, regionCode))
     );
-}
-
-export function getLanguageFromStory<Language extends Pick<NewsroomLanguageSettings, 'code'>>(
-    languages: Language[],
-    story: Pick<Story, 'culture'>,
-): Language | undefined {
-    return languages.find((lang) => lang.code === story.culture.code);
-}
-
-/**
- * Extracts company information for the selected locale
- */
-export function getCompanyInformation<
-    Language extends Pick<NewsroomLanguageSettings, 'is_default' | 'code' | 'company_information'>,
->(languages: Language[], locale: Locale | Locale.AnyCode): Language['company_information'] {
-    const currentLanguage =
-        getLanguageByExactLocaleCode(languages, locale) ?? getDefaultLanguage(languages);
-
-    return currentLanguage.company_information;
 }
 
 /**
