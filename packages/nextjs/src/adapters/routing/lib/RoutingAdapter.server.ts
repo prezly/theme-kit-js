@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 
 import { type AsyncResolvable, resolveAsync } from '../../../utils';
 
+import { generateUrlFromPattern } from './generateUrlFromPattern';
 import type { Router, RoutesMap, UrlGenerator } from './types';
 
 export namespace RoutingAdapter {
@@ -27,13 +27,15 @@ export namespace RoutingAdapter {
             return {
                 router,
                 generateUrl(routeName: keyof Routes, params = {}) {
-                    const localeCode: Locale.Code = (params as any).localeCode ?? activeLocale;
-                    const localeSlug =
-                        Routing.getShortestLocaleSlug(localeCode, { locales, defaultLocale }) ||
-                        undefined;
-
-                    // @ts-ignore
-                    return router.generate(routeName, { localeCode, localeSlug, ...params });
+                    return generateUrlFromPattern(
+                        router.routes[routeName].pattern as `/${string}`,
+                        params as any,
+                        {
+                            activeLocale,
+                            defaultLocale,
+                            locales,
+                        },
+                    );
                 },
             };
         }
