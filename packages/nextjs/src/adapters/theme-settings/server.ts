@@ -8,7 +8,7 @@ export namespace ThemeSettingsAdapter {
 
     export function connect<T>(config: Configuration<T>) {
         async function useThemeSettings(): Promise<T> {
-            const [defaults, settings] = await resolveAsync([config.defaults, config.settings]);
+            const [defaults, settings] = await resolveAsync(config.defaults, config.settings);
 
             return {
                 ...defaults,
