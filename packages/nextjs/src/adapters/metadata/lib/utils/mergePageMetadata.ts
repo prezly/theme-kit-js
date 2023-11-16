@@ -7,11 +7,11 @@ export function mergePageMetadata(...metadatas: Metadata[]): Metadata {
 
 function merge(a: Metadata, b: Metadata): Metadata {
     if (Object.keys(a).length === 0) {
-        return b;
+        return withoutUndefined(b);
     }
 
     if (Object.keys(b).length === 0) {
-        return a;
+        return withoutUndefined(a);
     }
 
     return {
