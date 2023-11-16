@@ -1,11 +1,7 @@
 'use client';
 
-import {
-    ArrowUpRightIcon,
-    Bars3BottomRightIcon,
-    MagnifyingGlassIcon,
-    XMarkIcon,
-} from '@heroicons/react/24/outline';
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
+import { Bars3BottomRightIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import type {
     Category,
     Culture,
@@ -23,13 +19,11 @@ import { useDevice } from '@/hooks';
 import { Button } from '../Button';
 
 import { CategoriesDropdown, LanguagesDropdown } from './components';
-import type { NavigationLayout } from './types';
 
 export interface Props {
     className?: string;
     categories: Category[];
     languages: NewsroomLanguageSettings[];
-    layout?: NavigationLayout;
     showNewsroomLabelAsideLogo?: boolean;
     externalSiteLink?: string;
     onSearch?: () => void;
@@ -46,7 +40,6 @@ export function Navigation({
     className,
     categories,
     languages,
-    layout = 'default',
     newsroom,
     showNewsroomLabelAsideLogo,
     externalSiteLink,
@@ -73,6 +66,24 @@ export function Navigation({
             hasStandaloneContactsPage ||
             externalSiteLink,
     );
+    const shouldUseCenteredLayout =
+        [
+            categories.length,
+            languages.length,
+            publicGalleriesCount,
+            hasStandaloneAboutPage,
+            hasStandaloneContactsPage,
+            externalSiteLink,
+        ].filter(Boolean).length >= 5;
+
+    let externalLinkLabel = '';
+    if (externalSiteLink) {
+        externalLinkLabel =
+            new URL(externalSiteLink).hostname.length > 15
+                ? 'Website'
+                : new URL(externalSiteLink).hostname;
+    }
+
     const linkClassName = twMerge(
         'label-large text-gray-600 hover:text-gray-800 shrink-0',
         !isSm && `text-lg font-bold`,
@@ -115,7 +126,7 @@ export function Navigation({
                         'md:items-center justify-between gap-12 md:gap-4 hidden md:flex',
                         Boolean(openMobileNav && !isSm) &&
                             `flex flex-col w-screen absolute top-24 left-0 z-10 bg-white border-b border-gray-200`,
-                        layout === 'centered' ? `lg:w-2/3` : 'md:w-max',
+                        shouldUseCenteredLayout ? `lg:w-2/3` : 'md:w-max',
                     )}
                 >
                     {Boolean(
@@ -164,7 +175,7 @@ export function Navigation({
                     <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4">
                         {Boolean(onSearch) && (
                             <Button
-                                className="hidden md:flex"
+                                className="hidden md:flex p-0"
                                 variation="navigation"
                                 icon={MagnifyingGlassIcon}
                                 onClick={handleSearch}
@@ -188,8 +199,8 @@ export function Navigation({
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        {new URL(externalSiteLink).hostname}
-                                        <ArrowUpRightIcon className="ml-1 w-2 h-2" />
+                                        {externalLinkLabel}
+                                        <ArrowUpRightIcon className="ml-1 w-5 h-5" />
                                     </a>
                                 )}
                             </div>

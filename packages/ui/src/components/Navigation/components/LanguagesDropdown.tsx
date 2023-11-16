@@ -1,6 +1,7 @@
 'use client';
 
-import { CheckIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
+import { CheckIcon } from '@heroicons/react/24/outline';
+import { GlobeEuropeAfricaIcon } from '@heroicons/react/24/solid';
 import type { Category, Culture, ExtendedStory, NewsroomLanguageSettings } from '@prezly/sdk';
 import { getLanguageDisplayName, getUsedLanguages, LocaleObject } from '@prezly/theme-kit-core';
 import { useMemo } from 'react';
@@ -45,10 +46,10 @@ export function LanguagesDropdown({
         <Dropdown
             className="border-0 w-max p-0 bg-transparent text-gray-600 hover:text-gray-800"
             contentProps={{
-                className: 'border mt-2 p-0 mb-5 overflow-auto',
+                className: 'border mt-2 p-0 mb-5 overflow-auto rounded shadow-large',
                 side: isSm ? 'bottom' : 'left',
             }}
-            label={<GlobeAltIcon className="w-6 h-6" />}
+            label={<GlobeEuropeAfricaIcon className="w-6 h-6" />}
         >
             <Dropdown.Group>
                 {displayedLanguages.map((language, index) => {
@@ -68,15 +69,17 @@ export function LanguagesDropdown({
                     return (
                         <Dropdown.Item
                             className={twMerge(
-                                'border-b border-gray-200',
+                                'border-b border-gray-200 p-0',
                                 index === displayedLanguages.length - 1 && `border-b-0`,
                             )}
                             key={language.code}
                         >
                             <a className="px-6 py-4 flex items-center justify-between" href={link}>
-                                <span>{getLanguageDisplayName(language, languages)}</span>
+                                <span className="label-medium">
+                                    {getLanguageDisplayName(language, languages)}
+                                </span>
                                 {language.code === currentLanguage?.code && (
-                                    <CheckIcon className="w-[20px] h-[20px]" />
+                                    <CheckIcon className="w-4 h-4" />
                                 )}
                             </a>
                         </Dropdown.Item>

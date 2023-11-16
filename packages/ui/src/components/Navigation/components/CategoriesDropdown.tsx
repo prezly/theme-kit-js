@@ -3,12 +3,12 @@
 import { ArrowRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid';
 import type { Category, Culture } from '@prezly/sdk';
 import { getCategoryUrl, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
-import Link from 'next/link';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Button } from '@/components/Button';
 import { Dropdown } from '@/components/Dropdown';
+import { Link } from '@/components/Link';
 import { useDevice } from '@/hooks';
 
 export interface Props {
@@ -63,7 +63,7 @@ export function CategoriesDropdown({ categories, locale }: Props) {
         <Dropdown
             className="border-0 w-max p-0 text-gray-600 hover:text-gray-800"
             contentProps={{
-                className: 'bg-gray-50 w-screen mt-10 p-12',
+                className: 'bg-gray-50 w-screen mt-10 px-12 py-8',
             }}
             // TODO: Add translations
             label="Categories"
@@ -78,25 +78,24 @@ export function CategoriesDropdown({ categories, locale }: Props) {
                         return (
                             <div key={category.id}>
                                 <Link
-                                    className="gap-2 group"
+                                    className="gap-1 w-full justify-start"
                                     href={getCategoryUrl(
                                         category,
                                         LocaleObject.fromAnyCode(locale),
                                     )}
-                                    locale={locale}
+                                    localeCode={locale}
                                 >
-                                    <h3 className="title-xx-small group-hover:underline">
-                                        {categoryData.name}
-                                    </h3>
-                                    <p className="text-description">{categoryData.description}</p>
+                                    <h3 className="subtitle-small">{categoryData.name}</h3>
+                                    <p className="text-small">{categoryData.description}</p>
                                 </Link>
                                 <Link
-                                    className="w-max mt-3 label-medium flex items-center gap-2 text-accent hover:underline"
+                                    className="mt-3 label-medium"
+                                    contentClassName="flex items-center gap-2"
                                     href={getCategoryUrl(
                                         category,
                                         LocaleObject.fromAnyCode(locale),
                                     )}
-                                    locale={locale}
+                                    localeCode={locale}
                                 >
                                     View all
                                     <ArrowRightIcon className="w-4 h-4" />
@@ -106,9 +105,11 @@ export function CategoriesDropdown({ categories, locale }: Props) {
                     })}
                 </div>
                 <Link
-                    className="w-max ml-auto mt-8 label-large flex items-center gap-2 hover:underline"
+                    className="w-max ml-auto mt-8"
+                    contentClassName="flex items-center gap-2"
                     href="/categories"
-                    locale={locale}
+                    localeCode={locale}
+                    variation="secondary"
                 >
                     View all categories <ArrowRightIcon className="w-[20px] h-[20px]" />
                 </Link>
