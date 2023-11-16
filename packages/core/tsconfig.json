@@ -2,8 +2,9 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declarationDir": "./build",
-    "module": "commonjs",
+    "module": "esnext",
     "noEmit": false,
+    "emitDeclarationOnly": true,
     "outDir": "./build",
     "rootDir": "./src",
     "target": "esnext",

@@ -27,7 +27,6 @@
     "target": "esnext",
   },
   "include": [".prettierrc.js"],
-  "exclude": ["babel.*.js"],
   "references": [
     { "path": "./packages/nextjs" },
     { "path": "./packages/core" },

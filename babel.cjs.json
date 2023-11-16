@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "esmodules": false,
+    "node": "16"
+  },
+  "plugins": [
+    ["babel-plugin-add-import-extension", { "extension": "cjs" }]
+  ],
+  "presets": [
+    "@babel/typescript",
+    "@babel/react",
+    ["@babel/env", { "modules": "commonjs" }]
+  ],
+  "ignore": [
+    "**/*.test.*",
+    "**/__mocks__/*"
+  ]
+}

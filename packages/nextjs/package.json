@@ -2,8 +2,8 @@
   "name": "@prezly/theme-kit-nextjs",
   "version": "0.0.0-next-745047af18de4df62baba5cc177eb85d7ffe5225",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
-  "main": "build/index.js",
-  "module": "build/index.mjs",
+  "type": "module",
+  "main": "build/index.mjs",
   "types": "build/index.d.ts",
   "files": [
     "build",
@@ -12,33 +12,33 @@
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
-      "import": "./build/index.mjs",
-      "default": "./build/index.js"
+      "require": "./build/index.cjs",
+      "default": "./build/index.mjs"
     },
     "./client": {
       "types": "./build/client.d.ts",
-      "import": "./build/client.mjs",
-      "default": "./build/client.js"
+      "require": "./build/client.cjs",
+      "default": "./build/client.mjs"
     },
     "./server": {
       "types": "./build/server.d.ts",
-      "import": "./build/server.mjs",
-      "default": "./build/server.js"
+      "require": "./build/server.cjs",
+      "default": "./build/server.mjs"
     },
     "./next-config": {
       "types": "./build/next-config/index.d.ts",
-      "import": "./build/next-config/index.mjs",
-      "default": "./build/next-config/index.js"
+      "require": "./build/next-config/index.cjs",
+      "default": "./build/next-config/index.mjs"
     },
     "./sentry": {
       "types": "./build/sentry/index.d.ts",
-      "import": "./build/sentry/index.mjs",
-      "default": "./build/sentry/index.js"
+      "require": "./build/sentry/index.cjs",
+      "default": "./build/sentry/index.mjs"
     },
     "./playwright": {
       "types": "./build/playwright/index.d.ts",
-      "import": "./build/playwright/index.mjs",
-      "default": "./build/playwright/index.js"
+      "require": "./build/playwright/index.cjs",
+      "default": "./build/playwright/index.mjs"
     }
   },
   "engines": {
@@ -68,13 +68,16 @@
     "prebuild": "rimraf build/* *.tsbuildinfo",
     "build": "npm run build:types && npm run build:esm && npm run build:cjs",
     "build:types": "tsc --project .",
-    "build:cjs": "babel --config-file=../../babel.cjs.js src/ --extensions=.ts,.tsx --out-dir=build/",
-    "build:esm": "babel --config-file=../../babel.esm.js src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.mjs",
+    "build:esm": "babel --config-file=../../babel.esm.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.mjs",
+    "build:cjs": "babel --config-file=../../babel.cjs.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.cjs",
     "dev": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false --incremental --project .",
     "lint": "eslint src",
     "test": "npm run test:build",
-    "test:build": "node test/test-build.cjs && node test/test-build.mjs"
+    "test:build": "npm run test:build:cjs && npm run test:build:esm && npm run test:build:types",
+    "test:build:types": "tsc --noEmit build/index.d.ts",
+    "test:build:esm": "node tests/test-build.mjs",
+    "test:build:cjs": "node tests/test-build.cjs"
   },
   "peerDependencies": {
     "@playwright/test": "1.x",

@@ -2,7 +2,7 @@
   "name": "@prezly/theme-kit-core",
   "version": "0.0.0-next-745047af18de4df62baba5cc177eb85d7ffe5225",
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
-  "main": "build/index.js",
+  "main": "build/index.mjs",
   "types": "build/index.d.ts",
   "files": [
     "build",
@@ -11,16 +11,25 @@
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
-      "default": "./build/index.js"
+      "require": "./build/index.cjs",
+      "default": "./build/index.mjs"
     }
   },
   "scripts": {
     "prebuild": "rimraf build/* *.tsbuildinfo",
-    "build": "tsc --project .",
+    "build": "npm run build:types && npm run build:esm && npm run build:cjs",
+    "build:types": "tsc --project .",
+    "build:esm": "babel --config-file=../../babel.esm.json src/ --extensions=.ts --out-dir=build/ --out-file-extension=.mjs",
+    "build:cjs": "babel --config-file=../../babel.cjs.json src/ --extensions=.ts --out-dir=build/ --out-file-extension=.cjs",
     "dev": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --incremental --project .",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "npm run test:unit && npm run test:build",
+    "test:unit": "jest",
+    "test:build": "npm run test:build:cjs && npm run test:build:esm && npm run test:build:types",
+    "test:build:types": "tsc --noEmit build/index.d.ts",
+    "test:build:esm": "node tests/test-build.mjs",
+    "test:build:cjs": "node tests/test-build.cjs"
   },
   "peerDependencies": {
     "@prezly/sdk": "^18.2.0"
