@@ -1,14 +1,10 @@
 'use client';
 
-import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { ReactNode } from 'react';
 import { createContext, useCallback, useContext } from 'react';
-import UrlPattern from 'url-pattern';
 
-import { withoutUndefined } from '../../../utils';
-
-import { normalizeUrl } from './normalizeUrl';
+import { generateUrlFromPattern } from './generateUrlFromPattern';
 import type { Router, RoutesMap, UrlGenerator } from './types';
 
 interface Context<T extends RoutesMap> {
@@ -28,7 +24,7 @@ export namespace RoutingAdapter {
             return <context.Provider value={value}>{props.children}</context.Provider>;
         }
 
-        function useRouting(activeLocale: Locale.Code) {
+        function useRouting(locale: Locale.Code) {
             const value = useContext(context);
 
             if (!value) {
@@ -40,23 +36,13 @@ export namespace RoutingAdapter {
             const { routes, locales, defaultLocale } = value;
 
             const generateUrl = useCallback(
-                (routeName: keyof Routes, params: any = {}) => {
-                    const pattern = new UrlPattern(routes[routeName]);
-
-                    const localeCode: Locale.Code = params.localeCode ?? activeLocale;
-                    const localeSlug: Locale.AnySlug =
-                        params.localeSlug ??
-                        Routing.getShortestLocaleSlug(localeCode, { locales, defaultLocale });
-
-                    const href = pattern.stringify({
-                        localeCode,
-                        localeSlug,
-                        ...withoutUndefined(params),
-                    });
-
-                    return normalizeUrl(href as `/${string}`);
-                },
-                [routes, locales, defaultLocale, activeLocale],
+                (routeName: keyof Routes, params: any = {}) =>
+                    generateUrlFromPattern(routes[routeName] as `/${string}`, params, {
+                        locale,
+                        locales,
+                        defaultLocale,
+                    }),
+                [routes, locales, defaultLocale, locale],
             ) as UrlGenerator<Router<Routes>>;
 
             // @ts-ignore
