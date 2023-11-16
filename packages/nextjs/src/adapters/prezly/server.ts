@@ -17,6 +17,7 @@ export namespace PrezlyAdapter {
 
     export interface CacheConfiguration {
         ttl?: CachedFetch.Options['ttl'];
+        fetch?: CachedFetch.Options['fetch'];
     }
 
     export const DEFAULT_REQUEST_CACHE_TTL = 10000;
@@ -25,8 +26,9 @@ export namespace PrezlyAdapter {
         config: Resolvable<Configuration>,
         cacheConfig: CacheConfiguration = {},
     ) {
-        const fetch = CachedFetch.create({
+        const cachedFetch = CachedFetch.create({
             ttl: cacheConfig.ttl ?? DEFAULT_REQUEST_CACHE_TTL,
+            fetch: cacheConfig.fetch,
         });
 
         function usePrezlyClient() {
@@ -42,7 +44,12 @@ export namespace PrezlyAdapter {
                 formats,
             } = resolve(config);
 
-            const client = createPrezlyClient({ fetch, accessToken, baseUrl, headers });
+            const client = createPrezlyClient({
+                fetch: cachedFetch,
+                accessToken,
+                baseUrl,
+                headers,
+            });
             const contentDelivery = ContentDelivery.createClient(client, newsroom, theme, {
                 pinning,
                 formats,
