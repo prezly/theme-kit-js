@@ -4,6 +4,13 @@
     "node": "16"
   },
   "plugins": [
+    [
+      "auto-import", {
+        "declarations": [
+          { "default": "React", "path": "react" }
+        ]
+      }
+    ],
     ["babel-plugin-add-import-extension", { "extension": "mjs" }]
   ],
   "presets": [
