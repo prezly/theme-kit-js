@@ -68,7 +68,7 @@ export function ContentRenderer({ nodes, story, intl }: ContentRenderer.Props) {
                         component={({ node }) => (
                             <ContactCard
                                 className="max-w-full"
-                                contactInfo={{ ...node.contact, avatar_image: null }}
+                                contact={{ ...node.contact, avatar_image: null }}
                             />
                         )}
                     />

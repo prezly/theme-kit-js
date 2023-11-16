@@ -1,9 +1,9 @@
-import type { ContactInfo } from '../type';
+import type { ContactCard } from '../ContactCard';
 
 /**
  * This contact data is pulled from The Good Newsroom
  */
-export const CONTACT_INFO: ContactInfo = {
+export const CONTACT_INFO: ContactCard.DisplayedContact = {
     name: 'Marthe Anthonis',
     email: 'marthe@prezly.com',
     phone: '(+351) 900 455 845',
