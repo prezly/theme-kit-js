@@ -91,5 +91,12 @@ async function importThemeKitDictionary(localeCode: Locale.Code): Promise<IntlDi
 
     const messages = await import(`@prezly/theme-kit-intl/i18n/${isoCode}.json`);
 
-    return { ...messages };
+    return { ...unwrapModule(messages) };
+}
+
+function unwrapModule<T>(module: T | { default: T }): T {
+    if (module && typeof module === 'object' && 'default' in module) {
+        return module.default;
+    }
+    return module;
 }
