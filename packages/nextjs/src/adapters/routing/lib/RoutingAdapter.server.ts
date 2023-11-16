@@ -31,9 +31,9 @@ export namespace RoutingAdapter {
                         router.routes[routeName].pattern as `/${string}`,
                         params as any,
                         {
-                            locale: activeLocale,
-                            locales,
+                            activeLocale,
                             defaultLocale,
+                            locales,
                         },
                     );
                 },

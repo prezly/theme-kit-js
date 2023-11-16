@@ -22,9 +22,9 @@ describe('generateUrlFromPattern', () => {
             '/(:localeSlug/)media',
             {},
             {
-                locale: 'fr',
-                locales: ['en', 'nl', 'fr'],
+                activeLocale: 'fr',
                 defaultLocale: 'en',
+                locales: ['en', 'nl', 'fr'],
             },
         );
 
@@ -36,9 +36,9 @@ describe('generateUrlFromPattern', () => {
             '/(:localeSlug/)media',
             {},
             {
-                locale: 'en',
-                locales: ['en', 'nl', 'fr'],
+                activeLocale: 'en',
                 defaultLocale: 'en',
+                locales: ['en', 'nl', 'fr'],
             },
         );
 
@@ -50,9 +50,9 @@ describe('generateUrlFromPattern', () => {
             '/(:localeSlug/)media',
             {},
             {
-                locale: 'nl_BE',
-                locales: ['en_US', 'nl_BE', 'fr_FR'],
+                activeLocale: 'nl_BE',
                 defaultLocale: 'en_US',
+                locales: ['en_US', 'nl_BE', 'fr_FR'],
             },
         );
 

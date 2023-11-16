@@ -8,9 +8,9 @@ import { withoutUndefined } from '../../../utils';
 import { normalizeUrl } from './normalizeUrl';
 
 export interface Context {
-    locale: Locale.Code;
-    locales: Locale.Code[];
+    activeLocale: Locale.Code;
     defaultLocale: Locale.Code;
+    locales: Locale.Code[];
 }
 
 export type Params = Record<string, string | undefined | null> & {
@@ -40,9 +40,9 @@ export function generateUrlFromPattern(
     const urlPattern = toUrlPattern(pattern);
 
     if (context) {
-        const { locale, locales, defaultLocale } = context;
+        const { activeLocale, locales, defaultLocale } = context;
 
-        const localeCode: Locale.Code = params.localeCode ?? locale;
+        const localeCode: Locale.Code = params.localeCode ?? activeLocale;
         const localeSlug =
             (params.localeSlug ??
                 Routing.getShortestLocaleSlug(localeCode, { locales, defaultLocale })) ||
