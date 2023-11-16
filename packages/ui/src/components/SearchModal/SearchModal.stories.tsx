@@ -18,6 +18,13 @@ export default {
     },
 } as Meta<typeof SearchModal>;
 
+const DISPLAYED_CATEGORIES: SearchModal.DisplayedCategory[] = CATEGORIES.map((category) => ({
+    id: category.id,
+    name: category.display_name,
+    description: category.display_description,
+    href: `/category/${category.display_name.toLowerCase().replace(' ', '-')}`,
+}));
+
 const SearchModalTemplate: StoryFn<typeof SearchModal> = (args) => {
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -25,14 +32,14 @@ const SearchModalTemplate: StoryFn<typeof SearchModal> = (args) => {
         setModalOpen(!modalOpen);
     }
 
-    function handleOpenChange(open: boolean) {
+    function handleToggle(open: boolean) {
         setModalOpen(open);
     }
 
     return (
         <div className="p-12">
             <Button onClick={toggleModalOpen}>Open search modal</Button>
-            <SearchModal {...args} isOpen={modalOpen} onOpenChange={handleOpenChange} />
+            <SearchModal {...args} isOpen={modalOpen} onToggle={handleToggle} />
         </div>
     );
 };
@@ -48,8 +55,8 @@ Default.args = {
     },
     newsroomName: 'Test site',
     locale: 'en',
-    categories: CATEGORIES,
+    categories: DISPLAYED_CATEGORIES,
     logo: null,
-    hideSubtitle: false,
+    showSubtitle: true,
     showDate: true,
 };

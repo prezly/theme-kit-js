@@ -17,8 +17,10 @@ const GalleryTitleTemplate: StoryFn<typeof GalleryTitle> = (args) => <GalleryTit
 
 export const Default = GalleryTitleTemplate.bind({});
 Default.args = {
-    name: 'Galileo Art Collection',
-    description:
-        'Galileo, a renowned pioneer in the artificial intelligence landscape, announced the groundbreaking release of ShopAI.',
-    uploadcareGroupUrl: 'https://cdn.uc.assets.prezly.com/test',
+    gallery: {
+        name: 'Galileo Art Collection',
+        description:
+            'Galileo, a renowned pioneer in the artificial intelligence landscape, announced the groundbreaking release of ShopAI.',
+        downloadHref: 'https://cdn.uc.assets.prezly.com/test',
+    },
 };

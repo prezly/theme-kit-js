@@ -1,6 +1,6 @@
-import type { HeroImageSize } from './HeroImage';
+import type { HeroImage } from './HeroImage';
 
-function getDesktopImageSize(heroSize: HeroImageSize) {
+function getDesktopImageSize(heroSize: HeroImage.Size) {
     switch (heroSize) {
         case 'default':
             return 380;
@@ -9,7 +9,7 @@ function getDesktopImageSize(heroSize: HeroImageSize) {
     }
 }
 
-export function getHeroImageSizes(desiredSize: HeroImageSize) {
+export function getHeroImageSizes(desiredSize: HeroImage.Size) {
     return {
         mobile: 420,
         tablet: desiredSize === 'large' ? 350 : 240,

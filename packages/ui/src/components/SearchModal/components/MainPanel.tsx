@@ -1,4 +1,4 @@
-import type { Category, Culture, UploadedImage } from '@prezly/sdk';
+import type { Culture, UploadedImage } from '@prezly/sdk';
 import { useSearchBox } from 'react-instantsearch';
 
 import { CategoriesList } from './CategoriesList';
@@ -10,7 +10,7 @@ export function MainPanel({
     newsroomName,
     logo,
     showDate,
-    hideSubtitle,
+    showSubtitle = true,
 }: MainPanel.Props) {
     const { query } = useSearchBox();
     const isQuerySet = Boolean(query?.length);
@@ -18,12 +18,6 @@ export function MainPanel({
     if (!isQuerySet && !categories.length) {
         return null;
     }
-
-    const displayedCategories: CategoriesList.DisplayedCategory[] = categories.map((category) => ({
-        id: category.id,
-        name: category.display_name,
-        href: `/category/${category.display_name.toLowerCase()}`, // TODO: Lift URL generation from here
-    }));
 
     return (
         <div className="pt-3 pb-12 px-6">
@@ -33,22 +27,24 @@ export function MainPanel({
                     newsroomName={newsroomName}
                     logo={logo}
                     showDate={showDate}
-                    hideSubtitle={hideSubtitle}
+                    showSubtitle={showSubtitle}
                 />
             ) : (
-                <CategoriesList categories={displayedCategories} />
+                <CategoriesList categories={categories} />
             )}
         </div>
     );
 }
 
 export namespace MainPanel {
+    export type DisplayedCategory = CategoriesList.DisplayedCategory;
+
     export interface Props {
-        categories: Category[];
+        categories: DisplayedCategory[];
         locale: Culture['code'];
         newsroomName: string;
         logo: UploadedImage | null;
         showDate: boolean;
-        hideSubtitle: boolean;
+        showSubtitle?: boolean;
     }
 }

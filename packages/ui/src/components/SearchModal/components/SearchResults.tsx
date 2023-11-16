@@ -12,7 +12,7 @@ export function SearchResults({
     locale,
     newsroomName,
     logo,
-    hideSubtitle,
+    showSubtitle = true,
     showDate,
     intl = {},
 }: SearchResults.Props) {
@@ -39,7 +39,7 @@ export function SearchResults({
                         locale={locale}
                         logo={logo}
                         showDate={showDate}
-                        hideSubtitle={hideSubtitle}
+                        showSubtitle={showSubtitle}
                         newsroomName={newsroomName}
                     />
                 )}
@@ -70,7 +70,7 @@ export namespace SearchResults {
         locale: Culture['code'];
         newsroomName: string;
         logo: UploadedImage | null;
-        hideSubtitle: boolean;
+        showSubtitle?: boolean;
         showDate: boolean;
         intl?: Partial<Intl>;
     }

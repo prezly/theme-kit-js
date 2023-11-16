@@ -312,7 +312,7 @@ const StoryCardTemplate: StoryFn<typeof StoryCard> = (args) => <StoryCard {...ar
 
 export const Default = StoryCardTemplate.bind({});
 Default.args = {
-    story: TEST_STORY as any,
+    story: { ...TEST_STORY, thumbnailImage: TEST_STORY.thumbnail_image } as any,
     categories: CATEGORIES,
     showDate: true,
     newsroomName: 'Test newsroom',
@@ -321,7 +321,7 @@ Default.args = {
 
 export const WithoutThumbnailImage = StoryCardTemplate.bind({});
 WithoutThumbnailImage.args = {
-    story: { ...TEST_STORY, thumbnail_image: null } as any,
+    story: { ...TEST_STORY, thumbnailImage: null } as any,
     categories: CATEGORIES,
     showDate: true,
     newsroomName: 'Test newsroom',

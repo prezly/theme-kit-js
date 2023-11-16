@@ -44,9 +44,7 @@ export function Attachment({ node, intl }: Attachment.Props) {
 }
 
 export namespace Attachment {
-    export interface Intl {
-        ['actions.download']: string;
-    }
+    export type Intl = DownloadLink.Intl;
 
     export interface Props {
         node: AttachmentNode;

@@ -18,6 +18,12 @@ const DISPLAYED_CATEGORIES: Navigation.DisplayedCategory[] = CATEGORIES.map((cat
     href: `/category/${category.display_name.toLowerCase()}`,
 }));
 
+const DISPLAYED_NEWSROOM: Navigation.DisplayedNewsroom = {
+    name: NEWSROOM.display_name,
+    galleries: NEWSROOM.public_galleries_number,
+    logo: NEWSROOM.newsroom_logo,
+};
+
 export default {
     title: 'Components/Navigation',
     component: Navigation,
@@ -36,7 +42,7 @@ export const Default = NavigationTemplate.bind({});
 Default.args = {
     categories: { options: DISPLAYED_CATEGORIES, indexHref: '/categories' },
     languages: DISPLAYED_LANGUAGES,
-    newsroom: NEWSROOM,
+    newsroom: DISPLAYED_NEWSROOM,
     externalSiteLink: 'https://hey.test-site.com/testing-1-2-3',
     onSearch: () => {},
     hasStandaloneAboutPage: true,
@@ -49,8 +55,8 @@ export const WithoutLogo = NavigationTemplate.bind({});
 WithoutLogo.args = {
     ...Default.args,
     newsroom: {
-        ...NEWSROOM,
-        newsroom_logo: null,
+        ...DISPLAYED_NEWSROOM,
+        logo: null,
     },
 };
 

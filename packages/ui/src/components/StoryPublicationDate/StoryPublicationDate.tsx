@@ -1,5 +1,6 @@
 import type { Culture } from '@prezly/sdk';
 import { format } from 'date-fns';
+// FIXME: avoid importing all locales
 import * as locales from 'date-fns/locale';
 
 export function StoryPublicationDate({

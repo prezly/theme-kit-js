@@ -8,12 +8,9 @@ import { twMerge } from 'tailwind-merge';
 import { ButtonLink } from '../Button';
 import { StoryShareLinks } from '../StoryShareLinks';
 
-export function GalleryTitle({
-    className,
-    name,
-    description,
-    uploadcareGroupUrl,
-}: GalleryTitle.Props) {
+export function GalleryTitle({ className, gallery }: GalleryTitle.Props) {
+    const { name, description, downloadHref } = gallery;
+
     const [url, setUrl] = useState('');
 
     useEffect(() => {
@@ -28,9 +25,9 @@ export function GalleryTitle({
                 <h1 className="title-large">{name}</h1>
                 {description && <p className="subtitle-large mt-3">{description}</p>}
                 <div className="mt-6 flex items-center gap-4">
-                    {uploadcareGroupUrl && (
+                    {downloadHref && (
                         <ButtonLink
-                            href={uploadcareGroupUrl}
+                            href={downloadHref}
                             forceRefresh
                             icon={ArrowDownTrayIcon}
                             iconPlacement="right"
@@ -47,10 +44,14 @@ export function GalleryTitle({
 }
 
 export namespace GalleryTitle {
-    export interface Props {
-        className?: string;
+    export interface DisplayedGallery {
         name: NewsroomGallery['name'];
         description: NewsroomGallery['description'];
-        uploadcareGroupUrl?: string | null;
+        downloadHref?: string | null;
+    }
+
+    export interface Props {
+        className?: string;
+        gallery: DisplayedGallery;
     }
 }

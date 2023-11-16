@@ -12,7 +12,7 @@ export function StoryShareLinks({
     iconClassName,
     shareUrl,
     onUrlCopied,
-    showScrollToTopButton,
+    withScrollToTopButton,
     layout = 'horizontal',
 }: StoryShareLinks.Props) {
     const [isScrollToTopVisible, setIsScrollToTopVisible] = useState(false);
@@ -99,7 +99,7 @@ export function StoryShareLinks({
             >
                 <LinkIcon className={twMerge('text-gray-800 w-5', iconClassName)} />
             </a>
-            {showScrollToTopButton && isScrollToTopVisible && (
+            {withScrollToTopButton && isScrollToTopVisible && (
                 <a
                     href="#"
                     target="_blank"
@@ -125,7 +125,7 @@ export namespace StoryShareLinks {
     export interface Props {
         shareUrl: string | null;
         onUrlCopied?: () => void;
-        showScrollToTopButton?: boolean;
+        withScrollToTopButton?: boolean;
         className?: string;
         iconClassName?: string;
         layout?: StoryShareLinksLayout;

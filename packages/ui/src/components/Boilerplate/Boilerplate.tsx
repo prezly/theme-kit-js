@@ -10,15 +10,10 @@ import { twMerge } from 'tailwind-merge';
 
 import { Link } from '../Link';
 
-export function Boilerplate({ className, companyInformation, intl = {} }: BoilerPlate.Props) {
+export function Boilerplate({ className, companyInformation, intl = {} }: Boilerplate.Props) {
     const { about, phone, email, address, website } = companyInformation;
 
-    const hasContactInformation = Boolean(
-        companyInformation.address ||
-            companyInformation.phone ||
-            companyInformation.email ||
-            companyInformation.website,
-    );
+    const hasContactInformation = Boolean(address || phone || email || website);
 
     if (!about && !phone && !email && !address && !website) {
         return null;
@@ -87,17 +82,22 @@ export function Boilerplate({ className, companyInformation, intl = {} }: Boiler
     );
 }
 
-export namespace BoilerPlate {
+export namespace Boilerplate {
+    export interface DisplayedInformation {
+        about: NewsroomCompanyInformation['about'];
+        phone: NewsroomCompanyInformation['phone'];
+        email: NewsroomCompanyInformation['email'];
+        address: NewsroomCompanyInformation['address'];
+        website: NewsroomCompanyInformation['website'];
+    }
+
     export interface Intl {
         ['boilerplate.title']: string;
     }
 
     export interface Props {
         className?: string;
-        companyInformation: Pick<
-            NewsroomCompanyInformation,
-            'about' | 'phone' | 'email' | 'address' | 'website'
-        >;
+        companyInformation: DisplayedInformation;
         intl?: Partial<Intl>;
     }
 }

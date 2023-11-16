@@ -3,20 +3,9 @@ import Image from '@prezly/uploadcare-image';
 import { twMerge } from 'tailwind-merge';
 
 import { getStoryThumbnail } from '@/lib';
-import type { AlgoliaStory, StoryWithImage } from '@/types';
+import type { StoryWithImage } from '@/types';
 
 import { getHeroImageSizes } from './lib';
-
-export type HeroImageSize = 'large' | 'default';
-
-type Props = {
-    story: StoryWithImage | AlgoliaStory;
-    size: HeroImageSize;
-    className?: string;
-    placeholderClassName?: string;
-    newsroomName: string;
-    logo?: UploadedImage | null;
-};
 
 export function HeroImage({
     story,
@@ -25,7 +14,7 @@ export function HeroImage({
     placeholderClassName,
     newsroomName,
     logo,
-}: Props) {
+}: HeroImage.Props) {
     const image = getStoryThumbnail(story);
 
     if (image) {
@@ -66,4 +55,22 @@ export function HeroImage({
             {!logo && newsroomName}
         </span>
     );
+}
+
+export namespace HeroImage {
+    export type Size = 'large' | 'default';
+
+    export interface DisplayedStory {
+        thumbnailImage: StoryWithImage['thumbnail_image'];
+        title: StoryWithImage['title'];
+    }
+
+    export interface Props {
+        size: Size;
+        className?: string;
+        placeholderClassName?: string;
+        newsroomName: string;
+        logo?: UploadedImage | null;
+        story: DisplayedStory;
+    }
 }

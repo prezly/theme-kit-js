@@ -9,7 +9,7 @@ export function Breadcrumbs({ items, className }: Breadcrumbs.Props) {
         <nav className={className}>
             <ol className="flex items-center gap-2">
                 {items.map((item, index) => (
-                    <Breadcrumb key={item.url} item={item} isLast={index === items.length - 1} />
+                    <Breadcrumb key={item.href} item={item} isLast={index === items.length - 1} />
                 ))}
             </ol>
         </nav>
@@ -17,8 +17,10 @@ export function Breadcrumbs({ items, className }: Breadcrumbs.Props) {
 }
 
 export namespace Breadcrumbs {
+    export type Item = Breadcrumb.Item;
+
     export interface Props {
-        items: Breadcrumb.BreadcrumbItem[];
+        items: Breadcrumb.Item[];
         className?: string;
     }
 }

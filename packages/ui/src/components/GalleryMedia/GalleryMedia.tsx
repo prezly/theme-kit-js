@@ -6,18 +6,11 @@ import { twMerge } from 'tailwind-merge';
 
 import { Link } from '../Link';
 
-export function GalleryMedia({
-    className,
-    cover,
-    name,
-    galleryHref,
-    imagesNumber,
-    videosNumber,
-    intl = {},
-}: GalleryMedia.Props) {
+export function GalleryMedia({ gallery, className, intl = {} }: GalleryMedia.Props) {
+    const { cover, images, videos, href, name } = gallery;
     return (
         <Link
-            href={galleryHref}
+            href={href}
             className={twMerge(
                 'relative w-full md:w-max transition-transform duration-300 hover:scale-[1.02] hover:shadow-xLarge',
                 className,
@@ -43,22 +36,24 @@ export function GalleryMedia({
             >
                 <p className="title-x-small text-gray-100">{name}</p>
                 <div className="flex items-center justify-between">
-                    {Boolean(imagesNumber || videosNumber) && (
+                    {(images > 0 || videos > 0) && (
                         <div className="flex items-center gap-3">
-                            {Boolean(imagesNumber) && (
+                            {images > 0 && (
                                 <span className="flex text-gray-100">
                                     <PhotoIcon className="w-5 h-5 mr-2" />
-                                    {videosNumber === 0
-                                        ? `${imagesNumber} ${intl['images.title'] ?? 'Images'}`
-                                        : imagesNumber}
+                                    {videos === 0
+                                        ? // FIXME: use interpolated i18n string here
+                                          `${images} ${intl['images.title'] ?? 'Images'}`
+                                        : images}
                                 </span>
                             )}
-                            {Boolean(videosNumber) && (
+                            {videos > 0 && (
                                 <span className="flex text-gray-100">
                                     <VideoCameraIcon className="w-5 h-5 mr-2" />
-                                    {imagesNumber === 0
-                                        ? `${videosNumber} ${intl['videos.title'] ?? 'Videos'}`
-                                        : videosNumber}
+                                    {images === 0
+                                        ? // FIXME: use interpolated i18n string here
+                                          `${videos} ${intl['videos.title'] ?? 'Videos'}`
+                                        : videos}
                                 </span>
                             )}
                         </div>
@@ -77,13 +72,17 @@ export namespace GalleryMedia {
         ['images.title']: string;
     }
 
-    export interface Props {
-        galleryHref: `/${string}`;
+    export interface DisplayedGallery {
         name: NewsroomGallery['name'];
-        className?: string;
-        imagesNumber: NewsroomGallery['images_number'];
-        videosNumber: NewsroomGallery['videos_number'];
+        images: NewsroomGallery['images_number'];
+        videos: NewsroomGallery['videos_number'];
         cover?: UploadedImage | null;
+        href: `/${string}`;
+    }
+
+    export interface Props {
+        gallery: DisplayedGallery;
+        className?: string;
         intl?: Partial<Intl>;
     }
 }

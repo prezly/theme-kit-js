@@ -1,1 +1,1 @@
-export { StoryImage, type StoryImageSize } from './StoryImage';
+export { StoryImage } from './StoryImage';

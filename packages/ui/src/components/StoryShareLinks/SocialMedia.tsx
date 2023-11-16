@@ -100,10 +100,15 @@ export function SocialMedia({ className, companySocials, iconClassName }: Social
 }
 
 export namespace SocialMedia {
-    export type CompanySocials = Pick<
-        NewsroomCompanyInformation,
-        'facebook' | 'instagram' | 'linkedin' | 'tiktok' | 'pinterest' | 'twitter' | 'youtube'
-    >;
+    export interface CompanySocials {
+        facebook: NewsroomCompanyInformation['facebook'];
+        instagram: NewsroomCompanyInformation['instagram'];
+        linkedin: NewsroomCompanyInformation['linkedin'];
+        tiktok: NewsroomCompanyInformation['tiktok'];
+        pinterest: NewsroomCompanyInformation['pinterest'];
+        twitter: NewsroomCompanyInformation['twitter'];
+        youtube: NewsroomCompanyInformation['youtube'];
+    }
 
     export interface Props {
         className?: string;

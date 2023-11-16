@@ -29,15 +29,11 @@ export function Navigation({
 }: Navigation.Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const { isSm } = useDevice();
-    const {
-        display_name: siteName,
-        public_galleries_number: publicGalleriesCount,
-        newsroom_logo: logo,
-    } = newsroom;
+    const { name, galleries, logo } = newsroom;
     const hasExtraLinks = Boolean(
         categories.options.length > 0 ||
             languages.length > 0 ||
-            publicGalleriesCount ||
+            galleries ||
             hasStandaloneAboutPage ||
             hasStandaloneContactsPage ||
             externalSiteLink,
@@ -48,7 +44,7 @@ export function Navigation({
         [
             categories.options.length,
             languages.length,
-            publicGalleriesCount,
+            galleries,
             hasStandaloneAboutPage,
             hasStandaloneContactsPage,
             externalSiteLink,
@@ -82,7 +78,7 @@ export function Navigation({
             <nav className="flex items-center justify-between">
                 <Link className="flex items-center gap-2" href="/" locale={locale}>
                     <h1 className={twMerge(`subtitle-medium`, Boolean(logo) && `hidden`)}>
-                        {siteName}
+                        {name}
                     </h1>
                     {logo && (
                         <Image
@@ -90,7 +86,7 @@ export function Navigation({
                             layout="fill"
                             objectFit="contain"
                             imageDetails={logo}
-                            alt={siteName}
+                            alt={name}
                         />
                     )}
                     {showNewsroomLabelAsideLogo && (
@@ -111,7 +107,7 @@ export function Navigation({
                         categories.options.length > 0 ||
                             hasStandaloneAboutPage ||
                             hasStandaloneContactsPage ||
-                            publicGalleriesCount,
+                            galleries,
                     ) && (
                         <div className="pt-6 md:pt-0 flex flex-col md:flex-row md:items-center gap-12 md:gap-4 px-6 md:px-0">
                             {categories.options.length > 0 && (
@@ -121,7 +117,7 @@ export function Navigation({
                                     indexHref={categories.indexHref}
                                 />
                             )}
-                            {publicGalleriesCount > 0 && (
+                            {galleries > 0 && (
                                 <Link
                                     className={linkClassName}
                                     href="/media"
@@ -212,6 +208,12 @@ export namespace Navigation {
     export type DisplayedLanguage = LanguagesDropdown.Option;
     export type DisplayedCategory = CategoriesDropdown.Option;
 
+    export interface DisplayedNewsroom {
+        name: Newsroom['display_name'];
+        galleries: Newsroom['public_galleries_number'];
+        logo: Newsroom['newsroom_logo'];
+    }
+
     export interface Props {
         className?: string;
         intl?: Partial<Navigation.Intl>;
@@ -226,6 +228,6 @@ export namespace Navigation {
         locale: Culture['code'];
         hasStandaloneAboutPage?: boolean;
         hasStandaloneContactsPage?: boolean;
-        newsroom: Pick<Newsroom, 'display_name' | 'public_galleries_number' | 'newsroom_logo'>;
+        newsroom: DisplayedNewsroom;
     }
 }

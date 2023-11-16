@@ -1,15 +1,13 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import type { Culture, UploadedImage } from '@prezly/sdk';
+import type { Culture, Story, UploadedImage } from '@prezly/sdk';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
-
-import type { StoryWithImage } from '@/types';
 
 import { ButtonLink } from '../Button';
 import { CategoriesList } from '../CategoriesList';
 import { StoryPublicationDate } from '../StoryPublicationDate';
 
-import { HeroImage, type HeroImageSize } from './components';
+import { HeroImage } from './components';
 
 export function Hero({
     story,
@@ -23,7 +21,7 @@ export function Hero({
     hideSubtitle,
     className,
 }: Hero.Props) {
-    const { slug, title, subtitle } = story;
+    const { href, title, subtitle } = story;
 
     return (
         <div
@@ -38,7 +36,7 @@ export function Hero({
                     'w-full md:w-1/2',
                     size === 'large' ? 'aspect-[30/30]' : 'aspect-[27/17]',
                 )}
-                href={`/${slug}`}
+                href={href}
                 locale={false}
             >
                 <HeroImage
@@ -70,7 +68,7 @@ export function Hero({
                     )}
                 </div>
                 <div className="mt-4">
-                    <Link href={`/${slug}`} locale={false}>
+                    <Link href={href} locale={false}>
                         <h2 className="title-medium cursor-pointer group-hover:text-gray-950">
                             {title}
                         </h2>
@@ -82,7 +80,7 @@ export function Hero({
                     )}
                     <ButtonLink
                         className={twMerge('mt-6 w-max', size === 'default' && `md:hidden`)}
-                        href={`/${slug}`}
+                        href={href}
                         localeCode={false}
                         icon={ArrowRightIcon}
                         iconPlacement="right"
@@ -100,11 +98,16 @@ export function Hero({
 export namespace Hero {
     export type DisplayedCategory = CategoriesList.DisplayedCategory;
 
+    export interface DisplayedStory extends HeroImage.DisplayedStory {
+        subtitle: Story['subtitle'];
+        href: string;
+    }
+
     export interface Props {
-        story: StoryWithImage;
+        story: DisplayedStory;
         categories?: Hero.DisplayedCategory[];
         locale: Culture['code'];
-        size?: HeroImageSize;
+        size?: HeroImage.Size;
         newsroomName: string;
         logo?: UploadedImage | null;
         showDate?: boolean;

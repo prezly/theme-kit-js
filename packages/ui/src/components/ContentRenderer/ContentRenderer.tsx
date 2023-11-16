@@ -95,9 +95,7 @@ export function ContentRenderer({ nodes, story, intl }: ContentRenderer.Props) {
 }
 
 export namespace ContentRenderer {
-    export interface Intl {
-        ['actions.download']: string;
-    }
+    export type Intl = Attachment.Intl;
 
     export type Props = PropsWithChildren<{
         story: ExtendedStory;
