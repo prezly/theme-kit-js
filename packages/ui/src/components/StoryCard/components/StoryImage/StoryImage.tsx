@@ -37,7 +37,7 @@ export function StoryImage({
                 objectFit="cover"
                 containerClassName={twMerge(`block h-full md:rounded`)}
                 className={twMerge(
-                    `block h-full w-full md:rounded transition-transform ease-out duration-[250ms] group-hover:transform group-hover:scale-[1.05]`,
+                    `block h-full w-full md:rounded transition ease-out duration-[300ms] group-hover:transform group-hover:scale-[1.02] group-hover:shadow-xLarge`,
                     className,
                 )}
                 sizes={getHeroImageSizes(size)}
@@ -49,7 +49,7 @@ export function StoryImage({
         <span
             className={twMerge(
                 `h-full flex items-center justify-center p-6 bg-placeholder text-center text-large font-bold md:rounded text-header-link`,
-                `transition-transform ease-out duration-[250ms] group-hover:transform group-hover:scale-[1.05]`,
+                `transition ease-out duration-[300ms] group-hover:transform group-hover:scale-[1.02] group-hover:shadow-xLarge`,
                 placeholderClassName,
             )}
         >

@@ -1,6 +1,7 @@
 'use client';
 
-import { CheckIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
+import { CheckIcon } from '@heroicons/react/24/outline';
+import { GlobeEuropeAfricaIcon } from '@heroicons/react/24/solid';
 import type { Culture } from '@prezly/sdk';
 import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -20,21 +21,21 @@ export function LanguagesDropdown({ selected, options }: LanguagesDropdown.Props
         <Dropdown
             className="border-0 w-max p-0 bg-transparent text-gray-600 hover:text-gray-800"
             contentProps={{
-                className: 'border mt-2 p-0 mb-5 overflow-auto',
+                className: 'border mt-2 p-0 mb-5 overflow-auto rounded shadow-large',
                 side: isSm ? 'bottom' : 'left',
             }}
-            label={<GlobeAltIcon className="w-6 h-6" />}
+            label={<GlobeEuropeAfricaIcon className="w-6 h-6" />}
         >
             <Dropdown.Group>
                 {displayedOptions.map(({ code, name, href }) => (
                     <Dropdown.Item
-                        className={twMerge('border-b border-gray-200', 'last:border-b-0')}
+                        className={twMerge('border-b border-gray-200 p-0', 'last:border-b-0')}
                         key={code}
                     >
                         <a className="px-6 py-4 flex items-center justify-between" href={href}>
-                            <span>{name}</span>
+                            <span className="label-medium">{name}</span>
                             {selected && code === selected.code && (
-                                <CheckIcon className="w-[20px] h-[20px]" />
+                                <CheckIcon className="w-4 h-4" />
                             )}
                         </a>
                     </Dropdown.Item>

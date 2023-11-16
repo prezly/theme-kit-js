@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -25,7 +25,7 @@ export function Dropdown({ children, label, className, contentProps }: Dropdown.
                 {label}
                 <ChevronDownIcon
                     className={twMerge(
-                        'w-4 h-4',
+                        'w-5 h-5',
                         `group-data-[state=open]:-rotate-180 transition-transform`,
                     )}
                 />

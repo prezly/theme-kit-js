@@ -34,6 +34,7 @@ export function SubscriptionCta({
             >
                 <Input
                     className="w-full"
+                    inputClassName="py-3 px-4"
                     error={error}
                     placeholder={intl['subscription.labelEmail'] ?? 'Enter your email'}
                     value={value}

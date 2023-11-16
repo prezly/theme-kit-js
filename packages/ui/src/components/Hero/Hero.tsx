@@ -71,10 +71,12 @@ export function Hero({
                 </div>
                 <div className="mt-4">
                     <Link href={`/${slug}`} locale={false}>
-                        <h2 className="title-medium cursor-pointer">{title}</h2>
+                        <h2 className="title-medium cursor-pointer group-hover:text-gray-950">
+                            {title}
+                        </h2>
                     </Link>
                     {Boolean(!hideSubtitle && subtitle) && (
-                        <p className="subtitle-medium mt-3 line-clamp-3 text-ellipsis">
+                        <p className="subtitle-medium mt-3 line-clamp-3 text-ellipsis group-hover:text-gray-950">
                             {subtitle}
                         </p>
                     )}

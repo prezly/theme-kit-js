@@ -29,17 +29,17 @@ export function Link({
             href={forceRefresh ? hrefWithLocale : href}
             ref={forwardRef as any}
             className={twMerge(
-                'flex items-center justify-center w-max rounded',
+                'flex items-center justify-center w-max rounded transition-colors',
                 size === 'small' ? `label-medium` : `label-large`,
                 variation === 'primary' &&
                     `
-  text-accent hover:text-accent-dark active:text-accent-dark focus:text-accent-dark focus-within:text-accent-dark
+  text-accent hover:text-accent-dark active:text-accent-darker focus:text-accent-darker focus-within:text-accent-darker
   focus:ring-2 focus:ring-accent-lighter focus-within:ring-2 focus-within:ring-accent-lighter
   ${disabled && 'text-accent-lighter pointer-events-none'}
   `,
                 variation === 'secondary' &&
                     `
-      text-gray-600 hover:text-gray-800 focus:text-gray-800 focus:ring-2 focus:ring-accent-lighter
+      text-gray-600 hover:text-black focus:text-black focus:ring-2 focus:ring-accent-lighter
   focus-within:text-gray-800 focus-within:ring-2 focus-within:ring-accent-lighter active:text-gray-950 ${
       disabled && 'text-gray-500 pointer-events-none'
   }

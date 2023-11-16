@@ -1,13 +1,13 @@
 'use client';
 
-import { ArrowRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid';
+import { ArrowRightIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import type { Category } from '@prezly/sdk';
-import Link from 'next/link';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Button } from '@/components/Button';
 import { Dropdown } from '@/components/Dropdown';
+import { Link } from '@/components/Link';
 import { useDevice } from '@/hooks';
 
 export function CategoriesDropdown({ options, indexHref, intl = {} }: CategoriesDropdown.Props) {
@@ -47,7 +47,7 @@ export function CategoriesDropdown({ options, indexHref, intl = {} }: Categories
         <Dropdown
             className="border-0 w-max p-0 text-gray-600 hover:text-gray-800"
             contentProps={{
-                className: 'bg-gray-50 w-screen mt-10 p-12',
+                className: 'bg-gray-50 w-screen mt-10 px-12 py-8',
             }}
             label={intl['categories.title'] ?? 'Categories'}
         >
@@ -55,12 +55,13 @@ export function CategoriesDropdown({ options, indexHref, intl = {} }: Categories
                 <div className="grid grid-cols-4 gap-y-8 gap-x-12">
                     {options.map(({ id, href, name, description }) => (
                         <div key={id}>
-                            <Link className="gap-2 group" href={href}>
-                                <h3 className="title-xx-small group-hover:underline">{name}</h3>
-                                <p className="text-description">{description}</p>
+                            <Link className="gap-1 w-full justify-start" href={href}>
+                                <h3 className="subtitle-small">{name}</h3>
+                                <p className="text-small">{description}</p>
                             </Link>
                             <Link
-                                className="w-max mt-3 label-medium flex items-center gap-2 text-accent hover:underline"
+                                className="w-max mt-3"
+                                contentClassName="label-medium flex items-center gap-2 text-accent"
                                 href={href}
                             >
                                 {intl['categories.view'] ?? 'View'}
@@ -71,11 +72,13 @@ export function CategoriesDropdown({ options, indexHref, intl = {} }: Categories
                 </div>
                 {indexHref && (
                     <Link
-                        className="w-max ml-auto mt-8 label-large flex items-center gap-2 hover:underline"
+                        className="w-max ml-auto mt-8"
+                        contentClassName="flex items-center gap-2"
                         href={indexHref}
+                        variation="secondary"
                     >
                         {intl['categories.viewAll'] ?? 'View all'}{' '}
-                        <ArrowRightIcon className="w-[20px] h-[20px]" />
+                        <ArrowRightIcon className="w-4 h-4" />
                     </Link>
                 )}
             </div>

@@ -39,7 +39,7 @@ export function Boilerplate({ className, companyInformation, intl = {} }: Boiler
                     <div className="flex flex-col w-full md:max-w-xs rounded border border-gray-700 h-max">
                         {website && (
                             <div className="p-6 border-b border-gray-700 last:border-b-0 gap-4 flex items-center">
-                                <GlobeAltIcon className="w-4 h-4 text-white" />
+                                <GlobeAltIcon className="w-4 h-4 text-white shrink-0" />
                                 <Link
                                     className="text-white hover:text-white hover:underline"
                                     href={website}
@@ -54,7 +54,7 @@ export function Boilerplate({ className, companyInformation, intl = {} }: Boiler
                         )}
                         {phone && (
                             <div className="p-6 border-b border-gray-700 last:border-b-0 gap-4 flex items-center">
-                                <DevicePhoneMobileIcon className="w-4 h-4 text-white" />
+                                <DevicePhoneMobileIcon className="w-4 h-4 text-white shrink-0" />
                                 <Link
                                     className="text-white hover:text-white hover:underline"
                                     href={`tel:${phone}`}
@@ -65,7 +65,7 @@ export function Boilerplate({ className, companyInformation, intl = {} }: Boiler
                         )}
                         {email && (
                             <div className="p-6 border-b border-gray-700 last:border-b-0 gap-4 flex items-center">
-                                <EnvelopeIcon className="w-4 h-4 text-white" />
+                                <EnvelopeIcon className="w-4 h-4 text-white shrink-0" />
                                 <Link
                                     className="text-white hover:text-white hover:underline"
                                     href={`mailto:${email}`}
@@ -76,7 +76,7 @@ export function Boilerplate({ className, companyInformation, intl = {} }: Boiler
                         )}
                         {address && (
                             <address className="p-6 border-b border-gray-700 last:border-b-0 gap-4 flex items-center not-italic">
-                                <MapPinIcon className="w-4 h-4 text-white" />
+                                <MapPinIcon className="w-4 h-4 text-white shrink-0" />
                                 <p className="label-large text-white">{address}</p>
                             </address>
                         )}
