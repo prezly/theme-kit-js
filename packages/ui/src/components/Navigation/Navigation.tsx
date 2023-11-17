@@ -16,7 +16,7 @@ import { CategoriesDropdown, LanguagesDropdown } from './components';
 
 export function Navigation({
     className,
-    intl,
+    intl = {},
     categories = { options: [] },
     languages = [],
     newsroom,
@@ -26,6 +26,9 @@ export function Navigation({
     locale,
     hasStandaloneAboutPage,
     hasStandaloneContactsPage,
+    indexHref,
+    aboutHref,
+    contactsHref,
 }: Navigation.Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const { isSm } = useDevice();
@@ -76,7 +79,7 @@ export function Navigation({
     return (
         <header className={twMerge('p-6 lg:px-12 border-b border-gray-200 relative', className)}>
             <nav className="flex items-center justify-between">
-                <Link className="flex items-center gap-2" href="/" locale={locale}>
+                <Link className="flex items-center gap-2" href={indexHref}>
                     <h1 className={twMerge(`subtitle-medium`, Boolean(logo) && `hidden`)}>
                         {name}
                     </h1>
@@ -91,7 +94,7 @@ export function Navigation({
                     )}
                     {showNewsroomLabelAsideLogo && (
                         <p className="label-large pl-2 border-l border-gray-400 text-gray-400">
-                            Newsroom
+                            {intl['newsroom.title'] ?? 'Newsroom'}
                         </p>
                     )}
                 </Link>
@@ -118,33 +121,18 @@ export function Navigation({
                                 />
                             )}
                             {galleries > 0 && (
-                                <Link
-                                    className={linkClassName}
-                                    href="/media"
-                                    locale={locale ?? false}
-                                >
-                                    {/* TODO: Use translations */}
-                                    Media
+                                <Link className={linkClassName} href="/media">
+                                    {intl['media.title'] ?? 'Media'}
                                 </Link>
                             )}
-                            {hasStandaloneAboutPage && (
-                                <Link
-                                    className={linkClassName}
-                                    href="/about"
-                                    locale={locale ?? false}
-                                >
-                                    {/* TODO: Use translations */}
-                                    About
+                            {hasStandaloneAboutPage && aboutHref && (
+                                <Link className={linkClassName} href={aboutHref}>
+                                    {intl['about.title'] ?? 'About'}
                                 </Link>
                             )}
-                            {hasStandaloneContactsPage && (
-                                <Link
-                                    className={linkClassName}
-                                    href="/contacts"
-                                    locale={locale ?? false}
-                                >
-                                    {/* TODO: Use translations */}
-                                    Contacts
+                            {hasStandaloneContactsPage && contactsHref && (
+                                <Link className={linkClassName} href={contactsHref}>
+                                    {intl['contacts.title'] ?? 'Contacts'}
                                 </Link>
                             )}
                         </div>
@@ -204,7 +192,13 @@ export function Navigation({
 }
 
 export namespace Navigation {
-    export type Intl = CategoriesDropdown.Intl;
+    export interface Intl extends CategoriesDropdown.Intl {
+        ['newsroom.title']: string;
+        ['media.title']: string;
+        ['about.title']: string;
+        ['contacts.title']: string;
+    }
+
     export type DisplayedLanguage = LanguagesDropdown.Option;
     export type DisplayedCategory = CategoriesDropdown.Option;
 
@@ -229,5 +223,9 @@ export namespace Navigation {
         hasStandaloneAboutPage?: boolean;
         hasStandaloneContactsPage?: boolean;
         newsroom: DisplayedNewsroom;
+        indexHref: `/${string}`;
+        mediaHref: `/${string}`;
+        aboutHref?: `/${string}`;
+        contactsHref?: `/${string}`;
     }
 }

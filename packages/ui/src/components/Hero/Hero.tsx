@@ -37,7 +37,6 @@ export function Hero({
                     size === 'large' ? 'aspect-[30/30]' : 'aspect-[27/17]',
                 )}
                 href={href}
-                locale={false}
             >
                 <HeroImage
                     className="cursor-pointer"
@@ -68,7 +67,7 @@ export function Hero({
                     )}
                 </div>
                 <div className="mt-4">
-                    <Link href={href} locale={false}>
+                    <Link href={href}>
                         <h2 className="title-medium cursor-pointer group-hover:text-gray-950">
                             {title}
                         </h2>
@@ -81,7 +80,6 @@ export function Hero({
                     <ButtonLink
                         className={twMerge('mt-6 w-max', size === 'default' && `md:hidden`)}
                         href={href}
-                        localeCode={false}
                         icon={ArrowRightIcon}
                         iconPlacement="right"
                         size="small"

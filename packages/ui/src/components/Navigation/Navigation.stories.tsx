@@ -49,6 +49,10 @@ Default.args = {
     hasStandaloneContactsPage: true,
     showNewsroomLabelAsideLogo: true,
     locale: 'en',
+    indexHref: '/',
+    aboutHref: '/about',
+    contactsHref: '/contacts',
+    mediaHref: '/media',
 };
 
 export const WithoutLogo = NavigationTemplate.bind({});

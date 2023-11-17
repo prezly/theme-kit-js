@@ -39,7 +39,6 @@ export function StoryCard({
                         : 'w-1/3 hidden md:block md:max-w-[200px]',
                 )}
                 href={href}
-                locale={false}
             >
                 <StoryImage
                     className="cursor-pointer"
@@ -71,7 +70,7 @@ export function StoryCard({
                     )}
                 </div>
                 <div className="mt-4">
-                    <Link href={href} locale={false}>
+                    <Link href={href}>
                         <h2
                             className={twMerge(
                                 'cursor-pointer',
