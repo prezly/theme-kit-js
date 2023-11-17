@@ -14,19 +14,26 @@ export default {
     },
 } as Meta<typeof GalleryMedia>;
 
+const DISPLAYED_GALLERY: GalleryMedia.DisplayedGallery = {
+    name: GALLERY.name,
+    href: `/gallery/album/${GALLERY.uuid}`,
+    images: GALLERY.images_number,
+    videos: GALLERY.videos_number,
+};
+
 const GalleryMediaTemplate: StoryFn<typeof GalleryMedia> = (args) => <GalleryMedia {...args} />;
 
 export const Default = GalleryMediaTemplate.bind({});
 Default.args = {
-    gallery: { ...GALLERY, videos_number: 2 },
+    gallery: DISPLAYED_GALLERY,
 };
 
 export const WithOnlyImages = GalleryMediaTemplate.bind({});
 WithOnlyImages.args = {
-    gallery: GALLERY,
+    gallery: { ...DISPLAYED_GALLERY, videos: 0 },
 };
 
 export const WithoutImages = GalleryMediaTemplate.bind({});
 WithoutImages.args = {
-    gallery: { ...GALLERY, images_number: 0, videos_number: 0 },
+    gallery: { ...DISPLAYED_GALLERY, images: 0 },
 };

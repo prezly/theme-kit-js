@@ -1,6 +1,6 @@
 'use client';
 
-import type { Category, Culture, UploadedImage } from '@prezly/sdk';
+import type { Culture, UploadedImage } from '@prezly/sdk';
 import * as Dialog from '@radix-ui/react-dialog';
 import algoliasearch from 'algoliasearch/lite';
 import { useMemo } from 'react';
@@ -10,33 +10,19 @@ import { twMerge } from 'tailwind-merge';
 import { MainPanel, SearchBar } from './components';
 import type { AlgoliaConfig } from './types';
 
-export interface Props {
-    isOpen: boolean;
-    className?: string;
-    overlayClassName?: string;
-    onOpenChange: (open: boolean) => void;
-    algoliaConfig: AlgoliaConfig;
-    locale: Culture['code'];
-    newsroomName: string;
-    categories: Category[];
-    hideSubtitle: boolean;
-    showDate: boolean;
-    logo: UploadedImage | null;
-}
-
 export function SearchModal({
     isOpen,
     categories,
     className,
     overlayClassName,
-    onOpenChange,
+    onToggle,
     algoliaConfig,
     locale,
     newsroomName,
     logo,
-    hideSubtitle,
+    showSubtitle = true,
     showDate,
-}: Props) {
+}: SearchModal.Props) {
     const { ALGOLIA_API_KEY, ALGOLIA_APP_ID, ALGOLIA_INDEX } = algoliaConfig;
 
     const searchClient = useMemo(
@@ -45,11 +31,11 @@ export function SearchModal({
     );
 
     function handleClose() {
-        onOpenChange(false);
+        onToggle(false);
     }
 
     return (
-        <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
+        <Dialog.Root open={isOpen} onOpenChange={onToggle}>
             <Dialog.Portal>
                 <Dialog.Overlay
                     className={twMerge('fixed inset-0 bg-gray-700 bg-opacity-40', overlayClassName)}
@@ -72,7 +58,7 @@ export function SearchModal({
                             categories={categories}
                             locale={locale}
                             logo={logo}
-                            hideSubtitle={hideSubtitle}
+                            showSubtitle={showSubtitle}
                             showDate={showDate}
                             newsroomName={newsroomName}
                         />
@@ -81,4 +67,22 @@ export function SearchModal({
             </Dialog.Portal>
         </Dialog.Root>
     );
+}
+
+export namespace SearchModal {
+    export type DisplayedCategory = MainPanel.DisplayedCategory;
+
+    export interface Props {
+        isOpen: boolean;
+        className?: string;
+        overlayClassName?: string;
+        onToggle: (open: boolean) => void;
+        algoliaConfig: AlgoliaConfig;
+        locale: Culture['code'];
+        newsroomName: string;
+        categories: DisplayedCategory[];
+        showSubtitle?: boolean;
+        showDate: boolean;
+        logo: UploadedImage | null;
+    }
 }

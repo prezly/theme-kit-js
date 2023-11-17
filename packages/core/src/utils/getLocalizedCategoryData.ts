@@ -28,14 +28,17 @@ export function getLocalizedCategoryData(
     }
 
     const targetLocaleCode = locale.toUnderscoreCode();
-    const { i18n } = category;
-    const populatedLocales = Object.keys(i18n).filter((localeCode) => i18n[localeCode].name);
-    const targetLocale =
-        populatedLocales.find((localeCode) => localeCode === targetLocaleCode) ||
-        populatedLocales.find((localeCode) => i18n[localeCode].name === category.display_name) ||
-        populatedLocales[0];
 
-    const { locale: _, ...localizedData } = i18n[targetLocale];
+    const translations = Object.values(category.i18n).filter((translation) =>
+        Boolean(translation.name),
+    );
+
+    const targetTranslation =
+        translations.find((translation) => translation.locale.code === targetLocaleCode) ??
+        translations.find((translation) => translation.name === category.display_name) ??
+        translations[0];
+
+    const { locale: _, ...localizedData } = targetTranslation;
 
     return localizedData;
 }
@@ -52,8 +55,6 @@ export function getCategoryHasTranslation(
     category: Pick<Category, 'i18n'>,
     locale: LocaleObject,
 ): boolean {
-    const targetLocaleCode = locale.toUnderscoreCode();
-    const { i18n } = category;
-    const populatedLocales = Object.keys(i18n).filter((localeCode) => i18n[localeCode].name);
-    return Boolean(populatedLocales.find((localeCode) => localeCode === targetLocaleCode));
+    const translation = category.i18n[locale.toUnderscoreCode()];
+    return Boolean(translation && translation.name);
 }

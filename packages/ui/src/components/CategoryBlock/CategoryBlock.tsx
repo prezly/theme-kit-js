@@ -1,20 +1,10 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import type { Category, Culture } from '@prezly/sdk';
-import { getCategoryUrl, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
+import type { Category } from '@prezly/sdk';
 import { twMerge } from 'tailwind-merge';
 
 import { Link } from '../Link';
 
-export interface Props {
-    category: Category;
-    className?: string;
-    locale: Culture['code'];
-}
-
-export function CategoryBlock({ className, category, locale }: Props) {
-    const localeObj = LocaleObject.fromAnyCode(locale);
-    const { name, description } = getLocalizedCategoryData(category, localeObj);
-
+export function CategoryBlock({ className, category, intl = {} }: CategoryBlock.Props) {
     return (
         <div
             className={twMerge(
@@ -22,19 +12,34 @@ export function CategoryBlock({ className, category, locale }: Props) {
                 className,
             )}
         >
-            <h3 className="subtitle-small">{name}</h3>
-            {description && <p className="mt-1 text-small">{description}</p>}
+            <h3 className="subtitle-small">{category.name}</h3>
+            {category.description && <p className="mt-1 text-small">{category.description}</p>}
 
             <Link
                 className="label-large text-accent mt-5"
-                href={getCategoryUrl(category, localeObj)}
-                localeCode={locale}
+                href={category.href}
                 icon={ArrowRightIcon}
                 iconPlacement="right"
             >
-                {/* TODO:  Add translations */}
-                View
+                {intl['category.view'] ?? 'View'}
             </Link>
         </div>
     );
+}
+
+export namespace CategoryBlock {
+    export interface Intl {
+        ['category.view']: string;
+    }
+
+    export interface DisplayedCategory {
+        name: Category.Translation['name'];
+        description: Category.Translation['description'];
+        href: `/${string}`;
+    }
+    export interface Props {
+        className?: string;
+        intl?: Partial<CategoryBlock.Intl>;
+        category: CategoryBlock.DisplayedCategory;
+    }
 }

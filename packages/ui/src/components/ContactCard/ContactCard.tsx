@@ -1,4 +1,5 @@
 import { DevicePhoneMobileIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import type { NewsroomContact } from '@prezly/sdk';
 import { UploadcareImage } from '@prezly/uploadcare-image';
 import { twMerge } from 'tailwind-merge';
 
@@ -6,19 +7,12 @@ import { Icons } from '@/icons';
 
 import { Link } from '../Link';
 
-import type { ContactInfo } from './type';
 import { getSocialHandles } from './utils';
 
-export interface Props {
-    contactInfo: ContactInfo;
-    className?: string;
-}
-
-export function ContactCard({ contactInfo, className }: Props) {
-    const { avatar_image, avatar_url, description, company, name, email, phone, mobile } =
-        contactInfo;
+export function ContactCard({ contact, className }: ContactCard.Props) {
+    const { avatar_image, avatar_url, description, company, name, email, phone, mobile } = contact;
     const subtitle = description && company ? `${description}, ${company}` : description;
-    const { facebook, twitter } = getSocialHandles(contactInfo);
+    const { facebook, twitter } = getSocialHandles(contact);
 
     return (
         <div
@@ -89,4 +83,25 @@ export function ContactCard({ contactInfo, className }: Props) {
             </div>
         </div>
     );
+}
+
+export namespace ContactCard {
+    export interface DisplayedContact {
+        avatar_image: NewsroomContact['avatar_image'];
+        name: NewsroomContact['name'];
+        description: NewsroomContact['description'];
+        company: NewsroomContact['company'];
+        email: NewsroomContact['email'];
+        phone: NewsroomContact['phone'];
+        mobile: NewsroomContact['mobile'];
+        website: NewsroomContact['website'];
+        facebook: NewsroomContact['facebook'];
+        twitter: NewsroomContact['twitter'];
+        avatar_url?: string | null;
+    }
+
+    export interface Props {
+        contact: DisplayedContact;
+        className?: string;
+    }
 }

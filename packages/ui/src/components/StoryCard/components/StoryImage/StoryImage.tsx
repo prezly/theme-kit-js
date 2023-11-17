@@ -1,5 +1,4 @@
 import type { UploadedImage } from '@prezly/sdk';
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import Image from '@prezly/uploadcare-image';
 import { twMerge } from 'tailwind-merge';
 
@@ -8,17 +7,6 @@ import type { StoryWithImage } from '@/types';
 
 import { getHeroImageSizes } from './lib';
 
-export type StoryImageSize = 'large' | 'tiny';
-
-type Props = {
-    story: StoryWithImage | AlgoliaStory;
-    size: StoryImageSize;
-    className?: string;
-    placeholderClassName?: string;
-    newsroomName: string;
-    logo?: UploadedImage | null;
-};
-
 export function StoryImage({
     story,
     size,
@@ -26,7 +14,7 @@ export function StoryImage({
     placeholderClassName,
     newsroomName,
     logo,
-}: Props) {
+}: StoryImage.Props) {
     const image = getStoryThumbnail(story);
 
     if (image) {
@@ -67,4 +55,22 @@ export function StoryImage({
             {!logo && newsroomName}
         </span>
     );
+}
+
+export namespace StoryImage {
+    export type Size = 'large' | 'tiny';
+
+    export interface DisplayedStory {
+        thumbnailImage: StoryWithImage['thumbnail_image'];
+        title: StoryWithImage['title'];
+    }
+
+    export interface Props {
+        size: Size;
+        className?: string;
+        placeholderClassName?: string;
+        newsroomName: string;
+        logo?: UploadedImage | null;
+        story: DisplayedStory;
+    }
 }

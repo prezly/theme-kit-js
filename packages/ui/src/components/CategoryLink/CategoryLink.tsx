@@ -1,30 +1,23 @@
-import type { Category, Culture } from '@prezly/sdk';
-import {
-    type AlgoliaCategoryRef,
-    getCategoryUrl,
-    getLocalizedCategoryData,
-    LocaleObject,
-} from '@prezly/theme-kit-core';
+import type { Category } from '@prezly/sdk';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
-interface Props {
-    category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef;
-    locale: Culture['code'];
-    className?: string;
-}
-
-export function CategoryLink({ category, locale, className }: Props) {
-    const localeObj = LocaleObject.fromAnyCode(locale);
-    const { name } = getLocalizedCategoryData(category, localeObj);
-
+export function CategoryLink({ category, className }: CategoryLink.Props) {
     return (
-        <Link
-            className={twMerge(`label-large text-accent`, className)}
-            href={getCategoryUrl(category, localeObj)}
-            locale={locale}
-        >
-            <span>{name}</span>
+        <Link className={twMerge(`label-large text-accent`, className)} href={category.href}>
+            <span>{category.name}</span>
         </Link>
     );
+}
+
+export namespace CategoryLink {
+    export interface DisplayedCategory {
+        name: Category.Translation['name'];
+        href: `/${string}`;
+    }
+
+    export interface Props {
+        category: DisplayedCategory;
+        className?: string;
+    }
 }

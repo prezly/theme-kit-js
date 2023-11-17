@@ -1,5 +1,4 @@
-import type { NewsroomCompanyInformation } from '@prezly/sdk';
-
+import type { SocialMedia } from './SocialMedia';
 import type { ShareableSocialNetwork, SocialNetwork } from './types';
 
 function prependAtToUsername(username: string): string {
@@ -35,7 +34,7 @@ function getSocialLink(socialNetwork: SocialNetwork, url: string | null): string
     }
 }
 
-export function getSocialLinks(companyInformation: NewsroomCompanyInformation) {
+export function getSocialLinks(companyInformation: SocialMedia.CompanySocials) {
     const { facebook, instagram, linkedin, pinterest, tiktok, twitter, youtube } =
         companyInformation;
 

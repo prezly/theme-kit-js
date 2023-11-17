@@ -17,7 +17,13 @@ export function Variable({ node }: Props) {
     const variables = useVariables();
 
     if (node.key === 'publication.date' && variables.story) {
-        return <StoryPublicationDate story={variables.story} />;
+        return (
+            <StoryPublicationDate
+                dateFormat={variables.story.newsroom.date_format}
+                publishedAt={variables.story.published_at}
+                locale={variables.story.culture.code}
+            />
+        );
     }
 
     return null;

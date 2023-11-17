@@ -1,7 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
 import { Breadcrumbs } from './Breadcrumbs';
-import type { BreadcrumbItem } from './components';
 
 export default {
     title: 'Components/Breadcrumbs',
@@ -14,10 +13,10 @@ export default {
     },
 } as Meta<typeof Breadcrumbs>;
 
-const ITEMS: BreadcrumbItem[] = [
-    { name: 'Homepage', url: '/' },
-    { name: 'Media', url: '/media' },
-    { name: 'Galileo Art Collection', url: '/media/galileo-art-collection' },
+const ITEMS: Breadcrumbs.Item[] = [
+    { name: 'Homepage', href: '/' },
+    { name: 'Media', href: '/media' },
+    { name: 'Galileo Art Collection', href: '/media/galileo-art-collection' },
 ];
 
 const BreadcrumbsTemplate: StoryFn<typeof Breadcrumbs> = (args) => <Breadcrumbs {...args} />;

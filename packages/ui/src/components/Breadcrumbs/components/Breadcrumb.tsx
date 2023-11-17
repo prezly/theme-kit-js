@@ -2,18 +2,7 @@ import { ChevronRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
-export interface BreadcrumbItem {
-    url: string;
-    name: string;
-}
-
-export interface Props {
-    item: BreadcrumbItem;
-    isLast: boolean;
-    className?: string;
-}
-
-export function Breadcrumb({ item, isLast, className }: Props) {
+export function Breadcrumb({ item, isLast, className }: Breadcrumb.Props) {
     return (
         <li
             className={twMerge(
@@ -22,8 +11,21 @@ export function Breadcrumb({ item, isLast, className }: Props) {
                 className,
             )}
         >
-            <Link href={item.url}>{item.name}</Link>
+            <Link href={item.href}>{item.name}</Link>
             {!isLast && <ChevronRightIcon className="w-3 h-3" />}
         </li>
     );
+}
+
+export namespace Breadcrumb {
+    export interface Item {
+        href: string;
+        name: string;
+    }
+
+    export interface Props {
+        item: Item;
+        isLast: boolean;
+        className?: string;
+    }
 }

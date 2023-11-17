@@ -1,1 +1,1 @@
-export { HeroImage, type HeroImageSize } from './HeroImage';
+export { HeroImage } from './HeroImage';

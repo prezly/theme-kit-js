@@ -1,38 +1,27 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import type { Culture, UploadedImage } from '@prezly/sdk';
+import type { Culture, Story, UploadedImage } from '@prezly/sdk';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
-
-import type { StoryWithImage } from '@/types';
 
 import { ButtonLink } from '../Button';
 import { CategoriesList } from '../CategoriesList';
 import { StoryPublicationDate } from '../StoryPublicationDate';
 
-import { HeroImage, type HeroImageSize } from './components';
-
-export interface Props {
-    story: StoryWithImage;
-    locale: Culture['code'];
-    size?: HeroImageSize;
-    newsroomName: string;
-    logo?: UploadedImage | null;
-    showDate?: boolean;
-    hideSubtitle?: boolean;
-    className?: string;
-}
+import { HeroImage } from './components';
 
 export function Hero({
     story,
+    categories = [],
     showDate,
     locale,
+    dateFormat,
     newsroomName,
     logo,
     size = 'default',
     hideSubtitle,
     className,
-}: Props) {
-    const { slug, categories, title, subtitle } = story;
+}: Hero.Props) {
+    const { href, title, subtitle } = story;
 
     return (
         <div
@@ -47,8 +36,7 @@ export function Hero({
                     'w-full md:w-1/2',
                     size === 'large' ? 'aspect-[30/30]' : 'aspect-[27/17]',
                 )}
-                href={`/${slug}`}
-                locale={false}
+                href={href}
             >
                 <HeroImage
                     className="cursor-pointer"
@@ -68,18 +56,18 @@ export function Hero({
                 <div className="flex flex-wrap items-center gap-1">
                     {showDate && (
                         <span className="label-large text-gray-500 shrink-0">
-                            <StoryPublicationDate locale={locale} story={story} />
+                            <StoryPublicationDate dateFormat={dateFormat} locale={locale} />
                         </span>
                     )}
-                    {Boolean(categories.length) && (
+                    {categories.length > 0 && (
                         <>
                             <span className="label-large text-gray-500">·</span>
-                            <CategoriesList categories={categories} locale={locale} />
+                            <CategoriesList categories={categories} />
                         </>
                     )}
                 </div>
                 <div className="mt-4">
-                    <Link href={`/${slug}`} locale={false}>
+                    <Link href={href}>
                         <h2 className="title-medium cursor-pointer group-hover:text-gray-950">
                             {title}
                         </h2>
@@ -91,8 +79,7 @@ export function Hero({
                     )}
                     <ButtonLink
                         className={twMerge('mt-6 w-max', size === 'default' && `md:hidden`)}
-                        href={`/${slug}`}
-                        localeCode={false}
+                        href={href}
                         icon={ArrowRightIcon}
                         iconPlacement="right"
                         size="small"
@@ -104,4 +91,26 @@ export function Hero({
             </div>
         </div>
     );
+}
+
+export namespace Hero {
+    export type DisplayedCategory = CategoriesList.DisplayedCategory;
+
+    export interface DisplayedStory extends HeroImage.DisplayedStory {
+        subtitle: Story['subtitle'];
+        href: string;
+    }
+
+    export interface Props {
+        story: DisplayedStory;
+        categories?: Hero.DisplayedCategory[];
+        locale: Culture['code'];
+        size?: HeroImage.Size;
+        newsroomName: string;
+        logo?: UploadedImage | null;
+        showDate?: boolean;
+        hideSubtitle?: boolean;
+        className?: string;
+        dateFormat?: string;
+    }
 }

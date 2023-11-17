@@ -295,11 +295,25 @@ const TEST_STORY = {
     },
 };
 
+const CATEGORIES: Hero.DisplayedCategory[] = [
+    {
+        id: 4876,
+        name: 'Food',
+        href: '/category/food',
+    },
+    {
+        id: 4880,
+        name: 'Environment',
+        href: '/category/environment',
+    },
+];
+
 const HeroTemplate: StoryFn<typeof Hero> = (args) => <Hero {...args} />;
 
 export const Default = HeroTemplate.bind({});
 Default.args = {
-    story: TEST_STORY as any,
+    story: { ...TEST_STORY, thumbnailImage: TEST_STORY.thumbnail_image } as any,
+    categories: CATEGORIES,
     showDate: true,
     newsroomName: 'Test newsroom',
     locale: 'en',
@@ -307,7 +321,8 @@ Default.args = {
 
 export const WithoutThumbnailImage = HeroTemplate.bind({});
 WithoutThumbnailImage.args = {
-    story: { ...TEST_STORY, thumbnail_image: null } as any,
+    story: { ...TEST_STORY, thumbnailImage: null } as any,
+    categories: CATEGORIES,
     showDate: true,
     newsroomName: 'Test newsroom',
     locale: 'en',

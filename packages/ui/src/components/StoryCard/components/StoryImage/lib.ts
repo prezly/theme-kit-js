@@ -1,6 +1,6 @@
-import type { StoryImageSize } from './StoryImage';
+import type { StoryImage } from './StoryImage';
 
-function getDesktopImageSize(imageSize: StoryImageSize) {
+function getDesktopImageSize(imageSize: StoryImage.Size) {
     switch (imageSize) {
         case 'tiny':
             return 200;
@@ -9,7 +9,7 @@ function getDesktopImageSize(imageSize: StoryImageSize) {
     }
 }
 
-export function getHeroImageSizes(desiredSize: StoryImageSize) {
+export function getHeroImageSizes(desiredSize: StoryImage.Size) {
     return {
         mobile: 420,
         tablet: desiredSize === 'large' ? 350 : 240,

@@ -1,19 +1,23 @@
-import type { Culture, Newsroom } from '@prezly/sdk';
-import { getDataRequestLink, LocaleObject } from '@prezly/theme-kit-core';
-
-interface Props {
-    className?: string;
-    newsroom: Pick<Newsroom, 'uuid' | 'custom_data_request_link'>;
-    locale: Culture['code'];
-}
-
-export function DataRequestLink({ className, newsroom, locale }: Props) {
-    const href = getDataRequestLink(newsroom, LocaleObject.fromAnyCode(locale));
-
+export function DataRequestLink({
+    className,
+    privacyRequestLink,
+    intl = {},
+}: DataRequestLink.Props) {
     return (
-        <a href={href} className={className}>
-            {/* TODO: add translations */}
-            Data requests
+        <a href={privacyRequestLink} className={className}>
+            {intl['actions.privacyRequests'] ?? 'Privacy requests'}
         </a>
     );
+}
+
+export namespace DataRequestLink {
+    export interface Intl {
+        ['actions.privacyRequests']: string;
+    }
+
+    export interface Props {
+        className?: string;
+        privacyRequestLink: string;
+        intl?: Partial<Intl>;
+    }
 }
