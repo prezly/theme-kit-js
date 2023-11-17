@@ -26,6 +26,7 @@ export namespace PrezlyAdapter {
         cacheConfig: CacheConfiguration = {},
     ) {
         const cachedFetch = CachedFetch.create({
+            ...cacheConfig,
             ttl: cacheConfig.ttl ?? DEFAULT_REQUEST_CACHE_TTL,
         });
 
