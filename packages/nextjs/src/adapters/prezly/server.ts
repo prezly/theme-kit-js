@@ -5,8 +5,6 @@ import { CachedFetch, ContentDelivery } from '@prezly/theme-kit-core';
 
 import { type Resolvable, resolve } from '../../utils';
 
-type Fetch = typeof fetch;
-
 export namespace PrezlyAdapter {
     export interface Configuration {
         accessToken: string;
@@ -18,12 +16,10 @@ export namespace PrezlyAdapter {
         formats?: Story.FormatVersion[];
     }
 
-    export interface CacheConfiguration {
-        ttl?: CachedFetch.Options['ttl'];
-        fetch?: Fetch;
-    }
+    export type CacheConfiguration = Partial<CachedFetch.Options>;
 
     export const DEFAULT_REQUEST_CACHE_TTL = 10000;
+    export const DEFAULT_CACHED_METHODS = ['GET', 'POST'];
 
     export function connect(
         config: Resolvable<Configuration>,
@@ -31,7 +27,6 @@ export namespace PrezlyAdapter {
     ) {
         const cachedFetch = CachedFetch.create({
             ttl: cacheConfig.ttl ?? DEFAULT_REQUEST_CACHE_TTL,
-            fetch: cacheConfig.fetch,
         });
 
         function usePrezlyClient() {
