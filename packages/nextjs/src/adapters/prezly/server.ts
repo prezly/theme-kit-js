@@ -31,7 +31,7 @@ export namespace PrezlyAdapter {
     ) {
         const cachedFetch = CachedFetch.create({
             ttl: cacheConfig.ttl ?? DEFAULT_REQUEST_CACHE_TTL,
-            fetch: cacheConfig.fetch ?? getOriginalGlobalFetch(),
+            fetch: cacheConfig.fetch,
         });
 
         function usePrezlyClient() {
@@ -63,14 +63,4 @@ export namespace PrezlyAdapter {
 
         return { usePrezlyClient };
     }
-}
-
-/**
- * Try to get the original global `fetch()` implementation.
- * Not the one patched by Next.js
- * @see https://github.com/vercel/next.js/blob/1ae13b5d9f3bf452e83d395a15614edce08432ac/packages/next/src/server/lib/patch-fetch.ts#L157
- */
-function getOriginalGlobalFetch(): Fetch {
-    // eslint-disable-next-line no-underscore-dangle
-    return (globalThis ? (globalThis as any)._nextOriginalFetch : undefined) ?? fetch;
 }
