@@ -1,34 +1,25 @@
 import { ArrowRightIcon, PhotoIcon, VideoCameraIcon } from '@heroicons/react/24/outline';
-import type { Culture, NewsroomGallery } from '@prezly/sdk';
-import { getGalleryThumbnail } from '@prezly/theme-kit-core';
+import type { NewsroomGallery } from '@prezly/sdk';
+import type { UploadedImage } from '@prezly/uploadcare';
 import { UploadcareImage } from '@prezly/uploadcare-image';
 import { twMerge } from 'tailwind-merge';
 
 import { Link } from '../Link';
 
-export interface Props {
-    className?: string;
-    gallery: NewsroomGallery;
-    locale?: Culture['code'];
-}
-
-export function GalleryMedia({ className, gallery, locale }: Props) {
-    const { name, images_number, videos_number, uuid } = gallery;
-    const cover = getGalleryThumbnail(gallery);
-
+export function GalleryMedia({ gallery, className, intl = {} }: GalleryMedia.Props) {
+    const { cover, images, videos, href, name } = gallery;
     return (
         <Link
-            href={`/media/album/${uuid}`}
-            className={twMerge('relative w-full md:w-max group', className)}
+            href={href}
+            className={twMerge(
+                'relative w-full md:w-max transition-transform duration-300 hover:scale-[1.02] hover:shadow-xLarge',
+                className,
+            )}
             contentClassName="p-0"
-            localeCode={locale}
         >
             {cover && (
                 <UploadcareImage
-                    className={twMerge(
-                        'aspect-[17/12] md:aspect-[6/7] w-full max-w-full md:max-w-[256px]',
-                        'transition-transform group-hover:transform group-hover:scale-[1.05]',
-                    )}
+                    className="aspect-[17/12] md:aspect-[6/7] w-full max-w-full md:max-w-[256px]"
                     lazy
                     layout="fill"
                     objectFit="cover"
@@ -45,24 +36,24 @@ export function GalleryMedia({ className, gallery, locale }: Props) {
             >
                 <p className="title-x-small text-gray-100">{name}</p>
                 <div className="flex items-center justify-between">
-                    {Boolean(images_number || videos_number) && (
+                    {(images > 0 || videos > 0) && (
                         <div className="flex items-center gap-3">
-                            {Boolean(images_number) && (
+                            {images > 0 && (
                                 <span className="flex text-gray-100">
                                     <PhotoIcon className="w-5 h-5 mr-2" />
-                                    {/* TODO: Add translations */}
-                                    {videos_number === 0
-                                        ? `${images_number} Images`
-                                        : images_number}
+                                    {videos === 0
+                                        ? // FIXME: use interpolated i18n string here
+                                          `${images} ${intl['images.title'] ?? 'Images'}`
+                                        : images}
                                 </span>
                             )}
-                            {Boolean(videos_number) && (
+                            {videos > 0 && (
                                 <span className="flex text-gray-100">
                                     <VideoCameraIcon className="w-5 h-5 mr-2" />
-                                    {/* TODO: Add translations */}
-                                    {images_number === 0
-                                        ? `${videos_number} Videos`
-                                        : videos_number}
+                                    {images === 0
+                                        ? // FIXME: use interpolated i18n string here
+                                          `${videos} ${intl['videos.title'] ?? 'Videos'}`
+                                        : videos}
                                 </span>
                             )}
                         </div>
@@ -73,4 +64,25 @@ export function GalleryMedia({ className, gallery, locale }: Props) {
             </div>
         </Link>
     );
+}
+
+export namespace GalleryMedia {
+    export interface Intl {
+        ['videos.title']: string;
+        ['images.title']: string;
+    }
+
+    export interface DisplayedGallery {
+        name: NewsroomGallery['name'];
+        images: NewsroomGallery['images_number'];
+        videos: NewsroomGallery['videos_number'];
+        cover?: UploadedImage | null;
+        href: `/${string}`;
+    }
+
+    export interface Props {
+        gallery: DisplayedGallery;
+        className?: string;
+        intl?: Partial<Intl>;
+    }
 }

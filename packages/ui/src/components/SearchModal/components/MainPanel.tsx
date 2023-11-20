@@ -1,17 +1,8 @@
-import type { Category, Culture, UploadedImage } from '@prezly/sdk';
+import type { Culture, UploadedImage } from '@prezly/sdk';
 import { useSearchBox } from 'react-instantsearch';
 
 import { CategoriesList } from './CategoriesList';
 import { SearchResults } from './SearchResults';
-
-export interface Props {
-    categories: Category[];
-    locale: Culture['code'];
-    newsroomName: string;
-    logo: UploadedImage | null;
-    showDate: boolean;
-    hideSubtitle: boolean;
-}
 
 export function MainPanel({
     categories,
@@ -19,8 +10,8 @@ export function MainPanel({
     newsroomName,
     logo,
     showDate,
-    hideSubtitle,
-}: Props) {
+    showSubtitle = true,
+}: MainPanel.Props) {
     const { query } = useSearchBox();
     const isQuerySet = Boolean(query?.length);
 
@@ -36,11 +27,24 @@ export function MainPanel({
                     newsroomName={newsroomName}
                     logo={logo}
                     showDate={showDate}
-                    hideSubtitle={hideSubtitle}
+                    showSubtitle={showSubtitle}
                 />
             ) : (
-                <CategoriesList categories={categories} locale={locale} />
+                <CategoriesList categories={categories} />
             )}
         </div>
     );
+}
+
+export namespace MainPanel {
+    export type DisplayedCategory = CategoriesList.DisplayedCategory;
+
+    export interface Props {
+        categories: DisplayedCategory[];
+        locale: Culture['code'];
+        newsroomName: string;
+        logo: UploadedImage | null;
+        showDate: boolean;
+        showSubtitle?: boolean;
+    }
 }

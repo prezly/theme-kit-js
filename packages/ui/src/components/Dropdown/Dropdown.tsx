@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -13,13 +13,7 @@ import type { ComponentPropsWithoutRef, ElementRef, PropsWithChildren, ReactNode
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export interface Props {
-    label: ReactNode;
-    className?: string;
-    contentProps?: DropdownMenuContentProps;
-}
-
-function DropdownComponent({ children, label, className, contentProps }: PropsWithChildren<Props>) {
+export function Dropdown({ children, label, className, contentProps }: Dropdown.Props) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger
@@ -31,7 +25,7 @@ function DropdownComponent({ children, label, className, contentProps }: PropsWi
                 {label}
                 <ChevronDownIcon
                     className={twMerge(
-                        'w-4 h-4',
+                        'w-5 h-5',
                         `group-data-[state=open]:-rotate-180 transition-transform`,
                     )}
                 />
@@ -66,9 +60,15 @@ const DropdownItem = forwardRef<
 ));
 DropdownItem.displayName = 'DropdownItem';
 
-export const Dropdown = Object.assign(DropdownComponent, {
-    Label: DropdownMenuLabel,
-    Group: DropdownMenuGroup,
-    Item: DropdownItem,
-    Separator: DropdownMenuSeparator,
-});
+export namespace Dropdown {
+    export type Props = PropsWithChildren<{
+        label: ReactNode;
+        className?: string;
+        contentProps?: DropdownMenuContentProps;
+    }>;
+
+    export const Label = DropdownMenuLabel;
+    export const Group = DropdownMenuGroup;
+    export const Item = DropdownItem;
+    export const Separator = DropdownMenuSeparator;
+}

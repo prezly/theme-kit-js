@@ -1,15 +1,12 @@
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import type { UploadcareImageDetails } from '@prezly/uploadcare-image/build/types';
 
-import type { StoryWithImage } from '../types';
+export function getStoryThumbnail(story: {
+    thumbnailImage: string | null;
+}): UploadcareImageDetails | null {
+    const { thumbnailImage } = story;
 
-export function getStoryThumbnail(
-    story: StoryWithImage | AlgoliaStory,
-): UploadcareImageDetails | null {
-    const { thumbnail_image } = story;
-
-    if (thumbnail_image) {
-        return JSON.parse(thumbnail_image);
+    if (thumbnailImage) {
+        return JSON.parse(thumbnailImage);
     }
 
     return null;

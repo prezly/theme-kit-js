@@ -1,19 +1,15 @@
+'use client';
+
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import type { NewsroomGallery } from '@prezly/sdk';
-import { getUploadcareGroupUrl } from '@prezly/theme-kit-core';
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { ButtonLink } from '../Button';
 import { StoryShareLinks } from '../StoryShareLinks';
 
-export interface Props {
-    gallery: NewsroomGallery;
-    className?: string;
-}
-
-export function GalleryTitle({ gallery, className }: Props) {
-    const { name, uploadcare_group_uuid, description } = gallery;
+export function GalleryTitle({ className, gallery }: GalleryTitle.Props) {
+    const { name, description, downloadHref } = gallery;
 
     const [url, setUrl] = useState('');
 
@@ -29,9 +25,9 @@ export function GalleryTitle({ gallery, className }: Props) {
                 <h1 className="title-large">{name}</h1>
                 {description && <p className="subtitle-large mt-3">{description}</p>}
                 <div className="mt-6 flex items-center gap-4">
-                    {uploadcare_group_uuid && (
+                    {downloadHref && (
                         <ButtonLink
-                            href={getUploadcareGroupUrl(uploadcare_group_uuid, name)}
+                            href={downloadHref}
                             forceRefresh
                             icon={ArrowDownTrayIcon}
                             iconPlacement="right"
@@ -45,4 +41,17 @@ export function GalleryTitle({ gallery, className }: Props) {
             </div>
         </div>
     );
+}
+
+export namespace GalleryTitle {
+    export interface DisplayedGallery {
+        name: NewsroomGallery['name'];
+        description: NewsroomGallery['description'];
+        downloadHref?: string | null;
+    }
+
+    export interface Props {
+        className?: string;
+        gallery: DisplayedGallery;
+    }
 }

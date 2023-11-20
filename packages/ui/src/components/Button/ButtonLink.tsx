@@ -26,12 +26,9 @@ export function ButtonLink({
 
     const hrefWithLocale = localeCode ? `/${localeCode}/${href.toString()}` : href.toString();
 
-    const iconClassName = twMerge(
-        !children && variation !== 'navigation'
-            ? // Adjusted icon height for square buttons
-              'w-4 h-6'
-            : 'w-6 h-6',
-    );
+    const isIconOnly = Boolean(icon && !children);
+    const hasLeftIcon = Boolean(icon && iconPlacement === 'left');
+    const hasRightIcon = Boolean(icon && iconPlacement === 'right');
 
     return (
         <Element
@@ -39,8 +36,10 @@ export function ButtonLink({
             ref={forwardRef as any}
             className={twMerge(
                 rounded ? 'rounded-full' : 'rounded',
-                `flex items-center justify-center border border-transparent bg-transparent focus:ring-4 focus-within:ring-4 focus:ring-accent-lighter focus-within:ring-accent-lighter`,
-                size === 'small' ? 'py-2 px-3 label-medium' : ' py-3 px-4 label-large',
+                `flex items-center justify-center border border-transparent bg-transparent focus:ring-4 focus-within:ring-4 focus:ring-accent-lighter focus-within:ring-accent-lighter leading-[126%]`,
+                size === 'small'
+                    ? `py-2 px-3 label-medium ${hasLeftIcon && 'pl-2'} ${hasRightIcon && 'pr-2'}`
+                    : `py-3 px-4 label-large ${hasLeftIcon && 'pl-3'} ${hasRightIcon && 'pr-3'}`,
                 variation === 'primary' &&
                     `
                 bg-accent border-accent text-accent-button-text
@@ -65,14 +64,15 @@ export function ButtonLink({
                 focus:text-gray-950
                 disabled:bg-white disabled:text-gray-400`,
                 Boolean(Icon) && Boolean(children) && `gap-2`,
+                isIconOnly && (size === 'small' ? 'p-2' : 'p-3'),
                 className,
             )}
             {...linkProps}
         >
-            {iconPlacement === 'left' && <Icon icon={icon} className={iconClassName} />}
+            {iconPlacement === 'left' && <Icon icon={icon} />}
             {/* If there are no children, we insert a zero-width space to preserve the line-height */}
             <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
-            {iconPlacement === 'right' && <Icon icon={icon} className={iconClassName} />}
+            {iconPlacement === 'right' && <Icon icon={icon} />}
         </Element>
     );
 }

@@ -5,15 +5,6 @@ import { twMerge } from 'tailwind-merge';
 import { ShareButton } from './ShareButton';
 import type { StoryShareLinksLayout } from './types';
 
-export interface Props {
-    shareUrl: string | null;
-    onUrlCopied?: () => void;
-    showScrollToTopButton?: boolean;
-    className?: string;
-    iconClassName?: string;
-    layout?: StoryShareLinksLayout;
-}
-
 const SCROLL_TOP_MIN_HEIGHT = 300;
 
 export function StoryShareLinks({
@@ -21,9 +12,9 @@ export function StoryShareLinks({
     iconClassName,
     shareUrl,
     onUrlCopied,
-    showScrollToTopButton,
+    withScrollToTopButton,
     layout = 'horizontal',
-}: Props) {
+}: StoryShareLinks.Props) {
     const [isScrollToTopVisible, setIsScrollToTopVisible] = useState(false);
 
     function copyShareUrl(event?: ReactMouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -69,7 +60,7 @@ export function StoryShareLinks({
     return (
         <div
             className={twMerge(
-                `flex items-center rounded border border-gray-200 w-max`,
+                `flex items-center rounded border border-gray-200 w-max overflow-hidden`,
                 layout === 'vertical' && `flex-col h-max`,
                 className,
             )}
@@ -99,7 +90,7 @@ export function StoryShareLinks({
                 title="Copy URL"
                 aria-label="Copy URL"
                 className={twMerge(
-                    'p-3 border-gray-200',
+                    'p-3 border-gray-200 bg-white hover:bg-gray-100 active:bg-gray-200',
                     layout === 'vertical'
                         ? `border-b  last:border-b-0`
                         : `border-r last:border-r-0`,
@@ -108,7 +99,7 @@ export function StoryShareLinks({
             >
                 <LinkIcon className={twMerge('text-gray-800 w-5', iconClassName)} />
             </a>
-            {showScrollToTopButton && isScrollToTopVisible && (
+            {withScrollToTopButton && isScrollToTopVisible && (
                 <a
                     href="#"
                     target="_blank"
@@ -116,7 +107,7 @@ export function StoryShareLinks({
                     title="Go to top"
                     aria-label="Go to top"
                     className={twMerge(
-                        'p-3 border-gray-200',
+                        'p-3 border-gray-200 bg-white hover:bg-gray-100 active:bg-gray-200',
                         layout === 'vertical'
                             ? `border-b  last:border-b-0`
                             : `border-r last:border-r-0`,
@@ -128,4 +119,15 @@ export function StoryShareLinks({
             )}
         </div>
     );
+}
+
+export namespace StoryShareLinks {
+    export interface Props {
+        shareUrl: string | null;
+        onUrlCopied?: () => void;
+        withScrollToTopButton?: boolean;
+        className?: string;
+        iconClassName?: string;
+        layout?: StoryShareLinksLayout;
+    }
 }

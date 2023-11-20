@@ -1,30 +1,48 @@
 import type { Culture, UploadedImage } from '@prezly/sdk';
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 
 import { StoryCard } from '@/components/StoryCard';
+import type { AlgoliaStory } from '@/types';
 
-export interface Props {
-    hit: { attributes: AlgoliaStory };
-    hideSubtitle: boolean;
-    locale: Culture['code'];
-    newsroomName: string;
-    logo: UploadedImage | null;
-    showDate: boolean;
-}
-
-export function Hit({ hit, hideSubtitle, locale, logo, newsroomName, showDate }: Props) {
+export function Hit({ hit, showSubtitle = true, locale, logo, newsroomName, showDate }: Hit.Props) {
     const { attributes: story } = hit;
+
+    const displayedStory: StoryCard.DisplayedStory = {
+        title: story.title,
+        subtitle: story.subtitle,
+        thumbnailImage: story.thumbnail_image,
+        href: `/${story.slug}`, // TODO: move URL generation outside of ui package
+    };
+
+    const displayedCategories = story.categories.map(
+        (category): StoryCard.DisplayedCategory => ({
+            id: category.id,
+            name: category.name,
+            href: `/category/${category.slug}`, // TODO: Lift URL generation from here
+        }),
+    );
 
     return (
         <StoryCard
             className="w-full mt-6"
-            hideSubtitle={hideSubtitle}
+            showSubtitle={showSubtitle}
             showDate={showDate}
             logo={logo}
             locale={locale}
             newsroomName={newsroomName}
-            story={story}
+            story={displayedStory}
+            categories={displayedCategories}
             size="tiny"
         />
     );
+}
+
+export namespace Hit {
+    export interface Props {
+        hit: { attributes: AlgoliaStory };
+        showSubtitle: boolean;
+        locale: Culture['code'];
+        newsroomName: string;
+        logo: UploadedImage | null;
+        showDate: boolean;
+    }
 }

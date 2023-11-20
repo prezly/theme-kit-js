@@ -1,18 +1,8 @@
 'use client';
 
-import {
-    ArrowUpRightIcon,
-    Bars3BottomRightIcon,
-    MagnifyingGlassIcon,
-    XMarkIcon,
-} from '@heroicons/react/24/outline';
-import type {
-    Category,
-    Culture,
-    ExtendedStory,
-    Newsroom,
-    NewsroomLanguageSettings,
-} from '@prezly/sdk';
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
+import { Bars3BottomRightIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import type { Culture, Newsroom } from '@prezly/sdk';
 import Image from '@prezly/uploadcare-image';
 import Link from 'next/link';
 import { type MouseEvent as ReactMouseEvent, useState } from 'react';
@@ -23,30 +13,12 @@ import { useDevice } from '@/hooks';
 import { Button } from '../Button';
 
 import { CategoriesDropdown, LanguagesDropdown } from './components';
-import type { NavigationLayout } from './types';
-
-export interface Props {
-    className?: string;
-    categories: Category[];
-    languages: NewsroomLanguageSettings[];
-    layout?: NavigationLayout;
-    showNewsroomLabelAsideLogo?: boolean;
-    externalSiteLink?: string;
-    onSearch?: () => void;
-    locale: Culture['code'];
-    hasStandaloneAboutPage?: boolean;
-    hasStandaloneContactsPage?: boolean;
-    hasError?: boolean;
-    currentStory: ExtendedStory | undefined;
-    currentCategory: Pick<Category, 'i18n' | 'display_name'> | undefined;
-    newsroom: Pick<Newsroom, 'display_name' | 'public_galleries_number' | 'newsroom_logo'>;
-}
 
 export function Navigation({
     className,
-    categories,
-    languages,
-    layout = 'default',
+    intl = {},
+    categories = { options: [] },
+    languages = [],
     newsroom,
     showNewsroomLabelAsideLogo,
     externalSiteLink,
@@ -54,25 +26,41 @@ export function Navigation({
     locale,
     hasStandaloneAboutPage,
     hasStandaloneContactsPage,
-    hasError,
-    currentCategory,
-    currentStory,
-}: Props) {
+    indexHref,
+    aboutHref,
+    contactsHref,
+}: Navigation.Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const { isSm } = useDevice();
-    const {
-        display_name: siteName,
-        public_galleries_number: publicGalleriesCount,
-        newsroom_logo: logo,
-    } = newsroom;
+    const { name, galleries, logo } = newsroom;
     const hasExtraLinks = Boolean(
-        categories.length ||
-            languages.length ||
-            publicGalleriesCount ||
+        categories.options.length > 0 ||
+            languages.length > 0 ||
+            galleries ||
             hasStandaloneAboutPage ||
             hasStandaloneContactsPage ||
             externalSiteLink,
     );
+
+    const selectedLanguage = languages.find((lang) => lang.code === locale);
+    const shouldUseCenteredLayout =
+        [
+            categories.options.length,
+            languages.length,
+            galleries,
+            hasStandaloneAboutPage,
+            hasStandaloneContactsPage,
+            externalSiteLink,
+        ].filter(Boolean).length >= 5;
+
+    let externalLinkLabel = '';
+    if (externalSiteLink) {
+        externalLinkLabel =
+            new URL(externalSiteLink).hostname.length > 15
+                ? 'Website'
+                : new URL(externalSiteLink).hostname;
+    }
+
     const linkClassName = twMerge(
         'label-large text-gray-600 hover:text-gray-800 shrink-0',
         !isSm && `text-lg font-bold`,
@@ -91,9 +79,9 @@ export function Navigation({
     return (
         <header className={twMerge('p-6 lg:px-12 border-b border-gray-200 relative', className)}>
             <nav className="flex items-center justify-between">
-                <Link className="flex items-center gap-2" href="/" locale={locale}>
+                <Link className="flex items-center gap-2" href={indexHref}>
                     <h1 className={twMerge(`subtitle-medium`, Boolean(logo) && `hidden`)}>
-                        {siteName}
+                        {name}
                     </h1>
                     {logo && (
                         <Image
@@ -101,12 +89,12 @@ export function Navigation({
                             layout="fill"
                             objectFit="contain"
                             imageDetails={logo}
-                            alt={siteName}
+                            alt={name}
                         />
                     )}
                     {showNewsroomLabelAsideLogo && (
                         <p className="label-large pl-2 border-l border-gray-400 text-gray-400">
-                            Newsroom
+                            {intl['newsroom.title'] ?? 'Newsroom'}
                         </p>
                     )}
                 </Link>
@@ -115,47 +103,36 @@ export function Navigation({
                         'md:items-center justify-between gap-12 md:gap-4 hidden md:flex',
                         Boolean(openMobileNav && !isSm) &&
                             `flex flex-col w-screen absolute top-24 left-0 z-10 bg-white border-b border-gray-200`,
-                        layout === 'centered' ? `lg:w-2/3` : 'md:w-max',
+                        shouldUseCenteredLayout ? `lg:w-2/3` : 'md:w-max',
                     )}
                 >
                     {Boolean(
-                        categories.length ||
+                        categories.options.length > 0 ||
                             hasStandaloneAboutPage ||
                             hasStandaloneContactsPage ||
-                            publicGalleriesCount,
+                            galleries,
                     ) && (
                         <div className="pt-6 md:pt-0 flex flex-col md:flex-row md:items-center gap-12 md:gap-4 px-6 md:px-0">
-                            {categories.length > 0 && (
-                                <CategoriesDropdown categories={categories} locale={locale} />
+                            {categories.options.length > 0 && (
+                                <CategoriesDropdown
+                                    options={categories.options}
+                                    intl={intl}
+                                    indexHref={categories.indexHref}
+                                />
                             )}
-                            {publicGalleriesCount > 0 && (
-                                <Link
-                                    className={linkClassName}
-                                    href="/media"
-                                    locale={locale ?? false}
-                                >
-                                    {/* TODO: Use translations */}
-                                    Media
+                            {galleries > 0 && (
+                                <Link className={linkClassName} href="/media">
+                                    {intl['media.title'] ?? 'Media'}
                                 </Link>
                             )}
-                            {hasStandaloneAboutPage && (
-                                <Link
-                                    className={linkClassName}
-                                    href="/about"
-                                    locale={locale ?? false}
-                                >
-                                    {/* TODO: Use translations */}
-                                    About
+                            {hasStandaloneAboutPage && aboutHref && (
+                                <Link className={linkClassName} href={aboutHref}>
+                                    {intl['about.title'] ?? 'About'}
                                 </Link>
                             )}
-                            {hasStandaloneContactsPage && (
-                                <Link
-                                    className={linkClassName}
-                                    href="/contacts"
-                                    locale={locale ?? false}
-                                >
-                                    {/* TODO: Use translations */}
-                                    Contacts
+                            {hasStandaloneContactsPage && contactsHref && (
+                                <Link className={linkClassName} href={contactsHref}>
+                                    {intl['contacts.title'] ?? 'Contacts'}
                                 </Link>
                             )}
                         </div>
@@ -164,7 +141,7 @@ export function Navigation({
                     <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-4">
                         {Boolean(onSearch) && (
                             <Button
-                                className="hidden md:flex"
+                                className="hidden md:flex p-0"
                                 variation="navigation"
                                 icon={MagnifyingGlassIcon}
                                 onClick={handleSearch}
@@ -174,11 +151,8 @@ export function Navigation({
                             <div className="flex items-start md:items-center flex-row-reverse md:flex-row bg-gray-50 md:bg-transparent p-6 md:p-0 gap-4 justify-between md:justify-start">
                                 {languages.length > 0 && (
                                     <LanguagesDropdown
-                                        hasError={hasError}
-                                        languages={languages}
-                                        locale={locale}
-                                        currentCategory={currentCategory}
-                                        currentStory={currentStory}
+                                        options={languages}
+                                        selected={selectedLanguage}
                                     />
                                 )}
                                 {externalSiteLink && (
@@ -188,8 +162,8 @@ export function Navigation({
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        {new URL(externalSiteLink).hostname}
-                                        <ArrowUpRightIcon className="ml-1 w-2 h-2" />
+                                        {externalLinkLabel}
+                                        <ArrowUpRightIcon className="ml-1 w-5 h-5" />
                                     </a>
                                 )}
                             </div>
@@ -215,4 +189,43 @@ export function Navigation({
             </nav>
         </header>
     );
+}
+
+export namespace Navigation {
+    export interface Intl extends CategoriesDropdown.Intl {
+        ['newsroom.title']: string;
+        ['media.title']: string;
+        ['about.title']: string;
+        ['contacts.title']: string;
+    }
+
+    export type DisplayedLanguage = LanguagesDropdown.Option;
+    export type DisplayedCategory = CategoriesDropdown.Option;
+
+    export interface DisplayedNewsroom {
+        name: Newsroom['display_name'];
+        galleries: Newsroom['public_galleries_number'];
+        logo: Newsroom['newsroom_logo'];
+    }
+
+    export interface Props {
+        className?: string;
+        intl?: Partial<Navigation.Intl>;
+        categories?: {
+            options: Navigation.DisplayedCategory[];
+            indexHref?: CategoriesDropdown.Props['indexHref'];
+        };
+        languages?: Navigation.DisplayedLanguage[];
+        showNewsroomLabelAsideLogo?: boolean;
+        externalSiteLink?: string;
+        onSearch?: () => void;
+        locale: Culture['code'];
+        hasStandaloneAboutPage?: boolean;
+        hasStandaloneContactsPage?: boolean;
+        newsroom: DisplayedNewsroom;
+        indexHref: `/${string}`;
+        mediaHref: `/${string}`;
+        aboutHref?: `/${string}`;
+        contactsHref?: `/${string}`;
+    }
 }

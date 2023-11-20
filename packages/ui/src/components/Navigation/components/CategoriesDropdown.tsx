@@ -1,22 +1,16 @@
 'use client';
 
-import { ArrowRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid';
-import type { Category, Culture } from '@prezly/sdk';
-import { getCategoryUrl, getLocalizedCategoryData } from '@prezly/theme-kit-core';
-import Link from 'next/link';
+import { ArrowRightIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
+import type { Category } from '@prezly/sdk';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Button } from '@/components/Button';
 import { Dropdown } from '@/components/Dropdown';
+import { Link } from '@/components/Link';
 import { useDevice } from '@/hooks';
 
-export interface Props {
-    categories: Category[];
-    locale: Culture['code'];
-}
-
-export function CategoriesDropdown({ categories, locale }: Props) {
+export function CategoriesDropdown({ options, indexHref, intl = {} }: CategoriesDropdown.Props) {
     const { isSm } = useDevice();
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
 
@@ -34,23 +28,16 @@ export function CategoriesDropdown({ categories, locale }: Props) {
                     onClick={toggleDropdown}
                     variation="navigation"
                 >
-                    Categories
+                    {intl['categories.title'] ?? 'Categories'}
                 </Button>
                 <div
                     className={twMerge(`hidden`, mobileDropdownOpen && `flex flex-col gap-6 mt-6`)}
                 >
-                    {categories.map((category) => {
-                        const categoryData = getLocalizedCategoryData(category, locale);
-                        return (
-                            <Link
-                                className="gap-2 label-large text-gray-600"
-                                href={getCategoryUrl(category, locale)}
-                                key={category.id}
-                            >
-                                {categoryData.name}
-                            </Link>
-                        );
-                    })}
+                    {options.map(({ id, href, name }) => (
+                        <Link className="gap-2 label-large text-gray-600" href={href} key={id}>
+                            {name}
+                        </Link>
+                    ))}
                 </div>
             </div>
         );
@@ -60,47 +47,61 @@ export function CategoriesDropdown({ categories, locale }: Props) {
         <Dropdown
             className="border-0 w-max p-0 text-gray-600 hover:text-gray-800"
             contentProps={{
-                className: 'bg-gray-50 w-screen mt-10 p-12',
+                className: 'bg-gray-50 w-screen mt-10 px-12 py-8',
             }}
-            // TODO: Add translations
-            label="Categories"
+            label={intl['categories.title'] ?? 'Categories'}
         >
             <div>
                 <div className="grid grid-cols-4 gap-y-8 gap-x-12">
-                    {categories.map((category) => {
-                        const categoryData = getLocalizedCategoryData(category, locale);
-                        return (
-                            <div key={category.id}>
-                                <Link
-                                    className="gap-2 group"
-                                    href={getCategoryUrl(category, locale)}
-                                    locale={locale}
-                                >
-                                    <h3 className="title-xx-small group-hover:underline">
-                                        {categoryData.name}
-                                    </h3>
-                                    <p className="text-description">{categoryData.description}</p>
-                                </Link>
-                                <Link
-                                    className="w-max mt-3 label-medium flex items-center gap-2 text-accent hover:underline"
-                                    href={getCategoryUrl(category, locale)}
-                                    locale={locale}
-                                >
-                                    View all
-                                    <ArrowRightIcon className="w-4 h-4" />
-                                </Link>
-                            </div>
-                        );
-                    })}
+                    {options.map(({ id, href, name, description }) => (
+                        <div key={id}>
+                            <Link className="gap-1 w-full justify-start" href={href}>
+                                <h3 className="subtitle-small">{name}</h3>
+                                <p className="text-small">{description}</p>
+                            </Link>
+                            <Link
+                                className="w-max mt-3"
+                                contentClassName="label-medium flex items-center gap-2 text-accent"
+                                href={href}
+                            >
+                                {intl['categories.view'] ?? 'View'}
+                                <ArrowRightIcon className="w-4 h-4" />
+                            </Link>
+                        </div>
+                    ))}
                 </div>
-                <Link
-                    className="w-max ml-auto mt-8 label-large flex items-center gap-2 hover:underline"
-                    href="/categories"
-                    locale={locale}
-                >
-                    View all categories <ArrowRightIcon className="w-[20px] h-[20px]" />
-                </Link>
+                {indexHref && (
+                    <Link
+                        className="w-max ml-auto mt-8"
+                        contentClassName="flex items-center gap-2"
+                        href={indexHref}
+                        variation="secondary"
+                    >
+                        {intl['categories.viewAll'] ?? 'View all'}{' '}
+                        <ArrowRightIcon className="w-4 h-4" />
+                    </Link>
+                )}
             </div>
         </Dropdown>
     );
+}
+
+export namespace CategoriesDropdown {
+    export interface Intl {
+        ['categories.title']: string;
+        ['categories.view']: string;
+        ['categories.viewAll']: string;
+    }
+    export interface Option {
+        id: Category['id'];
+        name: Category.Translation['name'];
+        description: Category.Translation['description'];
+        href: `/${string}`;
+    }
+
+    export interface Props {
+        options: Option[];
+        intl?: Partial<Intl>;
+        indexHref?: `/${string}`;
+    }
 }

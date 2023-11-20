@@ -1,84 +1,61 @@
 'use client';
 
-import { CheckIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
-import type { Category, Culture, ExtendedStory, NewsroomLanguageSettings } from '@prezly/sdk';
-import { getLanguageDisplayName, getUsedLanguages } from '@prezly/theme-kit-core';
+import { CheckIcon } from '@heroicons/react/24/outline';
+import { GlobeEuropeAfricaIcon } from '@heroicons/react/24/solid';
+import type { Culture } from '@prezly/sdk';
 import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Dropdown } from '@/components/Dropdown';
 import { useDevice } from '@/hooks';
 
-import { getTranslationUrl } from '../util';
-
-export interface Props {
-    languages: NewsroomLanguageSettings[];
-    locale: Culture['code'];
-    currentStory: ExtendedStory | undefined;
-    currentCategory: Pick<Category, 'i18n' | 'display_name'> | undefined;
-    hasError?: boolean;
-}
-
-export function LanguagesDropdown({
-    languages,
-    locale,
-    hasError,
-    currentCategory,
-    currentStory,
-}: Props) {
+export function LanguagesDropdown({ selected, options }: LanguagesDropdown.Props) {
     const { isSm } = useDevice();
-    const currentLanguage = languages.find((language) => language.locale.code === locale);
 
-    const displayedLanguages = useMemo(() => {
-        if (!languages.length) {
-            return [];
-        }
-
-        return getUsedLanguages(languages).sort((a, b) =>
-            getLanguageDisplayName(a, languages).localeCompare(
-                getLanguageDisplayName(b, languages),
-            ),
-        );
-    }, [languages]);
+    const displayedOptions = useMemo(
+        () => [...options].sort((a, b) => a.name.localeCompare(b.name)),
+        [options],
+    );
 
     return (
         <Dropdown
             className="border-0 w-max p-0 bg-transparent text-gray-600 hover:text-gray-800"
             contentProps={{
-                className: 'border mt-2 p-0 mb-5 overflow-auto',
+                className: 'border mt-2 p-0 mb-5 overflow-auto rounded shadow-large',
                 side: isSm ? 'bottom' : 'left',
             }}
-            label={<GlobeAltIcon className="w-6 h-6" />}
+            label={<GlobeEuropeAfricaIcon className="w-6 h-6" />}
         >
             <Dropdown.Group>
-                {displayedLanguages.map((language, index) => {
-                    const translationLink = hasError
-                        ? '/'
-                        : getTranslationUrl(locale, currentCategory, currentStory);
-
-                    const link =
-                        currentStory && translationLink !== '/'
-                            ? translationLink
-                            : `/${language.code}${translationLink}`;
-
-                    return (
-                        <Dropdown.Item
-                            className={twMerge(
-                                'border-b border-gray-200',
-                                index === displayedLanguages.length - 1 && `border-b-0`,
+                {displayedOptions.map(({ code, name, href }) => (
+                    <Dropdown.Item
+                        className={twMerge('border-b border-gray-200 p-0', 'last:border-b-0')}
+                        key={code}
+                    >
+                        <a className="px-6 py-4 flex items-center justify-between" href={href}>
+                            <span className="label-medium">{name}</span>
+                            {selected && code === selected.code && (
+                                <CheckIcon className="w-4 h-4" />
                             )}
-                            key={language.code}
-                        >
-                            <a className="px-6 py-4 flex items-center justify-between" href={link}>
-                                <span>{getLanguageDisplayName(language, languages)}</span>
-                                {language.code === currentLanguage?.code && (
-                                    <CheckIcon className="w-[20px] h-[20px]" />
-                                )}
-                            </a>
-                        </Dropdown.Item>
-                    );
-                })}
+                        </a>
+                    </Dropdown.Item>
+                ))}
             </Dropdown.Group>
         </Dropdown>
     );
+}
+
+export namespace LanguagesDropdown {
+    type WithoutRegion<T> = T;
+
+    export interface Option {
+        code: Culture['code'];
+        name: Culture['native_name'] | WithoutRegion<Culture['native_name']>;
+        href: `/${string}`;
+    }
+
+    export interface Props {
+        selected?: LanguagesDropdown.Option;
+        options: LanguagesDropdown.Option[];
+    }
 }

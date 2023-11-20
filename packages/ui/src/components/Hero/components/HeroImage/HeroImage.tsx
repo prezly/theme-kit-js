@@ -1,5 +1,4 @@
 import type { UploadedImage } from '@prezly/sdk';
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import Image from '@prezly/uploadcare-image';
 import { twMerge } from 'tailwind-merge';
 
@@ -8,17 +7,6 @@ import type { StoryWithImage } from '@/types';
 
 import { getHeroImageSizes } from './lib';
 
-export type HeroImageSize = 'large' | 'default';
-
-type Props = {
-    story: StoryWithImage | AlgoliaStory;
-    size: HeroImageSize;
-    className?: string;
-    placeholderClassName?: string;
-    newsroomName: string;
-    logo?: UploadedImage | null;
-};
-
 export function HeroImage({
     story,
     size,
@@ -26,7 +14,7 @@ export function HeroImage({
     placeholderClassName,
     newsroomName,
     logo,
-}: Props) {
+}: HeroImage.Props) {
     const image = getStoryThumbnail(story);
 
     if (image) {
@@ -38,7 +26,7 @@ export function HeroImage({
                 objectFit="cover"
                 containerClassName={twMerge(`block h-full md:rounded`)}
                 className={twMerge(
-                    `block h-full w-full md:rounded transition-transform ease-out duration-[250ms] group-hover:transform group-hover:scale-[1.05]`,
+                    `block h-full w-full md:rounded transition ease-out duration-[300ms] group-hover:transform group-hover:scale-[1.02] group-hover:shadow-xLarge`,
                     className,
                 )}
                 sizes={getHeroImageSizes(size)}
@@ -50,7 +38,7 @@ export function HeroImage({
         <span
             className={twMerge(
                 `h-full flex items-center justify-center p-6 bg-placeholder text-center text-large font-bold md:rounded text-header-link`,
-                `transition-transform ease-out duration-[250ms] group-hover:transform group-hover:scale-[1.05]`,
+                `transition ease-out duration-[250ms] group-hover:transform group-hover:scale-[1.02] group-hover:shadow-xLarge`,
                 placeholderClassName,
             )}
         >
@@ -67,4 +55,22 @@ export function HeroImage({
             {!logo && newsroomName}
         </span>
     );
+}
+
+export namespace HeroImage {
+    export type Size = 'large' | 'default';
+
+    export interface DisplayedStory {
+        thumbnailImage: StoryWithImage['thumbnail_image'];
+        title: StoryWithImage['title'];
+    }
+
+    export interface Props {
+        size: Size;
+        className?: string;
+        placeholderClassName?: string;
+        newsroomName: string;
+        logo?: UploadedImage | null;
+        story: DisplayedStory;
+    }
 }

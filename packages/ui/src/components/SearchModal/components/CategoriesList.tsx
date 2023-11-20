@@ -1,35 +1,41 @@
-import type { Category, Culture } from '@prezly/sdk';
-import { getCategoryUrl, getLocalizedCategoryData } from '@prezly/theme-kit-core';
+import type { Category } from '@prezly/sdk';
 
 import { ButtonLink } from '@/components/Button';
+import type { CategoryLink } from '@/components/CategoryLink';
 
-export interface Props {
-    categories: Category[];
-    locale: Culture['code'];
-}
-
-export function CategoriesList({ categories, locale }: Props) {
+export function CategoriesList({ categories, intl = {} }: CategoriesList.Props) {
     return (
         <>
-            {/* TODO: Add translations */}
-            <p className="subtitle-small text-gray-600">Categories</p>
+            <p className="subtitle-small text-gray-600">
+                {intl['categories.title'] ?? 'Categories'}
+            </p>
             <div className="mt-6 flex items-center gap-3 flex-wrap">
-                {categories.map((category) => {
-                    const { name } = getLocalizedCategoryData(category, locale);
-
-                    return (
-                        <ButtonLink
-                            key={category.id}
-                            href={getCategoryUrl(category, locale)}
-                            localeCode={locale}
-                            variation="secondary"
-                            rounded
-                        >
-                            {name}
-                        </ButtonLink>
-                    );
-                })}
+                {categories.map((category) => (
+                    <ButtonLink
+                        key={category.id}
+                        href={category.href}
+                        variation="secondary"
+                        rounded
+                    >
+                        {category.name}
+                    </ButtonLink>
+                ))}
             </div>
         </>
     );
+}
+
+export namespace CategoriesList {
+    export interface Intl {
+        ['categories.title']: string;
+    }
+
+    export interface DisplayedCategory extends CategoryLink.DisplayedCategory {
+        id: Category['id'];
+    }
+
+    export interface Props {
+        categories: DisplayedCategory[];
+        intl?: Partial<Intl>;
+    }
 }

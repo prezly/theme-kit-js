@@ -18,17 +18,17 @@ const ContactCardTemplate: StoryFn<typeof ContactCard> = (args) => <ContactCard 
 
 export const Default = ContactCardTemplate.bind({});
 Default.args = {
-    contactInfo: CONTACT_INFO,
+    contact: CONTACT_INFO,
 };
 
 export const WithoutAvatar = ContactCardTemplate.bind({});
 WithoutAvatar.args = {
-    contactInfo: { ...CONTACT_INFO, avatar_image: null },
+    contact: { ...CONTACT_INFO, avatar_image: null },
 };
 
 export const WithoutSocials = ContactCardTemplate.bind({});
 WithoutSocials.args = {
-    contactInfo: {
+    contact: {
         ...CONTACT_INFO,
         email: null,
         phone: null,
@@ -40,7 +40,7 @@ WithoutSocials.args = {
 
 export const WithoutRole = ContactCardTemplate.bind({});
 WithoutRole.args = {
-    contactInfo: {
+    contact: {
         ...CONTACT_INFO,
         description: null,
     },

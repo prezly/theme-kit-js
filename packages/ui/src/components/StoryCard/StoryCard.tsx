@@ -1,5 +1,4 @@
 import type { Culture, UploadedImage } from '@prezly/sdk';
-import type { AlgoliaStory } from '@prezly/theme-kit-core';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
@@ -8,30 +7,21 @@ import type { StoryWithImage } from '@/types';
 import { CategoriesList } from '../CategoriesList';
 import { StoryPublicationDate } from '../StoryPublicationDate';
 
-import { StoryImage, type StoryImageSize } from './components';
-
-export interface Props {
-    story: StoryWithImage | AlgoliaStory;
-    locale: Culture['code'];
-    size?: StoryImageSize;
-    newsroomName: string;
-    logo?: UploadedImage | null;
-    showDate?: boolean;
-    hideSubtitle?: boolean;
-    className?: string;
-}
+import { StoryImage } from './components';
 
 export function StoryCard({
     story,
+    categories = [],
+    dateFormat,
     showDate,
     locale,
     newsroomName,
     logo,
     size = 'large',
-    hideSubtitle,
+    showSubtitle = true,
     className,
-}: Props) {
-    const { slug, categories, title, subtitle } = story;
+}: StoryCard.Props) {
+    const { href, title, subtitle } = story;
 
     return (
         <div
@@ -48,8 +38,7 @@ export function StoryCard({
                         ? 'w-full md:aspect-[27/17]'
                         : 'w-1/3 hidden md:block md:max-w-[200px]',
                 )}
-                href={`/${slug}`}
-                locale={false}
+                href={href}
             >
                 <StoryImage
                     className="cursor-pointer"
@@ -70,34 +59,36 @@ export function StoryCard({
                 <div className="flex flex-wrap items-center gap-1">
                     {showDate && (
                         <span className="label-large text-gray-500 shrink-0">
-                            <StoryPublicationDate locale={locale} story={story} />
+                            <StoryPublicationDate locale={locale} dateFormat={dateFormat} />
                         </span>
                     )}
-                    {Boolean(categories.length) && (
+                    {categories.length > 0 && (
                         <>
                             <span className="label-large text-gray-500">·</span>
-                            <CategoriesList categories={categories} locale={locale} />
+                            <CategoriesList categories={categories} />
                         </>
                     )}
                 </div>
                 <div className="mt-4">
-                    <Link href={`/${slug}`} locale={false}>
+                    <Link href={href}>
                         <h2
                             className={twMerge(
                                 'cursor-pointer',
                                 size === 'large' ? 'title-small ' : 'title-xx-small',
+                                'group-hover:text-gray-950',
                             )}
                         >
                             {title}
                         </h2>
                     </Link>
-                    {Boolean(!hideSubtitle && subtitle) && (
+                    {Boolean(showSubtitle && subtitle) && (
                         <p
                             className={twMerge(
                                 'mt-3 text-ellipsis',
                                 size === 'large'
                                     ? 'subtitle-small line-clamp-3'
                                     : 'label-large font-medium text-gray-800 line-clamp-2',
+                                'group-hover:text-gray-950',
                             )}
                         >
                             {subtitle}
@@ -107,4 +98,28 @@ export function StoryCard({
             </div>
         </div>
     );
+}
+
+export namespace StoryCard {
+    export type DisplayedCategory = CategoriesList.DisplayedCategory;
+
+    export interface DisplayedStory {
+        title: StoryWithImage['title'];
+        subtitle: StoryWithImage['subtitle'];
+        href: `/${string}`;
+        thumbnailImage: StoryWithImage['thumbnail_image'];
+    }
+
+    export interface Props {
+        story: DisplayedStory;
+        categories?: StoryCard.DisplayedCategory[];
+        locale: Culture['code'];
+        size?: StoryImage.Size;
+        newsroomName: string;
+        logo?: UploadedImage | null;
+        showDate?: boolean;
+        showSubtitle?: boolean;
+        className?: string;
+        dateFormat?: string;
+    }
 }

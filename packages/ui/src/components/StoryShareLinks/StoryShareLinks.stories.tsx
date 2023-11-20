@@ -20,5 +20,5 @@ const StoryShareLinksTemplate: StoryFn<typeof StoryShareLinks> = (args) => (
 export const Default = StoryShareLinksTemplate.bind({});
 Default.args = {
     shareUrl: 'https://story.test',
-    showScrollToTopButton: true,
+    withScrollToTopButton: true,
 };
