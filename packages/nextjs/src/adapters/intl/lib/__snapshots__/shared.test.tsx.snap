@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`formatMessageFragment should fallback to the default message if the dictionary does not have it 1`] = `
+[
+  "Hello, ",
+  <strong>
+    Julio
+  </strong>,
+  "!",
+]
+`;
+
+exports[`formatMessageFragment should format intl-generated message intl object using the given values 1`] = `
+[
+  "¡Hola, ",
+  <strong>
+    Julio
+  </strong>,
+  "!",
+]
+`;
+
+exports[`formatMessageFragment should leave placeholders if the given values object does not have enough data 1`] = `
+[
+  "¡Hola, ",
+  "{name}",
+  "!",
+]
+`;
