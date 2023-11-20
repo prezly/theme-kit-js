@@ -48,7 +48,7 @@ export function withCache(fetch: Fetch, { ttl, debug = false, methods }: Options
     );
 
     if (debug) {
-        return ((...args: Parameters<Fetch>) => {
+        return ((...args: Parameters<typeof cachedFetch>) => {
             const key = getCacheKey(...args);
             if (key && dedupeStore.has(key)) {
                 // eslint-disable-next-line no-console
@@ -66,5 +66,5 @@ export function withCache(fetch: Fetch, { ttl, debug = false, methods }: Options
         }) as Fetch;
     }
 
-    return cachedFetch;
+    return cachedFetch as Fetch;
 }
