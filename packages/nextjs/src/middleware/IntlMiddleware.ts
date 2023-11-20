@@ -71,9 +71,9 @@ export namespace IntlMiddleware {
                 return NextResponse.rewrite(
                     new URL(matched.route.rewrite(matched.params as any), request.nextUrl),
                     {
-                        headers: withAddedHeaders(request.headers, {
+                        headers: {
                             [localeHeader]: matched.params.localeCode,
-                        }),
+                        },
                     },
                 );
             }
@@ -85,17 +85,17 @@ export namespace IntlMiddleware {
                 return NextResponse.rewrite(
                     new URL(`/${localized.params.localeCode}/404`, request.nextUrl),
                     {
-                        headers: withAddedHeaders(request.headers, {
+                        headers: {
                             [localeHeader]: localized.params.localeCode,
-                        }),
+                        },
                     },
                 );
             }
 
             return NextResponse.rewrite(new URL(`/${defaultLocale}/404`, request.nextUrl), {
-                headers: withAddedHeaders(request.headers, {
+                headers: {
                     [localeHeader]: defaultLocale,
-                }),
+                },
             });
         };
     }
@@ -112,12 +112,4 @@ export namespace IntlMiddleware {
         // Validate and return
         return Locale.from(code || 'en').code;
     }
-}
-
-function withAddedHeaders(current: Headers, extra: Record<string, string>) {
-    const extended = new Headers(current);
-    Object.entries(extra).forEach(([name, value]) => {
-        extended.set(name, value);
-    });
-    return extended;
 }
