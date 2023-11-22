@@ -1,4 +1,4 @@
-import { Locale } from '../Locale';
+import { Locale } from '../../Locale';
 
 import { toDate } from './shared';
 import type { Iso8601Date, Timezone, UnixTimestampInSeconds } from './types';
