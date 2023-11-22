@@ -58,7 +58,7 @@ function prepareMessage(message?: string): IntlMessageFormat | undefined {
 }
 
 function parseMessage(message: string): IntlMessageFormat {
-    if (message.length === 0 || message.indexOf('{') === -1) {
+    if (message.length === 0) {
         return [{ type: 0, value: message }];
     }
 
@@ -74,10 +74,12 @@ function parseMessage(message: string): IntlMessageFormat {
             break;
         }
 
-        const prefix = remaining.substring(start);
+        const prefix = remaining.substring(0, start);
         const placeholder = remaining.substring(start + 1, end);
 
-        if (prefix) format.push({ type: 0, value: prefix });
+        if (prefix) {
+            format.push({ type: 0, value: prefix });
+        }
         if (placeholder) {
             format.push({ type: 1, value: placeholder });
         } else {
