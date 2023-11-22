@@ -4,6 +4,7 @@ import type {
     IntlMessageDescriptor,
     IntlMessageValues,
     Locale,
+    Timezone,
 } from '@prezly/theme-kit-intl';
 import {
     formatMessageFragment,
@@ -18,7 +19,6 @@ import {
     FormattedDate as BaseFormattedDate,
     FormattedTime as BaseFormattedTime,
 } from './lib/shared';
-import type { DateFormat, TimeFormat, Timezone } from './lib/types';
 
 type Awaitable<T> = T | Promise<T>;
 
@@ -26,8 +26,6 @@ export namespace IntlAdapter {
     export interface Configuration {
         resolveDictionary?: (localeCode: Locale.Code) => Awaitable<IntlDictionary>;
         locale: Resolvable<Locale.Code>;
-        dateFormat: AsyncResolvable<DateFormat>;
-        timeFormat: AsyncResolvable<TimeFormat>;
         timezone: AsyncResolvable<Timezone>;
     }
 
@@ -37,12 +35,7 @@ export namespace IntlAdapter {
     }: Configuration) {
         async function useIntl() {
             const localeCode = resolve(config.locale);
-
-            const [timezone, dateFormat, timeFormat] = await resolveAsync(
-                config.timezone,
-                config.dateFormat,
-                config.timeFormat,
-            );
+            const timezone = await resolveAsync(config.timezone);
 
             const messages = await resolveDictionary(localeCode);
 
@@ -56,8 +49,6 @@ export namespace IntlAdapter {
                     return formatMessageString(descriptor, messages, values);
                 },
                 timezone,
-                dateFormat,
-                timeFormat,
             };
         }
 
@@ -71,16 +62,18 @@ export namespace IntlAdapter {
             return <>{formatMessageFragment(props.for, messages, props.values)}</>;
         }
 
-        async function FormattedDate(props: BaseFormattedDate.Props) {
-            const dateFormat = await resolveAsync(config.dateFormat);
+        async function FormattedDate(props: Omit<BaseFormattedDate.Props, 'locale' | 'timezone'>) {
+            const localeCode = resolve(config.locale);
+            const timezone = await resolveAsync(config.timezone);
 
-            return <BaseFormattedDate format={dateFormat} {...props} />;
+            return <BaseFormattedDate locale={localeCode} timezone={timezone} {...props} />;
         }
 
-        async function FormattedTime(props: BaseFormattedTime.Props) {
-            const timeFormat = await resolveAsync(config.timeFormat);
+        async function FormattedTime(props: Omit<BaseFormattedTime.Props, 'locale' | 'timezone'>) {
+            const localeCode = resolve(config.locale);
+            const timezone = await resolveAsync(config.timezone);
 
-            return <BaseFormattedTime format={timeFormat} {...props} />;
+            return <BaseFormattedTime locale={localeCode} timezone={timezone} {...props} />;
         }
 
         return { useIntl, FormattedMessage, FormattedDate, FormattedTime };

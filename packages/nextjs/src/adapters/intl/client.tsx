@@ -7,17 +7,17 @@ import type {
     IntlMessageDescriptor,
     IntlMessageValues,
     Locale,
+    Timezone,
 } from '@prezly/theme-kit-intl';
 import { formatMessageFragment, formatMessageString } from '@prezly/theme-kit-intl';
 import type { ReactElement, ReactNode } from 'react';
 import { createContext, useCallback, useContext } from 'react';
 
-import { DEFAULT_DATE_FORMAT, DEFAULT_TIME_FORMAT, DEFAULT_TIMEZONE } from './lib/constants';
+import { DEFAULT_TIMEZONE } from './lib/constants';
 import {
     FormattedDate as BaseFormattedDate,
     FormattedTime as BaseFormattedTime,
 } from './lib/shared';
-import type { DateFormat, TimeFormat, Timezone } from './lib/types';
 
 interface IntlContext {
     locale: Locale.Code;
@@ -25,13 +25,11 @@ interface IntlContext {
     locales: Locale.Code[];
     messages: IntlDictionary;
     timezone: Timezone;
-    dateFormat: DateFormat;
-    timeFormat: TimeFormat;
 }
 
 export namespace IntlAdapter {
     export interface Options {
-        defaults?: Partial<Pick<IntlContext, 'locale' | 'timezone' | 'dateFormat' | 'timeFormat'>>;
+        defaults?: Partial<Pick<IntlContext, 'locale' | 'timezone'>>;
     }
 
     export function connect({ defaults = {} }: Options = {}) {
@@ -41,8 +39,6 @@ export namespace IntlAdapter {
             defaultLocale: defaults.locale ?? 'en',
             messages: {},
             timezone: defaults.timezone ?? DEFAULT_TIMEZONE,
-            dateFormat: defaults.dateFormat ?? DEFAULT_DATE_FORMAT,
-            timeFormat: defaults.timeFormat ?? DEFAULT_TIME_FORMAT,
         });
 
         function IntlContextProvider({
@@ -74,16 +70,16 @@ export namespace IntlAdapter {
             return <>{formatMessageFragment(props.for, messages, props.values)}</>;
         }
 
-        function FormattedDate(props: BaseFormattedDate.Props) {
-            const { dateFormat } = useIntl();
+        function FormattedDate(props: Omit<BaseFormattedDate.Props, 'locale' | 'timezone'>) {
+            const { locale, timezone } = useIntl();
 
-            return <BaseFormattedDate format={dateFormat} {...props} />;
+            return <BaseFormattedDate locale={locale} timezone={timezone} {...props} />;
         }
 
-        function FormattedTime(props: BaseFormattedTime.Props) {
-            const { timeFormat } = useIntl();
+        function FormattedTime(props: Omit<BaseFormattedTime.Props, 'locale' | 'timezone'>) {
+            const { locale, timezone } = useIntl();
 
-            return <BaseFormattedTime format={timeFormat} {...props} />;
+            return <BaseFormattedTime locale={locale} timezone={timezone} {...props} />;
         }
 
         return {
