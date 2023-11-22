@@ -1,5 +1,7 @@
 import * as translations from './messages';
 
+export * from './formatting';
+
 // eslint-disable-next-line import/no-default-export
 export { translations };
 
