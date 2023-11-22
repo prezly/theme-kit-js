@@ -1,5 +1,5 @@
 import { Locale } from './Locale';
-import { locales } from './locales';
+import { supportedLocales } from './supportedLocales';
 
 describe('Locale', () => {
     it('should throw when created from invalid code', () => {
@@ -138,7 +138,7 @@ describe('Locale', () => {
     });
 
     it('should work for all supported locales', () => {
-        locales.forEach((code) => {
+        supportedLocales.forEach((code) => {
             expect(() => Locale.from(code)).not.toThrow();
         });
     });
