@@ -1,9 +1,10 @@
-import renderer from 'react-test-renderer';
+/* eslint-disable @typescript-eslint/no-use-before-define */
+import { expect } from '@playwright/test';
 
-import { formatMessageFragment, formatMessageString } from './shared';
+import { formatMessageFragment, formatMessageString } from './lib';
 import type { IntlDictionary } from './types';
 
-const INTL: IntlDictionary = {
+const I18N: IntlDictionary = {
     [`hello.world`]: [
         {
             type: 0,
@@ -23,8 +24,8 @@ const INTL: IntlDictionary = {
 describe('formatMessageString', () => {
     it('should format intl-generated message intl object using the given values', () => {
         const formatted = formatMessageString(
-            INTL,
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
+            I18N,
             { name: 'Julio' },
         );
 
@@ -33,9 +34,8 @@ describe('formatMessageString', () => {
 
     it('should leave placeholders if the given values object does not have enough data', () => {
         const formatted = formatMessageString(
-            INTL,
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
-
+            I18N,
             {},
         );
 
@@ -44,8 +44,8 @@ describe('formatMessageString', () => {
 
     it('should fallback to the default message if the dictionary does not have it', () => {
         const formatted = formatMessageString(
-            {},
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
+            {},
             { name: 'Julio' },
         );
 
@@ -56,31 +56,38 @@ describe('formatMessageString', () => {
 describe('formatMessageFragment', () => {
     it('should format intl-generated message intl object using the given values', () => {
         const formatted = formatMessageFragment(
-            INTL,
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
-            { name: <strong>Julio</strong> },
+            I18N,
+            { name: createElement('strong', ['Julio']) },
         );
 
-        expect(renderer.create(formatted).toJSON()).toMatchSnapshot();
+        expect(formatted).toEqual(['¡Hola, ', { type: 'strong', children: ['Julio'] }, '!']);
     });
 
     it('should leave placeholders if the given values object does not have enough data', () => {
         const formatted = formatMessageFragment(
-            INTL,
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
+            I18N,
             {},
         );
 
-        expect(renderer.create(formatted).toJSON()).toMatchSnapshot();
+        expect(formatted).toEqual(['¡Hola, ', '{name}', '!']);
     });
 
     it('should fallback to the default message if the dictionary does not have it', () => {
         const formatted = formatMessageFragment(
-            {},
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
-            { name: <strong>Julio</strong> },
+            {},
+            { name: createElement('strong', ['Julio']) },
         );
 
-        expect(renderer.create(formatted).toJSON()).toMatchSnapshot();
+        expect(formatted).toEqual(['Hello, ', { type: 'strong', children: ['Julio'] }, '!']);
     });
 });
+
+/**
+ * Emulating React.createElement for test purposes.
+ */
+function createElement(type: string, children: string[]) {
+    return { type, children };
+}

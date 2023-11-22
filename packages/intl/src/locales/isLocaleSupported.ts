@@ -1,5 +1,5 @@
 import { Locale } from './Locale';
-import { locales as supportedLocales } from './locales';
+import { supportedLocales } from './supportedLocales';
 
 export function isLocaleSupported(code: Locale | Locale.AnyCode) {
     try {

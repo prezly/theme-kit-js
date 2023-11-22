@@ -1,5 +1,16 @@
 /* eslint-disable @typescript-eslint/no-use-before-define,react/jsx-props-no-spreading */
-import { type Locale, pickSupportedLocale } from '@prezly/theme-kit-intl';
+import type {
+    IntlDictionary,
+    IntlMessageDescriptor,
+    IntlMessageValues,
+    Locale,
+    Timezone,
+} from '@prezly/theme-kit-intl';
+import {
+    formatMessageFragment,
+    formatMessageString,
+    pickSupportedLocale,
+} from '@prezly/theme-kit-intl';
 import type { ReactElement } from 'react';
 
 import { type AsyncResolvable, type Resolvable, resolve, resolveAsync } from '../../utils';
@@ -7,17 +18,7 @@ import { type AsyncResolvable, type Resolvable, resolve, resolveAsync } from '..
 import {
     FormattedDate as BaseFormattedDate,
     FormattedTime as BaseFormattedTime,
-    formatMessageFragment,
-    formatMessageString,
 } from './lib/shared';
-import type {
-    DateFormat,
-    IntlDictionary,
-    IntlMessageDescriptor,
-    IntlMessageValues,
-    TimeFormat,
-    Timezone,
-} from './lib/types';
 
 type Awaitable<T> = T | Promise<T>;
 
@@ -25,8 +26,6 @@ export namespace IntlAdapter {
     export interface Configuration {
         resolveDictionary?: (localeCode: Locale.Code) => Awaitable<IntlDictionary>;
         locale: Resolvable<Locale.Code>;
-        dateFormat: AsyncResolvable<DateFormat>;
-        timeFormat: AsyncResolvable<TimeFormat>;
         timezone: AsyncResolvable<Timezone>;
     }
 
@@ -36,12 +35,7 @@ export namespace IntlAdapter {
     }: Configuration) {
         async function useIntl() {
             const localeCode = resolve(config.locale);
-
-            const [timezone, dateFormat, timeFormat] = await resolveAsync(
-                config.timezone,
-                config.dateFormat,
-                config.timeFormat,
-            );
+            const timezone = await resolveAsync(config.timezone);
 
             const messages = await resolveDictionary(localeCode);
 
@@ -52,11 +46,9 @@ export namespace IntlAdapter {
                     descriptor: IntlMessageDescriptor,
                     values?: IntlMessageValues<string>,
                 ) {
-                    return formatMessageString(messages, descriptor, values);
+                    return formatMessageString(descriptor, messages, values);
                 },
                 timezone,
-                dateFormat,
-                timeFormat,
             };
         }
 
@@ -65,21 +57,23 @@ export namespace IntlAdapter {
             values?: IntlMessageValues<string | ReactElement>;
             locale?: Locale.Code;
         }) {
-            const dictionary = await resolveDictionary(props.locale ?? resolve(config.locale));
+            const messages = await resolveDictionary(props.locale ?? resolve(config.locale));
 
-            return formatMessageFragment(dictionary, props.for, props.values);
+            return <>{formatMessageFragment(props.for, messages, props.values)}</>;
         }
 
-        async function FormattedDate(props: BaseFormattedDate.Props) {
-            const dateFormat = await resolveAsync(config.dateFormat);
+        async function FormattedDate(props: Omit<BaseFormattedDate.Props, 'locale' | 'timezone'>) {
+            const localeCode = resolve(config.locale);
+            const timezone = await resolveAsync(config.timezone);
 
-            return <BaseFormattedDate format={dateFormat} {...props} />;
+            return <BaseFormattedDate locale={localeCode} timezone={timezone} {...props} />;
         }
 
-        async function FormattedTime(props: BaseFormattedTime.Props) {
-            const timeFormat = await resolveAsync(config.timeFormat);
+        async function FormattedTime(props: Omit<BaseFormattedTime.Props, 'locale' | 'timezone'>) {
+            const localeCode = resolve(config.locale);
+            const timezone = await resolveAsync(config.timezone);
 
-            return <BaseFormattedTime format={timeFormat} {...props} />;
+            return <BaseFormattedTime locale={localeCode} timezone={timezone} {...props} />;
         }
 
         return { useIntl, FormattedMessage, FormattedDate, FormattedTime };
