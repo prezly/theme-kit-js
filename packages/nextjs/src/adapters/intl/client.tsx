@@ -1,8 +1,14 @@
-'use client';
-
 /* eslint-disable react/jsx-props-no-spreading */
 
-import type { Locale } from '@prezly/theme-kit-intl';
+'use client';
+
+import type {
+    IntlDictionary,
+    IntlMessageDescriptor,
+    IntlMessageValues,
+    Locale,
+} from '@prezly/theme-kit-intl';
+import { formatMessageFragment, formatMessageString } from '@prezly/theme-kit-intl';
 import type { ReactElement, ReactNode } from 'react';
 import { createContext, useCallback, useContext } from 'react';
 
@@ -10,17 +16,8 @@ import { DEFAULT_DATE_FORMAT, DEFAULT_TIME_FORMAT, DEFAULT_TIMEZONE } from './li
 import {
     FormattedDate as BaseFormattedDate,
     FormattedTime as BaseFormattedTime,
-    formatMessageFragment,
-    formatMessageString,
 } from './lib/shared';
-import type {
-    DateFormat,
-    IntlDictionary,
-    IntlMessageDescriptor,
-    IntlMessageValues,
-    TimeFormat,
-    Timezone,
-} from './lib/types';
+import type { DateFormat, TimeFormat, Timezone } from './lib/types';
 
 interface IntlContext {
     locale: Locale.Code;
@@ -60,7 +57,7 @@ export namespace IntlAdapter {
 
             const formatMessage = useCallback(
                 (descriptor: IntlMessageDescriptor, values?: IntlMessageValues<string>) =>
-                    formatMessageString(messages, descriptor, values),
+                    formatMessageString(descriptor, messages, values),
                 [messages],
             );
 
@@ -74,7 +71,7 @@ export namespace IntlAdapter {
         }) {
             const { messages } = useIntl();
 
-            return formatMessageFragment(messages, props.for, props.values);
+            return <>{formatMessageFragment(props.for, messages, props.values)}</>;
         }
 
         function FormattedDate(props: BaseFormattedDate.Props) {

@@ -1,5 +1,15 @@
 /* eslint-disable @typescript-eslint/no-use-before-define,react/jsx-props-no-spreading */
-import { type Locale, pickSupportedLocale } from '@prezly/theme-kit-intl';
+import type {
+    IntlDictionary,
+    IntlMessageDescriptor,
+    IntlMessageValues,
+    Locale,
+} from '@prezly/theme-kit-intl';
+import {
+    formatMessageFragment,
+    formatMessageString,
+    pickSupportedLocale,
+} from '@prezly/theme-kit-intl';
 import type { ReactElement } from 'react';
 
 import { type AsyncResolvable, type Resolvable, resolve, resolveAsync } from '../../utils';
@@ -7,17 +17,8 @@ import { type AsyncResolvable, type Resolvable, resolve, resolveAsync } from '..
 import {
     FormattedDate as BaseFormattedDate,
     FormattedTime as BaseFormattedTime,
-    formatMessageFragment,
-    formatMessageString,
 } from './lib/shared';
-import type {
-    DateFormat,
-    IntlDictionary,
-    IntlMessageDescriptor,
-    IntlMessageValues,
-    TimeFormat,
-    Timezone,
-} from './lib/types';
+import type { DateFormat, TimeFormat, Timezone } from './lib/types';
 
 type Awaitable<T> = T | Promise<T>;
 
@@ -52,7 +53,7 @@ export namespace IntlAdapter {
                     descriptor: IntlMessageDescriptor,
                     values?: IntlMessageValues<string>,
                 ) {
-                    return formatMessageString(messages, descriptor, values);
+                    return formatMessageString(descriptor, messages, values);
                 },
                 timezone,
                 dateFormat,
@@ -65,9 +66,9 @@ export namespace IntlAdapter {
             values?: IntlMessageValues<string | ReactElement>;
             locale?: Locale.Code;
         }) {
-            const dictionary = await resolveDictionary(props.locale ?? resolve(config.locale));
+            const messages = await resolveDictionary(props.locale ?? resolve(config.locale));
 
-            return formatMessageFragment(dictionary, props.for, props.values);
+            return <>{formatMessageFragment(props.for, messages, props.values)}</>;
         }
 
         async function FormattedDate(props: BaseFormattedDate.Props) {
