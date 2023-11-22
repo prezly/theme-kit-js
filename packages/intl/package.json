@@ -65,7 +65,6 @@
     },
     "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/intl#readme",
     "dependencies": {
-        "@formatjs/intl": "^1.16.0",
         "@technically/is-not-undefined": "^1.0.0"
     },
     "devDependencies": {

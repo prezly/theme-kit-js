@@ -1,4 +1,4 @@
-import { defineMessages } from '@formatjs/intl';
+import { defineMessages } from '../dsl';
 
 export const subscription = defineMessages({
     formTitle: {
