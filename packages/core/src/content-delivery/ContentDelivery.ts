@@ -50,6 +50,14 @@ export namespace story {
     }
 }
 
+export namespace galleries {
+    export interface SearchParams {
+        offset?: number;
+        limit?: number;
+        type?: `${NewsroomGallery.Type}`;
+    }
+}
+
 export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
@@ -158,9 +166,7 @@ export function createClient(
             });
         },
 
-        galleries(
-            params: { offset?: number; limit?: number; type?: `${NewsroomGallery.Type}` } = {},
-        ) {
+        galleries(params: galleries.SearchParams = {}) {
             const { offset, limit, type } = params;
             return prezly.newsroomGalleries.search(newsroomUuid, {
                 limit,
