@@ -1,6 +1,6 @@
 {
     "name": "@prezly/theme-kit-intl",
-    "version": "0.0.0-next-9a4b4ee9b502f0ac404e40e32e885752d86dc2ee",
+    "version": "0.0.0-next-c69b02095490ce161288489a23741152a347ed7c",
     "description": "Translations for Prezly themes",
     "type": "module",
     "main": "build/index.mjs",
