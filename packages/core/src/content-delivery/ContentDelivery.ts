@@ -147,15 +147,20 @@ export function createClient(
             }
         },
 
-        stories<Include extends (keyof Story.ExtraFields)[] = never[]>(params: {
-            search?: string;
-            category?: Pick<Category, 'id'>;
-            locale?: Pick<Culture, 'code'>;
-            limit?: number;
-            offset?: number;
-            include?: Include;
-        }) {
-            const { search, offset, limit, category, locale, include } = params;
+        stories<Include extends (keyof Story.ExtraFields)[]>(
+            params: {
+                search?: string;
+                category?: Pick<Category, 'id'>;
+                locale?: Pick<Culture, 'code'>;
+                limit?: number;
+                offset?: number;
+            },
+            options: {
+                include?: Include;
+            } = {},
+        ) {
+            const { search, offset, limit, category, locale } = params;
+            const { include } = options;
             return prezly.stories.search({
                 sortOrder: chronologically(SortOrder.Direction.DESC, pinning),
                 formats,
@@ -173,13 +178,16 @@ export function createClient(
             });
         },
 
-        async allStories(
+        async allStories<Include extends (keyof Story.ExtraFields)[]>(
             params: {
                 search?: string;
                 category?: Pick<Category, 'id'>;
                 locale?: Pick<Culture, 'code'>;
             } = {},
-        ): Promise<Story[]> {
+            options: {
+                include?: Include;
+            } = {},
+        ) {
             const newsroom = await client.newsroom();
 
             const chunkSize = 200;
@@ -191,17 +199,20 @@ export function createClient(
             const pages = Math.ceil(maxStories / chunkSize);
 
             const promises = Array.from({ length: pages }, (_, chunkIndex) =>
-                client.stories({
-                    ...params,
-                    limit: chunkSize,
-                    offset: chunkIndex * chunkSize,
-                }),
+                client.stories<Include>(
+                    {
+                        ...params,
+                        limit: chunkSize,
+                        offset: chunkIndex * chunkSize,
+                    },
+                    options,
+                ),
             );
 
             return (await Promise.all(promises)).flatMap((response) => response.stories);
         },
 
-        async story<Include extends (keyof Story.ExtraFields)[] = never[]>(
+        async story<Include extends (keyof Story.ExtraFields)[]>(
             params: { uuid: Story['uuid']; slug?: never } | { uuid?: never; slug: Story['slug'] },
             options: { include?: Include } = {},
         ) {
