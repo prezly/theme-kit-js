@@ -13,6 +13,51 @@ export interface Options {
     pinning?: boolean;
 }
 
+export namespace stories {
+    export interface SearchParams {
+        search?: string;
+        category?: Pick<Category, 'id'>;
+        locale?: Pick<Culture, 'code'>;
+        limit?: number;
+        offset?: number;
+    }
+
+    export interface IncludeOptions<Include extends (keyof Story.ExtraFields)[]> {
+        include?: Include;
+    }
+}
+
+export namespace allStories {
+    export interface SearchParams {
+        search?: string;
+        category?: Pick<Category, 'id'>;
+        locale?: Pick<Culture, 'code'>;
+    }
+
+    export interface IncludeOptions<Include extends (keyof Story.ExtraFields)[]> {
+        include?: Include;
+    }
+}
+
+export namespace story {
+    export type SearchParams =
+        | { uuid: Story['uuid']; slug?: never }
+        | { uuid?: never; slug: Story['slug'] };
+
+    // eslint-disable-next-line @typescript-eslint/no-shadow
+    export interface IncludeOptions<Include extends (keyof Story.ExtraFields)[]> {
+        include?: Include;
+    }
+}
+
+export namespace galleries {
+    export interface SearchParams {
+        offset?: number;
+        limit?: number;
+        type?: `${NewsroomGallery.Type}`;
+    }
+}
+
 export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
@@ -121,9 +166,7 @@ export function createClient(
             });
         },
 
-        galleries(
-            params: { offset?: number; limit?: number; type?: `${NewsroomGallery.Type}` } = {},
-        ) {
+        galleries(params: galleries.SearchParams = {}) {
             const { offset, limit, type } = params;
             return prezly.newsroomGalleries.search(newsroomUuid, {
                 limit,
@@ -147,15 +190,12 @@ export function createClient(
             }
         },
 
-        stories<Include extends (keyof Story.ExtraFields)[] = never[]>(params: {
-            search?: string;
-            category?: Pick<Category, 'id'>;
-            locale?: Pick<Culture, 'code'>;
-            limit?: number;
-            offset?: number;
-            include?: Include;
-        }) {
-            const { search, offset, limit, category, locale, include } = params;
+        stories<Include extends (keyof Story.ExtraFields)[]>(
+            params: stories.SearchParams,
+            options: stories.IncludeOptions<Include> = {},
+        ) {
+            const { search, offset, limit, category, locale } = params;
+            const { include } = options;
             return prezly.stories.search({
                 sortOrder: chronologically(SortOrder.Direction.DESC, pinning),
                 formats,
@@ -173,13 +213,10 @@ export function createClient(
             });
         },
 
-        async allStories(
-            params: {
-                search?: string;
-                category?: Pick<Category, 'id'>;
-                locale?: Pick<Culture, 'code'>;
-            } = {},
-        ): Promise<Story[]> {
+        async allStories<Include extends (keyof Story.ExtraFields)[]>(
+            params: allStories.SearchParams = {},
+            options: allStories.IncludeOptions<Include> = {},
+        ) {
             const newsroom = await client.newsroom();
 
             const chunkSize = 200;
@@ -191,19 +228,22 @@ export function createClient(
             const pages = Math.ceil(maxStories / chunkSize);
 
             const promises = Array.from({ length: pages }, (_, chunkIndex) =>
-                client.stories({
-                    ...params,
-                    limit: chunkSize,
-                    offset: chunkIndex * chunkSize,
-                }),
+                client.stories<Include>(
+                    {
+                        ...params,
+                        limit: chunkSize,
+                        offset: chunkIndex * chunkSize,
+                    },
+                    options,
+                ),
             );
 
             return (await Promise.all(promises)).flatMap((response) => response.stories);
         },
 
-        async story<Include extends (keyof Story.ExtraFields)[] = never[]>(
-            params: { uuid: Story['uuid']; slug?: never } | { uuid?: never; slug: Story['slug'] },
-            options: { include?: Include } = {},
+        async story<Include extends (keyof Story.ExtraFields)[]>(
+            params: story.SearchParams,
+            options: story.IncludeOptions<Include> = {},
         ) {
             const { include = [] } = options;
 
@@ -222,7 +262,7 @@ export function createClient(
                 }
             }
 
-            const { stories } = await prezly.stories.search({
+            const { stories: data } = await prezly.stories.search({
                 formats,
                 limit: 1,
                 query: {
@@ -242,7 +282,7 @@ export function createClient(
                 include: [...Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS, ...include],
             });
 
-            return stories[0] ?? null;
+            return data[0] ?? null;
         },
     };
 

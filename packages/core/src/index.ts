@@ -1,6 +1,6 @@
 export * as Boilerplate from './boilerplate';
 export * from './constants';
-export * as ContentDelivery from './content-delivery';
+export { ContentDelivery } from './content-delivery';
 export * as Environment from './environment';
 export { HttpClient } from './http';
 export { CachedFetch } from './fetch';

@@ -1,1 +1,1 @@
-export * from './ContentDelivery';
+export * as ContentDelivery from './ContentDelivery';
