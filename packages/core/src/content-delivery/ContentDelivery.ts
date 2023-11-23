@@ -13,6 +13,43 @@ export interface Options {
     pinning?: boolean;
 }
 
+export namespace stories {
+    export interface SearchParams {
+        search?: string;
+        category?: Pick<Category, 'id'>;
+        locale?: Pick<Culture, 'code'>;
+        limit?: number;
+        offset?: number;
+    }
+
+    export interface IncludeOptions<Include extends (keyof Story.ExtraFields)[]> {
+        include?: Include;
+    }
+}
+
+export namespace allStories {
+    export interface SearchParams {
+        search?: string;
+        category?: Pick<Category, 'id'>;
+        locale?: Pick<Culture, 'code'>;
+    }
+
+    export interface IncludeOptions<Include extends (keyof Story.ExtraFields)[]> {
+        include?: Include;
+    }
+}
+
+export namespace story {
+    export type SearchParams =
+        | { uuid: Story['uuid']; slug?: never }
+        | { uuid?: never; slug: Story['slug'] };
+
+    // eslint-disable-next-line @typescript-eslint/no-shadow
+    export interface IncludeOptions<Include extends (keyof Story.ExtraFields)[]> {
+        include?: Include;
+    }
+}
+
 export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
@@ -148,16 +185,8 @@ export function createClient(
         },
 
         stories<Include extends (keyof Story.ExtraFields)[]>(
-            params: {
-                search?: string;
-                category?: Pick<Category, 'id'>;
-                locale?: Pick<Culture, 'code'>;
-                limit?: number;
-                offset?: number;
-            },
-            options: {
-                include?: Include;
-            } = {},
+            params: stories.SearchParams,
+            options: stories.IncludeOptions<Include> = {},
         ) {
             const { search, offset, limit, category, locale } = params;
             const { include } = options;
@@ -179,14 +208,8 @@ export function createClient(
         },
 
         async allStories<Include extends (keyof Story.ExtraFields)[]>(
-            params: {
-                search?: string;
-                category?: Pick<Category, 'id'>;
-                locale?: Pick<Culture, 'code'>;
-            } = {},
-            options: {
-                include?: Include;
-            } = {},
+            params: allStories.SearchParams = {},
+            options: allStories.IncludeOptions<Include> = {},
         ) {
             const newsroom = await client.newsroom();
 
@@ -213,8 +236,8 @@ export function createClient(
         },
 
         async story<Include extends (keyof Story.ExtraFields)[]>(
-            params: { uuid: Story['uuid']; slug?: never } | { uuid?: never; slug: Story['slug'] },
-            options: { include?: Include } = {},
+            params: story.SearchParams,
+            options: story.IncludeOptions<Include> = {},
         ) {
             const { include = [] } = options;
 
@@ -233,7 +256,7 @@ export function createClient(
                 }
             }
 
-            const { stories } = await prezly.stories.search({
+            const { stories: data } = await prezly.stories.search({
                 formats,
                 limit: 1,
                 query: {
@@ -253,7 +276,7 @@ export function createClient(
                 include: [...Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS, ...include],
             });
 
-            return stories[0] ?? null;
+            return data[0] ?? null;
         },
     };
 
