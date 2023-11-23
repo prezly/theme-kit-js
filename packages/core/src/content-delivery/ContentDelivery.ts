@@ -147,14 +147,15 @@ export function createClient(
             }
         },
 
-        stories(params: {
+        stories<Include extends (keyof Story.ExtraFields)[] = never[]>(params: {
             search?: string;
             category?: Pick<Category, 'id'>;
             locale?: Pick<Culture, 'code'>;
             limit?: number;
             offset?: number;
+            include?: Include;
         }) {
-            const { search, offset, limit, category, locale } = params;
+            const { search, offset, limit, category, locale, include } = params;
             return prezly.stories.search({
                 sortOrder: chronologically(SortOrder.Direction.DESC, pinning),
                 formats,
@@ -168,7 +169,7 @@ export function createClient(
                     [`status`]: { $in: [Story.Status.PUBLISHED] },
                     [`visibility`]: { $in: [Story.Visibility.PUBLIC] },
                 },
-                include: ['thumbnail_image'],
+                include,
             });
         },
 
@@ -200,14 +201,17 @@ export function createClient(
             return (await Promise.all(promises)).flatMap((response) => response.stories);
         },
 
-        async story(
+        async story<Include extends (keyof Story.ExtraFields)[] = never[]>(
             params: { uuid: Story['uuid']; slug?: never } | { uuid?: never; slug: Story['slug'] },
+            options: { include?: Include } = {},
         ) {
+            const { include = [] } = options;
+
             if (params.uuid) {
                 try {
                     return await prezly.stories.get(params.uuid, {
                         formats,
-                        include: Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS,
+                        include: [...Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS, ...include],
                     });
                 } catch (error) {
                     if (error instanceof ApiError && isNotAvailableError(error)) {
@@ -235,7 +239,7 @@ export function createClient(
                         ],
                     },
                 },
-                include: Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS,
+                include: [...Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS, ...include],
             });
 
             return stories[0] ?? null;
