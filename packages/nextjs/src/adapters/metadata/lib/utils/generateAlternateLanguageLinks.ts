@@ -4,11 +4,11 @@ import type { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
 type Alternates = NonNullable<Metadata['alternates']>;
-type GenerateUrlFn = (localeCode: Locale.Code) => string | undefined;
+export type UrlGenerator = (localeCode: Locale.Code) => string | undefined;
 
 export function generateAlternateLanguageLinks(
     languages: Pick<NewsroomLanguageSettings, 'code' | 'is_default'>[],
-    generateUrl: GenerateUrlFn,
+    generateUrl: UrlGenerator,
 ): Alternates['languages'] {
     const links = MetadataHelper.getAlternateLanguageLinks(languages, generateUrl);
 

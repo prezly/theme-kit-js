@@ -2,16 +2,15 @@ import type { Metadata } from 'next';
 
 import { resolveAsync } from '../../../utils';
 
-import type { PageUrlGenerator, Prerequisites } from './types';
+import type { Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
 
 type Params = Prerequisites & {
     indexable?: boolean;
-    generateUrl?: PageUrlGenerator;
 };
 
 export async function generateRootMetadata(
-    { indexable = true, generateUrl, ...resolvable }: Params,
+    { indexable = true, ...resolvable }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
     const [locale, newsroom, companyInformation, languages] = await resolveAsync(
@@ -37,7 +36,6 @@ export async function generateRootMetadata(
             newsroom,
             companyInformation,
             languages,
-            generateUrl,
             title: {
                 template: `%s | ${title}`,
                 default: title,
