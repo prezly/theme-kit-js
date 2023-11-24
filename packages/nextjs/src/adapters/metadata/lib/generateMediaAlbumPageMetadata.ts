@@ -9,13 +9,14 @@ import { generatePageMetadata } from './utils';
 
 export type Params = Prerequisites & {
     album: AsyncResolvable<NewsroomGallery>;
-    generateUrl: AppUrlGenerator;
+    generateUrl: AsyncResolvable<AppUrlGenerator>;
 };
 
 export async function generateMediaAlbumPageMetadata(
-    { generateUrl, album: resolvableAlbum, ...prerequisites }: Params,
+    { generateUrl: resolvableUrlGenerator, album: resolvableAlbum, ...prerequisites }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
+    const generateUrl = await resolveAsync(resolvableUrlGenerator);
     const album = await resolveAsync(resolvableAlbum);
 
     const thumbnail = Galleries.getCoverImage(album);

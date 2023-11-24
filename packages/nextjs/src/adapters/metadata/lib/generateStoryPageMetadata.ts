@@ -13,13 +13,19 @@ export type Params = Omit<Prerequisites, 'locale'> & {
     isPreview?: boolean;
     isSecret?: boolean;
 
-    generateUrl: AppUrlGenerator;
+    generateUrl: AsyncResolvable<AppUrlGenerator>;
 };
 
 export async function generateStoryPageMetadata(
-    { isPreview = false, isSecret = false, generateUrl, ...resolvable }: Params,
+    {
+        isPreview = false,
+        isSecret = false,
+        generateUrl: resolvableUrlGenerator,
+        ...resolvable
+    }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
+    const generateUrl = await resolveAsync(resolvableUrlGenerator);
     const story = await resolveAsync(resolvable.story);
 
     function generateStoryUrl(localeCode: Locale.Code, translation: StoryRef) {

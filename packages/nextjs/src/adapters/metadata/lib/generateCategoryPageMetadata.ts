@@ -8,14 +8,16 @@ import { generatePageMetadata } from './utils';
 
 export type Params = Prerequisites & {
     category: AsyncResolvable<Category>;
-    generateUrl: AppUrlGenerator;
+    generateUrl: AsyncResolvable<AppUrlGenerator>;
 };
 
 export async function generateCategoryPageMetadata(
-    { generateUrl, category: resolvableCategory, ...prerequisites }: Params,
+    { generateUrl: resolvableUrlGenerator, category: resolvableCategory, ...prerequisites }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
+    const generateUrl = await resolveAsync(resolvableUrlGenerator);
     const category = await resolveAsync(resolvableCategory);
+
     const { name, description } =
         Category.translation(category, resolve(prerequisites.locale)) ?? {};
 

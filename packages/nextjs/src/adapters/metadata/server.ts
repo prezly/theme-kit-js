@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 
+import type { AsyncResolvable } from '../../utils';
+
 import * as lib from './lib';
 import type { AppUrlGenerator, Prerequisites } from './lib';
 
 export namespace MetadataAdapter {
     export type Configuration = Prerequisites & {
-        generateUrl: AppUrlGenerator;
+        generateUrl: AsyncResolvable<AppUrlGenerator>;
     };
 
     type WithoutPrerequisites<T> = Omit<T, keyof Prerequisites>;
