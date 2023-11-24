@@ -30,6 +30,34 @@ export namespace MetadataAdapter {
             return lib.generateStoryPageMetadata({ ...prerequisites, ...params }, ...metadata);
         }
 
+        function generateCategoryPageMetadata(
+            params: WithoutPrerequisites<lib.generateCategoryPageMetadata.Parameters>,
+            ...metadata: Metadata[]
+        ) {
+            return lib.generateCategoryPageMetadata({ ...prerequisites, ...params }, ...metadata);
+        }
+
+        function generateMediaPageMetadata(
+            params: WithoutPrerequisites<lib.generateMediaPageMetadata.Parameters>,
+            ...metadata: Metadata[]
+        ) {
+            return lib.generateMediaPageMetadata({ ...prerequisites, ...params }, ...metadata);
+        }
+
+        function generateMediaAlbumPageMetadata(
+            params: WithoutPrerequisites<lib.generateMediaAlbumPageMetadata.Parameters>,
+            ...metadata: Metadata[]
+        ) {
+            return lib.generateMediaAlbumPageMetadata({ ...prerequisites, ...params }, ...metadata);
+        }
+
+        function generateSearchPageMetadata(
+            params: WithoutPrerequisites<lib.generateSearchPageMetadata.Parameters>,
+            ...metadata: Metadata[]
+        ) {
+            return lib.generateSearchPageMetadata({ ...prerequisites, ...params }, ...metadata);
+        }
+
         return {
             // generic
             mergePageMetadata: lib.mergePageMetadata,
@@ -38,6 +66,10 @@ export namespace MetadataAdapter {
             generatePageMetadata,
             generateRootMetadata,
             generateStoryPageMetadata,
+            generateCategoryPageMetadata,
+            generateMediaPageMetadata,
+            generateMediaAlbumPageMetadata,
+            generateSearchPageMetadata,
         };
     }
 }
