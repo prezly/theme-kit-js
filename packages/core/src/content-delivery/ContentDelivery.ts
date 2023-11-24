@@ -50,7 +50,7 @@ export namespace story {
     }
 }
 
-export namespace galleries {
+export namespace mediaAlbums {
     export interface SearchParams {
         offset?: number;
         limit?: number;
@@ -166,7 +166,7 @@ export function createClient(
             });
         },
 
-        galleries(params: galleries.SearchParams = {}) {
+        mediaAlbums(params: mediaAlbums.SearchParams = {}) {
             const { offset, limit, type } = params;
             return prezly.newsroomGalleries.search(newsroomUuid, {
                 limit,
@@ -179,7 +179,7 @@ export function createClient(
             });
         },
 
-        async gallery(uuid: NewsroomGallery['uuid']) {
+        async mediaAlbum(uuid: NewsroomGallery['uuid']) {
             try {
                 return await prezly.newsroomGalleries.get(newsroomUuid, uuid);
             } catch (error) {
