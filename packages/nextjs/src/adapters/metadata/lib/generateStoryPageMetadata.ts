@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 import { type AsyncResolvable, resolveAsync } from '../../../utils';
 
-import type { Prerequisites, Url } from './types';
+import type { AppUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
 
 export type Params = Omit<Prerequisites, 'locale'> & {
@@ -13,7 +13,7 @@ export type Params = Omit<Prerequisites, 'locale'> & {
     isPreview?: boolean;
     isSecret?: boolean;
 
-    generateUrl?: (locale: Locale.Code, story: StoryRef) => Url | undefined;
+    generateUrl: AppUrlGenerator;
 };
 
 export async function generateStoryPageMetadata(
@@ -24,7 +24,7 @@ export async function generateStoryPageMetadata(
 
     function generateStoryUrl(localeCode: Locale.Code, translation: StoryRef) {
         if (Story.isPublished(translation)) {
-            return generateUrl?.(localeCode, translation);
+            return generateUrl?.('story', { ...translation, localeCode });
         }
         return undefined;
     }

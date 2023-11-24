@@ -1,16 +1,15 @@
 import type { NewsroomGallery } from '@prezly/sdk';
 import { Galleries, Uploads } from '@prezly/theme-kit-core';
-import type { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
 import { type AsyncResolvable, resolveAsync } from '../../../utils';
 
-import type { Prerequisites, Url } from './types';
+import type { AppUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
 
 export type Params = Prerequisites & {
     album: AsyncResolvable<NewsroomGallery>;
-    generateUrl?: (locale: Locale.Code, album: NewsroomGallery) => Url | undefined;
+    generateUrl: AppUrlGenerator;
 };
 
 export async function generateMediaAlbumPageMetadata(
@@ -27,7 +26,7 @@ export async function generateMediaAlbumPageMetadata(
             ...prerequisites,
             title: album.title,
             imageUrl,
-            generateUrl: (localeCode) => generateUrl?.(localeCode, album),
+            generateUrl: (localeCode) => generateUrl('mediaAlbum', { ...album, localeCode }),
         },
         ...metadata,
     );

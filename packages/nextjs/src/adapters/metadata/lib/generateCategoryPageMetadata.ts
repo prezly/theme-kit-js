@@ -1,15 +1,14 @@
 import { Category } from '@prezly/sdk';
-import type { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
 import { type AsyncResolvable, resolve, resolveAsync } from '../../../utils';
 
-import type { Prerequisites, Url } from './types';
+import type { AppUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
 
 export type Params = Prerequisites & {
     category: AsyncResolvable<Category>;
-    generateUrl?: (locale: Locale.Code, category: Category) => Url | undefined;
+    generateUrl: AppUrlGenerator;
 };
 
 export async function generateCategoryPageMetadata(
@@ -25,7 +24,10 @@ export async function generateCategoryPageMetadata(
             ...prerequisites,
             title: name,
             description,
-            generateUrl: (localeCode) => generateUrl?.(localeCode, category),
+            generateUrl: (localeCode) => {
+                const translated = Category.translation(category, localeCode);
+                return translated && generateUrl('category', { ...translated, localeCode });
+            },
         },
         ...metadata,
     );

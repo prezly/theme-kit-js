@@ -4,8 +4,9 @@ import { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
 import { resolveAsync } from '../../../../utils';
-import type { PageUrlGenerator, Prerequisites } from '../types';
+import type { Prerequisites } from '../types';
 
+import type { UrlGenerator } from './generateAlternateLanguageLinks';
 import { generateAlternateLanguageLinks } from './generateAlternateLanguageLinks';
 import { mergePageMetadata } from './mergePageMetadata';
 
@@ -13,7 +14,7 @@ type Params = Prerequisites & {
     title?: Metadata['title'];
     description?: Metadata['description'];
     imageUrl?: string;
-    generateUrl?: PageUrlGenerator;
+    generateUrl?: UrlGenerator;
 };
 
 export async function generatePageMetadata(
