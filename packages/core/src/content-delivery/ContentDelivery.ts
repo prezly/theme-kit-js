@@ -22,8 +22,8 @@ export namespace stories {
         offset?: number;
     }
 
-    export interface IncludeOptions<Include extends (keyof Story.ExtraFields)[]> {
-        include?: Include;
+    export interface IncludeOptions<Include extends keyof Story.ExtraFields> {
+        include?: Include[];
     }
 }
 
@@ -34,8 +34,8 @@ export namespace allStories {
         locale?: Pick<Culture, 'code'>;
     }
 
-    export interface IncludeOptions<Include extends (keyof Story.ExtraFields)[]> {
-        include?: Include;
+    export interface IncludeOptions<Include extends keyof Story.ExtraFields> {
+        include?: Include[];
     }
 }
 
@@ -45,8 +45,8 @@ export namespace story {
         | { uuid?: never; slug: Story['slug'] };
 
     // eslint-disable-next-line @typescript-eslint/no-shadow
-    export interface IncludeOptions<Include extends (keyof Story.ExtraFields)[]> {
-        include?: Include;
+    export interface IncludeOptions<Include extends keyof Story.ExtraFields> {
+        include?: Include[];
     }
 }
 
@@ -190,12 +190,12 @@ export function createClient(
             }
         },
 
-        stories<Include extends (keyof Story.ExtraFields)[]>(
+        stories<Include extends keyof Story.ExtraFields = never>(
             params: stories.SearchParams,
             options: stories.IncludeOptions<Include> = {},
         ) {
             const { search, offset, limit, category, locale } = params;
-            const { include } = options;
+            const { include = [] } = options;
             return prezly.stories.search({
                 sortOrder: chronologically(SortOrder.Direction.DESC, pinning),
                 formats,
@@ -213,10 +213,12 @@ export function createClient(
             });
         },
 
-        async allStories<Include extends (keyof Story.ExtraFields)[]>(
+        async allStories<Include extends keyof Story.ExtraFields = never>(
             params: allStories.SearchParams = {},
             options: allStories.IncludeOptions<Include> = {},
         ) {
+            const { include = [] } = options;
+
             const newsroom = await client.newsroom();
 
             const chunkSize = 200;
@@ -234,14 +236,14 @@ export function createClient(
                         limit: chunkSize,
                         offset: chunkIndex * chunkSize,
                     },
-                    options,
+                    { include },
                 ),
             );
 
             return (await Promise.all(promises)).flatMap((response) => response.stories);
         },
 
-        async story<Include extends (keyof Story.ExtraFields)[]>(
+        async story<Include extends keyof Story.ExtraFields = never>(
             params: story.SearchParams,
             options: story.IncludeOptions<Include> = {},
         ) {
