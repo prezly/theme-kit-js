@@ -13,7 +13,7 @@ export type Params = Prerequisites & {
     generateUrl?: (locale: Locale.Code, album: NewsroomGallery) => Url | undefined;
 };
 
-export async function generateMediaAlbumMetadata(
+export async function generateMediaAlbumPageMetadata(
     { generateUrl, album: resolvableAlbum, ...prerequisites }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
