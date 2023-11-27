@@ -24,7 +24,7 @@ export namespace RoutingAdapter {
             return <context.Provider value={value}>{props.children}</context.Provider>;
         }
 
-        function useRouting(activeLocale: Locale.Code) {
+        function useRouting() {
             const value = useContext(context);
 
             if (!value) {
@@ -38,11 +38,10 @@ export namespace RoutingAdapter {
             const generateUrl = useCallback(
                 (routeName: keyof Routes, params: any = {}) =>
                     generateUrlFromPattern(routes[routeName] as `/${string}`, params, {
-                        activeLocale,
                         defaultLocale,
                         locales,
                     }),
-                [routes, locales, defaultLocale, activeLocale],
+                [routes, locales, defaultLocale],
             ) as UrlGenerator<Router<Routes>>;
 
             // @ts-ignore

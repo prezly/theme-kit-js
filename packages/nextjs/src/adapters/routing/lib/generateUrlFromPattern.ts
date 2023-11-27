@@ -8,15 +8,12 @@ import { withoutUndefined } from '../../../utils';
 import { normalizeUrl } from './normalizeUrl';
 
 export interface Context {
-    activeLocale: Locale.Code;
     defaultLocale: Locale.Code;
     locales: Locale.Code[];
 }
 
-export type Params = Record<string, string | undefined | null> & {
-    localeCode?: Locale.Code;
-    localeSlug?: Locale.AnySlug | false;
-};
+export type Params = Record<string, string | undefined | null> &
+    ({ localeCode: Locale.Code } | { localeSlug: Locale.AnySlug });
 
 const CACHE = new Map<string, UrlPattern>();
 
@@ -32,28 +29,29 @@ function toUrlPattern(pattern: string): UrlPattern {
     return urlPattern;
 }
 
-export function generateUrlFromPattern(
-    pattern: `/${string}`,
-    params: Params | undefined = {}, // eslint-disable-line @typescript-eslint/default-param-last
-    context?: Context,
-) {
+export function generateUrlFromPattern(pattern: `/${string}`, params: Params, context?: Context) {
     const urlPattern = toUrlPattern(pattern);
 
     if (context) {
-        const { activeLocale, locales, defaultLocale } = context;
+        const { locales, defaultLocale } = context;
 
-        const localeCode: Locale.Code = params.localeCode ?? activeLocale;
+        const { localeCode } = params;
         const localeSlug =
-            (params.localeSlug ??
-                Routing.getShortestLocaleSlug(localeCode, { locales, defaultLocale })) ||
-            undefined;
+            params.localeSlug ??
+            (Routing.getShortestLocaleSlug(localeCode as Locale.Code, {
+                locales,
+                defaultLocale,
+            }) ||
+                '');
 
         return normalizeUrl(
-            urlPattern.stringify({
-                localeCode,
-                localeSlug,
-                ...withoutUndefined(params),
-            }) as `/${string}`,
+            urlPattern.stringify(
+                withoutUndefined({
+                    ...params,
+                    localeCode,
+                    localeSlug,
+                }),
+            ) as `/${string}`,
         );
     }
 
