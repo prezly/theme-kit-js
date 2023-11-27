@@ -50,6 +50,10 @@ export function withCache(fetch: Fetch, { ttl, debug = false, methods }: Options
     if (debug) {
         return ((...args: Parameters<typeof cachedFetch>) => {
             const key = getCacheKey(...args);
+            if (!key) {
+                // eslint-disable-next-line no-console
+                console.info('Uncachable request', args[0]);
+            }
             if (key && dedupeStore.has(key)) {
                 // eslint-disable-next-line no-console
                 console.info('Deduping request', args[0]);
