@@ -60,6 +60,8 @@ export function withCache(fetch: Fetch, { ttl, debug = false, methods }: Options
             }
             if (key) {
                 // eslint-disable-next-line no-console
+                console.info('Cache key = ', key);
+                // eslint-disable-next-line no-console
                 console.info(
                     cache.has(key) ? 'Cache HIT on request' : 'Cache MISS on request',
                     args[0],
