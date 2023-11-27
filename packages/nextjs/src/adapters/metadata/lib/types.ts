@@ -8,7 +8,7 @@ import type {
 } from '@prezly/sdk';
 import type { Locale } from '@prezly/theme-kit-intl';
 
-import type { AsyncResolvable, Resolvable } from '../../../utils';
+import type { AsyncResolvable } from '../../../utils';
 
 export type Url = `/${string}`;
 
@@ -23,7 +23,7 @@ export type AppUrlGenerator = {
 };
 
 export type Prerequisites = {
-    locale: Resolvable<Locale.Code>;
+    locale: Locale.Code;
     newsroom: AsyncResolvable<Newsroom>;
     companyInformation: AsyncResolvable<NewsroomCompanyInformation>;
     languages: AsyncResolvable<NewsroomLanguageSettings[]>;
