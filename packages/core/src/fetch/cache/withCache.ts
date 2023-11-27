@@ -57,10 +57,7 @@ export function withCache(fetch: Fetch, { ttl, debug = false, methods }: Options
             const endpoint =
                 method.toLowerCase() === 'get' ? `${method} ${url}` : `${method} ${url}\n${body}`;
 
-            if (key) {
-                // eslint-disable-next-line no-console
-                console.info(`Cache key of ${endpoint} == ${key}`);
-            } else {
+            if (!key) {
                 // eslint-disable-next-line no-console
                 console.info(`Uncachable request ${endpoint}`);
             }
