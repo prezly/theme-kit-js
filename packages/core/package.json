@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-core",
-  "version": "0.0.0-next-b47ea84d78c618d037c39237f78d156887ed3c87",
+  "version": "0.0.0-next-1eb5f48388b3382333dc4ffc4c9cb7eb58d398bf",
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
   "main": "build/index.mjs",
   "types": "build/index.d.ts",
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@e1himself/cached-fetch": "^1.1.2",
-    "@prezly/theme-kit-intl": "0.0.0-next-b47ea84d78c618d037c39237f78d156887ed3c87",
+    "@prezly/theme-kit-intl": "0.0.0-next-1eb5f48388b3382333dc4ffc4c9cb7eb58d398bf",
     "@prezly/uploadcare": "^2.3.4",
     "@technically/is-not-undefined": "^1.0.0",
     "parse-data-url": "^6.0.0"
