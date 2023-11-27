@@ -13,7 +13,7 @@ export interface Context {
 }
 
 export type Params = Record<string, string | undefined | null> &
-    ({ localeCode: Locale.Code } | { localeSlug: Locale.AnySlug });
+    ({ localeCode?: Locale.Code } | { localeSlug?: Locale.AnySlug });
 
 const CACHE = new Map<string, UrlPattern>();
 
@@ -29,20 +29,16 @@ function toUrlPattern(pattern: string): UrlPattern {
     return urlPattern;
 }
 
-export function generateUrlFromPattern(pattern: `/${string}`, params: Params, context?: Context) {
+export function generateUrlFromPattern(
+    pattern: `/${string}`,
+    params: Params = {},
+    context?: Context,
+) {
     const urlPattern = toUrlPattern(pattern);
 
     if (context) {
-        const { locales, defaultLocale } = context;
-
         const { localeCode } = params;
-        const localeSlug =
-            params.localeSlug ??
-            (Routing.getShortestLocaleSlug(localeCode as Locale.Code, {
-                locales,
-                defaultLocale,
-            }) ||
-                '');
+        const localeSlug = getLocaleSlug(params, context);
 
         return normalizeUrl(
             urlPattern.stringify(
@@ -56,4 +52,14 @@ export function generateUrlFromPattern(pattern: `/${string}`, params: Params, co
     }
 
     return normalizeUrl(urlPattern.stringify(withoutUndefined(params)) as `/${string}`);
+}
+
+function getLocaleSlug(params: Params, context: Context): string {
+    if (params.localeSlug) {
+        return params.localeSlug;
+    }
+    if (params.localeCode) {
+        return Routing.getShortestLocaleSlug(params.localeCode as Locale.Code, context) || '';
+    }
+    return '';
 }

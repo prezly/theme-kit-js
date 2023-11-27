@@ -11,8 +11,36 @@ describe('generateUrlFromPattern', () => {
 
     it('should generate a URL with optional variables (without context)', () => {
         const href = generateUrlFromPattern('/(:localeSlug/)media', {
-            localeCode: '',
+            localeSlug: '',
         });
+
+        expect(href).toBe('/media');
+    });
+
+    it('should generate a URL based on the current locale', () => {
+        const href = generateUrlFromPattern(
+            '/(:localeSlug/)media',
+            {
+                localeCode: 'fr',
+            },
+            {
+                defaultLocale: 'en',
+                locales: ['en', 'nl', 'fr'],
+            },
+        );
+
+        expect(href).toBe('/fr/media');
+    });
+
+    it('should generate a homepage URL based on the current locale', () => {
+        const href = generateUrlFromPattern(
+            '/(:localeSlug/)media',
+            { localeCode: 'en' },
+            {
+                defaultLocale: 'en',
+                locales: ['en', 'nl', 'fr'],
+            },
+        );
 
         expect(href).toBe('/media');
     });
