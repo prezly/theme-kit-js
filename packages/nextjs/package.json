@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "0.0.0-next-ssg-6c1bf8801f9e70ce78b7ad8e976bc5db8fdb500a",
+  "version": "0.0.0-next-ssg-2d655a154689f1928f80e3dc89a3d7e2664ea756",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "type": "module",
   "main": "build/index.mjs",
@@ -92,8 +92,8 @@
     }
   },
   "dependencies": {
-    "@prezly/theme-kit-core": "0.0.0-next-ssg-6c1bf8801f9e70ce78b7ad8e976bc5db8fdb500a",
-    "@prezly/theme-kit-intl": "0.0.0-next-ssg-6c1bf8801f9e70ce78b7ad8e976bc5db8fdb500a",
+    "@prezly/theme-kit-core": "0.0.0-next-ssg-2d655a154689f1928f80e3dc89a3d7e2664ea756",
+    "@prezly/theme-kit-intl": "0.0.0-next-ssg-2d655a154689f1928f80e3dc89a3d7e2664ea756",
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
