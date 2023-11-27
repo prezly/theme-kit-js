@@ -28,6 +28,7 @@ export namespace PrezlyAdapter {
         const cachedFetch = CachedFetch.create({
             ...cacheConfig,
             ttl: cacheConfig.ttl ?? DEFAULT_REQUEST_CACHE_TTL,
+            methods: cacheConfig.methods ?? DEFAULT_CACHED_METHODS,
         });
 
         function usePrezlyClient() {
