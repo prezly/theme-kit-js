@@ -49,26 +49,31 @@ export function withCache(fetch: Fetch, { ttl, debug = false, methods }: Options
 
     if (debug) {
         return ((...args: Parameters<typeof cachedFetch>) => {
+            const [url, init] = args;
+
             const key = getCacheKey(...args);
+
+            const { method = 'get', body = undefined } = init ?? {};
+            const endpoint =
+                method.toLowerCase() === 'get' ? `${method} ${url}` : `${method} ${url}\n${body}`;
 
             if (key) {
                 // eslint-disable-next-line no-console
-                console.info('Cache key', args[0], JSON.parse(key));
+                console.info(`Cache key of ${endpoint} == ${key}`);
             } else {
                 // eslint-disable-next-line no-console
-                console.info('Uncachable request', args[0]);
+                console.info(`Uncachable request ${endpoint}`);
             }
 
             if (key && dedupeStore.has(key)) {
                 // eslint-disable-next-line no-console
-                console.info('Deduping request', args[0]);
+                console.info(`Deduping request ${endpoint}`);
 
                 return cachedFetch(...args).then((data) => {
                     console.info(
                         cache.has(key)
-                            ? 'Cache HIT on deduped request'
-                            : 'Cache MISS on deduped request',
-                        args[0],
+                            ? `Cache HIT on deduped request ${endpoint}`
+                            : `Cache MISS on deduped request ${endpoint}`,
                     );
                     return data;
                 });
@@ -76,12 +81,22 @@ export function withCache(fetch: Fetch, { ttl, debug = false, methods }: Options
             if (key) {
                 // eslint-disable-next-line no-console
                 console.info(
-                    cache.has(key) ? 'Cache HIT on request' : 'Cache MISS on request',
-                    args[0],
+                    cache.has(key)
+                        ? `Cache HIT on request ${endpoint}`
+                        : `Cache MISS on request ${endpoint}`,
                 );
             }
 
-            return cachedFetch(...args);
+            return cachedFetch(...args).then((data) => {
+                if (key) {
+                    console.info(
+                        cache.has(key)
+                            ? `Cached request ${endpoint}`
+                            : `DID NOT cache request ${endpoint}`,
+                    );
+                }
+                return data;
+            });
         }) as Fetch;
     }
 
