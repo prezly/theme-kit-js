@@ -10,11 +10,10 @@ type Params = Prerequisites & {
 };
 
 export async function generateRootMetadata(
-    { indexable = true, ...resolvable }: Params,
+    { locale, indexable = true, ...resolvable }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
-    const [locale, newsroom, companyInformation, languages] = await resolveAsync(
-        resolvable.locale,
+    const [newsroom, companyInformation, languages] = await resolveAsync(
         resolvable.newsroom,
         resolvable.companyInformation,
         resolvable.languages,

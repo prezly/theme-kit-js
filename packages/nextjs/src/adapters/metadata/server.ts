@@ -6,16 +6,16 @@ import * as lib from './lib';
 import type { AppUrlGenerator, Prerequisites } from './lib';
 
 export namespace MetadataAdapter {
-    export type Configuration = Prerequisites & {
+    export type Configuration = Omit<Prerequisites, 'locale'> & {
         generateUrl: AsyncResolvable<AppUrlGenerator>;
     };
 
-    type WithoutPrerequisites<T> = Omit<T, keyof Prerequisites>;
     type WithoutSharedConfiguration<T> = Omit<T, keyof Configuration>;
 
     export function connect(configuration: Configuration) {
         function generatePageMetadata(
-            params: WithoutPrerequisites<lib.generatePageMetadata.Parameters> = {},
+            params: WithoutSharedConfiguration<lib.generatePageMetadata.Parameters> &
+                Pick<lib.generatePageMetadata.Parameters, 'generateUrl'>,
             ...metadata: Metadata[]
         ) {
             const { generateUrl, ...prerequisites } = configuration;
@@ -23,7 +23,7 @@ export namespace MetadataAdapter {
         }
 
         function generateRootMetadata(
-            params: WithoutSharedConfiguration<lib.generateRootMetadata.Parameters> = {},
+            params: WithoutSharedConfiguration<lib.generateRootMetadata.Parameters>,
             ...metadata: Metadata[]
         ) {
             return lib.generateRootMetadata({ ...configuration, ...params }, ...metadata);

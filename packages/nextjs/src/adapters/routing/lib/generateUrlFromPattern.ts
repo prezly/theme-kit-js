@@ -8,15 +8,12 @@ import { withoutUndefined } from '../../../utils';
 import { normalizeUrl } from './normalizeUrl';
 
 export interface Context {
-    activeLocale: Locale.Code;
     defaultLocale: Locale.Code;
     locales: Locale.Code[];
 }
 
-export type Params = Record<string, string | undefined | null> & {
-    localeCode?: Locale.Code;
-    localeSlug?: Locale.AnySlug | false;
-};
+export type Params = Record<string, string | undefined | null> &
+    ({ localeCode?: Locale.Code } | { localeSlug?: Locale.AnySlug });
 
 const CACHE = new Map<string, UrlPattern>();
 
@@ -34,28 +31,35 @@ function toUrlPattern(pattern: string): UrlPattern {
 
 export function generateUrlFromPattern(
     pattern: `/${string}`,
-    params: Params | undefined = {}, // eslint-disable-line @typescript-eslint/default-param-last
+    params: Params = {},
     context?: Context,
 ) {
     const urlPattern = toUrlPattern(pattern);
 
     if (context) {
-        const { activeLocale, locales, defaultLocale } = context;
-
-        const localeCode: Locale.Code = params.localeCode ?? activeLocale;
-        const localeSlug =
-            (params.localeSlug ??
-                Routing.getShortestLocaleSlug(localeCode, { locales, defaultLocale })) ||
-            undefined;
+        const { localeCode } = params;
+        const localeSlug = getLocaleSlug(params, context);
 
         return normalizeUrl(
-            urlPattern.stringify({
-                localeCode,
-                localeSlug,
-                ...withoutUndefined(params),
-            }) as `/${string}`,
+            urlPattern.stringify(
+                withoutUndefined({
+                    ...params,
+                    localeCode,
+                    localeSlug,
+                }),
+            ) as `/${string}`,
         );
     }
 
     return normalizeUrl(urlPattern.stringify(withoutUndefined(params)) as `/${string}`);
+}
+
+function getLocaleSlug(params: Params, context: Context): string {
+    if (params.localeSlug) {
+        return params.localeSlug;
+    }
+    if (params.localeCode) {
+        return Routing.getShortestLocaleSlug(params.localeCode as Locale.Code, context) || '';
+    }
+    return '';
 }

@@ -10,7 +10,6 @@ export namespace RoutingAdapter {
     export interface Configuration {
         locales: Locale.Code[];
         defaultLocale: Locale.Code;
-        activeLocale: Locale.Code;
     }
 
     export function connect<Routes extends RoutesMap>(
@@ -22,7 +21,7 @@ export namespace RoutingAdapter {
             generateUrl: UrlGenerator<Router<Routes>>;
         }> {
             const router = createRouter();
-            const { locales, defaultLocale, activeLocale } = await resolveAsync(config);
+            const { locales, defaultLocale } = await resolveAsync(config);
 
             return {
                 router,
@@ -31,7 +30,6 @@ export namespace RoutingAdapter {
                         router.routes[routeName].pattern as `/${string}`,
                         params as any,
                         {
-                            activeLocale,
                             defaultLocale,
                             locales,
                         },

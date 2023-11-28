@@ -20,9 +20,10 @@ describe('generateUrlFromPattern', () => {
     it('should generate a URL based on the current locale', () => {
         const href = generateUrlFromPattern(
             '/(:localeSlug/)media',
-            {},
             {
-                activeLocale: 'fr',
+                localeCode: 'fr',
+            },
+            {
                 defaultLocale: 'en',
                 locales: ['en', 'nl', 'fr'],
             },
@@ -34,9 +35,8 @@ describe('generateUrlFromPattern', () => {
     it('should generate a homepage URL based on the current locale', () => {
         const href = generateUrlFromPattern(
             '/(:localeSlug/)media',
-            {},
+            { localeCode: 'en' },
             {
-                activeLocale: 'en',
                 defaultLocale: 'en',
                 locales: ['en', 'nl', 'fr'],
             },
@@ -48,9 +48,8 @@ describe('generateUrlFromPattern', () => {
     it('should generate a shortest possible locale slug', () => {
         const href = generateUrlFromPattern(
             '/(:localeSlug/)media',
-            {},
+            { localeCode: 'nl_BE' },
             {
-                activeLocale: 'nl_BE',
                 defaultLocale: 'en_US',
                 locales: ['en_US', 'nl_BE', 'fr_FR'],
             },
