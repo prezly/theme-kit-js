@@ -1,7 +1,7 @@
 #/usr/bin/bash
 
 COMMIT=`git log | head -n1 | cut -d\  -f2`
-VERSION=0.0.0-next-ssg-$COMMIT
+VERSION=0.0.0-next-$COMMIT
 
 echo Preparing $VERSION
 
@@ -22,4 +22,4 @@ git add lerna.json \
 
 git commit -m "v$VERSION"
 
-npx lerna publish --dist-tag next-ssh from-package
+npx lerna publish --dist-tag next from-package
