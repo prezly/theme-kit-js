@@ -1,1 +1,1 @@
-export { IntlMiddleware } from './IntlMiddleware';
+export * as NextIntlMiddleware from './middleware';
