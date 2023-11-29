@@ -1,4 +1,5 @@
-import { type AsyncResolvable, resolveAsync, withoutUndefined } from '../../utils';
+import { AsyncResolvable } from '@prezly/theme-kit-core';
+import { omitUndefined } from '@technically/omit-undefined';
 
 export namespace ThemeSettingsAdapter {
     export interface Configuration<T> {
@@ -8,11 +9,14 @@ export namespace ThemeSettingsAdapter {
 
     export function connect<T>(config: Configuration<T>) {
         async function useThemeSettings(): Promise<T> {
-            const [defaults, settings] = await resolveAsync(config.defaults, config.settings);
+            const [defaults, settings] = await AsyncResolvable.resolve(
+                config.defaults,
+                config.settings,
+            );
 
             return {
                 ...defaults,
-                ...withoutUndefined(settings ?? {}),
+                ...omitUndefined(settings ?? {}),
             } as T;
         }
 

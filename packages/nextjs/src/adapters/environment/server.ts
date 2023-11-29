@@ -1,6 +1,4 @@
-import { Environment } from '@prezly/theme-kit-core';
-
-import { type Resolvable, resolve } from '../../utils';
+import { Environment, Resolvable } from '@prezly/theme-kit-core';
 
 type HttpEnvHeader = string;
 
@@ -14,7 +12,7 @@ export namespace EnvironmentAdapter {
         options: Configuration = {},
     ) {
         function useEnvironment(): T {
-            const httpEnvHeader = resolve(options.httpEnvHeader);
+            const httpEnvHeader = Resolvable.resolve(options.httpEnvHeader);
             const variables = Environment.combine(process.env, httpEnvHeader);
             return validate(variables);
         }

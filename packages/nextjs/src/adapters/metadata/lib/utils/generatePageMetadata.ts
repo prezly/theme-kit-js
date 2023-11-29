@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { Newsrooms } from '@prezly/theme-kit-core';
+import { AsyncResolvable, Newsrooms } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
-import { resolveAsync } from '../../../../utils';
 import type { Prerequisites } from '../types';
 
 import type { UrlGenerator } from './generateAlternateLanguageLinks';
@@ -21,7 +20,7 @@ export async function generatePageMetadata(
     { title, description, imageUrl, generateUrl, ...resolvable }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
-    const [locale, newsroom, companyInformation, languages] = await resolveAsync(
+    const [locale, newsroom, companyInformation, languages] = await AsyncResolvable.resolve(
         resolvable.locale,
         resolvable.newsroom,
         resolvable.companyInformation,

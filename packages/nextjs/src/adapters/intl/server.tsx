@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define,react/jsx-props-no-spreading */
+import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type {
     IntlDictionary,
     IntlMessageDescriptor,
@@ -12,8 +13,6 @@ import {
     pickSupportedLocale,
 } from '@prezly/theme-kit-intl';
 import type { ReactElement } from 'react';
-
-import { type AsyncResolvable, resolveAsync } from '../../utils';
 
 import {
     FormattedDate as BaseFormattedDate,
@@ -33,7 +32,7 @@ export namespace IntlAdapter {
         ...config
     }: Configuration) {
         async function useIntl(locale: Locale.Code) {
-            const timezone = await resolveAsync(config.timezone);
+            const timezone = await AsyncResolvable.resolve(config.timezone);
 
             const messages = await resolveDictionary(locale);
 
@@ -60,13 +59,13 @@ export namespace IntlAdapter {
         }
 
         async function FormattedDate(props: Omit<BaseFormattedDate.Props, 'timezone'>) {
-            const timezone = await resolveAsync(config.timezone);
+            const timezone = await AsyncResolvable.resolve(config.timezone);
 
             return <BaseFormattedDate timezone={timezone} {...props} />;
         }
 
         async function FormattedTime(props: Omit<BaseFormattedTime.Props, 'timezone'>) {
-            const timezone = await resolveAsync(config.timezone);
+            const timezone = await AsyncResolvable.resolve(config.timezone);
 
             return <BaseFormattedTime timezone={timezone} {...props} />;
         }

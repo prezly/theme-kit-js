@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
+import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
-
-import { type AsyncResolvable, resolveAsync } from '../../../utils';
 
 import { generateUrlFromPattern } from './generateUrlFromPattern';
 import type { Router, RoutesMap, UrlGenerator } from './types';
@@ -21,7 +20,7 @@ export namespace RoutingAdapter {
             generateUrl: UrlGenerator<Router<Routes>>;
         }> {
             const router = createRouter();
-            const { locales, defaultLocale } = await resolveAsync(config);
+            const { locales, defaultLocale } = await AsyncResolvable.resolve(config);
 
             return {
                 router,

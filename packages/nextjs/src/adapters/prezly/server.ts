@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Newsroom, NewsroomTheme, Story } from '@prezly/sdk';
 import { createPrezlyClient } from '@prezly/sdk';
-import { CachedFetch, ContentDelivery } from '@prezly/theme-kit-core';
-
-import { type Resolvable, resolve } from '../../utils';
+import { CachedFetch, ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
 
 export namespace PrezlyAdapter {
     export interface Configuration {
@@ -42,7 +40,7 @@ export namespace PrezlyAdapter {
                 theme,
                 pinning,
                 formats,
-            } = resolve(config);
+            } = Resolvable.resolve(config);
 
             const client = createPrezlyClient({
                 fetch: cachedFetch,

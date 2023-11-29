@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { Category, type Newsroom, type Story } from '@prezly/sdk';
+import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { MetadataRoute } from 'next';
-
-import type { AsyncResolvable } from '../utils';
-import { resolveAsync } from '../utils';
 
 import { build } from './build';
 import type {
@@ -33,7 +31,10 @@ export async function generate(
     { generateUrl, ...resolvable }: Context,
     { baseUrl, priority = guessPriority, changeFrequency = guessChangeFrequency }: Options,
 ): Promise<MetadataRoute.Sitemap> {
-    const [locales, newsroom] = await resolveAsync(resolvable.locales, resolvable.newsroom);
+    const [locales, newsroom] = await AsyncResolvable.resolve(
+        resolvable.locales,
+        resolvable.newsroom,
+    );
 
     async function generateHomepageEntries() {
         return locales.map((localeCode) => ({
@@ -44,7 +45,7 @@ export async function generate(
     }
 
     async function generateStoriesEntries() {
-        const stories = await resolveAsync(resolvable.stories);
+        const stories = await AsyncResolvable.resolve(resolvable.stories);
 
         return stories.map((story) => {
             const params = { ...story, localeCode: story.culture.code };
@@ -57,7 +58,7 @@ export async function generate(
     }
 
     async function generateCategoriesEntries() {
-        const categories = await resolveAsync(resolvable.categories);
+        const categories = await AsyncResolvable.resolve(resolvable.categories);
 
         return categories.flatMap((category) =>
             Category.translations(category)

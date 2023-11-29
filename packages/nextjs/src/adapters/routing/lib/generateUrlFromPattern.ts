@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
+import { omitUndefined } from '@technically/omit-undefined';
 import UrlPattern from 'url-pattern';
-
-import { withoutUndefined } from '../../../utils';
 
 import { normalizeUrl } from './normalizeUrl';
 
@@ -42,7 +41,7 @@ export function generateUrlFromPattern(
 
         return normalizeUrl(
             urlPattern.stringify(
-                withoutUndefined({
+                omitUndefined({
                     ...params,
                     localeCode,
                     localeSlug,
@@ -51,7 +50,7 @@ export function generateUrlFromPattern(
         );
     }
 
-    return normalizeUrl(urlPattern.stringify(withoutUndefined(params)) as `/${string}`);
+    return normalizeUrl(urlPattern.stringify(omitUndefined(params)) as `/${string}`);
 }
 
 function getLocaleSlug(params: Params, context: Context): string {

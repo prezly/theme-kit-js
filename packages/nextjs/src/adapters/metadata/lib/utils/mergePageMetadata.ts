@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
+import { omitUndefined } from '@technically/omit-undefined';
 import type { Metadata } from 'next';
 
 export function mergePageMetadata(...metadatas: Metadata[]): Metadata {
@@ -7,33 +8,33 @@ export function mergePageMetadata(...metadatas: Metadata[]): Metadata {
 
 function merge(a: Metadata, b: Metadata): Metadata {
     if (Object.keys(a).length === 0) {
-        return withoutUndefined(b);
+        return omitUndefined(b);
     }
 
     if (Object.keys(b).length === 0) {
-        return withoutUndefined(a);
+        return omitUndefined(a);
     }
 
     return {
-        ...withoutUndefined(a),
-        ...withoutUndefined(b),
+        ...omitUndefined(a),
+        ...omitUndefined(b),
         robots: mergeRobots(a.robots, b.robots),
         alternates: mergeAlternates(a.alternates, b.alternates),
         openGraph: {
-            ...withoutUndefined(a.openGraph ?? {}),
-            ...withoutUndefined(b.openGraph ?? {}),
+            ...omitUndefined(a.openGraph ?? {}),
+            ...omitUndefined(b.openGraph ?? {}),
         },
         twitter: {
-            ...withoutUndefined(a.twitter ?? {}),
-            ...withoutUndefined(b.twitter ?? {}),
+            ...omitUndefined(a.twitter ?? {}),
+            ...omitUndefined(b.twitter ?? {}),
         },
         verification: {
-            ...withoutUndefined(a.verification ?? {}),
-            ...withoutUndefined(b.verification ?? {}),
+            ...omitUndefined(a.verification ?? {}),
+            ...omitUndefined(b.verification ?? {}),
         },
         other: {
-            ...withoutUndefined(a.other ?? {}),
-            ...withoutUndefined(b.other ?? {}),
+            ...omitUndefined(a.other ?? {}),
+            ...omitUndefined(b.other ?? {}),
         },
     };
 }
@@ -41,8 +42,8 @@ function merge(a: Metadata, b: Metadata): Metadata {
 function mergeRobots(a: Metadata['robots'], b: Metadata['robots']): Metadata['robots'] {
     if (a && typeof a === 'object' && b && typeof b === 'object') {
         return {
-            ...withoutUndefined(a),
-            ...withoutUndefined(b),
+            ...omitUndefined(a),
+            ...omitUndefined(b),
         };
     }
 
@@ -54,21 +55,15 @@ function mergeAlternates(
     b: Metadata['alternates'],
 ): Metadata['alternates'] {
     return {
-        ...withoutUndefined(a ?? {}),
-        ...withoutUndefined(b ?? {}),
+        ...omitUndefined(a ?? {}),
+        ...omitUndefined(b ?? {}),
         media: {
-            ...withoutUndefined(a?.media ?? {}),
-            ...withoutUndefined(b?.media ?? {}),
+            ...omitUndefined(a?.media ?? {}),
+            ...omitUndefined(b?.media ?? {}),
         },
         types: {
-            ...withoutUndefined(a?.types ?? {}),
-            ...withoutUndefined(b?.types ?? {}),
+            ...omitUndefined(a?.types ?? {}),
+            ...omitUndefined(b?.types ?? {}),
         },
     };
-}
-
-function withoutUndefined<T extends {}>(input: T): T {
-    return Object.fromEntries(
-        Object.entries(input).filter(([, propValue]) => propValue !== undefined),
-    ) as T;
 }

@@ -1,6 +1,5 @@
+import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Metadata } from 'next';
-
-import { type AsyncResolvable, resolveAsync } from '../../../utils';
 
 import type { AppUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
@@ -15,7 +14,7 @@ export async function generateSearchPageMetadata(
     { title, description, generateUrl: resolvableUrlGenerator, ...prerequisites }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
-    const generateUrl = await resolveAsync(resolvableUrlGenerator);
+    const generateUrl = await AsyncResolvable.resolve(resolvableUrlGenerator);
 
     return generatePageMetadata(
         {

@@ -1,9 +1,8 @@
 import { Story } from '@prezly/sdk';
 import type { StoryRef } from '@prezly/sdk';
+import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
-
-import { type AsyncResolvable, resolveAsync } from '../../../utils';
 
 import type { AppUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
@@ -25,8 +24,10 @@ export async function generateStoryPageMetadata(
     }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
-    const generateUrl = await resolveAsync(resolvableUrlGenerator);
-    const story = await resolveAsync(resolvable.story);
+    const [generateUrl, story] = await AsyncResolvable.resolve(
+        resolvableUrlGenerator,
+        resolvable.story,
+    );
 
     function generateStoryUrl(localeCode: Locale.Code, translation: StoryRef) {
         if (Story.isPublished(translation)) {

@@ -1,6 +1,5 @@
+import type { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Metadata } from 'next';
-
-import type { AsyncResolvable } from '../../utils';
 
 import * as lib from './lib';
 import type { AppUrlGenerator, Prerequisites } from './lib';
