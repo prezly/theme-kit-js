@@ -25,6 +25,11 @@
       "require": "./build/server.cjs",
       "default": "./build/server.mjs"
     },
+    "./middleware": {
+      "types": "./build/middleware/index.d.ts",
+      "require": "./build/middleware/index.cjs",
+      "default": "./build/middleware/index.mjs"
+    },
     "./next-config": {
       "types": "./build/next-config/index.d.ts",
       "require": "./build/next-config/index.cjs",
