@@ -54,6 +54,9 @@
     "react": "^18.x",
     "react-dom": "^18.x"
   },
+  "dependencies": {
+    "@prezly/theme-kit-intl": "^0.0.0-next-613d39b130effa22a0ea501019c4f6d1ce5a761b"
+  },
   "publishConfig": {
     "access": "public"
   },

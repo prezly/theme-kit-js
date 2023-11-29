@@ -12,12 +12,11 @@ import {
     formatMessageString,
     pickSupportedLocale,
 } from '@prezly/theme-kit-intl';
-import type { ReactElement } from 'react';
-
 import {
     FormattedDate as BaseFormattedDate,
     FormattedTime as BaseFormattedTime,
-} from './lib/shared';
+} from '@prezly/theme-kit-react';
+import type { ReactElement } from 'react';
 
 type Awaitable<T> = T | Promise<T>;
 
