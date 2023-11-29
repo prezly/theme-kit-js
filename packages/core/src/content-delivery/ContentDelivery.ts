@@ -58,6 +58,8 @@ export namespace mediaAlbums {
     }
 }
 
+export type Client = ReturnType<typeof createClient>;
+
 export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
