@@ -15,11 +15,6 @@
       "require": "./build/index.cjs",
       "default": "./build/index.mjs"
     },
-    "./client": {
-      "types": "./build/client.d.ts",
-      "require": "./build/client.cjs",
-      "default": "./build/client.mjs"
-    },
     "./server": {
       "types": "./build/server.d.ts",
       "require": "./build/server.cjs",
