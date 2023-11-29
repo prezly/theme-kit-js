@@ -1,4 +1,4 @@
-import { type Resolvable, resolve } from '../../utils';
+import { Resolvable } from '@prezly/theme-kit-core';
 
 export namespace AnalyticsAdapter {
     export interface Configuration {
@@ -8,7 +8,7 @@ export namespace AnalyticsAdapter {
     export function connect(config: Configuration) {
         function useAnalytics() {
             return {
-                isTrackingEnabled: resolve(config.isTrackingEnabled),
+                isTrackingEnabled: Resolvable.resolve(config.isTrackingEnabled),
             };
         }
 

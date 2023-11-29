@@ -1,7 +1,5 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
-import { Routing } from '@prezly/theme-kit-core';
-
-import { type AsyncResolvable, resolveAsync } from '../../../utils';
+import { AsyncResolvable, Routing } from '@prezly/theme-kit-core';
 
 import type { Router, RoutesMap } from './types';
 
@@ -20,7 +18,7 @@ export function createRouter<Routes extends RoutesMap>(
 
         async match(path: string, searchParams: URLSearchParams) {
             async function resolveDefaultLocale() {
-                const languages = await resolveAsync(config.languages);
+                const languages = await AsyncResolvable.resolve(config.languages);
                 const defaultLanguage = languages.find((lang) => lang.is_default);
                 if (!defaultLanguage) {
                     throw new Error(
@@ -31,7 +29,7 @@ export function createRouter<Routes extends RoutesMap>(
             }
 
             async function resolveLocaleSlug(localeSlug: string) {
-                const languages = await resolveAsync(config.languages);
+                const languages = await AsyncResolvable.resolve(config.languages);
                 return Routing.matchLanguageByLocaleSlug(languages, localeSlug)?.code;
             }
 

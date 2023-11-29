@@ -1,8 +1,6 @@
 import type { Newsroom } from '@prezly/sdk';
+import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { MetadataRoute } from 'next';
-
-import type { AsyncResolvable } from '../utils';
-import { resolveAsync } from '../utils';
 
 export interface Context {
     newsroom: AsyncResolvable<Newsroom>;
@@ -15,7 +13,7 @@ export async function generate(
     { baseUrl, ...resolvable }: Context,
     extra: MetadataRoute.Robots | DisallowList = { rules: [] },
 ): Promise<MetadataRoute.Robots> {
-    const newsroom = await resolveAsync(resolvable.newsroom);
+    const newsroom = await AsyncResolvable.resolve(resolvable.newsroom);
 
     if (!newsroom.is_indexable) {
         return {

@@ -6,9 +6,8 @@ import type {
     StoryRef,
     TranslatedCategory,
 } from '@prezly/sdk';
+import type { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
-
-import type { AsyncResolvable } from '../../../utils';
 
 export type Url = `/${string}`;
 

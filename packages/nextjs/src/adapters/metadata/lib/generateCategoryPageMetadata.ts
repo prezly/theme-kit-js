@@ -1,7 +1,6 @@
 import { Category } from '@prezly/sdk';
+import { AsyncResolvable, Resolvable } from '@prezly/theme-kit-core';
 import type { Metadata } from 'next';
-
-import { type AsyncResolvable, resolve, resolveAsync } from '../../../utils';
 
 import type { AppUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
@@ -15,11 +14,11 @@ export async function generateCategoryPageMetadata(
     { generateUrl: resolvableUrlGenerator, category: resolvableCategory, ...prerequisites }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
-    const generateUrl = await resolveAsync(resolvableUrlGenerator);
-    const category = await resolveAsync(resolvableCategory);
+    const generateUrl = await AsyncResolvable.resolve(resolvableUrlGenerator);
+    const category = await AsyncResolvable.resolve(resolvableCategory);
 
     const { name, description } =
-        Category.translation(category, resolve(prerequisites.locale)) ?? {};
+        Category.translation(category, Resolvable.resolve(prerequisites.locale)) ?? {};
 
     return generatePageMetadata(
         {

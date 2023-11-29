@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { Routing } from '@prezly/theme-kit-core';
+import { AsyncResolvable } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
 import { headers } from 'next/headers';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 import type { Router, RoutesMap } from '../adapters/server';
-import { type AsyncResolvable, resolveAsync } from '../utils';
 
 export namespace IntlMiddleware {
     export interface Configuration {
@@ -26,7 +26,7 @@ export namespace IntlMiddleware {
 
             const { localeHeader = LOCALE_HEADER } = config;
 
-            const [locales, defaultLocale] = await resolveAsync(
+            const [locales, defaultLocale] = await AsyncResolvable.resolve(
                 config.locales,
                 config.defaultLocale,
             );

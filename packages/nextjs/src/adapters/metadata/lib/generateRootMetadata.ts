@@ -1,6 +1,5 @@
+import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Metadata } from 'next';
-
-import { resolveAsync } from '../../../utils';
 
 import type { Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
@@ -13,7 +12,7 @@ export async function generateRootMetadata(
     { locale, indexable = true, ...resolvable }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
-    const [newsroom, companyInformation, languages] = await resolveAsync(
+    const [newsroom, companyInformation, languages] = await AsyncResolvable.resolve(
         resolvable.newsroom,
         resolvable.companyInformation,
         resolvable.languages,
