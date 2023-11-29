@@ -1,26 +1,34 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { IntlMiddleware } from '@prezly/theme-kit-core';
+import { AsyncResolvable, IntlMiddleware, Resolvable } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
 import { headers } from 'next/headers';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export type Router = IntlMiddleware.Router;
-export interface Configuration extends IntlMiddleware.Configuration {
+export interface Configuration extends AsyncResolvable.Properties<IntlMiddleware.Context> {
     localeHeader?: string;
 }
 
 export const DEFAULT_LOCALE_HEADER = 'X-Prezly-Locale';
 
-export function create(createRouter: () => Router, config: Configuration) {
+export function create(router: Resolvable<Router>, config: Configuration) {
     const { localeHeader = DEFAULT_LOCALE_HEADER } = config;
 
-    const genericMiddleware = IntlMiddleware.create(createRouter, config);
-
     return async (request: NextRequest) => {
-        const { pathname, searchParams, origin } = request.nextUrl;
+        const { pathname, searchParams } = request.nextUrl;
 
-        const action = await genericMiddleware(pathname, searchParams, origin);
+        const [locales, defaultLocale] = await AsyncResolvable.resolve(
+            config.locales,
+            config.defaultLocale,
+        );
+
+        const action = await IntlMiddleware.handle(
+            Resolvable.resolve(router),
+            pathname,
+            searchParams,
+            { locales, defaultLocale },
+        );
 
         if ('redirect' in action) {
             return NextResponse.redirect(action.redirect);

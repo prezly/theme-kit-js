@@ -8,6 +8,10 @@ type DynamicallyResolvable<T> = () => T;
 type AsyncDynamicallyResolvable<T> = () => Promise<T>;
 
 export namespace Resolvable {
+    export type Properties<T> = {
+        [key in keyof T]: Resolvable<T[key]>;
+    };
+
     export function resolve<T>(value: T | DynamicallyResolvable<T>): T {
         if (typeof value === 'function') {
             return (value as DynamicallyResolvable<T>)();
@@ -17,6 +21,10 @@ export namespace Resolvable {
 }
 
 export namespace AsyncResolvable {
+    export type Properties<T> = {
+        [key in keyof T]: AsyncResolvable<T[key]>;
+    };
+
     export function resolve<T>(
         value: T | DynamicallyResolvable<T> | AsyncDynamicallyResolvable<T>,
     ): Awaitable<T>;
