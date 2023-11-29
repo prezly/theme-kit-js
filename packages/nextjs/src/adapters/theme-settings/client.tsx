@@ -1,9 +1,8 @@
 'use client';
 
+import { omitUndefined } from '@technically/omit-undefined';
 import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
-
-import { withoutUndefined } from '../../utils';
 
 export namespace ThemeSettingsAdapter {
     export interface Configuration<T> {
@@ -19,7 +18,7 @@ export namespace ThemeSettingsAdapter {
         }) {
             const settings = {
                 ...config.defaults,
-                ...withoutUndefined(props.settings ?? {}),
+                ...omitUndefined(props.settings ?? {}),
             };
             return <context.Provider value={settings}>{props.children}</context.Provider>;
         }

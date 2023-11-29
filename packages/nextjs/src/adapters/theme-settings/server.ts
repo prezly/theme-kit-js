@@ -1,6 +1,5 @@
 import { AsyncResolvable } from '@prezly/theme-kit-core';
-
-import { withoutUndefined } from '../../utils';
+import { omitUndefined } from '@technically/omit-undefined';
 
 export namespace ThemeSettingsAdapter {
     export interface Configuration<T> {
@@ -17,7 +16,7 @@ export namespace ThemeSettingsAdapter {
 
             return {
                 ...defaults,
-                ...withoutUndefined(settings ?? {}),
+                ...omitUndefined(settings ?? {}),
             } as T;
         }
 

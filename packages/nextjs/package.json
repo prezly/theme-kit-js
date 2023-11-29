@@ -94,6 +94,7 @@
   "dependencies": {
     "@prezly/theme-kit-core": "0.0.0-next-613d39b130effa22a0ea501019c4f6d1ce5a761b",
     "@prezly/theme-kit-intl": "0.0.0-next-613d39b130effa22a0ea501019c4f6d1ce5a761b",
+    "@technically/omit-undefined": "^1.0.1",
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
