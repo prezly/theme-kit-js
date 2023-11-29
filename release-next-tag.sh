@@ -1,7 +1,7 @@
 #/usr/bin/bash
 
 COMMIT=`git log | head -n1 | cut -d\  -f2`
-VERSION=0.0.0-next-$COMMIT
+VERSION=0.0.0-next-remix-$COMMIT
 
 echo Preparing $VERSION
 
