@@ -17,6 +17,7 @@ git add lerna.json \
         package-lock.json \
         packages/core/package.json \
         packages/intl/package.json \
+        packages/react/package.json \
         packages/nextjs/package.json \
         packages/ui/package.json
 
