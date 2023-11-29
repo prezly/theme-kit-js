@@ -5,6 +5,7 @@
   "workspaces": [
     "packages/core",
     "packages/intl",
+    "packages/react",
     "packages/nextjs"
   ],
   "scripts": {
