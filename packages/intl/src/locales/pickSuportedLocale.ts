@@ -1,7 +1,6 @@
+import { DEFAULT_LOCALE } from './constants';
 import { isLocaleSupported } from './isLocaleSupported';
 import { Locale } from './Locale';
-
-export const DEFAULT_LOCALE = 'en';
 
 /**
  * Use this function to determine which translations file you should load from `@prezly/theme-kit-intl` package.
