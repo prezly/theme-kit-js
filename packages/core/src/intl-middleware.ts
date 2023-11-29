@@ -18,7 +18,7 @@ export interface Router {
 }
 
 export interface Match {
-    params: Params & { localeCode: Locale.Code; localeSlug: Locale.AnySlug };
+    params: Params & { localeCode: Locale.Code; localeSlug?: Locale.AnySlug };
     route: Route;
 }
 
@@ -42,7 +42,7 @@ export async function handle(
     if (matched) {
         const { params } = matched;
 
-        if (params.localeSlug && params.localeCode) {
+        if (params.localeSlug) {
             // If there is :localeSlug, and it is resolved to the default newsroom locale -- remove it.
             if (params.localeCode === defaultLocale) {
                 const redirect = matched.route.generate({
