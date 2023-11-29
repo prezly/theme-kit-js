@@ -25,6 +25,11 @@
       "require": "./build/server.cjs",
       "default": "./build/server.mjs"
     },
+    "./middleware": {
+      "types": "./build/middleware/index.d.ts",
+      "require": "./build/middleware/index.cjs",
+      "default": "./build/middleware/index.mjs"
+    },
     "./next-config": {
       "types": "./build/next-config/index.d.ts",
       "require": "./build/next-config/index.cjs",
@@ -94,6 +99,7 @@
   "dependencies": {
     "@prezly/theme-kit-core": "0.0.0-next-613d39b130effa22a0ea501019c4f6d1ce5a761b",
     "@prezly/theme-kit-intl": "0.0.0-next-613d39b130effa22a0ea501019c4f6d1ce5a761b",
+    "@prezly/theme-kit-react": "^0.0.0-next-613d39b130effa22a0ea501019c4f6d1ce5a761b",
     "@technically/omit-undefined": "^1.0.2",
     "url-pattern": "^1.0.3"
   },
