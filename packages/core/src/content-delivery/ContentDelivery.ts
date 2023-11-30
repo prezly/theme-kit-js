@@ -11,6 +11,7 @@ import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '
 export interface Options {
     formats?: Story.FormatVersion[];
     pinning?: boolean;
+    cache?: boolean;
 }
 
 export namespace stories {
@@ -64,7 +65,7 @@ export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
     newsroomThemeUuid: NewsroomTheme['id'] | undefined,
-    { formats = [Story.FormatVersion.SLATEJS_V4], pinning = false }: Options = {},
+    { formats = [Story.FormatVersion.SLATEJS_V4], pinning = false, cache = false }: Options = {},
 ) {
     const client = {
         newsroom() {
@@ -290,7 +291,34 @@ export function createClient(
         },
     };
 
+    if (cache) {
+        injectCache(client);
+    }
+
     return client;
+}
+
+function injectCache(client: Client) {
+    const cachedCalls = new Map<string, any>();
+
+    const methodNames = Object.keys(client) as (keyof Client)[];
+
+    methodNames.forEach((methodName) => {
+        const uncachedFn = client[methodName].bind(client);
+
+        // eslint-disable-next-line no-param-reassign
+        client[methodName] = (...args: Parameters<typeof uncachedFn>) => {
+            const key = `${methodName}:${JSON.stringify(args)}`;
+
+            const cached = cachedCalls.get(key);
+            if (cached) return cached;
+
+            const value = (uncachedFn as Function)(...args);
+            cachedCalls.set(key, value);
+
+            return value;
+        };
+    });
 }
 
 function chronologically(direction: `${SortOrder.Direction}`, pinning = false) {
