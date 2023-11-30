@@ -4,7 +4,7 @@
 
 const assert = require('assert');
 
-const { RoutingAdapter } = require('@prezly/theme-kit-nextjs/client');
+const { RoutingAdapter } = require('@prezly/theme-kit-nextjs');
 
 assert(typeof RoutingAdapter.connect === 'function');
 

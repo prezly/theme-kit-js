@@ -14,20 +14,26 @@ export namespace PrezlyAdapter {
         formats?: Story.FormatVersion[];
     }
 
-    export type CacheConfiguration = Partial<CachedFetch.Options>;
+    export interface CacheConfiguration {
+        dataCache?: boolean;
+        fetchCache?: boolean | Partial<CachedFetch.Options>;
+    }
 
     export const DEFAULT_REQUEST_CACHE_TTL = 10000;
-    export const DEFAULT_CACHED_METHODS = ['GET', 'POST'];
+    export const DEFAULT_REQUEST_CACHED_METHODS = ['GET', 'POST'];
 
     export function connect(
         config: Resolvable<Configuration>,
-        cacheConfig: CacheConfiguration = {},
+        { dataCache = false, fetchCache = false }: CacheConfiguration = {},
     ) {
-        const cachedFetch = CachedFetch.create({
-            ...cacheConfig,
-            ttl: cacheConfig.ttl ?? DEFAULT_REQUEST_CACHE_TTL,
-            methods: cacheConfig.methods ?? DEFAULT_CACHED_METHODS,
-        });
+        const fetchCacheConfig = fetchCache === true ? {} : fetchCache;
+        const cachedFetch = fetchCacheConfig
+            ? CachedFetch.create({
+                  ...fetchCacheConfig,
+                  ttl: fetchCacheConfig.ttl ?? DEFAULT_REQUEST_CACHE_TTL,
+                  methods: fetchCacheConfig.methods ?? DEFAULT_REQUEST_CACHED_METHODS,
+              })
+            : undefined;
 
         function usePrezlyClient() {
             const {
@@ -51,6 +57,7 @@ export namespace PrezlyAdapter {
             const contentDelivery = ContentDelivery.createClient(client, newsroom, theme, {
                 pinning,
                 formats,
+                cache: dataCache,
             });
 
             return { client, contentDelivery };
