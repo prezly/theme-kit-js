@@ -35,7 +35,7 @@ export function create(router: Resolvable<Router>, config: Configuration) {
         }
 
         if ('rewrite' in action) {
-            return NextResponse.rewrite(action.rewrite, {
+            return NextResponse.rewrite(new URL(action.rewrite, request.nextUrl), {
                 headers: {
                     [localeHeader]: action.locale,
                 },
