@@ -31,7 +31,7 @@ export function create(router: Resolvable<Router>, config: Configuration) {
         );
 
         if ('redirect' in action) {
-            return NextResponse.redirect(action.redirect);
+            return NextResponse.redirect(new URL(action.redirect, request.nextUrl));
         }
 
         if ('rewrite' in action) {
