@@ -35,7 +35,7 @@
     "url": "https://github.com/prezly/theme-kit-js/issues"
   },
   "peerDependencies": {
-    "@prezly/sdk": "^18.2.0",
+    "@prezly/sdk": "^18.2.2",
     "next": "^13.x",
     "react": "^18.x",
     "react-dom": "^18.x"
