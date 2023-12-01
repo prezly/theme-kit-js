@@ -1,3 +1,5 @@
+'use client';
+
 import { BaseFormattedDate } from './BaseFormattedDate';
 import { useIntl } from './IntlContext';
 import type { Optional } from './utils';

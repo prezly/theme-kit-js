@@ -1,3 +1,5 @@
+'use client';
+
 import { BaseFormattedMessage } from './BaseFormattedMessage';
 import { useIntl } from './IntlContext';
 import type { Optional } from './utils';

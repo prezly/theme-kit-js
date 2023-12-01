@@ -1,3 +1,5 @@
+'use client';
+
 import { BaseFormattedTime } from './BaseFormattedTime';
 import { useIntl } from './IntlContext';
 import type { Optional } from './utils';
