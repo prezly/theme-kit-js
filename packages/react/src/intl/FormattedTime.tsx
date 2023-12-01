@@ -1,24 +1,12 @@
-/* eslint-disable @typescript-eslint/no-use-before-define,react/jsx-props-no-spreading */
-import type { Iso8601Date, Locale, Timezone, UnixTimestampInSeconds } from '@prezly/theme-kit-intl';
-import { formatTime } from '@prezly/theme-kit-intl';
-import type { TimeHTMLAttributes } from 'react';
+import { BaseFormattedTime } from './BaseFormattedTime';
+import { useIntl } from './IntlContext';
+import type { Optional } from './utils';
 
-import { toDate } from './utils';
-
-export function FormattedTime({ value, locale, timezone, ...attributes }: FormattedTime.Props) {
-    const dateTime = toDate(value);
-
-    return (
-        <time {...attributes} dateTime={dateTime.toISOString()}>
-            {formatTime(dateTime, { locale, timezone })}
-        </time>
-    );
+export function FormattedTime(props: FormattedTime.Props) {
+    const { timezone, locale } = useIntl();
+    return <BaseFormattedTime timezone={timezone} locale={locale} {...props} />;
 }
 
 export namespace FormattedTime {
-    export type Props = {
-        value: Date | Iso8601Date | UnixTimestampInSeconds;
-        locale: Locale.Code;
-        timezone: Timezone;
-    } & Omit<TimeHTMLAttributes<HTMLTimeElement>, 'dateTime'>;
+    export type Props = Optional<BaseFormattedTime.Props, 'locale' | 'timezone'>;
 }

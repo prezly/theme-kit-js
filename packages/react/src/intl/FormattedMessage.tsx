@@ -1,15 +1,12 @@
-import type { IntlMessageDescriptor, IntlMessageValues, Locale } from '@prezly/theme-kit-intl';
-import { formatMessageFragment } from '@prezly/theme-kit-intl';
-import type { ReactElement } from 'react';
-
+import { BaseFormattedMessage } from './BaseFormattedMessage';
 import { useIntl } from './IntlContext';
+import type { Optional } from './utils';
 
-export function FormattedMessage(props: {
-    for: IntlMessageDescriptor;
-    values?: IntlMessageValues<string | ReactElement>;
-    locale?: Locale | Locale.Code;
-}) {
+export function FormattedMessage(props: FormattedMessage.Props) {
     const { messages } = useIntl();
+    return <BaseFormattedMessage messages={messages} {...props} />;
+}
 
-    return <>{formatMessageFragment(props.for, messages, props.values)}</>;
+export namespace FormattedMessage {
+    export type Props = Optional<BaseFormattedMessage.Props, 'messages'>;
 }
