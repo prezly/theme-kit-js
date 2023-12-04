@@ -166,6 +166,12 @@ export function getShortestLocaleCode<
         return false;
     }
 
+    // Undocumented feature: you can completely disable locale shortening by setting `BYPASS_LOCALE_CODE_SHORTENING` env variable.
+    // Currently used by a custom theme.
+    if (process.env.BYPASS_LOCALE_CODE_SHORTENING) {
+        return localeCode;
+    }
+
     // Try shorting to neutral language code
     const neutralLanguageCode = locale.toNeutralLanguageCode();
     const matchingLanguagesByNeutralCode = languages.filter(
