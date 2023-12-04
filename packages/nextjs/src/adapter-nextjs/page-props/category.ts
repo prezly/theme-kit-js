@@ -17,25 +17,25 @@ import { processStaticRequest } from '../processStaticRequest';
 
 import type { PropsFunction } from './lib/types';
 
-export interface CategoryPageProps<StoryType extends Story = Story> {
-    stories: StoryType[];
+export interface CategoryPageProps<Include extends keyof Story.ExtraFields = never> {
+    stories: (Story & Pick<Story.ExtraFields, Include>)[];
     pagination: PaginationProps;
 }
 
-interface Options {
-    extraStoryFields?: (keyof Story.ExtraFields)[];
+interface Options<Include extends keyof Story.ExtraFields> {
+    extraStoryFields?: Include[];
     pageSize?: number;
 }
 
 export function getCategoryPageServerSideProps<
     CustomProps extends Record<string, any>,
-    StoryType extends Story = Story,
->(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options) {
-    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options || {};
+    Include extends keyof Story.ExtraFields = never,
+>(customProps: CustomProps | PropsFunction<CustomProps>, options: Options<Include> = {}) {
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options;
 
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
-    ): Promise<GetServerSidePropsResult<CategoryPageProps<StoryType> & CustomProps>> {
+    ): Promise<GetServerSidePropsResult<CategoryPageProps<Include> & CustomProps>> {
         const { api, serverSideProps } = await getNewsroomServerSideProps(context);
 
         const { slug } = context.params as { slug: string };
@@ -65,8 +65,7 @@ export function getCategoryPageServerSideProps<
             context,
             {
                 ...serverSideProps,
-                // TODO: This is temporary until return types from API are figured out
-                stories: stories as StoryType[],
+                stories,
                 pagination: {
                     itemsTotal: storiesTotal,
                     currentPage: page ?? 1,
@@ -83,13 +82,16 @@ export function getCategoryPageServerSideProps<
 
 export function getCategoryPageStaticProps<
     CustomProps extends Record<string, any>,
-    StoryType extends Story = Story,
->(customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>, options?: Options) {
-    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields } = options || {};
+    Include extends keyof Story.ExtraFields = never,
+>(
+    customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
+    options: Options<Include> = {},
+) {
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields = [] } = options;
 
     return async function getStaticProps(
         context: GetStaticPropsContext,
-    ): Promise<GetStaticPropsResult<CategoryPageProps<StoryType> & CustomProps>> {
+    ): Promise<GetStaticPropsResult<CategoryPageProps<Include> & CustomProps>> {
         const { api, staticProps } = await getNewsroomStaticProps(context);
 
         const { slug } = context.params as { slug: string };
@@ -113,8 +115,7 @@ export function getCategoryPageStaticProps<
 
         return processStaticRequest(context, {
             ...staticProps,
-            // TODO: This is temporary until return types from API are figured out
-            stories: stories as StoryType[],
+            stories,
             pagination: {
                 itemsTotal: storiesTotal,
                 currentPage: 1,

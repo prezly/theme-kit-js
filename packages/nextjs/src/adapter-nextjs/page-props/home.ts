@@ -15,13 +15,13 @@ import { processStaticRequest } from '../processStaticRequest';
 
 import type { PropsFunction } from './lib/types';
 
-export interface HomePageProps<StoryType extends Story = Story> {
-    stories: StoryType[];
+export interface HomePageProps<Include extends keyof Story.ExtraFields = never> {
+    stories: (Story & Pick<Story.ExtraFields, Include>)[];
     pagination: PaginationProps;
 }
 
-interface Options {
-    extraStoryFields?: (keyof Story.ExtraFields)[];
+interface Options<Include extends keyof Story.ExtraFields> {
+    extraStoryFields?: Include[];
     /**
      * When set to `true`, the initial `stories` array will include one extra story to place as highlighted story.
      * This will offset each subsequent page by 1 story to account for that.
@@ -34,8 +34,8 @@ interface Options {
 
 export function getHomepageServerSideProps<
     CustomProps extends Record<string, any>,
-    StoryType extends Story = Story,
->(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options) {
+    Include extends keyof Story.ExtraFields = never,
+>(customProps: CustomProps | PropsFunction<CustomProps>, options?: Options<Include>) {
     const {
         pageSize = DEFAULT_PAGE_SIZE,
         extraStoryFields,
@@ -46,7 +46,7 @@ export function getHomepageServerSideProps<
 
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
-    ): Promise<GetServerSidePropsResult<HomePageProps<StoryType> & CustomProps>> {
+    ): Promise<GetServerSidePropsResult<HomePageProps<Include> & CustomProps>> {
         const { api, serverSideProps } = await getNewsroomServerSideProps(context, {
             loadHomepageContacts: true,
         });
@@ -71,8 +71,7 @@ export function getHomepageServerSideProps<
             context,
             {
                 ...serverSideProps,
-                // TODO: This is temporary until return types from API are figured out
-                stories: stories as StoryType[],
+                stories,
                 pagination: {
                     itemsTotal: storiesTotal,
                     currentPage: page ?? 1,
@@ -90,13 +89,16 @@ export function getHomepageServerSideProps<
 
 export function getHomepageStaticProps<
     CustomProps extends Record<string, any>,
-    StoryType extends Story = Story,
->(customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>, options?: Options) {
-    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields, pinning = false } = options || {};
+    Include extends keyof Story.ExtraFields = never,
+>(
+    customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
+    options: Options<Include> = {},
+) {
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields = [], pinning = false } = options;
 
     return async function getStaticProps(
         context: GetStaticPropsContext,
-    ): Promise<GetStaticPropsResult<HomePageProps<StoryType> & CustomProps>> {
+    ): Promise<GetStaticPropsResult<HomePageProps<Include> & CustomProps>> {
         const { api, staticProps } = await getNewsroomStaticProps(context, {
             loadHomepageContacts: true,
         });
@@ -113,8 +115,7 @@ export function getHomepageStaticProps<
 
         return processStaticRequest(context, {
             ...staticProps,
-            // TODO: This is temporary until return types from API are figured out
-            stories: stories as StoryType[],
+            stories,
             pagination: {
                 itemsTotal: storiesTotal,
                 currentPage: 1,
