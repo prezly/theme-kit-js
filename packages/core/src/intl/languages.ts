@@ -166,9 +166,9 @@ export function getShortestLocaleCode<
         return false;
     }
 
-    // Undocumented feature: you can completely disable locale shortening by setting `BYPASS_LOCALE_CODE_SHORTENING` env variable.
+    // Undocumented feature: you can completely disable locale shortening by setting `NEXT_PUBLIC_BYPASS_LOCALE_CODE_SHORTENING` env variable.
     // Currently used by a custom theme.
-    if (process.env.BYPASS_LOCALE_CODE_SHORTENING) {
+    if (process.env.NEXT_PUBLIC_BYPASS_LOCALE_CODE_SHORTENING) {
         return localeCode;
     }
 
