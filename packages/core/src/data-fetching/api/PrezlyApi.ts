@@ -29,12 +29,12 @@ const ERROR_CODE_NOT_FOUND = 404;
 const ERROR_CODE_FORBIDDEN = 403;
 const ERROR_CODE_GONE = 410;
 
-interface GetStoriesOptions {
+interface GetStoriesOptions<Include extends keyof Story.ExtraFields = never> {
     page?: number;
     pageSize?: number;
     order?: `${SortOrder.Direction}`;
     pinning?: boolean;
-    include?: (keyof Story.ExtraFields)[];
+    include?: Include[];
     localeCode?: string;
     /**
      * When set to `true`, the result for the first page will include one extra story to place as highlighted story.
@@ -139,7 +139,7 @@ export class PrezlyApi {
         return stories;
     }
 
-    async getStories({
+    async getStories<Include extends keyof Story.ExtraFields = never>({
         page = undefined,
         pageSize = DEFAULT_PAGE_SIZE,
         order = DEFAULT_SORT_ORDER,
@@ -148,7 +148,7 @@ export class PrezlyApi {
         localeCode,
         withHighlightedStory,
         filterQuery,
-    }: GetStoriesOptions = {}) {
+    }: GetStoriesOptions<Include> = {}) {
         const sortOrder = getChronologicalSortOrder(order, pinning);
         const query = JSON.stringify(
             getStoriesQuery(this.newsroomUuid, undefined, localeCode, filterQuery),
@@ -169,7 +169,7 @@ export class PrezlyApi {
         return { stories, storiesTotal };
     }
 
-    async getStoriesFromCategory(
+    async getStoriesFromCategory<Include extends keyof Story.ExtraFields = never>(
         category: Category,
         {
             page = undefined,
@@ -178,7 +178,7 @@ export class PrezlyApi {
             include,
             localeCode,
             filterQuery,
-        }: Omit<GetStoriesOptions, 'pinning' | 'withHighlightedStory'> = {},
+        }: Omit<GetStoriesOptions<Include>, 'pinning' | 'withHighlightedStory'>,
     ) {
         const sortOrder = getChronologicalSortOrder(order);
         const query = JSON.stringify(
@@ -231,11 +231,13 @@ export class PrezlyApi {
         );
     }
 
-    searchStories: Stories.Client['search'] = (options) => {
-        const formats = options?.formats ?? [Story.FormatVersion.SLATEJS_V4];
+    searchStories<Include extends keyof Story.ExtraFields = never>(
+        options: Stories.SearchOptions<Include>,
+    ) {
+        const { formats = [Story.FormatVersion.SLATEJS_V4], include = [] } = options;
 
-        return this.sdk.stories.search({ ...options, formats });
-    };
+        return this.sdk.stories.search({ ...options, formats, include });
+    }
 
     async getGalleries({ page, pageSize, type }: GetGalleriesOptions) {
         const { offset, limit } = toPaginationParams({ page, pageSize });
