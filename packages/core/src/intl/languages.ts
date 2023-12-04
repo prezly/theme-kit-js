@@ -14,6 +14,8 @@ function isOnlyCulture(
 }
 
 /**
+ * @param mode - defaults to 'native', determines whether to return the native language name or the english language name
+ *
  * @returns the display name of the locale in its native language
  *
  * If there's only one culture used in a specific language,
@@ -28,18 +30,20 @@ function isOnlyCulture(
 export function getLanguageDisplayName(
     language: Pick<NewsroomLanguageSettings, 'locale'>,
     languages: Pick<NewsroomLanguageSettings, 'locale'>[],
+    mode: 'native' | 'english' = 'native',
 ): string {
     const { locale } = language;
+    const displayedName = mode === 'native' ? locale.native_name : locale.name;
 
     if (isOnlyCulture(locale, languages)) {
-        const cultureNameIndex = locale.native_name.indexOf('(');
+        const cultureNameIndex = displayedName.indexOf('(');
 
         if (cultureNameIndex !== -1) {
-            return locale.native_name.slice(0, cultureNameIndex - 1);
+            return displayedName.slice(0, cultureNameIndex - 1);
         }
     }
 
-    return locale.native_name;
+    return displayedName;
 }
 
 /**
