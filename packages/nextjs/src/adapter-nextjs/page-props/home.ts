@@ -28,6 +28,9 @@ interface Options<Include extends keyof Story.ExtraFields> {
      */
     withHighlightedStory?: boolean;
     pageSize?: number;
+    /**
+     * @deprecated Story Pinning will always be enabled in the next major release.
+     */
     pinning?: boolean;
     filterQuery?: Object;
 }

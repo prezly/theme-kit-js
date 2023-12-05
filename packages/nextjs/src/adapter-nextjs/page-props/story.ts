@@ -84,7 +84,14 @@ export function getStoryPageStaticProps<CustomProps extends Record<string, any>>
     };
 }
 
-export async function getStoryPageStaticPaths(options: { pinning?: boolean } = {}) {
+export async function getStoryPageStaticPaths(
+    options: {
+        /**
+         * @deprecated Story Pinning will always be enabled in the next major release.
+         */
+        pinning?: boolean;
+    } = {},
+) {
     const api = getNextPrezlyApi();
     const stories = await api.getAllStories({
         pinning: options.pinning ?? true,

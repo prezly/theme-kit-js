@@ -33,6 +33,9 @@ interface GetStoriesOptions<Include extends keyof Story.ExtraFields = never> {
     page?: number;
     pageSize?: number;
     order?: `${SortOrder.Direction}`;
+    /**
+     * @deprecated Story Pinning will always be enabled in the next major release.
+     */
     pinning?: boolean;
     include?: Include[];
     localeCode?: string;

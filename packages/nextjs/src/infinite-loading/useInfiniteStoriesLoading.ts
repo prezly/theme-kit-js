@@ -15,6 +15,9 @@ async function fetchStories<T extends Story = Story>(
     category?: Category,
     locale?: LocaleObject,
     include?: (keyof Story.ExtraFields)[],
+    /**
+     * @deprecated Story Pinning will always be enabled in the next major release.
+     */
     pinning?: boolean,
     filterQuery?: Object,
 ): Promise<{ stories: T[]; storiesTotal: number }> {
@@ -56,6 +59,9 @@ export function useInfiniteStoriesLoading<T extends Story = Story>(
     pagination: PaginationProps,
     category?: Category,
     include?: (keyof Story.ExtraFields)[],
+    /**
+     * @deprecated Story Pinning will always be enabled in the next major release.
+     */
     pinning?: boolean,
     filterQuery?: Object,
 ) {
