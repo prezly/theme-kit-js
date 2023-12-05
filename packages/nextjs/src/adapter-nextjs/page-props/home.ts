@@ -39,7 +39,7 @@ export function getHomepageServerSideProps<
     const {
         pageSize = DEFAULT_PAGE_SIZE,
         extraStoryFields,
-        pinning = false,
+        pinning = true,
         withHighlightedStory = false,
         filterQuery,
     } = options || {};
@@ -94,7 +94,7 @@ export function getHomepageStaticProps<
     customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
     options: Options<Include> = {},
 ) {
-    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields = [], pinning = false } = options;
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields = [], pinning = true } = options;
 
     return async function getStaticProps(
         context: GetStaticPropsContext,

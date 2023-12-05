@@ -41,7 +41,7 @@ export function getSitemapServerSideProps(
 
         const api = getNextPrezlyApi(req);
         const stories = await api.getAllStories({
-            pinning: options.pinning ?? false,
+            pinning: options.pinning ?? true,
         });
         const categories = await api.getCategories();
 

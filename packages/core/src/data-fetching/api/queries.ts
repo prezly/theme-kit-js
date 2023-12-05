@@ -49,7 +49,7 @@ export function getStoriesQuery(
     return query;
 }
 
-export function getChronologicalSortOrder(direction: `${SortOrder.Direction}`, pinning = false) {
+export function getChronologicalSortOrder(direction: `${SortOrder.Direction}`, pinning = true) {
     const pinnedFirst = SortOrder.desc('is_pinned');
     const chronological =
         direction === SortOrder.Direction.ASC

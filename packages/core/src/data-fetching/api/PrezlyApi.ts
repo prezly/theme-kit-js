@@ -114,7 +114,7 @@ export class PrezlyApi {
      */
     async getAllStories({
         order = DEFAULT_SORT_ORDER,
-        pinning = false,
+        pinning = true,
     }: Pick<GetStoriesOptions, 'order' | 'pinning'> = {}) {
         const sortOrder = getChronologicalSortOrder(order, pinning);
         const newsroom = await this.getNewsroom();
@@ -143,7 +143,7 @@ export class PrezlyApi {
         page = undefined,
         pageSize = DEFAULT_PAGE_SIZE,
         order = DEFAULT_SORT_ORDER,
-        pinning = false,
+        pinning = true,
         include,
         localeCode,
         withHighlightedStory,
