@@ -33,6 +33,9 @@ interface GetStoriesOptions<Include extends keyof Story.ExtraFields = never> {
     page?: number;
     pageSize?: number;
     order?: `${SortOrder.Direction}`;
+    /**
+     * @deprecated Story Pinning will always be enabled in the next major release.
+     */
     pinning?: boolean;
     include?: Include[];
     localeCode?: string;
@@ -114,7 +117,7 @@ export class PrezlyApi {
      */
     async getAllStories({
         order = DEFAULT_SORT_ORDER,
-        pinning = false,
+        pinning = true,
     }: Pick<GetStoriesOptions, 'order' | 'pinning'> = {}) {
         const sortOrder = getChronologicalSortOrder(order, pinning);
         const newsroom = await this.getNewsroom();
@@ -143,7 +146,7 @@ export class PrezlyApi {
         page = undefined,
         pageSize = DEFAULT_PAGE_SIZE,
         order = DEFAULT_SORT_ORDER,
-        pinning = false,
+        pinning = true,
         include,
         localeCode,
         withHighlightedStory,

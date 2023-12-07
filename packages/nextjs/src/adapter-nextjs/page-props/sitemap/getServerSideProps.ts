@@ -22,7 +22,14 @@ function normalizeBaseUrl(baseUrl: string, protocol = 'https') {
 }
 
 export function getSitemapServerSideProps(
-    options: { additionalPaths?: string[]; basePath?: string; pinning?: boolean } = {},
+    options: {
+        additionalPaths?: string[];
+        basePath?: string;
+        /**
+         * @deprecated Story Pinning will always be enabled in the next major release.
+         */
+        pinning?: boolean;
+    } = {},
 ) {
     return async function getServerSideProps(ctx: NextPageContext) {
         const { res, req } = ctx;
@@ -41,7 +48,7 @@ export function getSitemapServerSideProps(
 
         const api = getNextPrezlyApi(req);
         const stories = await api.getAllStories({
-            pinning: options.pinning ?? false,
+            pinning: options.pinning ?? true,
         });
         const categories = await api.getCategories();
 
