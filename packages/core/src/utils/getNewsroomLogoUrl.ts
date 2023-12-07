@@ -1,9 +1,8 @@
 import type { Newsroom } from '@prezly/sdk';
+import type { Locale } from '@prezly/theme-kit-intl';
 import { UploadcareImage } from '@prezly/uploadcare';
 
-import type { LocaleObject } from '../intl';
-
-import { OG_IMAGE_API_URL } from './constants';
+import { OG_IMAGE_API_URL } from '../constants';
 
 export function getNewsroomLogoUrl(
     newsroom: Pick<Newsroom, 'newsroom_logo'>,
@@ -35,9 +34,12 @@ export function getNewsroomFaviconUrl(
     return '';
 }
 
-export function getNewsroomOgImageUrl(
-    newsroom: Pick<Newsroom, 'uuid'>,
-    locale?: LocaleObject,
-): string {
-    return `${OG_IMAGE_API_URL}/${newsroom.uuid}${locale ? `?locale=${locale.toUrlSlug()}` : ''}`;
+export function getNewsroomOgImageUrl(newsroom: Pick<Newsroom, 'uuid'>, locale?: Locale): string {
+    const url = `${OG_IMAGE_API_URL}/${newsroom.uuid}`;
+
+    if (locale) {
+        return `${url}?locale=${locale.slug}`;
+    }
+
+    return url;
 }

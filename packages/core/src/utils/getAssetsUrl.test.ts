@@ -1,4 +1,5 @@
-import { ASSETS_URL } from './constants';
+import { ASSETS_URL } from '../constants';
+
 import { getAssetsUrl } from './getAssetsUrl';
 
 describe('getAssetsUrl', () => {

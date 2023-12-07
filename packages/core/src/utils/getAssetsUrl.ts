@@ -1,4 +1,4 @@
-import { ASSETS_URL } from './constants';
+import { ASSETS_URL } from '../constants';
 
 /**
  * @param uuid UUID of the assets hosted on Uploadcare
