@@ -6,8 +6,10 @@
 
 This repo is a supplementary package for Prezly themes that need multi-language support.
 It has two main exports:
-- Translation files in ICU synthax compiled to work seamlessly with [react-intl] library and Crowdin.
-- Typed message descriptors to use in [react-intl] `FormattedMessage` components and `formatMessage` helpers.
+- Translation files in ICU syntax compiled to work with bundled formatting helpers, 
+  or seamlessly with [react-intl] library and Crowdin.
+- Typed message descriptors to use with bundled `FormattedMessage` components and `formatMessage` helper 
+  or their twin sisters from [react-intl].
 
 ## Getting started
 
@@ -22,7 +24,7 @@ npm install react-intl @prezly/theme-kit-intl
 
 1) Import the messages for your desired locale. `localeIsoCode` refers to a ISO hyphen-code. You can check which locale codes are supported in the [theme-kit-nextjs](https://github.com/prezly/theme-kit-nextjs/blob/main/src/intl/locale.ts#L10-L57) repo.
 ```ts
-const messages = await import(`@prezly/theme-kit-intl/messages/${localeIsoCode}.json`);
+const messages = await import(`@prezly/theme-kit-intl/i18n/${localeIsoCode}.json`);
 ```
 
 2) Pass the messages to the `IntlProvider` wrapper component. It should be at the top of your component tree to work properly.
