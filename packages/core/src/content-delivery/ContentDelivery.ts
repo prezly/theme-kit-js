@@ -145,9 +145,16 @@ export function createClient(
             return prezly.newsroomCategories.list(newsroomUuid, { sortOrder: '+order' });
         },
 
-        async category(id: Category['id']) {
+        async category(arg: Category['id'] | Category.Translation['slug']) {
             const categories = await client.categories();
-            return categories.find((category) => category.id === id);
+
+            if (typeof arg === 'number') {
+                return categories.find((category) => category.id === arg);
+            }
+
+            return categories.find((category) =>
+                Category.translations(category).some((translation) => translation.slug === arg),
+            );
         },
 
         async translatedCategories(
