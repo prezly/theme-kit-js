@@ -119,9 +119,7 @@ export function getLanguageFromStory<Language extends Pick<NewsroomLanguageSetti
     languages: Language[],
     story: Pick<Story, 'culture'>,
 ): Language | undefined {
-    const { code: storyLocaleCode } = story.culture;
-
-    return languages.find(({ code }) => code === storyLocaleCode);
+    return languages.find(({ code }) => code === story.culture.code);
 }
 
 /**

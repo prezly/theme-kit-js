@@ -1,5 +1,20 @@
 import type { CultureRef, Story } from '@prezly/sdk';
 
+export interface AlgoliaEnv {
+    ALGOLIA_API_KEY: string;
+    ALGOLIA_APP_ID: string;
+    ALGOLIA_INDEX: string;
+}
+
+export interface PrezlyNewsroomEnv {
+    PREZLY_ACCESS_TOKEN: string;
+    PREZLY_NEWSROOM_UUID: string;
+    PREZLY_THEME_UUID?: string;
+    PREZLY_MODE?: 'preview';
+}
+
+export interface PrezlyEnv extends PrezlyNewsroomEnv, AlgoliaEnv {}
+
 /**
  * Categories in Algolia index are stored in a simplified format, with `slug` and `name` properties already saved in the correct locale for the story search result.
  */
