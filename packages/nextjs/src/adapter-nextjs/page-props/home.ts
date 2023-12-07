@@ -52,23 +52,27 @@ export function getHomepageServerSideProps<
     ): Promise<GetServerSidePropsResult<HomePageProps<Include> & CustomProps>> {
         const { api, serverSideProps } = await getNewsroomServerSideProps(context, {
             loadHomepageContacts: true,
+            pinning,
         });
 
         const { query } = context;
-        const page = query.page && typeof query.page === 'string' ? Number(query.page) : undefined;
+        const page = query.page && typeof query.page === 'string' ? Number(query.page) : 1;
 
         const { localeCode } = serverSideProps.newsroomContextProps;
 
-        const storiesPaginated = await api.getStories({
-            page,
-            pageSize,
-            pinning,
-            include: extraStoryFields,
-            localeCode,
-            withHighlightedStory,
-            filterQuery,
-        });
-        const { stories, storiesTotal } = storiesPaginated;
+        const storiesPaginated = await api.stories(
+            {
+                offset: (page - 1) * pageSize,
+                limit: pageSize,
+                locale: localeCode,
+                highlighted: withHighlightedStory ? 1 : 0,
+                query: filterQuery,
+            },
+            {
+                include: extraStoryFields,
+            },
+        );
+        const { stories, pagination } = storiesPaginated;
 
         return processRequest(
             context,
@@ -76,7 +80,7 @@ export function getHomepageServerSideProps<
                 ...serverSideProps,
                 stories,
                 pagination: {
-                    itemsTotal: storiesTotal,
+                    itemsTotal: pagination.matched_records_number,
                     currentPage: page ?? 1,
                     pageSize,
                     withHighlightedStory,
@@ -104,23 +108,27 @@ export function getHomepageStaticProps<
     ): Promise<GetStaticPropsResult<HomePageProps<Include> & CustomProps>> {
         const { api, staticProps } = await getNewsroomStaticProps(context, {
             loadHomepageContacts: true,
+            pinning,
         });
 
         const { localeCode } = staticProps.newsroomContextProps;
 
-        const storiesPaginated = await api.getStories({
-            pageSize,
-            pinning,
-            include: extraStoryFields,
-            localeCode,
-        });
-        const { stories, storiesTotal } = storiesPaginated;
+        const storiesPaginated = await api.stories(
+            {
+                limit: pageSize,
+                locale: localeCode,
+            },
+            {
+                include: extraStoryFields,
+            },
+        );
+        const { stories, pagination } = storiesPaginated;
 
         return processStaticRequest(context, {
             ...staticProps,
             stories,
             pagination: {
-                itemsTotal: storiesTotal,
+                itemsTotal: pagination.matched_records_number,
                 currentPage: 1,
                 pageSize,
             },

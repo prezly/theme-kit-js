@@ -1,5 +1,6 @@
 import type {
     Category,
+    Culture,
     ExtendedStory,
     Newsroom,
     NewsroomCompanyInformation,
@@ -64,7 +65,7 @@ export interface NewsroomContextType {
 }
 
 export interface NewsroomContextProps extends Omit<NewsroomContextType, 'locale'> {
-    localeCode: string;
+    localeCode: Culture.Code;
 }
 
 export const NewsroomContext = createContext<NewsroomContextType | undefined>(undefined);

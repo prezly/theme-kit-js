@@ -1,6 +1,6 @@
 import type { NextPageContext } from 'next';
 
-import { getNextPrezlyApi } from '../../../data-fetching';
+import { NextContentDelivery } from '../../../data-fetching';
 
 import { createPaths } from './createPaths';
 import { SitemapBuilder } from './SitemapBuilder';
@@ -46,11 +46,11 @@ export function getSitemapServerSideProps(
             req.headers['x-forwarded-proto'] as string | undefined,
         );
 
-        const api = getNextPrezlyApi(req);
-        const stories = await api.getAllStories({
-            pinning: options.pinning ?? true,
+        const api = NextContentDelivery.initClient(req, {
+            pinning: options.pinning,
         });
-        const categories = await api.getCategories();
+        const stories = await api.allStories();
+        const categories = await api.categories();
 
         const paths = createPaths(stories, categories);
         const sitemapBuilder = new SitemapBuilder(
