@@ -19,8 +19,9 @@ export namespace stories {
         search?: string;
         category?: Pick<Category, 'id'>;
         locale?: Pick<Culture, 'code'>;
-        limit?: number;
+        limit: number;
         offset?: number;
+        highlighted?: number;
     }
 
     export interface IncludeOptions<Include extends keyof Story.ExtraFields> {
@@ -197,13 +198,13 @@ export function createClient(
             params: stories.SearchParams,
             options: stories.IncludeOptions<Include> = {},
         ) {
-            const { search, offset, limit, category, locale } = params;
+            const { search, offset = 0, limit, category, locale, highlighted = 0 } = params;
             const { include = [] } = options;
             return prezly.stories.search({
                 sortOrder: chronologically(SortOrder.Direction.DESC, pinning),
                 formats,
-                limit,
-                offset,
+                limit: offset === 0 ? limit + highlighted : limit,
+                offset: offset > 0 ? offset + highlighted : offset,
                 search,
                 query: {
                     [`category.id`]: category ? { $any: [category.id] } : undefined,
