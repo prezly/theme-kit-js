@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { Hero } from '.';
 
@@ -11,7 +11,7 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=649-13479&mode=dev',
         },
     },
-} as Meta<typeof Hero>;
+} satisfies Meta<typeof Hero>;
 
 const TEST_STORY = {
     id: 438267,
@@ -310,7 +310,7 @@ const CATEGORIES: Hero.DisplayedCategory[] = [
 
 const HeroTemplate: StoryFn<typeof Hero> = (args) => <Hero {...args} />;
 
-export const Default = HeroTemplate.bind({});
+export const Default: StoryObj<typeof Hero> = HeroTemplate.bind({});
 Default.args = {
     story: { ...TEST_STORY, thumbnailImage: TEST_STORY.thumbnail_image } as any,
     categories: CATEGORIES,
@@ -319,7 +319,7 @@ Default.args = {
     locale: 'en',
 };
 
-export const WithoutThumbnailImage = HeroTemplate.bind({});
+export const WithoutThumbnailImage: StoryObj<typeof Hero> = HeroTemplate.bind({});
 WithoutThumbnailImage.args = {
     story: { ...TEST_STORY, thumbnailImage: null } as any,
     categories: CATEGORIES,

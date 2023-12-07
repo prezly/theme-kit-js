@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { GalleryTitle } from './GalleryTitle';
 
@@ -11,11 +11,11 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=705-25691&mode=dev',
         },
     },
-} as Meta<typeof GalleryTitle>;
+} satisfies Meta<typeof GalleryTitle>;
 
 const GalleryTitleTemplate: StoryFn<typeof GalleryTitle> = (args) => <GalleryTitle {...args} />;
 
-export const Default = GalleryTitleTemplate.bind({});
+export const Default: StoryObj<typeof GalleryTitle> = GalleryTitleTemplate.bind({});
 Default.args = {
     gallery: {
         name: 'Galileo Art Collection',

@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 import { Button } from '../Button';
@@ -16,7 +16,7 @@ export default {
         },
         layout: 'fullscreen',
     },
-} as Meta<typeof SearchModal>;
+} satisfies Meta<typeof SearchModal>;
 
 const DISPLAYED_CATEGORIES: SearchModal.DisplayedCategory[] = CATEGORIES.map((category) => ({
     id: category.id,
@@ -44,7 +44,7 @@ const SearchModalTemplate: StoryFn<typeof SearchModal> = (args) => {
     );
 };
 
-export const Default = SearchModalTemplate.bind({});
+export const Default: StoryObj<typeof SearchModal> = SearchModalTemplate.bind({});
 Default.args = {
     // using config values for The Goodnewsroom
     algoliaConfig: {

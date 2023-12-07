@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { StoryShareLinks } from '.';
 
@@ -11,13 +11,13 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=705-23438&mode=dev',
         },
     },
-} as Meta<typeof StoryShareLinks>;
+} satisfies Meta<typeof StoryShareLinks>;
 
 const StoryShareLinksTemplate: StoryFn<typeof StoryShareLinks> = (args) => (
     <StoryShareLinks {...args} />
 );
 
-export const Default = StoryShareLinksTemplate.bind({});
+export const Default: StoryObj<typeof StoryShareLinks> = StoryShareLinksTemplate.bind({});
 Default.args = {
     shareUrl: 'https://story.test',
     withScrollToTopButton: true,
