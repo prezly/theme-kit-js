@@ -1,50 +1,6 @@
-import type { CultureRef, NewsroomLanguageSettings, Story } from '@prezly/sdk';
+import type { NewsroomLanguageSettings, Story } from '@prezly/sdk';
 
 import { LocaleObject } from './localeObject';
-
-function isOnlyCulture(
-    culture: Pick<CultureRef, 'language_code'>,
-    languages: Pick<NewsroomLanguageSettings, 'locale'>[],
-): boolean {
-    const numberOfLanguages = languages.filter(
-        ({ locale: { language_code } }) => language_code === culture.language_code,
-    ).length;
-
-    return numberOfLanguages === 1;
-}
-
-/**
- * @param mode - defaults to 'native', determines whether to return the native language name or the english language name
- *
- * @returns the display name of the locale in its native language
- *
- * If there's only one culture used in a specific language,
- * we strip the culture name completely.
- *
- * Examples:
- *  - English (Global), Spanish (Spain)
- *  - -> English, Spanish
- *  - English (Global), English (UK), Spanish (Spain)
- *  - -> English (Global), English (UK), Spanish
- */
-export function getLanguageDisplayName(
-    language: Pick<NewsroomLanguageSettings, 'locale'>,
-    languages: Pick<NewsroomLanguageSettings, 'locale'>[],
-    mode: 'native' | 'english' = 'native',
-): string {
-    const { locale } = language;
-    const displayedName = mode === 'native' ? locale.native_name : locale.name;
-
-    if (isOnlyCulture(locale, languages)) {
-        const cultureNameIndex = displayedName.indexOf('(');
-
-        if (cultureNameIndex !== -1) {
-            return displayedName.slice(0, cultureNameIndex - 1);
-        }
-    }
-
-    return displayedName;
-}
 
 /**
  * @returns Language set as default in the Newsroom Settings.

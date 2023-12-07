@@ -7,7 +7,6 @@ import {
     getLanguageByExactLocaleCode,
     getLanguageByNeutralLocaleCode,
     getLanguageByShortRegionCode,
-    getLanguageDisplayName,
     getLanguageFromStory,
     getShortestLocaleCode,
     getUsedLanguages,
@@ -15,22 +14,6 @@ import {
 import { LocaleObject } from './localeObject';
 
 const ALL_LANGUAGES = Object.values(LANGUAGES);
-
-describe('getLanguageDisplayName', () => {
-    it('returns shortened name when language is the only culture', () => {
-        const languages = [LANGUAGES.en, LANGUAGES.fr];
-
-        expect(getLanguageDisplayName(LANGUAGES.en, languages)).toBe('English');
-        expect(getLanguageDisplayName(LANGUAGES.fr, languages)).toBe('Français');
-    });
-
-    it('returns full name when language is NOT the only culture', () => {
-        const languages = [LANGUAGES.nl_BE, LANGUAGES.nl_NL];
-
-        expect(getLanguageDisplayName(LANGUAGES.nl_BE, languages)).toBe('Nederlands (België)');
-        expect(getLanguageDisplayName(LANGUAGES.nl_NL, languages)).toBe('Nederlands (Nederland)');
-    });
-});
 
 describe('getDefaultLanguage', () => {
     it('returns the actual default language', () => {
