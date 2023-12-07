@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { StoryCard } from '.';
 
@@ -11,7 +11,7 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=633-34801&mode=dev',
         },
     },
-} as Meta<typeof StoryCard>;
+} satisfies Meta<typeof StoryCard>;
 
 const TEST_STORY = {
     id: 438267,
@@ -310,7 +310,7 @@ const CATEGORIES: StoryCard.DisplayedCategory[] = [
 
 const StoryCardTemplate: StoryFn<typeof StoryCard> = (args) => <StoryCard {...args} />;
 
-export const Default = StoryCardTemplate.bind({});
+export const Default: StoryObj<typeof StoryCard> = StoryCardTemplate.bind({});
 Default.args = {
     story: { ...TEST_STORY, thumbnailImage: TEST_STORY.thumbnail_image } as any,
     categories: CATEGORIES,
@@ -319,7 +319,7 @@ Default.args = {
     locale: 'en',
 };
 
-export const WithoutThumbnailImage = StoryCardTemplate.bind({});
+export const WithoutThumbnailImage: StoryObj<typeof StoryCard> = StoryCardTemplate.bind({});
 WithoutThumbnailImage.args = {
     story: { ...TEST_STORY, thumbnailImage: null } as any,
     categories: CATEGORIES,

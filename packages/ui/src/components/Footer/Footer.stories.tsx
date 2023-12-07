@@ -1,11 +1,11 @@
 import { AnalyticsContextProvider } from '@prezly/analytics-nextjs';
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { COMPANY_INFORMATION } from '../Boilerplate/__mocks__';
 
 import { Footer } from './Footer';
 
-export default {
+const meta: Meta<typeof Footer> = {
     title: 'Components/Footer',
     component: Footer,
     parameters: {
@@ -22,11 +22,12 @@ export default {
             </AnalyticsContextProvider>
         ),
     ],
-} as Meta<typeof Footer>;
+};
+export default meta;
 
 const FooterTemplate: StoryFn<typeof Footer> = (args) => <Footer {...args} />;
 
-export const Default = FooterTemplate.bind({});
+export const Default: StoryObj<typeof Footer> = FooterTemplate.bind({});
 Default.args = {
     companySocials: COMPANY_INFORMATION,
     hasStandaloneAboutPage: true,
@@ -38,20 +39,20 @@ Default.args = {
     externalSiteLink: 'https://test.com',
 };
 
-export const WithoutExternalLink = FooterTemplate.bind({});
+export const WithoutExternalLink: StoryObj<typeof Footer> = FooterTemplate.bind({});
 WithoutExternalLink.args = {
     ...Default.args,
     externalSiteLink: undefined,
 };
 
-export const WithoutMediaAndStandalonePages = FooterTemplate.bind({});
+export const WithoutMediaAndStandalonePages: StoryObj<typeof Footer> = FooterTemplate.bind({});
 WithoutMediaAndStandalonePages.args = {
     ...Default.args,
     hasStandaloneAboutPage: false,
     hasStandaloneContactsPage: false,
 };
 
-export const IsWhiteLabeled = FooterTemplate.bind({});
+export const IsWhiteLabeled: StoryObj<typeof Footer> = FooterTemplate.bind({});
 IsWhiteLabeled.args = {
     ...Default.args,
     isWhiteLabeled: false,

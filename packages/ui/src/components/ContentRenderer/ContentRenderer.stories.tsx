@@ -1,10 +1,10 @@
 import { AnalyticsContextProvider } from '@prezly/analytics-nextjs';
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { STORY } from './__mocks__';
 import { ContentRenderer } from './ContentRenderer';
 
-export default {
+const meta: Meta<typeof ContentRenderer> = {
     title: 'Components/ContentRenderer',
     component: ContentRenderer,
     parameters: {
@@ -23,13 +23,14 @@ export default {
             </p>
         ),
     ],
-} as Meta<typeof ContentRenderer>;
+};
+export default meta;
 
 const ContentRendererTemplate: StoryFn<typeof ContentRenderer> = (args) => (
     <ContentRenderer {...args} />
 );
 
-export const Default = ContentRendererTemplate.bind({});
+export const Default: StoryObj<typeof ContentRenderer> = ContentRendererTemplate.bind({});
 Default.args = {
     story: STORY,
     nodes: JSON.parse(STORY.content),

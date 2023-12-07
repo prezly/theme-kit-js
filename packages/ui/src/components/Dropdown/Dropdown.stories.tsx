@@ -1,8 +1,8 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { Dropdown } from '.';
 
-export default {
+const meta: Meta<typeof Dropdown> = {
     title: 'Forms/Dropdown',
     component: Dropdown,
     decorators: [
@@ -18,7 +18,8 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=633-23947&mode=dev',
         },
     },
-} as Meta<typeof Dropdown>;
+};
+export default meta;
 
 const ITEMS = [
     'All categories',
@@ -40,7 +41,7 @@ const DropdownTemplate: StoryFn<typeof Dropdown> = (args) => (
     </Dropdown>
 );
 
-export const Default = DropdownTemplate.bind({});
+export const Default: StoryObj<typeof Dropdown> = DropdownTemplate.bind({});
 Default.args = {
     label: 'Categories',
 };

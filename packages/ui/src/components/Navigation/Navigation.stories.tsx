@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { CATEGORIES, LANGUAGES, NEWSROOM } from './__mocks__';
 import { Navigation } from './Navigation';
@@ -34,11 +34,11 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=649-3016&mode=dev',
         },
     },
-} as Meta<typeof Navigation>;
+} satisfies Meta<typeof Navigation>;
 
 const NavigationTemplate: StoryFn<typeof Navigation> = (args) => <Navigation {...args} />;
 
-export const Default = NavigationTemplate.bind({});
+export const Default: StoryObj<typeof Navigation> = NavigationTemplate.bind({});
 Default.args = {
     categories: { options: DISPLAYED_CATEGORIES, indexHref: '/categories' },
     languages: DISPLAYED_LANGUAGES,
@@ -55,7 +55,7 @@ Default.args = {
     mediaHref: '/media',
 };
 
-export const WithoutLogo = NavigationTemplate.bind({});
+export const WithoutLogo: StoryObj<typeof Navigation> = NavigationTemplate.bind({});
 WithoutLogo.args = {
     ...Default.args,
     newsroom: {
@@ -64,14 +64,16 @@ WithoutLogo.args = {
     },
 };
 
-export const WithoutCategoriesAndLanguages = NavigationTemplate.bind({});
+export const WithoutCategoriesAndLanguages: StoryObj<typeof Navigation> = NavigationTemplate.bind(
+    {},
+);
 WithoutCategoriesAndLanguages.args = {
     ...Default.args,
     categories: undefined,
     languages: undefined,
 };
 
-export const WithoutExternalLink = NavigationTemplate.bind({});
+export const WithoutExternalLink: StoryObj<typeof Navigation> = NavigationTemplate.bind({});
 WithoutExternalLink.args = {
     ...Default.args,
     categories: undefined,
