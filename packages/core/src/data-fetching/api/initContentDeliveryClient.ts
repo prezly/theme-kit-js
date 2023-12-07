@@ -9,7 +9,7 @@ export function initContentDeliveryClient(
     req?: IncomingMessage,
     options?: ContentDelivery.Options,
 ): ContentDelivery.Client {
-    assertServerEnv('getPrezlyApi');
+    assertServerEnv('initContentDeliveryClient');
 
     // `getEnvVariables` handles both cases for envs parsing - .env and request headers
     const { PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID, PREZLY_THEME_UUID } = getEnvVariables(req);
