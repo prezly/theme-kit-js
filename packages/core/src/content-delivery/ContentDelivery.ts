@@ -4,6 +4,7 @@ import type {
     Newsroom,
     NewsroomTheme,
     PrezlyClient,
+    Query,
     TranslatedCategory,
 } from '@prezly/sdk';
 import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '@prezly/sdk';
@@ -22,6 +23,7 @@ export namespace stories {
         limit: number;
         offset?: number;
         highlighted?: number;
+        query?: Query;
     }
 
     export interface IncludeOptions<Include extends keyof Story.ExtraFields> {
@@ -205,21 +207,22 @@ export function createClient(
             params: stories.SearchParams,
             options: stories.IncludeOptions<Include> = {},
         ) {
-            const { search, offset = 0, limit, category, locale, highlighted = 0 } = params;
+            const { search, query, offset = 0, limit, category, locale, highlighted = 0 } = params;
             const { include = [] } = options;
+
             return prezly.stories.search({
                 sortOrder: chronologically(SortOrder.Direction.DESC, pinning),
                 formats,
                 limit: offset === 0 ? limit + highlighted : limit,
                 offset: offset > 0 ? offset + highlighted : offset,
                 search,
-                query: {
+                query: mergeQueries(query, {
                     [`category.id`]: category ? { $any: [category.id] } : undefined,
                     [`newsroom.uuid`]: { $in: [newsroomUuid] },
                     [`locale`]: locale ? { $in: [locale.code] } : undefined,
                     [`status`]: { $in: [Story.Status.PUBLISHED] },
                     [`visibility`]: { $in: [Story.Visibility.PUBLIC] },
-                },
+                }),
                 include,
             });
         },
@@ -337,6 +340,29 @@ function chronologically(direction: `${SortOrder.Direction}`, pinning = false) {
             : SortOrder.desc('published_at');
 
     return pinning ? SortOrder.combine(pinnedFirst, chronological) : chronological;
+}
+
+function mergeQueries(...queries: (Query | undefined)[]): Query | undefined {
+    const queryObjects = queries
+        .filter((query) => Boolean(query))
+        .map((query): object | undefined => {
+            if (typeof query === 'string') {
+                return JSON.parse(query);
+            }
+            return query;
+        })
+        .filter((query): query is object => Boolean(query))
+        .filter((query) => Object.keys(query).length > 0);
+
+    if (queryObjects.length === 0) {
+        return undefined;
+    }
+
+    if (queryObjects.length === 1) {
+        return queryObjects[0];
+    }
+
+    return { $and: queryObjects };
 }
 
 const ERROR_CODE_NOT_FOUND = 404;
