@@ -7,7 +7,7 @@ import {
     LocaleObject,
 } from '@prezly/theme-kit-core';
 import type { ContentDelivery } from '@prezly/theme-kit-core/server';
-import { getAlgoliaSettings, initContentDeliveryClient } from '@prezly/theme-kit-core/server';
+import { Algolia, initContentDeliveryClient } from '@prezly/theme-kit-core/server';
 import type { IncomingMessage } from 'http';
 
 import { getLanguageFromNextLocaleIsoCode } from '../intl';
@@ -45,7 +45,7 @@ export function createClient(
             const companyInformation = getCompanyInformation(languages, locale);
 
             const notifications = getNotifications(languages, locale);
-            const algoliaSettings = getAlgoliaSettings(request);
+            const algoliaSettings = Algolia.settings(request);
 
             return {
                 newsroomContextProps: {

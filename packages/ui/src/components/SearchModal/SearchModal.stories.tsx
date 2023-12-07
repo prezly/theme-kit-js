@@ -48,10 +48,9 @@ export const Default: StoryObj<typeof SearchModal> = SearchModalTemplate.bind({}
 Default.args = {
     // using config values for The Goodnewsroom
     algoliaConfig: {
-        ALGOLIA_API_KEY:
-            'NTI4YjFkN2RhNjU0NzIxOGUzMjQzMmQ0MTgwNjk1OWNjMmUzZTQzMTQ1ZWMzNjhlZDNhN2ExMGI2OTIzMDZmNXRhZ0ZpbHRlcnM9JTVCJTIybGljZW5zZV82MzM3JTIyJTJDJTIybmV3c3Jvb21fMTI2OTglMjIlNUQ=',
-        ALGOLIA_APP_ID: 'UI4CNRAHQB',
-        ALGOLIA_INDEX: 'public_stories_prod',
+        apiKey: 'NTI4YjFkN2RhNjU0NzIxOGUzMjQzMmQ0MTgwNjk1OWNjMmUzZTQzMTQ1ZWMzNjhlZDNhN2ExMGI2OTIzMDZmNXRhZ0ZpbHRlcnM9JTVCJTIybGljZW5zZV82MzM3JTIyJTJDJTIybmV3c3Jvb21fMTI2OTglMjIlNUQ=',
+        appId: 'UI4CNRAHQB',
+        index: 'public_stories_prod',
     },
     newsroomName: 'Test site',
     locale: 'en',

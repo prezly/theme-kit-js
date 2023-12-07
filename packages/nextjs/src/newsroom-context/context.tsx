@@ -10,7 +10,7 @@ import type {
     Notification,
 } from '@prezly/sdk';
 import { DEFAULT_LOCALE, LocaleObject } from '@prezly/theme-kit-core';
-import type { AlgoliaSettings } from '@prezly/theme-kit-core/server';
+import type { Algolia } from '@prezly/theme-kit-core/server';
 import type { PropsWithChildren } from 'react';
 import { createContext, useMemo } from 'react';
 
@@ -61,7 +61,7 @@ export interface NewsroomContextType {
     /**
      * Environment variables required for Algolia search to work.
      */
-    algoliaSettings: AlgoliaSettings;
+    algoliaSettings: Algolia.Settings;
 }
 
 export interface NewsroomContextProps extends Omit<NewsroomContextType, 'locale'> {

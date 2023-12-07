@@ -8,7 +8,7 @@ import { Configure, InstantSearch } from 'react-instantsearch';
 import { twMerge } from 'tailwind-merge';
 
 import { MainPanel, SearchBar } from './components';
-import type { AlgoliaConfig } from './types';
+import type { AlgoliaSettings } from './types';
 
 export function SearchModal({
     isOpen,
@@ -23,12 +23,9 @@ export function SearchModal({
     showSubtitle = true,
     showDate,
 }: SearchModal.Props) {
-    const { ALGOLIA_API_KEY, ALGOLIA_APP_ID, ALGOLIA_INDEX } = algoliaConfig;
+    const { apiKey, appId, index } = algoliaConfig;
 
-    const searchClient = useMemo(
-        () => algoliasearch(ALGOLIA_APP_ID, ALGOLIA_API_KEY),
-        [ALGOLIA_API_KEY, ALGOLIA_APP_ID],
-    );
+    const searchClient = useMemo(() => algoliasearch(appId, apiKey), [apiKey, appId]);
 
     function handleClose() {
         onToggle(false);
@@ -47,7 +44,7 @@ export function SearchModal({
                         className,
                     )}
                 >
-                    <InstantSearch searchClient={searchClient} indexName={ALGOLIA_INDEX}>
+                    <InstantSearch searchClient={searchClient} indexName={index}>
                         <Configure hitsPerPage={3} filters={`attributes.culture.code:${locale}`} />
                         <SearchBar
                             locale={locale}
@@ -77,7 +74,7 @@ export namespace SearchModal {
         className?: string;
         overlayClassName?: string;
         onToggle: (open: boolean) => void;
-        algoliaConfig: AlgoliaConfig;
+        algoliaConfig: AlgoliaSettings;
         locale: Culture['code'];
         newsroomName: string;
         categories: DisplayedCategory[];
