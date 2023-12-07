@@ -1,4 +1,4 @@
 export * from './intl';
-export * from './seo';
+export * as Metadata from './metadata';
 export * from './types';
 export * from './utils';

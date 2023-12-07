@@ -1,21 +1,21 @@
-import type { CultureRef } from '@prezly/sdk';
-
-import type { LocaleObject } from '../intl';
+import { Locale } from '@prezly/theme-kit-intl';
 
 import { getAlternateLanguageLinks } from './getAlternateLanguageLinks';
 
-function lang(code: CultureRef['code'], isDefault = false) {
+function lang(code: Locale.Code, isDefault = false) {
     return { code, is_default: isDefault };
 }
 
-function getTranslationUrl(locale: LocaleObject) {
-    return `translationUrl/${locale.toHyphenCode()}`;
+function getTranslationUrl(locale: Locale | Locale.AnyCode) {
+    const { isoCode } = Locale.from(locale);
+    return `translationUrl/${isoCode}`;
 }
 
-function generateTranslationUrl(locale: LocaleObject) {
+function generateTranslationUrl(locale: Locale | Locale.AnyCode) {
     const translationUrl = getTranslationUrl(locale);
+    const { lang: langCode } = Locale.from(locale);
 
-    return `http://localhost:3000/${locale.toNeutralLanguageCode()}/${translationUrl}`;
+    return `http://localhost:3000/${langCode}/${translationUrl}`;
 }
 
 describe('getAlternateLanguageLinks', () => {
@@ -132,8 +132,9 @@ describe('getAlternateLanguageLinks', () => {
         const links = getAlternateLanguageLinks(
             [lang('en_US'), lang('fr'), lang('fr_FR', true)],
             (locale) => {
-                const translationUrl =
-                    locale.toHyphenCode() === 'en-US' ? undefined : getTranslationUrl(locale);
+                const translationUrl = Locale.isEqual(locale, 'en-US')
+                    ? undefined
+                    : getTranslationUrl(locale);
 
                 if (translationUrl) {
                     return generateTranslationUrl(locale);
