@@ -19,7 +19,7 @@ export namespace stories {
     export interface SearchParams {
         search?: string;
         category?: Pick<Category, 'id'>;
-        locale?: Pick<Culture, 'code'>;
+        locale?: Pick<Culture, 'code'> | Culture.Code;
         limit: number;
         offset?: number;
         highlighted?: number;
@@ -210,6 +210,8 @@ export function createClient(
             const { search, query, offset = 0, limit, category, locale, highlighted = 0 } = params;
             const { include = [] } = options;
 
+            const localeCode = locale && typeof locale === 'object' ? locale.code : locale;
+
             return prezly.stories.search({
                 sortOrder: chronologically(SortOrder.Direction.DESC, pinning),
                 formats,
@@ -219,7 +221,7 @@ export function createClient(
                 query: mergeQueries(query, {
                     [`category.id`]: category ? { $any: [category.id] } : undefined,
                     [`newsroom.uuid`]: { $in: [newsroomUuid] },
-                    [`locale`]: locale ? { $in: [locale.code] } : undefined,
+                    [`locale`]: localeCode ? { $in: [localeCode] } : undefined,
                     [`status`]: { $in: [Story.Status.PUBLISHED] },
                     [`visibility`]: { $in: [Story.Visibility.PUBLIC] },
                 }),
