@@ -33,7 +33,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@playwright/test": "1.40.0",
+    "@playwright/test": "1.40.1",
     "@prezly/eslint-config": "4.5.0",
     "@prezly/sdk": "^18.2.2",
     "@types/jest": "29.5.10",
