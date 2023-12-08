@@ -1,5 +1,7 @@
 import type { Story } from '@prezly/sdk';
-import { DEFAULT_PAGE_SIZE, getLocalizedCategoryData, LocaleObject } from '@prezly/theme-kit-core';
+import { Category } from '@prezly/sdk';
+import { DEFAULT_PAGE_SIZE } from '@prezly/theme-kit-core';
+import { isNotUndefined } from '@technically/is-not-undefined';
 import type {
     GetServerSidePropsContext,
     GetServerSidePropsResult,
@@ -37,9 +39,10 @@ export function getCategoryPageServerSideProps<
         context: GetServerSidePropsContext,
     ): Promise<GetServerSidePropsResult<CategoryPageProps<Include> & CustomProps>> {
         const { api, serverSideProps } = await getNewsroomServerSideProps(context);
-
+        const { locale } = serverSideProps.newsroomContextProps;
         const { slug } = context.params as { slug: string };
-        const category = await api.category(slug);
+
+        const category = await api.translatedCategory(locale, slug);
 
         if (!category) {
             return {
@@ -50,14 +53,12 @@ export function getCategoryPageServerSideProps<
         const { query } = context;
         const page = query.page && typeof query.page === 'string' ? Number(query.page) : 1;
 
-        const { localeCode } = serverSideProps.newsroomContextProps;
-
         const { stories, pagination } = await api.stories(
             {
                 category,
                 offset: (page - 1) * pageSize,
                 limit: pageSize,
-                locale: localeCode ? { code: localeCode } : undefined,
+                locale,
             },
             {
                 include: extraStoryFields,
@@ -98,9 +99,10 @@ export function getCategoryPageStaticProps<
         context: GetStaticPropsContext,
     ): Promise<GetStaticPropsResult<CategoryPageProps<Include> & CustomProps>> {
         const { api, staticProps } = await getNewsroomStaticProps(context);
-
+        const { locale } = staticProps.newsroomContextProps;
         const { slug } = context.params as { slug: string };
-        const category = await api.category(slug);
+
+        const category = await api.translatedCategory(locale, slug);
 
         if (!category) {
             return {
@@ -108,13 +110,11 @@ export function getCategoryPageStaticProps<
             };
         }
 
-        const { localeCode } = staticProps.newsroomContextProps;
-
         const { stories, pagination } = await api.stories(
             {
                 category,
                 limit: pageSize,
-                locale: localeCode ? { code: localeCode } : undefined,
+                locale,
             },
             {
                 include: extraStoryFields,
@@ -143,22 +143,20 @@ export function getCategoryPageStaticProps<
 
 export async function getCategoryPageStaticPaths(): Promise<GetStaticPathsResult> {
     const api = NextContentDelivery.initClient();
-    const [categories, defaultLanguage] = await Promise.all([
-        api.categories(),
-        api.defaultLanguage(),
-    ]);
-    const locale = LocaleObject.fromAnyCode(defaultLanguage.code);
+    const [categories, defaultLocale] = await Promise.all([api.categories(), api.defaultLocale()]);
 
     const paths = categories
         .map((category) => {
-            const { slug } = getLocalizedCategoryData(category, locale);
-            if (!slug) {
+            const translation = Category.translation(category, defaultLocale);
+            if (!translation) {
                 return undefined;
             }
 
-            return { params: { slug } };
+            return {
+                params: { slug: translation.slug },
+            };
         })
-        .filter<{ params: { slug: string } }>(Boolean as any);
+        .filter(isNotUndefined);
 
     return {
         paths,

@@ -1,11 +1,6 @@
-import type { Category, ExtendedStory } from '@prezly/sdk';
-import type { LocaleObject } from '@prezly/theme-kit-core';
-import {
-    getCategoryHasTranslation,
-    getCategoryUrl,
-    isStoryPublished,
-    Visibility,
-} from '@prezly/theme-kit-core';
+import type { ExtendedStory, TranslatedCategory } from '@prezly/sdk';
+import { getCategoryUrl, isStoryPublished, Visibility } from '@prezly/theme-kit-core';
+import type { Locale } from '@prezly/theme-kit-intl';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
@@ -36,16 +31,14 @@ function getAllowedTranslationVisibilityValues(
  * or empty string, if `noFallback` is set to `true` (this is useful for alternate locale links).
  */
 function getTranslationUrl(
-    locale: LocaleObject,
+    locale: Locale.Code,
     path: string,
-    currentCategory?: Pick<Category, 'i18n' | 'display_name'>,
+    currentCategory?: TranslatedCategory,
     currentStory?: ExtendedStory,
     noFallback?: boolean,
 ) {
     if (currentCategory) {
-        if (getCategoryHasTranslation(currentCategory, locale)) {
-            return getCategoryUrl(currentCategory, locale);
-        }
+        return getCategoryUrl(currentCategory);
 
         if (noFallback) {
             return '';
@@ -54,14 +47,12 @@ function getTranslationUrl(
         return '/';
     }
 
-    const localeCode = locale.toUnderscoreCode();
-
-    if (currentStory && currentStory.culture.locale !== localeCode) {
+    if (currentStory && currentStory.culture.code !== locale) {
         const allowedVisibilityValues = getAllowedTranslationVisibilityValues(currentStory);
 
         const translatedStory = currentStory.translations.find(
             ({ culture, status, visibility }) =>
-                culture.locale === localeCode &&
+                culture.locale === locale &&
                 isStoryPublished(status) &&
                 allowedVisibilityValues.includes(visibility),
         );
@@ -89,7 +80,7 @@ export function useGetTranslationUrl() {
     const currentStory = useCurrentStory();
 
     return useCallback(
-        (locale: LocaleObject, noFallback?: boolean) =>
+        (locale: Locale.Code, noFallback?: boolean) =>
             getTranslationUrl(locale, asPath, currentCategory, currentStory, noFallback),
         [asPath, currentCategory, currentStory],
     );

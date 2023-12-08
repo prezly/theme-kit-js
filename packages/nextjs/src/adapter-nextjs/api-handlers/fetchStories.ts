@@ -18,7 +18,7 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
         category,
         include,
         formats,
-        localeCode,
+        locale,
         pinning,
         filterQuery,
     } = req.body;
@@ -31,7 +31,7 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
                 category,
                 offset: (page - 1) * pageSize,
                 limit: pageSize,
-                locale: localeCode,
+                locale,
                 highlighted: withHighlightedStory ? 1 : 0,
                 query: filterQuery,
             },

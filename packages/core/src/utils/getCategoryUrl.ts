@@ -1,6 +1,6 @@
-import type { Category } from '@prezly/sdk';
+import type { TranslatedCategory } from '@prezly/sdk';
 
-export function getCategoryUrl(category: Category.Translation): string {
+export function getCategoryUrl(category: TranslatedCategory): string {
     const { slug } = category;
     return `/category/${slug}`;
 }

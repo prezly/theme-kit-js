@@ -1,21 +1,15 @@
 import type { Story } from '@prezly/sdk';
-import {
-    getCompanyInformation,
-    getDefaultLanguage,
-    getLanguageFromStory,
-    getNotifications,
-    LocaleObject,
-} from '@prezly/theme-kit-core';
 import type { ContentDelivery } from '@prezly/theme-kit-core/server';
 import { Algolia, initContentDeliveryClient } from '@prezly/theme-kit-core/server';
+import type { Locale } from '@prezly/theme-kit-intl';
 import type { IncomingMessage } from 'http';
 
-import { getLanguageFromNextLocaleIsoCode } from '../intl';
+import { matchLanguageFromNextLocale } from '../intl';
 import type { PageProps, ServerSidePageProps } from '../types';
 
 export type Client = ContentDelivery.Client & {
     getNewsroomServerSideProps(
-        nextLocaleIsoCode?: string,
+        nextLocale?: Locale.AnySlug,
         story?: Pick<Story, 'culture'>,
     ): Promise<PageProps & ServerSidePageProps>;
 };
@@ -26,25 +20,40 @@ export function createClient(
 ): Client {
     return {
         ...contentDelivery,
-        async getNewsroomServerSideProps(nextLocaleIsoCode, story) {
-            const [newsroom, languages, categories, themePreset] = await Promise.all([
+        async getNewsroomServerSideProps(nextLocale, story) {
+            const [
+                newsroom,
+                languages,
+                defaultLanguage,
+                defaultLocale,
+                locales,
+                usedLocales,
+                categories,
+                themePreset,
+            ] = await Promise.all([
                 contentDelivery.newsroom(),
                 contentDelivery.languages(),
+                contentDelivery.defaultLanguage(),
+                contentDelivery.defaultLocale(),
+                contentDelivery.locales(),
+                contentDelivery.usedLocales(),
                 contentDelivery.categories(),
                 contentDelivery.theme(),
             ]);
 
             const currentLanguage = story
-                ? getLanguageFromStory(languages, story)
-                : getLanguageFromNextLocaleIsoCode(languages, nextLocaleIsoCode);
-            const defaultLanguage = getDefaultLanguage(languages);
+                ? languages.find((lang) => lang.code === story.culture.code)
+                : matchLanguageFromNextLocale(nextLocale, languages);
 
-            const { code: localeCode } = currentLanguage || defaultLanguage;
-            const locale = LocaleObject.fromAnyCode(localeCode);
+            const { code: locale } = currentLanguage || defaultLanguage;
 
-            const companyInformation = getCompanyInformation(languages, locale);
+            // Note: These following calls depend on the `contentDelivery.languages()` result,
+            //       which should be already cached at this stage.
+            const [companyInformation, notifications] = await Promise.all([
+                contentDelivery.companyInformation(locale),
+                contentDelivery.notifications(locale),
+            ]);
 
-            const notifications = getNotifications(languages, locale);
             const algoliaSettings = Algolia.settings(request);
 
             return {
@@ -53,7 +62,10 @@ export function createClient(
                     companyInformation,
                     categories,
                     languages,
-                    localeCode,
+                    locale,
+                    defaultLocale,
+                    locales,
+                    usedLocales,
                     notifications,
                     themePreset: themePreset ?? null,
                     algoliaSettings,
@@ -65,6 +77,9 @@ export function createClient(
 }
 
 export function initClient(request?: IncomingMessage, options?: ContentDelivery.Options) {
-    const contentDelivery = initContentDeliveryClient(request, options);
+    const contentDelivery = initContentDeliveryClient(request, {
+        cache: true,
+        ...options,
+    });
     return createClient(contentDelivery, request);
 }

@@ -60,6 +60,8 @@
   },
   "dependencies": {
     "@prezly/theme-kit-core": "^6.8.0",
+    "@prezly/theme-kit-intl": "^6.8.0",
+    "@technically/is-not-undefined": "^1.0.0",
     "next-seo": "^5.4.0"
   },
   "devDependencies": {

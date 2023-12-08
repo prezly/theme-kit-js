@@ -1,5 +1,5 @@
 import type { Category, Story } from '@prezly/sdk';
-import type { LocaleObject } from '@prezly/theme-kit-core';
+import type { Locale } from '@prezly/theme-kit-intl';
 import { useEffect } from 'react';
 
 import { useCurrentLocale } from '../newsroom-context';
@@ -13,7 +13,7 @@ async function fetchStories<T extends Story = Story>(
     pageSize: number,
     withHighlightedStory: boolean,
     category?: Category,
-    locale?: LocaleObject,
+    locale?: Locale.Code,
     include?: (keyof Story.ExtraFields)[],
     /**
      * @deprecated Story Pinning will always be enabled in the next major release.
@@ -34,9 +34,7 @@ async function fetchStories<T extends Story = Story>(
             category,
             include,
             pinning,
-            ...(locale && {
-                localeCode: locale.toUnderscoreCode(),
-            }),
+            locale,
             filterQuery,
         }),
     });

@@ -1,7 +1,7 @@
 import { useNewsroomContext } from '../context';
 
-export function useCurrentCategory() {
+export function useUsedLocales() {
     const context = useNewsroomContext();
 
-    return context.currentCategory;
+    return context.usedLocales;
 }

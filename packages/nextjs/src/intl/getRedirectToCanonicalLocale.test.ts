@@ -1,4 +1,4 @@
-import { DUMMY_DEFAULT_LOCALE, getRedirectToCanonicalLocale } from './locale';
+import { DUMMY_DEFAULT_LOCALE, getRedirectToCanonicalLocale } from './getRedirectToCanonicalLocale';
 
 describe('getRedirectToCanonicalLocale', () => {
     it('returns undefined when no locale or dummy locale is provided', () => {

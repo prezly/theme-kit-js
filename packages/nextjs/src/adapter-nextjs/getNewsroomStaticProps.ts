@@ -19,12 +19,12 @@ export async function getNewsroomStaticProps(
     options: Options = {},
 ) {
     assertServerEnv('getNewsroomStaticProps');
-    const { locale } = context;
+    const { locale: nextLocale } = context;
 
     const api = NextContentDelivery.initClient(undefined, {
         pinning: options.pinning,
     });
-    const staticProps = await api.getNewsroomServerSideProps(locale, options.story);
+    const staticProps = await api.getNewsroomServerSideProps(nextLocale, options.story);
 
     if (options.loadHomepageContacts) {
         staticProps.newsroomContextProps.contacts = await api.featuredContacts();

@@ -19,12 +19,12 @@ export async function getNewsroomServerSideProps(
     options: Options = {},
 ) {
     assertServerEnv('getNewsroomServerSideProps');
-    const { req: request, locale } = context;
+    const { req: request, locale: nextLocale } = context;
 
     const api = NextContentDelivery.initClient(request, {
         pinning: options.pinning,
     });
-    const serverSideProps = await api.getNewsroomServerSideProps(locale, options.story);
+    const serverSideProps = await api.getNewsroomServerSideProps(nextLocale, options.story);
 
     if (options.loadHomepageContacts) {
         serverSideProps.newsroomContextProps.contacts = await api.featuredContacts();

@@ -1,6 +1,5 @@
 import type {
     Category,
-    Culture,
     ExtendedStory,
     Newsroom,
     NewsroomCompanyInformation,
@@ -8,13 +7,14 @@ import type {
     NewsroomLanguageSettings,
     NewsroomThemePreset,
     Notification,
+    TranslatedCategory,
 } from '@prezly/sdk';
-import { DEFAULT_LOCALE, LocaleObject } from '@prezly/theme-kit-core';
 import type { Algolia } from '@prezly/theme-kit-core/server';
+import type { Locale } from '@prezly/theme-kit-intl';
 import type { PropsWithChildren } from 'react';
-import { createContext, useMemo } from 'react';
+import { createContext, useContext } from 'react';
 
-export interface NewsroomContextType {
+export interface NewsroomContext {
     /**
      * Basic newsroom information: newsroom logos, settings, etc.
      */
@@ -35,7 +35,7 @@ export interface NewsroomContextType {
     /**
      * Optional: Refers to a currently selected category when navigated to `/category/[slug]` page.
      */
-    currentCategory?: Category;
+    currentCategory?: TranslatedCategory;
     /**
      * Optional: Refers to a currently selected story when navigated to `/[slug]` page.
      */
@@ -45,9 +45,21 @@ export interface NewsroomContextType {
      */
     languages: NewsroomLanguageSettings[];
     /**
-     * Currently chosen locale
+     * Current locale
      */
-    locale: LocaleObject;
+    locale: Locale.Code;
+    /**
+     * Default newsroom locale.
+     */
+    defaultLocale: Locale.Code;
+    /**
+     * List of all enabled locales for the newsroom.
+     */
+    locales: Locale.Code[];
+    /**
+     * List of all enabled newsroom locales that have published public stories visible.
+     */
+    usedLocales: Locale.Code[];
     /**
      * Newsroom user-facing notifications (usually displayed as top-edge banners)
      */
@@ -64,15 +76,11 @@ export interface NewsroomContextType {
     algoliaSettings: Algolia.Settings;
 }
 
-export interface NewsroomContextProps extends Omit<NewsroomContextType, 'locale'> {
-    localeCode: Culture.Code;
-}
-
-export const NewsroomContext = createContext<NewsroomContextType | undefined>(undefined);
+const context = createContext<NewsroomContext | undefined>(undefined);
 
 /**
  * This context provides common Newsroom information retrieved by `getNewsroomServerSideProps` helper.
- * Please refer to the `NewsroomContextType` definition for more info on what's exposed from the context.
+ * Please refer to the `NewsroomContext` definition for more info on what's exposed from the context.
  */
 export function NewsroomContextProvider({
     categories,
@@ -82,19 +90,17 @@ export function NewsroomContextProvider({
     currentStory,
     companyInformation,
     languages,
-    localeCode,
+    locale,
+    defaultLocale,
+    locales,
+    usedLocales,
     notifications,
     themePreset,
     algoliaSettings,
     children,
-}: PropsWithChildren<NewsroomContextProps>) {
-    const locale = useMemo(
-        () => LocaleObject.fromAnyCode(localeCode || DEFAULT_LOCALE),
-        [localeCode],
-    );
-
+}: PropsWithChildren<NewsroomContext>) {
     return (
-        <NewsroomContext.Provider
+        <context.Provider
             value={{
                 categories,
                 contacts,
@@ -104,12 +110,26 @@ export function NewsroomContextProvider({
                 companyInformation,
                 languages,
                 locale,
+                defaultLocale,
+                locales,
+                usedLocales,
                 notifications,
                 themePreset,
                 algoliaSettings,
             }}
         >
             {children}
-        </NewsroomContext.Provider>
+        </context.Provider>
     );
+}
+
+export function useNewsroomContext() {
+    // TS Compiler is having a hard time figuring this type implicitly, so we have to set it explicitly
+    // See https://github.com/microsoft/TypeScript/issues/5711#issuecomment-340283439
+    const newsroomContext: NewsroomContext | undefined = useContext(context);
+    if (!newsroomContext) {
+        throw new Error('No `NewsroomContextProvider` found when calling `useNewsroomContext`');
+    }
+
+    return newsroomContext;
 }

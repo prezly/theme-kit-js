@@ -1,4 +1,4 @@
-import { useNewsroomContext } from './useNewsroomContext';
+import { useNewsroomContext } from '../context';
 
 export function useLanguages() {
     const context = useNewsroomContext();

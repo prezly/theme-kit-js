@@ -1,4 +1,3 @@
-import { LocaleObject } from '@prezly/theme-kit-core';
 import type { Redirect } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import { stringify } from 'querystring';
@@ -9,7 +8,7 @@ import { getResolvedPath } from '../utils';
 export const DUMMY_DEFAULT_LOCALE = 'qps-ploc';
 
 export function getRedirectToCanonicalLocale(
-    shortestLocaleCode: string | false,
+    shortestLocaleSlug: string | false,
     nextLocaleIsoCode: string | undefined,
     redirectPath: string,
     query?: ParsedUrlQuery,
@@ -19,11 +18,7 @@ export function getRedirectToCanonicalLocale(
         return undefined;
     }
 
-    const shortestLocaleSlug = shortestLocaleCode
-        ? LocaleObject.fromAnyCode(shortestLocaleCode).toUrlSlug()
-        : shortestLocaleCode;
-
-    if (shortestLocaleSlug !== nextLocaleIsoCode) {
+    if (shortestLocaleSlug && shortestLocaleSlug !== nextLocaleIsoCode) {
         const prefixedPath =
             redirectPath && !redirectPath.startsWith('/') ? `/${redirectPath}` : redirectPath;
         const finalPath = shortestLocaleSlug

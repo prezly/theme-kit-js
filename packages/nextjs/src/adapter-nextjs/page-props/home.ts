@@ -58,13 +58,13 @@ export function getHomepageServerSideProps<
         const { query } = context;
         const page = query.page && typeof query.page === 'string' ? Number(query.page) : 1;
 
-        const { localeCode } = serverSideProps.newsroomContextProps;
+        const { locale } = serverSideProps.newsroomContextProps;
 
         const storiesPaginated = await api.stories(
             {
                 offset: (page - 1) * pageSize,
                 limit: pageSize,
-                locale: localeCode,
+                locale,
                 highlighted: withHighlightedStory ? 1 : 0,
                 query: filterQuery,
             },
@@ -111,12 +111,12 @@ export function getHomepageStaticProps<
             pinning,
         });
 
-        const { localeCode } = staticProps.newsroomContextProps;
+        const { locale } = staticProps.newsroomContextProps;
 
         const storiesPaginated = await api.stories(
             {
                 limit: pageSize,
-                locale: localeCode,
+                locale,
             },
             {
                 include: extraStoryFields,

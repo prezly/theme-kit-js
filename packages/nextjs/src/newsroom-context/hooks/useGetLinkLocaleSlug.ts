@@ -1,5 +1,6 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
-import { getShortestLocaleCode, LocaleObject } from '@prezly/theme-kit-core';
+import { Routing } from '@prezly/theme-kit-core';
+import type { Locale } from '@prezly/theme-kit-intl';
 import { useCallback } from 'react';
 
 import { useCurrentLocale } from './useCurrentLocale';
@@ -13,15 +14,15 @@ import { useLanguages } from './useLanguages';
  */
 function getLinkLocaleSlug(
     languages: NewsroomLanguageSettings[],
-    locale: LocaleObject,
+    locale: Locale.Code,
 ): string | false {
-    const shortestLocaleCode = getShortestLocaleCode(languages, locale);
-    // When navigating to default language, we don't append the locale to the URL.
-    if (!shortestLocaleCode) {
-        return shortestLocaleCode;
-    }
+    const locales = languages.map((lang) => lang.code);
+    const [defaultLocale] = languages.filter((lang) => lang.is_default).map((lang) => lang.code);
 
-    return LocaleObject.fromAnyCode(shortestLocaleCode).toUrlSlug();
+    return Routing.getShortestLocaleSlug(locale, {
+        locales,
+        defaultLocale,
+    });
 }
 
 export function useGetLinkLocaleSlug() {
@@ -30,7 +31,7 @@ export function useGetLinkLocaleSlug() {
 
     // The `locale` parameter is mainly used for Language Dropdown
     return useCallback(
-        (locale?: LocaleObject) => getLinkLocaleSlug(languages, locale || currentLocale),
+        (locale?: Locale.Code) => getLinkLocaleSlug(languages, locale || currentLocale),
         [languages, currentLocale],
     );
 }

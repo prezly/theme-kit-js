@@ -100,6 +100,11 @@ export function createClient(
             return languages.map((lang) => lang.code);
         },
 
+        async usedLocales() {
+            const languages = await client.usedLanguages();
+            return languages.map((lang) => lang.code);
+        },
+
         async defaultLanguage() {
             const languages = await client.languages();
 

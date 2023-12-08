@@ -1,9 +1,4 @@
-import {
-    getAlternateLanguageLinks,
-    getNewsroomOgImageUrl,
-    getUsedLanguages,
-} from '@prezly/theme-kit-core';
-import type { AlternateLanguageLink } from '@prezly/theme-kit-core';
+import { getNewsroomOgImageUrl, Metadata } from '@prezly/theme-kit-core';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import type { NextSeoProps } from 'next-seo';
@@ -13,10 +8,11 @@ import {
     useCompanyInformation,
     useCurrentLocale,
     useCurrentStory,
+    useDefaultLocale,
     useGetLinkLocaleSlug,
     useGetTranslationUrl,
-    useLanguages,
     useNewsroom,
+    useUsedLocales,
 } from '../../newsroom-context';
 
 import { getAbsoluteUrl } from './lib';
@@ -47,7 +43,8 @@ export function PageSeo({
     const companyInformation = useCompanyInformation();
     const site = useNewsroom();
     const currentLocale = useCurrentLocale();
-    const languages = useLanguages();
+    const usedLocales = useUsedLocales();
+    const defaultLocale = useDefaultLocale();
     const getTranslationUrl = useGetTranslationUrl();
     const getLinkLocaleSlug = useGetLinkLocaleSlug();
     const currentStory = useCurrentStory();
@@ -78,14 +75,17 @@ export function PageSeo({
     const siteName = companyInformation.name;
     const sharingImageUrl = imageUrl || getNewsroomOgImageUrl(site, currentLocale);
 
-    const alternateLanguageLinks: AlternateLanguageLink[] = useMemo(() => {
-        if (!languages.length) {
+    const alternateLanguageLinks: Metadata.AlternateLanguageLink[] = useMemo(() => {
+        if (!usedLocales.length) {
             return [];
         }
 
-        const usedLanguages = getUsedLanguages(languages);
+        const usedLanguages = usedLocales.map((code) => ({
+            code,
+            is_default: code === defaultLocale,
+        }));
 
-        return getAlternateLanguageLinks(usedLanguages, (locale) => {
+        return Metadata.getAlternateLanguageLinks(usedLanguages, (locale) => {
             const translationUrl = getTranslationUrl(locale);
 
             if (!translationUrl) {
@@ -98,7 +98,7 @@ export function PageSeo({
                 currentStory && translationUrl !== '/' ? false : getLinkLocaleSlug(locale),
             );
         });
-    }, [currentStory, getLinkLocaleSlug, getTranslationUrl, languages, site.url]);
+    }, [currentStory, getLinkLocaleSlug, getTranslationUrl, usedLocales, defaultLocale, site.url]);
 
     return (
         <NextSeo
@@ -111,7 +111,7 @@ export function PageSeo({
                 url: canonicalUrl,
                 title: pageTitle,
                 description: pageDescription,
-                locale: currentLocale.toUnderscoreCode(),
+                locale: currentLocale,
                 images: [
                     {
                         url: sharingImageUrl,

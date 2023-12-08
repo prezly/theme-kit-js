@@ -1,4 +1,4 @@
-import { useNewsroomContext } from './useNewsroomContext';
+import { useNewsroomContext } from '../context';
 
 export function useAlgoliaSettings() {
     const context = useNewsroomContext();

@@ -1,4 +1,4 @@
-import type { NewsroomContextProps } from './newsroom-context';
+import type { NewsroomContext } from './newsroom-context';
 
 export interface ServerSidePageProps {
     /**
@@ -12,5 +12,5 @@ export interface ServerSidePageProps {
  * These are the props returned by the `processRequest` method that are meant to be passed to your `_app` to be injected into the `NewsroomContextProvider`.
  */
 export interface PageProps {
-    newsroomContextProps: NewsroomContextProps;
+    newsroomContextProps: NewsroomContext;
 }

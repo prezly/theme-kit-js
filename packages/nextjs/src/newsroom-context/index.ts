@@ -1,2 +1,2 @@
-export { NewsroomContext, NewsroomContextProvider, type NewsroomContextProps } from './context';
+export { type NewsroomContext, NewsroomContextProvider, useNewsroomContext } from './context';
 export * from './hooks';
