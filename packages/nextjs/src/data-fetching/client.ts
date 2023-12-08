@@ -17,6 +17,7 @@ export type Client = ContentDelivery.Client & {
     getNewsroomServerSideProps(
         nextLocaleIsoCode?: string,
         story?: Pick<Story, 'culture'>,
+        loadHomepageContacts?: boolean,
     ): Promise<PageProps & ServerSidePageProps>;
 };
 
@@ -26,12 +27,13 @@ export function createClient(
 ): Client {
     return {
         ...contentDelivery,
-        async getNewsroomServerSideProps(nextLocaleIsoCode, story) {
-            const [newsroom, languages, categories, themePreset] = await Promise.all([
+        async getNewsroomServerSideProps(nextLocaleIsoCode, story, loadHomepageContacts = false) {
+            const [newsroom, languages, categories, themePreset, contacts] = await Promise.all([
                 contentDelivery.newsroom(),
                 contentDelivery.languages(),
                 contentDelivery.categories(),
                 contentDelivery.theme(),
+                loadHomepageContacts ? contentDelivery.featuredContacts() : undefined,
             ]);
 
             const currentLanguage = story
@@ -57,6 +59,7 @@ export function createClient(
                     notifications,
                     themePreset: themePreset ?? null,
                     algoliaSettings,
+                    contacts,
                 },
                 localeResolved: Boolean(currentLanguage),
             };

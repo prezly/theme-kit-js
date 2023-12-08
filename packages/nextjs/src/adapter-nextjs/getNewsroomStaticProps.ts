@@ -24,11 +24,11 @@ export async function getNewsroomStaticProps(
     const api = NextContentDelivery.initClient(undefined, {
         pinning: options.pinning,
     });
-    const staticProps = await api.getNewsroomServerSideProps(locale, options.story);
-
-    if (options.loadHomepageContacts) {
-        staticProps.newsroomContextProps.contacts = await api.featuredContacts();
-    }
+    const staticProps = await api.getNewsroomServerSideProps(
+        locale,
+        options.story,
+        options.loadHomepageContacts,
+    );
 
     return { api, staticProps };
 }
