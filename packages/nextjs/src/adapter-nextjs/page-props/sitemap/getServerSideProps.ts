@@ -25,10 +25,6 @@ export function getSitemapServerSideProps(
     options: {
         additionalPaths?: string[];
         basePath?: string;
-        /**
-         * @deprecated Story Pinning will always be enabled in the next major release.
-         */
-        pinning?: boolean;
     } = {},
 ) {
     return async function getServerSideProps(ctx: NextPageContext) {
@@ -46,9 +42,7 @@ export function getSitemapServerSideProps(
             req.headers['x-forwarded-proto'] as string | undefined,
         );
 
-        const api = NextContentDelivery.initClient(req, {
-            pinning: options.pinning,
-        });
+        const api = NextContentDelivery.initClient(req);
         const stories = await api.allStories();
         const categories = await api.categories();
 

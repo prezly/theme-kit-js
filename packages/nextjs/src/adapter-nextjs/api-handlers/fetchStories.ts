@@ -19,12 +19,11 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
         include,
         formats,
         localeCode,
-        pinning,
         filterQuery,
     } = req.body;
 
     try {
-        const api = NextContentDelivery.initClient(req, { pinning, formats });
+        const api = NextContentDelivery.initClient(req, { formats });
 
         const { stories, pagination } = await api.stories(
             {

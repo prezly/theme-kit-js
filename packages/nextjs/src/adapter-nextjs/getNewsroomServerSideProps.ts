@@ -7,7 +7,6 @@ import { NextContentDelivery } from '../data-fetching';
 interface Options {
     loadHomepageContacts?: boolean;
     story?: Pick<Story, 'culture'>;
-    pinning?: boolean;
 }
 
 /**
@@ -21,9 +20,7 @@ export async function getNewsroomServerSideProps(
     assertServerEnv('getNewsroomServerSideProps');
     const { req: request, locale } = context;
 
-    const api = NextContentDelivery.initClient(request, {
-        pinning: options.pinning,
-    });
+    const api = NextContentDelivery.initClient(request);
 
     const serverSideProps = await api.getNewsroomServerSideProps(
         locale,
