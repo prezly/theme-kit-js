@@ -31,6 +31,7 @@ export function createClient(
                 usedLocales,
                 categories,
                 themePreset,
+                contacts,
             ] = await Promise.all([
                 contentDelivery.newsroom(),
                 contentDelivery.languages(),
