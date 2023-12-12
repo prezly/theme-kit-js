@@ -1,4 +1,4 @@
-import { getNewsroomOgImageUrl, Metadata } from '@prezly/theme-kit-core';
+import { Metadata, Newsrooms } from '@prezly/theme-kit-core';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import type { NextSeoProps } from 'next-seo';
@@ -73,7 +73,7 @@ export function PageSeo({
     const canonicalUrl =
         canonical || getAbsoluteUrl(currentPath, site.url, getLinkLocaleSlug(currentLocale));
     const siteName = companyInformation.name;
-    const sharingImageUrl = imageUrl || getNewsroomOgImageUrl(site, currentLocale);
+    const sharingImageUrl = imageUrl || Newsrooms.getOgImageUrl(site, currentLocale);
 
     const alternateLanguageLinks: Metadata.AlternateLanguageLink[] = useMemo(() => {
         if (!usedLocales.length) {

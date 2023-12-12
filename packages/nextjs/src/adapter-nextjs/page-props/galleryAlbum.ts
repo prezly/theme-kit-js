@@ -1,5 +1,5 @@
 import type { NewsroomGallery } from '@prezly/sdk';
-import { isGalleryEmpty } from '@prezly/theme-kit-core';
+import { Galleries } from '@prezly/theme-kit-core';
 import type {
     GetServerSidePropsContext,
     GetServerSidePropsResult,
@@ -31,7 +31,7 @@ export function getGalleryAlbumPageServerSideProps<CustomProps extends Record<st
         const { uuid } = context.params as { uuid: string };
         const gallery = await api.mediaAlbum(uuid);
 
-        if (!gallery || isGalleryEmpty(gallery)) {
+        if (!gallery || Galleries.isEmpty(gallery)) {
             return { notFound: true };
         }
 
@@ -60,7 +60,7 @@ export function getGalleryAlbumPageStaticProps<CustomProps extends Record<string
         const { uuid } = context.params as { uuid: string };
         const gallery = await api.mediaAlbum(uuid);
 
-        if (!gallery || isGalleryEmpty(gallery)) {
+        if (!gallery || Galleries.isEmpty(gallery)) {
             return { notFound: true };
         }
 
