@@ -7,7 +7,6 @@ import { NextContentDelivery } from '../data-fetching';
 interface Options {
     loadHomepageContacts?: boolean;
     story?: Pick<Story, 'culture'>;
-    pinning?: boolean;
 }
 
 /**
@@ -21,14 +20,13 @@ export async function getNewsroomServerSideProps(
     assertServerEnv('getNewsroomServerSideProps');
     const { req: request, locale: nextLocale } = context;
 
-    const api = NextContentDelivery.initClient(request, {
-        pinning: options.pinning,
-    });
-    const serverSideProps = await api.getNewsroomServerSideProps(nextLocale, options.story);
+    const api = NextContentDelivery.initClient(request);
 
-    if (options.loadHomepageContacts) {
-        serverSideProps.newsroomContextProps.contacts = await api.featuredContacts();
-    }
+    const serverSideProps = await api.getNewsroomServerSideProps(
+        nextLocale,
+        options.story,
+        options.loadHomepageContacts,
+    );
 
     return { api, serverSideProps };
 }

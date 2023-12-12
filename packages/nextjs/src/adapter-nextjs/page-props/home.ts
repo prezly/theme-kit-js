@@ -28,10 +28,6 @@ interface Options<Include extends keyof Story.ExtraFields> {
      */
     withHighlightedStory?: boolean;
     pageSize?: number;
-    /**
-     * @deprecated Story Pinning will always be enabled in the next major release.
-     */
-    pinning?: boolean;
     filterQuery?: Object;
 }
 
@@ -42,7 +38,6 @@ export function getHomepageServerSideProps<
     const {
         pageSize = DEFAULT_PAGE_SIZE,
         extraStoryFields,
-        pinning = true,
         withHighlightedStory = false,
         filterQuery,
     } = options || {};
@@ -52,7 +47,6 @@ export function getHomepageServerSideProps<
     ): Promise<GetServerSidePropsResult<HomePageProps<Include> & CustomProps>> {
         const { api, serverSideProps } = await getNewsroomServerSideProps(context, {
             loadHomepageContacts: true,
-            pinning,
         });
 
         const { query } = context;
@@ -101,14 +95,13 @@ export function getHomepageStaticProps<
     customProps: CustomProps | PropsFunction<CustomProps, GetStaticPropsContext>,
     options: Options<Include> = {},
 ) {
-    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields = [], pinning = true } = options;
+    const { pageSize = DEFAULT_PAGE_SIZE, extraStoryFields = [] } = options;
 
     return async function getStaticProps(
         context: GetStaticPropsContext,
     ): Promise<GetStaticPropsResult<HomePageProps<Include> & CustomProps>> {
         const { api, staticProps } = await getNewsroomStaticProps(context, {
             loadHomepageContacts: true,
-            pinning,
         });
 
         const { locale } = staticProps.newsroomContextProps;

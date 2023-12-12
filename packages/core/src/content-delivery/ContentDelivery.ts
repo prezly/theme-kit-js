@@ -11,7 +11,6 @@ import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '
 
 export interface Options {
     formats?: Story.FormatVersion[];
-    pinning?: boolean;
     cache?: boolean;
 }
 
@@ -64,11 +63,19 @@ export namespace mediaAlbums {
 
 export type Client = ReturnType<typeof createClient>;
 
+/**
+ * Sort order to list stories chronologically, with pinned stories on top.
+ */
+const CHRONOLOGICALLY: SortOrder = SortOrder.combine(
+    SortOrder.desc('is_pinned'),
+    SortOrder.desc('published_at'),
+);
+
 export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
     newsroomThemeUuid: NewsroomTheme['id'] | undefined,
-    { formats = [Story.FormatVersion.SLATEJS_V4], pinning = false, cache = false }: Options = {},
+    { formats = [Story.FormatVersion.SLATEJS_V4], cache = false }: Options = {},
 ) {
     const client = {
         newsroom() {
@@ -218,7 +225,7 @@ export function createClient(
             const localeCode = locale && typeof locale === 'object' ? locale.code : locale;
 
             return prezly.stories.search({
-                sortOrder: chronologically(SortOrder.Direction.DESC, pinning),
+                sortOrder: CHRONOLOGICALLY,
                 formats,
                 limit: offset === 0 ? limit + highlighted : limit,
                 offset: offset > 0 ? offset + highlighted : offset,
@@ -337,16 +344,6 @@ function injectCache(client: Client) {
             return value;
         };
     });
-}
-
-function chronologically(direction: `${SortOrder.Direction}`, pinning = false) {
-    const pinnedFirst = SortOrder.desc('is_pinned');
-    const chronological =
-        direction === SortOrder.Direction.ASC
-            ? SortOrder.asc('published_at')
-            : SortOrder.desc('published_at');
-
-    return pinning ? SortOrder.combine(pinnedFirst, chronological) : chronological;
 }
 
 function mergeQueries(...queries: (Query | undefined)[]): Query | undefined {
