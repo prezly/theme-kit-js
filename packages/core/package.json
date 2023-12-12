@@ -4,7 +4,10 @@
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "files": ["build", "README.md"],
+  "files": [
+    "build",
+    "README.md"
+  ],
   "exports": {
     ".": "./build/index.js",
     "./server": "./build/server.js",
@@ -13,9 +16,15 @@
   },
   "typesVersions": {
     "*": {
-      "server": ["build/server.d.ts"],
-      "localeConfig": ["build/intl/localeConfig.d.ts"],
-      "localeList": ["build/intl/localeList.d.ts"]
+      "server": [
+        "build/server.d.ts"
+      ],
+      "localeConfig": [
+        "build/intl/localeConfig.d.ts"
+      ],
+      "localeList": [
+        "build/intl/localeList.d.ts"
+      ]
     }
   },
   "scripts": {
@@ -33,7 +42,8 @@
     "@prezly/theme-kit-intl": "^6.8.0",
     "@prezly/uploadcare": "^2.3.4",
     "isomorphic-fetch": "^3.0.0",
-    "parse-data-url": "^4.0.1"
+    "parse-data-url": "^4.0.1",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.39",
@@ -47,7 +57,9 @@
     "node": ">= 16.x",
     "npm": ">= 8.x"
   },
-  "keywords": ["prezly"],
+  "keywords": [
+    "prezly"
+  ],
   "author": "Prezly Team",
   "license": "MIT",
   "bugs": {

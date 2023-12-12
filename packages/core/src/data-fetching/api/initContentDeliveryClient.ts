@@ -1,16 +1,14 @@
 import { createPrezlyClient } from '@prezly/sdk';
 import type { IncomingMessage } from 'http';
+import 'server-only';
 
 import { ContentDelivery } from '../../content-delivery';
 import * as Environment from '../../environment';
-import { assertServerEnv } from '../../utils';
 
 export function initContentDeliveryClient(
     req?: IncomingMessage,
     options?: ContentDelivery.Options,
 ): ContentDelivery.Client {
-    assertServerEnv('initContentDeliveryClient');
-
     // `Environment.boot` handles both cases for envs parsing - .env and request headers
     const { PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID, PREZLY_THEME_UUID } = Environment.boot(req);
 

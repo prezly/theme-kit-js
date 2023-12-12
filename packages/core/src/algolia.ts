@@ -1,7 +1,7 @@
 import type { IncomingMessage } from 'http';
+import 'server-only';
 
 import * as Environment from './environment';
-import { assertServerEnv } from './utils';
 
 export interface Settings {
     apiKey: string;
@@ -10,8 +10,6 @@ export interface Settings {
 }
 
 export function settings(req?: IncomingMessage): Settings {
-    assertServerEnv('Algolia.settings()');
-
     // `Environment.boot()` handles both cases for envs parsing - .env and request headers
     const {
         ALGOLIA_API_KEY = '',

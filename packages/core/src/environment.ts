@@ -1,15 +1,13 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { IncomingMessage } from 'http';
 import parseDataUrl from 'parse-data-url';
+import 'server-only';
 
 import type { PrezlyEnv } from './types';
-import { assertServerEnv } from './utils';
 
 export function boot<EnvType extends PrezlyEnv = PrezlyEnv>(
     request?: IncomingMessage,
 ): NodeJS.ProcessEnv & EnvType {
-    assertServerEnv('Environment.boot()');
-
     const headerName = (process.env.HTTP_ENV_HEADER || '').toLowerCase();
     const httpEnvHeader = headerName ? request?.headers[headerName] : undefined;
 
