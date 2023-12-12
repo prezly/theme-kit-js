@@ -1,11 +1,19 @@
 import type { NewsroomCompanyInformation } from '@prezly/sdk';
 
-type CompanyInformationWithSocialMedia = Pick<
+type CompanySocialMediaInformation = Pick<
     NewsroomCompanyInformation,
     'facebook' | 'instagram' | 'linkedin' | 'pinterest' | 'tiktok' | 'twitter' | 'youtube'
 >;
 
-export function hasAnySocialMedia(companyInformation: CompanyInformationWithSocialMedia): boolean {
+type CompanyAboutInformation = CompanySocialMediaInformation &
+    Pick<NewsroomCompanyInformation, 'about' | 'website'>;
+
+type CompanyContactInformation = Pick<
+    NewsroomCompanyInformation,
+    'address' | 'phone' | 'email' | 'website'
+>;
+
+export function hasAnySocialMedia(companyInformation: CompanySocialMediaInformation): boolean {
     return Boolean(
         companyInformation.facebook ||
             companyInformation.instagram ||
@@ -17,12 +25,7 @@ export function hasAnySocialMedia(companyInformation: CompanyInformationWithSoci
     );
 }
 
-type CompanyInformationWithAboutInformation = CompanyInformationWithSocialMedia &
-    Pick<NewsroomCompanyInformation, 'about' | 'website'>;
-
-export function hasAnyAboutInformation(
-    companyInformation: CompanyInformationWithAboutInformation,
-): boolean {
+export function hasAnyAboutInformation(companyInformation: CompanyAboutInformation): boolean {
     return Boolean(
         companyInformation.about ||
             companyInformation.website ||
@@ -30,14 +33,7 @@ export function hasAnyAboutInformation(
     );
 }
 
-type CompanyInformationWithContactInformation = Pick<
-    NewsroomCompanyInformation,
-    'address' | 'phone' | 'email' | 'website'
->;
-
-export function hasAnyContactInformation(
-    companyInformation: CompanyInformationWithContactInformation,
-): boolean {
+export function hasAnyContactInformation(companyInformation: CompanyContactInformation): boolean {
     return Boolean(
         companyInformation.address ||
             companyInformation.phone ||
