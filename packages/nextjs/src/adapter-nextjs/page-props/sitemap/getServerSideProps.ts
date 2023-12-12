@@ -1,3 +1,4 @@
+import { getAlgoliaSettings } from '@prezly/theme-kit-core/server';
 import type { NextPageContext } from 'next';
 
 import { getNextPrezlyApi } from '../../../data-fetching';
@@ -46,6 +47,7 @@ export function getSitemapServerSideProps(
         );
 
         const api = getNextPrezlyApi(req);
+        const { ALGOLIA_API_KEY } = getAlgoliaSettings(req);
         const [stories, categories, languages] = await Promise.all([
             api.getAllStories({
                 pinning: options.pinning ?? true,
@@ -61,7 +63,9 @@ export function getSitemapServerSideProps(
         );
 
         sitemapBuilder.addPageUrl('/');
-        // TODO: Add search page for all languages (if search is enabled)
+        if (ALGOLIA_API_KEY) {
+            sitemapBuilder.addPageUrl('/search');
+        }
         // TODO: Add media pages for all languages (if media galleries are available)
         categories.forEach((category) => sitemapBuilder.addCategoryUrl(category));
         stories.forEach((story) => sitemapBuilder.addStoryUrl(story));
