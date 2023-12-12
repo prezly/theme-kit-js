@@ -15,10 +15,6 @@ async function fetchStories<T extends Story = Story>(
     category?: Category,
     locale?: LocaleObject,
     include?: (keyof Story.ExtraFields)[],
-    /**
-     * @deprecated Story Pinning will always be enabled in the next major release.
-     */
-    pinning?: boolean,
     filterQuery?: Object,
 ): Promise<{ stories: T[]; storiesTotal: number }> {
     const result = await fetch(getResolvedPath('/api/fetch-stories'), {
@@ -33,7 +29,6 @@ async function fetchStories<T extends Story = Story>(
             withHighlightedStory,
             category,
             include,
-            pinning,
             ...(locale && {
                 localeCode: locale.toUnderscoreCode(),
             }),
@@ -59,10 +54,6 @@ export function useInfiniteStoriesLoading<T extends Story = Story>(
     pagination: PaginationProps,
     category?: Category,
     include?: (keyof Story.ExtraFields)[],
-    /**
-     * @deprecated Story Pinning will always be enabled in the next major release.
-     */
-    pinning?: boolean,
     filterQuery?: Object,
 ) {
     const currentLocale = useCurrentLocale();
@@ -77,7 +68,6 @@ export function useInfiniteStoriesLoading<T extends Story = Story>(
                 category,
                 currentLocale,
                 include,
-                pinning,
                 filterQuery,
             );
             return stories;

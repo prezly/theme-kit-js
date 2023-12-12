@@ -1,7 +1,7 @@
 import { assertServerEnv } from '@prezly/theme-kit-core';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { getNextPrezlyApi } from '../../data-fetching';
+import { NextContentDelivery } from '../../data-fetching';
 
 export async function fetchGalleries(req: NextApiRequest, res: NextApiResponse) {
     assertServerEnv('fetchGalleries');
@@ -14,9 +14,13 @@ export async function fetchGalleries(req: NextApiRequest, res: NextApiResponse) 
     const { page, pageSize, type } = req.body;
 
     try {
-        const api = getNextPrezlyApi(req);
+        const api = NextContentDelivery.initClient(req);
 
-        const { galleries, pagination } = await api.getGalleries({ page, pageSize, type });
+        const { galleries, pagination } = await api.mediaAlbums({
+            type,
+            limit: pageSize,
+            offset: (page - 1) * pageSize,
+        });
 
         res.status(200).json({ galleries, galleriesTotal: pagination.matched_records_number });
     } catch (error) {

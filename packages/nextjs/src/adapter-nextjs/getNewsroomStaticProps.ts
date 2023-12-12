@@ -2,7 +2,7 @@ import type { Story } from '@prezly/sdk';
 import { assertServerEnv } from '@prezly/theme-kit-core';
 import type { GetStaticPropsContext } from 'next';
 
-import { getNextPrezlyApi } from '../data-fetching';
+import { NextContentDelivery } from '../data-fetching';
 
 interface Options {
     loadHomepageContacts?: boolean;
@@ -20,12 +20,12 @@ export async function getNewsroomStaticProps(
     assertServerEnv('getNewsroomStaticProps');
     const { locale } = context;
 
-    const api = getNextPrezlyApi();
-    const staticProps = await api.getNewsroomServerSideProps(undefined, locale, options.story);
-
-    if (options.loadHomepageContacts) {
-        staticProps.newsroomContextProps.contacts = await api.getNewsroomContacts();
-    }
+    const api = NextContentDelivery.initClient();
+    const staticProps = await api.getNewsroomServerSideProps(
+        locale,
+        options.story,
+        options.loadHomepageContacts,
+    );
 
     return { api, staticProps };
 }

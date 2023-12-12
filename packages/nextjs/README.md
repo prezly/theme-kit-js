@@ -192,7 +192,7 @@ Since all of the common data is loaded into the `NewsroomContextProvider`, you d
 ```ts
 const { api, serverSideProps } = await getNewsroomServerSideProps(context);
 ```
-This function fetches all the required base props and exposes the `PrezlyApi` instance, which you can use to fetch additional content like stories or categories.
+This function fetches all the required base props and exposes the `ContentDelivery.Client` instance, which you can use to fetch additional content like stories or categories.
 
 ```ts
 return processRequest(

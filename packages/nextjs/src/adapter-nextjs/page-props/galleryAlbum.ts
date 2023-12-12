@@ -8,7 +8,7 @@ import type {
     GetStaticPropsResult,
 } from 'next';
 
-import { getNextPrezlyApi } from '../../data-fetching';
+import { NextContentDelivery } from '../../data-fetching';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
 import { processRequest } from '../processRequest';
@@ -29,7 +29,7 @@ export function getGalleryAlbumPageServerSideProps<CustomProps extends Record<st
         const { api, serverSideProps } = await getNewsroomServerSideProps(context);
 
         const { uuid } = context.params as { uuid: string };
-        const gallery = await api.getGallery(uuid);
+        const gallery = await api.mediaAlbum(uuid);
 
         if (!gallery || isGalleryEmpty(gallery)) {
             return { notFound: true };
@@ -58,7 +58,7 @@ export function getGalleryAlbumPageStaticProps<CustomProps extends Record<string
         const { api, staticProps } = await getNewsroomStaticProps(context);
 
         const { uuid } = context.params as { uuid: string };
-        const gallery = await api.getGallery(uuid);
+        const gallery = await api.mediaAlbum(uuid);
 
         if (!gallery || isGalleryEmpty(gallery)) {
             return { notFound: true };
@@ -78,8 +78,8 @@ export function getGalleryAlbumPageStaticProps<CustomProps extends Record<string
 }
 
 export async function getGalleryAlbumPageStaticPaths(): Promise<GetStaticPathsResult> {
-    const api = getNextPrezlyApi();
-    const { galleries } = await api.getGalleries({});
+    const api = NextContentDelivery.initClient();
+    const { galleries } = await api.mediaAlbums();
 
     const paths = galleries.map(({ uuid }) => ({ params: { uuid } }));
 
