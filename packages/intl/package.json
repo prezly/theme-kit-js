@@ -60,7 +60,7 @@
     },
     "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/intl#readme",
     "dependencies": {
-        "@formatjs/intl": "^1.16.0"
+        "@formatjs/intl": "^2.0.0"
     },
     "devDependencies": {
         "@babel/cli": "7.23.4",
@@ -68,7 +68,7 @@
         "@babel/plugin-transform-modules-commonjs": "7.23.3",
         "@babel/preset-env": "7.23.5",
         "@babel/preset-typescript": "7.23.3",
-        "@formatjs/cli": "4.8.4",
+        "@formatjs/cli": "6.2.4",
         "babel-plugin-add-import-extension": "1.6.0"
     },
     "publishConfig": {
