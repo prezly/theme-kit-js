@@ -1,5 +1,6 @@
-import { assertServerEnv, Routing } from '@prezly/theme-kit-core';
+import { Routing } from '@prezly/theme-kit-core';
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+import 'server-only';
 
 import { getRedirectToCanonicalLocale } from '../intl';
 import type { PageProps, ServerSidePageProps } from '../types';
@@ -18,7 +19,6 @@ export function processRequest<Props>(
     props: Props & PageProps & ServerSidePageProps,
     canonicalUrl?: string,
 ): GetServerSidePropsResult<Props> {
-    assertServerEnv('processRequest');
     const { locale: nextLocale, query, res } = context;
 
     if (process.env.NODE_ENV === 'production') {

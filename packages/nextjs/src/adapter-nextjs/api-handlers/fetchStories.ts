@@ -1,11 +1,9 @@
-import { assertServerEnv } from '@prezly/theme-kit-core';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import 'server-only';
 
 import { NextContentDelivery } from '../../data-fetching';
 
 export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
-    assertServerEnv('fetchStories');
-
     if (req.method !== 'POST') {
         res.status(405);
         return;

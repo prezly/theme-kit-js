@@ -1,6 +1,6 @@
 import type { Story } from '@prezly/sdk';
-import { assertServerEnv } from '@prezly/theme-kit-core';
 import type { GetServerSidePropsContext } from 'next';
+import 'server-only';
 
 import { NextContentDelivery } from '../data-fetching';
 
@@ -17,7 +17,6 @@ export async function getNewsroomServerSideProps(
     context: GetServerSidePropsContext,
     options: Options = {},
 ) {
-    assertServerEnv('getNewsroomServerSideProps');
     const { req: request, locale: nextLocale } = context;
 
     const api = NextContentDelivery.initClient(request);
