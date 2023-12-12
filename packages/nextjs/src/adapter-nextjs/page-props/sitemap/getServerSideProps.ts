@@ -2,7 +2,6 @@ import type { NextPageContext } from 'next';
 
 import { getNextPrezlyApi } from '../../../data-fetching';
 
-import { createPaths } from './createPaths';
 import { SitemapBuilder } from './SitemapBuilder';
 
 function normalizeBaseUrl(baseUrl: string, protocol = 'https') {
@@ -47,21 +46,27 @@ export function getSitemapServerSideProps(
         );
 
         const api = getNextPrezlyApi(req);
-        const stories = await api.getAllStories({
-            pinning: options.pinning ?? true,
-        });
-        const categories = await api.getCategories();
+        const [stories, categories, languages] = await Promise.all([
+            api.getAllStories({
+                pinning: options.pinning ?? true,
+            }),
+            api.getCategories(),
+            api.getNewsroomLanguages(),
+        ]);
 
-        const paths = createPaths(stories, categories);
         const sitemapBuilder = new SitemapBuilder(
             baseUrl,
             options.basePath || process.env.NEXT_PUBLIC_BASE_PATH,
+            languages,
         );
 
-        sitemapBuilder.addUrl('/');
-        paths.forEach((path) => sitemapBuilder.addUrl(path));
+        sitemapBuilder.addPageUrl('/');
+        // TODO: Add search page for all languages (if search is enabled)
+        // TODO: Add media pages for all languages (if media galleries are available)
+        categories.forEach((category) => sitemapBuilder.addCategoryUrl(category));
+        stories.forEach((story) => sitemapBuilder.addStoryUrl(story));
 
-        options.additionalPaths?.forEach((path) => sitemapBuilder.addUrl(path));
+        options.additionalPaths?.forEach((path) => sitemapBuilder.addPageUrl(path));
 
         res.setHeader('Content-Type', 'text/xml');
         res.write(sitemapBuilder.serialize());
