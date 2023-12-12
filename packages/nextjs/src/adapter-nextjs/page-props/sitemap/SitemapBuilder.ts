@@ -51,6 +51,10 @@ export class SitemapBuilder {
                 location: this.buildUrl(url, code),
                 changeFrequency: SitemapBuilder.guessFrequency(url),
                 priority: SitemapBuilder.guessPriority(url),
+                alternateLinks: this.usedLanguages.map((language) => ({
+                    href: this.buildUrl(url, language.code),
+                    lang: LocaleObject.fromAnyCode(language.code).toUrlSlug(),
+                })),
             });
         });
     }
@@ -58,14 +62,45 @@ export class SitemapBuilder {
     public addStoryUrl(story: Story) {
         const url = `/${story.slug}`;
 
+        // De-dupe translations and only include locales that are enabled on the site
+        const translationsMap = story.translations.reduce((map, translation) => {
+            if (
+                this.usedLanguages.some(({ code }) => code === translation.culture.code) &&
+                translation.status === 'published'
+            ) {
+                map.set(translation.culture.code, translation);
+            }
+
+            return map;
+        }, new Map());
+        // Include the original story to display it in alternate links
+        translationsMap.set(story.culture.code, story);
+        const translations = Array.from(translationsMap.values());
+
         this.urls.push({
             location: this.buildUrl(`/${story.slug}`),
             changeFrequency: SitemapBuilder.guessFrequency(url),
             priority: SitemapBuilder.guessPriority(url),
+            ...(translations.length > 1 && {
+                alternateLinks: translations.map((translatedStory) => ({
+                    href: this.buildUrl(`/${translatedStory.slug}`),
+                    lang: LocaleObject.fromAnyCode(translatedStory.culture.code).toUrlSlug(),
+                })),
+            }),
         });
     }
 
     public addCategoryUrl(category: Category) {
+        // De-dupe translations and only include locales that are enabled on the site
+        const translationsMap = Object.values(category.i18n).reduce((map, translation) => {
+            if (this.usedLanguages.some(({ code }) => code === translation.locale.code)) {
+                map.set(translation.locale.code, translation);
+            }
+
+            return map;
+        }, new Map());
+        const translations = Array.from(translationsMap.values());
+
         this.usedLanguages.forEach(({ code }) => {
             const translatedCategory = Category.translation(category, code);
             if (translatedCategory) {
@@ -75,6 +110,15 @@ export class SitemapBuilder {
                     location: this.buildUrl(url, code),
                     changeFrequency: SitemapBuilder.guessFrequency(url),
                     priority: SitemapBuilder.guessPriority(url),
+                    ...(translations.length > 1 && {
+                        alternateLinks: translations.map((translation) => ({
+                            href: this.buildUrl(
+                                `/category/${translation.slug}`,
+                                translation.locale.code,
+                            ),
+                            lang: LocaleObject.fromAnyCode(translation.locale.code).toUrlSlug(),
+                        })),
+                    }),
                 });
             }
         });
@@ -103,6 +147,10 @@ export class SitemapBuilder {
             url.location && `\t<loc>${url.location}</loc>`,
             url.changeFrequency && `\t<changefreq>${url.changeFrequency}</changefreq>`,
             url.priority && `\t<priority>${url.priority}</priority>`,
+            url.alternateLinks?.map(
+                ({ lang, href }) =>
+                    `\t<xhtml:link rel="alternate" hreflang="${lang}" href="${href}"/>`,
+            ),
             '</url>',
         ]
             .filter(Boolean)
@@ -112,7 +160,7 @@ export class SitemapBuilder {
     serialize() {
         return [
             '<?xml version="1.0" encoding="UTF-8" ?>',
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
+            '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.w3.org/TR/xhtml11/xhtml11_schema.html http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/TR/xhtml11/xhtml11_schema.html">',
             this.urls.map(SitemapBuilder.serializeLocation).join('\n'),
             '</urlset>',
         ].join('\n');
