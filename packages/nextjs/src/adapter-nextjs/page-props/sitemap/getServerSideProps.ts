@@ -48,12 +48,13 @@ export function getSitemapServerSideProps(
 
         const api = getNextPrezlyApi(req);
         const { ALGOLIA_API_KEY } = getAlgoliaSettings(req);
-        const [stories, categories, languages] = await Promise.all([
+        const [newsroom, languages, stories, categories] = await Promise.all([
+            api.getNewsroom(),
+            api.getNewsroomLanguages(),
             api.getAllStories({
                 pinning: options.pinning ?? true,
             }),
             api.getCategories(),
-            api.getNewsroomLanguages(),
         ]);
 
         const sitemapBuilder = new SitemapBuilder(
@@ -66,7 +67,11 @@ export function getSitemapServerSideProps(
         if (ALGOLIA_API_KEY) {
             sitemapBuilder.addPageUrl('/search');
         }
-        // TODO: Add media pages for all languages (if media galleries are available)
+        if (newsroom.public_galleries_number > 0) {
+            sitemapBuilder.addPageUrl('/media');
+            const { galleries } = await api.getGalleries({});
+            galleries.forEach(({ uuid }) => sitemapBuilder.addPageUrl(`/media/album/${uuid}`));
+        }
         categories.forEach((category) => sitemapBuilder.addCategoryUrl(category));
         stories.forEach((story) => sitemapBuilder.addStoryUrl(story));
 
