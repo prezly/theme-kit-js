@@ -1,4 +1,3 @@
-import { getAlgoliaSettings } from '@prezly/theme-kit-core/server';
 import type { NextPageContext } from 'next';
 
 import { getNextPrezlyApi } from '../../../data-fetching';
@@ -47,7 +46,6 @@ export function getSitemapServerSideProps(
         );
 
         const api = getNextPrezlyApi(req);
-        const { ALGOLIA_API_KEY } = getAlgoliaSettings(req);
         const [newsroom, languages, stories, categories] = await Promise.all([
             api.getNewsroom(),
             api.getNewsroomLanguages(),
@@ -64,9 +62,6 @@ export function getSitemapServerSideProps(
         );
 
         sitemapBuilder.addPageUrl('/');
-        if (ALGOLIA_API_KEY) {
-            sitemapBuilder.addPageUrl('/search');
-        }
         if (newsroom.public_galleries_number > 0) {
             sitemapBuilder.addPageUrl('/media');
             const { galleries } = await api.getGalleries({});
