@@ -36,7 +36,7 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
         if (req.url && new URL(req.url).pathname !== `/${story.slug}`) {
             return {
                 redirect: {
-                    destination: `/${slug}`,
+                    destination: `/${story.slug}`,
                     permanent: false,
                 },
             };
@@ -49,7 +49,7 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
         if (locale && locale !== DUMMY_DEFAULT_LOCALE) {
             return {
                 redirect: {
-                    destination: `/${slug}`,
+                    destination: `/${story.slug}`,
                     permanent: true,
                 },
             };
