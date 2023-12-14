@@ -22,23 +22,34 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
     ): Promise<GetServerSidePropsResult<CustomProps>> {
-        const api = NextContentDelivery.initClient(context.req, { formats });
+        const { locale, req, params } = context;
 
-        const { slug } = context.params as { slug?: string };
+        const api = NextContentDelivery.initClient(req, { formats });
+
+        const { slug } = params as { slug?: string };
         const story = slug ? await api.story({ slug }) : null;
         if (!story) {
             return { notFound: true };
+        }
+
+        // [DEV-12082] If the current URL pathname does not match the canonical URL -- redirect.
+        if (req.url && new URL(req.url).pathname !== `/${story.slug}`) {
+            return {
+                redirect: {
+                    destination: `/${story.slug}`,
+                    permanent: false,
+                },
+            };
         }
 
         const { serverSideProps } = await getNewsroomServerSideProps(context, {
             story,
         });
 
-        const { locale } = context;
         if (locale && locale !== DUMMY_DEFAULT_LOCALE) {
             return {
                 redirect: {
-                    destination: `/${slug}`,
+                    destination: `/${story.slug}`,
                     permanent: true,
                 },
             };

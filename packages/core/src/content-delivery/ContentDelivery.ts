@@ -287,27 +287,31 @@ export function createClient(
                 }
             }
 
-            const { stories: data } = await prezly.stories.search({
-                formats,
-                limit: 1,
-                query: {
-                    [`slug`]: params.slug,
-                    [`newsroom.uuid`]: { $in: [newsroomUuid] },
-                    [`status`]: {
-                        $in: [Story.Status.PUBLISHED, Story.Status.EMBARGO],
+            try {
+                return await prezly.stories.getBySlug(params.slug!, {
+                    formats,
+                    query: {
+                        [`newsroom.uuid`]: { $in: [newsroomUuid] },
+                        [`status`]: {
+                            $in: [Story.Status.PUBLISHED, Story.Status.EMBARGO],
+                        },
+                        [`visibility`]: {
+                            $in: [
+                                Story.Visibility.PUBLIC,
+                                Story.Visibility.PRIVATE,
+                                Story.Visibility.EMBARGO,
+                            ],
+                        },
                     },
-                    [`visibility`]: {
-                        $in: [
-                            Story.Visibility.PUBLIC,
-                            Story.Visibility.PRIVATE,
-                            Story.Visibility.EMBARGO,
-                        ],
-                    },
-                },
-                include: [...Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS, ...include],
-            });
+                    include: [...Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS, ...include],
+                });
+            } catch (error) {
+                if (error instanceof ApiError && isNotAvailableError(error)) {
+                    return null;
+                }
 
-            return data[0] ?? null;
+                throw error;
+            }
         },
     };
 
