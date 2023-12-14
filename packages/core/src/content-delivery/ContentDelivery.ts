@@ -186,7 +186,7 @@ export function createClient(
             });
         },
 
-        mediaAlbums(params: mediaAlbums.SearchParams = {}) {
+        galleries(params: mediaAlbums.SearchParams = {}) {
             const { offset, limit, type } = params;
             return prezly.newsroomGalleries.search(newsroomUuid, {
                 limit,
@@ -199,7 +199,7 @@ export function createClient(
             });
         },
 
-        async mediaAlbum(uuid: NewsroomGallery['uuid']) {
+        async gallery(uuid: NewsroomGallery['uuid']) {
             try {
                 return await prezly.newsroomGalleries.get(newsroomUuid, uuid);
             } catch (error) {

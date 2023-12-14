@@ -29,7 +29,7 @@ export function getGalleryAlbumPageServerSideProps<CustomProps extends Record<st
         const { api, serverSideProps } = await getNewsroomServerSideProps(context);
 
         const { uuid } = context.params as { uuid: string };
-        const gallery = await api.mediaAlbum(uuid);
+        const gallery = await api.gallery(uuid);
 
         if (!gallery || isGalleryEmpty(gallery)) {
             return { notFound: true };
@@ -58,7 +58,7 @@ export function getGalleryAlbumPageStaticProps<CustomProps extends Record<string
         const { api, staticProps } = await getNewsroomStaticProps(context);
 
         const { uuid } = context.params as { uuid: string };
-        const gallery = await api.mediaAlbum(uuid);
+        const gallery = await api.gallery(uuid);
 
         if (!gallery || isGalleryEmpty(gallery)) {
             return { notFound: true };
@@ -79,7 +79,7 @@ export function getGalleryAlbumPageStaticProps<CustomProps extends Record<string
 
 export async function getGalleryAlbumPageStaticPaths(): Promise<GetStaticPathsResult> {
     const api = NextContentDelivery.initClient();
-    const { galleries } = await api.mediaAlbums();
+    const { galleries } = await api.galleries();
 
     const paths = galleries.map(({ uuid }) => ({ params: { uuid } }));
 

@@ -37,7 +37,7 @@ export function getGalleryPageServerSideProps<CustomProps extends Record<string,
         const { query } = context;
 
         const page = query.page && typeof query.page === 'string' ? Number(query.page) : 1;
-        const { galleries, pagination } = await api.mediaAlbums({
+        const { galleries, pagination } = await api.galleries({
             offset: (page - 1) * pageSize,
             limit: pageSize,
         });
@@ -84,7 +84,7 @@ export function getGalleryPageStaticProps<CustomProps extends Record<string, any
     ): Promise<GetStaticPropsResult<GalleryPageProps & CustomProps>> {
         const { api, staticProps } = await getNewsroomStaticProps(context);
 
-        const { galleries, pagination } = await api.mediaAlbums({ limit: pageSize });
+        const { galleries, pagination } = await api.galleries({ limit: pageSize });
 
         // If there's only one gallery, redirect to it immediately
         if (galleries.length === 1) {

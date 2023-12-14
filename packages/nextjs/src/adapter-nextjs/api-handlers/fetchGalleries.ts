@@ -16,7 +16,7 @@ export async function fetchGalleries(req: NextApiRequest, res: NextApiResponse) 
     try {
         const api = NextContentDelivery.initClient(req);
 
-        const { galleries, pagination } = await api.mediaAlbums({
+        const { galleries, pagination } = await api.galleries({
             type,
             limit: pageSize,
             offset: (page - 1) * pageSize,
