@@ -43,8 +43,8 @@ export function getSitemapServerSideProps(
 
         const api = NextContentDelivery.initClient(req);
         const [newsroom, languages, stories, categories] = await Promise.all([
-            api.getNewsroom(),
-            api.getNewsroomLanguages(),
+            api.newsroom(),
+            api.languages(),
             api.allStories(),
             api.categories(),
         ]);
@@ -58,8 +58,10 @@ export function getSitemapServerSideProps(
         sitemapBuilder.addPageUrl('/');
         if (newsroom.public_galleries_number > 0) {
             sitemapBuilder.addPageUrl('/media');
-            const { galleries } = await api.getGalleries({});
-            galleries.forEach(({ uuid }) => sitemapBuilder.addPageUrl(`/media/album/${uuid}`));
+            const { galleries } = await api.galleries();
+            galleries.forEach((gallery) =>
+                sitemapBuilder.addPageUrl(`/media/album/${gallery.uuid}`),
+            );
         }
         categories.forEach((category) => sitemapBuilder.addCategoryUrl(category));
         stories.forEach((story) => sitemapBuilder.addStoryUrl(story));
