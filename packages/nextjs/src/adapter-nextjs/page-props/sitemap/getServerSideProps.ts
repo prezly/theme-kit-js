@@ -2,7 +2,6 @@ import type { NextPageContext } from 'next';
 
 import { NextContentDelivery } from '../../../data-fetching';
 
-import { createPaths } from './createPaths';
 import { SitemapBuilder } from './SitemapBuilder';
 
 function normalizeBaseUrl(baseUrl: string, protocol = 'https') {
@@ -43,19 +42,29 @@ export function getSitemapServerSideProps(
         );
 
         const api = NextContentDelivery.initClient(req);
-        const stories = await api.allStories();
-        const categories = await api.categories();
+        const [newsroom, languages, stories, categories] = await Promise.all([
+            api.getNewsroom(),
+            api.getNewsroomLanguages(),
+            api.allStories(),
+            api.categories(),
+        ]);
 
-        const paths = createPaths(stories, categories);
         const sitemapBuilder = new SitemapBuilder(
             baseUrl,
             options.basePath || process.env.NEXT_PUBLIC_BASE_PATH,
+            languages,
         );
 
-        sitemapBuilder.addUrl('/');
-        paths.forEach((path) => sitemapBuilder.addUrl(path));
+        sitemapBuilder.addPageUrl('/');
+        if (newsroom.public_galleries_number > 0) {
+            sitemapBuilder.addPageUrl('/media');
+            const { galleries } = await api.getGalleries({});
+            galleries.forEach(({ uuid }) => sitemapBuilder.addPageUrl(`/media/album/${uuid}`));
+        }
+        categories.forEach((category) => sitemapBuilder.addCategoryUrl(category));
+        stories.forEach((story) => sitemapBuilder.addStoryUrl(story));
 
-        options.additionalPaths?.forEach((path) => sitemapBuilder.addUrl(path));
+        options.additionalPaths?.forEach((path) => sitemapBuilder.addPageUrl(path));
 
         res.setHeader('Content-Type', 'text/xml');
         res.write(sitemapBuilder.serialize());
