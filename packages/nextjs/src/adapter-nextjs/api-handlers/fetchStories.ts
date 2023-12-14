@@ -1,7 +1,7 @@
 import { assertServerEnv } from '@prezly/theme-kit-core';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { getNextPrezlyApi } from '../../data-fetching';
+import { NextContentDelivery } from '../../data-fetching';
 
 export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
     assertServerEnv('fetchStories');
@@ -17,27 +17,29 @@ export async function fetchStories(req: NextApiRequest, res: NextApiResponse) {
         withHighlightedStory,
         category,
         include,
+        formats,
         localeCode,
-        pinning,
         filterQuery,
     } = req.body;
 
     try {
-        const api = getNextPrezlyApi(req);
+        const api = NextContentDelivery.initClient(req, { formats });
 
-        const { stories, storiesTotal } = await (category
-            ? api.getStoriesFromCategory(category, { page, pageSize, include, localeCode })
-            : api.getStories({
-                  page,
-                  pageSize,
-                  include,
-                  localeCode,
-                  withHighlightedStory,
-                  pinning,
-                  filterQuery,
-              }));
+        const { stories, pagination } = await api.stories(
+            {
+                category,
+                offset: (page - 1) * pageSize,
+                limit: pageSize,
+                locale: localeCode,
+                highlighted: withHighlightedStory ? 1 : 0,
+                query: filterQuery,
+            },
+            {
+                include,
+            },
+        );
 
-        res.status(200).json({ stories, storiesTotal });
+        res.status(200).json({ stories, storiesTotal: pagination.matched_records_number });
     } catch (error) {
         res.status(500).send({
             message: (error as Error).message,

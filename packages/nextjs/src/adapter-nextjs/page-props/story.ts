@@ -6,7 +6,7 @@ import type {
     GetStaticPropsResult,
 } from 'next';
 
-import { getNextPrezlyApi } from '../../data-fetching';
+import { NextContentDelivery } from '../../data-fetching';
 import { DUMMY_DEFAULT_LOCALE } from '../../intl';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
@@ -22,21 +22,34 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
     return async function getServerSideProps(
         context: GetServerSidePropsContext,
     ): Promise<GetServerSidePropsResult<CustomProps>> {
-        const api = getNextPrezlyApi(context.req);
+        const { locale, req, params } = context;
 
-        const { slug } = context.params as { slug?: string };
-        const story = slug ? await api.getStoryBySlug(slug, formats) : null;
+        const api = NextContentDelivery.initClient(req, { formats });
+
+        const { slug } = params as { slug?: string };
+        const story = slug ? await api.story({ slug }) : null;
         if (!story) {
             return { notFound: true };
         }
 
-        const { serverSideProps } = await getNewsroomServerSideProps(context, { story });
+        // [DEV-12082] If the current URL pathname does not match the canonical URL -- redirect.
+        if (req.url && req.url.split('?')[0] !== `/${story.slug}`) {
+            return {
+                redirect: {
+                    destination: `/${story.slug}`,
+                    permanent: false,
+                },
+            };
+        }
 
-        const { locale } = context;
+        const { serverSideProps } = await getNewsroomServerSideProps(context, {
+            story,
+        });
+
         if (locale && locale !== DUMMY_DEFAULT_LOCALE) {
             return {
                 redirect: {
-                    destination: `/${slug}`,
+                    destination: `/${story.slug}`,
                     permanent: true,
                 },
             };
@@ -60,10 +73,10 @@ export function getStoryPageStaticProps<CustomProps extends Record<string, any>>
     return async function getStaticProps(
         context: GetStaticPropsContext,
     ): Promise<GetStaticPropsResult<CustomProps>> {
-        const api = getNextPrezlyApi();
+        const api = NextContentDelivery.initClient(undefined, { formats });
 
         const { slug } = context.params as { slug?: string };
-        const story = slug ? await api.getStoryBySlug(slug, formats) : null;
+        const story = slug ? await api.story({ slug }) : null;
         if (!story) {
             return { notFound: true };
         }
@@ -84,18 +97,9 @@ export function getStoryPageStaticProps<CustomProps extends Record<string, any>>
     };
 }
 
-export async function getStoryPageStaticPaths(
-    options: {
-        /**
-         * @deprecated Story Pinning will always be enabled in the next major release.
-         */
-        pinning?: boolean;
-    } = {},
-) {
-    const api = getNextPrezlyApi();
-    const stories = await api.getAllStories({
-        pinning: options.pinning ?? true,
-    });
+export async function getStoryPageStaticPaths() {
+    const api = NextContentDelivery.initClient();
+    const stories = await api.allStories();
 
     const paths = stories.map(({ slug }) => ({ params: { slug } }));
 

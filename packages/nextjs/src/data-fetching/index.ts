@@ -1,1 +1,1 @@
-export { getNextPrezlyApi } from './getNextPrezlyApi';
+export * as NextContentDelivery from './client';

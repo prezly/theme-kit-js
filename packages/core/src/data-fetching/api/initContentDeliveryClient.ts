@@ -1,12 +1,15 @@
+import { createPrezlyClient } from '@prezly/sdk';
 import type { IncomingMessage } from 'http';
 
+import { ContentDelivery } from '../../content-delivery';
 import { assertServerEnv } from '../../utils';
 import { getEnvVariables } from '../lib/getEnvVariables';
 
-import { PrezlyApi } from './PrezlyApi';
-
-export function getPrezlyApi(req?: IncomingMessage): PrezlyApi {
-    assertServerEnv('getPrezlyApi');
+export function initContentDeliveryClient(
+    req?: IncomingMessage,
+    options?: ContentDelivery.Options,
+): ContentDelivery.Client {
+    assertServerEnv('initContentDeliveryClient');
 
     // `getEnvVariables` handles both cases for envs parsing - .env and request headers
     const { PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID, PREZLY_THEME_UUID } = getEnvVariables(req);
@@ -19,5 +22,10 @@ export function getPrezlyApi(req?: IncomingMessage): PrezlyApi {
         throw new Error('"PREZLY_NEWSROOM_UUID" is not set in env variables.');
     }
 
-    return new PrezlyApi(PREZLY_ACCESS_TOKEN, PREZLY_NEWSROOM_UUID, PREZLY_THEME_UUID);
+    const prezly = createPrezlyClient({
+        accessToken: PREZLY_ACCESS_TOKEN,
+        baseUrl: process.env.API_BASE_URL_OVERRIDE || undefined,
+    });
+
+    return ContentDelivery.createClient(prezly, PREZLY_NEWSROOM_UUID, PREZLY_THEME_UUID, options);
 }
