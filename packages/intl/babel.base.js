@@ -9,9 +9,6 @@ module.exports = function (api) {
             node: '12',
         },
 
-        presets: [
-            '@babel/typescript',
-            '@babel/env',
-        ],
+        presets: ['@babel/typescript', '@babel/env'],
     };
 };
