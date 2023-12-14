@@ -33,7 +33,7 @@ export function getStoryPageServerSideProps<CustomProps extends Record<string, a
         }
 
         // [DEV-12082] If the current URL pathname does not match the canonical URL -- redirect.
-        if (req.url && req.url.split('?')[0] !== `/${story.slug}`) {
+        if (slug && slug !== story.slug) {
             return {
                 redirect: {
                     destination: `/${story.slug}`,
