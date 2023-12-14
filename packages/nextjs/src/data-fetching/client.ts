@@ -8,6 +8,7 @@ import {
 } from '@prezly/theme-kit-core';
 import type { ContentDelivery } from '@prezly/theme-kit-core/server';
 import { getAlgoliaSettings, initContentDeliveryClient } from '@prezly/theme-kit-core/server';
+import { omitUndefined } from '@technically/omit-undefined';
 import type { IncomingMessage } from 'http';
 
 import { getLanguageFromNextLocaleIsoCode } from '../intl';
@@ -50,7 +51,7 @@ export function createClient(
             const algoliaSettings = getAlgoliaSettings(request);
 
             return {
-                newsroomContextProps: {
+                newsroomContextProps: omitUndefined({
                     newsroom,
                     companyInformation,
                     categories,
@@ -60,7 +61,7 @@ export function createClient(
                     themePreset: themePreset ?? null,
                     algoliaSettings,
                     contacts,
-                },
+                }),
                 localeResolved: Boolean(currentLanguage),
             };
         },
