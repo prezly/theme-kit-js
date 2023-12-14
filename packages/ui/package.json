@@ -36,7 +36,7 @@
   },
   "peerDependencies": {
     "@prezly/sdk": "^18.2.2",
-    "next": "^13.x",
+    "next": "^13.x || ^14.x",
     "react": "^18.x",
     "react-dom": "^18.x"
   },
