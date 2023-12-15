@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "6.9.0",
+  "version": "7.0.1",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -48,7 +48,7 @@
   },
   "peerDependencies": {
     "@playwright/test": "1.x",
-    "@prezly/sdk": "^18.2.2",
+    "@prezly/sdk": "^18.3.0",
     "next": "^12.x || ^13.x || ^14.x",
     "react": "^17.x || ^18.x",
     "react-dom": "^17.x || ^18.x"
@@ -59,7 +59,8 @@
     }
   },
   "dependencies": {
-    "@prezly/theme-kit-core": "^6.9.0",
+    "@prezly/theme-kit-core": "^7.0.0",
+    "@technically/omit-undefined": "^1.0.2",
     "next-seo": "^5.4.0"
   },
   "devDependencies": {

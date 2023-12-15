@@ -1,2 +1,1 @@
-export * from './getPrezlyApi';
-export { PrezlyApi } from './PrezlyApi';
+export { initContentDeliveryClient } from './initContentDeliveryClient';

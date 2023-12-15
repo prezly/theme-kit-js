@@ -1,6 +1,6 @@
 import type { NextPageContext } from 'next';
 
-import { getNextPrezlyApi } from '../../../data-fetching';
+import { NextContentDelivery } from '../../../data-fetching';
 
 import { SitemapBuilder } from './SitemapBuilder';
 
@@ -24,10 +24,6 @@ export function getSitemapServerSideProps(
     options: {
         additionalPaths?: string[];
         basePath?: string;
-        /**
-         * @deprecated Story Pinning will always be enabled in the next major release.
-         */
-        pinning?: boolean;
     } = {},
 ) {
     return async function getServerSideProps(ctx: NextPageContext) {
@@ -45,14 +41,12 @@ export function getSitemapServerSideProps(
             req.headers['x-forwarded-proto'] as string | undefined,
         );
 
-        const api = getNextPrezlyApi(req);
+        const api = NextContentDelivery.initClient(req);
         const [newsroom, languages, stories, categories] = await Promise.all([
-            api.getNewsroom(),
-            api.getNewsroomLanguages(),
-            api.getAllStories({
-                pinning: options.pinning ?? true,
-            }),
-            api.getCategories(),
+            api.newsroom(),
+            api.languages(),
+            api.allStories(),
+            api.categories(),
         ]);
 
         const sitemapBuilder = new SitemapBuilder(
@@ -64,8 +58,10 @@ export function getSitemapServerSideProps(
         sitemapBuilder.addPageUrl('/');
         if (newsroom.public_galleries_number > 0) {
             sitemapBuilder.addPageUrl('/media');
-            const { galleries } = await api.getGalleries({});
-            galleries.forEach(({ uuid }) => sitemapBuilder.addPageUrl(`/media/album/${uuid}`));
+            const { galleries } = await api.galleries();
+            galleries.forEach((gallery) =>
+                sitemapBuilder.addPageUrl(`/media/album/${gallery.uuid}`),
+            );
         }
         categories.forEach((category) => sitemapBuilder.addCategoryUrl(category));
         stories.forEach((story) => sitemapBuilder.addStoryUrl(story));

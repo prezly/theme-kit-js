@@ -8,7 +8,7 @@ import type {
     GetStaticPropsResult,
 } from 'next';
 
-import { getNextPrezlyApi } from '../../data-fetching';
+import { NextContentDelivery } from '../../data-fetching';
 import type { PaginationProps } from '../../infinite-loading/types';
 import { getNewsroomServerSideProps } from '../getNewsroomServerSideProps';
 import { getNewsroomStaticProps } from '../getNewsroomStaticProps';
@@ -39,7 +39,7 @@ export function getCategoryPageServerSideProps<
         const { api, serverSideProps } = await getNewsroomServerSideProps(context);
 
         const { slug } = context.params as { slug: string };
-        const category = await api.getCategoryBySlug(slug);
+        const category = await api.category(slug);
 
         if (!category) {
             return {
@@ -48,16 +48,21 @@ export function getCategoryPageServerSideProps<
         }
 
         const { query } = context;
-        const page = query.page && typeof query.page === 'string' ? Number(query.page) : undefined;
+        const page = query.page && typeof query.page === 'string' ? Number(query.page) : 1;
 
         const { localeCode } = serverSideProps.newsroomContextProps;
 
-        const { stories, storiesTotal } = await api.getStoriesFromCategory(category, {
-            page,
-            pageSize,
-            include: extraStoryFields,
-            localeCode,
-        });
+        const { stories, pagination } = await api.stories(
+            {
+                category,
+                offset: (page - 1) * pageSize,
+                limit: pageSize,
+                locale: localeCode ? { code: localeCode } : undefined,
+            },
+            {
+                include: extraStoryFields,
+            },
+        );
 
         serverSideProps.newsroomContextProps.currentCategory = category;
 
@@ -67,8 +72,8 @@ export function getCategoryPageServerSideProps<
                 ...serverSideProps,
                 stories,
                 pagination: {
-                    itemsTotal: storiesTotal,
-                    currentPage: page ?? 1,
+                    itemsTotal: pagination.matched_records_number,
+                    currentPage: page,
                     pageSize,
                 },
                 ...(typeof customProps === 'function'
@@ -95,7 +100,7 @@ export function getCategoryPageStaticProps<
         const { api, staticProps } = await getNewsroomStaticProps(context);
 
         const { slug } = context.params as { slug: string };
-        const category = await api.getCategoryBySlug(slug);
+        const category = await api.category(slug);
 
         if (!category) {
             return {
@@ -105,11 +110,16 @@ export function getCategoryPageStaticProps<
 
         const { localeCode } = staticProps.newsroomContextProps;
 
-        const { stories, storiesTotal } = await api.getStoriesFromCategory(category, {
-            pageSize,
-            include: extraStoryFields,
-            localeCode,
-        });
+        const { stories, pagination } = await api.stories(
+            {
+                category,
+                limit: pageSize,
+                locale: localeCode ? { code: localeCode } : undefined,
+            },
+            {
+                include: extraStoryFields,
+            },
+        );
 
         staticProps.newsroomContextProps.currentCategory = category;
 
@@ -117,7 +127,7 @@ export function getCategoryPageStaticProps<
             ...staticProps,
             stories,
             pagination: {
-                itemsTotal: storiesTotal,
+                itemsTotal: pagination.matched_records_number,
                 currentPage: 1,
                 pageSize,
             },
@@ -132,10 +142,10 @@ export function getCategoryPageStaticProps<
 }
 
 export async function getCategoryPageStaticPaths(): Promise<GetStaticPathsResult> {
-    const api = getNextPrezlyApi();
+    const api = NextContentDelivery.initClient();
     const [categories, defaultLanguage] = await Promise.all([
-        api.getCategories(),
-        api.getNewsroomDefaultLanguage(),
+        api.categories(),
+        api.defaultLanguage(),
     ]);
     const locale = LocaleObject.fromAnyCode(defaultLanguage.code);
 

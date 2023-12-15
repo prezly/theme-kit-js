@@ -36,8 +36,11 @@ export function getGalleryPageServerSideProps<CustomProps extends Record<string,
         const { api, serverSideProps } = await getNewsroomServerSideProps(context);
         const { query } = context;
 
-        const page = query.page && typeof query.page === 'string' ? Number(query.page) : undefined;
-        const { galleries, pagination } = await api.getGalleries({ page, pageSize });
+        const page = query.page && typeof query.page === 'string' ? Number(query.page) : 1;
+        const { galleries, pagination } = await api.galleries({
+            offset: (page - 1) * pageSize,
+            limit: pageSize,
+        });
 
         // If there's only one gallery, redirect to it immediately
         if (galleries.length === 1) {
@@ -58,7 +61,7 @@ export function getGalleryPageServerSideProps<CustomProps extends Record<string,
                 galleries,
                 pagination: {
                     itemsTotal: pagination.matched_records_number,
-                    currentPage: page ?? 1,
+                    currentPage: page,
                     pageSize,
                 },
                 ...(typeof customProps === 'function'
@@ -81,7 +84,7 @@ export function getGalleryPageStaticProps<CustomProps extends Record<string, any
     ): Promise<GetStaticPropsResult<GalleryPageProps & CustomProps>> {
         const { api, staticProps } = await getNewsroomStaticProps(context);
 
-        const { galleries, pagination } = await api.getGalleries({ pageSize });
+        const { galleries, pagination } = await api.galleries({ limit: pageSize });
 
         // If there's only one gallery, redirect to it immediately
         if (galleries.length === 1) {
