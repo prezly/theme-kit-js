@@ -2,6 +2,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "useWorkspaces": true,
-  "version": "7.0.1"
+  "version": "7.0.1",
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
