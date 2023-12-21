@@ -4,13 +4,13 @@ import type {
     Newsroom,
     NewsroomTheme,
     PrezlyClient,
+    Query,
     TranslatedCategory,
 } from '@prezly/sdk';
 import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '@prezly/sdk';
 
 export interface Options {
     formats?: Story.FormatVersion[];
-    pinning?: boolean;
     cache?: boolean;
 }
 
@@ -18,9 +18,11 @@ export namespace stories {
     export interface SearchParams {
         search?: string;
         category?: Pick<Category, 'id'>;
-        locale?: Pick<Culture, 'code'>;
-        limit?: number;
+        locale?: Pick<Culture, 'code'> | Culture.Code;
+        limit: number;
         offset?: number;
+        highlighted?: number;
+        query?: Query;
     }
 
     export interface IncludeOptions<Include extends keyof Story.ExtraFields> {
@@ -61,11 +63,19 @@ export namespace mediaAlbums {
 
 export type Client = ReturnType<typeof createClient>;
 
+/**
+ * Sort order to list stories chronologically, with pinned stories on top.
+ */
+const CHRONOLOGICALLY: SortOrder = SortOrder.combine(
+    SortOrder.desc('is_pinned'),
+    SortOrder.desc('published_at'),
+);
+
 export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
     newsroomThemeUuid: NewsroomTheme['id'] | undefined,
-    { formats = [Story.FormatVersion.SLATEJS_V4], pinning = false, cache = false }: Options = {},
+    { formats = [Story.FormatVersion.SLATEJS_V4], cache = false }: Options = {},
 ) {
     const client = {
         newsroom() {
@@ -144,9 +154,16 @@ export function createClient(
             return prezly.newsroomCategories.list(newsroomUuid, { sortOrder: '+order' });
         },
 
-        async category(id: Category['id']) {
+        async category(arg: Category['id'] | Category.Translation['slug']) {
             const categories = await client.categories();
-            return categories.find((category) => category.id === id);
+
+            if (typeof arg === 'number') {
+                return categories.find((category) => category.id === arg);
+            }
+
+            return categories.find((category) =>
+                Category.translations(category).some((translation) => translation.slug === arg),
+            );
         },
 
         async translatedCategories(
@@ -169,7 +186,7 @@ export function createClient(
             });
         },
 
-        mediaAlbums(params: mediaAlbums.SearchParams = {}) {
+        galleries(params: mediaAlbums.SearchParams = {}) {
             const { offset, limit, type } = params;
             return prezly.newsroomGalleries.search(newsroomUuid, {
                 limit,
@@ -182,7 +199,7 @@ export function createClient(
             });
         },
 
-        async mediaAlbum(uuid: NewsroomGallery['uuid']) {
+        async gallery(uuid: NewsroomGallery['uuid']) {
             try {
                 return await prezly.newsroomGalleries.get(newsroomUuid, uuid);
             } catch (error) {
@@ -197,21 +214,24 @@ export function createClient(
             params: stories.SearchParams,
             options: stories.IncludeOptions<Include> = {},
         ) {
-            const { search, offset, limit, category, locale } = params;
+            const { search, query, offset = 0, limit, category, locale, highlighted = 0 } = params;
             const { include = [] } = options;
+
+            const localeCode = locale && typeof locale === 'object' ? locale.code : locale;
+
             return prezly.stories.search({
-                sortOrder: chronologically(SortOrder.Direction.DESC, pinning),
+                sortOrder: CHRONOLOGICALLY,
                 formats,
-                limit,
-                offset,
+                limit: offset === 0 ? limit + highlighted : limit,
+                offset: offset > 0 ? offset + highlighted : offset,
                 search,
-                query: {
+                query: mergeQueries(query, {
                     [`category.id`]: category ? { $any: [category.id] } : undefined,
                     [`newsroom.uuid`]: { $in: [newsroomUuid] },
-                    [`locale`]: locale ? { $in: [locale.code] } : undefined,
+                    [`locale`]: localeCode ? { $in: [localeCode] } : undefined,
                     [`status`]: { $in: [Story.Status.PUBLISHED] },
                     [`visibility`]: { $in: [Story.Visibility.PUBLIC] },
-                },
+                }),
                 include,
             });
         },
@@ -267,27 +287,31 @@ export function createClient(
                 }
             }
 
-            const { stories: data } = await prezly.stories.search({
-                formats,
-                limit: 1,
-                query: {
-                    [`slug`]: params.slug,
-                    [`newsroom.uuid`]: { $in: [newsroomUuid] },
-                    [`status`]: {
-                        $in: [Story.Status.PUBLISHED, Story.Status.EMBARGO],
+            try {
+                return await prezly.stories.getBySlug(params.slug!, {
+                    formats,
+                    query: {
+                        [`newsroom.uuid`]: { $in: [newsroomUuid] },
+                        [`status`]: {
+                            $in: [Story.Status.PUBLISHED, Story.Status.EMBARGO],
+                        },
+                        [`visibility`]: {
+                            $in: [
+                                Story.Visibility.PUBLIC,
+                                Story.Visibility.PRIVATE,
+                                Story.Visibility.EMBARGO,
+                            ],
+                        },
                     },
-                    [`visibility`]: {
-                        $in: [
-                            Story.Visibility.PUBLIC,
-                            Story.Visibility.PRIVATE,
-                            Story.Visibility.EMBARGO,
-                        ],
-                    },
-                },
-                include: [...Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS, ...include],
-            });
+                    include: [...Stories.EXTENDED_STORY_INCLUDED_EXTRA_FIELDS, ...include],
+                });
+            } catch (error) {
+                if (error instanceof ApiError && isNotAvailableError(error)) {
+                    return null;
+                }
 
-            return data[0] ?? null;
+                throw error;
+            }
         },
     };
 
@@ -321,14 +345,27 @@ function injectCache(client: Client) {
     });
 }
 
-function chronologically(direction: `${SortOrder.Direction}`, pinning = false) {
-    const pinnedFirst = SortOrder.desc('is_pinned');
-    const chronological =
-        direction === SortOrder.Direction.ASC
-            ? SortOrder.asc('published_at')
-            : SortOrder.desc('published_at');
+function mergeQueries(...queries: (Query | undefined)[]): Query | undefined {
+    const queryObjects = queries
+        .filter((query) => Boolean(query))
+        .map((query): object | undefined => {
+            if (typeof query === 'string') {
+                return JSON.parse(query);
+            }
+            return query;
+        })
+        .filter((query): query is object => Boolean(query))
+        .filter((query) => Object.keys(query).length > 0);
 
-    return pinning ? SortOrder.combine(pinnedFirst, chronological) : chronological;
+    if (queryObjects.length === 0) {
+        return undefined;
+    }
+
+    if (queryObjects.length === 1) {
+        return queryObjects[0];
+    }
+
+    return { $and: queryObjects };
 }
 
 const ERROR_CODE_NOT_FOUND = 404;

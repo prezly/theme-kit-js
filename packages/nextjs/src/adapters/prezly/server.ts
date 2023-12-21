@@ -44,7 +44,6 @@ export namespace PrezlyAdapter {
                 // contentDelivery client properties
                 newsroom,
                 theme,
-                pinning,
                 formats,
             } = Resolvable.resolve(config);
 
@@ -55,7 +54,6 @@ export namespace PrezlyAdapter {
                 headers,
             });
             const contentDelivery = ContentDelivery.createClient(client, newsroom, theme, {
-                pinning,
                 formats,
                 cache: dataCache,
             });

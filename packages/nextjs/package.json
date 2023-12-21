@@ -81,8 +81,8 @@
   },
   "peerDependencies": {
     "@playwright/test": "1.x",
-    "@prezly/sdk": "^18.2.1",
-    "next": "^12.x || ^13.x",
+    "@prezly/sdk": "18.3.0",
+    "next": "^12.x || ^13.x || ^14.x",
     "react": "^17.x || ^18.x",
     "react-dom": "^17.x || ^18.x"
   },
@@ -99,7 +99,7 @@
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
-    "@sentry/nextjs": "7.80.1"
+    "@sentry/nextjs": "7.88.0"
   },
   "publishConfig": {
     "access": "public"

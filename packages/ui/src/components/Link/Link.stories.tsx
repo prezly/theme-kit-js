@@ -1,5 +1,5 @@
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { Link } from './Link';
 
@@ -12,7 +12,7 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=1128-37111&mode=dev',
         },
     },
-} as Meta<typeof Link>;
+} satisfies Meta<typeof Link>;
 
 const LinkTemplateWithChild: StoryFn<typeof Link> = (args) => (
     <Link {...args} href="https://prezly.com">
@@ -20,38 +20,38 @@ const LinkTemplateWithChild: StoryFn<typeof Link> = (args) => (
     </Link>
 );
 
-export const Primary = LinkTemplateWithChild.bind({});
+export const Primary: StoryObj<typeof Link> = LinkTemplateWithChild.bind({});
 Primary.args = {
     variation: 'primary',
 };
 
-export const Secondary = LinkTemplateWithChild.bind({});
+export const Secondary: StoryObj<typeof Link> = LinkTemplateWithChild.bind({});
 Secondary.args = {
     ...Primary.args,
     variation: 'secondary',
 };
 
-export const PrimaryWithIconLeft = LinkTemplateWithChild.bind({});
+export const PrimaryWithIconLeft: StoryObj<typeof Link> = LinkTemplateWithChild.bind({});
 PrimaryWithIconLeft.args = {
     ...Primary.args,
     icon: ArrowLeftIcon,
 };
 
-export const PrimaryWithIconRight = LinkTemplateWithChild.bind({});
+export const PrimaryWithIconRight: StoryObj<typeof Link> = LinkTemplateWithChild.bind({});
 PrimaryWithIconRight.args = {
     ...Primary.args,
     icon: ArrowRightIcon,
     iconPlacement: 'right',
 };
 
-export const SecondaryWithIconLeft = LinkTemplateWithChild.bind({});
+export const SecondaryWithIconLeft: StoryObj<typeof Link> = LinkTemplateWithChild.bind({});
 SecondaryWithIconLeft.args = {
     ...Secondary.args,
     icon: ArrowLeftIcon,
     iconPlacement: 'left',
 };
 
-export const DisabledLink = LinkTemplateWithChild.bind({});
+export const DisabledLink: StoryObj<typeof Link> = LinkTemplateWithChild.bind({});
 DisabledLink.args = {
     ...Primary.args,
     disabled: true,

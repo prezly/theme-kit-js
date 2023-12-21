@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { CONTACT_INFO } from './__mocks__';
 import { ContactCard } from './ContactCard';
@@ -12,21 +12,21 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=720-62555&mode=dev',
         },
     },
-} as Meta<typeof ContactCard>;
+} satisfies Meta<typeof ContactCard>;
 
 const ContactCardTemplate: StoryFn<typeof ContactCard> = (args) => <ContactCard {...args} />;
 
-export const Default = ContactCardTemplate.bind({});
+export const Default: StoryObj<typeof ContactCard> = ContactCardTemplate.bind({});
 Default.args = {
     contact: CONTACT_INFO,
 };
 
-export const WithoutAvatar = ContactCardTemplate.bind({});
+export const WithoutAvatar: StoryObj<typeof ContactCard> = ContactCardTemplate.bind({});
 WithoutAvatar.args = {
     contact: { ...CONTACT_INFO, avatar_image: null },
 };
 
-export const WithoutSocials = ContactCardTemplate.bind({});
+export const WithoutSocials: StoryObj<typeof ContactCard> = ContactCardTemplate.bind({});
 WithoutSocials.args = {
     contact: {
         ...CONTACT_INFO,
@@ -38,7 +38,7 @@ WithoutSocials.args = {
     },
 };
 
-export const WithoutRole = ContactCardTemplate.bind({});
+export const WithoutRole: StoryObj<typeof ContactCard> = ContactCardTemplate.bind({});
 WithoutRole.args = {
     contact: {
         ...CONTACT_INFO,

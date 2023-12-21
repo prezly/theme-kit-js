@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import type { Breadcrumbs } from '../Breadcrumbs';
 
@@ -13,7 +13,7 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=660-16925&mode=dev',
         },
     },
-} as Meta<typeof PageTitle>;
+} satisfies Meta<typeof PageTitle>;
 
 const PageTitleTemplate: StoryFn<typeof PageTitle> = (args) => <PageTitle {...args} />;
 
@@ -23,7 +23,7 @@ const ITEMS: Breadcrumbs.Item[] = [
     { name: 'Galileo Art Collection', href: '/media/galileo-art-collection' },
 ];
 
-export const Default = PageTitleTemplate.bind({});
+export const Default: StoryObj<typeof PageTitle> = PageTitleTemplate.bind({});
 Default.args = {
     title: 'Section Title',
     description: 'Section Description',

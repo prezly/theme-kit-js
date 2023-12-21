@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { Breadcrumbs } from './Breadcrumbs';
 
@@ -11,7 +11,7 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=649-13409&mode=dev',
         },
     },
-} as Meta<typeof Breadcrumbs>;
+} satisfies Meta<typeof Breadcrumbs>;
 
 const ITEMS: Breadcrumbs.Item[] = [
     { name: 'Homepage', href: '/' },
@@ -21,7 +21,7 @@ const ITEMS: Breadcrumbs.Item[] = [
 
 const BreadcrumbsTemplate: StoryFn<typeof Breadcrumbs> = (args) => <Breadcrumbs {...args} />;
 
-export const Default = BreadcrumbsTemplate.bind({});
+export const Default: StoryObj<typeof Breadcrumbs> = BreadcrumbsTemplate.bind({});
 Default.args = {
     items: ITEMS,
 };

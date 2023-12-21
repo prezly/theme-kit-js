@@ -1,5 +1,5 @@
 import { PlusIcon } from '@heroicons/react/24/solid';
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { Button } from '.';
 
@@ -14,64 +14,64 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=599-24589&mode=dev',
         },
     },
-} as Meta<typeof Button>;
+} satisfies Meta<typeof Button>;
 
 const ButtonTemplateWithChild: StoryFn<typeof Button> = (args) => <Button {...args}>Button</Button>;
 const ButtonTemplateWithoutChild: StoryFn<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = ButtonTemplateWithChild.bind({});
+export const Primary: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 Primary.args = {
     type: 'button',
     variation: 'primary',
 };
 
-export const Secondary = ButtonTemplateWithChild.bind({});
+export const Secondary: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 Secondary.args = {
     ...Primary.args,
     variation: 'secondary',
 };
 
-export const PrimaryWithIconLeft = ButtonTemplateWithChild.bind({});
+export const PrimaryWithIconLeft: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 PrimaryWithIconLeft.args = {
     ...Primary.args,
     icon: Icon,
 };
 
-export const PrimaryWithIconRight = ButtonTemplateWithChild.bind({});
+export const PrimaryWithIconRight: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 PrimaryWithIconRight.args = {
     ...Primary.args,
     icon: Icon,
     iconPlacement: 'right',
 };
 
-export const SecondaryWithIconLeft = ButtonTemplateWithChild.bind({});
+export const SecondaryWithIconLeft: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 SecondaryWithIconLeft.args = {
     ...Secondary.args,
     icon: Icon,
     iconPlacement: 'left',
 };
 
-export const SquareButton = ButtonTemplateWithoutChild.bind({});
+export const SquareButton: StoryObj<typeof Button> = ButtonTemplateWithoutChild.bind({});
 SquareButton.args = {
     ...Primary.args,
     icon: Icon,
 };
 
-export const DisabledButton = ButtonTemplateWithChild.bind({});
+export const DisabledButton: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 DisabledButton.args = {
     ...Primary.args,
     icon: Icon,
     disabled: true,
 };
 
-export const LoadingButton = ButtonTemplateWithChild.bind({});
+export const LoadingButton: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 LoadingButton.args = {
     ...Primary.args,
     icon: Icon,
     isLoading: true,
 };
 
-export const Rounded = ButtonTemplateWithChild.bind({});
+export const Rounded: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 Rounded.parameters = {
     design: {
         type: 'figma',
@@ -84,7 +84,7 @@ Rounded.args = {
     iconPlacement: 'right',
 };
 
-export const SecondaryRounded = ButtonTemplateWithChild.bind({});
+export const SecondaryRounded: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 SecondaryRounded.parameters = Rounded.parameters;
 SecondaryRounded.args = {
     icon: Icon,
@@ -93,7 +93,7 @@ SecondaryRounded.args = {
     iconPlacement: 'right',
 };
 
-export const SmallRounded = ButtonTemplateWithChild.bind({});
+export const SmallRounded: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 SmallRounded.parameters = Rounded.parameters;
 SmallRounded.args = {
     icon: Icon,

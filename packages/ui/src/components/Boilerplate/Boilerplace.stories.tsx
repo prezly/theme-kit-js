@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { COMPANY_INFORMATION } from './__mocks__';
 import { Boilerplate } from './Boilerplate';
@@ -13,21 +13,21 @@ export default {
         },
         layout: 'fullscreen',
     },
-} as Meta<typeof Boilerplate>;
+} satisfies Meta<typeof Boilerplate>;
 
 const BoilerplateTemplate: StoryFn<typeof Boilerplate> = (args) => <Boilerplate {...args} />;
 
-export const Default = BoilerplateTemplate.bind({});
+export const Default: StoryObj<typeof Boilerplate> = BoilerplateTemplate.bind({});
 Default.args = {
     companyInformation: COMPANY_INFORMATION,
 };
 
-export const WithoutAboutInformation = BoilerplateTemplate.bind({});
+export const WithoutAboutInformation: StoryObj<typeof Boilerplate> = BoilerplateTemplate.bind({});
 WithoutAboutInformation.args = {
     companyInformation: { ...COMPANY_INFORMATION, about: '' },
 };
 
-export const WithoutContactSection = BoilerplateTemplate.bind({});
+export const WithoutContactSection: StoryObj<typeof Boilerplate> = BoilerplateTemplate.bind({});
 WithoutContactSection.args = {
     companyInformation: {
         ...COMPANY_INFORMATION,

@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { SubscriptionCta } from './SubscriptionCta';
 
@@ -12,16 +12,16 @@ export default {
             url: 'https://www.figma.com/file/46dEAasj1iEtrVQOwmMswB/00--%3E-Themes-Design-System?type=design&node-id=649-3020&mode=dev',
         },
     },
-} as Meta<typeof SubscriptionCta>;
+} satisfies Meta<typeof SubscriptionCta>;
 
 const SubscriptionCtaTemplate: StoryFn<typeof SubscriptionCta> = (args) => (
     <SubscriptionCta {...args} />
 );
 
-export const Default = SubscriptionCtaTemplate.bind({});
+export const Default: StoryObj<typeof SubscriptionCta> = SubscriptionCtaTemplate.bind({});
 Default.args = {};
 
-export const WithError = SubscriptionCtaTemplate.bind({});
+export const WithError: StoryObj<typeof SubscriptionCta> = SubscriptionCtaTemplate.bind({});
 WithError.args = {
     error: 'Invalid email',
 };

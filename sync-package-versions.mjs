@@ -19,19 +19,21 @@ const { workspace = true, packages = [] } = rootPackage['sync-package-versions']
 const updatedSubPackages = subPackages.map((subPackage) => {
     let contents = subPackage.contents;
 
-    contents = subPackages.reduce((contents, sub) => {
-        return contents.replace(
-            new RegExp(`"version":\\s+"([^"]+)"`, 'g'),
-            (matchedString, matchedVersion) => matchedString.replace(matchedVersion, monorepoVersion),
-        );
-    }, contents);
+    if (workspace) {
+        contents = subPackages.reduce((contents, sub) => {
+            return contents.replace(
+                new RegExp(`"version":\\s+"([^"]+)"`, 'g'),
+                (matchedString, matchedVersion) => matchedString.replace(matchedVersion, monorepoVersion),
+            );
+        }, contents);
 
-    contents = subPackages.reduce((contents, sub) => {
-        return contents.replace(
-            new RegExp(`"${sub.package.name}":\\s+"([^"]+)"`, 'g'),
-            (matchedString, matchedVersion) => matchedString.replace(matchedVersion, monorepoVersion),
-        );
-    }, contents);
+        contents = subPackages.reduce((contents, sub) => {
+            return contents.replace(
+                new RegExp(`"${sub.package.name}":\\s+"([^"]+)"`, 'g'),
+                (matchedString, matchedVersion) => matchedString.replace(matchedVersion, monorepoVersion),
+            );
+        }, contents);
+    }
 
     contents = packages.reduce((contents, packageName) => {
         const packageVersion = rootPackage.dependencies?.[packageName]
