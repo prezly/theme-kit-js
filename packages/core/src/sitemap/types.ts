@@ -1,12 +1,32 @@
 import type { NewsroomGallery, StoryRef, TranslatedCategory } from '@prezly/sdk';
 import type { Locale } from '@prezly/theme-kit-intl';
-import type { MetadataRoute } from 'next';
 
 type Url = string;
 
-export type Entry = undefined | string | Partial<MetadataRoute.Sitemap[number]>;
-export type ChangeFrequency = MetadataRoute.Sitemap[number]['changeFrequency'];
-export type Priority = MetadataRoute.Sitemap[number]['priority'];
+export type SitemapFile = Array<SitemapFileEntry>;
+export type SitemapFileEntry = {
+    url: string;
+    lastModified?: string | Date;
+    changeFrequency?: ChangeFrequency;
+    priority?: Priority;
+    alternate?: AlternateLink[];
+};
+
+export type AlternateLink = {
+    url: string;
+    lang: Locale.IsoCode;
+};
+
+export type Entry = undefined | string | Partial<SitemapFileEntry>;
+export type ChangeFrequency =
+    | 'always'
+    | 'hourly'
+    | 'daily'
+    | 'weekly'
+    | 'monthly'
+    | 'yearly'
+    | 'never';
+export type Priority = number;
 
 // prettier-ignore
 export type AppUrlGenerator = {

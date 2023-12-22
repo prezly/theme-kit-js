@@ -54,27 +54,27 @@ export type ExtractPathParams<T extends string> =
     T extends `${infer _Start}(/:${infer Param})/${infer Rest}`
         ? { [k in Param]?: string } & ExtractPathParams<Rest>
         : // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        T extends `${infer _Start}(:${infer Param})/${infer Rest}`
-        ? { [k in Param]?: string } & ExtractPathParams<Rest>
-        : // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        T extends `${infer _Start}:${infer Param}/${infer Rest}`
-        ? { [k in Param]: string } & ExtractPathParams<Rest>
-        : // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        T extends `${infer _Start}(/:${infer Param})`
-        ? { [k in Param]?: string }
-        : // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        T extends `${infer _Start}(:${infer Param})`
-        ? { [k in Param]?: string }
-        : // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        T extends `${infer _Start}:${infer Param}`
-        ? { [k in Param]: string }
-        : unknown;
+          T extends `${infer _Start}(:${infer Param})/${infer Rest}`
+          ? { [k in Param]?: string } & ExtractPathParams<Rest>
+          : // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            T extends `${infer _Start}:${infer Param}/${infer Rest}`
+            ? { [k in Param]: string } & ExtractPathParams<Rest>
+            : // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              T extends `${infer _Start}(/:${infer Param})`
+              ? { [k in Param]?: string }
+              : // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                T extends `${infer _Start}(:${infer Param})`
+                ? { [k in Param]?: string }
+                : // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                  T extends `${infer _Start}:${infer Param}`
+                  ? { [k in Param]: string }
+                  : unknown;
 
 type WithLocaleCode<T> = T extends { localeSlug: string }
     ? Omit<T, 'localeSlug'> & { localeCode: string }
     : T extends { localeSlug?: string }
-    ? Omit<T, 'localeSlug'> & { localeCode?: string }
-    : T;
+      ? Omit<T, 'localeSlug'> & { localeCode?: string }
+      : T;
 
 /**
  * Construct a type based on `Router.generate()`, but:

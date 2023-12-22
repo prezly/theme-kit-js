@@ -1,9 +1,11 @@
+export type * from './types';
+
 export { build } from './build';
 export {
-    type Context,
+    type AsyncResolvableContext,
     type Options,
     generate,
     guessChangeFrequency,
     guessPriority,
 } from './generate';
-export type * from './types';
+export { stringify } from './stringify';
