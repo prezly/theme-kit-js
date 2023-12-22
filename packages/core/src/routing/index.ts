@@ -1,2 +1,3 @@
-export { getShortestLocaleSlug } from './getShortestLocaleSlug';
-export { matchLanguageByLocaleSlug } from './matchLanguageByLocaleSlug';
+export { Route } from './Route';
+export { Router, type RoutesMap } from './Router';
+export * as Routing from './Routing';

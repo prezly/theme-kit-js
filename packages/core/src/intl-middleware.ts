@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Locale } from '@prezly/theme-kit-intl';
 
-import * as Routing from './routing';
+import { Routing } from './routing';
 
 export interface Context {
     locales: Locale.Code[];

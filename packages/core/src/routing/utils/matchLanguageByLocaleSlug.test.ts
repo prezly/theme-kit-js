@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { LANGUAGES } from '../__mocks__/languages';
+import { LANGUAGES } from '../../__mocks__/languages';
 
 import { matchLanguageByLocaleSlug } from './matchLanguageByLocaleSlug';
 

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import { omitUndefined } from '@technically/omit-undefined';
 import UrlPattern from 'url-pattern';
 
+import { getShortestLocaleSlug } from './getShortestLocaleSlug';
 import { normalizeUrl } from './normalizeUrl';
 
 export interface Context {
@@ -58,7 +58,7 @@ function getLocaleSlug(params: Params, context: Context): string {
         return params.localeSlug;
     }
     if (params.localeCode) {
-        return Routing.getShortestLocaleSlug(params.localeCode as Locale.Code, context) || '';
+        return getShortestLocaleSlug(params.localeCode as Locale.Code, context) || '';
     }
     return '';
 }
