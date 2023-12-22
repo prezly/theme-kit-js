@@ -9,6 +9,12 @@ export type SitemapFileEntry = {
     lastModified?: string | Date;
     changeFrequency?: ChangeFrequency;
     priority?: Priority;
+    alternate?: AlternateLink[];
+};
+
+export type AlternateLink = {
+    url: string;
+    lang: Locale.IsoCode;
 };
 
 export type Entry = undefined | string | Partial<SitemapFileEntry>;
