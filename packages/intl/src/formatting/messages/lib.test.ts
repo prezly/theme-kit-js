@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { expect } from '@playwright/test';
-
 import { formatMessageFragment, formatMessageString } from './lib';
 import type { IntlDictionary } from './types';
 
