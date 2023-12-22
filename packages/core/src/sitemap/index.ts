@@ -1,6 +1,6 @@
 export { build } from './build';
 export {
-    type Context,
+    type AsyncResolvableContext,
     type Options,
     generate,
     guessChangeFrequency,

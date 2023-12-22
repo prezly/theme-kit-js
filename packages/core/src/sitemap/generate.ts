@@ -24,21 +24,45 @@ export interface Options {
     priority?: PriorityFn;
 }
 
-export interface Context {
-    locales: AsyncResolvable<Locale.Code[]>;
-    newsroom: AsyncResolvable<Newsroom>;
-    stories: AsyncResolvable<Story[]>;
-    categories: AsyncResolvable<Category[]>;
+type Context = {
+    locales: Locale.Code[];
+    newsroom: Newsroom;
+    stories: Story[];
+    categories: Category[];
     generateUrl: AppUrlGenerator;
-}
+};
 
-export async function generate(context: Context, options: Options): Promise<SitemapFile> {
+export type AsyncResolvableContext = {
+    locales: AsyncResolvable<Context['locales']>;
+    newsroom: AsyncResolvable<Context['newsroom']>;
+    stories: AsyncResolvable<Context['stories']>;
+    categories: AsyncResolvable<Context['categories']>;
+    generateUrl: AppUrlGenerator;
+};
+
+export async function generate(
+    context: AsyncResolvableContext,
+    options: Options,
+): Promise<SitemapFile> {
+    const [newsroom, locales, categories, stories] = await AsyncResolvable.resolve(
+        context.newsroom,
+        context.locales,
+        context.categories,
+        context.stories,
+    );
+    const resolvedContext = {
+        newsroom,
+        locales,
+        categories,
+        stories,
+        generateUrl: context.generateUrl,
+    };
     return build(
         [
-            generateHomepageEntries(context, options),
-            generateStoriesEntries(context, options),
-            generateCategoriesEntries(context, options),
-            generateMediaEntries(context, options),
+            generateHomepageEntries(resolvedContext, options),
+            generateStoriesEntries(resolvedContext, options),
+            generateCategoriesEntries(resolvedContext, options),
+            generateMediaEntries(resolvedContext, options),
         ],
         { baseUrl: options.baseUrl },
     );
@@ -50,12 +74,12 @@ async function generateHomepageEntries(
         changeFrequency = guessChangeFrequency,
     }: Pick<Options, 'priority' | 'changeFrequency'>,
 ) {
-    const locales = await AsyncResolvable.resolve(context.locales);
+    const { locales, generateUrl } = context;
 
     const entries = locales
         .map((localeCode) => ({
             locale: localeCode,
-            url: context.generateUrl('index', { localeCode }),
+            url: generateUrl('index', { localeCode }),
             priority: priority('index', { localeCode }),
             changeFrequency: changeFrequency('index', { localeCode }),
         }))
@@ -65,20 +89,21 @@ async function generateHomepageEntries(
 }
 
 async function generateStoriesEntries(
-    context: Pick<Context, 'stories' | 'generateUrl'>,
+    context: Pick<Context, 'locales' | 'stories' | 'generateUrl'>,
     {
         priority = guessPriority,
         changeFrequency = guessChangeFrequency,
     }: Pick<Options, 'priority' | 'changeFrequency'>,
 ) {
-    const stories = await AsyncResolvable.resolve(context.stories);
+    const { locales, stories, generateUrl } = context;
 
     const entries = stories
+        .filter((story) => locales.includes(story.culture.code))
         .map((story) => {
             const params = { ...story, localeCode: story.culture.code };
             return {
                 locale: story.culture.code,
-                url: context.generateUrl('story', params),
+                url: generateUrl('story', params),
                 priority: priority('story', params),
                 changeFrequency: changeFrequency('story', params),
             };
@@ -95,10 +120,7 @@ async function generateCategoriesEntries(
         changeFrequency = guessChangeFrequency,
     }: Pick<Options, 'priority' | 'changeFrequency'>,
 ) {
-    const [locales, categories] = await AsyncResolvable.resolve(
-        context.locales,
-        context.categories,
-    );
+    const { locales, categories, generateUrl } = context;
 
     const entries = categories
         .flatMap((category) =>
@@ -109,7 +131,7 @@ async function generateCategoriesEntries(
 
                     return {
                         locale: translation.locale,
-                        url: context.generateUrl('category', params),
+                        url: generateUrl('category', params),
                         priority: priority('category', params),
                         changeFrequency: changeFrequency('category', params),
                     };
@@ -127,14 +149,14 @@ async function generateMediaEntries(
         changeFrequency = guessChangeFrequency,
     }: Pick<Options, 'priority' | 'changeFrequency'>,
 ) {
-    const [newsroom, locales] = await AsyncResolvable.resolve(context.newsroom, context.locales);
+    const { newsroom, locales, generateUrl } = context;
 
     if (newsroom.public_galleries_number === 0) return [];
 
     const entries = locales
         .map((localeCode) => ({
             locale: localeCode,
-            url: context.generateUrl('media', { localeCode }),
+            url: generateUrl('media', { localeCode }),
             priority: priority('media', { localeCode }),
             changeFrequency: changeFrequency('media', { localeCode }),
         }))
