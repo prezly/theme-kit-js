@@ -15,7 +15,7 @@ export function stringify(sitemap: SitemapFile) {
 function stringifyEntry(entry: SitemapFileEntry) {
     return `<url>
       <loc>${entry.url}</loc>
-      ${entry.lastModified ? `<lastmod>${entry.lastModified}</lastmod>` : ''}
+      ${entry.lastModified ? `<lastmod>${stringifyDate(entry.lastModified)}</lastmod>` : ''}
       ${entry.changeFrequency ? `<changefreq>${entry.changeFrequency}</changefreq>` : ''}
       ${entry.priority ? `<priority>${entry.priority}</priority>` : ''}
       ${(entry.alternate ?? []).map(stringifyAlternateLink).join('')}
@@ -24,4 +24,11 @@ function stringifyEntry(entry: SitemapFileEntry) {
 
 function stringifyAlternateLink(alt: AlternateLink): string {
     return `<xhtml:link rel="alternate" hreflang="${alt.lang}" href="${alt.url}" />`;
+}
+
+function stringifyDate(date: string | Date) {
+    if (date instanceof Date) {
+        return date.toISOString();
+    }
+    return date;
 }
