@@ -1,6 +1,6 @@
-import type { MetadataRoute } from 'next';
+import { isNotUndefined } from '@technically/is-not-undefined';
 
-import type { Entry } from './types';
+import type { Entry, SitemapFile, SitemapFileEntry } from './types';
 
 interface Options {
     baseUrl: string;
@@ -9,20 +9,26 @@ interface Options {
 export async function build(
     entries: Entry[] | Promise<Entry[]> | Promise<Entry[]>[],
     { baseUrl }: Options,
-): Promise<MetadataRoute.Sitemap> {
+): Promise<SitemapFile> {
     const resolved = await (Array.isArray(entries)
         ? Promise.all(entries)
         : Promise.resolve(entries));
 
     return resolved
         .flat()
-        .map((entry) => {
-            if (typeof entry === 'string' || typeof entry === 'undefined') {
+        .map((entry): SitemapFileEntry | undefined => {
+            if (!entry) {
+                return undefined;
+            }
+            if (typeof entry === 'string') {
                 return { url: entry };
             }
-            return entry;
+            if (entry.url) {
+                return entry as Partial<SitemapFileEntry> & { url: string };
+            }
+            return undefined;
         })
-        .filter((entry): entry is MetadataRoute.Sitemap[number] => Boolean(entry.url))
+        .filter(isNotUndefined)
         .map((entry) => {
             if (
                 entry.url.startsWith('https://') ||

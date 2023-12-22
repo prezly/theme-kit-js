@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { Category, type Newsroom, type Story } from '@prezly/sdk';
-import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
-import type { MetadataRoute } from 'next';
+
+import { AsyncResolvable } from '../resolvable';
 
 import { build } from './build';
 import type {
@@ -11,6 +11,7 @@ import type {
     ChangeFrequencyFn,
     Priority,
     PriorityFn,
+    SitemapFile,
 } from './types';
 
 export interface Options {
@@ -30,7 +31,7 @@ export interface Context {
 export async function generate(
     { generateUrl, ...resolvable }: Context,
     { baseUrl, priority = guessPriority, changeFrequency = guessChangeFrequency }: Options,
-): Promise<MetadataRoute.Sitemap> {
+): Promise<SitemapFile> {
     const [locales, newsroom] = await AsyncResolvable.resolve(
         resolvable.locales,
         resolvable.newsroom,

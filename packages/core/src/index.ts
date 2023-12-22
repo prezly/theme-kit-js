@@ -13,4 +13,5 @@ export * as PrivacyPortal from './privacy-portal';
 export * from './resolvable';
 export * as Routing from './routing';
 export * as Search from './search';
+export * as Sitemap from './sitemap';
 export * as Uploads from './uploads';
