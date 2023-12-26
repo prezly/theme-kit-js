@@ -9,6 +9,7 @@ import { normalizeUrl } from './normalizeUrl';
 export interface Context {
     defaultLocale: Locale.Code;
     locales: Locale.Code[];
+    toLocaleSlug?: (locale: Locale.Code) => Locale.UrlSlug;
 }
 
 export type Params = Record<string, string | undefined | null> &
@@ -58,7 +59,8 @@ function getLocaleSlug(params: Params, context: Context): string {
         return params.localeSlug;
     }
     if (params.localeCode) {
-        return getShortestLocaleSlug(params.localeCode as Locale.Code, context) || '';
+        const { toLocaleSlug = getShortestLocaleSlug } = context;
+        return toLocaleSlug(params.localeCode as Locale.Code, context) || '';
     }
     return '';
 }

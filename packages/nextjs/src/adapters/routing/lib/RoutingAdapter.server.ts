@@ -1,37 +1,36 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { AsyncResolvable } from '@prezly/theme-kit-core';
+import type { Router, RoutesMap, UrlGenerator } from '@prezly/theme-kit-core';
+import { AsyncResolvable, Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 
-import { generateUrlFromPattern } from './generateUrlFromPattern';
-import type { Router, RoutesMap, UrlGenerator } from './types';
-
 export namespace RoutingAdapter {
-    export interface Configuration {
-        locales: Locale.Code[];
-        defaultLocale: Locale.Code;
-    }
+    export type Configuration = {
+        locales: AsyncResolvable<Locale.Code[]>;
+        defaultLocale: AsyncResolvable<Locale.Code>;
+        toLocaleSlug?: (locale: Locale.Code) => Locale.UrlSlug;
+    };
 
     export function connect<Routes extends RoutesMap>(
         createRouter: () => Router<Routes>,
-        config: AsyncResolvable<Configuration>,
+        config: Configuration,
     ) {
         async function useRouting(): Promise<{
             router: Router<Routes>;
             generateUrl: UrlGenerator<Router<Routes>>;
         }> {
             const router = createRouter();
-            const { locales, defaultLocale } = await AsyncResolvable.resolve(config);
+            const [locales, defaultLocale] = await AsyncResolvable.resolve(
+                config.locales,
+                config.defaultLocale,
+            );
 
             return {
                 router,
                 generateUrl(routeName: keyof Routes, params = {}) {
-                    return generateUrlFromPattern(
+                    return Routing.generateUrlFromPattern(
                         router.routes[routeName].pattern as `/${string}`,
                         params as any,
-                        {
-                            defaultLocale,
-                            locales,
-                        },
+                        { defaultLocale, locales, toLocaleSlug: config.toLocaleSlug },
                     );
                 },
             };

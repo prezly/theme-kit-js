@@ -1,6 +1,4 @@
-export type * from './types';
+export { Route, Router, type RoutesMap, Routing } from '@prezly/theme-kit-core';
 
-export { createRouter as router } from './lib/createRouter.server';
-export { createRoute as route } from './lib/createRoute.server';
-
+// eslint-disable-next-line import/extensions
 export { RoutingAdapter } from './lib/RoutingAdapter.server';
