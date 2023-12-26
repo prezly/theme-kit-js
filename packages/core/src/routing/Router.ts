@@ -15,7 +15,7 @@ export interface Router<Routes extends RoutesMap = RoutesMap> {
         [RouteName in keyof Routes]: Routes[RouteName] extends Route<string, infer Match>
             ? Promise<
                   | {
-                        params: Match & { localeSlug: Locale.AnySlug | typeof Router.X_DEFAULT };
+                        params: Match;
                         route: Route<string, Match>;
                     }
                   | undefined
@@ -38,8 +38,6 @@ export interface Router<Routes extends RoutesMap = RoutesMap> {
 }
 
 export namespace Router {
-    export const X_DEFAULT = 'x-default';
-
     export interface MatchContext {
         isSupportedLocale(code: string): code is Locale.AnySlug;
     }
@@ -63,18 +61,12 @@ export namespace Router {
                     }),
                 );
 
-                const [first] = matches
-                    .filter(isNotUndefined)
-                    .filter(({ params }) => {
-                        if ('localeSlug' in params && typeof params.localeSlug === 'string') {
-                            return isSupportedLocale(params.localeSlug);
-                        }
-                        return true;
-                    })
-                    .map(({ route, params }) => ({
-                        route,
-                        params: { ...params, localeSlug: params.localeSlug ?? X_DEFAULT },
-                    }));
+                const [first] = matches.filter(isNotUndefined).filter(({ params }) => {
+                    if ('localeSlug' in params && typeof params.localeSlug === 'string') {
+                        return isSupportedLocale(params.localeSlug);
+                    }
+                    return true;
+                });
 
                 return first;
             },
