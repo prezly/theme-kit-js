@@ -2,6 +2,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.0-next-55cf81a1019a82035ce95d82d09119738bdb1a8c",
+  "version": "0.0.0-next-a11e4c54380aecddde9be7b806db978bfb4380ae",
   "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
