@@ -25,12 +25,6 @@ export type Configuration = {
      * @see slugs.ts
      */
     isSupportedLocale?(locale: string): boolean;
-    /**
-     * Map locale to its URL slug. This will override the locale
-     * slug shortening logic we have implemented by default.
-     * See [CARE-3532].
-     */
-    toLocaleSlug(locale: Locale.Code): Locale.UrlSlug;
 };
 
 type Awaitable<T> = T | Promise<T> | PromiseLike<T>;
@@ -68,12 +62,14 @@ export const DEFAULT_LOCALE_SLUG_HEADER = 'X-Prezly-Locale-Slug';
  */
 export const X_DEFAULT_LOCALE_SLUG = 'x-default';
 
-export function create(router: Resolvable<Router>, config: Configuration) {
-    const { localeSlugHeader = DEFAULT_LOCALE_SLUG_HEADER } = config;
+export function create(router: Resolvable<Router>, config: Configuration = {}) {
+    const {
+        isSupportedLocale = isTheoreticallySupportedLocaleSlug,
+        localeSlugHeader = DEFAULT_LOCALE_SLUG_HEADER,
+    } = config;
 
     return async (request: NextRequest) => {
         const { pathname, searchParams } = request.nextUrl;
-        const { isSupportedLocale = isTheoreticallySupportedLocaleSlug } = config;
 
         const match = Resolvable.resolve(router).match(pathname, searchParams, {
             isSupportedLocale,
@@ -109,10 +105,30 @@ export function create(router: Resolvable<Router>, config: Configuration) {
 export type LocaleMatch = { redirect: string } | { notFound: true } | { locale: Locale.Code };
 
 export interface LocaleMatchContext {
+    /**
+     * Newsroom languages configuration.
+     */
     languages: AsyncResolvable<
         Pick<NewsroomLanguageSettings, 'code' | 'is_default' | 'public_stories_count'>[]
     >;
-    generateUrl: (locale: Locale.Code) => string | undefined;
+
+    /**
+     * Expected URL for the current page.
+     */
+    url: string;
+
+    /**
+     * Map locale to its URL slug. This will override the locale
+     * slug shortening logic we have implemented by default.
+     * See [CARE-3532].
+     */
+    toLocaleSlug?(
+        locale: Locale.Code,
+        context: {
+            defaultLocale: Locale.Code;
+            locales: Locale.Code[];
+        },
+    ): Locale.UrlSlug;
 }
 
 /**
@@ -157,8 +173,9 @@ export async function handleLocaleSlug(
  */
 async function matchLocaleSlug(
     localeSlug: Locale.AnySlug | typeof X_DEFAULT_LOCALE_SLUG,
-    { generateUrl, ...context }: LocaleMatchContext,
+    context: LocaleMatchContext,
 ): Promise<LocaleMatch> {
+    const { url, toLocaleSlug = Routing.getShortestLocaleSlug } = context;
     const languages = await AsyncResolvable.resolve(context.languages);
     const [defaultLocale] = languages.filter((lang) => lang.is_default).map((lang) => lang.code);
     const locales = languages.map((lang) => lang.code);
@@ -178,23 +195,21 @@ async function matchLocaleSlug(
         return { notFound: true };
     }
 
-    const shortestLocaleSlug = Routing.getShortestLocaleSlug(locale.code, {
+    const expectedLocaleSlug = toLocaleSlug(locale.code, {
         locales,
         defaultLocale,
     });
 
-    if (!shortestLocaleSlug) {
+    if (!expectedLocaleSlug) {
         // It is the default locale, which should not have localeSlug in the URL,
         // but it is present in the URL. Redirect to the right URL.
-        const url = generateUrl(locale.code);
-        return url ? { redirect: url } : { notFound: true };
+        return { redirect: url };
     }
 
-    if (shortestLocaleSlug !== localeSlug) {
+    if (localeSlug !== expectedLocaleSlug) {
         // The locale slug is not matching the expected shortest code.
         // Redirect to the right URL.
-        const url = generateUrl(locale.code);
-        return url ? { redirect: url } : { notFound: true };
+        return { redirect: url };
     }
 
     return { locale: locale.code };
