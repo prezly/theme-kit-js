@@ -14,7 +14,7 @@ export type Action =
     | { notFound: true; locale: Locale.Code };
 
 export interface Router {
-    match(pathname: string, searchParams: URLSearchParams): Awaitable<Match | undefined>;
+    match(pathname: string, searchParams: URLSearchParams): Match | undefined;
 }
 
 export interface Match {
@@ -29,15 +29,13 @@ export interface Route {
 
 type Params = Record<string, string>;
 
-type Awaitable<T> = T | Promise<T> | PromiseLike<T>;
-
-export async function handle(
+export function handle(
     router: Router,
     pathname: string,
     searchParams: URLSearchParams,
     { locales, defaultLocale }: Context,
-): Promise<Action> {
-    const matched = await router.match(pathname, searchParams);
+): Action {
+    const matched = router.match(pathname, searchParams);
 
     if (matched) {
         const { params } = matched;
@@ -81,7 +79,7 @@ export async function handle(
     }
 
     const possiblyLocaleSlug = pathname.split('/').filter(Boolean)[0] ?? '';
-    const localized = await router.match(`/${possiblyLocaleSlug}`, searchParams);
+    const localized = router.match(`/${possiblyLocaleSlug}`, searchParams);
 
     if (localized) {
         return {

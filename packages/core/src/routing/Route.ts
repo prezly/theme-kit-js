@@ -13,7 +13,7 @@ export type Route<Pattern = string, Match = unknown> = {
     /**
      * Match incoming request path and search params against the route definition.
      */
-    match(path: string, searchParams: URLSearchParams): Promise<Match | undefined>;
+    match(path: string, searchParams: URLSearchParams): Match | undefined;
 
     /**
      * Low-level route URL generator.
@@ -46,7 +46,7 @@ export namespace Route {
 
         return {
             pattern,
-            async match(path: string, searchParams: URLSearchParams) {
+            match(path: string, searchParams: URLSearchParams) {
                 const matched: Record<string, string | undefined> | undefined =
                     urlPattern.match(path);
 

@@ -5,6 +5,8 @@ import type { Route } from './Route';
 
 export type RoutesMap<T extends Route = Route> = Record<string, T>;
 
+type Maybe<T> = T | undefined;
+
 export interface Router<Routes extends RoutesMap = RoutesMap> {
     routes: Routes;
 
@@ -13,13 +15,10 @@ export interface Router<Routes extends RoutesMap = RoutesMap> {
         searchParams: URLSearchParams,
     ): {
         [RouteName in keyof Routes]: Routes[RouteName] extends Route<string, infer Match>
-            ? Promise<
-                  | {
-                        params: Match;
-                        route: Route<string, Match>;
-                    }
-                  | undefined
-              >
+            ? Maybe<{
+                  params: Match;
+                  route: Route<string, Match>;
+              }>
             : undefined;
     }[keyof Routes];
 
@@ -46,20 +45,18 @@ export namespace Router {
         return {
             routes,
 
-            async match(
+            match(
                 path: string,
                 searchParams: URLSearchParams,
                 { isSupportedLocale }: MatchContext,
             ) {
-                const matches = await Promise.all(
-                    Object.values(routes).map(async (route) => {
-                        const params = await route.match(path, searchParams);
-                        if (params) {
-                            return { params: params as Record<string, unknown>, route };
-                        }
-                        return undefined;
-                    }),
-                );
+                const matches = Object.values(routes).map((route) => {
+                    const params = route.match(path, searchParams);
+                    if (params) {
+                        return { params: params as Record<string, unknown>, route };
+                    }
+                    return undefined;
+                });
 
                 const [first] = matches.filter(isNotUndefined).filter(({ params }) => {
                     if ('localeSlug' in params && typeof params.localeSlug === 'string') {
