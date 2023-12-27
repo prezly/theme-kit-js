@@ -75,7 +75,7 @@
     "lint": "eslint src",
     "test": "npm run test:build",
     "test:build": "npm run test:build:cjs && npm run test:build:esm && npm run test:build:types",
-    "test:build:types": "tsc --noEmit build/index.d.ts",
+    "test:build:types": "tsc --esModuleInterop --noEmit build/index.d.ts",
     "test:build:esm": "node tests/test-build.mjs",
     "test:build:cjs": "node tests/test-build.cjs"
   },

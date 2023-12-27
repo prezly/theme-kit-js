@@ -9,6 +9,6 @@ const { RoutingAdapter } = require('@prezly/theme-kit-nextjs');
 assert(typeof RoutingAdapter.connect === 'function');
 
 // There was an issue with CommonJS build where default imports would not work properly
-const { createRoute } = require('../build/adapters/routing/lib/createRoute.server.cjs');
+const { IntlMiddleware } = require('../build/middleware/index.cjs');
 
-assert(createRoute('/:slug', '/:slug') !== null);
+assert(typeof IntlMiddleware.handleLocaleSlug === 'function');
