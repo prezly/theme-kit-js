@@ -102,8 +102,6 @@ export function create(router: Resolvable<Router>, config: Configuration = {}) {
     };
 }
 
-export type LocaleMatch = { redirect: string } | { notFound: true } | { locale: Locale.Code };
-
 export interface LocaleMatchContext {
     /**
      * Newsroom languages configuration.
@@ -139,63 +137,28 @@ export interface LocaleMatchContext {
  * - a REDIRECT will be performed
  * - a NOT FOUND error will be thrown
  *
- * This function is expected to be called in EVERY page render,
- * as we cannot use any API-data-dependent logic in the middleware.
- *
+ * This function is expected to be called in EVERY page render component,
+ * as we cannot move it into the middleware.
  * See <Challenge I> in [DEV-12250]
  */
 export async function handleLocaleSlug(
     localeSlug: Locale.AnySlug | typeof X_DEFAULT_LOCALE_SLUG,
     context: LocaleMatchContext,
 ): Promise<Locale.Code> {
-    const match = await matchLocaleSlug(localeSlug, context);
-
-    if ('notFound' in match) {
-        notFound();
-    }
-
-    if ('redirect' in match) {
-        redirect(match.redirect);
-    }
-
-    return match.locale;
-}
-
-/**
- * @internal
- *
- * Match the current `:localeSlug` parameter and against the newsroom configuration.
- *
- * One of the following results will be returned:
- * - `{ locale: Locale.Code }` if the locale slug has been successfully matched
- * - `{ redirect: string }` if the locale slug has been matched, but does not comply with locale slug shortening rules.
- * - `{ notFound: true }` if the locale slug has not been matched
- */
-async function matchLocaleSlug(
-    localeSlug: Locale.AnySlug | typeof X_DEFAULT_LOCALE_SLUG,
-    context: LocaleMatchContext,
-): Promise<LocaleMatch> {
-    const { url, toLocaleSlug = Routing.getShortestLocaleSlug } = context;
     const languages = await AsyncResolvable.resolve(context.languages);
-    const [defaultLocale] = languages.filter((lang) => lang.is_default).map((lang) => lang.code);
     const locales = languages.map((lang) => lang.code);
+    const [defaultLocale] = languages.filter((lang) => lang.is_default).map((lang) => lang.code);
 
-    if (localeSlug === X_DEFAULT_LOCALE_SLUG) {
-        // URLs without a `localeSlug` produce `x-default` localeSlug value,
-        // which should map to the newsroom default locale. We cannot just put
-        // the newsroom default locale, as we don't have access to the newsroom
-        // settings in the middleware. See <Challenge I> in [DEV-12250]
-        return { locale: defaultLocale };
-    }
+    const { url, toLocaleSlug = Routing.getShortestLocaleSlug } = context;
 
-    const locale = Routing.matchLanguageByLocaleSlug(languages, localeSlug);
+    const locale = await matchLocaleSlug(localeSlug, { languages });
 
     if (!locale) {
         // localeSlug does not match to a supported locale that is enabled on the newsroom.
-        return { notFound: true };
+        notFound();
     }
 
-    const expectedLocaleSlug = toLocaleSlug(locale.code, {
+    const expectedLocaleSlug = toLocaleSlug(locale, {
         locales,
         defaultLocale,
     });
@@ -203,16 +166,40 @@ async function matchLocaleSlug(
     if (!expectedLocaleSlug) {
         // It is the default locale, which should not have localeSlug in the URL,
         // but it is present in the URL. Redirect to the right URL.
-        return { redirect: url };
+        redirect(url);
     }
 
     if (localeSlug !== expectedLocaleSlug) {
         // The locale slug is not matching the expected shortest code.
         // Redirect to the right URL.
-        return { redirect: url };
+        redirect(url);
     }
 
-    return { locale: locale.code };
+    return locale;
+}
+
+/**
+ * Match the current `:localeSlug` parameter and against the newsroom configuration.
+ * Returns `undefined` if no locale was matched from the newsroom enabled languages settings.
+ */
+export async function matchLocaleSlug(
+    localeSlug: Locale.AnySlug | typeof X_DEFAULT_LOCALE_SLUG,
+    context: {
+        languages: Pick<NewsroomLanguageSettings, 'code' | 'is_default' | 'public_stories_count'>[];
+    },
+): Promise<Locale.Code | undefined> {
+    const { languages } = context;
+    const [defaultLocale] = languages.filter((lang) => lang.is_default).map((lang) => lang.code);
+
+    if (localeSlug === X_DEFAULT_LOCALE_SLUG) {
+        // URLs without a `localeSlug` produce `x-default` localeSlug value,
+        // which should map to the newsroom default locale. We cannot just put
+        // the newsroom default locale, as we don't have access to the newsroom
+        // settings in the middleware. See <Challenge I> in [DEV-12250]
+        return defaultLocale;
+    }
+
+    return Routing.matchLanguageByLocaleSlug(languages, localeSlug)?.code;
 }
 
 /**
