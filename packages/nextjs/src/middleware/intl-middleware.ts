@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
-import type { Route, Router } from '@prezly/theme-kit-core';
 import { AsyncResolvable, Resolvable, Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import { headers } from 'next/headers';
@@ -34,9 +33,28 @@ export type Configuration = {
     toLocaleSlug(locale: Locale.Code): Locale.UrlSlug;
 };
 
+type Awaitable<T> = T | Promise<T> | PromiseLike<T>;
+
+export type Router = {
+    match(
+        pathname: string,
+        searchParams: URLSearchParams,
+        context: {
+            isSupportedLocale(locale: string): boolean;
+        },
+    ): Awaitable<Match | undefined>;
+};
+
+export type Route = {
+    generate(params: Params): string;
+    rewrite(params: Params): string;
+};
+
+type Params = Record<string, unknown>;
+
 type Match = {
     route: Route;
-    params: Record<string, unknown> & { localeSlug?: string };
+    params: Params & { localeSlug?: string };
 };
 
 /**
@@ -50,7 +68,7 @@ export const DEFAULT_LOCALE_SLUG_HEADER = 'X-Prezly-Locale-Slug';
  */
 export const X_DEFAULT_LOCALE_SLUG = 'x-default';
 
-export function create<T extends Router>(router: Resolvable<T>, config: Configuration) {
+export function create(router: Resolvable<Router>, config: Configuration) {
     const { localeSlugHeader = DEFAULT_LOCALE_SLUG_HEADER } = config;
 
     return async (request: NextRequest) => {
