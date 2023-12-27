@@ -1,4 +1,3 @@
-import type { Locale } from '@prezly/theme-kit-intl';
 import { isNotUndefined } from '@technically/is-not-undefined';
 
 import type { Route } from './Route';
@@ -13,6 +12,7 @@ export interface Router<Routes extends RoutesMap = RoutesMap> {
     match(
         path: string,
         searchParams: URLSearchParams,
+        context: Router.MatchContext,
     ): {
         [RouteName in keyof Routes]: Routes[RouteName] extends Route<string, infer Match>
             ? Maybe<{
@@ -38,7 +38,7 @@ export interface Router<Routes extends RoutesMap = RoutesMap> {
 
 export namespace Router {
     export interface MatchContext {
-        isSupportedLocale(code: string): code is Locale.AnySlug;
+        isSupportedLocale(code: string): boolean;
     }
 
     export function create<Routes extends RoutesMap>(routes: Routes): Router<Routes> {

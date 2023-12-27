@@ -6,7 +6,6 @@ export { HttpClient } from './http';
 export { CachedFetch } from './fetch';
 export * as Galleries from './galleries';
 export * as Intl from './intl';
-export * as IntlMiddleware from './intl-middleware';
 export * as Metadata from './metadata';
 export * as Newsrooms from './newsrooms';
 export * as PrivacyPortal from './privacy-portal';
