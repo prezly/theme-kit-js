@@ -185,10 +185,12 @@ export async function handleLocaleSlug(
 export async function matchLocaleSlug(
     localeSlug: Locale.AnySlug | typeof X_DEFAULT_LOCALE_SLUG,
     context: {
-        languages: Pick<NewsroomLanguageSettings, 'code' | 'is_default' | 'public_stories_count'>[];
+        languages: AsyncResolvable<
+            Pick<NewsroomLanguageSettings, 'code' | 'is_default' | 'public_stories_count'>[]
+        >;
     },
 ): Promise<Locale.Code | undefined> {
-    const { languages } = context;
+    const languages = await AsyncResolvable.resolve(context.languages);
     const [defaultLocale] = languages.filter((lang) => lang.is_default).map((lang) => lang.code);
 
     if (localeSlug === X_DEFAULT_LOCALE_SLUG) {
