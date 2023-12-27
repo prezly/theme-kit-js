@@ -9,7 +9,10 @@ import { normalizeUrl } from './normalizeUrl';
 export interface Context {
     defaultLocale: Locale.Code;
     locales: Locale.Code[];
-    toLocaleSlug?: (locale: Locale.Code) => Locale.UrlSlug;
+    toLocaleSlug?: (
+        locale: Locale.Code,
+        context: Pick<Context, 'defaultLocale' | 'locales'>,
+    ) => Locale.UrlSlug;
 }
 
 export type Params = Record<string, string | undefined | null> &

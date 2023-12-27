@@ -5,24 +5,24 @@ import type { Locale } from '@prezly/theme-kit-intl';
 
 export namespace RoutingAdapter {
     export type Configuration = {
-        locales: AsyncResolvable<Locale.Code[]>;
-        defaultLocale: AsyncResolvable<Locale.Code>;
-        toLocaleSlug?: (locale: Locale.Code) => Locale.UrlSlug;
+        locales: Locale.Code[];
+        defaultLocale: Locale.Code;
+        toLocaleSlug?: (
+            locale: Locale.Code,
+            context: Pick<Configuration, 'locales' | 'defaultLocale'>,
+        ) => Locale.UrlSlug;
     };
 
     export function connect<Routes extends RoutesMap>(
         createRouter: () => Router<Routes>,
-        config: Configuration,
+        config: AsyncResolvable<Configuration>,
     ) {
         async function useRouting(): Promise<{
             router: Router<Routes>;
             generateUrl: UrlGenerator<Router<Routes>>;
         }> {
             const router = createRouter();
-            const [locales, defaultLocale] = await AsyncResolvable.resolve(
-                config.locales,
-                config.defaultLocale,
-            );
+            const { locales, defaultLocale, toLocaleSlug } = await AsyncResolvable.resolve(config);
 
             return {
                 router,
@@ -30,7 +30,7 @@ export namespace RoutingAdapter {
                     return Routing.generateUrlFromPattern(
                         router.routes[routeName].pattern as `/${string}`,
                         params as any,
-                        { defaultLocale, locales, toLocaleSlug: config.toLocaleSlug },
+                        { defaultLocale, locales, toLocaleSlug },
                     );
                 },
             };
