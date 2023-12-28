@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Newsroom, NewsroomTheme, Story } from '@prezly/sdk';
 import { createPrezlyClient } from '@prezly/sdk';
-import { CachedFetch, ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
+import { ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
 
 export namespace PrezlyAdapter {
     export interface Configuration {
@@ -16,7 +16,7 @@ export namespace PrezlyAdapter {
 
     export interface CacheConfiguration {
         dataCache?: boolean;
-        fetchCache?: boolean | Partial<CachedFetch.Options>;
+        fetch?: typeof fetch;
     }
 
     export const DEFAULT_REQUEST_CACHE_TTL = 10000;
@@ -24,17 +24,8 @@ export namespace PrezlyAdapter {
 
     export function connect(
         config: Resolvable<Configuration>,
-        { dataCache = false, fetchCache = false }: CacheConfiguration = {},
+        { dataCache = false, fetch }: CacheConfiguration = {},
     ) {
-        const fetchCacheConfig = fetchCache === true ? {} : fetchCache;
-        const cachedFetch = fetchCacheConfig
-            ? CachedFetch.create({
-                  ...fetchCacheConfig,
-                  ttl: fetchCacheConfig.ttl ?? DEFAULT_REQUEST_CACHE_TTL,
-                  methods: fetchCacheConfig.methods ?? DEFAULT_REQUEST_CACHED_METHODS,
-              })
-            : undefined;
-
         function usePrezlyClient() {
             const {
                 // sdk client properties
@@ -48,7 +39,7 @@ export namespace PrezlyAdapter {
             } = Resolvable.resolve(config);
 
             const client = createPrezlyClient({
-                fetch: cachedFetch,
+                fetch,
                 accessToken,
                 baseUrl,
                 headers,
