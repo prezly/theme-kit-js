@@ -53,7 +53,7 @@ export namespace story {
     }
 }
 
-export namespace mediaAlbums {
+export namespace galleries {
     export interface SearchParams {
         offset?: number;
         limit?: number;
@@ -186,7 +186,7 @@ export function createClient(
             });
         },
 
-        galleries(params: mediaAlbums.SearchParams = {}) {
+        galleries(params: galleries.SearchParams = {}) {
             const { offset, limit, type } = params;
             return prezly.newsroomGalleries.search(newsroomUuid, {
                 limit,

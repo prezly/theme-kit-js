@@ -50,10 +50,13 @@ export namespace MetadataAdapter {
         }
 
         function generateMediaAlbumPageMetadata(
-            params: WithoutSharedConfiguration<lib.generateMediaAlbumPageMetadata.Parameters>,
+            params: WithoutSharedConfiguration<lib.generateMediaGalleryPageMetadata.Parameters>,
             ...metadata: Metadata[]
         ) {
-            return lib.generateMediaAlbumPageMetadata({ ...configuration, ...params }, ...metadata);
+            return lib.generateMediaGalleryPageMetadata(
+                { ...configuration, ...params },
+                ...metadata,
+            );
         }
 
         function generateSearchPageMetadata(
