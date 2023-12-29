@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "0.0.0-next-5ca2b7530edf7928b433b00bcf1c578d97b84500",
+  "version": "0.0.0-next-932d00888f9363b1fee9c1fced455d89a28eb649",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "type": "module",
   "main": "build/index.mjs",
@@ -75,7 +75,7 @@
     "lint": "eslint src",
     "test": "npm run test:build",
     "test:build": "npm run test:build:cjs && npm run test:build:esm && npm run test:build:types",
-    "test:build:types": "tsc --noEmit build/index.d.ts",
+    "test:build:types": "tsc --esModuleInterop --noEmit build/index.d.ts",
     "test:build:esm": "node tests/test-build.mjs",
     "test:build:cjs": "node tests/test-build.cjs"
   },
@@ -92,9 +92,9 @@
     }
   },
   "dependencies": {
-    "@prezly/theme-kit-core": "0.0.0-next-5ca2b7530edf7928b433b00bcf1c578d97b84500",
-    "@prezly/theme-kit-intl": "0.0.0-next-5ca2b7530edf7928b433b00bcf1c578d97b84500",
-    "@prezly/theme-kit-react": "0.0.0-next-5ca2b7530edf7928b433b00bcf1c578d97b84500",
+    "@prezly/theme-kit-core": "0.0.0-next-932d00888f9363b1fee9c1fced455d89a28eb649",
+    "@prezly/theme-kit-intl": "0.0.0-next-932d00888f9363b1fee9c1fced455d89a28eb649",
+    "@prezly/theme-kit-react": "0.0.0-next-932d00888f9363b1fee9c1fced455d89a28eb649",
     "@technically/omit-undefined": "^1.0.2",
     "url-pattern": "^1.0.3"
   },

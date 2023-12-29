@@ -1,1 +1,1 @@
-export * as NextIntlMiddleware from './next-intl-middleware';
+export * as IntlMiddleware from './intl-middleware';

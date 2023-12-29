@@ -1,11 +1,10 @@
 'use client';
 
+import type { Router, RoutesMap, UrlGenerator } from '@prezly/theme-kit-core';
+import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { ReactNode } from 'react';
 import { createContext, useCallback, useContext } from 'react';
-
-import { generateUrlFromPattern } from './generateUrlFromPattern';
-import type { Router, RoutesMap, UrlGenerator } from './types';
 
 interface Context<T extends RoutesMap> {
     routes: {
@@ -13,6 +12,7 @@ interface Context<T extends RoutesMap> {
     };
     locales: Locale.Code[];
     defaultLocale: Locale.Code;
+    toLocaleSlug?: (locale: Locale.Code) => Locale.UrlSlug;
 }
 
 export namespace RoutingAdapter {
@@ -33,15 +33,16 @@ export namespace RoutingAdapter {
                 );
             }
 
-            const { routes, locales, defaultLocale } = value;
+            const { routes, locales, defaultLocale, toLocaleSlug } = value;
 
             const generateUrl = useCallback(
                 (routeName: keyof Routes, params: any = {}) =>
-                    generateUrlFromPattern(routes[routeName] as `/${string}`, params, {
+                    Routing.generateUrlFromPattern(routes[routeName] as `/${string}`, params, {
                         defaultLocale,
                         locales,
+                        toLocaleSlug,
                     }),
-                [routes, locales, defaultLocale],
+                [routes, locales, defaultLocale, toLocaleSlug],
             ) as UrlGenerator<Router<Routes>>;
 
             // @ts-ignore

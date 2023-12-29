@@ -1,6 +1,6 @@
 import type { Locale } from '@prezly/theme-kit-intl';
 
-import { LANGUAGES } from '../__mocks__/languages';
+import { LANGUAGES } from '../../__mocks__/languages';
 
 import { getShortestLocaleSlug } from './getShortestLocaleSlug';
 

@@ -1,14 +1,18 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import { omitUndefined } from '@technically/omit-undefined';
 import UrlPattern from 'url-pattern';
 
+import { getShortestLocaleSlug } from './getShortestLocaleSlug';
 import { normalizeUrl } from './normalizeUrl';
 
 export interface Context {
     defaultLocale: Locale.Code;
     locales: Locale.Code[];
+    toLocaleSlug?: (
+        locale: Locale.Code,
+        context: Pick<Context, 'defaultLocale' | 'locales'>,
+    ) => Locale.UrlSlug;
 }
 
 export type Params = Record<string, string | undefined | null> &
@@ -58,7 +62,8 @@ function getLocaleSlug(params: Params, context: Context): string {
         return params.localeSlug;
     }
     if (params.localeCode) {
-        return Routing.getShortestLocaleSlug(params.localeCode as Locale.Code, context) || '';
+        const { toLocaleSlug = getShortestLocaleSlug } = context;
+        return toLocaleSlug(params.localeCode as Locale.Code, context) || '';
     }
     return '';
 }
