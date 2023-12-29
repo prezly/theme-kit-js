@@ -14,13 +14,18 @@ type Options = RedisClientOptions & {
     ttl?: Seconds;
 };
 
-export async function createRedisCache({ ttl, ...options }: Options): Promise<Cache> {
-    const client = await createClient(options)
-        .on('error', (error) => console.error(error))
-        .connect();
+export function createRedisCache({ ttl, ...options }: Options): Cache {
+    async function connect() {
+        return createClient(options)
+            .on('error', (error) => console.error(error))
+            .connect();
+    }
+
+    const pendingConnection = connect();
 
     return {
         async get(key, latestVersion) {
+            const client = await pendingConnection;
             const cached = await client.get(key);
             if (!cached) {
                 return undefined;
@@ -40,6 +45,7 @@ export async function createRedisCache({ ttl, ...options }: Options): Promise<Ca
         },
 
         async set(key, value, version) {
+            const client = await pendingConnection;
             const entry: Entry = { value, version };
             await client.set(key, JSON.stringify(entry), { EX: ttl });
         },
