@@ -21,7 +21,7 @@ export namespace PrezlyAdapter {
     }
 
     export interface CacheConfiguration {
-        redis?: { url: string; ttl?: number };
+        redis?: { url: string; prefix?: string; ttl?: number };
         memory?: boolean;
         latestVersion?: number;
     }

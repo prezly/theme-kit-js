@@ -14,7 +14,7 @@ import type { Cache, UnixTimestampInSeconds } from './cache';
 /**
  * This is a temporary solution to validate the Redis cache approach
  * without implementing the newsroom version header first.
- * See [12072]
+ * See [DEV-12072]
  */
 const FAKE_LATEST_VERSION_TO_PROVE_EXPERIMENT = 0;
 
