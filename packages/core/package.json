@@ -40,7 +40,6 @@
     "@technically/is-not-undefined": "^1.0.0",
     "@technically/omit-undefined": "^1.0.2",
     "parse-data-url": "^6.0.0",
-    "redis": "^4.6.12",
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {

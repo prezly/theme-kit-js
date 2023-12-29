@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
+import type { ContentDelivery } from '@prezly/theme-kit-core';
 import { createClient, type RedisClientOptions } from 'redis';
 
-import type { Cache, UnixTimestampInSeconds } from './type';
-
 type Seconds = number;
+type UnixTimestampInSeconds = number;
 
 type Entry = {
     version: UnixTimestampInSeconds;
@@ -15,8 +15,12 @@ type Options = RedisClientOptions & {
     prefix?: string;
 };
 
-export function createRedisCache({ ttl, prefix = 'content:', ...options }: Options): Cache {
-    async function connect() {
+export function createRedisCache({
+    ttl,
+    prefix = 'content:',
+    ...options
+}: Options): ContentDelivery.Cache {
+    function connect() {
         return createClient(options)
             .on('error', (error) => console.error(error))
             .connect();

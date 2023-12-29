@@ -2,7 +2,8 @@
 import type { Newsroom, NewsroomTheme, Story } from '@prezly/sdk';
 import { createPrezlyClient } from '@prezly/sdk';
 import { ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
-import { isNotUndefined } from '@technically/is-not-undefined';
+
+import { type Configuration as CacheConfig, configure as configureCache } from './cache';
 
 export namespace PrezlyAdapter {
     export interface Configuration {
@@ -20,11 +21,7 @@ export namespace PrezlyAdapter {
         fetch?: typeof fetch;
     }
 
-    export interface CacheConfiguration {
-        redis?: { url: string; prefix?: string; ttl?: number };
-        memory?: boolean;
-        latestVersion?: number;
-    }
+    export type CacheConfiguration = CacheConfig;
 
     export const DEFAULT_REQUEST_CACHE_TTL = 10000;
     export const DEFAULT_REQUEST_CACHED_METHODS = ['GET', 'POST'];
@@ -62,23 +59,4 @@ export namespace PrezlyAdapter {
 
         return { usePrezlyClient };
     }
-}
-
-function configureCache(
-    config: PrezlyAdapter.CacheConfiguration,
-): ContentDelivery.Cache | undefined {
-    const caches = [
-        config.memory ? ContentDelivery.createSharedMemoryCache() : undefined,
-        config.redis ? ContentDelivery.createRedisCache(config.redis) : undefined,
-    ].filter(isNotUndefined);
-
-    if (caches.length === 0) {
-        return undefined;
-    }
-
-    if (caches.length === 1) {
-        return caches[0];
-    }
-
-    return ContentDelivery.createStackedCache(caches);
 }
