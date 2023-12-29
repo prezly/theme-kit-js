@@ -1,6 +1,6 @@
 export * as Boilerplate from './boilerplate';
 export * from './constants';
-export { ContentDelivery } from './content-delivery';
+export * as ContentDelivery from './content-delivery';
 export * as Environment from './environment';
 export { HttpClient } from './http';
 export * as Galleries from './galleries';

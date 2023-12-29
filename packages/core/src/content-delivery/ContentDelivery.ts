@@ -9,9 +9,19 @@ import type {
 } from '@prezly/sdk';
 import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '@prezly/sdk';
 
+import type { Cache, UnixTimestampInSeconds } from './cache';
+
+/**
+ * This is a temporary solution to validate the Redis cache approach
+ * without implementing the newsroom version header first.
+ * See [12072]
+ */
+const FAKE_LATEST_VERSION_TO_PROVE_EXPERIMENT = 0;
+
 export interface Options {
     formats?: Story.FormatVersion[];
-    cache?: boolean;
+    cache?: Cache;
+    latestVersion?: UnixTimestampInSeconds;
 }
 
 export namespace stories {
@@ -75,7 +85,11 @@ export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
     newsroomThemeUuid: NewsroomTheme['id'] | undefined,
-    { formats = [Story.FormatVersion.SLATEJS_V4], cache = false }: Options = {},
+    {
+        formats = [Story.FormatVersion.SLATEJS_V4],
+        cache,
+        latestVersion = FAKE_LATEST_VERSION_TO_PROVE_EXPERIMENT, // FIXME
+    }: Options = {},
 ) {
     const client = {
         newsroom() {
@@ -316,31 +330,43 @@ export function createClient(
     };
 
     if (cache) {
-        injectCache(client);
+        injectCache(client, cache, latestVersion);
     }
 
     return client;
 }
 
-function injectCache(client: Client) {
-    const cachedCalls = new Map<string, any>();
-
+function injectCache(client: Client, cache: Cache, latestVersion: UnixTimestampInSeconds) {
+    const methodCalls = new Map<string, Promise<any>>();
     const methodNames = Object.keys(client) as (keyof Client)[];
 
     methodNames.forEach((methodName) => {
         const uncachedFn = client[methodName].bind(client);
 
         // eslint-disable-next-line no-param-reassign
-        client[methodName] = (...args: Parameters<typeof uncachedFn>) => {
-            const key = `${methodName}:${JSON.stringify(args)}`;
+        client[methodName] = async (...args: Parameters<typeof uncachedFn>) => {
+            const cacheKey = `${methodName}:${JSON.stringify(args)}`;
+            const dedupeKey = `${latestVersion}:${cacheKey}`;
 
-            const cached = cachedCalls.get(key);
-            if (cached) return cached;
+            // Dedupe requests
+            const pending = methodCalls.get(dedupeKey);
+            if (pending) return pending;
 
-            const value = (uncachedFn as Function)(...args);
-            cachedCalls.set(key, value);
+            async function invoke() {
+                const cached = await cache.get(cacheKey, latestVersion);
+                if (cached) return cached;
 
-            return value;
+                const value = (uncachedFn as Function)(...args);
+                cache.set(cacheKey, value, latestVersion);
+
+                methodCalls.delete(dedupeKey);
+
+                return value;
+            }
+
+            const invokation = invoke();
+            methodCalls.set(dedupeKey, invokation);
+            return invokation;
         };
     });
 }
