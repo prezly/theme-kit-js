@@ -2,15 +2,13 @@
 
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
-import type { Fetch } from '../fetch/types';
-
 export interface HttpClient {
     get<T>(url: string, query?: Record<string, string | number | undefined | null>): Promise<T>;
     withHeaders(headers: Record<string, string>): HttpClient;
 }
 
 export interface Options {
-    fetch?: Fetch;
+    fetch?: typeof fetch;
     headers?: Record<string, string>;
 }
 

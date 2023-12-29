@@ -6,33 +6,33 @@ import type { AppUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
 
 export type Params = Prerequisites & {
-    album: AsyncResolvable<NewsroomGallery>;
+    gallery: AsyncResolvable<NewsroomGallery>;
     generateUrl: AsyncResolvable<AppUrlGenerator>;
 };
 
-export async function generateMediaAlbumPageMetadata(
-    { generateUrl: resolvableUrlGenerator, album: resolvableAlbum, ...prerequisites }: Params,
+export async function generateMediaGalleryPageMetadata(
+    { generateUrl: resolvableUrlGenerator, gallery: resolveGallery, ...prerequisites }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
-    const [generateUrl, album] = await AsyncResolvable.resolve(
+    const [generateUrl, gallery] = await AsyncResolvable.resolve(
         resolvableUrlGenerator,
-        resolvableAlbum,
+        resolveGallery,
     );
 
-    const thumbnail = Galleries.getCoverImage(album);
+    const thumbnail = Galleries.getCoverImage(gallery);
     const imageUrl = thumbnail ? Uploads.getCdnUrl(thumbnail.uuid) : undefined;
 
     return generatePageMetadata(
         {
             ...prerequisites,
-            title: album.title,
+            title: gallery.name,
             imageUrl,
-            generateUrl: (localeCode) => generateUrl('mediaAlbum', { ...album, localeCode }),
+            generateUrl: (localeCode) => generateUrl('mediaGallery', { ...gallery, localeCode }),
         },
         ...metadata,
     );
 }
 
-export namespace generateMediaAlbumPageMetadata {
+export namespace generateMediaGalleryPageMetadata {
     export type Parameters = Params;
 }

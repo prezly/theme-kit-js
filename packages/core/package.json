@@ -27,7 +27,7 @@
     "test": "npm run test:unit && npm run test:build",
     "test:unit": "jest",
     "test:build": "npm run test:build:cjs && npm run test:build:esm && npm run test:build:types",
-    "test:build:types": "tsc --esModuleInterop --noEmit build/index.d.ts",
+    "test:build:types": "tsc --esModuleInterop --noEmit --target esnext --moduleResolution node build/index.d.ts",
     "test:build:esm": "node tests/test-build.mjs",
     "test:build:cjs": "node tests/test-build.cjs"
   },
@@ -35,7 +35,6 @@
     "@prezly/sdk": "18.3.0"
   },
   "dependencies": {
-    "@e1himself/cached-fetch": "^1.1.2",
     "@prezly/theme-kit-intl": "0.0.0-next-932d00888f9363b1fee9c1fced455d89a28eb649",
     "@prezly/uploadcare": "^2.3.4",
     "@technically/is-not-undefined": "^1.0.0",

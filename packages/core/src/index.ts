@@ -1,9 +1,8 @@
 export * as Boilerplate from './boilerplate';
 export * from './constants';
-export { ContentDelivery } from './content-delivery';
+export * as ContentDelivery from './content-delivery';
 export * as Environment from './environment';
 export { HttpClient } from './http';
-export { CachedFetch } from './fetch';
 export * as Galleries from './galleries';
 export * as Intl from './intl';
 export * as Metadata from './metadata';

@@ -17,7 +17,7 @@ export type AppUrlGenerator = {
     (routeName: 'story', params: { localeCode: Locale.Code } & StoryRef): Url | undefined;
     (routeName: 'category', params: { localeCode: Locale.Code } & TranslatedCategory): Url | undefined;
     (routeName: 'media', params: { localeCode: Locale.Code }): | Url | undefined;
-    (routeName: 'mediaAlbum', params: { localeCode: Locale.Code } & NewsroomGallery): | Url | undefined;
+    (routeName: 'mediaGallery', params: { localeCode: Locale.Code } & NewsroomGallery): | Url | undefined;
     (routeName: 'search', params: { localeCode: Locale.Code }): | Url | undefined;
 };
 

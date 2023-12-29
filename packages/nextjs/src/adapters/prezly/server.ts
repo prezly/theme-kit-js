@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Newsroom, NewsroomTheme, Story } from '@prezly/sdk';
 import { createPrezlyClient } from '@prezly/sdk';
-import { CachedFetch, ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
+import { ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
+
+import { type Configuration as CacheConfig, configure as configureCache } from './cache';
 
 export namespace PrezlyAdapter {
     export interface Configuration {
@@ -14,27 +16,20 @@ export namespace PrezlyAdapter {
         formats?: Story.FormatVersion[];
     }
 
-    export interface CacheConfiguration {
-        dataCache?: boolean;
-        fetchCache?: boolean | Partial<CachedFetch.Options>;
+    export interface Options {
+        cache?: CacheConfiguration;
+        fetch?: typeof fetch;
     }
+
+    export type CacheConfiguration = CacheConfig;
 
     export const DEFAULT_REQUEST_CACHE_TTL = 10000;
     export const DEFAULT_REQUEST_CACHED_METHODS = ['GET', 'POST'];
 
     export function connect(
         config: Resolvable<Configuration>,
-        { dataCache = false, fetchCache = false }: CacheConfiguration = {},
+        { cache: cacheConfig, fetch }: Options = {},
     ) {
-        const fetchCacheConfig = fetchCache === true ? {} : fetchCache;
-        const cachedFetch = fetchCacheConfig
-            ? CachedFetch.create({
-                  ...fetchCacheConfig,
-                  ttl: fetchCacheConfig.ttl ?? DEFAULT_REQUEST_CACHE_TTL,
-                  methods: fetchCacheConfig.methods ?? DEFAULT_REQUEST_CACHED_METHODS,
-              })
-            : undefined;
-
         function usePrezlyClient() {
             const {
                 // sdk client properties
@@ -48,14 +43,15 @@ export namespace PrezlyAdapter {
             } = Resolvable.resolve(config);
 
             const client = createPrezlyClient({
-                fetch: cachedFetch,
+                fetch,
                 accessToken,
                 baseUrl,
                 headers,
             });
+
             const contentDelivery = ContentDelivery.createClient(client, newsroom, theme, {
                 formats,
-                cache: dataCache,
+                cache: cacheConfig ? configureCache(cacheConfig) : undefined,
             });
 
             return { client, contentDelivery };

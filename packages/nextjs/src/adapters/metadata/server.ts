@@ -49,11 +49,14 @@ export namespace MetadataAdapter {
             return lib.generateMediaPageMetadata({ ...configuration, ...params }, ...metadata);
         }
 
-        function generateMediaAlbumPageMetadata(
-            params: WithoutSharedConfiguration<lib.generateMediaAlbumPageMetadata.Parameters>,
+        function generateMediaGalleryPageMetadata(
+            params: WithoutSharedConfiguration<lib.generateMediaGalleryPageMetadata.Parameters>,
             ...metadata: Metadata[]
         ) {
-            return lib.generateMediaAlbumPageMetadata({ ...configuration, ...params }, ...metadata);
+            return lib.generateMediaGalleryPageMetadata(
+                { ...configuration, ...params },
+                ...metadata,
+            );
         }
 
         function generateSearchPageMetadata(
@@ -73,7 +76,7 @@ export namespace MetadataAdapter {
             generateStoryPageMetadata,
             generateCategoryPageMetadata,
             generateMediaPageMetadata,
-            generateMediaAlbumPageMetadata,
+            generateMediaGalleryPageMetadata,
             generateSearchPageMetadata,
         };
     }
