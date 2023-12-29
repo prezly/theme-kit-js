@@ -33,6 +33,6 @@ export async function generateMediaGalleryPageMetadata(
     );
 }
 
-export namespace generateMediaAlbumPageMetadata {
+export namespace generateMediaGalleryPageMetadata {
     export type Parameters = Params;
 }
