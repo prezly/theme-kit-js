@@ -158,16 +158,8 @@ export async function handleLocaleSlug(
         notFound();
     }
 
-    const expectedLocaleSlug = toLocaleSlug(locale, {
-        locales,
-        defaultLocale,
-    });
-
-    if (!expectedLocaleSlug) {
-        // It is the default locale, which should not have localeSlug in the URL,
-        // but it is present in the URL. Redirect to the right URL.
-        redirect(generateUrl(locale));
-    }
+    const expectedLocaleSlug =
+        toLocaleSlug(locale, { locales, defaultLocale }) || X_DEFAULT_LOCALE_SLUG; // convert `false` to "x-default"
 
     if (localeSlug !== expectedLocaleSlug) {
         // The locale slug is not matching the expected shortest code.
