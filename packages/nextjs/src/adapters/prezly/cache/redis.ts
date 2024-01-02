@@ -49,7 +49,7 @@ export function createRedisCache({ ttl, prefix = '', ...options }: Options): Con
             },
 
             namespace(namespace: string): ContentDelivery.Cache {
-                return createCache(`${prefix}${namespace}:`);
+                return createCache(`${namespacePrefix}${namespace}:`);
             },
         };
     }
