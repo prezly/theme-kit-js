@@ -4,6 +4,8 @@ import { isNotUndefined } from '@technically/is-not-undefined';
 
 import { createRedisCache } from './redis';
 
+const DEFAULT_REDIS_CACHE_TTL = 30 * 24 * 60 * 60; // 30 days
+
 export interface Configuration {
     redis?: { url: string; prefix?: string; ttl?: number };
     memory?: boolean;
@@ -27,7 +29,9 @@ export function configure(config: Configuration) {
 function configureStorage(config: Configuration): ContentDelivery.Cache | undefined {
     const caches = [
         config.memory ? ContentDelivery.createSharedMemoryCache() : undefined,
-        config.redis ? createRedisCache(config.redis) : undefined,
+        config.redis
+            ? createRedisCache({ ttl: DEFAULT_REDIS_CACHE_TTL, ...config.redis })
+            : undefined,
     ].filter(isNotUndefined);
 
     if (caches.length === 0) {

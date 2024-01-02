@@ -23,9 +23,6 @@ export namespace PrezlyAdapter {
 
     export type CacheConfiguration = CacheConfig;
 
-    export const DEFAULT_REQUEST_CACHE_TTL = 10000;
-    export const DEFAULT_REQUEST_CACHED_METHODS = ['GET', 'POST'];
-
     export function connect(
         config: Resolvable<Configuration>,
         { cache: cacheConfig, fetch }: Options = {},
@@ -52,7 +49,10 @@ export namespace PrezlyAdapter {
             const contentDelivery = ContentDelivery.createClient(client, newsroom, theme, {
                 formats,
                 cache: cacheConfig
-                    ? configureCache({ namespace: 'content:', ...cacheConfig })
+                    ? configureCache({
+                          namespace: 'content:',
+                          ...cacheConfig,
+                      })
                     : undefined,
             });
 
