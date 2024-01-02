@@ -389,7 +389,7 @@ function injectCache(
                 const cached = await cache.get(cacheKey, latestVersion);
                 if (cached) return cached;
 
-                const value = (uncachedFn as Function)(...args);
+                const value = await (uncachedFn as Function)(...args);
                 cache.set(cacheKey, value, latestVersion);
 
                 methodCalls.delete(dedupeKey);
