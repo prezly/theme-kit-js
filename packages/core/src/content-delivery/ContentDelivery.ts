@@ -330,7 +330,11 @@ export function createClient(
     };
 
     if (cache) {
-        injectCache(client, cache, latestVersion);
+        injectCache(
+            client,
+            cache.namespace(`${newsroomUuid}:${newsroomThemeUuid}:${formats.join(',')}:`),
+            latestVersion,
+        );
     }
 
     return client;

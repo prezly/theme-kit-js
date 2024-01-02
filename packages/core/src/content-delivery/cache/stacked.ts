@@ -16,5 +16,9 @@ export function createStackedCache(caches: Cache[]): Cache {
         async set(key, value, version) {
             await Promise.all(caches.map((cache) => cache.set(key, value, version)));
         },
+
+        namespace(namespace: string): Cache {
+            return createStackedCache(caches.map((cache) => cache.namespace(namespace)));
+        },
     };
 }
