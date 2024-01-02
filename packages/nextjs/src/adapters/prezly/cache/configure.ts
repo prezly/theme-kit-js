@@ -6,7 +6,6 @@ import { createRedisCache } from './redis';
 export interface Configuration {
     redis?: { url: string; prefix?: string; ttl?: number };
     memory?: boolean;
-    latestVersion?: number;
 }
 
 export function configure(config: Configuration): ContentDelivery.Cache | undefined {

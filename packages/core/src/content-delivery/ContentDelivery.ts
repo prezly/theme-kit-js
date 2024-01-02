@@ -11,12 +11,7 @@ import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '
 
 import type { Cache, UnixTimestampInSeconds } from './cache';
 
-/**
- * This is a temporary solution to validate the Redis cache approach
- * without implementing the newsroom version header first.
- * See [DEV-12072]
- */
-const FAKE_LATEST_VERSION_TO_PROVE_EXPERIMENT = 0;
+const FAKE_LATEST_VERSION = 0;
 
 export interface Options {
     formats?: Story.FormatVersion[];
@@ -106,7 +101,7 @@ export function createClient(
     {
         formats = [Story.FormatVersion.SLATEJS_V4],
         cache,
-        latestVersion = FAKE_LATEST_VERSION_TO_PROVE_EXPERIMENT, // FIXME
+        latestVersion = FAKE_LATEST_VERSION,
     }: Options = {},
 ) {
     const client = {
