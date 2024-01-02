@@ -21,9 +21,7 @@ export namespace PrezlyAdapter {
         fetch?: typeof fetch;
     }
 
-    export type CacheConfiguration = CacheConfig & {
-        latestVersion?: Resolvable<number>;
-    };
+    export type CacheConfiguration = CacheConfig;
 
     export const DEFAULT_REQUEST_CACHE_TTL = 10000;
     export const DEFAULT_REQUEST_CACHED_METHODS = ['GET', 'POST'];
@@ -53,8 +51,9 @@ export namespace PrezlyAdapter {
 
             const contentDelivery = ContentDelivery.createClient(client, newsroom, theme, {
                 formats,
-                cache: cacheConfig ? configureCache(cacheConfig)?.namespace('content:') : undefined,
-                latestVersion: Resolvable.resolve(cacheConfig?.latestVersion),
+                cache: cacheConfig
+                    ? configureCache({ namespace: 'content:', ...cacheConfig })
+                    : undefined,
             });
 
             return { client, contentDelivery };

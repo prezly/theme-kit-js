@@ -1,4 +1,5 @@
-import { ContentDelivery } from '@prezly/theme-kit-core';
+/* eslint-disable @typescript-eslint/no-use-before-define */
+import { ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
 import { isNotUndefined } from '@technically/is-not-undefined';
 
 import { createRedisCache } from './redis';
@@ -6,9 +7,24 @@ import { createRedisCache } from './redis';
 export interface Configuration {
     redis?: { url: string; prefix?: string; ttl?: number };
     memory?: boolean;
+    latestVersion: Resolvable<number>;
+    namespace?: string;
 }
 
-export function configure(config: Configuration): ContentDelivery.Cache | undefined {
+export function configure(config: Configuration) {
+    const storage = configureStorage(config);
+
+    if (storage) {
+        return {
+            storage: config.namespace ? storage.namespace(config.namespace) : storage,
+            latestVersion: Resolvable.resolve(config.latestVersion),
+        };
+    }
+
+    return undefined;
+}
+
+function configureStorage(config: Configuration): ContentDelivery.Cache | undefined {
     const caches = [
         config.memory ? ContentDelivery.createSharedMemoryCache() : undefined,
         config.redis ? createRedisCache(config.redis) : undefined,

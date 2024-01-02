@@ -11,12 +11,12 @@ import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '
 
 import type { Cache, UnixTimestampInSeconds } from './cache';
 
-const FAKE_LATEST_VERSION = 0;
-
 export interface Options {
     formats?: Story.FormatVersion[];
-    cache?: Cache;
-    latestVersion?: UnixTimestampInSeconds;
+    cache?: {
+        storage: Cache;
+        latestVersion: UnixTimestampInSeconds;
+    };
 }
 
 export namespace stories {
@@ -98,11 +98,7 @@ export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
     newsroomThemeUuid: NewsroomTheme['id'] | undefined,
-    {
-        formats = [Story.FormatVersion.SLATEJS_V4],
-        cache,
-        latestVersion = FAKE_LATEST_VERSION,
-    }: Options = {},
+    { formats = [Story.FormatVersion.SLATEJS_V4], cache }: Options = {},
 ) {
     const client = {
         newsroom() {
@@ -345,8 +341,8 @@ export function createClient(
     if (cache) {
         injectCache(
             client,
-            cache.namespace(`${newsroomUuid}:${newsroomThemeUuid}:${formats.join(',')}:`),
-            latestVersion,
+            cache.storage.namespace(`${newsroomUuid}:${newsroomThemeUuid}:${formats.join(',')}:`),
+            cache.latestVersion,
             UNCACHED_METHODS,
         );
     }
