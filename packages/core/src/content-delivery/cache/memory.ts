@@ -14,13 +14,13 @@ type Entry = {
     accessed: UnixTimestampInMilliseconds;
 };
 
-export function createSharedMemoryCache(): Cache {
+export function createSharedMemoryCache(prefix: string = ''): Cache {
     function gc() {
         Array.from(CACHE.entries())
             .sort(([, a], [, b]) => cmp(a.accessed, b.accessed))
             .slice(RECORDS_LIMIT)
             .forEach(([key]) => {
-                CACHE.delete(key);
+                CACHE.delete(`${prefix}${key}`);
             });
     }
 
@@ -51,6 +51,10 @@ export function createSharedMemoryCache(): Cache {
             if (CACHE.size > RECORDS_LIMIT && Math.random() < GC_PROBABILITY) {
                 gc();
             }
+        },
+
+        namespace(namespace: string): Cache {
+            return createSharedMemoryCache(`${prefix}${namespace}:`);
         },
     };
 }

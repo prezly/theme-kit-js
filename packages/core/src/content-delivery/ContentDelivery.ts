@@ -81,6 +81,24 @@ const CHRONOLOGICALLY: SortOrder = SortOrder.combine(
     SortOrder.desc('published_at'),
 );
 
+/**
+ * Do not cache these methods, as they are derivatives of other cached methods.
+ */
+const UNCACHED_METHODS: (keyof Client)[] = [
+    'themeSettings',
+    'language',
+    'usedLanguages',
+    'locales',
+    'defaultLanguage',
+    'defaultLocale',
+    'languageOrDefault',
+    'companyInformation',
+    'notifications',
+    'category',
+    'translatedCategory',
+    'translatedCategories',
+];
+
 export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
@@ -330,17 +348,32 @@ export function createClient(
     };
 
     if (cache) {
-        injectCache(client, cache, latestVersion);
+        injectCache(
+            client,
+            cache.namespace(`${newsroomUuid}:${newsroomThemeUuid}:${formats.join(',')}:`),
+            latestVersion,
+            UNCACHED_METHODS,
+        );
     }
 
     return client;
 }
 
-function injectCache(client: Client, cache: Cache, latestVersion: UnixTimestampInSeconds) {
+function injectCache(
+    client: Client,
+    cache: Cache,
+    latestVersion: UnixTimestampInSeconds,
+    uncachedMethods: (keyof Client)[] = [],
+) {
     const methodCalls = new Map<string, Promise<any>>();
     const methodNames = Object.keys(client) as (keyof Client)[];
 
     methodNames.forEach((methodName) => {
+        if (uncachedMethods.includes(methodName)) {
+            // Do not cache this method.
+            return;
+        }
+
         const uncachedFn = client[methodName].bind(client);
 
         // eslint-disable-next-line no-param-reassign
@@ -356,7 +389,7 @@ function injectCache(client: Client, cache: Cache, latestVersion: UnixTimestampI
                 const cached = await cache.get(cacheKey, latestVersion);
                 if (cached) return cached;
 
-                const value = (uncachedFn as Function)(...args);
+                const value = await (uncachedFn as Function)(...args);
                 cache.set(cacheKey, value, latestVersion);
 
                 methodCalls.delete(dedupeKey);
