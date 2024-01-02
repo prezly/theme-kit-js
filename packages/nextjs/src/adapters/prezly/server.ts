@@ -51,7 +51,7 @@ export namespace PrezlyAdapter {
 
             const contentDelivery = ContentDelivery.createClient(client, newsroom, theme, {
                 formats,
-                cache: cacheConfig ? configureCache(cacheConfig) : undefined,
+                cache: cacheConfig ? configureCache(cacheConfig)?.namespace('content:') : undefined,
             });
 
             return { client, contentDelivery };
