@@ -12,7 +12,13 @@ interface Context<T extends RoutesMap> {
     };
     locales: Locale.Code[];
     defaultLocale: Locale.Code;
-    toLocaleSlug?: (locale: Locale.Code) => Locale.UrlSlug;
+    toLocaleSlug?: (
+        locale: Locale.Code,
+        context: {
+            locales: Locale.Code[];
+            defaultLocale: Locale.Code;
+        },
+    ) => Locale.UrlSlug;
 }
 
 export namespace RoutingAdapter {
