@@ -11,6 +11,7 @@ export namespace RoutingAdapter {
             locale: Locale.Code,
             context: Pick<Configuration, 'locales' | 'defaultLocale'>,
         ) => Locale.UrlSlug;
+        origin: `http://${string}` | `https://${string}`;
     };
 
     export function connect<Routes extends RoutesMap>(
@@ -20,9 +21,11 @@ export namespace RoutingAdapter {
         async function useRouting(): Promise<{
             router: Router<Routes>;
             generateUrl: UrlGenerator<Router<Routes>>;
+            generateAbsoluteUrl: UrlGenerator.Absolute<Router<Routes>>;
         }> {
             const router = createRouter();
-            const { locales, defaultLocale, toLocaleSlug } = await AsyncResolvable.resolve(config);
+            const { locales, defaultLocale, toLocaleSlug, origin } =
+                await AsyncResolvable.resolve(config);
 
             return {
                 router,
@@ -32,6 +35,14 @@ export namespace RoutingAdapter {
                         params as any,
                         { defaultLocale, locales, toLocaleSlug },
                     );
+                },
+                generateAbsoluteUrl(routeName: keyof Routes, params = {}) {
+                    const url = Routing.generateUrlFromPattern(
+                        router.routes[routeName].pattern as `/${string}`,
+                        params as any,
+                        { defaultLocale, locales, toLocaleSlug },
+                    );
+                    return `${origin}${url}`;
                 },
             };
         }
