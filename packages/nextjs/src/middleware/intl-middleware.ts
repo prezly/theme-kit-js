@@ -16,6 +16,14 @@ export type Configuration = {
      * "not-found" pages, which do not have access to request path.
      */
     localeSlugHeader?: string;
+
+    /**
+     * The middleware will attach the request URL `origin` value to the
+     * rewritten request headers. This helps to get the request origin
+     * (protocol + host) anywhere in the app.
+     */
+    requestOriginHeader?: string;
+
     /**
      * Checks if the string matched by the `:localeSlug` URL parameter
      * can map to any supported locale. This is necessary to resolve
@@ -55,6 +63,7 @@ type Match = {
  * @see Configuration.localeSlugHeader
  */
 export const DEFAULT_LOCALE_SLUG_HEADER = 'X-Prezly-Locale-Slug';
+export const DEFAULT_REQUEST_ORIGIN_HEADER = 'X-Prezly-Request-Origin';
 
 /**
  * A magic string that will be used when a route
@@ -66,10 +75,11 @@ export function create(router: Resolvable<Router>, config: Configuration = {}) {
     const {
         isSupportedLocale = isTheoreticallySupportedLocaleSlug,
         localeSlugHeader = DEFAULT_LOCALE_SLUG_HEADER,
+        requestOriginHeader = DEFAULT_REQUEST_ORIGIN_HEADER,
     } = config;
 
     return async (request: NextRequest) => {
-        const { pathname, searchParams } = request.nextUrl;
+        const { pathname, searchParams, origin } = request.nextUrl;
 
         const match = Resolvable.resolve(router).match(pathname, searchParams, {
             isSupportedLocale,
@@ -81,6 +91,7 @@ export function create(router: Resolvable<Router>, config: Configuration = {}) {
             return NextResponse.rewrite(new URL(rewrite, request.nextUrl), {
                 headers: {
                     [localeSlugHeader]: localeSlug,
+                    [requestOriginHeader]: origin,
                 },
             });
         }
@@ -97,6 +108,7 @@ export function create(router: Resolvable<Router>, config: Configuration = {}) {
         return NextResponse.rewrite(new URL(`/${X_DEFAULT_LOCALE_SLUG}/404`, request.nextUrl), {
             headers: {
                 [localeSlugHeader]: X_DEFAULT_LOCALE_SLUG,
+                [requestOriginHeader]: origin,
             },
         });
     };
@@ -220,6 +232,20 @@ export function getLocaleSlugFromHeader(
     }
 
     return code || undefined; // convert empty string to `undefined`
+}
+
+export function getRequestOriginFromHeader(
+    requestOriginHeader = DEFAULT_REQUEST_ORIGIN_HEADER,
+): string {
+    const origin = headers().get(requestOriginHeader);
+
+    if (origin === null) {
+        throw new Error(
+            `Request origin header (${requestOriginHeader}) is not set. Please check if the middleware is configured properly.`,
+        );
+    }
+
+    return origin;
 }
 
 function isTheoreticallySupportedLocaleSlug(localeSlug: string): boolean {
