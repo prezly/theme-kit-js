@@ -2,12 +2,12 @@ import { Category } from '@prezly/sdk';
 import { AsyncResolvable, Resolvable } from '@prezly/theme-kit-core';
 import type { Metadata } from 'next';
 
-import type { AppUrlGenerator, Prerequisites } from './types';
+import type { AbsoluteUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
 
 export type Params = Prerequisites & {
     category: AsyncResolvable<Category>;
-    generateUrl: AsyncResolvable<AppUrlGenerator>;
+    generateUrl: AsyncResolvable<AbsoluteUrlGenerator>;
 };
 
 export async function generateCategoryPageMetadata(

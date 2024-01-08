@@ -9,10 +9,10 @@ import type {
 import type { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 
-export type Url = `/${string}`;
+export type Url = `http://${string}` | `https://${string}`;
 
 // prettier-ignore
-export type AppUrlGenerator = {
+export type AbsoluteUrlGenerator = {
     (routeName: 'index', params: { localeCode: Locale.Code }): Url | undefined;
     (routeName: 'story', params: { localeCode: Locale.Code } & StoryRef): Url | undefined;
     (routeName: 'category', params: { localeCode: Locale.Code } & TranslatedCategory): Url | undefined;

@@ -2,11 +2,11 @@ import type { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Metadata } from 'next';
 
 import * as lib from './lib';
-import type { AppUrlGenerator, Prerequisites } from './lib';
+import type { AbsoluteUrlGenerator, Prerequisites } from './lib';
 
 export namespace MetadataAdapter {
     export type Configuration = Omit<Prerequisites, 'locale'> & {
-        generateUrl: AsyncResolvable<AppUrlGenerator>;
+        generateUrl: AsyncResolvable<AbsoluteUrlGenerator>;
     };
 
     type WithoutSharedConfiguration<T> = Omit<T, keyof Configuration>;

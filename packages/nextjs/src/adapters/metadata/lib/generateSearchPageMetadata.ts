@@ -1,13 +1,13 @@
 import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type { Metadata } from 'next';
 
-import type { AppUrlGenerator, Prerequisites } from './types';
+import type { AbsoluteUrlGenerator, Prerequisites } from './types';
 import { generatePageMetadata } from './utils';
 
 export type Params = Prerequisites & {
     title: string;
     description?: string;
-    generateUrl: AsyncResolvable<AppUrlGenerator>;
+    generateUrl: AsyncResolvable<AbsoluteUrlGenerator>;
 };
 
 export async function generateSearchPageMetadata(
