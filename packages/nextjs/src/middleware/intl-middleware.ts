@@ -234,9 +234,7 @@ export function getLocaleSlugFromHeader(
     return code || undefined; // convert empty string to `undefined`
 }
 
-export function getRequestOriginFromHeader(
-    requestOriginHeader = DEFAULT_REQUEST_ORIGIN_HEADER,
-): string {
+export function getRequestOriginFromHeader(requestOriginHeader = DEFAULT_REQUEST_ORIGIN_HEADER) {
     const origin = headers().get(requestOriginHeader);
 
     if (origin === null) {
@@ -245,7 +243,7 @@ export function getRequestOriginFromHeader(
         );
     }
 
-    return origin;
+    return origin as `http://${string}` | `https://${string}`;
 }
 
 function isTheoreticallySupportedLocaleSlug(localeSlug: string): boolean {
