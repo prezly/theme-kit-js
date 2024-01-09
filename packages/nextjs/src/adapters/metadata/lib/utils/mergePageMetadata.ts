@@ -15,7 +15,7 @@ function merge(a: Metadata, b: Metadata): Metadata {
         return omitUndefined(a);
     }
 
-    return {
+    return omitUndefined({
         ...omitUndefined(a),
         ...omitUndefined(b),
         robots: mergeRobots(a.robots, b.robots),
@@ -36,7 +36,7 @@ function merge(a: Metadata, b: Metadata): Metadata {
             ...omitUndefined(a.other ?? {}),
             ...omitUndefined(b.other ?? {}),
         },
-    };
+    });
 }
 
 function mergeRobots(a: Metadata['robots'], b: Metadata['robots']): Metadata['robots'] {
