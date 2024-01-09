@@ -41,6 +41,10 @@ export async function generateStoryPageMetadata(
     const locale = story.culture.code;
     const authorName = author?.display_name || author?.email;
 
+    const isEmbargoStory = story.visibility === Story.Visibility.EMBARGO;
+    const isPrivateStory = story.visibility === Story.Visibility.PRIVATE;
+    const isConfidentialStory = story.visibility === Story.Visibility.CONFIDENTIAL;
+
     const title =
         story.seo_settings.meta_title || story.seo_settings.default_meta_title || story.title;
 
@@ -76,7 +80,10 @@ export async function generateStoryPageMetadata(
                     ? { [`application/json`]: `${oembed.url}.json` }
                     : undefined,
             },
-            robots: isPreview || isSecret ? { index: false, follow: false } : undefined,
+            robots:
+                isPreview || isSecret || isPrivateStory || isEmbargoStory || isConfidentialStory
+                    ? { index: false, follow: false }
+                    : undefined,
             openGraph: {
                 title: story.title,
                 description,
