@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { AsyncResolvable, Routing } from '@prezly/theme-kit-core';
-import type { Locale } from '@prezly/theme-kit-intl';
+import { Locale } from '@prezly/theme-kit-intl';
 import { headers } from 'next/headers';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
@@ -186,7 +186,7 @@ export interface LocaleMatchContext {
  */
 export function getLocaleCodeFromHeader(
     localeCodeHeader = DEFAULT_LOCALE_CODE_HEADER,
-): Locale.AnySlug | undefined {
+): Locale.Code | undefined {
     const code = headers().get(localeCodeHeader);
 
     if (code === null) {
@@ -195,7 +195,7 @@ export function getLocaleCodeFromHeader(
         );
     }
 
-    return code || undefined; // convert empty string to `undefined`
+    return Locale.from(code).code || undefined; // convert empty string to `undefined`
 }
 
 /**
