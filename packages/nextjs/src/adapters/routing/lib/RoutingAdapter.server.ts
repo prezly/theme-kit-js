@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type { Route, Router, RoutesMap, UrlGenerator } from '@prezly/theme-kit-core';
+import type { Router, RoutesMap, UrlGenerator } from '@prezly/theme-kit-core';
 import { AsyncResolvable, Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
-
-type Awaitable<T> = T | Promise<T>;
 
 export namespace RoutingAdapter {
     export type Configuration = {
@@ -24,10 +22,6 @@ export namespace RoutingAdapter {
             router: Router<Routes>;
             generateUrl: UrlGenerator<Router<Routes>>;
             generateAbsoluteUrl: UrlGenerator.Absolute<Router<Routes>>;
-            resolveLocale: <T extends keyof Routes>(
-                routeName: T,
-                params: Routes[T] extends Route<string, infer P> ? P : never,
-            ) => Awaitable<Locale.Code | undefined>;
         }> {
             const router = createRouter();
             const { locales, defaultLocale, toLocaleSlug, origin } =
@@ -49,9 +43,6 @@ export namespace RoutingAdapter {
                         { defaultLocale, locales, toLocaleSlug },
                     );
                     return `${origin}${url}`;
-                },
-                resolveLocale(routeName: keyof Routes, params) {
-                    return router.routes[routeName].resolveLocale(params);
                 },
             };
         }
