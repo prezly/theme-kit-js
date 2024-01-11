@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
-import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import type { Locale } from '@prezly/theme-kit-intl';
 import UrlPattern from 'url-pattern';
 
-import { AsyncResolvable } from '../resolvable';
+import type { AsyncResolvable } from '../resolvable';
 
 import type { ExtractPathParams } from './types';
-import { matchLanguageByLocaleSlug, normalizeUrl } from './utils';
+import { normalizeUrl } from './utils';
 
 type Awaitable<T> = T | Promise<T>;
 
@@ -33,11 +32,18 @@ export type Route<Pattern = string, Match = unknown> = {
     rewrite(params: Match): string;
 
     /**
-     * Resolve locale code from the request parameters.
+     * Manually resolve locale code from the request parameters,
+     * if the stock logic is not suitable for the current route.
      */
-    resolveLocale(
+    resolveLocale?(
         params: Match,
-        context: Route.LocaleResolutionContext,
+        context: AsyncResolvable<{
+            /**
+             * The enabled locales, provided in the order of importance
+             * to resolve locale any possible slug ambiguity.
+             */
+            locales: Locale.Code[];
+        }>,
     ): Awaitable<Locale.Code | undefined>;
 };
 
@@ -45,13 +51,7 @@ export namespace Route {
     export interface Options<Pattern extends string, Match> {
         check?(match: Match, searchParams: URLSearchParams): boolean;
         generate?(pattern: UrlPattern, params: ExtractPathParams<Pattern>): `/${string}`;
-        resolveLocale?(params: ExtractPathParams<Pattern>): Awaitable<Locale.Code | undefined>;
-    }
-
-    export interface LocaleResolutionContext {
-        languages: AsyncResolvable<
-            Pick<NewsroomLanguageSettings, 'code' | 'is_default' | 'public_stories_count'>[]
-        >;
+        resolveLocale?: Route<Pattern, Match>['resolveLocale'];
     }
 
     export function create<
@@ -64,23 +64,6 @@ export namespace Route {
     ): Route<Pattern, Match> {
         const urlPattern = new UrlPattern(pattern);
         const rewritePattern = new UrlPattern(rewrite);
-
-        async function defaultResolveLocale(params: Match, context: Route.LocaleResolutionContext) {
-            if ('localeSlug' in params && typeof params.localeSlug === 'string') {
-                const lang = matchLanguageByLocaleSlug(
-                    await AsyncResolvable.resolve(context.languages),
-                    params.localeSlug,
-                );
-                return lang?.code;
-            }
-
-            const languages = await AsyncResolvable.resolve(context.languages);
-            const [defaultLocale] = languages
-                .filter((lang) => lang.is_default)
-                .map((lang) => lang.code);
-
-            return defaultLocale;
-        }
 
         return {
             pattern,
@@ -107,9 +90,7 @@ export namespace Route {
             rewrite(params: Match) {
                 return rewritePattern.stringify(params);
             },
-            resolveLocale(params, context) {
-                return (resolveLocale ?? defaultResolveLocale)(params, context);
-            },
+            resolveLocale,
         };
     }
 }

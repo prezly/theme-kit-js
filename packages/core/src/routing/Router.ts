@@ -14,10 +14,10 @@ export interface Router<Routes extends RoutesMap = RoutesMap> {
         searchParams: URLSearchParams,
         context: Router.MatchContext,
     ): {
-        [RouteName in keyof Routes]: Routes[RouteName] extends Route<string, infer Match>
+        [RouteName in keyof Routes]: Routes[RouteName] extends Route<infer Pattern, infer Match>
             ? Maybe<{
                   params: Match;
-                  route: Route<string, Match>;
+                  route: Route<Pattern, Match>;
               }>
             : undefined;
     }[keyof Routes];
