@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
+import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import type { Locale } from '@prezly/theme-kit-intl';
 import UrlPattern from 'url-pattern';
 
+import { AsyncResolvable } from '../resolvable';
+
 import type { ExtractPathParams } from './types';
-import { normalizeUrl } from './utils';
+import { matchLanguageByLocaleSlug, normalizeUrl } from './utils';
 
 type Awaitable<T> = T | Promise<T>;
 
@@ -31,13 +34,11 @@ export type Route<Pattern = string, Match = unknown> = {
 
     /**
      * Resolve locale code from the request parameters.
-     *
-     * This WILL NOT be invoked automatically by the app during request routing
-     * (as we're super limited with what we can do in the middleware edge runtime).
-     * This method is expected to be invoked by the page & layout rendering components
-     * after the request has been routed.
      */
-    resolveLocale(params: Match): Awaitable<Locale.Code | undefined>;
+    resolveLocale(
+        params: Match,
+        context: Route.LocaleResolutionContext,
+    ): Awaitable<Locale.Code | undefined>;
 };
 
 export namespace Route {
@@ -45,6 +46,12 @@ export namespace Route {
         check?(match: Match, searchParams: URLSearchParams): boolean;
         generate?(pattern: UrlPattern, params: ExtractPathParams<Pattern>): `/${string}`;
         resolveLocale?(params: ExtractPathParams<Pattern>): Awaitable<Locale.Code | undefined>;
+    }
+
+    export interface LocaleResolutionContext {
+        languages: AsyncResolvable<
+            Pick<NewsroomLanguageSettings, 'code' | 'is_default' | 'public_stories_count'>[]
+        >;
     }
 
     export function create<
@@ -58,11 +65,21 @@ export namespace Route {
         const urlPattern = new UrlPattern(pattern);
         const rewritePattern = new UrlPattern(rewrite);
 
-        function defaultResolveLocale(params: Match) {
-            if ('localeCode' in params) {
-                return params.localeCode as Locale.Code;
+        async function defaultResolveLocale(params: Match, context: Route.LocaleResolutionContext) {
+            if ('localeSlug' in params && typeof params.localeSlug === 'string') {
+                const lang = matchLanguageByLocaleSlug(
+                    await AsyncResolvable.resolve(context.languages),
+                    params.localeSlug,
+                );
+                return lang?.code;
             }
-            return undefined;
+
+            const languages = await AsyncResolvable.resolve(context.languages);
+            const [defaultLocale] = languages
+                .filter((lang) => lang.is_default)
+                .map((lang) => lang.code);
+
+            return defaultLocale;
         }
 
         return {
@@ -90,8 +107,8 @@ export namespace Route {
             rewrite(params: Match) {
                 return rewritePattern.stringify(params);
             },
-            resolveLocale(params: Match) {
-                return (resolveLocale ?? defaultResolveLocale)(params);
+            resolveLocale(params, context) {
+                return (resolveLocale ?? defaultResolveLocale)(params, context);
             },
         };
     }
