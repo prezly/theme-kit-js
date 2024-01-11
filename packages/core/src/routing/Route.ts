@@ -5,6 +5,8 @@ import UrlPattern from 'url-pattern';
 import type { ExtractPathParams } from './types';
 import { normalizeUrl } from './utils';
 
+type Awaitable<T> = T | Promise<T>;
+
 export type Route<Pattern = string, Match = unknown> = {
     /**
      * Route match pattern.
@@ -35,14 +37,14 @@ export type Route<Pattern = string, Match = unknown> = {
      * This method is expected to be invoked by the page & layout rendering components
      * after the request has been routed.
      */
-    resolveLocale(params: Match): Locale.Code | undefined;
+    resolveLocale(params: Match): Awaitable<Locale.Code | undefined>;
 };
 
 export namespace Route {
     export interface Options<Pattern extends string, Match> {
         check?(match: Match, searchParams: URLSearchParams): boolean;
         generate?(pattern: UrlPattern, params: ExtractPathParams<Pattern>): `/${string}`;
-        resolveLocale?(params: ExtractPathParams<Pattern>): Locale.Code;
+        resolveLocale?(params: ExtractPathParams<Pattern>): Awaitable<Locale.Code | undefined>;
     }
 
     export function create<
@@ -88,7 +90,7 @@ export namespace Route {
             rewrite(params: Match) {
                 return rewritePattern.stringify(params);
             },
-            resolveLocale(params: Match): Locale.Code | undefined {
+            resolveLocale(params: Match) {
                 return (resolveLocale ?? defaultResolveLocale)(params);
             },
         };
