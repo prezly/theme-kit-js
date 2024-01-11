@@ -2,8 +2,6 @@
 import type { Locale } from '@prezly/theme-kit-intl';
 import UrlPattern from 'url-pattern';
 
-import type { AsyncResolvable } from '../resolvable';
-
 import type { ExtractPathParams } from './types';
 import { normalizeUrl } from './utils';
 
@@ -35,16 +33,7 @@ export type Route<Pattern = string, Match = unknown> = {
      * Manually resolve locale code from the request parameters,
      * if the stock logic is not suitable for the current route.
      */
-    resolveLocale?(
-        params: Match,
-        context: AsyncResolvable<{
-            /**
-             * The enabled locales, provided in the order of importance
-             * to resolve locale any possible slug ambiguity.
-             */
-            locales: Locale.Code[];
-        }>,
-    ): Awaitable<Locale.Code | undefined>;
+    resolveLocale?(params: Match): Awaitable<Locale.Code | undefined>;
 };
 
 export namespace Route {
