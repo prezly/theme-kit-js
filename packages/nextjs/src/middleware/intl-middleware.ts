@@ -49,6 +49,8 @@ export type Configuration = {
     requestOriginHeader?: string;
 };
 
+type Awaitable<T> = T | Promise<T> | PromiseLike<T>;
+
 export type Router = {
     match(
         pathname: string,
@@ -62,7 +64,7 @@ export type Router = {
 export type Route = {
     generate(params: Params): string;
     rewrite(params: Params): string;
-    resolveLocale?(params: Params): Locale.Code | undefined;
+    resolveLocale?(params: Params): Awaitable<Locale.Code | undefined>;
 };
 
 type Params = Record<string, unknown>;
@@ -122,7 +124,7 @@ export async function handle(request: NextRequest, config: Configuration) {
     const localeSlug = match.params.localeSlug || undefined; // convert empty string to `undefined`
 
     const localeCode =
-        match.route.resolveLocale?.(match.params) ??
+        (match.route.resolveLocale ? await match.route.resolveLocale(match.params) : undefined) ??
         (localeSlug ? Routing.matchLocaleSlug(localeSlug, locales) : undefined) ??
         defaultLocale;
 
