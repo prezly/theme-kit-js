@@ -49,8 +49,6 @@ export type Configuration = {
     requestOriginHeader?: string;
 };
 
-type Awaitable<T> = T | Promise<T> | PromiseLike<T>;
-
 export type Router = {
     match(
         pathname: string,
@@ -58,7 +56,7 @@ export type Router = {
         context: {
             isSupportedLocale(locale: string): boolean;
         },
-    ): Awaitable<Match | undefined>;
+    ): Match | undefined;
 };
 
 export type Route = {
