@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
+import type { Locale } from '@prezly/theme-kit-intl';
 import UrlPattern from 'url-pattern';
 
 import type { ExtractPathParams } from './types';
 import { normalizeUrl } from './utils';
+
+type Awaitable<T> = T | Promise<T>;
 
 export type Route<Pattern = string, Match = unknown> = {
     /**
@@ -25,12 +28,19 @@ export type Route<Pattern = string, Match = unknown> = {
      * Rewrite external route URL to the internal unambiguous pages layout URL.
      */
     rewrite(params: Match): string;
+
+    /**
+     * Manually resolve locale code from the request parameters,
+     * if the stock logic is not suitable for the current route.
+     */
+    resolveLocale?(params: Match): Awaitable<Locale.Code | undefined>;
 };
 
 export namespace Route {
     export interface Options<Pattern extends string, Match> {
         check?(match: Match, searchParams: URLSearchParams): boolean;
         generate?(pattern: UrlPattern, params: ExtractPathParams<Pattern>): `/${string}`;
+        resolveLocale?: Route<Pattern, Match>['resolveLocale'];
     }
 
     export function create<
@@ -39,7 +49,7 @@ export namespace Route {
     >(
         pattern: Pattern,
         rewrite: string,
-        { check, generate }: Options<Pattern, Match> = {},
+        { check, generate, resolveLocale }: Options<Pattern, Match> = {},
     ): Route<Pattern, Match> {
         const urlPattern = new UrlPattern(pattern);
         const rewritePattern = new UrlPattern(rewrite);
@@ -69,6 +79,7 @@ export namespace Route {
             rewrite(params: Match) {
                 return rewritePattern.stringify(params);
             },
+            resolveLocale,
         };
     }
 }

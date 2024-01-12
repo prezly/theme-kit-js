@@ -11,4 +11,4 @@ assert(typeof RoutingAdapter.connect === 'function');
 // There was an issue with CommonJS build where default imports would not work properly
 const { IntlMiddleware } = require('../build/middleware/index.cjs');
 
-assert(typeof IntlMiddleware.handleLocaleSlug === 'function');
+assert(typeof IntlMiddleware.getLocaleCodeFromHeader === 'function');
