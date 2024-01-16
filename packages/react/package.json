@@ -1,14 +1,11 @@
 {
   "name": "@prezly/theme-kit-react",
-  "version": "0.0.0-next-932d00888f9363b1fee9c1fced455d89a28eb649",
+  "version": "8.0.0",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "type": "module",
   "main": "build/index.mjs",
   "types": "build/index.d.ts",
-  "files": [
-    "build",
-    "README.md"
-  ],
+  "files": ["build", "README.md"],
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
@@ -29,10 +26,7 @@
     "url": "git+https://github.com/prezly/theme-kit-js.git",
     "directory": "packages/react"
   },
-  "keywords": [
-    "prezly",
-    "react"
-  ],
+  "keywords": ["prezly", "react"],
   "author": "Prezly Team",
   "license": "MIT",
   "bugs": {
@@ -55,7 +49,7 @@
     "react-dom": "^18.x"
   },
   "dependencies": {
-    "@prezly/theme-kit-intl": "0.0.0-next-932d00888f9363b1fee9c1fced455d89a28eb649"
+    "@prezly/theme-kit-intl": "^8.0.0"
   },
   "publishConfig": {
     "access": "public"
