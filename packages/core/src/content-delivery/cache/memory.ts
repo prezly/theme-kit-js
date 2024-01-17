@@ -15,15 +15,6 @@ type Entry = {
 };
 
 export function createSharedMemoryCache(prefix: string = ''): Cache {
-    function gc() {
-        Array.from(CACHE.entries())
-            .sort(([, a], [, b]) => -cmp(a.accessed, b.accessed))
-            .slice(RECORDS_LIMIT)
-            .forEach(([key]) => {
-                CACHE.delete(key);
-            });
-    }
-
     return {
         get(key, latestVersion) {
             const entry = CACHE.get(`${prefix}${key}`);
@@ -57,6 +48,15 @@ export function createSharedMemoryCache(prefix: string = ''): Cache {
             return createSharedMemoryCache(`${prefix}${namespace}:`);
         },
     };
+}
+
+function gc() {
+    Array.from(CACHE.entries())
+        .sort(([, a], [, b]) => -cmp(a.accessed, b.accessed))
+        .slice(RECORDS_LIMIT)
+        .forEach(([key]) => {
+            CACHE.delete(key);
+        });
 }
 
 function cmp(a: UnixTimestampInMilliseconds, b: UnixTimestampInMilliseconds) {
