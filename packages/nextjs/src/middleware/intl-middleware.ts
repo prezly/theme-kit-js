@@ -40,13 +40,6 @@ export type Configuration = {
      * "not-found" pages, which do not have access to request path.
      */
     localeCodeHeader?: string;
-
-    /**
-     * The middleware will attach the request URL `origin` value to the
-     * rewritten request headers. This helps to get the request origin
-     * (protocol + host) anywhere in the app.
-     */
-    requestOriginHeader?: string;
 };
 
 type Awaitable<T> = T | Promise<T> | PromiseLike<T>;
@@ -84,7 +77,6 @@ export async function handle(request: NextRequest, config: Configuration) {
     const {
         router,
         localeCodeHeader = DEFAULT_LOCALE_CODE_HEADER,
-        requestOriginHeader = DEFAULT_REQUEST_ORIGIN_HEADER,
         toLocaleSlug = Routing.getShortestLocaleSlug,
     } = config;
 
@@ -93,7 +85,7 @@ export async function handle(request: NextRequest, config: Configuration) {
         config.locales,
     );
 
-    const { pathname, searchParams, origin } = request.nextUrl;
+    const { pathname, searchParams } = request.nextUrl;
 
     const match = router.match(pathname, searchParams, {
         isSupportedLocale(localeSlug) {
@@ -116,7 +108,6 @@ export async function handle(request: NextRequest, config: Configuration) {
         return NextResponse.rewrite(new URL(`/${localeCode}/_error404`, request.nextUrl), {
             headers: {
                 [localeCodeHeader]: localeCode,
-                [requestOriginHeader]: origin,
             },
         });
     }
@@ -142,7 +133,6 @@ export async function handle(request: NextRequest, config: Configuration) {
     return NextResponse.rewrite(new URL(rewrite, request.nextUrl), {
         headers: {
             [localeCodeHeader]: localeCode,
-            [requestOriginHeader]: origin,
         },
     });
 }
@@ -196,25 +186,6 @@ export function getLocaleCodeFromHeader(
     }
 
     return Locale.from(code).code || undefined; // convert empty string to `undefined`
-}
-
-/**
- * Get the request `origin` attached to the request headers.
- *
- * WARNING: Calling this function will opt out of Next.js optimizations.
- * Only call it when absolutely necessary.
- * See https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-functions
- */
-export function getRequestOriginFromHeader(requestOriginHeader = DEFAULT_REQUEST_ORIGIN_HEADER) {
-    const origin = headers().get(requestOriginHeader);
-
-    if (origin === null) {
-        throw new Error(
-            `Request origin header (${requestOriginHeader}) is not set. Please check if the middleware is configured properly.`,
-        );
-    }
-
-    return origin as `http://${string}` | `https://${string}`;
 }
 
 function isTheoreticallySupportedLocaleSlug(localeSlug: string): boolean {
