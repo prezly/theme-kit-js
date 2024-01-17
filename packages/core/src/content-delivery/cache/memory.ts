@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Cache, UnixTimestampInSeconds } from './type';
 
-const RECORDS_LIMIT = 10000;
+export const RECORDS_LIMIT = 10000;
 const GC_PROBABILITY = 1 / 100;
 
 const CACHE = new Map<string, Entry>();
