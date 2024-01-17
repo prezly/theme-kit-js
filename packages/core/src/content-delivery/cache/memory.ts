@@ -17,7 +17,7 @@ type Entry = {
 export function createSharedMemoryCache(prefix: string = ''): Cache {
     function gc() {
         Array.from(CACHE.entries())
-            .sort(([, a], [, b]) => cmp(a.accessed, b.accessed))
+            .sort(([, a], [, b]) => -cmp(a.accessed, b.accessed))
             .slice(RECORDS_LIMIT)
             .forEach(([key]) => {
                 CACHE.delete(key);
