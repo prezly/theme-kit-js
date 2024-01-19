@@ -46,7 +46,7 @@ describe('createSharedMemoryCache', () => {
         }
 
         // Write 10% more records, 10 times to trigger CG
-        for (let repeat = 0; repeat < 10; repeat += 1) {
+        for (let repeat = 0; repeat < 100; repeat += 1) {
             for (let i = RECORDS_LIMIT; i < RECORDS_LIMIT * 1.1; i += 1) {
                 cache.set(`record-${i}`, `value-${i}`, 0);
             }
