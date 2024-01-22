@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import type { ContentDelivery } from '@prezly/theme-kit-core';
+import stableStringify from 'json-stable-stringify';
 import { createClient, type RedisClientOptions } from 'redis';
 
 type Seconds = number;
@@ -15,10 +16,18 @@ type Options = RedisClientOptions & {
     prefix?: string;
 };
 
+const CONNECTIONS = new Map<string, Promise<ReturnType<typeof createClient>>>();
+
 export function createRedisCache({ ttl, prefix = '', ...options }: Options): ContentDelivery.Cache {
-    const connection = createClient(options)
-        .on('error', (error) => console.error(error))
-        .connect();
+    const connectionKey = stableStringify(options);
+
+    const connection =
+        CONNECTIONS.get(connectionKey) ??
+        createClient(options)
+            .on('error', (error) => console.error(error))
+            .connect();
+
+    CONNECTIONS.set(connectionKey, connection);
 
     function createCache(namespacePrefix = ''): ContentDelivery.Cache {
         return {
