@@ -34,10 +34,7 @@ export async function generateRootMetadata(
             newsroom,
             companyInformation,
             languages,
-            title: {
-                template: `%s | ${title}`,
-                default: title,
-            },
+            title,
             description,
         },
         {
