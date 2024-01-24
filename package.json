@@ -6,7 +6,8 @@
     "packages/core",
     "packages/intl",
     "packages/react",
-    "packages/nextjs"
+    "packages/nextjs",
+    "packages/ui"
   ],
   "scripts": {
     "build": "npx lerna run build",
