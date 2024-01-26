@@ -71,7 +71,7 @@ function createStyle<Props extends {}>(
 }
 
 const buttonStyle = createStyle<Button.Props>(
-    'flex items-center justify-center',
+    'flex items-center justify-center gap-2',
     'border border-transparent bg-transparent',
     // 'focus:ring-4 focus:ring-accent-lighter',
     'focus-visible:ring-4 focus-visible:ring-accent-lighter',
@@ -82,8 +82,8 @@ const buttonStyle = createStyle<Button.Props>(
             $on: 'rounded-full',
         },
         size: {
-            default: 'py-3 px-4 label-large',
-            small: 'py-2 px-3 label-medium',
+            default: 'p-3 label-large',
+            small: 'p-2 label-medium',
         },
         variation: {
             primary: [
@@ -96,7 +96,7 @@ const buttonStyle = createStyle<Button.Props>(
             ],
             secondary: [
                 'bg-white border-gray-200 text-gray-800',
-                'hover:border-gray-300 hover:bg-gray-50',
+                'hover:bg-gray-50 hover:border-gray-300',
                 // 'focus:bg-gray-50 focus:border-transparent',
                 'focus-visible:bg-gray-50 focus-visible:border-transparent',
                 'active:bg-gray-100 active:border-gray-400',
@@ -113,6 +113,8 @@ const buttonStyle = createStyle<Button.Props>(
     },
 );
 
+const contentStyle = createStyle<Button.Props>('first:ml-1 last:mr-1 empty:hidden');
+
 export function Button({
     variation = 'primary',
     className,
@@ -128,29 +130,16 @@ export function Button({
     rounded,
     ...buttonProps
 }: Button.Props) {
-    const isIconOnly = Boolean(icon && !children);
-    const hasLeftIcon = Boolean(icon && iconPlacement === 'left');
-    const hasRightIcon = Boolean(icon && iconPlacement === 'right');
-
     return (
         <button
             ref={forwardRef}
             type={type}
-            className={buttonStyle(
-                { rounded, size, variation },
-                size === 'small'
-                    ? `${hasLeftIcon && 'pl-2'} ${hasRightIcon && 'pr-2'}`
-                    : `${hasLeftIcon && 'pl-3'} ${hasRightIcon && 'pr-3'}`,
-                Boolean(Icon) && Boolean(children) && `gap-2`,
-                isIconOnly && (size === 'small' ? 'p-2' : 'p-3'),
-                className,
-            )}
+            className={buttonStyle({ rounded, size, variation }, className)}
             disabled={disabled || isLoading}
             {...buttonProps}
         >
             {iconPlacement === 'left' && <Icon icon={icon} />}
-            {/* If there are no children, we insert a zero-width space to preserve the line-height */}
-            <span className={contentClassName}>{children ?? <>&#8203;</>}</span>
+            <span className={contentStyle({ size }, contentClassName)}>{children}</span>
             {iconPlacement === 'right' && <Icon icon={icon} />}
         </button>
     );
