@@ -74,8 +74,8 @@ function createStyle<Props extends {}>(
 const buttonStyle = createStyle<Button.Props>(
     'flex items-center justify-center',
     'border border-transparent bg-transparent',
-    'focus:ring-4 focus:ring-accent-lighter',
-    'focus-within:ring-4 focus-within:ring-accent-lighter',
+    // 'focus:ring-4 focus:ring-accent-lighter',
+    'focus-visible:ring-4 focus-visible:ring-accent-lighter',
     'leading-[126%]',
     {
         rounded: {
@@ -90,23 +90,24 @@ const buttonStyle = createStyle<Button.Props>(
             primary: [
                 'bg-accent border-accent text-accent-button-text',
                 'hover:bg-accent-dark hover:border-accent-dark',
-                'focus:bg-accent-dark focus:border-transparent',
-                'focus-within:bg-accent-dark focus-within:border-transparent',
+                // 'focus:bg-accent-dark focus:border-transparent',
+                'focus-visible:bg-accent-dark focus-visible:border-transparent',
                 'active:bg-accent-dark active:border-accent-dark',
                 'disabled:bg-accent-lighter disabled:border-transparent disabled:opacity-50',
             ],
             secondary: [
                 'bg-white border-gray-200 text-gray-800',
                 'hover:border-gray-300 hover:bg-gray-50',
-                'focus:bg-gray-50 focus:border-transparent',
-                'focus-within:bg-gray-50 focus-within:border-transparent',
+                // 'focus:bg-gray-50 focus:border-transparent',
+                'focus-visible:bg-gray-50 focus-visible:border-transparent',
                 'active:bg-gray-100 active:border-gray-400',
                 'disabled:bg-white disabled:border-transparent disabled:text-gray-400',
             ],
             navigation: [
                 'p-0 bg-white text-gray-800',
                 'hover:text-gray-900',
-                'focus:text-gray-950',
+                // 'focus:text-gray-950',
+                'focus-visible:text-gray-950',
                 'disabled:bg-white disabled:text-gray-400',
             ],
         },
