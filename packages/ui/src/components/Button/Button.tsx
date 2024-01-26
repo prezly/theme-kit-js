@@ -1,12 +1,12 @@
-import { isNotUndefined } from '@technically/is-not-undefined';
 import type { ButtonHTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Icon } from './Icon';
 import { type BaseProps, ButtonSize, ButtonVariant } from './types';
 
-type ClassName = string;
-type Styling = ClassName | Array<ClassName>;
+type Styling = StylingArray | string | null | undefined | 0 | false;
+type StylingArray = Array<Styling>;
+
 type StylingVariations<Props extends {}> = Partial<{
     [K in keyof Props]:
         | Styling
@@ -21,7 +21,7 @@ function compileVariationStyling<Props extends {}>(
     styling: StylingVariations<Props>,
 ): Styling {
     return Object.entries(styling)
-        .map(([key, subStyling]): Styling[] | Styling | undefined => {
+        .map(([key, subStyling]): Styling => {
             const propName = key as keyof Props;
             const isTruthy = Boolean(props[propName]);
             if (isTruthy && typeof subStyling === 'string') {
@@ -35,40 +35,39 @@ function compileVariationStyling<Props extends {}>(
                 return [
                     isTruthy ? (subStyling as any).$on : (subStyling as any).$off,
                     typeof prop === 'string' ? (subStyling as any)[prop] : undefined,
-                ] as Styling[];
+                ] as Styling;
             }
             return undefined;
         })
-        .flat()
-        .filter(isNotUndefined)
         .flat();
 }
 
 function compileStyle<Props extends {}>(
     props: Partial<Props>,
     styles: (Styling | StylingVariations<Props>)[],
-): ClassName {
-    const classString = styles
-        .map((styling): Styling | undefined => {
-            if (typeof styling === 'string' || Array.isArray(styling)) {
-                return styling;
-            }
-            if (typeof styling === 'object' && styling !== null) {
-                return compileVariationStyling(props, styling);
-            }
+    ...extraClasses: Styling[]
+): string {
+    const classes = styles.map((styling): Styling => {
+        if (!styling) {
             return undefined;
-        })
-        .flat()
-        .filter(isNotUndefined)
-        .join(' ');
+        }
+        if (typeof styling === 'string' || Array.isArray(styling)) {
+            return styling;
+        }
+        if (typeof styling === 'object') {
+            return compileVariationStyling(props, styling);
+        }
+        return undefined;
+    });
 
-    return twMerge(classString);
+    return twMerge(classes, ...extraClasses);
 }
 
 function createStyle<Props extends {}>(
     ...styles: (Styling | StylingVariations<Required<Props>>)[]
 ) {
-    return (config: Partial<Props> = {}) => compileStyle(config, styles);
+    return (config: Partial<Props> = {}, ...extraClasses: Styling[]) =>
+        compileStyle(config, styles, ...extraClasses);
 }
 
 const buttonStyle = createStyle<Button.Props>(
@@ -137,15 +136,15 @@ export function Button({
         <button
             ref={forwardRef}
             type={type}
-            className={buttonStyle({ rounded, size, variation })}
-            /*
+            className={buttonStyle(
+                { rounded, size, variation },
                 size === 'small'
-                    ? `py-2 px-3 label-medium ${hasLeftIcon && 'pl-2'} ${hasRightIcon && 'pr-2'}`
-                    : `py-3 px-4 label-large ${hasLeftIcon && 'pl-3'} ${hasRightIcon && 'pr-3'}`,
+                    ? `${hasLeftIcon && 'pl-2'} ${hasRightIcon && 'pr-2'}`
+                    : `${hasLeftIcon && 'pl-3'} ${hasRightIcon && 'pr-3'}`,
                 Boolean(Icon) && Boolean(children) && `gap-2`,
                 isIconOnly && (size === 'small' ? 'p-2' : 'p-3'),
                 className,
-            // })} */
+            )}
             disabled={disabled || isLoading}
             {...buttonProps}
         >
