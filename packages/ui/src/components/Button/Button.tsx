@@ -57,7 +57,6 @@ export function Button({
     size = 'default',
     icon,
     iconPlacement = 'left',
-    isLoading,
     disabled,
     children,
     contentClassName,
@@ -69,7 +68,7 @@ export function Button({
             ref={forwardRef}
             type={type}
             className={buttonStyle({ rounded, size, variation }, className)}
-            disabled={disabled || isLoading}
+            disabled={disabled}
             {...buttonProps}
         >
             {iconPlacement === 'left' && <Icon icon={icon} />}
@@ -82,7 +81,6 @@ export function Button({
 export namespace Button {
     export type Props = BaseProps &
         ButtonHTMLAttributes<HTMLButtonElement> & {
-            isLoading?: boolean;
             contentClassName?: string;
         };
 

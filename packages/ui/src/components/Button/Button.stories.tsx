@@ -64,13 +64,6 @@ DisabledButton.args = {
     disabled: true,
 };
 
-export const LoadingButton: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
-LoadingButton.args = {
-    ...Primary.args,
-    icon: Icon,
-    isLoading: true,
-};
-
 export const Rounded: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 Rounded.parameters = {
     design: {
