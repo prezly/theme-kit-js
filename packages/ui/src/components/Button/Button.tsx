@@ -1,10 +1,10 @@
 import type { ButtonHTMLAttributes } from 'react';
 
 import { Icon } from './Icon';
-import { createStyle } from './styling';
+import { createStyling } from './styling';
 import { type BaseProps, ButtonSize, ButtonVariant } from './types';
 
-const buttonStyle = createStyle<Button.Props>(
+const buttonStyle = createStyling<Button.Props>(
     'flex items-center justify-center gap-2',
     'border border-transparent bg-transparent',
     // 'focus:ring-4 focus:ring-accent-lighter',
@@ -47,7 +47,7 @@ const buttonStyle = createStyle<Button.Props>(
     },
 );
 
-const contentStyle = createStyle<Button.Props>('first:ml-1 last:mr-1 empty:hidden');
+const contentStyle = createStyling<Button.Props>('first:ml-1 last:mr-1 empty:hidden');
 
 export function Button({
     variation = 'primary',
