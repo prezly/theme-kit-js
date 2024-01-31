@@ -1,6 +1,8 @@
 import { PlusIcon } from '@heroicons/react/24/solid';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
+import { extendTheme } from '../../styler';
+
 import { Button } from '.';
 
 const Icon = PlusIcon;
@@ -64,13 +66,6 @@ DisabledButton.args = {
     disabled: true,
 };
 
-export const LoadingButton: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
-LoadingButton.args = {
-    ...Primary.args,
-    icon: Icon,
-    isLoading: true,
-};
-
 export const Rounded: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
 Rounded.parameters = {
     design: {
@@ -100,4 +95,13 @@ SmallRounded.args = {
     rounded: true,
     size: 'small',
     iconPlacement: 'right',
+};
+
+export const Themed: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
+Themed.args = {
+    type: 'button',
+    variation: 'primary',
+    theme: extendTheme(Button.theme, {
+        content: 'title-x-large text-gray-50',
+    }),
 };
