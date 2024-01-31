@@ -1,9 +1,10 @@
 import NextLink, { type LinkProps } from 'next/link';
 import type { HTMLProps, Ref, RefObject } from 'react';
 
+import type { Theme as GenericTheme } from '../../styler';
+
 import { defaultTheme } from './defaultTheme';
 import { Icon } from './Icon';
-import type { Theme as GenericTheme } from './theming';
 import { type BaseProps, ButtonSize, ButtonVariant } from './types';
 
 export function ButtonLink(props: ButtonLink.Props) {

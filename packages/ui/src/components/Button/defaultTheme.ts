@@ -1,5 +1,5 @@
-import { createStyling } from './styling';
-import type { Theme } from './theming';
+import { createStyling, type Theme } from '../../styler';
+
 import type { BaseProps } from './types';
 
 export const defaultTheme: Theme<'button' | 'content' | 'icon', BaseProps> = {

@@ -1,7 +1,7 @@
 import { PlusIcon } from '@heroicons/react/24/solid';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { extendTheme } from './theming';
+import { extendTheme } from '../../styler';
 
 import { Button } from '.';
 

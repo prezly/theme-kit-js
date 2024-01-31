@@ -8,7 +8,7 @@ export type Theme<Element extends string, Props extends {} = {}> = {
     [E in Element]: StylingFn<Props>;
 };
 
-export type ThemeExtension<Element extends string, Props extends {}> = Partial<{
+type ThemeExtension<Element extends string, Props extends {}> = Partial<{
     [E in Element]: ClassNames | ((props: Partial<Props>) => ClassNames);
 }>;
 

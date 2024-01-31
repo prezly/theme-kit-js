@@ -5,8 +5,8 @@ import { twMerge } from 'tailwind-merge';
 export type Styling<Props extends {}> = ClassNames | ClassNamesMapping<Props>;
 
 export type ClassNames = ClassNamesArray | string | null | undefined | 0 | false;
-export type ClassNamesArray = Array<ClassNames>;
-export type ClassNamesMapping<Props extends {}> = Partial<{
+type ClassNamesArray = Array<ClassNames>;
+type ClassNamesMapping<Props extends {}> = Partial<{
     [K in keyof Props]:
         | ClassNames
         | Partial<{ $on: ClassNames; $off: ClassNames }>

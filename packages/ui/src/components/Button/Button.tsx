@@ -1,8 +1,9 @@
 import type { ButtonHTMLAttributes, Ref } from 'react';
 
+import type { Theme as GenericTheme } from '../../styler';
+
 import { defaultTheme } from './defaultTheme';
 import { Icon } from './Icon';
-import type { Theme as GenericTheme } from './theming';
 import { type BaseProps, ButtonSize, ButtonVariant } from './types';
 
 export function Button(props: Button.Props) {
