@@ -45,6 +45,6 @@ export const defaultTheme: Theme<'button' | 'content' | 'icon', BaseProps> = {
             },
         },
     ),
-    content: createStyling<BaseProps>('first:ml-1 last:mr-1 empty:hidden'),
+    content: () => 'first:ml-1 last:mr-1 empty:hidden',
     icon: () => '',
 };
