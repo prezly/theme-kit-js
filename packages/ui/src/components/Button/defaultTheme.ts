@@ -1,10 +1,8 @@
 import { createStyling } from './styling';
-import type { Theme as GenericTheme } from './theming';
+import type { Theme } from './theming';
 import type { BaseProps } from './types';
 
-export type Theme = GenericTheme<'button' | 'content' | 'icon', BaseProps>;
-
-export const theme: Theme = {
+export const defaultTheme: Theme<'button' | 'content' | 'icon', BaseProps> = {
     button: createStyling<BaseProps>(
         'flex items-center justify-center gap-2',
         'border border-transparent bg-transparent',

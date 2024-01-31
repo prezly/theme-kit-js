@@ -2,16 +2,13 @@ import { twMerge } from 'tailwind-merge';
 
 import type { ClassNames } from './styling';
 
-type StylingFn<Props extends {} | never> = (
-    props?: Partial<Props>,
-    ...classNames: ClassNames[]
-) => string;
+type StylingFn<Props extends {}> = (props: Props, ...classNames: ClassNames[]) => string;
 
-export type Theme<Element extends string, Props extends {} | never = never> = {
+export type Theme<Element extends string, Props extends {} = {}> = {
     [E in Element]: StylingFn<Props>;
 };
 
-export type ThemeExtension<Element extends string, Props extends {} | never> = Partial<{
+export type ThemeExtension<Element extends string, Props extends {}> = Partial<{
     [E in Element]: ClassNames | ((props: Partial<Props>) => ClassNames);
 }>;
 
@@ -22,7 +19,7 @@ export function extendTheme<Element extends string, Props extends {} | never>(
     return Object.fromEntries(
         Object.keys(theme).map((element): [Element, StylingFn<Props>] => [
             element as Element,
-            (props: Partial<Props> = {}, ...classNames: ClassNames[]) => {
+            (props: Props, ...classNames: ClassNames[]) => {
                 const base = theme[element as Element](props);
                 const ext = extension[element as Element];
                 if (typeof ext === 'function') {

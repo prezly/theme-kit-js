@@ -1,8 +1,9 @@
 import NextLink, { type LinkProps } from 'next/link';
 import type { HTMLProps, Ref, RefObject } from 'react';
 
+import { defaultTheme } from './defaultTheme';
 import { Icon } from './Icon';
-import { type Theme as ButtonTheme, theme as defaultTheme } from './theme';
+import type { Theme as GenericTheme } from './theming';
 import { type BaseProps, ButtonSize, ButtonVariant } from './types';
 
 export function ButtonLink(props: ButtonLink.Props) {
@@ -63,6 +64,9 @@ export namespace ButtonLink {
     export type Size = ButtonSize;
     export const Size = ButtonSize;
 
-    export type Theme = ButtonTheme;
+    export type Theme = GenericTheme<
+        'button' | 'icon' | 'content',
+        Omit<Props, 'theme' | 'forwardRef'>
+    >;
     export const theme: Theme = defaultTheme;
 }

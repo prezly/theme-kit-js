@@ -1,7 +1,8 @@
 import type { ButtonHTMLAttributes, Ref } from 'react';
 
+import { defaultTheme } from './defaultTheme';
 import { Icon } from './Icon';
-import { type Theme as ButtonTheme, theme as defaultTheme } from './theme';
+import type { Theme as GenericTheme } from './theming';
 import { type BaseProps, ButtonSize, ButtonVariant } from './types';
 
 export function Button(props: Button.Props) {
@@ -54,6 +55,9 @@ export namespace Button {
     export type Size = ButtonSize;
     export const Size = ButtonSize;
 
-    export type Theme = ButtonTheme;
+    export type Theme = GenericTheme<
+        'button' | 'icon' | 'content',
+        Omit<Props, 'theme' | 'forwardRef'>
+    >;
     export const theme: Theme = defaultTheme;
 }
