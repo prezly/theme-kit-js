@@ -1,6 +1,8 @@
 import { PlusIcon } from '@heroicons/react/24/solid';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
+import { extendTheme } from './theming';
+
 import { Button } from '.';
 
 const Icon = PlusIcon;
@@ -93,4 +95,13 @@ SmallRounded.args = {
     rounded: true,
     size: 'small',
     iconPlacement: 'right',
+};
+
+export const Themed: StoryObj<typeof Button> = ButtonTemplateWithChild.bind({});
+Themed.args = {
+    type: 'button',
+    variation: 'primary',
+    theme: extendTheme(Button.theme, {
+        content: 'title-x-large text-gray-50',
+    }),
 };
