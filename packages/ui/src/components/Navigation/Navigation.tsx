@@ -29,14 +29,15 @@ export function Navigation({
     indexHref,
     aboutHref,
     contactsHref,
+    mediaHref,
 }: Navigation.Props) {
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const { isSm } = useDevice();
-    const { name, galleries, logo } = newsroom;
+    const { name, logo } = newsroom;
     const hasExtraLinks = Boolean(
         categories.options.length > 0 ||
             languages.length > 0 ||
-            galleries ||
+            mediaHref ||
             hasStandaloneAboutPage ||
             hasStandaloneContactsPage ||
             externalSiteLink,
@@ -47,7 +48,7 @@ export function Navigation({
         [
             categories.options.length,
             languages.length,
-            galleries,
+            mediaHref,
             hasStandaloneAboutPage,
             hasStandaloneContactsPage,
             externalSiteLink,
@@ -110,7 +111,7 @@ export function Navigation({
                         categories.options.length > 0 ||
                             hasStandaloneAboutPage ||
                             hasStandaloneContactsPage ||
-                            galleries,
+                            mediaHref,
                     ) && (
                         <div className="pt-6 md:pt-0 flex flex-col md:flex-row md:items-center gap-12 md:gap-4 px-6 md:px-0">
                             {categories.options.length > 0 && (
@@ -120,8 +121,8 @@ export function Navigation({
                                     indexHref={categories.indexHref}
                                 />
                             )}
-                            {galleries > 0 && (
-                                <Link className={linkClassName} href="/media">
+                            {mediaHref && (
+                                <Link className={linkClassName} href={mediaHref}>
                                     {intl['media.title'] ?? 'Media'}
                                 </Link>
                             )}
@@ -204,7 +205,6 @@ export namespace Navigation {
 
     export interface DisplayedNewsroom {
         name: Newsroom['display_name'];
-        galleries: Newsroom['public_galleries_number'];
         logo: Newsroom['newsroom_logo'];
     }
 
