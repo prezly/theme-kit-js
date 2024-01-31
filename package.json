@@ -41,7 +41,7 @@
     "@babel/preset-typescript": "^7.23.3",
     "@playwright/test": "1.40.1",
     "@prezly/eslint-config": "5.3.2",
-    "@prezly/sdk": "18.3.0",
+    "@prezly/sdk": "19.6.1",
     "@types/jest": "29.5.11",
     "@types/node": "20.11.0",
     "@types/react": "18.2.47",

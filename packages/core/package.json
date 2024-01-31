@@ -29,7 +29,7 @@
     "test:build:cjs": "node tests/test-build.cjs"
   },
   "peerDependencies": {
-    "@prezly/sdk": "18.3.0"
+    "@prezly/sdk": "19.6.1"
   },
   "dependencies": {
     "@prezly/theme-kit-intl": "^8.0.0",
