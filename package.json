@@ -45,7 +45,7 @@
     "@prezly/sdk": "19.7.0",
     "@types/jest": "29.5.12",
     "@types/node": "20.11.16",
-    "@types/react": "18.2.47",
+    "@types/react": "18.2.52",
     "@types/react-dom": "18.2.18",
     "babel-plugin-add-import-extension": "1.6.0",
     "babel-plugin-auto-import": "1.1.0",
