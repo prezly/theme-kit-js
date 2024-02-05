@@ -49,6 +49,7 @@
     "@types/react-dom": "18.2.18",
     "babel-plugin-add-import-extension": "^1.6.0",
     "babel-plugin-auto-import": "^1.1.0",
+    "babel-plugin-transform-remove-imports": "^1.7.1",
     "concurrently": "7.6.0",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",

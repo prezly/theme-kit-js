@@ -11,6 +11,7 @@
         ]
       }
     ],
+    ["babel-plugin-transform-remove-imports",{ "test": "\\.css$" }],
     ["babel-plugin-add-import-extension", { "extension": "cjs" }]
   ],
   "presets": [
