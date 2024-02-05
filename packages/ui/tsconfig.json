@@ -6,6 +6,7 @@
     "jsx": "react-jsx",
     "module": "commonjs",
     "noEmit": false,
+    "emitDeclarationOnly": true,
     "outDir": "./build",
     "rootDir": ".",
     "target": "esnext",

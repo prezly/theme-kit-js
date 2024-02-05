@@ -25,7 +25,10 @@
   "scripts": {
     "prebuild": "rimraf build/*",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run build:types && npm run build:esm && npm run build:cjs",
+    "build:types": "tsc --project .",
+    "build:esm": "babel --config-file=../../babel.esm.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.mjs",
+    "build:cjs": "babel --config-file=../../babel.cjs.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.cjs",
     "preview": "vite preview",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
