@@ -27,8 +27,9 @@
   "scripts": {
     "prebuild": "rimraf build/*",
     "dev": "vite",
-    "build": "npm run build:types && npm run build:esm && npm run build:cjs",
+    "build": "npm run build:types && npm run build:esm && npm run build:cjs && npm run build:css",
     "build:types": "tsc --project .",
+    "build:css": "tailwindcss -i ./styles/base.styles.css -o ./build/styles.css",
     "build:esm": "npm run build:esm:code && npm run build:esm:icons",
     "build:esm:code": "babel  --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.ts,.tsx --out-file-extension=.mjs",
     "build:esm:icons": "babel --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.svg     --out-file-extension=.svg.mjs",
