@@ -17,7 +17,8 @@
   "presets": [
     "@babel/typescript",
     "@babel/react",
-    ["@babel/env", { "modules": "commonjs" }]
+    ["@babel/env", { "modules": "commonjs" }],
+    "@dr.pogodin/babel-preset-svgr"
   ],
   "ignore": [
     "**/*.test.*",
