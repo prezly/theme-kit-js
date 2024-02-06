@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-@import "@prezly/content-renderer-react-js/build/styles/styles.css";
-
 @import "./typography.styles.css";
+
+@import "@prezly/content-renderer-react-js/styles.css";
 @import "./content.styles.css";
 
 @import "tailwindcss/base";
