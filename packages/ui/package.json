@@ -13,8 +13,10 @@
   "types": "./build/index.d.ts",
   "exports": {
     ".": {
-      "import": "./build/index.es.js",
-      "require": "./build/index.cjs.js"
+      "types": "./build/index.d.ts",
+      "import": "./build/index.mjs",
+      "require": "./build/index.cjs",
+      "default": "./build/index.mjs"
     }
   },
   "files": ["build", "README.md"],
