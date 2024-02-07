@@ -26,10 +26,6 @@ jobs:
             - name: Build packages
               run: npm run build
 
-            - name: Install ui dependencies
-              working-directory: ./packages/ui
-              run: npm ci
-
             - name: Install Chromatic
               run: npm install --save-dev chromatic
 
