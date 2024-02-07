@@ -28,6 +28,7 @@ jobs:
 
             - name: Install Chromatic
               run: npm install --save-dev chromatic
+              working-directory: ./packages/ui
 
             #👇 Adds Chromatic as a step in the workflow
             - uses: chromaui/action@v1
@@ -37,7 +38,7 @@ jobs:
                   #👇 Chromatic projectToken,
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   token: ${{ secrets.GITHUB_TOKEN }}
-                  workingDir: ./packages/ui # 👈 Working directory for the Chromatic CLI
+                  workingDir: packages/ui # 👈 Working directory for the Chromatic CLI
                   exitZeroOnChanges: true # 👈 Option to prevent the workflow from failing
                   skip: '@(renovate/**|dependabot/**)' # 👈 Option to skip Chromatic builds for PRs created by Renovate and Dependabot
                   onlyChanged: true # 👈 Enable TurboSnap (only update snapshots for changed files)
