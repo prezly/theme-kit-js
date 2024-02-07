@@ -13,8 +13,10 @@
   "types": "./build/index.d.ts",
   "exports": {
     ".": {
-      "import": "./build/index.es.js",
-      "require": "./build/index.cjs.js"
+      "types": "./build/index.d.ts",
+      "import": "./build/index.mjs",
+      "require": "./build/index.cjs",
+      "default": "./build/index.mjs"
     }
   },
   "files": ["build", "README.md"],
@@ -25,7 +27,15 @@
   "scripts": {
     "prebuild": "rimraf build/*",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run build:types && npm run build:esm && npm run build:cjs && npm run build:css",
+    "build:types": "tsc --project .",
+    "build:css": "postcss ./styles/base.styles.css -o ./build/styles.css",
+    "build:esm": "npm run build:esm:code && npm run build:esm:icons",
+    "build:esm:code": "babel  --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.ts,.tsx --out-file-extension=.mjs",
+    "build:esm:icons": "babel --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.svg     --out-file-extension=.svg.mjs",
+    "build:cjs": "npm run build:cjs:code && npm run build:cjs:icons",
+    "build:cjs:code": "babel  --config-file=../../babel.cjs.json src/ --out-dir=build/ --extensions=.ts,.tsx --out-file-extension=.cjs",
+    "build:cjs:icons": "babel --config-file=../../babel.cjs.json src/ --out-dir=build/ --extensions=.svg     --out-file-extension=.svg.cjs",
     "preview": "vite preview",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
@@ -55,6 +65,8 @@
     "@vitejs/plugin-react": "3.1.0",
     "autoprefixer": "10.4.17",
     "postcss": "8.4.33",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.0.0",
     "prop-types": "15.8.1",
     "storybook": "7.6.12",
     "tailwindcss": "3.4.1",
@@ -66,7 +78,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@prezly/analytics-nextjs": "^1.13.0",
-    "@prezly/content-renderer-react-js": "^0.34.0",
+    "@prezly/content-renderer-react-js": "^0.34.2",
     "@prezly/story-content-format": "^0.64.0",
     "@prezly/uploadcare": "^2.4.3",
     "@prezly/uploadcare-image": "^0.3.2",

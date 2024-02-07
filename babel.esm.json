@@ -11,12 +11,14 @@
         ]
       }
     ],
+    ["babel-plugin-transform-remove-imports",{ "test": "\\.css$" }],
     ["babel-plugin-add-import-extension", { "extension": "mjs" }]
   ],
   "presets": [
     "@babel/typescript",
     "@babel/react",
-    ["@babel/env", { "modules": false }]
+    ["@babel/env", { "modules": false }],
+    "@dr.pogodin/babel-preset-svgr"
   ],
   "ignore": [
     "**/*.test.*",

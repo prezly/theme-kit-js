@@ -6,19 +6,20 @@
     "jsx": "react-jsx",
     "module": "commonjs",
     "noEmit": false,
+    "emitDeclarationOnly": true,
     "outDir": "./build",
-    "rootDir": ".",
+    "rootDir": "./src/",
     "target": "esnext",
-    "baseUrl": ".",
+    "baseUrl": "./src/",
     "paths": {
-      "@/components": ["src/components/"],
-      "@/components/*": ["src/components/*"],
-      "@/icons": ["src/icons/"],
-      "@/lib": ["src/lib/"],
-      "@/types": ["src/types.ts"],
-      "@/hooks": ["src/hooks/"]
+      "@/components": ["./components/"],
+      "@/components/*": ["./components/*"],
+      "@/icons": ["./icons/"],
+      "@/lib": ["./lib/"],
+      "@/types": ["./types.ts"],
+      "@/hooks": ["./hooks/"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["./src", "./@types/*", "next-env.d.ts", "tailwind.config.js", "vite.config.js"]
+  "include": ["./src", "./@types/svg.d.ts"]
 }

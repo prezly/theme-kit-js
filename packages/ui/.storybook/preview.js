@@ -1,4 +1,4 @@
-import '../src/base.styles.css';
+import '../styles/base.styles.css';
 
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
