@@ -5,8 +5,7 @@
   "workspaces": [
     "packages/core",
     "packages/intl",
-    "packages/nextjs",
-    "packages/ui"
+    "packages/nextjs"
   ],
   "scripts": {
     "build": "npx lerna run build",
