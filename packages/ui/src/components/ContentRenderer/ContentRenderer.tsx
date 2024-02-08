@@ -20,8 +20,6 @@ import {
 } from '@prezly/story-content-format';
 import type { PropsWithChildren } from 'react';
 
-import '@prezly/content-renderer-react-js/styles.css';
-
 import { ContactCard } from '../ContactCard';
 
 import {
@@ -40,7 +38,6 @@ import {
     Variable,
     VariableContextProvider,
 } from './components';
-import './ContentRenderer.css';
 
 export function ContentRenderer({ nodes, story, intl }: ContentRenderer.Props) {
     return (
