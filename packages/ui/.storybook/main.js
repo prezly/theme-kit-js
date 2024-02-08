@@ -2,6 +2,7 @@ import { join, dirname } from 'path';
 import { mergeConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';
+import turbosnap from 'vite-plugin-turbosnap';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -28,9 +29,13 @@ const config = {
     docs: {
         autodocs: true,
     },
-    viteFinal(config) {
+    viteFinal(config, { configType }) {
         return mergeConfig(config, {
-            plugins: [tsconfigPaths(), svgr()],
+            plugins: [
+                configType === 'PRODUCTION' ? turbosnap({ rootDir: process.cwd() }) : undefined,
+                tsconfigPaths(),
+                svgr(),
+            ].filter(Boolean),
             define: {
                 'process.env': {},
             },
