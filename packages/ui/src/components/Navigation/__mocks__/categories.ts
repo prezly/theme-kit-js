@@ -23,6 +23,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Environment',
                 description: '',
                 slug: 'environment',
+                public_stories_number: 2,
             },
             en_GB: {
                 locale: {
@@ -36,6 +37,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Environment',
                 description: '',
                 slug: 'environment',
+                public_stories_number: 3,
             },
         },
     },
@@ -58,6 +60,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Food',
                 description: '',
                 slug: 'food',
+                public_stories_number: 2,
             },
             en_GB: {
                 locale: {
@@ -71,6 +74,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Food',
                 description: '',
                 slug: 'food',
+                public_stories_number: 2,
             },
             nl_BE: {
                 locale: {
@@ -84,6 +88,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Eten',
                 description: '',
                 slug: 'eten',
+                public_stories_number: 1,
             },
         },
     },
@@ -108,6 +113,7 @@ export const CATEGORIES: Category[] = [
                 description:
                     "Scientific breakthroughs that show the future isn't all doom and Skynet.",
                 slug: 'technology',
+                public_stories_number: 2,
             },
             nl_BE: {
                 locale: {
@@ -122,6 +128,7 @@ export const CATEGORIES: Category[] = [
                 description:
                     'Wetenschappelijke doorbraken die de toekomst laten zien is niet alleen maar onheil en Skynet.',
                 slug: 'technologie',
+                public_stories_number: 1,
             },
         },
     },
@@ -144,6 +151,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Art',
                 description: 'Developments from the global art scene.',
                 slug: 'art',
+                public_stories_number: 2,
             },
             nl_BE: {
                 locale: {
@@ -157,6 +165,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Kunst',
                 description: '',
                 slug: 'kunst',
+                public_stories_number: 0,
             },
         },
     },
@@ -179,6 +188,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Games',
                 description: '',
                 slug: 'games',
+                public_stories_number: 1,
             },
         },
     },
@@ -201,6 +211,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Animals',
                 description: '',
                 slug: 'animals',
+                public_stories_number: 1,
             },
         },
     },
@@ -223,6 +234,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Sports',
                 description: '',
                 slug: 'sports',
+                public_stories_number: 1,
             },
         },
     },
@@ -245,6 +257,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Other',
                 description: '',
                 slug: 'other',
+                public_stories_number: 1,
             },
         },
     },
@@ -267,6 +280,7 @@ export const CATEGORIES: Category[] = [
                 name: 'Family',
                 description: '',
                 slug: 'family',
+                public_stories_number: 1,
             },
         },
     },
