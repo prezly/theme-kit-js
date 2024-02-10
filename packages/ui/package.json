@@ -65,15 +65,15 @@
     "@vitejs/plugin-react": "3.1.0",
     "autoprefixer": "10.4.17",
     "postcss": "8.4.33",
-    "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.0.0",
+    "postcss-cli": "11.0.0",
+    "postcss-import": "15.1.0",
     "prop-types": "15.8.1",
     "storybook": "7.6.12",
     "tailwindcss": "3.4.1",
     "vite": "4.5.2",
     "vite-plugin-dts": "3.7.2",
     "vite-plugin-svgr": "4.2.0",
-    "vite-plugin-turbosnap": "^1.0.3",
+    "vite-plugin-turbosnap": "1.0.3",
     "vite-tsconfig-paths": "4.2.3"
   },
   "dependencies": {
