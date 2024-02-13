@@ -8,8 +8,8 @@
   },
   "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/ui#readme",
   "license": "MIT",
-  "main": "./build/index.cjs.js",
-  "module": "./build/index.es.js",
+  "main": "./build/index.cjs",
+  "module": "./build/index.mjs",
   "types": "./build/index.d.ts",
   "exports": {
     ".": {
