@@ -30,7 +30,7 @@
   "references": [
     { "path": "./packages/nextjs" },
     { "path": "./packages/core" },
-//    { "path": "./packages/ui" },
+    { "path": "./packages/ui" },
     { "path": "./packages/intl" }
   ]
 }

@@ -25,7 +25,7 @@
     "url": "git+https://github.com/prezly/theme-kit-js.git"
   },
   "scripts": {
-    "prebuild": "rimraf build/*",
+    "prebuild": "rimraf build/* *.tsbuildinfo",
     "dev": "vite",
     "build": "npm run build:types && npm run build:esm && npm run build:cjs && npm run build:css",
     "build:types": "tsc --project .",
