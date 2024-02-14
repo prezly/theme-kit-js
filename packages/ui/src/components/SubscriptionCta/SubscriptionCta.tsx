@@ -6,6 +6,7 @@ import { Input } from '../Input';
 
 export function SubscriptionCta({
     className,
+    disabled = false,
     error,
     value,
     onChange,
@@ -34,9 +35,10 @@ export function SubscriptionCta({
                     placeholder={intl['subscription.labelEmail'] ?? 'Enter your email'}
                     value={value}
                     onChange={(event) => onChange(event.target.value)}
+                    readOnly={disabled}
                 />
                 {children}
-                <Button className="shrink-0 w-full sm:w-max" type="submit">
+                <Button className="shrink-0 w-full sm:w-max" type="submit" disabled={disabled}>
                     {intl['actions.subscribe'] ?? 'Subscribe'}
                 </Button>
             </form>
@@ -53,6 +55,7 @@ export namespace SubscriptionCta {
 
     export interface Props {
         className?: string;
+        disabled?: boolean;
         value: string;
         error?: string;
         onChange: (value: string) => void;
