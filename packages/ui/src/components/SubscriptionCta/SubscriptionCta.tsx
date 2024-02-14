@@ -56,7 +56,7 @@ export namespace SubscriptionCta {
         value: string;
         error?: string;
         onChange: (value: string) => void;
-        onSubmit: (event: FormEvent) => void;
+        onSubmit: (event: FormEvent<HTMLFormElement>) => void;
         intl?: Partial<Intl>;
         children?: ReactNode;
     }
