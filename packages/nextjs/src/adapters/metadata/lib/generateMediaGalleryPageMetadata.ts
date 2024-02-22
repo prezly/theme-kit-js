@@ -26,6 +26,7 @@ export async function generateMediaGalleryPageMetadata(
         {
             ...prerequisites,
             title: gallery.name,
+            description: gallery.description,
             imageUrl,
             generateUrl: (localeCode) => generateUrl('mediaGallery', { ...gallery, localeCode }),
         },
