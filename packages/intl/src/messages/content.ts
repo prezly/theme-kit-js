@@ -30,6 +30,10 @@ export const mediaGallery = defineMessages({
         id: 'mediaGallery.title',
         defaultMessage: 'Media galleries',
     },
+    imagesCount: {
+        id: 'mediaGallery.imagesCount',
+        defaultMessage: '{imagesCount, plural, =0 {No images} one {# image} other {# images} }',
+    },
 });
 
 export const noStories = defineMessages({
