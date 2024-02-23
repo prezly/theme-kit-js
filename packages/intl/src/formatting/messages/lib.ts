@@ -33,20 +33,9 @@ export function formatMessageString(
     return format.flatMap((token) => formatToken(locale, token, values)).join('');
 }
 
-const CACHE = new Map<string, IntlMessageFormat>();
-
-function prepareMessage(message?: string): IntlMessageFormat | undefined {
-    if (typeof message === 'undefined') {
-        return undefined;
-    }
-
-    const cached = CACHE.get(message);
-    if (cached) return cached;
-
-    const parsed = parseMessage(message);
-    CACHE.set(message, parsed);
-    return parsed;
-}
+const prepareMessage = withCache((message?: string): IntlMessageFormat | undefined =>
+    typeof message !== 'undefined' ? parseMessage(message) : undefined,
+);
 
 function formatToken<T>(
     locale: Locale.Code,
