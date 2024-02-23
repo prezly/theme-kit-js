@@ -25,6 +25,7 @@ const I18N: IntlDictionary = {
         {
             offset: 0,
             options: {
+                // eslint-disable-next-line @typescript-eslint/naming-convention
                 '=0': {
                     value: [
                         {
@@ -66,6 +67,7 @@ const I18N: IntlDictionary = {
 describe('formatMessageString', () => {
     it('should format intl-generated message intl object using the given values', () => {
         const formatted = formatMessageString(
+            'en',
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
             I18N,
             { name: 'Julio' },
@@ -76,6 +78,7 @@ describe('formatMessageString', () => {
 
     it('should leave placeholders if the given values object does not have enough data', () => {
         const formatted = formatMessageString(
+            'en',
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
             I18N,
             {},
@@ -86,6 +89,7 @@ describe('formatMessageString', () => {
 
     it('should fallback to the default message if the dictionary does not have it', () => {
         const formatted = formatMessageString(
+            'en',
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
             {},
             { name: 'Julio' },
@@ -96,19 +100,25 @@ describe('formatMessageString', () => {
 
     it('should format pluralization placeholders', () => {
         function format(imagesCount: number) {
-            return formatMessageString({ id: 'images.count', defaultMessage: 'default' }, I18N, {
-                imagesCount,
-            });
+            return formatMessageString(
+                'en',
+                { id: 'images.count', defaultMessage: 'default' },
+                I18N,
+                {
+                    imagesCount,
+                },
+            );
         }
 
         expect(format(0)).toBe('Images: no images');
-        expect(format(1)).toBe('Images: 1 images');
+        expect(format(1)).toBe('Images: 1 image');
         expect(format(1024)).toBe('Images: 1024 images');
     });
 
     it('should do the most minimal support for pluralization placeholders in default messages', () => {
         function format(imagesCount: number) {
             return formatMessageString(
+                'en',
                 {
                     id: 'images.count',
                     defaultMessage: 'Images: {imagesCount, plural, other {IDK}}',
@@ -129,6 +139,7 @@ describe('formatMessageString', () => {
 describe('formatMessageFragment', () => {
     it('should format intl-generated message intl object using the given values', () => {
         const formatted = formatMessageFragment(
+            'en',
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
             I18N,
             { name: createElement('strong', ['Julio']) },
@@ -139,6 +150,7 @@ describe('formatMessageFragment', () => {
 
     it('should leave placeholders if the given values object does not have enough data', () => {
         const formatted = formatMessageFragment(
+            'en',
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
             I18N,
             {},
@@ -149,6 +161,7 @@ describe('formatMessageFragment', () => {
 
     it('should fallback to the default message if the dictionary does not have it', () => {
         const formatted = formatMessageFragment(
+            'en',
             { id: 'hello.world', defaultMessage: 'Hello, {name}!' },
             {},
             { name: createElement('strong', ['Julio']) },
@@ -159,19 +172,25 @@ describe('formatMessageFragment', () => {
 
     it('should format pluralization placeholders', () => {
         function format(imagesCount: number) {
-            return formatMessageFragment({ id: 'images.count', defaultMessage: 'default' }, I18N, {
-                imagesCount,
-            });
+            return formatMessageFragment(
+                'en',
+                { id: 'images.count', defaultMessage: 'default' },
+                I18N,
+                {
+                    imagesCount,
+                },
+            );
         }
 
         expect(format(0)).toEqual(['Images: ', 'no images']);
-        expect(format(1)).toEqual(['Images: ', '1', ' images']);
+        expect(format(1)).toEqual(['Images: ', '1', ' image']);
         expect(format(1024)).toEqual(['Images: ', '1024', ' images']);
     });
 
     it('should do the most minimal support for pluralization placeholders in default messages', () => {
         function format(imagesCount: number) {
             return formatMessageFragment(
+                'en',
                 {
                     id: 'images.count',
                     defaultMessage: 'Images: {imagesCount, plural, other {IDK}}',

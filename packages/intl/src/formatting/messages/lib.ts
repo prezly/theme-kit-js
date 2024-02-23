@@ -1,8 +1,14 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
+import type { Locale } from '../../locales';
+import { withCache } from '../../utils';
+
 import { IntlMessageFormat } from './types';
 import type { IntlDictionary, IntlMessageDescriptor, IntlMessageValues } from './types';
 
+const getPluralRules = withCache((locale: Locale.Code) => new Intl.PluralRules(locale));
+
 export function formatMessageFragment<T>(
+    locale: Locale.Code,
     { id, defaultMessage }: IntlMessageDescriptor,
     dictionary: IntlDictionary,
     values: IntlMessageValues<T> = {},
@@ -10,10 +16,11 @@ export function formatMessageFragment<T>(
     const format = dictionary[id] ??
         prepareMessage(defaultMessage) ?? [{ type: 0, value: `[${id}]` }];
 
-    return format.flatMap((token) => formatToken(token, values));
+    return format.flatMap((token) => formatToken(locale, token, values));
 }
 
 export function formatMessageString(
+    locale: Locale.Code,
     { id, defaultMessage }: IntlMessageDescriptor,
     dictionary: IntlDictionary,
     values: IntlMessageValues<string | number> = {},
@@ -23,7 +30,7 @@ export function formatMessageString(
             { type: IntlMessageFormat.Type.LITERAL, value: `[${id}]` },
         ];
 
-    return format.flatMap((token) => formatToken(token, values)).join('');
+    return format.flatMap((token) => formatToken(locale, token, values)).join('');
 }
 
 const CACHE = new Map<string, IntlMessageFormat>();
@@ -42,6 +49,7 @@ function prepareMessage(message?: string): IntlMessageFormat | undefined {
 }
 
 function formatToken<T>(
+    locale: Locale.Code,
     token: IntlMessageFormat[number],
     values: IntlMessageValues<T> = {},
     poundValue?: number | undefined,
@@ -62,9 +70,12 @@ function formatToken<T>(
             );
         }
 
-        const option = token.options[`=${value}`] ?? token.options.other;
+        const option =
+            token.options[`=${value}`] ??
+            token.options[getPluralRules(locale).select(value)] ??
+            token.options.other;
 
-        return option.value.flatMap((x) => formatToken(x, values, value));
+        return option.value.flatMap((x) => formatToken(locale, x, values, value));
     }
 
     if (token.type === IntlMessageFormat.Type.POUND) {
