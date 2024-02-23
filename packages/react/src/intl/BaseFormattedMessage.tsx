@@ -8,7 +8,7 @@ import { formatMessageFragment } from '@prezly/theme-kit-intl';
 import type { ReactElement } from 'react';
 
 export function BaseFormattedMessage(props: BaseFormattedMessage.Props) {
-    return <>{formatMessageFragment(props.for, props.messages, props.values)}</>;
+    return <>{formatMessageFragment(props.locale, props.for, props.messages, props.values)}</>;
 }
 
 export namespace BaseFormattedMessage {
@@ -16,6 +16,6 @@ export namespace BaseFormattedMessage {
         messages: IntlDictionary;
         for: IntlMessageDescriptor;
         values?: IntlMessageValues<string | ReactElement>;
-        locale?: Locale | Locale.Code;
+        locale: Locale.Code;
     }
 }
