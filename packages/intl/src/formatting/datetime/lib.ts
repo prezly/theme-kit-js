@@ -4,7 +4,7 @@ import { withCache } from '../../utils';
 import { toDate } from './shared';
 import type { Iso8601Date, Timezone, UnixTimestampInSeconds } from './types';
 
-const getDateFormat = withCache(
+export const getDateFormat = withCache(
     (locale: Locale.Code, timeZone: string, options: Intl.DateTimeFormatOptions = {}) =>
         new Intl.DateTimeFormat(Locale.from(locale).isoCode, {
             year: 'numeric',
@@ -15,7 +15,7 @@ const getDateFormat = withCache(
         }),
 );
 
-const getTimeFormat = withCache(
+export const getTimeFormat = withCache(
     (locale: Locale.Code, timeZone: string, options: Intl.DateTimeFormatOptions = {}) =>
         new Intl.DateTimeFormat(Locale.from(locale).isoCode, {
             hour: 'numeric',

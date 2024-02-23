@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type { Locale } from '../../locales';
+import { Locale } from '../../locales';
 import { withCache } from '../../utils';
 
 import { IntlMessageFormat } from './types';
 import type { IntlDictionary, IntlMessageDescriptor, IntlMessageValues } from './types';
 
-const getPluralRules = withCache((locale: Locale.Code) => new Intl.PluralRules(locale));
+export const getPluralRules = withCache(
+    (locale: Locale.AnyCode) => new Intl.PluralRules(Locale.from(locale).isoCode),
+);
 
 export function formatMessageFragment<T>(
     locale: Locale.Code,

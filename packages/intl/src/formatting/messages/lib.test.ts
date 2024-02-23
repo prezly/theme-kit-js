@@ -1,5 +1,13 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { formatMessageFragment, formatMessageString, parseMessage, tokenizeMessage } from './lib';
+import { Locale, supportedLocales } from '../../locales';
+
+import {
+    formatMessageFragment,
+    formatMessageString,
+    getPluralRules,
+    parseMessage,
+    tokenizeMessage,
+} from './lib';
 import type { IntlDictionary } from './types';
 
 const I18N: IntlDictionary = {
@@ -256,6 +264,15 @@ describe('tokenizeMessage', () => {
             '!',
         ]);
     });
+});
+
+describe('getPluralRules', () => {
+    test.each(supportedLocales)(
+        'should be safe to use with any of the supported locales: %s',
+        (locale) => {
+            expect(getPluralRules(Locale.from(locale).code)).toBeInstanceOf(Intl.PluralRules);
+        },
+    );
 });
 
 /**
