@@ -1,23 +1,10 @@
 import { Locale } from '../../locales';
+import { withCache } from '../../utils';
 
 import { toDate } from './shared';
 import type { Iso8601Date, Timezone, UnixTimestampInSeconds } from './types';
 
-function withCache<P extends any[], T extends any>(fn: (...args: P) => T) {
-    const CACHE = new Map<string, T>();
-
-    return (...args: P) => {
-        const key = JSON.stringify(args);
-        const cached = CACHE.get(key);
-        if (cached) return cached;
-
-        const value = fn(...args);
-        CACHE.set(key, value);
-        return value;
-    };
-}
-
-const getDateFormat = withCache(
+export const getDateFormat = withCache(
     (locale: Locale.Code, timeZone: string, options: Intl.DateTimeFormatOptions = {}) =>
         new Intl.DateTimeFormat(Locale.from(locale).isoCode, {
             year: 'numeric',
@@ -28,7 +15,7 @@ const getDateFormat = withCache(
         }),
 );
 
-const getTimeFormat = withCache(
+export const getTimeFormat = withCache(
     (locale: Locale.Code, timeZone: string, options: Intl.DateTimeFormatOptions = {}) =>
         new Intl.DateTimeFormat(Locale.from(locale).isoCode, {
             hour: 'numeric',

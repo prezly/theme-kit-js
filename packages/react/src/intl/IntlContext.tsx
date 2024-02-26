@@ -30,13 +30,13 @@ export function IntlProvider({ children, ...value }: IntlContext & { children: R
 }
 
 export function useIntl() {
-    const { messages, ...value } = useContext(context);
+    const { messages, locale, ...value } = useContext(context);
 
     const formatMessage = useCallback(
         (descriptor: IntlMessageDescriptor, values?: IntlMessageValues<string>) =>
-            formatMessageString(descriptor, messages, values),
-        [messages],
+            formatMessageString(locale, descriptor, messages, values),
+        [locale, messages],
     );
 
-    return { ...value, messages, formatMessage };
+    return { ...value, locale, messages, formatMessage };
 }

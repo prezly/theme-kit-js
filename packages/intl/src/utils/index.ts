@@ -1,0 +1,1 @@
+export { withCache } from './withCache';

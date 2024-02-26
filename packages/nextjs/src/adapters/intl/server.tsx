@@ -41,7 +41,7 @@ export namespace IntlAdapter {
                     descriptor: IntlMessageDescriptor,
                     values?: IntlMessageValues<string>,
                 ) {
-                    return formatMessageString(descriptor, messages, values);
+                    return formatMessageString(locale, descriptor, messages, values);
                 },
                 timezone,
             };
@@ -54,7 +54,7 @@ export namespace IntlAdapter {
         }) {
             const messages = await resolveDictionary(props.locale);
 
-            return <>{formatMessageFragment(props.for, messages, props.values)}</>;
+            return <>{formatMessageFragment(props.locale, props.for, messages, props.values)}</>;
         }
 
         async function FormattedDate(props: Omit<BaseFormattedDate.Props, 'timezone'>) {
