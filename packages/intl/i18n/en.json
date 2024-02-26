@@ -78,10 +78,16 @@
     "message": "Something went wrong. Please try submitting the form again"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} other {# images} }"
+    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} other {# images} }"
   },
   "mediaGallery.title": {
     "message": "Media galleries"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Media gallery"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} other {# videos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

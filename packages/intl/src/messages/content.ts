@@ -30,9 +30,19 @@ export const mediaGallery = defineMessages({
         id: 'mediaGallery.title',
         defaultMessage: 'Media galleries',
     },
+    titleSingular: {
+        id: 'mediaGallery.titleSingular',
+        defaultMessage: 'Media gallery',
+    },
     imagesCount: {
         id: 'mediaGallery.imagesCount',
-        defaultMessage: '{imagesCount, plural, =0 {No images} one {# image} other {# images} }',
+        defaultMessage:
+            '{imagesCount, plural, =0 {No images} one {# image} few {# images} other {# images} }',
+    },
+    videosCount: {
+        id: 'mediaGallery.videosCount',
+        defaultMessage:
+            '{videosCount, plural, =0 {No videos} one {# video} few {# videos} other {# videos} }',
     },
 });
 
