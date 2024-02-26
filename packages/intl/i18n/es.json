@@ -77,8 +77,17 @@
   "errors.unknown": {
     "message": "Ha habido un error. Intenta volver a enviar el formulario"
   },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+  },
   "mediaGallery.title": {
     "message": "Galerías multimedia"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Media gallery"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
@@ -148,7 +157,7 @@
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Búsqueda"
+    "message": "Buscar"
   },
   "search.viewLess": {
     "message": "Mostrar menos"
