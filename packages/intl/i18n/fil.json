@@ -42,7 +42,7 @@
     "message": "Mag-unsubscribe"
   },
   "boilerplate.contact": {
-    "message": "Contact"
+    "message": "Makipag-ugnayan"
   },
   "boilerplate.title": {
     "message": "Tungkol sa {companyName}"
@@ -78,16 +78,16 @@
     "message": "Nagkaproblema. Pakisumitengmuli ang form"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {No images} one {# image} other {# images} }"
   },
   "mediaGallery.title": {
     "message": "Mga gallery ng media"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Gallery ng media"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {No videos} one {# video} other {# videos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
