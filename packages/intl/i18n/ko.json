@@ -78,16 +78,16 @@
     "message": "뭔가 잘 되었습니다. 양식을 다시 제출하세요"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {이미지 없음} other {# 이미지} }"
   },
   "mediaGallery.title": {
     "message": "미디어 갤러리"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "미디어 갤러리"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {동영상 없음} other {#동영상} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
