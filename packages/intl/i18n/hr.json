@@ -78,16 +78,16 @@
     "message": "Nešto je pošlo po krivu. Pokušajte ponovno poslati zahtjev"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Nema slika} one {# slika} few {# slika} other {# slike} }"
   },
   "mediaGallery.title": {
     "message": "Medijske galerije"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Medijska galerija"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Nema videozapisa} one {# video} few {# videozapisa} other {# videozapisi}}"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
