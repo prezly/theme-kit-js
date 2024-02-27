@@ -78,16 +78,16 @@
     "message": "Xəta baş verdi. Xahiş olunur formanı yenidən daxil etməyə çalışın"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Şəkil yoxdur} one {# şəkil} other {# şəkil} }"
   },
   "mediaGallery.title": {
     "message": "Media qalereyaları"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Mediya qalereyası"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Video yoxdur} one {# video} other {# video} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
