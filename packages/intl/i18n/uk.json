@@ -78,16 +78,16 @@
     "message": "Сталася помилка. Спробуйте надіслати форму повторно"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Немає зображень} one {# зображення} few {# зображення} many {# зображення} other {# зображення} }"
   },
   "mediaGallery.title": {
     "message": "Медіа-галереї"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Медіагалерея"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Немає відео} one {# відео} few {# відео} many {# відео} other {# відео} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
