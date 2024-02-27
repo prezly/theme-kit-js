@@ -78,16 +78,16 @@
     "message": "Възникна грешка. Пробвайте да подадете формуляра отново"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Няма изображения} one {# изображение} few {# изображения} many {# изображения} other {# изображения} }"
   },
   "mediaGallery.title": {
     "message": "Мултимедийни галерии"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Галерия с медии"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Няма видеоклипове} one {# видеоклип} few {# видеоклипове} many {# видеоклипове} other {# видеоклипове} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
