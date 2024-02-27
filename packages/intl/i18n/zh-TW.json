@@ -78,7 +78,7 @@
     "message": "出了點問題。請再嘗試提交表格。"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, = 0 {No images} 一張{# image} 數張{# images} 很多{# images} 其他{# images}}"
+    "message": "{imagesCount, plural, =0 {沒有圖片} other {# 張圖片} }"
   },
   "mediaGallery.title": {
     "message": "媒體畫廊"
@@ -87,7 +87,7 @@
     "message": "媒體圖片庫"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, = 0 {No videos} 一個{# video} 數個{# videos} 很多{# videos} 其他{# videos}}"
+    "message": "{videosCount, plural, =0 {沒有視頻} other {# 個視頻} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
