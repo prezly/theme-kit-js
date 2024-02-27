@@ -78,16 +78,16 @@
     "message": "Ha habido un error. Intenta volver a enviar el formulario"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Sin imágenes} one {# imagen} few {# imágenes} many {# imágenes} other {# imágenes} }"
   },
   "mediaGallery.title": {
     "message": "Galerías multimedia"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Galería multimedia"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Sin vídeos} one {# vídeos} few {# vídeos} many {# vídeos} other {# vídeos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
