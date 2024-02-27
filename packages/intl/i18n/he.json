@@ -78,16 +78,16 @@
     "message": "משהו השתבש. נא לנסות לשלוח את הטופס מחדש"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {אין תמונות} one {תמונה אחת #} many {# תמונות} other {# תמונות} }"
   },
   "mediaGallery.title": {
     "message": "גלריות מדיה"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "גלריית מדיה"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {אין סרטונים} one {סרטון אחד #} many {# סרטונים} other {# סרטונים} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
