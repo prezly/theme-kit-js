@@ -78,16 +78,16 @@
     "message": "Midagi läks valesti. Proovige vormi uuesti esitada"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Pildid puuduvad} one {# pilt} other {# pilte} }"
   },
   "mediaGallery.title": {
     "message": "Meediagaleriid"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Meediagalerii"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {No videos} one {# video} other {# videos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
