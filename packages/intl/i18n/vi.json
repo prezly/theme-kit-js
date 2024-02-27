@@ -78,7 +78,7 @@
     "message": "Đã xảy ra sự cố. Vui lòng gửi lại mẫu đơn"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} một {# image} vài {# images} nhiều {# images} {# images} khác}"
+    "message": "{imagesCount, plural, =0 {Không có hình ảnh} other {# hình ảnh} }"
   },
   "mediaGallery.title": {
     "message": "Thư viện đa phương tiện"
@@ -87,7 +87,7 @@
     "message": "Thư viện truyền thông"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} một {# video} vài {# videos} nhiều {# videos} {# videos} vài}"
+    "message": "{videosCount, plural, =0 {Không có video} other {# video} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
