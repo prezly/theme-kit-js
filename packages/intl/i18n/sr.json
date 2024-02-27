@@ -78,16 +78,16 @@
     "message": "Nešto nije u redu. Pokušajte ponovo da pošaljete obrazac"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Nema slika} one {# slika} few {# slike} many {# slika} other {# slika} }"
   },
   "mediaGallery.title": {
     "message": "Galerije medija"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Galerija medija"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Nema video snimaka} one {# video snimak} few {# video snimka} many {# video snimaka} other {# video snimaka} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
