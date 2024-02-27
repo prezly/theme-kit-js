@@ -77,8 +77,17 @@
   "errors.unknown": {
     "message": "Xəta baş verdi. Xahiş olunur formanı yenidən daxil etməyə çalışın"
   },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Şəkil yoxdur} one {# şəkil} other {# şəkil} }"
+  },
   "mediaGallery.title": {
     "message": "Media qalereyaları"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Mediya qalereyası"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Video yoxdur} one {# video} other {# video} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

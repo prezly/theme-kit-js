@@ -77,8 +77,17 @@
   "errors.unknown": {
     "message": "Nimadir xato ketdi. Shaklni qaytadan yuborishga urinib ko‘ring"
   },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Rasm yo'q} one {# rasm} other {# rasm} }"
+  },
   "mediaGallery.title": {
     "message": "Media galereyalar"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Media galereyasi"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural,=0 {Video yo'q} one {# video} other {# videolar} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

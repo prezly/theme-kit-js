@@ -77,8 +77,17 @@
   "errors.unknown": {
     "message": "อะไรบางอย่างผิดปกติ โปรดลองส่งแบบฟอร์มอีกครั้ง"
   },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {ไม่มีรูป} one {# รูป} few {# รูป} many {# รูป} other {# รูป} }"
+  },
   "mediaGallery.title": {
     "message": "แกลลอรี่สื่อ"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "แกลเลอรีสื่อ"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {ไม่มีวิดีโอ} one {# วิดีโอ} few {# วิดีโอ} many {# วิดีโอ} other {# วิดีโอ} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

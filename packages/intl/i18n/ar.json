@@ -39,13 +39,13 @@
     "message": "تبديل حالة عناصر تصفية البحث"
   },
   "actions.unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "إلغاء الاشتراك"
   },
   "boilerplate.contact": {
     "message": "اتصل"
   },
   "boilerplate.title": {
-    "message": "About {companyName}"
+    "message": "حول {companyName}"
   },
   "categories.title": {
     "message": "الفئات"
@@ -77,8 +77,17 @@
   "errors.unknown": {
     "message": "حدث خطأ ما. يُرجى تجربة إرسال النموذج مُجددًا"
   },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {لا توجد صور} one {# صورة} few {# صور} many {# صور} other {# صور} }"
+  },
   "mediaGallery.title": {
     "message": "معرض الوسائط"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "معرض الوسائط"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {لا توجد فيديوهات} one {# فيديو ~ ~ # فيديو} few {# فيديو} many {# فيديو} other {# فيديو} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

@@ -77,8 +77,17 @@
   "errors.unknown": {
     "message": "Jotain meni pieleen. Yritä lähettää lomake uudelleen"
   },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Ei kuvia} one {# kuva} other {# kuvat} }"
+  },
   "mediaGallery.title": {
     "message": "Mediagalleriat"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Mediagalleria"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Ei videoita} one {# video} other {# videot} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

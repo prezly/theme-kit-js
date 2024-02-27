@@ -3,13 +3,13 @@
     "message": "Zpět na domovskou stránku"
   },
   "actions.copyShareUrl": {
-    "message": "Zkopírovat adresu URL"
+    "message": "Zkopírovat URL"
   },
   "actions.download": {
     "message": "Stáhnout"
   },
   "actions.loadMore": {
-    "message": "Zjistit více"
+    "message": "Načíst více"
   },
   "actions.more": {
     "message": "Více"
@@ -77,8 +77,17 @@
   "errors.unknown": {
     "message": "Něco se pokazilo. Zkuste prosím odeslat formulář znovu"
   },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Žádné obrázky} one {# obrázek} few {# obrázky} many {# obrázků} other {# obrázků} }"
+  },
   "mediaGallery.title": {
     "message": "Galerie médií"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Galerie médií"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Žádná videa} one {# video} few {# videa} many {#videí} other {# videí} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
@@ -95,7 +104,7 @@
     "message": "Přepnout navigaci"
   },
   "newsroom.title": {
-    "message": "webové stránky"
+    "message": "Stránka"
   },
   "noStories.subtitle": {
     "message": "Vraťte se později zpět a podívejte se na nové příběhy."
@@ -107,7 +116,7 @@
     "message": "Pokud jste adresu URL napsali ručně, zkontrolujte pravopis v panelu adresy."
   },
   "notFound.title": {
-    "message": "Stránka, kterou hledáte, neexistuje…"
+    "message": "Stránka, kterou hledáte, neexistuje..."
   },
   "search.action": {
     "description": "The word should be treated as a verb (e.g. a Search action on a button)",

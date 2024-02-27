@@ -77,8 +77,17 @@
   "errors.unknown": {
     "message": "Noget gik galt. Prøv at indsende formularen igen"
   },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Ingen billeder} one {# billede} few {# billeder} many {# billeder} other {# billeder} }"
+  },
   "mediaGallery.title": {
     "message": "Mediegallerier"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Mediegalleri"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Ingen videoer} one {# video} few {# videoer} many {# videoer} other {# videoer} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
