@@ -1,5 +1,6 @@
-import type { NewsroomGallery } from '@prezly/sdk';
+import { NewsroomGallery } from '@prezly/sdk';
 import { AsyncResolvable, Galleries, Uploads } from '@prezly/theme-kit-core';
+import { formatMessageString, importDictionary, translations } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
 import type { AbsoluteUrlGenerator, Prerequisites } from './types';
@@ -14,10 +15,34 @@ export async function generateMediaGalleryPageMetadata(
     { generateUrl: resolvableUrlGenerator, gallery: resolveGallery, ...prerequisites }: Params,
     ...metadata: Metadata[]
 ): Promise<Metadata> {
+    const { locale } = prerequisites;
     const [generateUrl, gallery] = await AsyncResolvable.resolve(
         resolvableUrlGenerator,
         resolveGallery,
     );
+
+    const dictionary = await importDictionary(locale);
+
+    const title = `${formatMessageString(locale, translations.mediaGallery.titleSingular, dictionary)}: ${gallery.name}`;
+
+    let { description } = gallery;
+    if (gallery.type === NewsroomGallery.Type.IMAGE) {
+        description = `${formatMessageString(
+            locale,
+            translations.mediaGallery.imagesCount,
+            dictionary,
+            { imagesCount: gallery.images_number },
+        )} - ${gallery.description}`;
+    }
+
+    if (gallery.type === NewsroomGallery.Type.VIDEO) {
+        description = `${formatMessageString(
+            locale,
+            translations.mediaGallery.videosCount,
+            dictionary,
+            { videosCount: gallery.videos_number },
+        )} - ${gallery.description}`;
+    }
 
     const thumbnail = Galleries.getCoverImage(gallery);
     const imageUrl = thumbnail ? Uploads.getCdnUrl(thumbnail.uuid) : undefined;
@@ -25,8 +50,8 @@ export async function generateMediaGalleryPageMetadata(
     return generatePageMetadata(
         {
             ...prerequisites,
-            title: gallery.name,
-            description: gallery.description,
+            title,
+            description,
             imageUrl,
             generateUrl: (localeCode) => generateUrl('mediaGallery', { ...gallery, localeCode }),
         },
