@@ -78,7 +78,7 @@
     "message": "کوئی مسئلہ پیش آ گیا۔ براہ مہربانی فارم دوبارہ جمع کرانے کی کوشش کریں۔"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} ایک {# image} چند {# images} بہت {# images} دیگر {# images} }"
+    "message": "{imagesCount, plural, =0 {کوئی تصاویر نہیں ہیں۔} one {# تصویر} other {# تصاویر} }"
   },
   "mediaGallery.title": {
     "message": "میڈیا گیلریز"
@@ -87,7 +87,7 @@
     "message": "میڈیا گیلری"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} ایک {# video} چند {# videos} بہت {# videos} دیگر {# videos} }"
+    "message": "{videosCount, plural, =0 {کوئی ویڈیوز نہیں۔} one {# ویڈیو} other {# ویڈیوز} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
