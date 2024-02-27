@@ -78,16 +78,16 @@
     "message": "Čosi sa pokazilo. Skúste znova odoslať formulár"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Žiadne obrázky} one {# obrázok} few {# obrázky} other {# obrázkov} }"
   },
   "mediaGallery.title": {
     "message": "Galérie médií"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Galéria médií"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Žiadne videá} one {# video} few {# videá} other {# videí} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
