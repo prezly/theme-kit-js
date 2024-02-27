@@ -78,16 +78,16 @@
     "message": "कुछ गलत हो गया है। कृपया फॉर्म को फिर से जमा करने का प्रयास करें।"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {कोई इमेज नहीं} one {# इमेज} other {# इमेज} }"
   },
   "mediaGallery.title": {
     "message": "मीडिया गैलरी"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "मीडिया गैलरी"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {कोई वीडियो नहीं} one {# वीडियो} other {# वीडियो}}"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
