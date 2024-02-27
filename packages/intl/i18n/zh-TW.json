@@ -78,16 +78,16 @@
     "message": "出了點問題。請再嘗試提交表格。"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, = 0 {No images} 一張{# image} 數張{# images} 很多{# images} 其他{# images}}"
   },
   "mediaGallery.title": {
     "message": "媒體畫廊"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "媒體圖片庫"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, = 0 {No videos} 一個{# video} 數個{# videos} 很多{# videos} 其他{# videos}}"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
