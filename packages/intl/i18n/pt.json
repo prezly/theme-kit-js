@@ -6,7 +6,7 @@
     "message": "Copiar URL"
   },
   "actions.download": {
-    "message": "Download"
+    "message": "Descarregar"
   },
   "actions.loadMore": {
     "message": "Carregar mais"
@@ -78,16 +78,16 @@
     "message": "Algo correu mal. Por favor, experimente submeter o formulário novamente"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Sem imagens} one {# imagem} few {# imagens} many {# imagens} other {# imagens} }"
   },
   "mediaGallery.title": {
     "message": "Galerias de 'media'"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Galeria de média"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Sem vídeos} one {# vídeo} few {# vídeos} many {# vídeos} other {# vídeos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
@@ -104,7 +104,7 @@
     "message": "Ativar a navegação"
   },
   "newsroom.title": {
-    "message": "Site"
+    "message": "Local"
   },
   "noStories.subtitle": {
     "message": "Volte mais tarde para ver novas histórias."
