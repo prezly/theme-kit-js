@@ -12,7 +12,7 @@ jobs:
         # The first item in the matrix should be the minimal supported SDK version, the last item should be the latest supported version.
         # You should include any major releases that could potentially break the compatibility in between.
         # Please keep this in sync with the peer dependency version and with the test.yml workflow.
-        sdk-version: [ 19 ]
+        sdk-version: [ 20 ]
 
     steps:
     - uses: actions/checkout@v3
