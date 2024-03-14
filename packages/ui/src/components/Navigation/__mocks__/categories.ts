@@ -40,6 +40,8 @@ export const CATEGORIES: Category[] = [
                 public_stories_number: 3,
             },
         },
+        is_featured: false,
+        image: null
     },
     {
         id: 4876,
@@ -91,6 +93,8 @@ export const CATEGORIES: Category[] = [
                 public_stories_number: 1,
             },
         },
+        is_featured: false,
+        image: null,
     },
     {
         id: 5986,
@@ -131,6 +135,8 @@ export const CATEGORIES: Category[] = [
                 public_stories_number: 1,
             },
         },
+        is_featured: false,
+        image: null,
     },
     {
         id: 5987,
@@ -168,6 +174,8 @@ export const CATEGORIES: Category[] = [
                 public_stories_number: 0,
             },
         },
+        is_featured: false,
+        image: null,
     },
     {
         id: 6602,
@@ -191,6 +199,8 @@ export const CATEGORIES: Category[] = [
                 public_stories_number: 1,
             },
         },
+        is_featured: false,
+        image: null,
     },
     {
         id: 6603,
@@ -214,6 +224,8 @@ export const CATEGORIES: Category[] = [
                 public_stories_number: 1,
             },
         },
+        is_featured: false,
+        image: null,
     },
     {
         id: 6604,
@@ -237,6 +249,8 @@ export const CATEGORIES: Category[] = [
                 public_stories_number: 1,
             },
         },
+        is_featured: false,
+        image: null,
     },
     {
         id: 6605,
@@ -260,6 +274,8 @@ export const CATEGORIES: Category[] = [
                 public_stories_number: 1,
             },
         },
+        is_featured: false,
+        image: null,
     },
     {
         id: 6606,
@@ -283,5 +299,7 @@ export const CATEGORIES: Category[] = [
                 public_stories_number: 1,
             },
         },
+        is_featured: false,
+        image: null,
     },
 ];
