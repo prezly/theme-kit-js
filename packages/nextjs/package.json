@@ -86,9 +86,9 @@
     }
   },
   "dependencies": {
-    "@prezly/theme-kit-core": "^9.1.0",
-    "@prezly/theme-kit-intl": "^9.0.0",
-    "@prezly/theme-kit-react": "^9.0.0",
+    "@prezly/theme-kit-core": "9.1.0",
+    "@prezly/theme-kit-intl": "9.1.0",
+    "@prezly/theme-kit-react": "9.1.0",
     "@technically/is-not-undefined": "^1.0.0",
     "@technically/omit-undefined": "^1.0.2",
     "json-stable-stringify": "^1.1.1",

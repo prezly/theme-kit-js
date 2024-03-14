@@ -32,7 +32,7 @@
     "@prezly/sdk": "20.0.0"
   },
   "dependencies": {
-    "@prezly/theme-kit-intl": "^9.0.0",
+    "@prezly/theme-kit-intl": "9.1.0",
     "@prezly/uploadcare": "^2.3.4",
     "@technically/is-not-undefined": "^1.0.0",
     "@technically/omit-undefined": "^1.0.2",
