@@ -41,7 +41,7 @@ export const CATEGORIES: Category[] = [
             },
         },
         is_featured: false,
-        image: null
+        image: null,
     },
     {
         id: 4876,
