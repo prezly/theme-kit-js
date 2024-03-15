@@ -1,4 +1,4 @@
-import type { FormEvent } from 'react';
+import type { FormEvent, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Button } from '../Button';
@@ -6,18 +6,14 @@ import { Input } from '../Input';
 
 export function SubscriptionCta({
     className,
+    disabled = false,
     error,
     value,
     onChange,
     onSubmit,
     intl = {},
+    children,
 }: SubscriptionCta.Props) {
-    function handleSubmit(event?: FormEvent<HTMLFormElement>) {
-        event?.preventDefault();
-
-        onSubmit();
-    }
-
     return (
         <div
             className={twMerge(
@@ -30,7 +26,7 @@ export function SubscriptionCta({
             </h3>
             <form
                 className="flex flex-col sm:flex-row items-start w-full md:w-1/2 gap-4"
-                onSubmit={handleSubmit}
+                onSubmit={onSubmit}
             >
                 <Input
                     className="w-full"
@@ -39,8 +35,10 @@ export function SubscriptionCta({
                     placeholder={intl['subscription.labelEmail'] ?? 'Enter your email'}
                     value={value}
                     onChange={(event) => onChange(event.target.value)}
+                    readOnly={disabled}
                 />
-                <Button className="shrink-0 w-full sm:w-max" type="submit">
+                {children}
+                <Button className="shrink-0 w-full sm:w-max" type="submit" disabled={disabled}>
                     {intl['actions.subscribe'] ?? 'Subscribe'}
                 </Button>
             </form>
@@ -57,10 +55,12 @@ export namespace SubscriptionCta {
 
     export interface Props {
         className?: string;
+        disabled?: boolean;
         value: string;
         error?: string;
         onChange: (value: string) => void;
-        onSubmit: () => void;
+        onSubmit: (event: FormEvent<HTMLFormElement>) => void;
         intl?: Partial<Intl>;
+        children?: ReactNode;
     }
 }

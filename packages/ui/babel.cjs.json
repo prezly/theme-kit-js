@@ -1,0 +1,12 @@
+{
+    "extends": "../../babel.cjs.json",
+    "plugins": [
+        [
+            "babel-plugin-module-resolver",
+            {
+                "root": ["./src"],
+                "alias": { "@": "./src" }
+            }
+        ]
+    ]
+}

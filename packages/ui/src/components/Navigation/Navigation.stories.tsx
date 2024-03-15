@@ -20,7 +20,6 @@ const DISPLAYED_CATEGORIES: Navigation.DisplayedCategory[] = CATEGORIES.map((cat
 
 const DISPLAYED_NEWSROOM: Navigation.DisplayedNewsroom = {
     name: NEWSROOM.display_name,
-    galleries: NEWSROOM.public_galleries_number,
     logo: NEWSROOM.newsroom_logo,
 };
 
