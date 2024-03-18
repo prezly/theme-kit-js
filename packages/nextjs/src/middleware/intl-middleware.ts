@@ -130,7 +130,13 @@ export async function handle(request: NextRequest, config: Configuration) {
 
     // Rewrite the URl to route it to the right internal page path
     const rewrite = match.route.rewrite({ localeCode, ...match.params });
-    return NextResponse.rewrite(new URL(rewrite, request.nextUrl), {
+    const rewriteUrl = new URL(rewrite, request.nextUrl);
+
+    searchParams.forEach((value, key) => {
+        rewriteUrl.searchParams.set(key, value);
+    });
+
+    return NextResponse.rewrite(rewriteUrl, {
         headers: {
             [localeCodeHeader]: localeCode,
         },
