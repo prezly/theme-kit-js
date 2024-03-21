@@ -78,10 +78,10 @@
     "message": "Възникна грешка. Пробвайте да подадете формуляра отново"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Всички истории"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Последни истории"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Няма изображения} one {# изображение} few {# изображения} many {# изображения} other {# изображения} }"
