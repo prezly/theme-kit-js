@@ -78,10 +78,10 @@
     "message": "Une erreur s'est produite. Veuillez envoyer le formulaire à nouveau"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Toutes les histoires"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Derniers articles"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Pas d'images} one {# image} other {# images} }"
