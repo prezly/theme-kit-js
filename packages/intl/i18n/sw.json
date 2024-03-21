@@ -78,10 +78,10 @@
     "message": "Hitilafu fulani imetokea. Tafadhali jaribu kuwasilisha fomu tena"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Hadithi zote"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Hadithi za hivi karibuni"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Hakuna picha} one {# picha} other {# picha}}"
