@@ -78,10 +78,10 @@
     "message": "Marret xi ħaġa ħażin. Jekk jogħġbok erġa' ibgħat il-formola mill-ġdid"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "L-istejjer kollha"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "L-aħħar stejjer"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {L-ebda stampa} one {Stampa waħda} few {# stampi} many {#-il stampa} other {# stampa} }"
