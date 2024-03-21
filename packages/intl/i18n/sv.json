@@ -78,10 +78,10 @@
     "message": "Något blev fel. Var god försök sända formuläret igen"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Alla berättelser"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Senaste berättelserna"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Inga bilder} one {# bild} few {# bilder} many {# bilder} other {# bilder} }"
