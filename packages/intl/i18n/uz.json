@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Nimadir xato ketdi. Shaklni qaytadan yuborishga urinib ko‘ring"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Rasm yo'q} one {# rasm} other {# rasm} }"
   },
