@@ -78,10 +78,10 @@
     "message": "कुछ गलत हो गया है। कृपया फॉर्म को फिर से जमा करने का प्रयास करें।"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "सभी कहानियां"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "नई कहानियां"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {कोई इमेज नहीं} one {# इमेज} other {# इमेज} }"
