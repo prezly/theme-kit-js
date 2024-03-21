@@ -78,10 +78,10 @@
     "message": "Valami hiba történt. Kérjük, próbáld meg újra beküldeni a nyomtatványt"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Összes történet"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Legfrissebb történetek"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Nincsenek képek} one {# kép} other {# képek} }"
