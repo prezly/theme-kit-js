@@ -78,10 +78,10 @@
     "message": "Κάτι πήγε στραβά. Παρακαλούμε προσπαθήστε να υποβάλλετε ξανά τη φόρμα"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Όλες οι ιστορίες"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Τελευταίες ιστορίες"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Χωρίς εικόνες} one {# εικόνα} other {# εικόνες} }"
