@@ -78,10 +78,10 @@
     "message": "Coś poszło nie tak. Spróbuj ponownie przesłać formularz"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Wszystkie historie"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Najnowsze historie"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Brak obrazów} one {# obraz} few {# obrazy} many {# obrazy} other {# obrazy} }"
