@@ -78,10 +78,10 @@
     "message": "Нешта пайшло не так. Калі ласка, паспрабуйце адправіць форму яшчэ раз"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Усе гісторыі"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Апошнія гісторыі"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Няма выяў} one {# выява} few {# выявы} many {# выяў} other {# выяў} }"
