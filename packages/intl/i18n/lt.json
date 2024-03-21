@@ -78,10 +78,10 @@
     "message": "Kažkas nepavyko. Bandykite dar kartą pateikti formą"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Visos istorijos"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Naujausios istorijos"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Nėra vaizdų} one {# vaizdas} few {# vaizdai} many {# vaizdai} other {# vaizdai} }"
