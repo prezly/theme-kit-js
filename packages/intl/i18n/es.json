@@ -78,10 +78,10 @@
     "message": "Ha habido un error. Intenta volver a enviar el formulario"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Todas las historias"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Últimas historias"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Sin imágenes} one {# imagen} few {# imágenes} many {# imágenes} other {# imágenes} }"
