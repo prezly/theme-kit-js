@@ -78,10 +78,10 @@
     "message": "Nekaj je šlo narobe. Pošljite obrazec znova"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Vse zgodbe"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Najnovejše zgodbe"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Brez slik} one {# slika} few {# slike} many {# slike} other {# slike} }"
