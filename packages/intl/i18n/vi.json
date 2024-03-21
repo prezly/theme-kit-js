@@ -78,10 +78,10 @@
     "message": "Đã xảy ra sự cố. Vui lòng gửi lại mẫu đơn"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Tất cả các câu chuyện"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Câu chuyện mới nhất"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Không có hình ảnh} other {# hình ảnh} }"
