@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Čosi sa pokazilo. Skúste znova odoslať formulár"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Žiadne obrázky} one {# obrázok} few {# obrázky} other {# obrázkov} }"
   },
