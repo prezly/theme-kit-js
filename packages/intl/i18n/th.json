@@ -78,10 +78,10 @@
     "message": "อะไรบางอย่างผิดปกติ โปรดลองส่งแบบฟอร์มอีกครั้ง"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "ทุกเรื่อง"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "เรื่องล่าสุด"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {ไม่มีรูป} one {# รูป} few {# รูป} many {# รูป} other {# รูป} }"
