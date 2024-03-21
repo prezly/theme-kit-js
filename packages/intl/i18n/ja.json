@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "エラーが発生しました。もう一度フォームを送信してください。"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {画像なし} other {# 画像} }"
   },
