@@ -78,10 +78,10 @@
     "message": "حدث خطأ ما. يُرجى تجربة إرسال النموذج مُجددًا"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "جميع القصص"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "أحدث القصص"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {لا توجد صور} one {# صورة} few {# صور} many {# صور} other {# صور} }"
