@@ -78,10 +78,10 @@
     "message": "Něco se pokazilo. Zkuste prosím odeslat formulář znovu"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Všechny příběhy"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Nejnovější příběhy"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Žádné obrázky} one {# obrázek} few {# obrázky} many {# obrázků} other {# obrázků} }"
