@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "อะไรบางอย่างผิดปกติ โปรดลองส่งแบบฟอร์มอีกครั้ง"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {ไม่มีรูป} one {# รูป} few {# รูป} many {# รูป} other {# รูป} }"
   },
