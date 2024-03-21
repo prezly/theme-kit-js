@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "משהו השתבש. נא לנסות לשלוח את הטופס מחדש"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {אין תמונות} one {תמונה אחת #} many {# תמונות} other {# תמונות} }"
   },
