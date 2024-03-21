@@ -78,10 +78,10 @@
     "message": "Nimadir xato ketdi. Shaklni qaytadan yuborishga urinib ko‘ring"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Barcha hikoyalar"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Oxirgi hikoyalar"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Rasm yo'q} one {# rasm} other {# rasm} }"
