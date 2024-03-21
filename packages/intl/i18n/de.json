@@ -78,10 +78,10 @@
     "message": "Etwas ist schief gelaufen. Bitte versuchen Sie erneut, das Formular abzusenden"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Alle Geschichten"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Neueste Geschichten"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Keine bilder} one {# bild} other {# bilder} }"
