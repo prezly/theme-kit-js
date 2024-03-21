@@ -78,10 +78,10 @@
     "message": "Midagi läks valesti. Proovige vormi uuesti esitada"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Kõik lood"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Värskeimad lood"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Pildid puuduvad} one {# pilt} other {# pilte} }"
