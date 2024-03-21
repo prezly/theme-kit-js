@@ -78,10 +78,10 @@
     "message": "エラーが発生しました。もう一度フォームを送信してください。"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "すべてのストーリー"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "最新ストーリー"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {画像なし} other {# 画像} }"
