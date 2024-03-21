@@ -78,10 +78,10 @@
     "message": "Ceva nu este în regulă. Încercați să trimiteți formularul din nou"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Toate poveștile"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Cele mai recente povești"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Fără imagini} one {# imagine} few {# imagini} other {# imagini} }"
