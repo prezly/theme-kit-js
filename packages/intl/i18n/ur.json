@@ -78,10 +78,10 @@
     "message": "کوئی مسئلہ پیش آ گیا۔ براہ مہربانی فارم دوبارہ جمع کرانے کی کوشش کریں۔"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "تمام کہانیاں"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "نئی کہانیاں"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {کوئی تصاویر نہیں ہیں۔} one {# تصویر} other {# تصاویر} }"
