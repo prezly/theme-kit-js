@@ -78,10 +78,10 @@
     "message": "Terjadi kesalahan. Mohon coba kirimkan kembali formulirnya"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Semua stori"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Stori terbaru"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Tidak ada gambar} other {# gambar} }"
