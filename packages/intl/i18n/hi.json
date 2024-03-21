@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "कुछ गलत हो गया है। कृपया फॉर्म को फिर से जमा करने का प्रयास करें।"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {कोई इमेज नहीं} one {# इमेज} other {# इमेज} }"
   },
