@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Đã xảy ra sự cố. Vui lòng gửi lại mẫu đơn"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Không có hình ảnh} other {# hình ảnh} }"
   },
