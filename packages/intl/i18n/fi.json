@@ -78,10 +78,10 @@
     "message": "Jotain meni pieleen. Yritä lähettää lomake uudelleen"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Kaikki tarinat"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Uusimmat tarinat"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Ei kuvia} one {# kuva} other {# kuvat} }"
