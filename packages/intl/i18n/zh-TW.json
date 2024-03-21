@@ -78,10 +78,10 @@
     "message": "出了點問題。請再嘗試提交表格。"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "所有故事"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "最新故事"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {沒有圖片} other {# 張圖片} }"
