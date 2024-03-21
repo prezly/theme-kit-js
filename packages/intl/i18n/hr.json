@@ -78,10 +78,10 @@
     "message": "Nešto je pošlo po krivu. Pokušajte ponovno poslati zahtjev"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Sve vijesti"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Najnovije vijesti"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Nema slika} one {# slika} few {# slika} other {# slike} }"
