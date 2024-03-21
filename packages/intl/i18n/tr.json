@@ -78,10 +78,10 @@
     "message": "Bir şeyler yanlış gitti. Lütfen formu tekrar göndermeyi dene"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Tüm hikayeler"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Son hikayeler"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Resim yok} one {# resim} few {# resim} many {# resim} other {# resim} }"
