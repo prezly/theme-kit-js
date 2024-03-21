@@ -78,10 +78,10 @@
     "message": "Čosi sa pokazilo. Skúste znova odoslať formulár"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Všetky príbehy"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Najnovšie príbehy"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Žiadne obrázky} one {# obrázok} few {# obrázky} other {# obrázkov} }"
