@@ -78,10 +78,10 @@
     "message": "Lets het verkeerd geloop. Probeer die vorm weer indien"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Alle stories"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Nuutste stories"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Geen beelde nie} one {# beeld} other {# beelde} }"
