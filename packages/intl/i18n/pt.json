@@ -78,10 +78,10 @@
     "message": "Algo correu mal. Por favor, experimente submeter o formulário novamente"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Todas as histórias"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Últimas histórias"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Sem imagens} one {# imagem} few {# imagens} many {# imagens} other {# imagens} }"
