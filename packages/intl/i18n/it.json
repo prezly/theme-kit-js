@@ -78,10 +78,10 @@
     "message": "Qualcosa è andato storto. Prova a inviare nuovamente il modulo"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Tutte le storie"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Ultime storie"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Nessuna immagine} one {# immagine} many {# immagini} other {# immagini} }"
