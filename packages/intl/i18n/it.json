@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Qualcosa è andato storto. Prova a inviare nuovamente il modulo"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Nessuna immagine} one {# immagine} many {# immagini} other {# immagini} }"
   },
