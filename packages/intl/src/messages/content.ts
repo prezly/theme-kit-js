@@ -1,5 +1,16 @@
 import { defineMessages } from '../dsl';
 
+export const homepage = defineMessages({
+    latestStories: {
+        id: 'homepage.latestStories',
+        defaultMessage: 'Latest stories',
+    },
+    allStories: {
+        id: 'homepage.allStories',
+        defaultMessage: 'All stories',
+    },
+});
+
 export const boilerplate = defineMessages({
     title: {
         id: 'boilerplate.title',
