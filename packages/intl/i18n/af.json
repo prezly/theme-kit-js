@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Lets het verkeerd geloop. Probeer die vorm weer indien"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Geen beelde nie} one {# beeld} other {# beelde} }"
   },
