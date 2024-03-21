@@ -78,10 +78,10 @@
     "message": "Сталася помилка. Спробуйте надіслати форму повторно"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Всі історії"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Останні історії"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Немає зображень} one {# зображення} few {# зображення} many {# зображення} other {# зображення} }"
