@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Nešto je pošlo po krivu. Pokušajte ponovno poslati zahtjev"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Nema slika} one {# slika} few {# slika} other {# slike} }"
   },
