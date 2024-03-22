@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Възникна грешка. Пробвайте да подадете формуляра отново"
   },
+  "homepage.allStories": {
+    "message": "Всички истории"
+  },
+  "homepage.latestStories": {
+    "message": "Последни истории"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Няма изображения} one {# изображение} few {# изображения} many {# изображения} other {# изображения} }"
   },

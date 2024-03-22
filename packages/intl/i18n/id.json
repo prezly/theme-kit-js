@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Terjadi kesalahan. Mohon coba kirimkan kembali formulirnya"
   },
+  "homepage.allStories": {
+    "message": "Semua stori"
+  },
+  "homepage.latestStories": {
+    "message": "Stori terbaru"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Tidak ada gambar} other {# gambar} }"
   },

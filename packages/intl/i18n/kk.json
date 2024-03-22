@@ -77,17 +77,23 @@
   "errors.unknown": {
     "message": "Бірдеңе дұрыс болмады. Пішінді қайтадан жіберіп көріңіз"
   },
+  "homepage.allStories": {
+    "message": "Барлық оқиғалар"
+  },
+  "homepage.latestStories": {
+    "message": "Соңғы оқиғалар"
+  },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Сурет жоқ} one {# сурет} few {# сурет} many {# сурет} other {# сурет} }"
   },
   "mediaGallery.title": {
     "message": "Мультимедиа галереялары"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Мультимедиа галереясы"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Бейне жоқ} one {# бейне} few {# бейне} many {# бейне} other {# бейне} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

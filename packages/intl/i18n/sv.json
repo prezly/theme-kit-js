@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Något blev fel. Var god försök sända formuläret igen"
   },
+  "homepage.allStories": {
+    "message": "Alla berättelser"
+  },
+  "homepage.latestStories": {
+    "message": "Senaste berättelserna"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Inga bilder} one {# bild} few {# bilder} many {# bilder} other {# bilder} }"
   },

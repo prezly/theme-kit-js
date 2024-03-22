@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Noget gik galt. Prøv at indsende formularen igen"
   },
+  "homepage.allStories": {
+    "message": "Alle historier"
+  },
+  "homepage.latestStories": {
+    "message": "Seneste historier"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Ingen billeder} one {# billede} few {# billeder} many {# billeder} other {# billeder} }"
   },

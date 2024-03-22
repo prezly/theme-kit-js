@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Nekaj je šlo narobe. Pošljite obrazec znova"
   },
+  "homepage.allStories": {
+    "message": "Vse zgodbe"
+  },
+  "homepage.latestStories": {
+    "message": "Najnovejše zgodbe"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Brez slik} one {# slika} few {# slike} many {# slike} other {# slike} }"
   },

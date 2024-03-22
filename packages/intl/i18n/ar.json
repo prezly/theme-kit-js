@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "حدث خطأ ما. يُرجى تجربة إرسال النموذج مُجددًا"
   },
+  "homepage.allStories": {
+    "message": "جميع القصص"
+  },
+  "homepage.latestStories": {
+    "message": "أحدث القصص"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {لا توجد صور} one {# صورة} few {# صور} many {# صور} other {# صور} }"
   },

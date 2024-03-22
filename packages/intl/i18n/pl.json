@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Coś poszło nie tak. Spróbuj ponownie przesłać formularz"
   },
+  "homepage.allStories": {
+    "message": "Wszystkie historie"
+  },
+  "homepage.latestStories": {
+    "message": "Najnowsze historie"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Brak obrazów} one {# obraz} few {# obrazy} many {# obrazy} other {# obrazy} }"
   },

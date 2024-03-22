@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Kaut kas nogāja greizi. Lūdzu, mēģiniet vēlreiz iesniegt veidlapu"
   },
+  "homepage.allStories": {
+    "message": "Visi stāsti"
+  },
+  "homepage.latestStories": {
+    "message": "Jaunākie stāsti"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Nav attēlu} one {# attēls} other {# attēli} }"
   },

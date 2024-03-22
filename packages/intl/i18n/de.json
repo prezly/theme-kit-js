@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Etwas ist schief gelaufen. Bitte versuchen Sie erneut, das Formular abzusenden"
   },
+  "homepage.allStories": {
+    "message": "Alle Geschichten"
+  },
+  "homepage.latestStories": {
+    "message": "Neueste Geschichten"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Keine bilder} one {# bild} other {# bilder} }"
   },

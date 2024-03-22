@@ -77,6 +77,12 @@
   "errors.unknown": {
     "message": "Midagi läks valesti. Proovige vormi uuesti esitada"
   },
+  "homepage.allStories": {
+    "message": "Kõik lood"
+  },
+  "homepage.latestStories": {
+    "message": "Värskeimad lood"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Pildid puuduvad} one {# pilt} other {# pilte} }"
   },
