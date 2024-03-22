@@ -78,10 +78,10 @@
     "message": "Бірдеңе дұрыс болмады. Пішінді қайтадан жіберіп көріңіз"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Барлық оқиғалар"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Соңғы оқиғалар"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Сурет жоқ} one {# сурет} few {# сурет} many {# сурет} other {# сурет} }"
