@@ -78,10 +78,10 @@
     "message": "Nagkaproblema. Pakisumitengmuli ang form"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Lahat ng mga kwento"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Pinakabagong kwento"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {No images} one {# image} other {# images} }"
