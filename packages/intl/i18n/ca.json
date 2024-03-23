@@ -78,10 +78,10 @@
     "message": "Alguna cosa ha anat malament. Torna a enviar el formulari"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Totes les històries"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Darreres històries"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Sense imatges} one {# imatge} few {# imatges} many {# imatges} other {# imatges} }"
