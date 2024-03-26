@@ -14,7 +14,7 @@ export function BaseFormattedTime({
 
     return (
         <time {...attributes} dateTime={dateTime.toISOString()}>
-            {formatTime(dateTime, { locale, timezone })}
+            {formatTime(dateTime, { locale, timezone }).replace('GMT', 'UTC')}
         </time>
     );
 }
