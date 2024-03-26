@@ -21,7 +21,7 @@ export const getTimeFormat = withCache(
             hour: 'numeric',
             minute: 'numeric',
             timeZone,
-            timeZoneName: 'shortGeneric',
+            timeZoneName: 'longOffset',
             ...options,
         }),
 );
