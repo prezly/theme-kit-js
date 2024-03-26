@@ -78,10 +78,10 @@
     "message": "Det har oppstått en feil. Prøv å sende skjemaet på nytt"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Alle historier"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Nyeste historier"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Ingen bilder} one {# bilde} other {# bilder} }"
