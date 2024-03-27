@@ -11,10 +11,13 @@ export function BaseFormattedTime({
     ...attributes
 }: BaseFormattedTime.Props) {
     const dateTime = toDate(value);
+    const time = formatTime(dateTime, { locale, timezone })
+        .replace(/GMT(?=[+-]\d{2}:\d{2})/g, 'UTC')
+        .replace(/(UTC)(\+\d{2}:\d{2})/g, '($1$2)');
 
     return (
         <time {...attributes} dateTime={dateTime.toISOString()}>
-            {formatTime(dateTime, { locale, timezone }).replace('GMT', 'UTC')}
+            {time}
         </time>
     );
 }
