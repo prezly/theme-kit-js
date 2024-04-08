@@ -78,10 +78,10 @@
     "message": "Xəta baş verdi. Xahiş olunur formanı yenidən daxil etməyə çalışın"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Bütün hekayələr"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Ən son hekayələr"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Şəkil yoxdur} one {# şəkil} other {# şəkil} }"
