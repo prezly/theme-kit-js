@@ -35,6 +35,8 @@ export function getGalleryAlbumPageServerSideProps<CustomProps extends Record<st
             return { notFound: true };
         }
 
+        serverSideProps.newsroomContextProps.currentGallery = gallery;
+
         return processRequest(
             context,
             {
