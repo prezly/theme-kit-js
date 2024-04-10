@@ -5,6 +5,7 @@ import type {
     Newsroom,
     NewsroomCompanyInformation,
     NewsroomContact,
+    NewsroomGallery,
     NewsroomLanguageSettings,
     NewsroomThemePreset,
     Notification,
@@ -36,6 +37,10 @@ export interface NewsroomContextType {
      * Optional: Refers to a currently selected category when navigated to `/category/[slug]` page.
      */
     currentCategory?: Category;
+    /**
+     * Optional: Refers to a currently selected media gallery when navigated to `/media/album/[uuid]` page.
+     */
+    currentGallery?: NewsroomGallery;
     /**
      * Optional: Refers to a currently selected story when navigated to `/[slug]` page.
      */
@@ -79,6 +84,7 @@ export function NewsroomContextProvider({
     contacts,
     newsroom,
     currentCategory,
+    currentGallery,
     currentStory,
     companyInformation,
     languages,
@@ -100,6 +106,7 @@ export function NewsroomContextProvider({
                 contacts,
                 newsroom,
                 currentCategory,
+                currentGallery,
                 currentStory,
                 companyInformation,
                 languages,
