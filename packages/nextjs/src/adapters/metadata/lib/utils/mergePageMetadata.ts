@@ -28,10 +28,7 @@ function merge(a: Metadata, b: Metadata): Metadata {
             ...omitUndefined(a.twitter ?? {}),
             ...omitUndefined(b.twitter ?? {}),
         },
-        verification: {
-            ...omitUndefined(a.verification ?? {}),
-            ...omitUndefined(b.verification ?? {}),
-        },
+        verification: mergeVerification(a.verification, b.verification),
         other: {
             ...omitUndefined(a.other ?? {}),
             ...omitUndefined(b.other ?? {}),
@@ -40,6 +37,20 @@ function merge(a: Metadata, b: Metadata): Metadata {
 }
 
 function mergeRobots(a: Metadata['robots'], b: Metadata['robots']): Metadata['robots'] {
+    if (a && typeof a === 'object' && b && typeof b === 'object') {
+        return {
+            ...omitUndefined(a),
+            ...omitUndefined(b),
+        };
+    }
+
+    return b || a;
+}
+
+function mergeVerification(
+    a: Metadata['verification'],
+    b: Metadata['verification'],
+): Metadata['verification'] {
     if (a && typeof a === 'object' && b && typeof b === 'object') {
         return {
             ...omitUndefined(a),
