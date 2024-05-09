@@ -78,7 +78,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
-    "@prezly/analytics-nextjs": "^1.13.0",
+    "@prezly/analytics-nextjs": "^2.1.5",
     "@prezly/content-renderer-react-js": "0.37.0",
     "@prezly/story-content-format": "^0.64.0",
     "@prezly/uploadcare": "^2.4.3",
