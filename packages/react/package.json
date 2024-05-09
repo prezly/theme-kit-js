@@ -49,7 +49,7 @@
     "react-dom": "^18.x"
   },
   "dependencies": {
-    "@prezly/theme-kit-intl": "^9.3.2"
+    "@prezly/theme-kit-intl": "9.3.2"
   },
   "publishConfig": {
     "access": "public"
