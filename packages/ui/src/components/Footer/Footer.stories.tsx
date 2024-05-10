@@ -1,4 +1,4 @@
-import { AnalyticsContextProvider } from '@prezly/analytics-nextjs';
+import { AnalyticsProvider } from '@prezly/analytics-nextjs';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { COMPANY_INFORMATION } from '../Boilerplate/__mocks__';
@@ -17,9 +17,9 @@ const meta: Meta<typeof Footer> = {
     },
     decorators: [
         (Story) => (
-            <AnalyticsContextProvider>
+            <AnalyticsProvider>
                 <Story />
-            </AnalyticsContextProvider>
+            </AnalyticsProvider>
         ),
     ],
 };
