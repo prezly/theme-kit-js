@@ -1,4 +1,4 @@
-import { AnalyticsContextProvider } from '@prezly/analytics-nextjs';
+import { AnalyticsProvider } from '@prezly/analytics-nextjs';
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { STORY } from './__mocks__';
@@ -17,9 +17,9 @@ const meta: Meta<typeof ContentRenderer> = {
     decorators: [
         (Story) => (
             <p className="max-w-3xl p-10 mx-auto">
-                <AnalyticsContextProvider>
+                <AnalyticsProvider>
                     <Story />
-                </AnalyticsContextProvider>
+                </AnalyticsProvider>
             </p>
         ),
     ],
