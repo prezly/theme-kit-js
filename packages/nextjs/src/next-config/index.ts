@@ -38,7 +38,7 @@ export function createNextConfig({ recommendedHeaders = true }: Partial<Options>
                             },
                             {
                                 key: 'Content-Security-Policy',
-                                value: "upgrade-insecure-requests; report-uri https://csp.prezly.net/report; frame-ancestors 'self' https://rock.prezly.com https://rock.*.prezly.net http://rock.prezly.test",
+                                value: "upgrade-insecure-requests; report-uri https://csp.prezly.net/report; frame-ancestors 'self' https://rock.prezly.com https://*.prezly.net http://rock.prezly.test",
                             },
                         ],
                     },
