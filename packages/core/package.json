@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-core",
-  "version": "9.5.2",
+  "version": "9.6.0",
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
   "main": "build/index.mjs",
   "types": "build/index.d.ts",
@@ -32,7 +32,7 @@
     "@prezly/sdk": "21.6.0"
   },
   "dependencies": {
-    "@prezly/theme-kit-intl": "9.5.2",
+    "@prezly/theme-kit-intl": "^9.6.0",
     "@prezly/uploadcare": "2.4.4",
     "@technically/is-not-undefined": "^1.0.0",
     "@technically/omit-undefined": "^1.0.2",
