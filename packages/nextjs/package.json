@@ -75,7 +75,7 @@
   },
   "peerDependencies": {
     "@playwright/test": "1.x",
-    "@prezly/sdk": "21.0.0",
+    "@prezly/sdk": "21.6.0",
     "next": "^12.x || ^13.x || ^14.x",
     "react": "^17.x || ^18.x",
     "react-dom": "^17.x || ^18.x"
@@ -86,9 +86,9 @@
     }
   },
   "dependencies": {
-    "@prezly/theme-kit-core": "^9.4.0",
-    "@prezly/theme-kit-intl": "9.3.2",
-    "@prezly/theme-kit-react": "^9.4.0",
+    "@prezly/theme-kit-core": "9.5.2",
+    "@prezly/theme-kit-intl": "9.5.2",
+    "@prezly/theme-kit-react": "9.5.2",
     "@technically/is-not-undefined": "^1.0.0",
     "@technically/omit-undefined": "^1.0.2",
     "json-stable-stringify": "^1.1.1",
