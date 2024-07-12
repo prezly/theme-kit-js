@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Terjadi kesalahan. Mohon coba kirimkan kembali formulirnya"
   },
+  "homepage.allStories": {
+    "message": "Semua stori"
+  },
+  "homepage.latestStories": {
+    "message": "Stori terbaru"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Tidak ada gambar} other {# gambar} }"
+  },
   "mediaGallery.title": {
     "message": "Galeri media"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Galeri media"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Tidak ada video} other {# video} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
@@ -148,7 +163,7 @@
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Pencarian"
+    "message": "Cari"
   },
   "search.viewLess": {
     "message": "Lihat lebih sedikit"

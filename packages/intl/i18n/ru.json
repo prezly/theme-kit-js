@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Что-то пошло не так. Попробуйте отправить форму снова"
   },
+  "homepage.allStories": {
+    "message": "Все истории"
+  },
+  "homepage.latestStories": {
+    "message": "Последние истории"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Без изображений} one {# изображение} few {# изображения} many {# изображения} other {# изображения} }"
+  },
   "mediaGallery.title": {
     "message": "Медиагалереи"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Медиагалерея"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Нет видео} one {# видео} few {# видео} many {# видео} other {# видео} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

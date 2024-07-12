@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "कुछ गलत हो गया है। कृपया फॉर्म को फिर से जमा करने का प्रयास करें।"
   },
+  "homepage.allStories": {
+    "message": "सभी कहानियां"
+  },
+  "homepage.latestStories": {
+    "message": "नई कहानियां"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {कोई इमेज नहीं} one {# इमेज} other {# इमेज} }"
+  },
   "mediaGallery.title": {
     "message": "मीडिया गैलरी"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "मीडिया गैलरी"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {कोई वीडियो नहीं} one {# वीडियो} other {# वीडियो}}"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

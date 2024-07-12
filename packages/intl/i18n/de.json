@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Etwas ist schief gelaufen. Bitte versuchen Sie erneut, das Formular abzusenden"
   },
+  "homepage.allStories": {
+    "message": "Alle Geschichten"
+  },
+  "homepage.latestStories": {
+    "message": "Neueste Geschichten"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Keine bilder} one {# bild} other {# bilder} }"
+  },
   "mediaGallery.title": {
     "message": "Mediengalerien"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Mediengalerie"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Keine videos} one {# video} other {# videos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

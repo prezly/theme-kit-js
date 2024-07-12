@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Đã xảy ra sự cố. Vui lòng gửi lại mẫu đơn"
   },
+  "homepage.allStories": {
+    "message": "Tất cả các câu chuyện"
+  },
+  "homepage.latestStories": {
+    "message": "Câu chuyện mới nhất"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Không có hình ảnh} other {# hình ảnh} }"
+  },
   "mediaGallery.title": {
     "message": "Thư viện đa phương tiện"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Thư viện truyền thông"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Không có video} other {# video} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

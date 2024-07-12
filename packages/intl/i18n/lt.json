@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Kažkas nepavyko. Bandykite dar kartą pateikti formą"
   },
+  "homepage.allStories": {
+    "message": "Visos istorijos"
+  },
+  "homepage.latestStories": {
+    "message": "Naujausios istorijos"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Nėra vaizdų} one {# vaizdas} few {# vaizdai} many {# vaizdai} other {# vaizdai} }"
+  },
   "mediaGallery.title": {
     "message": "Medijos galerijos"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Žiniasklaidos galerija"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Nėra vaizdo įrašų} one {# vaizdo įrašų} few {# vaizdo įrašų} many {# vaizdo įrašų} other {# vaizdo įrašų} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
@@ -148,7 +163,7 @@
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Ieškoti"
+    "message": "Ieška"
   },
   "search.viewLess": {
     "message": "Rodyti mažiau"

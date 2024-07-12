@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Nešto nije u redu. Pokušajte ponovo da pošaljete obrazac"
   },
+  "homepage.allStories": {
+    "message": "Sve priče"
+  },
+  "homepage.latestStories": {
+    "message": "Najnovije priče"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Nema slika} one {# slika} few {# slike} many {# slika} other {# slika} }"
+  },
   "mediaGallery.title": {
     "message": "Galerije medija"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Galerija medija"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Nema video snimaka} one {# video snimak} few {# video snimka} many {# video snimaka} other {# video snimaka} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

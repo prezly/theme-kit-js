@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "エラーが発生しました。もう一度フォームを送信してください。"
   },
+  "homepage.allStories": {
+    "message": "すべてのストーリー"
+  },
+  "homepage.latestStories": {
+    "message": "最新ストーリー"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {画像なし} other {# 画像} }"
+  },
   "mediaGallery.title": {
     "message": "メディアギャラリー"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "メディアギャラリー"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {動画なし} other {#動画} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

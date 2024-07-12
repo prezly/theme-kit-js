@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Valami hiba történt. Kérjük, próbáld meg újra beküldeni a nyomtatványt"
   },
+  "homepage.allStories": {
+    "message": "Összes történet"
+  },
+  "homepage.latestStories": {
+    "message": "Legfrissebb történetek"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Nincsenek képek} one {# kép} other {# képek} }"
+  },
   "mediaGallery.title": {
     "message": "Médiagalériák"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Média galéria"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Nincsenek videók} one {# video} other {# videók} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

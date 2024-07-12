@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Det har oppstått en feil. Prøv å sende skjemaet på nytt"
   },
+  "homepage.allStories": {
+    "message": "Alle historier"
+  },
+  "homepage.latestStories": {
+    "message": "Nyeste historier"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Ingen bilder} one {# bilde} other {# bilder} }"
+  },
   "mediaGallery.title": {
     "message": "Mediagallerier"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Mediegalleri"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Ingen videoer} one {# video} other {# videoer} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

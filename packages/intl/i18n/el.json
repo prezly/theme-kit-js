@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Κάτι πήγε στραβά. Παρακαλούμε προσπαθήστε να υποβάλλετε ξανά τη φόρμα"
   },
+  "homepage.allStories": {
+    "message": "Όλες οι ιστορίες"
+  },
+  "homepage.latestStories": {
+    "message": "Τελευταίες ιστορίες"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Χωρίς εικόνες} one {# εικόνα} other {# εικόνες} }"
+  },
   "mediaGallery.title": {
     "message": "Γκαλερί Μέσων"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Γκαλερί πολυμέσων"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Δεν υπάρχουν βίντεο} one {# βίντεο} other {# βίντεο} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

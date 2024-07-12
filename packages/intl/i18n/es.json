@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Ha habido un error. Intenta volver a enviar el formulario"
   },
+  "homepage.allStories": {
+    "message": "Todas las historias"
+  },
+  "homepage.latestStories": {
+    "message": "Últimas historias"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Sin imágenes} one {# imagen} few {# imágenes} many {# imágenes} other {# imágenes} }"
+  },
   "mediaGallery.title": {
     "message": "Galerías multimedia"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Galería multimedia"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Sin vídeos} one {# vídeos} few {# vídeos} many {# vídeos} other {# vídeos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
@@ -148,7 +163,7 @@
   },
   "search.title": {
     "description": "The word should be treated as a noun (e.g. a title of the Search section)",
-    "message": "Búsqueda"
+    "message": "Buscar"
   },
   "search.viewLess": {
     "message": "Mostrar menos"

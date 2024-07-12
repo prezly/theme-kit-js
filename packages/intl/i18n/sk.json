@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Čosi sa pokazilo. Skúste znova odoslať formulár"
   },
+  "homepage.allStories": {
+    "message": "Všetky príbehy"
+  },
+  "homepage.latestStories": {
+    "message": "Najnovšie príbehy"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Žiadne obrázky} one {# obrázok} few {# obrázky} other {# obrázkov} }"
+  },
   "mediaGallery.title": {
     "message": "Galérie médií"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Galéria médií"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Žiadne videá} one {# video} few {# videá} other {# videí} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
