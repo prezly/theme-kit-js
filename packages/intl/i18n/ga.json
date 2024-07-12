@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Something went wrong. Please try submitting the form again"
   },
+  "homepage.allStories": {
+    "message": "All stories"
+  },
+  "homepage.latestStories": {
+    "message": "Latest stories"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+  },
   "mediaGallery.title": {
     "message": "Media galleries"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Media gallery"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

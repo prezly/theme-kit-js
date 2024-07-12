@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Сталася помилка. Спробуйте надіслати форму повторно"
   },
+  "homepage.allStories": {
+    "message": "Всі історії"
+  },
+  "homepage.latestStories": {
+    "message": "Останні історії"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Немає зображень} one {# зображення} few {# зображення} many {# зображення} other {# зображення} }"
+  },
   "mediaGallery.title": {
     "message": "Медіа-галереї"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Медіагалерея"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Немає відео} one {# відео} few {# відео} many {# відео} other {# відео} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

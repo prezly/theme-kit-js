@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Midagi läks valesti. Proovige vormi uuesti esitada"
   },
+  "homepage.allStories": {
+    "message": "Kõik lood"
+  },
+  "homepage.latestStories": {
+    "message": "Värskeimad lood"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Pildid puuduvad} one {# pilt} other {# pilte} }"
+  },
   "mediaGallery.title": {
     "message": "Meediagaleriid"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Meediagalerii"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {No videos} one {# video} other {# videos} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

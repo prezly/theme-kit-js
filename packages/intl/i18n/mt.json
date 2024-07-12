@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Marret xi ħaġa ħażin. Jekk jogħġbok erġa' ibgħat il-formola mill-ġdid"
   },
+  "homepage.allStories": {
+    "message": "L-istejjer kollha"
+  },
+  "homepage.latestStories": {
+    "message": "L-aħħar stejjer"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {L-ebda stampa} one {Stampa waħda} few {# stampi} many {#-il stampa} other {# stampa} }"
+  },
   "mediaGallery.title": {
     "message": "Gallariji tal-midja"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Gallerija tal-midja"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {L-ebda vidjo} one {Vidjo wieħed} few {# vidjos} many {#-il vidjo} other {# vidjo} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

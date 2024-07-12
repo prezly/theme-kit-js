@@ -42,7 +42,7 @@
     "message": "Schrijf je uit"
   },
   "boilerplate.contact": {
-    "message": "Contact"
+    "message": "Neem contact op met"
   },
   "boilerplate.title": {
     "message": "Over {companyName}"
@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "Er is iets fout gegaan. Probeer het formulier opnieuw te verzenden"
   },
+  "homepage.allStories": {
+    "message": "Alle verhalen"
+  },
+  "homepage.latestStories": {
+    "message": "Meest recente verhalen"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Geen afbeeldingen} one {# afbeelding} few {# afbeeldingen} many {# afbeeldingen} other {# afbeeldingen} }"
+  },
   "mediaGallery.title": {
     "message": "Mediagalerijen"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Mediagalerij"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Geen video's} one {# video} few {# video's} many {# video's} other {# video's} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",

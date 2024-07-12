@@ -77,8 +77,23 @@
   "errors.unknown": {
     "message": "出问题了。请再次尝试提交表格。"
   },
+  "homepage.allStories": {
+    "message": "所有故事"
+  },
+  "homepage.latestStories": {
+    "message": "最新故事"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {没有图像} one {# 图像} few {# 图像} many {# 图像} other {# 图像} }"
+  },
   "mediaGallery.title": {
     "message": "媒体画廊"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "媒体库"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {没有视频} one {# 视频} few {# 视频} many {# 视频} other {# 视频} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
