@@ -1,6 +1,13 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import { NewsroomGallery } from '@prezly/sdk';
 import { AsyncResolvable, Galleries, Uploads } from '@prezly/theme-kit-core';
-import { formatMessageString, importDictionary, translations } from '@prezly/theme-kit-intl';
+import {
+    formatMessageString,
+    importDictionary,
+    type IntlDictionary,
+    type Locale,
+    translations,
+} from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
 import type { AbsoluteUrlGenerator, Prerequisites } from './types';
@@ -24,26 +31,7 @@ export async function generateMediaGalleryPageMetadata(
     const dictionary = await importDictionary(locale);
 
     const title = `${formatMessageString(locale, translations.mediaGallery.titleSingular, dictionary)}: ${gallery.name}`;
-
-    let { description } = gallery;
-    if (gallery.type === NewsroomGallery.Type.IMAGE) {
-        description = `${formatMessageString(
-            locale,
-            translations.mediaGallery.imagesCount,
-            dictionary,
-            { imagesCount: gallery.images_number },
-        )} - ${gallery.description}`;
-    }
-
-    if (gallery.type === NewsroomGallery.Type.VIDEO) {
-        description = `${formatMessageString(
-            locale,
-            translations.mediaGallery.videosCount,
-            dictionary,
-            { videosCount: gallery.videos_number },
-        )} - ${gallery.description}`;
-    }
-
+    const description = generateDescription(locale, dictionary, gallery);
     const thumbnail = Galleries.getCoverImage(gallery);
     const imageUrl = thumbnail ? Uploads.getCdnUrl(thumbnail.uuid) : undefined;
 
@@ -61,4 +49,37 @@ export async function generateMediaGalleryPageMetadata(
 
 export namespace generateMediaGalleryPageMetadata {
     export type Parameters = Params;
+}
+
+function generateDescription(
+    locale: Locale.Code,
+    dictionary: IntlDictionary,
+    gallery: NewsroomGallery,
+) {
+    const description = gallery.description?.trim() ?? '';
+
+    if (gallery.type === NewsroomGallery.Type.IMAGE) {
+        const imagesCount = formatMessageString(
+            locale,
+            translations.mediaGallery.imagesCount,
+            dictionary,
+            {
+                imagesCount: gallery.images_number,
+            },
+        );
+
+        return [imagesCount, description].filter(Boolean).join(' - ');
+    }
+
+    if (gallery.type === NewsroomGallery.Type.VIDEO) {
+        const videosCount = formatMessageString(
+            locale,
+            translations.mediaGallery.videosCount,
+            dictionary,
+            { videosCount: gallery.videos_number },
+        );
+        return [videosCount, description].filter(Boolean).join(' - ');
+    }
+
+    return description;
 }
