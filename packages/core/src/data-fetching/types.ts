@@ -18,3 +18,17 @@ export interface PrezlyNewsroomEnv {
 }
 
 export interface PrezlyEnv extends PrezlyNewsroomEnv, AlgoliaSettings, MeiliSearchSettings {}
+
+export type SearchSettings =
+    | {
+          searchBackend: 'algolia';
+          appId: string;
+          apiKey: string;
+          index: string;
+      }
+    | {
+          searchBackend: 'meilisearch';
+          host: string;
+          apiKey: string;
+          index: string;
+      };
