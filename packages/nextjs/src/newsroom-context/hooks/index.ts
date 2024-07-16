@@ -8,4 +8,5 @@ export * from './useGetTranslationUrl';
 export * from './useLanguages';
 export * from './useNewsroom';
 export * from './useNewsroomContext';
+export * from './useSearchClient';
 export * from './useSearchSettings';
