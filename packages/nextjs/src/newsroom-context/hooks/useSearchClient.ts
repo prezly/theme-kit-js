@@ -1,6 +1,6 @@
 import { instantMeiliSearch } from '@meilisearch/instant-meilisearch';
 import type { SearchSettings } from '@prezly/theme-kit-core/server';
-import algoliasearch from 'algoliasearch';
+import algoliasearch from 'algoliasearch/lite';
 
 export function useSearchClient(settings: SearchSettings) {
     return settings.searchBackend === 'algolia'
