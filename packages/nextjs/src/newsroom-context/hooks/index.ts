@@ -1,4 +1,3 @@
-export * from './useAlgoliaSettings';
 export * from './useCategories';
 export * from './useCompanyInformation';
 export * from './useCurrentCategory';
@@ -9,3 +8,4 @@ export * from './useGetTranslationUrl';
 export * from './useLanguages';
 export * from './useNewsroom';
 export * from './useNewsroomContext';
+export * from './useSearchSettings';
