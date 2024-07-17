@@ -37,7 +37,7 @@
     "@prezly/sdk": "21.6.0",
     "@types/jest": "29.5.11",
     "@types/node": "20.11.0",
-    "@types/react": "18.2.47",
+    "@types/react": "18.3.3",
     "@types/react-dom": "18.2.18",
     "concurrently": "7.6.0",
     "eslint": "8.56.0",
