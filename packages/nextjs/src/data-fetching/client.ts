@@ -7,7 +7,7 @@ import {
     LocaleObject,
 } from '@prezly/theme-kit-core';
 import type { ContentDelivery } from '@prezly/theme-kit-core/server';
-import { getAlgoliaSettings, initContentDeliveryClient } from '@prezly/theme-kit-core/server';
+import { getSearchSettings, initContentDeliveryClient } from '@prezly/theme-kit-core/server';
 import { omitUndefined } from '@technically/omit-undefined';
 import type { IncomingMessage } from 'http';
 
@@ -48,7 +48,7 @@ export function createClient(
             const companyInformation = getCompanyInformation(languages, locale);
 
             const notifications = getNotifications(languages, locale);
-            const algoliaSettings = getAlgoliaSettings(request);
+            const searchSettings = getSearchSettings(request);
 
             return {
                 newsroomContextProps: omitUndefined({
@@ -59,7 +59,7 @@ export function createClient(
                     localeCode,
                     notifications,
                     themePreset: themePreset ?? null,
-                    algoliaSettings,
+                    searchSettings,
                     contacts,
                 }),
                 localeResolved: Boolean(currentLanguage),

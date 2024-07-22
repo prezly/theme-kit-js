@@ -4,6 +4,12 @@ export interface AlgoliaSettings {
     ALGOLIA_INDEX: string;
 }
 
+export interface MeiliSearchSettings {
+    MEILISEARCH_API_KEY: string;
+    MEILISEARCH_HOST: string;
+    MEILISEARCH_INDEX: string;
+}
+
 export interface PrezlyNewsroomEnv {
     PREZLY_ACCESS_TOKEN: string;
     PREZLY_NEWSROOM_UUID: string;
@@ -11,4 +17,18 @@ export interface PrezlyNewsroomEnv {
     PREZLY_MODE?: 'preview';
 }
 
-export interface PrezlyEnv extends PrezlyNewsroomEnv, AlgoliaSettings {}
+export interface PrezlyEnv extends PrezlyNewsroomEnv, AlgoliaSettings, MeiliSearchSettings {}
+
+export type SearchSettings =
+    | {
+          searchBackend: 'algolia';
+          appId: string;
+          apiKey: string;
+          index: string;
+      }
+    | {
+          searchBackend: 'meilisearch';
+          host: string;
+          apiKey: string;
+          index: string;
+      };

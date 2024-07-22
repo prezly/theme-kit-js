@@ -1,11 +1,11 @@
 import type { Category } from '@prezly/sdk';
 
 import type { LocaleObject } from '../intl';
-import type { AlgoliaCategoryRef } from '../types';
+import type { IndexedCategoryRef } from '../types';
 
-function isAlgoliaCategory(
-    category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
-): category is AlgoliaCategoryRef {
+function isIndexedCategory(
+    category: Pick<Category, 'i18n' | 'display_name'> | IndexedCategoryRef,
+): category is IndexedCategoryRef {
     return 'name' in category && 'slug' in category;
 }
 
@@ -16,10 +16,10 @@ interface LocalizedCategoryData {
 }
 
 export function getLocalizedCategoryData(
-    category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
+    category: Pick<Category, 'i18n' | 'display_name'> | IndexedCategoryRef,
     locale: LocaleObject,
 ): LocalizedCategoryData {
-    if (isAlgoliaCategory(category)) {
+    if (isIndexedCategory(category)) {
         return {
             description: null,
             name: category.name,
@@ -44,7 +44,7 @@ export function getLocalizedCategoryData(
 }
 
 export function getCategoryUrl(
-    category: Pick<Category, 'i18n' | 'display_name'> | AlgoliaCategoryRef,
+    category: Pick<Category, 'i18n' | 'display_name'> | IndexedCategoryRef,
     locale: LocaleObject,
 ): string {
     const { slug } = getLocalizedCategoryData(category, locale);
