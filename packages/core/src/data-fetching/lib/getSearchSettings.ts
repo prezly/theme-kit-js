@@ -36,9 +36,5 @@ export function getSearchSettings(req?: IncomingMessage): SearchSettings | undef
         };
     }
 
-    console.warn(
-        'Neither Algolia nor MeiliSearch env variables are set. Search will not be enabled.',
-    );
-
     return undefined;
 }
