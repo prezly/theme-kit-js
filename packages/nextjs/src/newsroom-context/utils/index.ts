@@ -1,0 +1,1 @@
+export { getSearchClient } from './getSearchClient';
