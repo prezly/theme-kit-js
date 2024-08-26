@@ -25,95 +25,21 @@ export namespace AsyncResolvable {
         [key in keyof T]: AsyncResolvable<T[key]>;
     };
 
-    export function resolve<T>(
-        value: T | DynamicallyResolvable<T> | AsyncDynamicallyResolvable<T>,
-    ): Awaitable<T>;
+    export function resolve<T>(value: AsyncResolvable<T>): Awaitable<T>;
 
-    export function resolve<T1, T2>(
-        ...values: [AsyncResolvable<T1>, AsyncResolvable<T2>]
-    ): Promise<[T1, T2]>;
+    export function resolve<T extends any[]>(
+        ...values: { [K in keyof T]: AsyncResolvable<T[K]> }
+    ): Promise<{ [K in keyof T]: T[K] }>;
 
-    export function resolve<T1, T2, T3>(
-        ...values: [AsyncResolvable<T1>, AsyncResolvable<T2>, AsyncResolvable<T3>]
-    ): Promise<[T1, T2, T3]>;
-
-    export function resolve<T1, T2, T3, T4>(
-        ...values: [
-            AsyncResolvable<T1>,
-            AsyncResolvable<T2>,
-            AsyncResolvable<T3>,
-            AsyncResolvable<T4>,
-        ]
-    ): Promise<[T1, T2, T3, T4]>;
-
-    export function resolve<T1, T2, T3, T4, T5>(
-        ...values: [
-            AsyncResolvable<T1>,
-            AsyncResolvable<T2>,
-            AsyncResolvable<T3>,
-            AsyncResolvable<T4>,
-            AsyncResolvable<T5>,
-        ]
-    ): Promise<[T1, T2, T3, T4, T5]>;
-
-    export function resolve<T1, T2, T3, T4, T5, T6>(
-        ...values: [
-            AsyncResolvable<T1>,
-            AsyncResolvable<T2>,
-            AsyncResolvable<T3>,
-            AsyncResolvable<T4>,
-            AsyncResolvable<T5>,
-            AsyncResolvable<T6>,
-        ]
-    ): Promise<[T1, T2, T3, T4, T5, T6]>;
-
-    export function resolve<T1, T2, T3, T4, T5, T6, T7>(
-        ...values: [
-            AsyncResolvable<T1>,
-            AsyncResolvable<T2>,
-            AsyncResolvable<T3>,
-            AsyncResolvable<T4>,
-            AsyncResolvable<T5>,
-            AsyncResolvable<T6>,
-            AsyncResolvable<T7>,
-        ]
-    ): Promise<[T1, T2, T3, T4, T5, T6, T7]>;
-
-    export function resolve<T1, T2, T3, T4, T5, T6, T7, T8>(
-        ...values: [
-            AsyncResolvable<T1>,
-            AsyncResolvable<T2>,
-            AsyncResolvable<T3>,
-            AsyncResolvable<T4>,
-            AsyncResolvable<T5>,
-            AsyncResolvable<T6>,
-            AsyncResolvable<T7>,
-            AsyncResolvable<T8>,
-        ]
-    ): Promise<[T1, T2, T3, T4, T5, T6, T7, T8]>;
-
-    export function resolve<T1, T2, T3, T4, T5, T6, T7, T8, T9>(
-        ...values: [
-            AsyncResolvable<T1>,
-            AsyncResolvable<T2>,
-            AsyncResolvable<T3>,
-            AsyncResolvable<T4>,
-            AsyncResolvable<T5>,
-            AsyncResolvable<T6>,
-            AsyncResolvable<T7>,
-            AsyncResolvable<T8>,
-            AsyncResolvable<T9>,
-        ]
-    ): Promise<[T1, T2, T3, T4, T5, T6, T7, T8, T9]>;
-
-    export function resolve<T>(...values: AsyncResolvable<T>[]): Awaitable<T> | Promise<T[]> {
+    export function resolve<T extends any[]>(
+        ...values: { [K in keyof T]: AsyncResolvable<T[K]> }
+    ): Awaitable<T> | Promise<{ [K in keyof T]: T[K] }> {
         if (values.length === 1) {
-            const [value] = values;
-            return resolveAsyncOne(value);
+            return resolveAsyncOne(values[0]) as Awaitable<T[0]>;
         }
 
         const resolutions = values.map((value) => resolveAsyncOne(value));
-        return Promise.all(resolutions);
+        return Promise.all(resolutions) as Promise<{ [K in keyof T]: T[K] }>;
     }
 }
 
