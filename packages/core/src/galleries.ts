@@ -1,6 +1,6 @@
 import type { NewsroomGallery, UploadedImage } from '@prezly/sdk';
 
-import { ASSETS_CDN_URL } from './constants';
+import { ASSETS_SECONDARY_CDN_URL } from './constants';
 
 export function isEmpty(
     gallery: Pick<NewsroomGallery, 'images_number' | 'videos_number'>,
@@ -36,5 +36,5 @@ export function getArchiveDownloadUrl(
     // Uploadcare doesn't like slashes in filenames even in encoded form.
     const filename = encodeURIComponent(title.replace(/\//g, '_'));
 
-    return `${ASSETS_CDN_URL}/${uuid}/archive/zip/${filename}.zip`;
+    return `${ASSETS_SECONDARY_CDN_URL}/${uuid}/archive/zip/${filename}.zip`;
 }
