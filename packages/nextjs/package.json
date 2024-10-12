@@ -96,7 +96,7 @@
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
-    "@sentry/nextjs": "7.119.1"
+    "@sentry/nextjs": "7.119.2"
   },
   "publishConfig": {
     "access": "public"
