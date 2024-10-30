@@ -48,7 +48,7 @@ export function buildSentryConfig(
     return {
         dsn,
         // Adjust this value in production, or use tracesSampler for greater control
-        tracesSampleRate: 0.02,
+        tracesSampleRate: 0.005,
         // ...
         // Note: if you want to override the automatic release value, do not set a
         // `release` value here - use the environment variable `SENTRY_RELEASE`, so
