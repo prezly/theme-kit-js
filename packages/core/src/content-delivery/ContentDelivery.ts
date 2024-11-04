@@ -23,6 +23,7 @@ export namespace stories {
     export interface SearchParams {
         search?: string;
         category?: Pick<Category, 'id'>;
+        tags?: string[];
         locale?: Pick<Culture, 'code'> | Culture.Code;
         limit: number;
         offset?: number;
@@ -237,7 +238,16 @@ export function createClient(
             params: stories.SearchParams,
             options: stories.IncludeOptions<Include> = {},
         ) {
-            const { search, query, offset = 0, limit, category, locale, highlighted = 0 } = params;
+            const {
+                search,
+                query,
+                offset = 0,
+                limit,
+                category,
+                locale,
+                highlighted = 0,
+                tags,
+            } = params;
             const { include = [] } = options;
 
             const localeCode = locale && typeof locale === 'object' ? locale.code : locale;
@@ -254,6 +264,7 @@ export function createClient(
                     [`locale`]: localeCode ? { $in: [localeCode] } : undefined,
                     [`status`]: { $in: [Story.Status.PUBLISHED] },
                     [`visibility`]: { $in: [Story.Visibility.PUBLIC] },
+                    [`tag_names`]: tags?.length ? { $in: [tags] } : undefined,
                 }),
                 include,
             });
