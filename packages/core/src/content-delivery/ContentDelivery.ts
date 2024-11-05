@@ -264,7 +264,7 @@ export function createClient(
                     [`locale`]: localeCode ? { $in: [localeCode] } : undefined,
                     [`status`]: { $in: [Story.Status.PUBLISHED] },
                     [`visibility`]: { $in: [Story.Visibility.PUBLIC] },
-                    [`tag_names`]: tags?.length ? { $in: [tags] } : undefined,
+                    [`tag.name`]: tags?.length ? { $any: [tags] } : undefined,
                 }),
                 include,
             });
