@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
-
 import { useCallback, useEffect, useReducer } from 'react';
 
 const DEFAULT_RETRIES = 3;

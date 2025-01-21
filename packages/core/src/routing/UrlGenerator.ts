@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-redeclare */
 import type { Route } from './Route';
 import type { Router } from './Router';
 

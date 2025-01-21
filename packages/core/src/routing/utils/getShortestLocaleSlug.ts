@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { Locale } from '@prezly/theme-kit-intl';
 
 import { isNumberCode } from './isNumberCode';

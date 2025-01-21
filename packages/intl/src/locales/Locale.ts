@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
-
 import { isNotUndefined } from '@technically/is-not-undefined';
 
 export interface Locale {
@@ -115,8 +113,8 @@ export namespace Locale {
             );
         }
 
-        const scriptCode: Locale.ScriptCode | undefined = scripts[0];
-        const regionCode: Locale.RegionCode | undefined = regions[0];
+        const [scriptCode] = scripts as [Locale.ScriptCode | undefined];
+        const [regionCode] = regions as [Locale.RegionCode | undefined];
         const code = [
             lang.toLowerCase(),
             regionCode,

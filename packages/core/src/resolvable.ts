@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define,@typescript-eslint/no-redeclare */
-
 export type Resolvable<T> = T | DynamicallyResolvable<T>;
 export type AsyncResolvable<T> = T | DynamicallyResolvable<T> | AsyncDynamicallyResolvable<T>;
 

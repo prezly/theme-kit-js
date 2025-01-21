@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Newsroom, NewsroomTheme, Story } from '@prezly/sdk';
 import { createPrezlyClient } from '@prezly/sdk';
 import { ContentDelivery, Resolvable } from '@prezly/theme-kit-core';

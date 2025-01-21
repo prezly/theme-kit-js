@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
 import { isNotUndefined } from '@technically/is-not-undefined';
 

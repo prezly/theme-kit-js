@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Culture, NewsroomLanguageSettings } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
 

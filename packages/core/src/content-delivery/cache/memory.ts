@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Cache, UnixTimestampInSeconds } from './type';
 
 export const RECORDS_LIMIT = 10000;

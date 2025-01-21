@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { isNotUndefined } from '@technically/is-not-undefined';
 import { twMerge } from 'tailwind-merge';
 

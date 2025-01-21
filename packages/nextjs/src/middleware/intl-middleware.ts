@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { AsyncResolvable, Routing } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
-import { headers, UnsafeUnwrappedHeaders } from 'next/headers';
+import { headers, type UnsafeUnwrappedHeaders } from 'next/headers';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 

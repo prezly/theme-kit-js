@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { AsyncResolvable, Newsrooms } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';

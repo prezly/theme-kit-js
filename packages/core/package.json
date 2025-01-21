@@ -3,6 +3,7 @@
   "version": "9.8.1",
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
   "main": "build/index.mjs",
+  "type": "module",
   "types": "build/index.d.ts",
   "files": ["build", "README.md"],
   "exports": {
