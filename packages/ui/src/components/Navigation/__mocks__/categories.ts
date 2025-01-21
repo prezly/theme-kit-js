@@ -19,6 +19,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (Global)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en',
+                        name: 'English (Global)',
+                    },
                 },
                 name: 'Environment',
                 description: '',
@@ -33,6 +37,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (United Kingdom)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en_GB',
+                        name: 'English (United Kingdom)',
+                    },
                 },
                 name: 'Environment',
                 description: '',
@@ -58,6 +66,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (Global)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en',
+                        name: 'English (Global)',
+                    },
                 },
                 name: 'Food',
                 description: '',
@@ -72,6 +84,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (United Kingdom)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en_GB',
+                        name: 'English (United Kingdom)',
+                    },
                 },
                 name: 'Food',
                 description: '',
@@ -86,6 +102,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'Nederlands (België)',
                     direction: 'ltr' as any,
                     language_code: 'nl',
+                    language: {
+                        code: 'nl_BE',
+                        name: 'Dutch (Belgium)',
+                    },
                 },
                 name: 'Eten',
                 description: '',
@@ -112,6 +132,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (Global)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en',
+                        name: 'English (Global)',
+                    },
                 },
                 name: 'Technology',
                 description:
@@ -127,6 +151,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'Nederlands (België)',
                     direction: 'ltr' as any,
                     language_code: 'nl',
+                    language: {
+                        code: 'nl_BE',
+                        name: 'Dutch (Belgium)',
+                    },
                 },
                 name: 'Technologie',
                 description:
@@ -153,6 +181,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (Global)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en',
+                        name: 'English (Global)',
+                    },
                 },
                 name: 'Art',
                 description: 'Developments from the global art scene.',
@@ -167,6 +199,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'Nederlands (België)',
                     direction: 'ltr' as any,
                     language_code: 'nl',
+                    language: {
+                        code: 'nl_BE',
+                        name: 'Dutch (Belgium)',
+                    },
                 },
                 name: 'Kunst',
                 description: '',
@@ -192,6 +228,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (Global)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en',
+                        name: 'English (Global)',
+                    },
                 },
                 name: 'Games',
                 description: '',
@@ -217,6 +257,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (Global)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en',
+                        name: 'English (Global)',
+                    },
                 },
                 name: 'Animals',
                 description: '',
@@ -242,6 +286,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (Global)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en',
+                        name: 'English (Global)',
+                    },
                 },
                 name: 'Sports',
                 description: '',
@@ -267,6 +315,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (Global)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en',
+                        name: 'English (Global)',
+                    },
                 },
                 name: 'Other',
                 description: '',
@@ -292,6 +344,10 @@ export const CATEGORIES: Category[] = [
                     native_name: 'English (Global)',
                     direction: 'ltr' as any,
                     language_code: 'en',
+                    language: {
+                        code: 'en',
+                        name: 'English (Global)',
+                    },
                 },
                 name: 'Family',
                 description: '',

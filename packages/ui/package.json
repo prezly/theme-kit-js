@@ -27,13 +27,13 @@
   "scripts": {
     "prebuild": "rimraf build/*",
     "dev": "vite",
-    "build": "npm run build:types && npm run build:esm && npm run build:cjs && npm run build:css",
+    "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs && pnpm build:css",
     "build:types": "tsc --project .",
     "build:css": "postcss ./styles/base.styles.css -o ./build/styles.css",
-    "build:esm": "npm run build:esm:code && npm run build:esm:icons",
+    "build:esm": "pnpm build:esm:code && pnpm build:esm:icons",
     "build:esm:code": "babel  --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.ts,.tsx --out-file-extension=.mjs",
     "build:esm:icons": "babel --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.svg     --out-file-extension=.svg.mjs",
-    "build:cjs": "npm run build:cjs:code && npm run build:cjs:icons",
+    "build:cjs": "pnpm build:cjs:code && pnpm build:cjs:icons",
     "build:cjs:code": "babel  --config-file=../../babel.cjs.json src/ --out-dir=build/ --extensions=.ts,.tsx --out-file-extension=.cjs",
     "build:cjs:icons": "babel --config-file=../../babel.cjs.json src/ --out-dir=build/ --extensions=.svg     --out-file-extension=.svg.cjs",
     "preview": "vite preview",
@@ -45,10 +45,10 @@
     "url": "https://github.com/prezly/theme-kit-js/issues"
   },
   "peerDependencies": {
-    "@prezly/sdk": "21.12.0",
-    "next": "^14.1.1",
-    "react": "^18.x",
-    "react-dom": "^18.x"
+    "@prezly/sdk": "23.6.0",
+    "next": "^15.1.4",
+    "react": "^19.x",
+    "react-dom": "^19.x"
   },
   "devDependencies": {
     "@storybook/addon-designs": "7.0.9",
@@ -89,7 +89,7 @@
     "@technically/is-not-undefined": "^1.0.0",
     "algoliasearch": "^4.20.0",
     "date-fns": "^2.30.0",
-    "react-instantsearch": "^7.3.0",
+    "react-instantsearch": "^7.15.0",
     "social-links": "^1.14.0",
     "tailwind-merge": "^1.14.0",
     "tinycolor2": "^1.6.0"

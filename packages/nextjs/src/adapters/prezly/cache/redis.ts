@@ -19,7 +19,7 @@ type Options = RedisClientOptions & {
 const CONNECTIONS = new Map<string, Promise<ReturnType<typeof createClient>>>();
 
 export function createRedisCache({ ttl, prefix = '', ...options }: Options): ContentDelivery.Cache {
-    const connectionKey = stableStringify(options);
+    const connectionKey = stableStringify(options) as string;
 
     const connection =
         CONNECTIONS.get(connectionKey) ??

@@ -2,7 +2,7 @@
 import type { NewsroomLanguageSettings } from '@prezly/sdk';
 import { AsyncResolvable, Routing } from '@prezly/theme-kit-core';
 import { Locale } from '@prezly/theme-kit-intl';
-import { headers } from 'next/headers';
+import { headers, UnsafeUnwrappedHeaders } from 'next/headers';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
@@ -183,7 +183,7 @@ export interface LocaleMatchContext {
 export function getLocaleCodeFromHeader(
     localeCodeHeader = DEFAULT_LOCALE_CODE_HEADER,
 ): Locale.Code | undefined {
-    const code = headers().get(localeCodeHeader);
+    const code = (headers() as unknown as UnsafeUnwrappedHeaders).get(localeCodeHeader);
 
     if (code === null) {
         throw new Error(
