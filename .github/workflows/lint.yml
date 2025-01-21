@@ -11,25 +11,14 @@ jobs:
             - name: Check out Git repository
               uses: actions/checkout@v3
 
-            - name: Use Node.js
-              uses: actions/setup-node@v3
+            - name: Setup environment
+              uses: prezly/setup-github-actions@v1
               with:
-                node-version-file: '.nvmrc'
-
-            - name: Cache node modules
-              uses: actions/cache@v3
-              env:
-                cache-name: cache-node-modules
-              with:
-                path: "**/node_modules"
-                key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-                restore-keys: |
-                  ${{ runner.os }}-build-${{ env.cache-name }}-
-                  ${{ runner.os }}-build-
-                  ${{ runner.os }}-
+                pnpm: 9.15.4
+                node: 20
 
             - name: Install Node.js dependencies
-              run: npm ci
+              run: pnpm install
 
             - name: Run ESLint
               uses: wearerequired/lint-action@v2.3.0

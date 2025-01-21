@@ -22,18 +22,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+
+    - name: Setup environment
+      uses: prezly/setup-github-actions@v1
       with:
-        node-version: 16
+        pnpm: 9.15.4
+        node: 20
+
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install
+
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: pnpm dlx playwright install --with-deps
+
     - name: Run Playwright tests
-      run: npx playwright test
+      run: pnpm exec playwright test
       env:
         TESTS_BASE_URL: ${{ github.event.deployment_status.target_url }}
         TESTS_NEWSROOM_NAME: ${{ inputs.site-name }}
+  
     - uses: actions/upload-artifact@v3
       if: always()
       with:
