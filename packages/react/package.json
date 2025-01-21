@@ -14,11 +14,11 @@
     }
   },
   "engines": {
-    "node": ">= 16.x",
+    "node": ">= 20.x",
     "npm": ">= 8.x"
   },
   "devEngines": {
-    "node": ">= 16.x",
+    "node": ">= 20.x",
     "npm": ">= 8.x"
   },
   "repository": {
@@ -45,8 +45,8 @@
     "test": "echo 'No tests yet'"
   },
   "peerDependencies": {
-    "react": "^18.x",
-    "react-dom": "^18.x"
+    "react": "^18.x || 19.x",
+    "react-dom": "^18.x || 19.x"
   },
   "dependencies": {
     "@prezly/theme-kit-intl": "^9.6.0"
