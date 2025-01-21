@@ -1,5 +1,3 @@
-import { jest } from '@jest/globals';
-
 import { DEFAULT_LOCALE } from './constants';
 import { pickSupportedLocale } from './pickSuportedLocale';
 
