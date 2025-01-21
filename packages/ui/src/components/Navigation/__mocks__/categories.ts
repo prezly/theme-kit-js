@@ -21,7 +21,7 @@ export const CATEGORIES: Category[] = [
                     language_code: 'en',
                     language: {
                         code: 'en',
-                        name: 'English (Global)',
+                        name: 'English',
                     },
                 },
                 name: 'Environment',
@@ -38,7 +38,7 @@ export const CATEGORIES: Category[] = [
                     direction: 'ltr' as any,
                     language_code: 'en',
                     language: {
-                        code: 'en_GB',
+                        code: 'en',
                         name: 'English (United Kingdom)',
                     },
                 },
@@ -85,7 +85,7 @@ export const CATEGORIES: Category[] = [
                     direction: 'ltr' as any,
                     language_code: 'en',
                     language: {
-                        code: 'en_GB',
+                        code: 'en',
                         name: 'English (United Kingdom)',
                     },
                 },
@@ -103,7 +103,7 @@ export const CATEGORIES: Category[] = [
                     direction: 'ltr' as any,
                     language_code: 'nl',
                     language: {
-                        code: 'nl_BE',
+                        code: 'nl',
                         name: 'Dutch (Belgium)',
                     },
                 },
@@ -152,7 +152,7 @@ export const CATEGORIES: Category[] = [
                     direction: 'ltr' as any,
                     language_code: 'nl',
                     language: {
-                        code: 'nl_BE',
+                        code: 'nl',
                         name: 'Dutch (Belgium)',
                     },
                 },
@@ -200,7 +200,7 @@ export const CATEGORIES: Category[] = [
                     direction: 'ltr' as any,
                     language_code: 'nl',
                     language: {
-                        code: 'nl_BE',
+                        code: 'nl',
                         name: 'Dutch (Belgium)',
                     },
                 },

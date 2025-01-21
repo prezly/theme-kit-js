@@ -66,7 +66,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
             direction: 'rtl' as any,
             language_code: 'ar',
             language: {
-                code: 'ar_BH',
+                code: 'ar',
                 name: 'Arabic (Bahrain)',
             },
         },
@@ -118,7 +118,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
             direction: 'rtl' as any,
             language_code: 'ar',
             language: {
-                code: 'ar_QA',
+                code: 'ar',
                 name: 'Arabic (Qatar)',
             },
         },
@@ -170,7 +170,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
             direction: 'ltr' as any,
             language_code: 'nl',
             language: {
-                code: 'nl_BE',
+                code: 'nl',
                 name: 'Dutch (Belgium)',
             },
         },
@@ -284,8 +284,8 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
             direction: 'ltr' as any,
             language_code: 'en',
             language: {
-                code: 'en_NZ',
-                name: 'English (New Zealand)',
+                code: 'en',
+                name: 'English (New Zeland)',
             },
         },
         is_default: false,
@@ -336,7 +336,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
             direction: 'ltr' as any,
             language_code: 'en',
             language: {
-                code: 'en_PK',
+                code: 'en',
                 name: 'English (Pakistan)',
             },
         },
@@ -388,7 +388,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
             direction: 'ltr' as any,
             language_code: 'en',
             language: {
-                code: 'en_PH',
+                code: 'en',
                 name: 'English (Philippines)',
             },
         },
@@ -440,8 +440,8 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
             direction: 'ltr' as any,
             language_code: 'en',
             language: {
-                code: 'en_QA',
-                name: 'English (Qatar)',
+                code: 'en',
+                name: 'English (Quatar)',
             },
         },
         is_default: false,
@@ -492,7 +492,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
             direction: 'ltr' as any,
             language_code: 'el',
             language: {
-                code: 'el_GR',
+                code: 'el',
                 name: 'Greek',
             },
         },
@@ -544,7 +544,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
             direction: 'ltr' as any,
             language_code: 'hu',
             language: {
-                code: 'hu_HU',
+                code: 'hu',
                 name: 'Hungarian',
             },
         },
