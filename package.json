@@ -2,13 +2,6 @@
   "name": "@prezly/theme-kit-js-monorepo",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "packages/core",
-    "packages/intl",
-    "packages/react",
-    "packages/nextjs",
-    "packages/ui"
-  ],
   "scripts": {
     "build": "pnpm exec lerna run build",
     "dev:core": "pnpm exec lerna run dev --scope=@prezly/theme-kit-core",
