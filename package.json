@@ -10,29 +10,29 @@
     "packages/ui"
   ],
   "scripts": {
-    "build": "npx lerna run build",
-    "dev:core": "npx lerna run dev --scope=@prezly/theme-kit-core",
-    "dev:nextjs": "npx lerna run dev --scope=@prezly/theme-kit-nextjs",
-    "dev:ui": "npx lerna run dev --scope=@prezly/theme-kit-ui",
-    "lint": "npx lerna run lint",
-    "lint:fix": "npx lerna run lint -- --fix",
+    "build": "pnpm exec lerna run build",
+    "dev:core": "pnpm exec lerna run dev --scope=@prezly/theme-kit-core",
+    "dev:nextjs": "pnpm exec lerna run dev --scope=@prezly/theme-kit-nextjs",
+    "dev:ui": "pnpm exec lerna run dev --scope=@prezly/theme-kit-ui",
+    "lint": "pnpm exec lerna run lint",
+    "lint:fix": "pnpm exec lerna run lint -- --fix",
     "prettier": "prettier --check './packages/**/*.(js|ts|tsx)'",
-    "prettier:fix": "npm run prettier -- --write --no-list-different",
-    "test": "npx lerna run test",
-    "typecheck": "npx lerna run typecheck",
-    "check": "npx lerna run lint,typecheck,test",
-    "release": "npm run release:prepare && npm run release:publish",
-    "release:preview": "npm run release:prepare && npm run release:publish:preview",
-    "release:prepare": "npx lerna run lint,test,build",
+    "prettier:fix": "pnpm prettier -- --write --no-list-different",
+    "test": "pnpm exec lerna run test",
+    "typecheck": "pnpm exec lerna run typecheck",
+    "check": "pnpm exec lerna run lint,typecheck,test",
+    "release": "pnpm release:prepare && pnpm release:publish",
+    "release:preview": "pnpm release:prepare && pnpm release:publish:preview",
+    "release:prepare": "pnpm exec lerna run lint,test,build",
     "release:publish": "lerna publish --no-private",
     "release:preview-tag": "./release-preview-tag.sh",
     "release:next-tag": "./release-next-tag.sh",
     "sync-package-versions": "node ./sync-package-versions.mjs"
   },
   "dependencies": {
-    "next": "^14.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "^15.1.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.26.4",
@@ -42,30 +42,27 @@
     "@babel/preset-typescript": "7.26.0",
     "@dr.pogodin/babel-preset-svgr": "1.9.0",
     "@playwright/test": "1.49.1",
-    "@prezly/eslint-config": "5.3.2",
-    "@prezly/sdk": "21.12.0",
+    "@prezly/eslint-config": "6.0.0",
+    "@prezly/sdk": "23.6.0",
     "@types/jest": "29.5.14",
-    "@types/node": "20.17.14",
-    "@types/react": "18.3.18",
-    "@types/react-dom": "18.3.5",
+    "@types/node": "22.10.7",
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3",
     "babel-plugin-add-import-extension": "1.6.0",
     "babel-plugin-auto-import": "1.1.0",
     "babel-plugin-transform-remove-imports": "1.8.0",
-    "concurrently": "7.6.0",
-    "eslint": "8.57.1",
-    "eslint-config-next": "14.2.23",
+    "concurrently": "9.1.2",
+    "eslint": "9.18.0",
+    "eslint-config-next": "15.1.5",
     "jest": "29.7.0",
     "lerna": "8.1.9",
     "prettier": "3.4.2",
-    "rimraf": "5.0.10",
+    "rimraf": "6.0.1",
     "ts-jest": "29.2.5",
-    "typescript": "5.3.3"
+    "typescript": "5.7.3"
   },
   "sync-package-versions": {
     "workspace": true,
-    "packages": [
-      "@prezly/sdk",
-      "@prezly/uploadcare"
-    ]
+    "packages": ["@prezly/sdk", "@prezly/uploadcare"]
   }
 }
