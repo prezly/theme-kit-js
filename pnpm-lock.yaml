@@ -100,8 +100,8 @@ importers:
         specifier: 21.12.0 || ^23.x
         version: 23.6.0
       '@prezly/theme-kit-intl':
-        specifier: ^10.0.2-alpha.0
-        version: 10.0.2-alpha.0
+        specifier: ^10.0.3-alpha.0
+        version: 10.0.3-alpha.0
       '@prezly/uploadcare':
         specifier: 2.4.4
         version: 2.4.4
@@ -141,14 +141,14 @@ importers:
         specifier: 21.12.0 || ^23.x
         version: 23.6.0
       '@prezly/theme-kit-core':
-        specifier: ^10.0.2-alpha.0
-        version: 10.0.2-alpha.0(@prezly/sdk@23.6.0)
+        specifier: ^10.0.3-alpha.0
+        version: 10.0.3-alpha.0(@prezly/sdk@23.6.0)
       '@prezly/theme-kit-intl':
-        specifier: ^10.0.2-alpha.0
-        version: 10.0.2-alpha.0
+        specifier: ^10.0.3-alpha.0
+        version: 10.0.3-alpha.0
       '@prezly/theme-kit-react':
-        specifier: ^10.0.2-alpha.0
-        version: 10.0.2-alpha.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^10.0.3-alpha.0
+        version: 10.0.3-alpha.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@technically/is-not-undefined':
         specifier: ^1.0.0
         version: 1.0.0
@@ -181,8 +181,8 @@ importers:
   packages/react:
     dependencies:
       '@prezly/theme-kit-intl':
-        specifier: ^10.0.2-alpha.0
-        version: 10.0.2-alpha.0
+        specifier: ^10.0.3-alpha.0
+        version: 10.0.3-alpha.0
       react:
         specifier: ^18.x || ^19.x
         version: 19.0.0
@@ -1946,22 +1946,22 @@ packages:
   '@prezly/story-content-format@0.64.0':
     resolution: {integrity: sha512-y9yHEM3S6wUvgcBvUY87lOkm9k8gp2gdx8SF0SoJu6Lfqp9slS8FlCsLTqZJV7C7g57Vd+LfX3JbXObQ2K8GZw==}
 
-  '@prezly/theme-kit-core@10.0.2-alpha.0':
-    resolution: {integrity: sha512-ivwy4Si9fLRyo4qmhDtNR4eMY7iEr58JhRcSV0x/0AicLg2B8AsVh1U5aQuVNTBqI4qTypuIH8rydeJsITDguQ==}
+  '@prezly/theme-kit-core@10.0.3-alpha.0':
+    resolution: {integrity: sha512-jegdmMjDCX3cTER0tUVtLDiqB9mNoI2o+SqdAbsYQzuYTAGcJxaM/yIzIyYQtnXYRSX8OFCIaiT2uIIDyUlbvA==}
     engines: {node: '>= 16.x', npm: '>= 8.x'}
     peerDependencies:
       '@prezly/sdk': 21.12.0 || ^23.x
 
-  '@prezly/theme-kit-intl@10.0.2-alpha.0':
-    resolution: {integrity: sha512-W/1c5asHzhDR8rHIOCCKG90abgGVgib37mdyhiF+GZ5WUNEEUhwEqtkb+Wyx6jR3UpL8S/7oaQGZL64Ixob2hw==}
+  '@prezly/theme-kit-intl@10.0.3-alpha.0':
+    resolution: {integrity: sha512-4Fr0jVF8AumzxDz0Po81uMPHYLpiP9p7y9EqolkkZ+xLDQjhxNHNjAEjLG8ker9fkuM2XbyNegmdsQawRvgxBg==}
     engines: {node: '>= 14.x', npm: '>= 7.x'}
 
-  '@prezly/theme-kit-react@10.0.2-alpha.0':
-    resolution: {integrity: sha512-hb69TFO6qB1FVoVxfSLh9GP43RAofsRKt0Jt0BgPg2MZdKJ/LgbCUUAjqcnvomJDiQs+F1mGio7jDAeYoqnwRw==}
+  '@prezly/theme-kit-react@10.0.3-alpha.0':
+    resolution: {integrity: sha512-7QoPjHq+Ro6N4X6jS1JshMKi/QbEePV/eKz/L7ANIXqT9rpv3WpxGR/9Rmp3INBawEOY5AaGlQ9GPlKl7QnvoQ==}
     engines: {node: '>= 20.x', npm: '>= 8.x'}
     peerDependencies:
-      react: ^18.x || 19.x
-      react-dom: ^18.x || 19.x
+      react: ^18.x || ^19.x
+      react-dom: ^18.x || ^19.x
 
   '@prezly/uploadcare-image@0.3.2':
     resolution: {integrity: sha512-gLlgSwPQzlUZqSUOw2YZ6Bceh3A0Ymf5axjQJX1V8PtIHXVLKM9pSq+pmBOoVDs4JXue/unysMTG+qZwEwz9+g==}
@@ -10695,23 +10695,23 @@ snapshots:
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
 
-  '@prezly/theme-kit-core@10.0.2-alpha.0(@prezly/sdk@23.6.0)':
+  '@prezly/theme-kit-core@10.0.3-alpha.0(@prezly/sdk@23.6.0)':
     dependencies:
       '@prezly/sdk': 23.6.0
-      '@prezly/theme-kit-intl': 10.0.2-alpha.0
+      '@prezly/theme-kit-intl': 10.0.3-alpha.0
       '@prezly/uploadcare': 2.4.4
       '@technically/is-not-undefined': 1.0.0
       '@technically/omit-undefined': 1.0.4
       parse-data-url: 6.0.0
       url-pattern: 1.0.3
 
-  '@prezly/theme-kit-intl@10.0.2-alpha.0':
+  '@prezly/theme-kit-intl@10.0.3-alpha.0':
     dependencies:
       '@technically/is-not-undefined': 1.0.0
 
-  '@prezly/theme-kit-react@10.0.2-alpha.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@prezly/theme-kit-react@10.0.3-alpha.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@prezly/theme-kit-intl': 10.0.2-alpha.0
+      '@prezly/theme-kit-intl': 10.0.3-alpha.0
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 

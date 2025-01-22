@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useEffect, useReducer } from 'react';
 
 const DEFAULT_RETRIES = 3;
