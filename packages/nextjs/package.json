@@ -5,10 +5,7 @@
   "type": "module",
   "main": "build/index.mjs",
   "types": "build/index.d.ts",
-  "files": [
-    "build",
-    "README.md"
-  ],
+  "files": ["build", "README.md"],
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
@@ -54,10 +51,7 @@
     "url": "git+https://github.com/prezly/theme-kit-js.git",
     "directory": "packages/nextjs"
   },
-  "keywords": [
-    "prezly",
-    "nextjs"
-  ],
+  "keywords": ["prezly", "nextjs"],
   "author": "Prezly Team",
   "license": "MIT",
   "bugs": {
@@ -82,9 +76,9 @@
   "peerDependencies": {
     "@playwright/test": "1.x",
     "@prezly/sdk": "21.12.0 || ^23.x",
-    "next": "^12.x || ^13.x || ^14.x || ^15.x",
-    "react": "^17.x || ^18.x || ^19.x",
-    "react-dom": "^17.x || ^18.x || ^19.x"
+    "next": "^14.x || ^15.x",
+    "react": "^18.x || ^19.x",
+    "react-dom": "^18.x || ^19.x"
   },
   "peerDependenciesMeta": {
     "@playwright/test": {
@@ -97,8 +91,8 @@
     "@prezly/theme-kit-react": "^10.0.2-alpha.0",
     "@technically/is-not-undefined": "^1.0.0",
     "@technically/omit-undefined": "^1.0.4",
-    "json-stable-stringify": "^1.1.1",
-    "redis": "^4.6.12",
+    "json-stable-stringify": "^1.2.1",
+    "redis": "^4.7.0",
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
