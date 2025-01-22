@@ -14,7 +14,7 @@ See individual package READMEs for more information:
 
 ### Getting started
 
-After pulling the repo, run `npm i` to install the dependencies. This will install the root dependencies, as well as dependencies for individual packages.
+After pulling the repo, run `pnpm i` to install the dependencies. This will install the root dependencies, as well as dependencies for individual packages.
 
 ### NPM scripts
 

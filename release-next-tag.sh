@@ -5,13 +5,13 @@ VERSION=0.0.0-next-$COMMIT
 
 echo Preparing $VERSION
 
-npx lerna version $VERSION --no-push --no-git-tag-version --yes
+pnpm exec lerna version $VERSION --no-push --no-git-tag-version --yes
 
-npm run sync-package-versions
+pnpm sync-package-versions
 
-npm install
+pnpm install
 
-npm run build
+pnpm build
 
 git add lerna.json \
         package-lock.json \
@@ -23,4 +23,4 @@ git add lerna.json \
 
 git commit -m "v$VERSION"
 
-npx lerna publish --dist-tag next from-package
+pnpm exec lerna publish --dist-tag next from-package
