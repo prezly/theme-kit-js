@@ -16,7 +16,7 @@ jobs:
         pnpm: 9.15.4
         node: 20
 
-    - run: pnpm install
+    - run: pnpm install --frozen-lockfile
 
     - run: pnpm typecheck
       env:

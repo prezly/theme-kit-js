@@ -9,7 +9,7 @@ pnpm exec lerna version $VERSION --no-push --no-git-tag-version --yes
 
 pnpm sync-package-versions
 
-pnpm install
+pnpm install --frozen-lockfile
 
 pnpm build
 
