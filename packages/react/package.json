@@ -5,10 +5,7 @@
   "type": "module",
   "main": "build/index.mjs",
   "types": "build/index.d.ts",
-  "files": [
-    "build",
-    "README.md"
-  ],
+  "files": ["build", "README.md"],
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
@@ -29,10 +26,7 @@
     "url": "git+https://github.com/prezly/theme-kit-js.git",
     "directory": "packages/react"
   },
-  "keywords": [
-    "prezly",
-    "react"
-  ],
+  "keywords": ["prezly", "react"],
   "author": "Prezly Team",
   "license": "MIT",
   "bugs": {
