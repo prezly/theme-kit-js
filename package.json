@@ -42,7 +42,7 @@
     "@babel/preset-typescript": "7.26.0",
     "@dr.pogodin/babel-preset-svgr": "1.9.0",
     "@playwright/test": "1.49.1",
-    "@prezly/eslint-config": "5.3.2",
+    "@prezly/eslint-config": "5.4.5",
     "@prezly/sdk": "23.6.0",
     "@types/jest": "29.5.14",
     "@types/node": "20.17.16",
