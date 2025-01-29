@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { IntlDictionary } from './formatting';
 import { type Locale, pickSupportedLocale } from './locales';
 

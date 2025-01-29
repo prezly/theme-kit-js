@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { omitUndefined } from '@technically/omit-undefined';
 import type { Metadata } from 'next';
 

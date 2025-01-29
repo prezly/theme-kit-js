@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
-
 import { createPrezlyClient } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
 

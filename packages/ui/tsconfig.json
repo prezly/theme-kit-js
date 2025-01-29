@@ -20,6 +20,7 @@
       "@/hooks": ["./hooks/"]
     }
   },
+  "files": ["./index.d.ts"],
   "exclude": ["node_modules"],
   "include": ["./src", "./@types/svg.d.ts"]
 }

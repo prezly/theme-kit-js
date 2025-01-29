@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define,react/jsx-props-no-spreading */
 import { AsyncResolvable } from '@prezly/theme-kit-core';
 import type {
     IntlDictionary,

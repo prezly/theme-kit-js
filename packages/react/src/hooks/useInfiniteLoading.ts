@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
+'use client';
 
 import { useCallback, useEffect, useReducer } from 'react';
 

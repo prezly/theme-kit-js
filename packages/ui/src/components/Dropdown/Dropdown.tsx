@@ -9,7 +9,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu';
-import type { ComponentPropsWithoutRef, ElementRef, PropsWithChildren, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ComponentRef, PropsWithChildren, ReactNode } from 'react';
 import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -44,7 +44,7 @@ export function Dropdown({ children, label, className, contentProps }: Dropdown.
 }
 
 const DropdownItem = forwardRef<
-    ElementRef<typeof DropdownMenuItem>,
+    ComponentRef<typeof DropdownMenuItem>,
     ComponentPropsWithoutRef<typeof DropdownMenuItem>
 >(({ className, ...props }, ref) => (
     <DropdownMenuItem

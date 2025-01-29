@@ -1,5 +1,3 @@
-/* eslint-disable import/extensions */
-
 export * from './app-helper/server';
 export * from './intl/server';
 export * from './metadata/server';

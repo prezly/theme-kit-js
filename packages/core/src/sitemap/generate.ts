@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { Category } from '@prezly/sdk';
 import type { Newsroom, Story } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';

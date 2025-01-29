@@ -20,7 +20,6 @@ export type IntlMessageFormat = (
     | { type: IntlMessageFormat.Type.POUND }
 )[];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
 export namespace IntlMessageFormat {
     /**
      * @see https://github.com/formatjs/formatjs/blob/df4f21270320237eb5a91fbf74f3f8f51b4ff184/rust/icu-messageformat-parser/src/ast.rs#L212-L262

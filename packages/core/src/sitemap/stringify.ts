@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { AlternateLink, SitemapFile, SitemapFileEntry } from './types';
 
 export function stringify(sitemap: SitemapFile) {

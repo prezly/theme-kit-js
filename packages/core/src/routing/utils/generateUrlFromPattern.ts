@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Locale } from '@prezly/theme-kit-intl';
 import { omitUndefined } from '@technically/omit-undefined';
 import UrlPattern from 'url-pattern';

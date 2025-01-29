@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type { Router, RoutesMap, UrlGenerator } from '@prezly/theme-kit-core';
 import { AsyncResolvable, Routing } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';

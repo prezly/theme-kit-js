@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-nextjs",
-  "version": "9.8.2",
+  "version": "10.0.4-alpha.0",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "type": "module",
   "main": "build/index.mjs",
@@ -60,15 +60,15 @@
   "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/nextjs#readme",
   "scripts": {
     "prebuild": "rimraf build/* *.tsbuildinfo",
-    "build": "npm run build:types && npm run build:esm && npm run build:cjs",
+    "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs",
     "build:types": "tsc --project .",
     "build:esm": "babel --config-file=../../babel.esm.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.mjs",
     "build:cjs": "babel --config-file=../../babel.cjs.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.cjs",
     "dev": "tsc --watch --preserveWatchOutput --project .",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false --incremental --project .",
     "lint": "eslint src",
-    "test": "npm run test:build",
-    "test:build": "npm run test:build:cjs && npm run test:build:esm && npm run test:build:types",
+    "test": "pnpm test:build",
+    "test:build": "pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",
     "test:build:types": "tsc --esModuleInterop --noEmit build/index.d.ts",
     "test:build:esm": "node tests/test-build.mjs",
     "test:build:cjs": "node tests/test-build.cjs"
@@ -76,9 +76,9 @@
   "peerDependencies": {
     "@playwright/test": "1.x",
     "@prezly/sdk": "21.12.0 || ^23.x",
-    "next": "^12.x || ^13.x || ^14.x",
-    "react": "^17.x || ^18.x",
-    "react-dom": "^17.x || ^18.x"
+    "next": "^14.x || ^15.x",
+    "react": "^18.x || ^19.x",
+    "react-dom": "^18.x || ^19.x"
   },
   "peerDependenciesMeta": {
     "@playwright/test": {
@@ -86,13 +86,13 @@
     }
   },
   "dependencies": {
-    "@prezly/theme-kit-core": "^9.8.2",
-    "@prezly/theme-kit-intl": "^9.8.2",
-    "@prezly/theme-kit-react": "^9.8.2",
+    "@prezly/theme-kit-core": "^10.0.4-alpha.0",
+    "@prezly/theme-kit-intl": "^10.0.4-alpha.0",
+    "@prezly/theme-kit-react": "^10.0.4-alpha.0",
     "@technically/is-not-undefined": "^1.0.0",
-    "@technically/omit-undefined": "^1.0.2",
-    "json-stable-stringify": "^1.1.1",
-    "redis": "^4.6.12",
+    "@technically/omit-undefined": "^1.0.4",
+    "json-stable-stringify": "^1.2.1",
+    "redis": "^4.7.0",
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {

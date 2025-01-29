@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import parseDataUrl from 'parse-data-url';
 
 export function combine(

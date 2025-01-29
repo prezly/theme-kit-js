@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import type {
     Culture,
     Newsroom,
@@ -53,7 +52,6 @@ export namespace story {
         | { uuid: Story['uuid']; slug?: never }
         | { uuid?: never; slug: Story['slug'] };
 
-    // eslint-disable-next-line @typescript-eslint/no-shadow
     export interface IncludeOptions<Include extends keyof Story.ExtraFields> {
         include?: Include[];
     }
@@ -378,7 +376,6 @@ function injectCache(
 
         const uncachedFn = client[methodName].bind(client);
 
-        // eslint-disable-next-line no-param-reassign
         client[methodName] = async (...args: Parameters<typeof uncachedFn>) => {
             const cacheKey = `${methodName}:${JSON.stringify(args)}`;
             const dedupeKey = `${latestVersion}:${cacheKey}`;

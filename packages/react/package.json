@@ -1,6 +1,6 @@
 {
   "name": "@prezly/theme-kit-react",
-  "version": "9.8.2",
+  "version": "10.0.4-alpha.0",
   "description": "Data layer and utility library for developing Prezly themes with NextJS",
   "type": "module",
   "main": "build/index.mjs",
@@ -14,11 +14,11 @@
     }
   },
   "engines": {
-    "node": ">= 16.x",
+    "node": ">= 20.x",
     "npm": ">= 8.x"
   },
   "devEngines": {
-    "node": ">= 16.x",
+    "node": ">= 20.x",
     "npm": ">= 8.x"
   },
   "repository": {
@@ -35,7 +35,7 @@
   "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/react#readme",
   "scripts": {
     "prebuild": "rimraf build/* *.tsbuildinfo",
-    "build": "npm run build:types && npm run build:esm && npm run build:cjs",
+    "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs",
     "build:types": "tsc --project .",
     "build:esm": "babel --config-file=../../babel.esm.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.mjs",
     "build:cjs": "babel --config-file=../../babel.cjs.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.cjs",
@@ -45,11 +45,11 @@
     "test": "echo 'No tests yet'"
   },
   "peerDependencies": {
-    "react": "^18.x",
-    "react-dom": "^18.x"
+    "react": "^18.x || ^19.x",
+    "react-dom": "^18.x || ^19.x"
   },
   "dependencies": {
-    "@prezly/theme-kit-intl": "^9.8.2"
+    "@prezly/theme-kit-intl": "^10.0.4-alpha.0"
   },
   "publishConfig": {
     "access": "public"

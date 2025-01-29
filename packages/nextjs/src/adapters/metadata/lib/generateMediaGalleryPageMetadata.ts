@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { NewsroomGallery } from '@prezly/sdk';
 import { AsyncResolvable, Galleries, Uploads } from '@prezly/theme-kit-core';
 import {
