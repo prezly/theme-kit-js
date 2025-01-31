@@ -86,8 +86,8 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@prezly/analytics-nextjs": "3.0.0",
-    "@prezly/content-renderer-react-js": "0.37.2",
-    "@prezly/story-content-format": "^0.64.0",
+    "@prezly/content-renderer-react-js": "0.40.0",
+    "@prezly/story-content-format": "^0.68.0",
     "@prezly/uploadcare": "^2.4.3",
     "@prezly/uploadcare-image": "^0.3.2",
     "@radix-ui/react-dialog": "^1.0.5",
