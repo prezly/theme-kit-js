@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@prezly/theme-kit-intl": "^10.2.0",
-    "@prezly/uploadcare": "2.4.4",
+    "@prezly/uploadcare": "2.5.0",
     "@technically/is-not-undefined": "^1.0.0",
     "@technically/omit-undefined": "^1.0.4",
     "parse-data-url": "^6.0.0",
