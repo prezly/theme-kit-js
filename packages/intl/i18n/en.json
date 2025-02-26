@@ -83,6 +83,12 @@
   "cookieConsent.cookiePolicy": {
     "message": "Cookie Policy"
   },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "You can revoke cookies at anytime at the bottom of the page."
   },
