@@ -85,6 +85,10 @@ export const cookieConsent = defineMessages({
         defaultMessage:
             'We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others.',
     },
+    managePreferencesTitle: {
+        id: 'cookieConsent.managePreferencesTitle',
+        defaultMessage: 'Manage cookie preferences',
+    },
     accept: {
         id: 'cookieConsent.accept',
         defaultMessage: 'Yes, you can use cookies',
@@ -96,5 +100,56 @@ export const cookieConsent = defineMessages({
     notice: {
         id: 'cookieConsent.notice',
         defaultMessage: 'You can revoke cookies at anytime at the bottom of the page.',
+    },
+    privacyPolicy: {
+        id: 'cookieConsent.privacyPolicy',
+        defaultMessage: 'Privacy Policy',
+    },
+    cookiePolicy: {
+        id: 'cookieConsent.cookiePolicy',
+        defaultMessage: 'Cookie Policy',
+    },
+    categoryNecessary: {
+        id: 'cookieConsent.categoryNecessary',
+        defaultMessage: 'Strictly Necessary cookies',
+    },
+    categoryNecessaryDescription: {
+        id: 'cookieConsent.categoryNecessaryDescription',
+        defaultMessage:
+            'These cookies are essential for the proper functioning of the website and cannot be disabled.',
+    },
+    categoryFirstParty: {
+        id: 'cookieConsent.categoryFirstParty',
+        defaultMessage: 'First-party Analytics',
+    },
+    categoryFirstPartyDescription: {
+        id: 'cookieConsent.categoryFirstPartyDescription',
+        defaultMessage:
+            'Cookies used to collect information about how visitors use our website, directly by us.',
+    },
+    categoryThirdParty: {
+        id: 'cookieConsent.categoryThirdParty',
+        defaultMessage: 'Third-party Cookies',
+    },
+    categoryThirdPartyDescription: {
+        id: 'cookieConsent.categoryThirdPartyDescription',
+        defaultMessage:
+            'Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking.',
+    },
+    acceptSelection: {
+        id: 'cookieConsent.acceptSelection',
+        defaultMessage: 'Accept current selection',
+    },
+    acceptAll: {
+        id: 'cookieConsent.acceptAll',
+        defaultMessage: 'Accept all',
+    },
+    rejectAll: {
+        id: 'cookieConsent.rejectAll',
+        defaultMessage: 'Reject all',
+    },
+    managePreferences: {
+        id: 'cookieConsent.managePreferences',
+        defaultMessage: 'Manage preferences',
     },
 });
