@@ -85,6 +85,10 @@ export const cookieConsent = defineMessages({
         defaultMessage:
             'We use cookies on our website. They help us get to know you a little and how you use our website. This helps us provide a more valuable and tailored experience for you and others.',
     },
+    managePreferencesTitle: {
+        id: 'cookieConsent.managePreferencesTitle',
+        defaultMessage: 'Manage cookie preferences',
+    },
     accept: {
         id: 'cookieConsent.accept',
         defaultMessage: 'Yes, you can use cookies',
@@ -143,5 +147,9 @@ export const cookieConsent = defineMessages({
     rejectAll: {
         id: 'cookieConsent.rejectAll',
         defaultMessage: 'Reject all',
+    },
+    managePreferences: {
+        id: 'cookieConsent.managePreferences',
+        defaultMessage: 'Manage preferences',
     },
 });
