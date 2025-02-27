@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Ja, cookies må anvendes"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Du kan afvise cookies når som helst nederst på siden."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Privatlivspolitik"
+  },
   "cookieConsent.reject": {
     "message": "Nej, cookies må ikke anvendes"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "Vi bruger cookies på vores hjemmeside. De hjælper os med at lære lidt om dig og hvordan du bruger vores hjemmeside. Dette hjælper os til at give dig og andre brugere end mere værdifuld og personlig oplevelse."
