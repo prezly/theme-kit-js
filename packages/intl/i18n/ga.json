@@ -57,37 +57,37 @@
     "message": "Is féidir fianáin a úsáid"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Glac gach"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Glac an roghnúchán reatha"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Anailísíocht chéad pháirtí"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Fianáin a úsáidtear chun faisnéis a bhailiú faoin gcaoi a n-úsáideann cuairteoirí ár suíomh gréasáin, go díreach againn."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Fianáin a bhfuil géarghá leo"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Tá na fianáin seo riachtanach d'fheidhmiú cuí an tsuímh gréasáin agus ní féidir iad a dhíchumasú."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Fianáin Tríú Páirtí"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Fianáin arna socrú ag seirbhísí tríú páirtí, amhail iad siúd a úsáidtear le haghaidh fógraíochta, leabú na meán sóisialta, agus rianú an tsuímh ghréasáin."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Polasaí Fianáin"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Bainistigh sainroghanna"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Bainistigh sainroghanna fianáin"
   },
   "cookieConsent.notice": {
     "message": "Is féidir leat fianáin a chúlghairm am ar bith ag bun an leathanaigh seo."
@@ -99,7 +99,7 @@
     "message": "Ná húsáidtear fianáin"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Diúltaigh do gach rud"
   },
   "cookieConsent.subtitle": {
     "message": "Bainimid úsáid as fianáin ar ár láithreán gréasáin. Tá siad ina gcuidiú linn aithne a chur ort agus insint dúinn conas a úsáideann tú ár láithreán gréasáin. Cuidíonn sé sin linn eispéireas níos luachmhaire, saincheaptha a thabhairt duit agus do dhaoine eile."
@@ -117,13 +117,13 @@
     "message": "Something went wrong. Please try submitting the form again"
   },
   "homepage.allStories": {
-    "message": "All stories"
+    "message": "Gach scéal"
   },
   "homepage.latestStories": {
-    "message": "Latest stories"
+    "message": "Na scéalta is déanaí"
   },
   "mediaGallery.imagesCount": {
-    "message": "{imagesCount, plural, =0 {No images} one {# image} few {# images} many {# images} other {# images} }"
+    "message": "{imagesCount, plural, =0 {Gan íomha} one {# íomha} few {# íomha} many {# n-íomha} other {# íomha} }"
   },
   "mediaGallery.title": {
     "message": "Media galleries"
@@ -132,7 +132,7 @@
     "message": "Gailearaí meán"
   },
   "mediaGallery.videosCount": {
-    "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
+    "message": "{videosCount, plural, =0 {Gan fhíseáin} one {# fhíseán} two {# fhíseán} few {# fhíseán} many {# bhfíseán} other {# físeán} }"
   },
   "misc.embargoMessage": {
     "description": "Embargo means that the story is not allowed to be shared before the specified date",
