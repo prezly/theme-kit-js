@@ -57,37 +57,37 @@
     "message": "Evet, çerezleri kullanabilirsiniz"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Tümünü kabul et"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Mevcut seçimi kabul et"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Birinci Taraf Analizi"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Çerezler, ziyaretçilerin web sitemizi nasıl kullandıkları hakkında doğrudan bizim tarafımızdan bilgi amacıyla için kullanılır."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Kesinlikle Gerekli çerezler"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Bu çerezler, web sitesinin düzgün çalışması için gereklidir ve devre dışı bırakılamaz."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Üçüncü Taraf Çerezleri"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Reklam, sosyal medya yerleştirmeleri ve web sitesi izleme için kullanılanlar gibi üçüncü taraf hizmetleri tarafından ayarlanan çerezler."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Çerez Politikası"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Tercihleri yönet"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Çerez tercihlerini yönetme"
   },
   "cookieConsent.notice": {
     "message": "Çerezleri istediğiniz zaman bu sayfanın altından iptal edebilirsiniz."
@@ -99,7 +99,7 @@
     "message": "Hayır, çerezleri kullanmayın"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Tümünü reddet"
   },
   "cookieConsent.subtitle": {
     "message": "Web sitemizde çerez kullanıyoruz. Çerezler sizi biraz tanımamıza ve web sitemizi nasıl kullandığınızı öğrenmemize yardımcı olur. Böylece çerezler, siz ve diğer kullanıcılar için daha değerli ve daha uygun hâle getirilmiş bir deneyim sunmamıza yardım eder."
