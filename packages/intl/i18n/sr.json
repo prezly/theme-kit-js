@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Da, možete da koristite kolačiće"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Možete da povučete korišćenje kolačića bilo kada na dnu stranice."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Politika privatnosti"
+  },
   "cookieConsent.reject": {
     "message": "Ne, ne koristite kolačiće"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "Koristimo kolačiće na našem veb-sajtu. Oni nam pomažu da vas bolje upoznamo i da shvatimo kako koristite naš veb-sajt. Ovo nam pomaže da ponudimo vrednije i prilagođenije iskustvo za vas i druge."
