@@ -129,7 +129,7 @@
     "message": "Media galleries"
   },
   "mediaGallery.titleSingular": {
-    "message": "Media gallery"
+    "message": "Gailearaí meán"
   },
   "mediaGallery.videosCount": {
     "message": "{videosCount, plural, =0 {No videos} one {# video} few {# videos} many {# videos} other {# videos} }"
