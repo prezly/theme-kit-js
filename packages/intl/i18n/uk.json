@@ -57,7 +57,7 @@
     "message": "Так, ви можете використовувати кукіз"
   },
   "cookieConsent.acceptAll": {
-    "message": "Прийняти всі"
+    "message": "Прийняти все"
   },
   "cookieConsent.acceptSelection": {
     "message": "Прийняти поточний вибір"
@@ -78,16 +78,16 @@
     "message": "Сторонні файли cookie"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Файли cookie, установлені сторонніми сервісами, наприклад, для реклами, вбудовування елементів соцмереж і відстеження дій на вебсайтах."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Політика щодо файлів cookie"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Керувати налаштуваннями"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Керування налаштуваннями файлів cookie"
   },
   "cookieConsent.notice": {
     "message": "Ви можете відкликати кукіз у будь-який час внизу сторінки."
@@ -99,7 +99,7 @@
     "message": "Ні, не використовуйте кукіз"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Відхилити все"
   },
   "cookieConsent.subtitle": {
     "message": "На нашому сайті ми використовуємо кукіз. Вони допомагають нам трохи дізнатись про вас та про те, як ви користуєтесь нашим сайтом. Це допомагає нам забезпечити для вас та інших більш цінний та індивідуально налаштований досвід."
