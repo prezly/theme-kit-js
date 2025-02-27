@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "हाँ, आप कुकीज़ का प्रयोग कर सकते हैं"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "आप पेज के निचले भाग पर जाकर किसी भी समय कुकीज़ हेतु अनुमति को रद्द कर सकते हैं।"
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "गोपनीयता नीति"
+  },
   "cookieConsent.reject": {
     "message": "नहीं, कुकीज़ का प्रयोग नहीं करें"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "हम अपनी वेबसाइट पर कुकीज़ का प्रयोग करते हैं। वे आपके बारे में थोड़ा जानने में और आप हमारी वेबसाइट का प्रयोग किस प्रकार करते हैं इस बारे में जानने में हमारी सहायता करती हैं। इससे हमें आपके और अन्य लोगों हेतु अधिक मूल्यवान और रुचि अनुरूप अनुभव प्रदान करने में मदद मिलती है।"
