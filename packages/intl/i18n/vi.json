@@ -57,37 +57,37 @@
     "message": "Vâng, bạn có thể sử dụng cookie"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Chấp nhận tất cả"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Chấp nhận lựa chọn hiện tại"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Phân tích của bên thứ nhất"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Các cookie được sử dụng để thu thập thông tin về cách thức khách truy cập sử dụng trang web của chúng tôi, trực tiếp bởi chúng tôi."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Các cookie thật sự cần thiết"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Các cookie này là thiết yếu để trang web hoạt động hiệu quả và không thể bị tắt."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Cookie của bên thứ ba"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Các cookie được thiết lập bởi dịch vụ của bên thứ ba, chẳng hạn những cookie dùng cho quảng cáo, nhúng mạng xã hội, và theo dõi của trang web."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Chính sách cookie"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Quản lý tùy chọn"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Quản lý tùy chọn cookie"
   },
   "cookieConsent.notice": {
     "message": "Bạn có thể thu hồi cookie bất kỳ lúc nào ở cuối trang."
@@ -99,7 +99,7 @@
     "message": "Không, đừng sử dụng cookie"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Từ chối tất cả"
   },
   "cookieConsent.subtitle": {
     "message": "Chúng tôi sử dụng cookie trên trang web của chúng tôi. Chúng giúp chúng tôi hiểu chút ít về bạn và cách bạn sử dụng trang web của chúng tôi. Điều này giúp chúng tôi đem lại trải nghiệm đáng giá và phù hợp với bạn và những người khác."
