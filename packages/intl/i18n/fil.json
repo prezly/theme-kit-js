@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Oo, maaari kayong gumamit ng mga cookie"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Maaari mong ipawalang-bisa ang mga cookie sa anumang oras sa ibaba ng page."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Patakaran ng Pagkapribado"
+  },
   "cookieConsent.reject": {
     "message": "Hindi, huwag gumamit ng mga cookie"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "Gumagamit kami ng mga cookie sa aming website. Tinutulungan kami ng mga ito na makilala ka nang kaunti at kung paano mo ginagamit ang aming website. Tinutulungan kami nito na makapagbigay ng mas mahalaga at iniakmang karanasan para sa iyo at iba pa."
