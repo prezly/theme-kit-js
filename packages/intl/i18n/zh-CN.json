@@ -57,7 +57,7 @@
     "message": "好的，你可以使用信息记录程序（cookies）"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "全部接受"
   },
   "cookieConsent.acceptSelection": {
     "message": "Accept current selection"
