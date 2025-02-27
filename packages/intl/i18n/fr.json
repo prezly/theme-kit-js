@@ -57,37 +57,37 @@
     "message": "Oui, vous pouvez utiliser des cookies"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Tout accepter"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Accepter la sélection actuelle"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Analyses de première partie"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Cookies utilisés directement par nous pour collecter des informations sur la façon dont les visiteurs utilisent notre site Web."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Cookies strictement nécessaires"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Ces cookies sont essentiels au bon fonctionnement du site Web et ne peuvent pas être désactivés."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Cookies de tiers"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Cookies définis par des services tiers, tels que ceux utilisés pour la publicité, les médias sociaux et le suivi du site Web."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Politique relative aux cookies"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Gérer les préférences"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Gérer les préférences relatives aux cookies"
   },
   "cookieConsent.notice": {
     "message": "À tout moment, il vous est possible de désactiver les cookies en bas de page."
@@ -99,7 +99,7 @@
     "message": "Non, n'utilisez pas de cookies"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Tout rejeter"
   },
   "cookieConsent.subtitle": {
     "message": "Nous utilisons des cookies sur notre site internet. Ils nous aident à en savoir un tout petit peu plus sur vous et sur votre façon d'utiliser notre site. Ainsi, il nous est possible de vous proposer, à vous comme à d'autres, une expérience plus riche et personnalisée."
