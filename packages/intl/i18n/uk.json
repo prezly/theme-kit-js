@@ -57,25 +57,25 @@
     "message": "Так, ви можете використовувати кукіз"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Прийняти всі"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Прийняти поточний вибір"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Власна аналітика"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Файли cookie, які використовуються для збору інформації про те, як відвідувачі використовують наш сайт, безпосередньо нами."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Обов’язкові файли cookie"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Ці файли cookie необхідні для коректної роботи вебсайту й не можуть бути вимкнені."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Сторонні файли cookie"
   },
   "cookieConsent.categoryThirdPartyDescription": {
     "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
