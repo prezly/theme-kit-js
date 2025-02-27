@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Так, ви можете використовувати кукіз"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Ви можете відкликати кукіз у будь-який час внизу сторінки."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Політика конфіденційності"
+  },
   "cookieConsent.reject": {
     "message": "Ні, не використовуйте кукіз"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "На нашому сайті ми використовуємо кукіз. Вони допомагають нам трохи дізнатись про вас та про те, як ви користуєтесь нашим сайтом. Це допомагає нам забезпечити для вас та інших більш цінний та індивідуально налаштований досвід."
