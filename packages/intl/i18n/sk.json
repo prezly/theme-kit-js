@@ -57,37 +57,37 @@
     "message": "Môžete používať súbory cookies"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Prijať všetky"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Prijať aktuálny výber"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Analýza prvej strany"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Súbory cookie používané priamo nami na zhromažďovanie informácií o tom, ako návštevníci používajú naše webové stránky."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Nevyhnutne potrebné súbory cookie"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Tieto súbory cookie sú nevyhnutné pre správne fungovanie webovej stránky a nemožno ich vypnúť."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Súbory cookie tretích strán"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Súbory cookie nastavené službami tretích strán, napríklad tie, ktoré sa používajú na reklamu, vkladanie do sociálnych médií a sledovanie webových stránok."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Zásady používania súborov cookie"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Správa predvolieb"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Spravovanie predvolieb súborov cookie"
   },
   "cookieConsent.notice": {
     "message": "Súbory cookies môžete kedykoľvek zrušiť v spodnej časti stránky."
@@ -99,7 +99,7 @@
     "message": "Nepoužívajte súbory cookies"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Odmietnuť všetky"
   },
   "cookieConsent.subtitle": {
     "message": "Na našej webstránke používame súbory cookies. Pomáhajú nám o niečo viac vás spoznať a tiež zistiť, akým spôsobom používate našu webstránku. Vďaka nim vám môžeme poskytnúť hodnotnejší zážitok šitý na mieru vám aj ostatným."
