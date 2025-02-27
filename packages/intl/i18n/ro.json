@@ -57,37 +57,37 @@
     "message": "Da, puteți utiliza cookie-uri"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Acceptare toate"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Acceptare selecție curentă"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Date obținute direct"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Cookie-uri utilizate pentru a colecta informații despre modul în care vizitatorii utilizează site-ul nostru, direct de către noi."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Cookie-uri strict necesare"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Aceste cookie-uri sunt esențiale pentru buna funcționare a site-ului și nu pot fi dezactivate."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Cookie-uri terță parte"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Cookie-uri setate de servicii terțe, cum ar fi cele utilizate pentru publicitate, încorporări în social media și urmărirea site-urilor web."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Politica privind cookie-urile"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Gestionare preferințe"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Gestionare preferințe privind cookie-urile"
   },
   "cookieConsent.notice": {
     "message": "Puteți revoca oricând cookie-urile în partea de jos a ecranului."
@@ -99,7 +99,7 @@
     "message": "Nu, nu utilizați cookie-uri"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Respingere toate"
   },
   "cookieConsent.subtitle": {
     "message": "Utilizăm cookie-uri pe site-ul nostru. Acestea ne ajută să ne familiarizăm puțin cu dvs. și cu modul în care folosiți site-ul nostru. Acest lucru ne ajută să oferim, dvs. și altora, o experiență mai valoroasă și mai personalizată."
