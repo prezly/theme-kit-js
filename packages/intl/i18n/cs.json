@@ -66,28 +66,28 @@
     "message": "Analytika první strany"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Pomocí souborů cookie shromažďujeme informace o tom, jak návštěvníci používají naše webové stránky."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Nezbytně nutné soubory cookie"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Tyto soubory cookie jsou nezbytné pro správné fungování webových stránek a nelze je zakázat."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Soubory cookie třetích stran"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Soubory cookie používané službami třetích stran, například pro reklamu, vkládání na sociální sítě a sledování webových stránek."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Zásady používání souborů cookie"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Správa předvoleb"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Správa předvoleb souborů cookie"
   },
   "cookieConsent.notice": {
     "message": "Použití souborů cookies můžete kdykoli zrušit v dolní části stránky."
@@ -99,7 +99,7 @@
     "message": "Ne, nepoužívejte soubory cookies"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Odmítnout všechny"
   },
   "cookieConsent.subtitle": {
     "message": "Na našich webových stránkách používáme soubory cookies. Pomáhají nám vás trochu poznat a zjistit, jak naše webové stránky využíváte. Díky tomu můžeme vám i ostatním uživatelům poskytovat cennější a přizpůsobený zážitek."
