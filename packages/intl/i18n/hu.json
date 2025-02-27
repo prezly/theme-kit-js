@@ -57,37 +57,37 @@
     "message": "Igen, használhat cookie-kat"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Elfogadom az összeset"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Elfogadom a jelenleg kiválasztottakat"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Első fél elemzései"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Sütik, amelyeket közvetlenül mi gyűjtünk, és arról szolgálnak információkkal, hogy a látogatók hogyan használják a weboldalunkat."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Szigorúan szükséges sütik"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Ezek a sütik elengedhetetlenek a weboldal megfelelő működéséhez, ezért nem tilthatók le."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Harmadik féltől származó sütik"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Harmadik fél által beállított sütik, például a hirdetésekhez, a közösségi oldalakon való beágyazásokhoz és a weboldal nyomon követéséhez használt sütik."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Sütiszabályzat"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Beállítások kezelése"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Sütibeállítások kezelése"
   },
   "cookieConsent.notice": {
     "message": "A cookie-kat bármikor visszavonhatja az oldal alján."
@@ -99,7 +99,7 @@
     "message": "Nem, ne használjon cookie-kat"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Elutasítom az összeset"
   },
   "cookieConsent.subtitle": {
     "message": "A weboldalunkon cookie-kat használunk. Segítenek nekünk egy kicsit jobban megismerni önt, és azt, hogyan használja a honlapunkat. Ez segít nekünk értékesebb és személyre szabott élményt nyújtani önnek és másoknak."
