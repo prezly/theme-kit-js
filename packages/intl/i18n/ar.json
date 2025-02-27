@@ -72,22 +72,22 @@
     "message": "ملفات تعريف الارتباط التي لا غنى عنها"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "ملفات تعريف الارتباط هذه ضرورية للتشغيل الصحيح للموقع الإلكتروني، ولا يمكن إيقافها."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "ملفات تعريف الارتباط من الأطراف الخارجية"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "ملفات تعريف الارتباط التي تفرضها خدمات الأطراف الخارجية، مثل تلك المستخدمة لعرض الإعلانات والربط بوسائل التواصل الاجتماعي وتتبع المواقع الإلكترونية."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "سياسة ملفات تعريف الارتباط"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "إدارة التفضيلات"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "إدارة تفضيلات ملفات تعريف الارتباط"
   },
   "cookieConsent.notice": {
     "message": "يمكنك إلغاء ملفات تعريف الارتباط في أي وقت في الجزء السفلي من الصفحة."
@@ -99,7 +99,7 @@
     "message": "لا، لا تستخدموا ملفات تعريف الارتباط"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "رفض الكل"
   },
   "cookieConsent.subtitle": {
     "message": "نحن نستخدم ملفات تعريف الارتباط في موقعنا الإلكتروني، فهي تساعدنا على التعرف عليك قليلاً وعلى كيفية استخدامك لموقعنا الإلكتروني. يساعدنا هذا في إمدادك أنت والآخرين بتجربة ثرية ومخصصة."
