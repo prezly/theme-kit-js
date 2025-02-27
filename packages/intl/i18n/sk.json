@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Môžete používať súbory cookies"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Súbory cookies môžete kedykoľvek zrušiť v spodnej časti stránky."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Zásady ochrany osobných údajov"
+  },
   "cookieConsent.reject": {
     "message": "Nepoužívajte súbory cookies"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "Na našej webstránke používame súbory cookies. Pomáhajú nám o niečo viac vás spoznať a tiež zistiť, akým spôsobom používate našu webstránku. Vďaka nim vám môžeme poskytnúť hodnotnejší zážitok šitý na mieru vám aj ostatným."
