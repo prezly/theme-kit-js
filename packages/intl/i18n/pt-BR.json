@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Sim, pode usar cookies"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Você pode revogar os cookies a qualquer momento no fim da página."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Política de Privacidade"
+  },
   "cookieConsent.reject": {
     "message": "Não, não use cookies"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "Nós usamos cookies em nosso site. Eles nos permitem conhecê-lo melhor e saber como você usa nosso site. Isso nos ajuda a oferecer uma experiência mais rica e individualizada para você e outras pessoas."
