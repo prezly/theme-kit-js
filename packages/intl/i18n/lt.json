@@ -57,7 +57,7 @@
     "message": "Taip, galite naudoti slapukus"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Priimti visus"
   },
   "cookieConsent.acceptSelection": {
     "message": "Accept current selection"
@@ -81,10 +81,10 @@
     "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Slapukų politika"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Tvarkyti nuostatas"
   },
   "cookieConsent.managePreferencesTitle": {
     "message": "Manage cookie preferences"
@@ -99,7 +99,7 @@
     "message": "Ne, nenaudokite slapukų"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Atmesti visus"
   },
   "cookieConsent.subtitle": {
     "message": "Savo svetainėje naudojame slapukus. Jie padeda mums kiek pažinti jus ir sužinoti, kaip naudojatės mūsų svetaine. Tai padeda mums suteikti labiau vertingą ir pritaikytą patirtį jums ir kitiems."
