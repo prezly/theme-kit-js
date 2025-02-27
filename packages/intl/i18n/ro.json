@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Da, puteți utiliza cookie-uri"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Puteți revoca oricând cookie-urile în partea de jos a ecranului."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Politica de confidențialitate"
+  },
   "cookieConsent.reject": {
     "message": "Nu, nu utilizați cookie-uri"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "Utilizăm cookie-uri pe site-ul nostru. Acestea ne ajută să ne familiarizăm puțin cu dvs. și cu modul în care folosiți site-ul nostru. Acest lucru ne ajută să oferim, dvs. și altora, o experiență mai valoroasă și mai personalizată."
