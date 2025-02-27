@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "ได้ คุณสามารถใช้คุกกี้"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "คุณสามารถยกเลิกคุกกี้ได้ตลอดเวลาที่ด้านล่างของหน้า"
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "นโยบายความเป็นส่วนตัว"
+  },
   "cookieConsent.reject": {
     "message": "ไม่ได้ ไม่ให้ใช้คุกกี้"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "เราใช้คุกกี้บนเว็บไซต์ของเรา เพราะคุ้กกี้ช่วยให้ได้รู้จักคุณเล็กน้อยรวมไปถึงวิธีการที่คุณใช้เว็บไซต์ของเรา ซึ่งจะช่วยให้เราส่งมอบประสบการณ์ที่มีคุณค่าและเหมาะสมสำหรับคุณและคนอื่น ๆ"
