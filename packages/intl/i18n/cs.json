@@ -57,13 +57,13 @@
     "message": "Ano, můžete používat soubory cookies"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Přijmout vše"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Přijmout aktuální výběr"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Analytika první strany"
   },
   "cookieConsent.categoryFirstPartyDescription": {
     "message": "Cookies used to collect information about how visitors use our website, directly by us."
