@@ -60,34 +60,34 @@
     "message": "全部接受"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "接受当前选择"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "第一方分析"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "我们直接使用的 Cookie，用于收集关于访客如何使用我们网站的信息。"
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "必不可少的 Cookie"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "这些 Cookie 对于网站的正常运行至关重要，无法禁用。"
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "第三方 Cookie"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "由第三方服务设置的 Cookie，例如那些用于广告、社交媒体嵌入和网站跟踪的 Cookie。"
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Cookie 政策"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "管理偏好设置"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "管理 Cookie 偏好设置"
   },
   "cookieConsent.notice": {
     "message": "您可以随时在页面下方取消信息记录程序（cookies）。"
@@ -99,7 +99,7 @@
     "message": "不好，不要使用信息记录程序（cookies）"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "全部拒绝"
   },
   "cookieConsent.subtitle": {
     "message": "我们在网站上使用信息记录程序（cookies）。他们帮助我们了解到您的一些信息和您如何使用我们的网站。这能帮助我们给您和其他人提供一个更加实用和个性化的体验。"
