@@ -57,19 +57,19 @@
     "message": "نعم، يمكنكم استخدام ملفات تعريف الارتباط"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "قبول الكل"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "قبول الاختيار الحالي"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "تحليلات الطرف الأول"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "نستفيد من ملفات تعريف الارتباط التي نجمعها بأنفسنا في جمع معلومات حول كيفية استخدام الزائرين لموقعنا الإلكتروني."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "ملفات تعريف الارتباط التي لا غنى عنها"
   },
   "cookieConsent.categoryNecessaryDescription": {
     "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
