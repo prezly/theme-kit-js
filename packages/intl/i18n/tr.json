@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Evet, çerezleri kullanabilirsiniz"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Çerezleri istediğiniz zaman bu sayfanın altından iptal edebilirsiniz."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Gizlilik Politikası"
+  },
   "cookieConsent.reject": {
     "message": "Hayır, çerezleri kullanmayın"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "Web sitemizde çerez kullanıyoruz. Çerezler sizi biraz tanımamıza ve web sitemizi nasıl kullandığınızı öğrenmemize yardımcı olur. Böylece çerezler, siz ve diğer kullanıcılar için daha değerli ve daha uygun hâle getirilmiş bir deneyim sunmamıza yardım eder."
