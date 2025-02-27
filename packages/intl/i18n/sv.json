@@ -57,37 +57,37 @@
     "message": "Ja, ni kan använda cookies"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Acceptera alla"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Acceptera aktuellt val"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Förstapartsanalys"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Cookies som används för att samla in information om hur besökare använder vår webbplats, direkt av oss."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Nödvändiga cookies"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt och kan inte avaktiveras."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Tredjepartscookies"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Cookies från tredjepartstjänster, t.ex. sådana som används för annonsering, inbäddning i sociala medier och spårning av webbplatser."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Cookie-policy"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Hantera inställningar"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Hantera cookie-inställningar"
   },
   "cookieConsent.notice": {
     "message": "Du kan återkalla cookies när som helst längst ner på sidan."
@@ -99,7 +99,7 @@
     "message": "Nej, använd inte cookies"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Avvisa alla"
   },
   "cookieConsent.subtitle": {
     "message": "Vi använder cookies på vår hemsida. De hjälper oss att lära känna dig lite och hur du använder vår hemsida. Detta hjälper oss att ge en mer värdefull och skräddarsydd upplevelse för dig och andra."
