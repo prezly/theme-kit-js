@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Vâng, bạn có thể sử dụng cookie"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Bạn có thể thu hồi cookie bất kỳ lúc nào ở cuối trang."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Chính sách Quyền Riêng tư"
+  },
   "cookieConsent.reject": {
     "message": "Không, đừng sử dụng cookie"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "Chúng tôi sử dụng cookie trên trang web của chúng tôi. Chúng giúp chúng tôi hiểu chút ít về bạn và cách bạn sử dụng trang web của chúng tôi. Điều này giúp chúng tôi đem lại trải nghiệm đáng giá và phù hợp với bạn và những người khác."
