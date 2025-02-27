@@ -57,37 +57,37 @@
     "message": "Da, lahko uporabljate piškotke"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Sprejmi vse"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Sprejmi trenutni izbor"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Lastna analitika"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Naši lastni piškotki, s katerimi zbiramo informacije o tem, kako obiskovalci uporabljajo naše spletno mesto."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Nujno potrebni piškotki"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Ti piškotki so nujni za pravilno delovanje spletnega mesta in jih ni mogoče onemogočiti."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Piškotki tretjih oseb"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Piškotki storitev zunanjih ponudnikov, denimo taki, ki se uporabljajo za oglaševanje, vdelavo vsebine iz družbenih omrežij in sledenje spletnemu mestu."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Pravilnik o piškotkih"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Upravljanje nastavitev"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Upravljanje nastavitev piškotkov"
   },
   "cookieConsent.notice": {
     "message": "Piškotke lahko kadarkoli prekličete na dnu strani."
@@ -99,7 +99,7 @@
     "message": "Ne, ne uporabljajte piškotkov"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Zavrni vse"
   },
   "cookieConsent.subtitle": {
     "message": "Na našem spletnem mestu uporabljamo piškotke. Pomagajo nam, da vas malce bolje spoznamo in razumemo, kako uporabljate naše spletno mesto. To nam omogoča, da lahko zagotovimo bolj prilagojeno izkušnjo za vas in za druge."
