@@ -57,37 +57,37 @@
     "message": "Так, вы можаце выкарыстоўваць кукі-файлы"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Прыняць усе"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Прыняць бягучы выбар"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Уласная аналітыка"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Файлы cookie, якія выкарыстоўваюцца для збору інфармацыі пра тое, як наведвальнікі выкарыстоўваюць наш вэб-сайт. Збор і апрацоўка даных ажыццяўляецца непасрэдна намі."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Абавязковыя файлы cookie"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Гэтыя файлы cookie неабходныя для правільнай работы вэб-сайта і не могуць быць адключаны."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Староннія файлы cookie"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Файлы cookie, устаноўленыя староннімі сэрвісамі, напрыклад, для рэкламы, убудавання элементаў сацыяльных сетак і адсочвання дзеянняў на вэб-сайце."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Палітыка ў дачыненні да файлаў cookie"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Кіраваць наладамі"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Кіраваць наладамі файлаў cookie"
   },
   "cookieConsent.notice": {
     "message": "Вы можаце адклікаць кукі-файлы ў любы час у ніжняй частцы старонкі."
@@ -99,7 +99,7 @@
     "message": "Не, не трэба выкарыстоўваць кукі-файлы"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Адхіліць усе"
   },
   "cookieConsent.subtitle": {
     "message": "На нашым сайце мы выкарыстоўваем кукі-файлы. Яны дапамагаюць нам крыху даведацца пра вас і пра тое, як вы карыстаецеся нашым сайтам. Гэта дапамагае нам забяспечыць вам больш карысны карыстацкі інтэрфейс з індывідуальнымі настройкамі."
