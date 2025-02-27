@@ -57,37 +57,37 @@
     "message": "Tak, możecie używać ciasteczek"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Zaakceptuj wszystkie"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Zaakceptuj bieżący wybór"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Analityka własna"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Pliki cookie używane bezpośrednio przez nas do zbierania informacji o tym, jak odwiedzający korzystają z naszej strony internetowej."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Niezbędne pliki cookie"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Te pliki cookie są niezbędne do prawidłowego działania strony internetowej i nie można ich wyłączyć."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Pliki cookie stron trzecich"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Pliki cookie ustawiane przez usługi stron trzecich, takie jak pliki używane do celów reklamowych, osadzania w mediach społecznościowych i śledzenia stron internetowych."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Polityka plików cookie"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Zarządzaj preferencjami"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Zarządzanie preferencjami dotyczącymi plików cookie"
   },
   "cookieConsent.notice": {
     "message": "Możesz unieważnić ciasteczka w każdej chwili na dole strony."
@@ -99,7 +99,7 @@
     "message": "Nie, nie możecie używać ciasteczek"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Odrzuć wszystkie"
   },
   "cookieConsent.subtitle": {
     "message": "Używamy ciasteczek na naszej stronie. Pomagają nam one dowiedzieć się trochę o Tobie i o tym, jak używasz naszej strony. To pomaga nam zapewnić cenniejsze i bardziej dostosowane doznania dla Ciebie i innych."
