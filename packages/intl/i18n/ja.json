@@ -66,7 +66,7 @@
     "message": "ファーストパーティ分析"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookieは、訪問者によるウェブサイトの使用方法に関する情報を収集するために使用されます。これは、当社によって直接行われます。"
+    "message": "当社によって直接発行されるCookieで、訪問者によるウェブサイトの使用方法に関する情報を収集するために使用されます。"
   },
   "cookieConsent.categoryNecessary": {
     "message": "必須Cookie"
@@ -78,7 +78,7 @@
     "message": "サードパーティーCookie"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "サードパーティサービスによって設定されたCookieで、広告、ソーシャルメディアへの埋め込み、ウェブサイトのトラッキングなどに使用されます。"
+    "message": "サードパーティサービスによって設定されたCookieで、広告、ソーシャルメディアの埋め込み、ウェブサイトのトラッキングなどに使用されます。"
   },
   "cookieConsent.cookiePolicy": {
     "message": "Cookieポリシー"
