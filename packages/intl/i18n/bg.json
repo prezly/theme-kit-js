@@ -57,37 +57,37 @@
     "message": "Да, можете да използвате „бисквитки“"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Приемане на всички"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Приемане на текущия избор"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Собствени „бисквитки“ за анализ"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "„Бисквитки“, които се използват за събиране на информация за това как посетителите използват нашия уебсайт, директно от нас."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Строго необходими „бисквитки“"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Тези „бисквитки“ са от съществено значение за правилното функциониране на уебсайта и не могат да бъдат деактивирани."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "„Бисквитки“ на трети страни"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "„Бисквитки“, зададени от услуги на трети страни, като например такива, използвани за рекламиране, вграждане в социални медии и проследяване на уебсайтове."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Политика за „бисквитките“"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Управление на предпочитанията"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Управление на предпочитанията за „бисквитките“"
   },
   "cookieConsent.notice": {
     "message": "Можете да отмените „бисквитките“ по всяко време в долната част на страницата."
@@ -99,7 +99,7 @@
     "message": "Не, не използвайте „бисквитки“"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Отхвърляне на всички"
   },
   "cookieConsent.subtitle": {
     "message": "Ние използваме „бисквитки“ на нашия уеб сайт. Те ни помагат да ви опознаем малко и това, как използвате нашия уебсайт. Това ни помага да осигурим по-ценно и съобразено с вас и останалите преживяване."
