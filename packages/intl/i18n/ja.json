@@ -57,37 +57,37 @@
     "message": "はい、クッキーの使用を許可します"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "すべて許可する"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "現在の選択を許可する"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "ファーストパーティ分析"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Cookieは、訪問者によるウェブサイトの使用方法に関する情報を収集するために使用されます。これは、当社によって直接行われます。"
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "必須Cookie"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "これらのCookieはウェブサイトを正常に機能させるために不可欠であり、無効にすることはできません。"
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "サードパーティーCookie"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "サードパーティサービスによって設定されたCookieで、広告、ソーシャルメディアへの埋め込み、ウェブサイトのトラッキングなどに使用されます。"
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Cookieポリシー"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "設定の管理"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Cookie設定の管理"
   },
   "cookieConsent.notice": {
     "message": "クッキーはページの下部からいつでも無効にできます。"
@@ -99,7 +99,7 @@
     "message": "いいえ、クッキーを使用しないでください"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "すべて拒否する"
   },
   "cookieConsent.subtitle": {
     "message": "弊ウェブサイトではクッキーを使用します。これは弊社が、お客様について、またお客様による弊ウェブサイトの使い方について知るのに役立ちます。これにより弊社はお客様方に対してより有益で的確な体験を提供することができます。"
