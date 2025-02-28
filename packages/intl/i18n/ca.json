@@ -78,16 +78,16 @@
     "message": "Galetes de tercers"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Galetes establertes per serveis de tercers, com ara les utilitzades per a publicitat, incrustacions de xarxes socials i seguiment de llocs web."
+    "message": "Galetes establertes per serveis de tercers, com ara les utilitzades per a publicitat, insercions en xarxes socials i seguiment de llocs web."
   },
   "cookieConsent.cookiePolicy": {
     "message": "Política de galetes"
   },
   "cookieConsent.managePreferences": {
-    "message": "Gestiona les preferències"
+    "message": "Gestioneu les preferències"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Gestiona les preferències de galetes"
+    "message": "Gestioneu les preferències de galetes"
   },
   "cookieConsent.notice": {
     "message": "Podeu revocar les galetes en qualsevol moment a la part inferior de la pàgina."
