@@ -57,37 +57,37 @@
     "message": "Jah, võite kasutada küpsiseid"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Nõustu kõigiga"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Nõustu praeguse valikuga"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Esimese osapoole analüütika"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Meie loodud küpsised, mida kasutatakse teabe kogumiseks selle kohta, kuidas külastajad meie veebisaiti kasutavad."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Rangelt vajalikud küpsised"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Need küpsised on veebisaidi nõuetekohaseks toimimiseks hädavajalikud ja neid ei saa keelata."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Kolmanda osapoole küpsised"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Kolmandate osapoolte teenuste seatud küpsised, näiteks need, mida kasutatakse reklaami, sotsiaalmeediapostituste manustamise ja veebisaidi jälgimise jaoks."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Küpsiste poliitika"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Eelistuste haldamine"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Küpsiste eelistuste haldamine"
   },
   "cookieConsent.notice": {
     "message": "Saad küpsised igal ajal lehe allosas tühistada."
@@ -99,7 +99,7 @@
     "message": "Ei, te ei või kasutada küpsiseid"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Keeldu kõigist"
   },
   "cookieConsent.subtitle": {
     "message": "Kasutame oma veebisaidil küpsiseid. Need aitavad meil sind veidi tundma õppida ja samuti infot selle kohta, kuidas sa meie veebisaiti kasutad. See info aitab meil pakkuda sulle ja teistele väärtuslikumaid ning kohandatumaid kogemusi."
