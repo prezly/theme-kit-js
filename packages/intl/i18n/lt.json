@@ -57,28 +57,28 @@
     "message": "Taip, galite naudoti slapukus"
   },
   "cookieConsent.acceptAll": {
-    "message": "Priimti visus"
+    "message": "Sutikti su visais"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Sutikti su pasirinktais"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Pirmosios šalies analitinės priemonės"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Slapukus tiesiogiai naudojame rinkti informacijai apie tai, kaip lankytojai naudojasi mūsų svetaine."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Griežtai būtinieji slapukai"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Šie slapukai yra būtini, kad svetainė tinkamai veiktų, todėl jų išjungti neįmanoma."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Trečiųjų šalių slapukai"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Trečiųjų šalių paslaugų teikėjų nustatyti slapukai, naudojami, pvz., reklamai, socialinių tinklų turiniui įterpti ir svetainei sekti."
   },
   "cookieConsent.cookiePolicy": {
     "message": "Slapukų politika"
@@ -87,7 +87,7 @@
     "message": "Tvarkyti nuostatas"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Slapukų nuostatų tvarkymas"
   },
   "cookieConsent.notice": {
     "message": "Puslapio apačioje galite bet kada atšaukti slapukus."
