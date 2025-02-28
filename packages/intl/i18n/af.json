@@ -57,37 +57,37 @@
     "message": "Ja, julle kan koekies gebruik"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Aanvaar almal"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Aanvaar huidige keuse"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Eersteparty-statistiek"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Koekies wat gebruik wrd om inligting in te win oor hoe besoekers ons webwerf gebruik, wat deur ons sélf geplaas en gelees word."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Streng noodsaaklike koekies"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Hierdie koekies is noodsaaklik vir die werking van die webwerf, en kan nie gedeaktiveer word nie."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Derdeparty-koekies"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Koekies wat deur derde partye geplaas en gelees word, bv. vir reklame, sosiale media-inbedde, en webwerfvolging."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Koekiebeleid"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Bestuur voorkeure"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Bestuuur koekievoorkeure"
   },
   "cookieConsent.notice": {
     "message": "Jy kan koekies enige tyd onder aan die bladsy herroep."
@@ -99,7 +99,7 @@
     "message": "Nee, moenie koekies gebruik nie"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Weier almal"
   },
   "cookieConsent.subtitle": {
     "message": "Ons gebruik koekies op ons webwerf. Hulle help ons om ’n bietjie meer oor jou en hoe jy ons webwerf gebruik, uit te vind. Dit help ons om ’n waardevoller en persoonlike ondervinding aan jou en ander te verskaf."
