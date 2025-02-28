@@ -57,37 +57,37 @@
     "message": "Иә, кукилерді пайдаланылады"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Барлығын қабылдау"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Ағымдағы таңдауды қабылдау"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Бірінші тарап аналитикасы"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Біз пайдаланушылардың веб-сайтымызды қалай пайдаланатыны туралы ақпаратын жинайтын cookie файлдарын өңдейміз."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Қатаң түрде қажет cookie файлдары"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Бұл cookie файлдары веб-сайттың дұрыс жұмыс істеуіне өте қажет және оны өшіруге болмайды."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Үшінші тарап cookie файлдары"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Үшінші тарап орнататын cookie файлдары (мысалы, жарнамада пайдаланылатын, әлеуметтік желіге кіріктірілетін және веб-сайтты қадағалайтын)."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Cookie файлының саясаты"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Таңдауларды басқару"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Cookie таңдауларын басқару"
   },
   "cookieConsent.notice": {
     "message": "Беттің соңында куки файлдарын кез келген уақытта кері қайтара аласыз."
@@ -99,7 +99,7 @@
     "message": "Жоқ, кукилерді пайдаланылмайды"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Барлығын қабылдамау"
   },
   "cookieConsent.subtitle": {
     "message": "Біз веб-сайттарда кукилер пайдаланамыз. Олар сіз туралы және веб-сайтымызды қалай қолданатыныңыз туралы кішкене білуімізге көмектеседі. Бұл барлығымыз үшін анағұрлым пайдалы интерфейс және талғамға сай параметрлер жасауға көмектеседі."
