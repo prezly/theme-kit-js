@@ -57,37 +57,37 @@
     "message": "Ndio, unaweza kutumia vidakuzi"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Kubali zote"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Kubali uteuzi wa sasa"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Takwimu Zetu"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Vidakuzi vinavyotumiwa kukusanya maelezo kuhusu jinsi wageni wanavyotumia tovuti yetu, moja kwa moja nasi."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Vidakuzi Vinavyofaa pekee"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Vidakuzi hivi vinafaa kwa utendaji bora wa tovuti na haviwezi kuzimwa."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Vidakuzi vya Wengine"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Vidakuzi vinavyowekwa na huduma za wengine, kama vile vinavyotumika katika matangazo, mipachiko ya mitandao jamii na ufuatiliaji wa tovuti."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Sera ya Vidakuzi"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Dhibiti mapendeleo"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Dhibiti mapendeleo ya vidakuzi"
   },
   "cookieConsent.notice": {
     "message": "Unaweza kubatilisha vidakuzi wakati wowote chini ya ukurasa."
@@ -99,7 +99,7 @@
     "message": "Hapana, usitumie vidakuzi"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Kataa zote"
   },
   "cookieConsent.subtitle": {
     "message": "Tunatumia vidakuzi kwenye tovuti yetu. Zinatusaidia kukufahamu kidogo na jinsi unavyotumia tovuti yetu. Hii hutusaidia kukupa hali ya utumiaji yenye thamani zaidi na iliyoundwa mahsusi kwako na kwa wengine."
