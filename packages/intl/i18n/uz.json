@@ -57,37 +57,37 @@
     "message": "Ha, cookie fayllardan foydalanishingiz mumkin"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Hammasini qabul qilish"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Joriy tanlovni qabul qilish"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Ichki tahlil"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Cookie-fayllar tashrif buyuruvchilarning veb-saytimizdan bevosita qanday foydalanishi haqidagi axborotni biz tomonimizdan olish uchun ishlatiladi."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Qatʼiy zaruriy cookie fayllar"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Bu cookie-fayllar veb-saytning toʻgʻri ishlashi uchun zarur va ularni faolsizlantirish mumkin emas."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Tashqi cookie-fayllar"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Reklama, ijtimoiy tarmoqlarga joylash va veb-saytlarni kuzatish kabi tashqi xizmatlar tomonidan oʻrnatiladigan cookie-fayllar."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Cookie siyosati"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Sozlamalarni boshqarish"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Cookie sozlamalarini boshqarish"
   },
   "cookieConsent.notice": {
     "message": "Cookie fayllarni istalgan vaqt sahifaning pastki qismida bekor qilishingiz mumkin."
@@ -99,7 +99,7 @@
     "message": "Yoʻq, cookie fayllardan foydalanmang"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Hammasini rad etish"
   },
   "cookieConsent.subtitle": {
     "message": "Veb-saytimizda cookie fayllardan foydalanamiz. Ular bizga siz haqingizda ozroq bilishga va veb-saytimizdan qanday foydalanishingizda yordam beradi. Bu biz uchun yanada qimmatli va mos tajribalarni siz va boshqalarga taqdim qilishimizda yordam beradi."
