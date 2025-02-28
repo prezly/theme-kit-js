@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Sim, podem usar 'cookies'"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Aceitar tudo"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Aceitar a seleção atual"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Dados analíticos de primeira parte"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies utilizados para recolher informações sobre como os visitantes utilizam o nosso website, diretamente por nós."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Cookies estritamente necessários"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Estes cookies são essenciais para o bom funcionamento do website e não podem ser desativados."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Cookies de terceiros"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies definidos por serviços de terceiros, como os utilizados para publicidade, incorporação em redes sociais e rastreio de websites."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Política de cookies"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Gerir preferências"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Gerir as preferências de cookies"
+  },
   "cookieConsent.notice": {
     "message": "Pode revogar os 'cookies' a qualquer momento no fundo da página."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Política de Privacidade"
+  },
   "cookieConsent.reject": {
     "message": "Não, não usem 'cookies'"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Rejeitar tudo"
   },
   "cookieConsent.subtitle": {
     "message": "Utilizamos 'cookies' no nosso 'website'. Ajudam-nos a saber um pouco de si e como utiliza o nosso 'website'. Isto ajuda-nos a fornecer uma experiência mais valiosa e personalizada para si e os outros."

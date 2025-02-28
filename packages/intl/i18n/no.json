@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Ja, dere kan benytte informasjonskapsler"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Godta alle"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Godta utvalg"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Førstepartsanalyse"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Informasjonskapsler brukes til å samle inn informasjon direkte av oss om hvordan besøkende bruker nettstedet vårt."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Nødvendige informasjonskapsler"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Disse informasjonskapslene er avgjørende for at nettstedet skal fungere på riktig måte, og de kan ikke deaktiveres."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Informasjonskapsler fra tredjeparter"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Informasjonskapsler fra tredjepartstjenester, for eksempel de som brukes til annonsering, innbygging fra sosiale medier og sporing av nettsteder."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Retningslinjer for informasjonskapsler"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Behandle preferanser"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Behandle preferanser for informasjonskapsler"
+  },
   "cookieConsent.notice": {
     "message": "Du kan kansellere bruk av informasjonskapsler når som helst nederst på siden."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Personvernregler"
+  },
   "cookieConsent.reject": {
     "message": "Nei, ikke benytt informasjonskapsler"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Avvis alle"
   },
   "cookieConsent.subtitle": {
     "message": "Vi benytter informasjonskapsler på vårt nettsted. De hjelper oss med å lære deg litt å kjenne, og hvordan du bruker vårt nettsted. Dette hjelper oss med å tilby en mer verdifull og skreddersydd opplevelse for deg og andre."

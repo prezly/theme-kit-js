@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Ha, cookie fayllardan foydalanishingiz mumkin"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Hammasini qabul qilish"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Joriy tanlovni qabul qilish"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Ichki tahlil"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookie-fayllar tashrif buyuruvchilarning veb-saytimizdan bevosita qanday foydalanishi haqidagi axborotni biz tomonimizdan olish uchun ishlatiladi."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Qatʼiy zaruriy cookie fayllar"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Bu cookie-fayllar veb-saytning toʻgʻri ishlashi uchun zarur va ularni faolsizlantirish mumkin emas."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Tashqi cookie-fayllar"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Reklama, ijtimoiy tarmoqlarga joylash va veb-saytlarni kuzatish kabi tashqi xizmatlar tomonidan oʻrnatiladigan cookie-fayllar."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie siyosati"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Sozlamalarni boshqarish"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Cookie sozlamalarini boshqarish"
+  },
   "cookieConsent.notice": {
     "message": "Cookie fayllarni istalgan vaqt sahifaning pastki qismida bekor qilishingiz mumkin."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Maxfiylik siyosati"
+  },
   "cookieConsent.reject": {
     "message": "Yoʻq, cookie fayllardan foydalanmang"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Hammasini rad etish"
   },
   "cookieConsent.subtitle": {
     "message": "Veb-saytimizda cookie fayllardan foydalanamiz. Ular bizga siz haqingizda ozroq bilishga va veb-saytimizdan qanday foydalanishingizda yordam beradi. Bu biz uchun yanada qimmatli va mos tajribalarni siz va boshqalarga taqdim qilishimizda yordam beradi."

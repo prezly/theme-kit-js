@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Ja, julle kan koekies gebruik"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Aanvaar almal"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Aanvaar huidige keuse"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Eersteparty-statistiek"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Koekies wat gebruik wrd om inligting in te win oor hoe besoekers ons webwerf gebruik, wat deur ons sélf geplaas en gelees word."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Streng noodsaaklike koekies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Hierdie koekies is noodsaaklik vir die werking van die webwerf, en kan nie gedeaktiveer word nie."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Derdeparty-koekies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Koekies wat deur derde partye geplaas en gelees word, bv. vir reklame, sosiale media-inbedde, en webwerfvolging."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Koekiebeleid"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Bestuur voorkeure"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Bestuuur koekievoorkeure"
+  },
   "cookieConsent.notice": {
     "message": "Jy kan koekies enige tyd onder aan die bladsy herroep."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Privaatheidsbeleid"
+  },
   "cookieConsent.reject": {
     "message": "Nee, moenie koekies gebruik nie"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Weier almal"
   },
   "cookieConsent.subtitle": {
     "message": "Ons gebruik koekies op ons webwerf. Hulle help ons om ’n bietjie meer oor jou en hoe jy ons webwerf gebruik, uit te vind. Dit help ons om ’n waardevoller en persoonlike ondervinding aan jou en ander te verskaf."

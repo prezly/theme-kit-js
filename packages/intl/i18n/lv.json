@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Jā, jūs varat izmantot sīkdatnes"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Atļaut visas"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Atļaut pašreizējo atlasi"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Pārziņa analītika"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Mūsu noteiktās sīkdatnes, kuras izmanto, lai apkopotu informāciju par to, kā apmeklētāji izmanto mūsu vietni."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Obligāti nepieciešamās sīkdatnes"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Šīs sīkdatnes ir būtiskas tīmekļa vietnes pareizai darbībai, un tās nevar atspējot."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Trešās puses sīkdatnes"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Sīkdatnes, ko nosaka trešo pušu pakalpojumi, piemēram, tādas sīkdatnes, kuras izmanto reklāmām, sociālo tīklu iestrādnēm un vietņu izsekošanai."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Sīkdatņu politika"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Pārvaldīt preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Pārvaldīt sīkdatņu preferences"
+  },
   "cookieConsent.notice": {
     "message": "Sīkdatnes varat atcelt jebkurā laikā lapas apakšdaļā."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Privātuma politika"
+  },
   "cookieConsent.reject": {
     "message": "Nē, neizmantojiet sīkdatnes"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Noraidīt visas"
   },
   "cookieConsent.subtitle": {
     "message": "Mēs savā vietnē izmantojam sīkdatnes. Tās palīdz mums iepazīt jūs un to, kā jūs izmantojat mūsu vietni. Tas palīdz mums sniegt vērtīgāku un pielāgotu pieredzi gan jums, gan citiem."

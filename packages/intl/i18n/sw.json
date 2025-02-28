@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Ndio, unaweza kutumia vidakuzi"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Kubali zote"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Kubali uteuzi wa sasa"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Takwimu Zetu"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Vidakuzi vinavyotumiwa kukusanya maelezo kuhusu jinsi wageni wanavyotumia tovuti yetu, moja kwa moja nasi."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Vidakuzi Vinavyofaa pekee"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Vidakuzi hivi vinafaa kwa utendaji bora wa tovuti na haviwezi kuzimwa."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Vidakuzi vya Wengine"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Vidakuzi vinavyowekwa na huduma za wengine, kama vile vinavyotumika katika matangazo, mipachiko ya mitandao jamii na ufuatiliaji wa tovuti."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Sera ya Vidakuzi"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Dhibiti mapendeleo"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Dhibiti mapendeleo ya vidakuzi"
+  },
   "cookieConsent.notice": {
     "message": "Unaweza kubatilisha vidakuzi wakati wowote chini ya ukurasa."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Sera ya Faragha"
+  },
   "cookieConsent.reject": {
     "message": "Hapana, usitumie vidakuzi"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Kataa zote"
   },
   "cookieConsent.subtitle": {
     "message": "Tunatumia vidakuzi kwenye tovuti yetu. Zinatusaidia kukufahamu kidogo na jinsi unavyotumia tovuti yetu. Hii hutusaidia kukupa hali ya utumiaji yenye thamani zaidi na iliyoundwa mahsusi kwako na kwa wengine."

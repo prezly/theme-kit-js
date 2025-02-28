@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "نعم، يمكنكم استخدام ملفات تعريف الارتباط"
   },
+  "cookieConsent.acceptAll": {
+    "message": "قبول الكل"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "قبول الاختيار الحالي"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "تحليلات الطرف الأول"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "نستفيد من ملفات تعريف الارتباط التي نجمعها بأنفسنا في جمع معلومات حول كيفية استخدام الزائرين لموقعنا الإلكتروني."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "ملفات تعريف الارتباط التي لا غنى عنها"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "ملفات تعريف الارتباط هذه ضرورية للتشغيل الصحيح للموقع الإلكتروني، ولا يمكن إيقافها."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "ملفات تعريف الارتباط من الأطراف الخارجية"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "ملفات تعريف الارتباط التي تفرضها خدمات الأطراف الخارجية، مثل تلك المستخدمة لعرض الإعلانات والربط بوسائل التواصل الاجتماعي وتتبع المواقع الإلكترونية."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "سياسة ملفات تعريف الارتباط"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "إدارة التفضيلات"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "إدارة تفضيلات ملفات تعريف الارتباط"
+  },
   "cookieConsent.notice": {
     "message": "يمكنك إلغاء ملفات تعريف الارتباط في أي وقت في الجزء السفلي من الصفحة."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "سياسة الخصوصية"
+  },
   "cookieConsent.reject": {
     "message": "لا، لا تستخدموا ملفات تعريف الارتباط"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "رفض الكل"
   },
   "cookieConsent.subtitle": {
     "message": "نحن نستخدم ملفات تعريف الارتباط في موقعنا الإلكتروني، فهي تساعدنا على التعرف عليك قليلاً وعلى كيفية استخدامك لموقعنا الإلكتروني. يساعدنا هذا في إمدادك أنت والآخرين بتجربة ثرية ومخصصة."

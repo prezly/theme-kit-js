@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Да, можете да използвате „бисквитки“"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Приемане на всички"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Приемане на текущия избор"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Собствени „бисквитки“ за анализ"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "„Бисквитки“, които се използват директно от нас за събиране на информация за това как посетителите използват нашия уебсайт."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Строго необходими „бисквитки“"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Тези „бисквитки“ са от съществено значение за правилното функциониране на уебсайта и не могат да бъдат деактивирани."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "„Бисквитки“ на трети страни"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "„Бисквитки“, зададени от услуги на трети страни, като например такива, използвани за рекламиране, вграждане в социални медии и проследяване на уебсайтове."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Политика за „бисквитките“"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Управление на предпочитанията"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Управление на предпочитанията за „бисквитките“"
+  },
   "cookieConsent.notice": {
     "message": "Можете да отмените „бисквитките“ по всяко време в долната част на страницата."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Политика за поверителност"
+  },
   "cookieConsent.reject": {
     "message": "Не, не използвайте „бисквитки“"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Отхвърляне на всички"
   },
   "cookieConsent.subtitle": {
     "message": "Ние използваме „бисквитки“ на нашия уеб сайт. Те ни помагат да ви опознаем малко и това, как използвате нашия уебсайт. Това ни помага да осигурим по-ценно и съобразено с вас и останалите преживяване."

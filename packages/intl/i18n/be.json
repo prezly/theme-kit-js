@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Так, вы можаце выкарыстоўваць кукі-файлы"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Прыняць усе"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Прыняць бягучы выбар"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Уласная аналітыка"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Файлы cookie, якія выкарыстоўваюцца для збору інфармацыі пра тое, як наведвальнікі выкарыстоўваюць наш вэб-сайт. Збор і апрацоўка даных ажыццяўляецца непасрэдна намі."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Абавязковыя файлы cookie"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Гэтыя файлы cookie неабходныя для правільнай работы вэб-сайта і не могуць быць адключаны."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Староннія файлы cookie"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Файлы cookie, устаноўленыя староннімі сэрвісамі, напрыклад, для рэкламы, убудавання элементаў сацыяльных сетак і адсочвання дзеянняў на вэб-сайце."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Палітыка ў дачыненні да файлаў cookie"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Кіраваць наладамі"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Кіраваць наладамі файлаў cookie"
+  },
   "cookieConsent.notice": {
     "message": "Вы можаце адклікаць кукі-файлы ў любы час у ніжняй частцы старонкі."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Палітыка прыватнасці"
+  },
   "cookieConsent.reject": {
     "message": "Не, не трэба выкарыстоўваць кукі-файлы"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Адхіліць усе"
   },
   "cookieConsent.subtitle": {
     "message": "На нашым сайце мы выкарыстоўваем кукі-файлы. Яны дапамагаюць нам крыху даведацца пра вас і пра тое, як вы карыстаецеся нашым сайтам. Гэта дапамагае нам забяспечыць вам больш карысны карыстацкі інтэрфейс з індывідуальнымі настройкамі."

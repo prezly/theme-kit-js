@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Jah, võite kasutada küpsiseid"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Nõustu kõigiga"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Nõustu praeguse valikuga"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Esimese osapoole analüütika"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Meie loodud küpsised, mida kasutatakse teabe kogumiseks selle kohta, kuidas külastajad meie veebisaiti kasutavad."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Rangelt vajalikud küpsised"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Need küpsised on veebisaidi nõuetekohaseks toimimiseks hädavajalikud ja neid ei saa keelata."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Kolmanda osapoole küpsised"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Kolmandate osapoolte teenuste seatud küpsised, näiteks need, mida kasutatakse reklaami, sotsiaalmeediapostituste manustamise ja veebisaidi jälgimise jaoks."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Küpsiste poliitika"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Eelistuste haldamine"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Küpsiste eelistuste haldamine"
+  },
   "cookieConsent.notice": {
     "message": "Saad küpsised igal ajal lehe allosas tühistada."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Privaatsuseeskirjad"
+  },
   "cookieConsent.reject": {
     "message": "Ei, te ei või kasutada küpsiseid"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Keeldu kõigist"
   },
   "cookieConsent.subtitle": {
     "message": "Kasutame oma veebisaidil küpsiseid. Need aitavad meil sind veidi tundma õppida ja samuti infot selle kohta, kuidas sa meie veebisaiti kasutad. See info aitab meil pakkuda sulle ja teistele väärtuslikumaid ning kohandatumaid kogemusi."

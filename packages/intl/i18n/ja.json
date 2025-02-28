@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "はい、クッキーの使用を許可します"
   },
+  "cookieConsent.acceptAll": {
+    "message": "すべて許可する"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "現在の選択を許可する"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "ファーストパーティ分析"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "当社によって直接発行されるCookieで、訪問者によるウェブサイトの使用方法に関する情報を収集するために使用されます。"
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "必須Cookie"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "これらのCookieはウェブサイトを正常に機能させるために不可欠であり、無効にすることはできません。"
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "サードパーティーCookie"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "サードパーティサービスによって設定されたCookieで、広告、ソーシャルメディアの埋め込み、ウェブサイトのトラッキングなどに使用されます。"
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookieポリシー"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "設定の管理"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Cookie設定の管理"
+  },
   "cookieConsent.notice": {
     "message": "クッキーはページの下部からいつでも無効にできます。"
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "プライバシーポリシー"
+  },
   "cookieConsent.reject": {
     "message": "いいえ、クッキーを使用しないでください"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "すべて拒否する"
   },
   "cookieConsent.subtitle": {
     "message": "弊ウェブサイトではクッキーを使用します。これは弊社が、お客様について、またお客様による弊ウェブサイトの使い方について知るのに役立ちます。これにより弊社はお客様方に対してより有益で的確な体験を提供することができます。"

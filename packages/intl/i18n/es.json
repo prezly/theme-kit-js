@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Sí, pueden usar cookies"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Aceptar todo"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Aceptar la selección actual"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Análisis de primera parte"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies utilizadas para recopilar información sobre cómo los visitantes utilizan nuestro sitio web, directamente por nosotros."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Cookies estrictamente necesarias"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Estas cookies son esenciales para el correcto funcionamiento del sitio web y no pueden desactivarse."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Cookies de terceros"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies establecidas por servicios de terceros, como las utilizadas para publicidad, incorporación de contenido en redes sociales y seguimiento de sitios web."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Política de cookies"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Gestionar preferencias"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Gestionar las preferencias de cookies"
+  },
   "cookieConsent.notice": {
     "message": "Puede anular las cookies en cualquier momento al final de la página."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Política de Privacidad"
+  },
   "cookieConsent.reject": {
     "message": "No, no utilicen cookies"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Rechazar todo"
   },
   "cookieConsent.subtitle": {
     "message": "Utilizamos cookies en nuestro sitio web. Nos ayudan a conocerle un poco y saber cómo usa nuestro sitio web, lo que nos sirve para proporcionarle a usted y a los demás una experiencia más valiosa y personalizada."

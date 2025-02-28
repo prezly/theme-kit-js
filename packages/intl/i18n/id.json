@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Ya, Anda dapat menggunakan kuki."
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accept all"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accept current selection"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strictly Necessary cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie Policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Manage preferences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Manage cookie preferences"
+  },
   "cookieConsent.notice": {
     "message": "Anda dapat mencabut kuki kapan saja pada bagian bawah halaman."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Kebijakan Privasi"
+  },
   "cookieConsent.reject": {
     "message": "Tidak, jangan menggunakan kuki."
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Reject all"
   },
   "cookieConsent.subtitle": {
     "message": "Kami menggunakan kuki di situs web kami. Kuki membantu untuk mengetahui sedikit tentang Anda dan bagaimana Anda menggunakan situs web kami. Hal ini membantu kami menyediakan pengalaman yang lebih berharga dan disesuaikan untuk Anda dan orang lain."

@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Ja, ni kan använda cookies"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Acceptera alla"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Acceptera aktuellt val"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Förstapartsanalys"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies som används för att samla in information om hur besökare använder vår webbplats, direkt av oss."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Nödvändiga cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt och kan inte avaktiveras."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Tredjepartscookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies från tredjepartstjänster, t.ex. sådana som används för annonsering, inbäddning i sociala medier och spårning av webbplatser."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie-policy"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Hantera inställningar"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Hantera cookie-inställningar"
+  },
   "cookieConsent.notice": {
     "message": "Du kan återkalla cookies när som helst längst ner på sidan."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Integritetspolicy"
+  },
   "cookieConsent.reject": {
     "message": "Nej, använd inte cookies"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Avvisa alla"
   },
   "cookieConsent.subtitle": {
     "message": "Vi använder cookies på vår hemsida. De hjälper oss att lära känna dig lite och hur du använder vår hemsida. Detta hjälper oss att ge en mer värdefull och skräddarsydd upplevelse för dig och andra."
