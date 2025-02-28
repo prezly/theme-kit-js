@@ -57,37 +57,37 @@
     "message": "Sí, pueden usar cookies"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Aceptar todo"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Aceptar la selección actual"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Análisis de primera parte"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Cookies utilizadas para recopilar información sobre cómo los visitantes utilizan nuestro sitio web, directamente por nosotros."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Cookies estrictamente necesarias"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Estas cookies son esenciales para el correcto funcionamiento del sitio web y no pueden desactivarse."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Cookies de terceros"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Cookies establecidas por servicios de terceros, como las utilizadas para publicidad, incorporación de contenido en redes sociales y seguimiento de sitios web."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Política de cookies"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Gestionar preferencias"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Gestionar las preferencias de cookies"
   },
   "cookieConsent.notice": {
     "message": "Puede anular las cookies en cualquier momento al final de la página."
@@ -99,7 +99,7 @@
     "message": "No, no utilicen cookies"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Rechazar todo"
   },
   "cookieConsent.subtitle": {
     "message": "Utilizamos cookies en nuestro sitio web. Nos ayudan a conocerle un poco y saber cómo usa nuestro sitio web, lo que nos sirve para proporcionarle a usted y a los demás una experiencia más valiosa y personalizada."
