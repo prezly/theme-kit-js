@@ -57,37 +57,37 @@
     "message": "Ya, Anda dapat menggunakan kuki."
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Terima semua"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Terima pilihan saat ini"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Analitik Pihak Pertama"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Cookie yang digunakan untuk mengumpulkan informasi tentang bagaimana pengunjung menggunakan situs web kami, secara langsung oleh kami."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Cookie yang Wajib Ada"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Cookie ini sangat penting agar situs web berfungsi dengan benar dan tidak dapat dinonaktifkan."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Cookie Pihak Ketiga"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Cookie yang dipasang oleh layanan pihak ketiga, seperti yang digunakan untuk iklan, penyematan media sosial, dan pelacakan situs web."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Kebijakan Cookie"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Kelola preferensi"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Kelola preferensi cookie"
   },
   "cookieConsent.notice": {
     "message": "Anda dapat mencabut kuki kapan saja pada bagian bawah halaman."
@@ -99,7 +99,7 @@
     "message": "Tidak, jangan menggunakan kuki."
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Tolak semua"
   },
   "cookieConsent.subtitle": {
     "message": "Kami menggunakan kuki di situs web kami. Kuki membantu untuk mengetahui sedikit tentang Anda dan bagaimana Anda menggunakan situs web kami. Hal ini membantu kami menyediakan pengalaman yang lebih berharga dan disesuaikan untuk Anda dan orang lain."
