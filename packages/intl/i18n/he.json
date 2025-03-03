@@ -57,37 +57,37 @@
     "message": "כן, ניתן להשתמש בקוקיות"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "לאשר את כולן"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "לאשר את הבחירה הנוכחית"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "קוקיות ניתוח של צד ראשון"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "קוקיות שבהם אנחנו משתמשים באופן ישיר כדי לאסוף פרטים על האופן שבו המבקרים משתמשים באתר שלנו."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "קוקיות חיוניות לחלוטין"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "הקוקיות האלו נחוצות לתפקוד התקין של האתר ואי אפשר להשבית אותן."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "קוקיות של צד שלישי"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "קוקיות שמוגדרות על ידי שירותי צד שלישי, למשל כאלה שמשמשות לצורכי פרסום, הטמעת רשתות חברתיות ומעקב אחרי אתרים."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "מדיניות קוקיות"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "ניהול העדפות"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "ניהול העדפות לגבי קוקיות"
   },
   "cookieConsent.notice": {
     "message": "ניתן לבטל את ההסכמה לקוקיות בכל עת, בתחתית הדף."
@@ -99,7 +99,7 @@
     "message": "לא, אל תשתמשו בקוקיות"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "לדחות את כולן"
   },
   "cookieConsent.subtitle": {
     "message": "אנו משתמשים בקוקיות באתר האינטרנט שלנו. הן עוזרות לנו להכיר אותך קצת יותר טוב וללמוד על אופן השימוש שלך באתר. זה עוזר לנו להעניק לך ולאחרים חוויית שימוש מלאה יותר ומותאמת אישית."
