@@ -57,37 +57,37 @@
     "message": "Iva, tistgħu tużaw il-cookies"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Aċċetta kollox"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Aċċetta l-għażla kurrenti"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Analitika tal-Ewwel Parti"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Cookies użati biex niġbru informazzjoni dwar kif il-viżitaturi jużaw is-sit web tagħna, direttament minna."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Cookies Strettament Neċessarji"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Dawn il-cookies huma essenzjali għall-funzjonament tajjeb tas-sit web u ma jistgħux jiġu diżattivati."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Cookies ta’ Partijiet Terzi"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Cookies stabbiliti minn servizzi ta’ partijiet terzi, bħal dawk użati għar-reklamar, inkorporazzjonijiet tal-midja soċjali, u traċċar ta’ siti web."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Politika dwar il-Cookies"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Immaniġġja l-preferenzi"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Immaniġġja l-preferenzi tal-cookies"
   },
   "cookieConsent.notice": {
     "message": "Meta trid tista' tneħħi l-permess għall-cookies minn qiegħ il-paġna."
@@ -99,7 +99,7 @@
     "message": "Le, tużawx il-cookies"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Irrifjuta kollox"
   },
   "cookieConsent.subtitle": {
     "message": "Aħna nużaw il-cookies fuq is-sit tagħna. Dawn jgħinuna nsiru nafuk aħjar filwaqt li nifhmu kif tuża s-sit tagħna. B'hekk inkunu nistgħu noffru lilek u lill-utenti l-oħra esperjenza aqwa u iktar personalizzata."
