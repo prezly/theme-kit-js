@@ -57,37 +57,37 @@
     "message": "Bəli, kukilərdən istifadə edə bilərsiniz"
   },
   "cookieConsent.acceptAll": {
-    "message": "Accept all"
+    "message": "Hamısını qəbul et"
   },
   "cookieConsent.acceptSelection": {
-    "message": "Accept current selection"
+    "message": "Cari seçimi qəbul et"
   },
   "cookieConsent.categoryFirstParty": {
-    "message": "First-party Analytics"
+    "message": "Birinci tərəf analitikası"
   },
   "cookieConsent.categoryFirstPartyDescription": {
-    "message": "Cookies used to collect information about how visitors use our website, directly by us."
+    "message": "Veb-saytımızın qonaqlarının ondan necə istifadə etdikləri haqqında məlumatların birbaşa bizim tərəfimizdən toplanması üçün istifadə edilə kukilər."
   },
   "cookieConsent.categoryNecessary": {
-    "message": "Strictly Necessary cookies"
+    "message": "Zəruri olan kukilər"
   },
   "cookieConsent.categoryNecessaryDescription": {
-    "message": "These cookies are essential for the proper functioning of the website and cannot be disabled."
+    "message": "Bu kukilər veb-saytın düzgün işləməsi üçün vacibdir və deaktiv edilə bilməz."
   },
   "cookieConsent.categoryThirdParty": {
-    "message": "Third-party Cookies"
+    "message": "Üçüncü tərəf kukiləri"
   },
   "cookieConsent.categoryThirdPartyDescription": {
-    "message": "Cookies set by third-party services, such as those used for advertising, social media embeds, and website tracking."
+    "message": "Üçüncü tərəf xidmətləri tərəfindən quraşdırılan kuki faylları, məsələn, reklam, sosial mediaya yerləşdirilmə və veb-saytın izlənilməsi üçün istifadə olunalar."
   },
   "cookieConsent.cookiePolicy": {
-    "message": "Cookie Policy"
+    "message": "Kuki siyasəti"
   },
   "cookieConsent.managePreferences": {
-    "message": "Manage preferences"
+    "message": "Seçimləri idarə et"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Manage cookie preferences"
+    "message": "Kuki seçimlərini idarə edin"
   },
   "cookieConsent.notice": {
     "message": "Kukiləri istənilən vaxt səhifənin alt hissəsindən ləğv edə bilərsiniz."
@@ -99,7 +99,7 @@
     "message": "Xeyr, kukilərdən istifadə etməyin"
   },
   "cookieConsent.rejectAll": {
-    "message": "Reject all"
+    "message": "Hamısından imtina"
   },
   "cookieConsent.subtitle": {
     "message": "Veb saytımızda kukilərdən istifadə edirik. Sizi bir az tanımağımıza və veb saytımızı necə istifadə etdiyinizə kömək edirlər. Bu, sizin və başqaları üçün daha dəyərli və uyğun bir təcrübə təmin etməyimizə kömək edir."
