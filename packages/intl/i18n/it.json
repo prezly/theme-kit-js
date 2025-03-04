@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Sì, potete utilizzare i cookie"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accetta tutto"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accetta la selezione corrente"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Cookie analitici di prima parte"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "I cookie utilizzati per raccogliere informazioni su come i visitatori utilizzano il nostro sito web, installati direttamente da noi."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Cookie strettamente necessari"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Questi cookie sono essenziali per il corretto funzionamento del sito web e non possono essere disattivati."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Cookie di terze parti"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "I cookie impostati da servizi di terze parti, come quelli utilizzati per la pubblicità, l'integrazione dei social media e il tracciamento del sito web."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Informativa sui cookie"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Gestisci le preferenze"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Gestisci le preferenze sui cookie"
+  },
   "cookieConsent.notice": {
     "message": "Puoi revocare i cookie in qualsiasi momento in fondo a questa pagina."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Informativa sulla privacy"
+  },
   "cookieConsent.reject": {
     "message": "No, non utilizzate i cookie"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Rifiuta tutto"
   },
   "cookieConsent.subtitle": {
     "message": "Utilizziamo i cookie sul nostro sito web. Ci aiutano a conoscere qualcosa di più su di te e sul modo in cui usi il nostro sito. Questo ci consente di fornire un'esperienza di qualità e personalizzata per te e per gli altri."

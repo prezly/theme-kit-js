@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Ναι, μπορείτε να χρησιμοποιείτε cookies"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Αποδοχή όλων"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Αποδοχή τρέχουσας επιλογής"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Αναλυτικά στοιχεία πρώτου μέρους"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies που χρησιμοποιούνται για συλλογή πληροφοριών σχετικά με τον τρόπο με τον οποίον χρησιμοποιούν οι επισκέπτες τον ιστότοπό μας, απευθείας από εμάς."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Απολύτως απαραίτητα cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Τα cookies αυτά είναι απαραίτητα για την ορθή λειτουργία του ιστότοπου και δεν μπορούν να απενεργοποιηθούν."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Cookies τρίτων μερών"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies που έχουν οριστεί από υπηρεσίες τρίτων μερών, όπως αυτά που χρησιμοποιούνται για διαφημίσεις, ενσωματώσεις σε μέσα κοινωνικής δικτύωσης και παρακολούθηση ιστότοπων."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Πολιτική περί cookies"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Διαχείριση προτιμήσεων"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Διαχείριση προτιμήσεων cookies"
+  },
   "cookieConsent.notice": {
     "message": "Μπορείτε να ανακαλέσετε τα cookies οποιαδήποτε στιγμή, στο κάτω μέρος της σελίδας."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Πολιτική Απορρήτου"
+  },
   "cookieConsent.reject": {
     "message": "Όχι, μην χρησιμοποιείτε cookies"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Απόρριψη όλων"
   },
   "cookieConsent.subtitle": {
     "message": "Χρησιμοποιούμε cookies στην ιστοσελίδα μας. Μας βοηθούν να σας γνωρίσουμε και πώς χρησιμοποιείτε την ιστοσελίδα μας. Μπορούμε έτσι να παρέχουμε πιο αξιόλογο περιεχόμενο και εμπειρία προσαρμοσμένη στα μέτρα σας."

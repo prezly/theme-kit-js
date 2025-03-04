@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Oo, maaari kayong gumamit ng mga cookie"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Tanggapin lahat"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Tanggapin ang kasalukuyang pinili"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "First-party Analytics"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies na ginamit para mangolekta ng impormasyon tungkol sa kung paano ginagamit ng mga bisita ang aming website, nang kami mismo."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Kinakailangang cookies lang"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Mahalaga ang mga cookies na ito para sa maayos na paggana ng website at hindi puwedeng i-disable."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Third-party na Cookies"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies na itinakda ng mga third-party na serbisyo, tulad ng ginagamit para sa advertising, social media na mga embed, at tracking ng website."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Patakaran sa Cookie"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "I-manage ang mga kagustuhan"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "I-manage ang mga kagustuhan sa cookie"
+  },
   "cookieConsent.notice": {
     "message": "Maaari mong ipawalang-bisa ang mga cookie sa anumang oras sa ibaba ng page."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Patakaran ng Pagkapribado"
+  },
   "cookieConsent.reject": {
     "message": "Hindi, huwag gumamit ng mga cookie"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Tanggihan lahat"
   },
   "cookieConsent.subtitle": {
     "message": "Gumagamit kami ng mga cookie sa aming website. Tinutulungan kami ng mga ito na makilala ka nang kaunti at kung paano mo ginagamit ang aming website. Tinutulungan kami nito na makapagbigay ng mas mahalaga at iniakmang karanasan para sa iyo at iba pa."

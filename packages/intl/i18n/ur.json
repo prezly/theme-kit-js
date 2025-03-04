@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "جی ہاں، آپ کوکیز استعمال کر سکتے ہیں"
   },
+  "cookieConsent.acceptAll": {
+    "message": "تمام کو قبول کریں"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "موجودہ انتخاب کو قبول کریں"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "پہلی پارٹی کے تجزیات"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "کوکیز کو یہ معلومات اکٹھی کرنے کے لیے استعمال کیا جاتا ہے کہ ہمارے وزیٹرز براہِ راست ہماری جانب سے، ہماری ویب سائٹ کو کیسے استعمال کرتے ہیں۔"
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "انتہائی ضروری کوکیز"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "یہ کوکیز ویب سائٹ کے موزوں طور پر کام کرنے کے لیے ضروری ہیں اور غیر فعال نہیں کی جا سکتیں۔"
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "فریق ثالث کوکیز"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "فریق ثالث سروسز کی جانب سے سیٹ کی گئی کوکیز، جیسا کہ وہ جو تشہیر، سوشل میڈیا ایمبیڈز، اور ویب سائٹ ٹریکنگ کے لیے استعمال کی جاتی ہیں۔"
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "کوکی پالیسی"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "ترجیحات کا نظم کریں"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "کوکی کی ترجیحات کا نظم کریں"
+  },
   "cookieConsent.notice": {
     "message": "آپ صفحے کے نچلے حصے میں کسی بھی وقت کوکیز کو کالعدم کر سکتے ہیں۔"
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "رازداری پالیسی"
+  },
   "cookieConsent.reject": {
     "message": "نہیں، کوکیز استعمال نہ کریں"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "تمام کو مسترد کریں"
   },
   "cookieConsent.subtitle": {
     "message": "ہم اپنی ویب سائٹ پر کوکیز کا استعمال کرتے ہیں۔ یہ ہمیں آپ کو تھوڑا جاننے میں مدد دیتے ہیں اور یہ بتاتے ہیں کہ آپ ہماری ویب سائٹ کا استعمال کیسے کرتے ہیں۔ اس سے ہمیں آپ اور دوسروں کے لئے زیادہ قیمتی اور مناسب تجربہ فراہم کرنے میں مدد ملتی ہے۔"

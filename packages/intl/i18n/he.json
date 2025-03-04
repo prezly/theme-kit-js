@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "כן, ניתן להשתמש בקוקיות"
   },
+  "cookieConsent.acceptAll": {
+    "message": "לאשר את כולן"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "לאשר את הבחירה הנוכחית"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "קוקיות ניתוח של צד ראשון"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "קוקיות שבהם אנחנו משתמשים באופן ישיר כדי לאסוף פרטים על האופן שבו המבקרים משתמשים באתר שלנו."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "קוקיות חיוניות לחלוטין"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "הקוקיות האלו נחוצות לתפקוד התקין של האתר ואי אפשר להשבית אותן."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "קוקיות של צד שלישי"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "קוקיות שמוגדרות על ידי שירותי צד שלישי, למשל כאלה שמשמשות לצורכי פרסום, הטמעת רשתות חברתיות ומעקב אחרי אתרים."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "מדיניות קוקיות"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "ניהול העדפות"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "ניהול העדפות לגבי קוקיות"
+  },
   "cookieConsent.notice": {
     "message": "ניתן לבטל את ההסכמה לקוקיות בכל עת, בתחתית הדף."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "מדיניות הפרטיות"
+  },
   "cookieConsent.reject": {
     "message": "לא, אל תשתמשו בקוקיות"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "לדחות את כולן"
   },
   "cookieConsent.subtitle": {
     "message": "אנו משתמשים בקוקיות באתר האינטרנט שלנו. הן עוזרות לנו להכיר אותך קצת יותר טוב וללמוד על אופן השימוש שלך באתר. זה עוזר לנו להעניק לך ולאחרים חוויית שימוש מלאה יותר ומותאמת אישית."

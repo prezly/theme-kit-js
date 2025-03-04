@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Iva, tistgħu tużaw il-cookies"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Aċċetta kollox"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Aċċetta l-għażla kurrenti"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Analitika tal-Ewwel Parti"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies użati biex niġbru informazzjoni dwar kif il-viżitaturi jużaw is-sit web tagħna, direttament minna."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Cookies Strettament Neċessarji"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Dawn il-cookies huma essenzjali għall-funzjonament tajjeb tas-sit web u ma jistgħux jiġu diżattivati."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Cookies ta’ Partijiet Terzi"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies stabbiliti minn servizzi ta’ partijiet terzi, bħal dawk użati għar-reklamar, inkorporazzjonijiet tal-midja soċjali, u traċċar ta’ siti web."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Politika dwar il-Cookies"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Immaniġġja l-preferenzi"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Immaniġġja l-preferenzi tal-cookies"
+  },
   "cookieConsent.notice": {
     "message": "Meta trid tista' tneħħi l-permess għall-cookies minn qiegħ il-paġna."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Politika tal-Privatezza"
+  },
   "cookieConsent.reject": {
     "message": "Le, tużawx il-cookies"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Irrifjuta kollox"
   },
   "cookieConsent.subtitle": {
     "message": "Aħna nużaw il-cookies fuq is-sit tagħna. Dawn jgħinuna nsiru nafuk aħjar filwaqt li nifhmu kif tuża s-sit tagħna. B'hekk inkunu nistgħu noffru lilek u lill-utenti l-oħra esperjenza aqwa u iktar personalizzata."

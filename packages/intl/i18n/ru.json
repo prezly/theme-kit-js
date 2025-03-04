@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Да, вы можете использовать куки-файлы"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Принять все"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Принять выбранные"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Собственная аналитика"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Файлы cookie, используемые непосредственно нами для сбора информации о том, как посетители взаимодействуют с нашим сайтом."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Обязательные файлы cookie"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Эти файлы cookie необходимы для правильной работы сайта и не могут быть отключены."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Сторонние файлы cookie"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Файлы cookie, устанавливаемые сторонними сервисами — например, для рекламы, встраивания соцсетей и отслеживания на сайтах."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Политика использования файлов cookie"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Настроить параметры"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Настроить параметры файлов cookie"
+  },
   "cookieConsent.notice": {
     "message": "Вы можете отозвать куки-файлы в любое время в нижней части страницы."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Политика конфиденциальности"
+  },
   "cookieConsent.reject": {
     "message": "Нет, не нужно использовать куки-файлы"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Отклонить все"
   },
   "cookieConsent.subtitle": {
     "message": "На нашем веб-сайте мы используем куки-файлы. Они помогают нам немного узнать о вас и о том, как вы используете наш веб-сайт. Это помогает нам обеспечить более полезный пользовательский интерфейс с индивидуальными настройками."

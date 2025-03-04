@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Sí, podeu utilitzar galetes"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Accepta-les totes"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accepta la selecció actual"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Analítica de galetes pròpies"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Galetes utilitzades per recollir informació sobre com els visitants utilitzen el nostre lloc web, fet directament per nosaltres."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Galetes estrictament necessàries"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Aquestes galetes són essencials per al funcionament correcte del lloc web i no es poden desactivar."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Galetes de tercers"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Galetes establertes per serveis de tercers, com ara les utilitzades per a publicitat, insercions en xarxes socials i seguiment de llocs web."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Política de galetes"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Gestioneu les preferències"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Gestioneu les preferències de galetes"
+  },
   "cookieConsent.notice": {
     "message": "Podeu revocar les galetes en qualsevol moment a la part inferior de la pàgina."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Política de privadesa"
+  },
   "cookieConsent.reject": {
     "message": "No, no utilitzeu galetes"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Rebutja-les totes"
   },
   "cookieConsent.subtitle": {
     "message": "Utilitzem galetes en el nostre lloc web. Ens ajuden a conèixer-vos una mica i a saber com utilitzeu la nostra web. Això ens ajuda a oferir una experiència més valuosa i a mida per a tu i per als altres."

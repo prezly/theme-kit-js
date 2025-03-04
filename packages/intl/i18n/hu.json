@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Igen, használhat cookie-kat"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Elfogadom az összeset"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Elfogadom a jelenleg kiválasztottakat"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Első fél elemzései"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Sütik, amelyeket közvetlenül mi gyűjtünk, és arról szolgálnak információkkal, hogy a látogatók hogyan használják a weboldalunkat."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Szigorúan szükséges sütik"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Ezek a sütik elengedhetetlenek a weboldal megfelelő működéséhez, ezért nem tilthatók le."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Harmadik féltől származó sütik"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Harmadik fél által beállított sütik, például a hirdetésekhez, a közösségi oldalakon való beágyazásokhoz és a weboldal nyomon követéséhez használt sütik."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Sütiszabályzat"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Beállítások kezelése"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Sütibeállítások kezelése"
+  },
   "cookieConsent.notice": {
     "message": "A cookie-kat bármikor visszavonhatja az oldal alján."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Adatvédelmi politikája"
+  },
   "cookieConsent.reject": {
     "message": "Nem, ne használjon cookie-kat"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Elutasítom az összeset"
   },
   "cookieConsent.subtitle": {
     "message": "A weboldalunkon cookie-kat használunk. Segítenek nekünk egy kicsit jobban megismerni önt, és azt, hogyan használja a honlapunkat. Ez segít nekünk értékesebb és személyre szabott élményt nyújtani önnek és másoknak."

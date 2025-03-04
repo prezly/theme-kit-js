@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Oui, vous pouvez utiliser des cookies"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Tout accepter"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Accepter la sélection actuelle"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Analyses de première partie"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies utilisés directement par nous pour collecter des informations sur la façon dont les visiteurs utilisent notre site Web."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Cookies strictement nécessaires"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Ces cookies sont essentiels au bon fonctionnement du site Web et ne peuvent pas être désactivés."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Cookies de tiers"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies définis par des services tiers, tels que ceux utilisés pour la publicité, les médias sociaux et le suivi du site Web."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Politique relative aux cookies"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Gérer les préférences"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Gérer les préférences relatives aux cookies"
+  },
   "cookieConsent.notice": {
     "message": "À tout moment, il vous est possible de désactiver les cookies en bas de page."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Politique de confidentialité"
+  },
   "cookieConsent.reject": {
     "message": "Non, n'utilisez pas de cookies"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Tout rejeter"
   },
   "cookieConsent.subtitle": {
     "message": "Nous utilisons des cookies sur notre site internet. Ils nous aident à en savoir un tout petit peu plus sur vous et sur votre façon d'utiliser notre site. Ainsi, il nous est possible de vous proposer, à vous comme à d'autres, une expérience plus riche et personnalisée."

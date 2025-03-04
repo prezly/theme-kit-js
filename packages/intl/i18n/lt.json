@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Taip, galite naudoti slapukus"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Sutikti su visais"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Sutikti su pasirinktais"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Pirmosios šalies analitinės priemonės"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Slapukus tiesiogiai naudojame rinkti informacijai apie tai, kaip lankytojai naudojasi mūsų svetaine."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Griežtai būtinieji slapukai"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Šie slapukai yra būtini, kad svetainė tinkamai veiktų, todėl jų išjungti neįmanoma."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Trečiųjų šalių slapukai"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Trečiųjų šalių paslaugų teikėjų nustatyti slapukai, naudojami, pvz., reklamai, socialinių tinklų turiniui įterpti ir svetainei sekti."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Slapukų politika"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Tvarkyti nuostatas"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Slapukų nuostatų tvarkymas"
+  },
   "cookieConsent.notice": {
     "message": "Puslapio apačioje galite bet kada atšaukti slapukus."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Privatumo politika"
+  },
   "cookieConsent.reject": {
     "message": "Ne, nenaudokite slapukų"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Atmesti visus"
   },
   "cookieConsent.subtitle": {
     "message": "Savo svetainėje naudojame slapukus. Jie padeda mums kiek pažinti jus ir sužinoti, kaip naudojatės mūsų svetaine. Tai padeda mums suteikti labiau vertingą ir pritaikytą patirtį jums ir kitiems."

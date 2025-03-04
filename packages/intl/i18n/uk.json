@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Так, ви можете використовувати кукіз"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Прийняти все"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Прийняти поточний вибір"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Власна аналітика"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Файли cookie, які використовуються для збору інформації про те, як відвідувачі використовують наш сайт, безпосередньо нами."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Обов’язкові файли cookie"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Ці файли cookie необхідні для коректної роботи вебсайту й не можуть бути вимкнені."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Сторонні файли cookie"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Файли cookie, установлені сторонніми сервісами, наприклад, для реклами, вбудовування елементів соцмереж і відстеження дій на вебсайтах."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Політика щодо файлів cookie"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Керувати налаштуваннями"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Керування налаштуваннями файлів cookie"
+  },
   "cookieConsent.notice": {
     "message": "Ви можете відкликати кукіз у будь-який час внизу сторінки."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Політика конфіденційності"
+  },
   "cookieConsent.reject": {
     "message": "Ні, не використовуйте кукіз"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Відхилити все"
   },
   "cookieConsent.subtitle": {
     "message": "На нашому сайті ми використовуємо кукіз. Вони допомагають нам трохи дізнатись про вас та про те, як ви користуєтесь нашим сайтом. Це допомагає нам забезпечити для вас та інших більш цінний та індивідуально налаштований досвід."

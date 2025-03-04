@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Vâng, bạn có thể sử dụng cookie"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Chấp nhận tất cả"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Chấp nhận lựa chọn hiện tại"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Phân tích của bên thứ nhất"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Các cookie được sử dụng để thu thập thông tin về cách thức khách truy cập sử dụng trang web của chúng tôi, trực tiếp bởi chúng tôi."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Các cookie thật sự cần thiết"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Các cookie này là thiết yếu để trang web hoạt động hiệu quả và không thể bị tắt."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Cookie của bên thứ ba"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Các cookie được thiết lập bởi dịch vụ của bên thứ ba, chẳng hạn những cookie dùng cho quảng cáo, nhúng mạng xã hội, và theo dõi của trang web."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Chính sách cookie"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Quản lý tùy chọn"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Quản lý tùy chọn cookie"
+  },
   "cookieConsent.notice": {
     "message": "Bạn có thể thu hồi cookie bất kỳ lúc nào ở cuối trang."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Chính sách Quyền Riêng tư"
+  },
   "cookieConsent.reject": {
     "message": "Không, đừng sử dụng cookie"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Từ chối tất cả"
   },
   "cookieConsent.subtitle": {
     "message": "Chúng tôi sử dụng cookie trên trang web của chúng tôi. Chúng giúp chúng tôi hiểu chút ít về bạn và cách bạn sử dụng trang web của chúng tôi. Điều này giúp chúng tôi đem lại trải nghiệm đáng giá và phù hợp với bạn và những người khác."

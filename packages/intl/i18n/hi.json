@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "हाँ, आप कुकीज़ का प्रयोग कर सकते हैं"
   },
+  "cookieConsent.acceptAll": {
+    "message": "सभी स्वीकार करें"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "वर्तमान चयन स्वीकार करें"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "फ़र्स्ट-पार्टी ऐनालिटिक्स"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "इस बारे में जानकारी एकत्र करने के लिए सीधे हमारे द्वारा कुकीज़ का इस्तेमाल किया जाता है कि विज़िटर हमारी वेबसाइट का इस्तेमाल कैसे करते हैं।"
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "अत्यंत आवश्यक कुकीज़"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "ये कुकीज़ वेबसाइट की समुचित फ़ंक्शनिंग के लिए आवश्यक हैं और इन्हें अक्षम नहीं किया जा सकता है।"
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "थर्ड-पार्टी कुकीज़"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "थर्ड-पार्टी सर्विस द्वारा सेट की गई कुकीज़ जैसे कि विज्ञापन, सोशल मीडिया एंबेड और वेबसाइट ट्रैकिंग के लिए इस्तेमाल की जाने वाली कुकीज़।"
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "कुकी पॉलिसी"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "प्राथमिकताएं मैनेज करें"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "कुकी प्राथमिकताएं मैनेज करें"
+  },
   "cookieConsent.notice": {
     "message": "आप पेज के निचले भाग पर जाकर किसी भी समय कुकीज़ हेतु अनुमति को रद्द कर सकते हैं।"
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "गोपनीयता नीति"
+  },
   "cookieConsent.reject": {
     "message": "नहीं, कुकीज़ का प्रयोग नहीं करें"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "सभी अस्वीकार करें"
   },
   "cookieConsent.subtitle": {
     "message": "हम अपनी वेबसाइट पर कुकीज़ का प्रयोग करते हैं। वे आपके बारे में थोड़ा जानने में और आप हमारी वेबसाइट का प्रयोग किस प्रकार करते हैं इस बारे में जानने में हमारी सहायता करती हैं। इससे हमें आपके और अन्य लोगों हेतु अधिक मूल्यवान और रुचि अनुरूप अनुभव प्रदान करने में मदद मिलती है।"

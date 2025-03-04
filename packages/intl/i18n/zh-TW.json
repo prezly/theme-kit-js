@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "是的，您可以使用 cookies"
   },
+  "cookieConsent.acceptAll": {
+    "message": "全部接受"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "接受目前選擇"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "第一方分析"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "我們直接使用 Cookie 來收集關於訪客如何使用我們網站的資訊。"
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "絕對必要的 Cookie"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "這些 Cookie 對於網站的正常運作是必要的，而且無法停用。"
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "第三方 Cookie"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "由第三方服務設定的 Cookie，例如用於廣告、社群媒體嵌入和網站追蹤的 Cookie。"
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookie 政策"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "管理偏好設定"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "管理 Cookie 偏好設定"
+  },
   "cookieConsent.notice": {
     "message": "您可以隨時在網頁底部撤銷 cookies 。"
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "私隱政策"
+  },
   "cookieConsent.reject": {
     "message": "不，不要使用 cookies"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "全部拒絕"
   },
   "cookieConsent.subtitle": {
     "message": "我們的網站使用 cookies 。 它們幫助我們稍微了解您，以及您如何使用我們的網站。 這有助於我們為您和其他人提供更有價值和量身定制的體驗。"

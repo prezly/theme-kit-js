@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Kyllä, voitte käyttää evästeitä"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Hyväksy kaikki"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Hyväksy nykyinen valinta"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Ensimmäisen osapuolen analytiikka"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Käytämme näitä evästeitä keräämään tietoa siitä, miten kävijät käyttävät verkkosivustoamme."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Ehdottoman välttämättömät evästeet"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Nämä evästeet ovat välttämättömiä verkkosivuston moitteettoman toiminnan kannalta, eikä niitä voi poistaa käytöstä."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Kolmannen osapuolen evästeet"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Kolmannen osapuolen palveluiden asettamat evästeet, kuten mainonnassa, sosiaalisen median upotuksissa ja verkkosivustojen seurannassa käytettävät evästeet."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Evästekäytäntö"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Hallitse asetuksia"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Hallitse evästeasetuksia"
+  },
   "cookieConsent.notice": {
     "message": "Voit peruuttaa evästeet milloin tahansa sivun alalaidasta."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Tietosuojakäytännöt"
+  },
   "cookieConsent.reject": {
     "message": "Ei, älkää käyttäkö evästeitä"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Hylkää kaikki"
   },
   "cookieConsent.subtitle": {
     "message": "Käytämme sivustollamme evästeitä. Niiden avulla tutustumme sinuun ja tapoihisi käyttää sivustoa. Näin pystymme tarjoamaan arvokkaamman ja yksilöllisemmän kokemuksen sinulle ja muille käyttäjille."

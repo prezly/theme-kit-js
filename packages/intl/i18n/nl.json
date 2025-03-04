@@ -56,11 +56,50 @@
   "cookieConsent.accept": {
     "message": "Ja, u kunt cookies gebruiken"
   },
+  "cookieConsent.acceptAll": {
+    "message": "Alles accepteren"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Huidige selectie accepteren"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Eigen analyse"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Cookies die rechtstreeks door ons worden gebruikt om informatie te verzamelen over hoe bezoekers onze website gebruiken."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Strikt noodzakelijke cookies"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Deze cookies zijn essentieel voor de goede werking van de website en kunnen niet worden uitgeschakeld."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Cookies van derden"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Cookies die zijn ingesteld door diensten van derden, zoals cookies die worden gebruikt voor advertenties, insluitingen in sociale media en het volgen van websites."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Cookiebeleid"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Voorkeuren beheren"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Cookievoorkeuren beheren"
+  },
   "cookieConsent.notice": {
     "message": "U kunt cookies op elk moment onderaan de pagina intrekken."
   },
+  "cookieConsent.privacyPolicy": {
+    "message": "Privacybeleid"
+  },
   "cookieConsent.reject": {
     "message": "Nee, gebruik geen cookies"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Alles weigeren"
   },
   "cookieConsent.subtitle": {
     "message": "We maken gebruik van cookies op onze website. Deze helpen ons om u iets beter te leren kennen en te zien hoe u onze website gebruikt. \nDit helpt ons een waardevollere en op maat gemaakte ervaring te bieden voor u en anderen."
