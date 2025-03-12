@@ -2,7 +2,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "10.2.1",
+  "version": "10.2.2",
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "npmClient": "pnpm"
 }

@@ -1,12 +1,8 @@
 {
   "name": "@prezly/theme-kit-ui",
-  "version": "10.2.1",
+  "version": "10.2.2",
   "description": "UI components for Prezly themes",
-  "keywords": [
-    "prezly",
-    "themes",
-    "ui"
-  ],
+  "keywords": ["prezly", "themes", "ui"],
   "author": {
     "name": "Prezly Team"
   },
@@ -23,10 +19,7 @@
       "default": "./build/index.mjs"
     }
   },
-  "files": [
-    "build",
-    "README.md"
-  ],
+  "files": ["build", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/prezly/theme-kit-js.git"

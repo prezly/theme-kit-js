@@ -1,14 +1,11 @@
 {
   "name": "@prezly/theme-kit-core",
-  "version": "10.2.1",
+  "version": "10.2.2",
   "description": "Data layer and utility library for developing Prezly themes with JavaScript",
   "main": "build/index.mjs",
   "type": "module",
   "types": "build/index.d.ts",
-  "files": [
-    "build",
-    "README.md"
-  ],
+  "files": ["build", "README.md"],
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
@@ -36,7 +33,7 @@
     "@prezly/sdk": "21.12.0 || ^23.x"
   },
   "dependencies": {
-    "@prezly/theme-kit-intl": "^10.2.1",
+    "@prezly/theme-kit-intl": "^10.2.2",
     "@prezly/uploadcare": "2.4.4",
     "@technically/is-not-undefined": "^1.0.0",
     "@technically/omit-undefined": "^1.0.4",
@@ -54,9 +51,7 @@
     "node": ">= 16.x",
     "npm": ">= 8.x"
   },
-  "keywords": [
-    "prezly"
-  ],
+  "keywords": ["prezly"],
   "author": "Prezly Team",
   "license": "MIT",
   "bugs": {
