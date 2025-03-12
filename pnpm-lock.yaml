@@ -199,14 +199,14 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(encoding@0.1.13)(next@15.1.5(@babel/core@7.26.7)(@opentelemetry/api@1.9.0)(@playwright/test@1.49.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/content-renderer-react-js':
-        specifier: 0.37.2
-        version: 0.37.2(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.41.0
+        version: 0.41.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/sdk':
         specifier: 21.12.0 || ^23.x
         version: 23.6.0
       '@prezly/story-content-format':
-        specifier: ^0.64.0
-        version: 0.64.0
+        specifier: ^0.68.0
+        version: 0.68.0
       '@prezly/uploadcare':
         specifier: ^2.4.3
         version: 2.4.4
@@ -1920,11 +1920,11 @@ packages:
       react: ^17.x || ^18.x
       react-dom: ^17.x || ^18.x
 
-  '@prezly/content-format@0.64.0':
-    resolution: {integrity: sha512-zgG2/Uw/Vy0JJMPC21Qk7UKWouymnk5z2bB80LEd9nwDxIVFmIiaHxH6kIzI9fpn9pFu7OeKxzJq1KS2wAT9Nw==}
+  '@prezly/content-format@0.68.0':
+    resolution: {integrity: sha512-7S5rgscnnhJfVyAiPJob8sT4RHQ1O2LUo60xQBz2OX+V01nTmm9wSiqbVx+/nP1OkWezH6EusNbP+3PdMYgE4w==}
 
-  '@prezly/content-renderer-react-js@0.37.2':
-    resolution: {integrity: sha512-1l5BG3RfihKVdk+02ikJyyP8un+CIx4mbCee0AA7OobFrqIYPtlI6UFxXl6epllnPj/HZ7vJU+p86CG++2qGng==}
+  '@prezly/content-renderer-react-js@0.41.0':
+    resolution: {integrity: sha512-Ow50G8FHD/K1Kq9LTDWM9fm1D92yeTF+i/h0xp9DOh7uns/R2L3j+6Z7LSVVsIRHPBcvbfTuZmcW1futwvBZgQ==}
     peerDependencies:
       react: '18'
       react-dom: '18'
@@ -1948,16 +1948,16 @@ packages:
   '@prezly/progress-promise@2.0.1':
     resolution: {integrity: sha512-uKBTA1gZ90ckKK/4wVoVORC3VUTkOgFwhZWwWsceKxVoAgDxqS5s0NXP5V7J+niEdvCkcoEVeCc25kCs+Hr/uQ==}
 
-  '@prezly/sdk@21.12.0':
-    resolution: {integrity: sha512-dUQERjNUCzfuHpEyFCmQKEWsLt6HogMSw5+C+GuOSDHxLvVEM+FEiTH24zGn8hg4ExFYMClSJ/dAJX2lFybwhQ==}
+  '@prezly/sdk@23.10.0':
+    resolution: {integrity: sha512-RGaZtfqLCki2OBxNwsnNo1sXY4aeEKmI/XvjnqXNz7WShiver81/0Bn9ha6C/tjvhbjsWqk9TUwzO7UbUBJCGA==}
     engines: {node: '>= 16'}
 
   '@prezly/sdk@23.6.0':
     resolution: {integrity: sha512-x3p2Ml3/WGrRbb4IKU/cJhnV97yyiRIshJKYKi20woUVsJVcUhUrcEEdnGAG5Zt3Mme6FFNo09teAEgh2RNLQg==}
     engines: {node: '>= 16'}
 
-  '@prezly/story-content-format@0.64.0':
-    resolution: {integrity: sha512-y9yHEM3S6wUvgcBvUY87lOkm9k8gp2gdx8SF0SoJu6Lfqp9slS8FlCsLTqZJV7C7g57Vd+LfX3JbXObQ2K8GZw==}
+  '@prezly/story-content-format@0.68.0':
+    resolution: {integrity: sha512-ltBRPH+722vhiSZ513c4hSZ5A0vzJWDv6Udq+8X1kWhBesnZA7acTCoOqTxnnsfB+sj6b1OM2SBvMK4SqkX1Wg==}
 
   '@prezly/theme-kit-core@10.2.1':
     resolution: {integrity: sha512-8nrjLURDmJGm08lfpR75SyX+2LzUOeOXVtP5BCZFGQfHbQCHtPRb/ToQkCYG1aZbf3B3X67j3neTKdbGgGi2pw==}
@@ -1987,6 +1987,9 @@ packages:
 
   '@prezly/uploadcare@2.4.4':
     resolution: {integrity: sha512-NMBMvrgBbhcuD/cdoIykiv8/v7l85yn9yVpXPYdXy26eB4aiFJY7JradDzWwm28dy9VM7jGKaQDeB0wxlOWHpw==}
+
+  '@prezly/uploadcare@2.5.0':
+    resolution: {integrity: sha512-3zflwwqJ87Wadm2zBbIsDoxpCeqpgKqDPWjB0D4d9qZVr6nK9GBV6aMfqtqevsdGoyrtLbmGKWcjOh+p5cMD+g==}
 
   '@prezly/uploads@0.2.1':
     resolution: {integrity: sha512-G4U0H89YSp/krcIjSSuZDqCZ2NeE4qQkFjY0yf7vkOf0IuRjpTfLb9Jr8uaOYFpql2ln8XINBPSFZWImThcB8g==}
@@ -10654,17 +10657,17 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@prezly/content-format@0.64.0':
+  '@prezly/content-format@0.68.0':
     dependencies:
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
 
-  '@prezly/content-renderer-react-js@0.37.2(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@prezly/content-renderer-react-js@0.41.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@prezly/linear-partition': 1.0.3
-      '@prezly/sdk': 21.12.0
-      '@prezly/story-content-format': 0.64.0
-      '@prezly/uploadcare': 2.4.4
+      '@prezly/sdk': 23.10.0
+      '@prezly/story-content-format': 0.68.0
+      '@prezly/uploadcare': 2.5.0
       '@react-hookz/web': 12.3.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       classnames: 2.5.1
       player.js: 0.1.0
@@ -10684,8 +10687,8 @@ snapshots:
       '@typescript-eslint/eslint-plugin': 8.21.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3)
       '@typescript-eslint/parser': 8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3)
       eslint: 9.18.0(jiti@1.21.7)
-      eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7))
-      eslint-config-airbnb-typescript: 18.0.0(@typescript-eslint/eslint-plugin@8.21.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7))
+      eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7))
+      eslint-config-airbnb-typescript: 18.0.0(@typescript-eslint/eslint-plugin@8.21.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7))
       eslint-config-prettier: 9.1.0(eslint@9.18.0(jiti@1.21.7))
       eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0)(eslint@9.18.0(jiti@1.21.7))
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0(jiti@1.21.7))
@@ -10716,7 +10719,7 @@ snapshots:
 
   '@prezly/progress-promise@2.0.1': {}
 
-  '@prezly/sdk@21.12.0':
+  '@prezly/sdk@23.10.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
       '@prezly/uploads': 0.2.1
@@ -10728,9 +10731,9 @@ snapshots:
       '@prezly/uploads': 0.2.1
       query-string: 6.14.1
 
-  '@prezly/story-content-format@0.64.0':
+  '@prezly/story-content-format@0.68.0':
     dependencies:
-      '@prezly/content-format': 0.64.0
+      '@prezly/content-format': 0.68.0
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
 
@@ -10765,6 +10768,14 @@ snapshots:
       uploadcare-widget: 3.21.8
 
   '@prezly/uploadcare@2.4.4':
+    dependencies:
+      '@prezly/progress-promise': 2.0.1
+      '@prezly/uploadcare-widget': 3.16.1
+      '@prezly/uploads': 0.3.2
+      lodash.clamp: 4.0.3
+      sanitize-filename: 1.6.3
+
+  '@prezly/uploadcare@2.5.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
       '@prezly/uploadcare-widget': 3.16.1
@@ -14281,7 +14292,7 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
-  eslint-config-airbnb-base@15.0.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7)):
+  eslint-config-airbnb-base@15.0.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7)):
     dependencies:
       confusing-browser-globals: 1.0.11
       eslint: 9.18.0(jiti@1.21.7)
@@ -14290,12 +14301,12 @@ snapshots:
       object.entries: 1.1.8
       semver: 6.3.1
 
-  eslint-config-airbnb-typescript@18.0.0(@typescript-eslint/eslint-plugin@8.21.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7)):
+  eslint-config-airbnb-typescript@18.0.0(@typescript-eslint/eslint-plugin@8.21.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7)):
     dependencies:
       '@typescript-eslint/eslint-plugin': 8.21.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3)
       '@typescript-eslint/parser': 8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3)
       eslint: 9.18.0(jiti@1.21.7)
-      eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7))
+      eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7))
     transitivePeerDependencies:
       - eslint-plugin-import
 
@@ -14347,7 +14358,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0(jiti@1.21.7)):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -14369,7 +14380,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.18.0(jiti@1.21.7)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@9.18.0(jiti@1.21.7))
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.21.0(eslint@9.18.0(jiti@1.21.7))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@9.18.0(jiti@1.21.7)))(eslint@9.18.0(jiti@1.21.7))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
