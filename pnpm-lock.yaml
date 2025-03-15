@@ -103,8 +103,8 @@ importers:
         specifier: ^10.2.2
         version: link:../intl
       '@prezly/uploadcare':
-        specifier: 2.4.4
-        version: 2.4.4
+        specifier: 2.5.0
+        version: 2.5.0
       '@technically/is-not-undefined':
         specifier: ^1.0.0
         version: 1.0.0
