@@ -34,7 +34,7 @@
     "@babel/preset-react": "7.26.3",
     "@babel/preset-typescript": "7.26.0",
     "@dr.pogodin/babel-preset-svgr": "1.9.0",
-    "@playwright/test": "1.51.0",
+    "@playwright/test": "1.51.1",
     "@prezly/eslint-config": "6.0.0",
     "@prezly/sdk": "23.10.1",
     "@types/jest": "29.5.14",
