@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import type { ContentDelivery } from '@prezly/theme-kit-core';
 import stableStringify from 'json-stable-stringify';
 import { createClient, type RedisClientOptions } from 'redis';

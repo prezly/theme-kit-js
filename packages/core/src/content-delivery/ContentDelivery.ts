@@ -257,7 +257,9 @@ export function createClient(
                 offset: offset > 0 ? offset + highlighted : offset,
                 search,
                 query: mergeQueries(query, {
-                    [`category.id`]: categories?.length ? { $all: categories.map(({ id }) => id) } : undefined,
+                    [`category.id`]: categories?.length
+                        ? { $all: categories.map(({ id }) => id) }
+                        : undefined,
                     [`newsroom.uuid`]: { $in: [newsroomUuid] },
                     [`locale`]: localeCode ? { $in: [localeCode] } : undefined,
                     [`status`]: { $in: [Story.Status.PUBLISHED] },
