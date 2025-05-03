@@ -28,11 +28,11 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.27.0",
-    "@babel/core": "7.26.10",
-    "@babel/preset-env": "7.26.9",
-    "@babel/preset-react": "7.26.3",
-    "@babel/preset-typescript": "7.27.0",
+    "@babel/cli": "7.27.1",
+    "@babel/core": "7.27.1",
+    "@babel/preset-env": "7.27.1",
+    "@babel/preset-react": "7.27.1",
+    "@babel/preset-typescript": "7.27.1",
     "@dr.pogodin/babel-preset-svgr": "1.9.0",
     "@playwright/test": "1.52.0",
     "@prezly/eslint-config": "6.0.0",
