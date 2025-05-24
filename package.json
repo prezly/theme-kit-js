@@ -33,7 +33,7 @@
     "@babel/preset-env": "7.27.2",
     "@babel/preset-react": "7.27.1",
     "@babel/preset-typescript": "7.27.1",
-    "@dr.pogodin/babel-preset-svgr": "1.9.0",
+    "@dr.pogodin/babel-preset-svgr": "1.9.1",
     "@playwright/test": "1.52.0",
     "@prezly/eslint-config": "6.0.0",
     "@prezly/sdk": "23.17.0",
