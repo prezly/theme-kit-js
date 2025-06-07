@@ -199,8 +199,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(encoding@0.1.13)(next@15.1.5(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/content-renderer-react-js':
-        specifier: 0.41.1
-        version: 0.41.1(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.41.2
+        version: 0.41.2(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/sdk':
         specifier: 21.12.0 || ^23.x
         version: 23.17.0
@@ -2028,8 +2028,8 @@ packages:
   '@prezly/content-format@0.68.0':
     resolution: {integrity: sha512-7S5rgscnnhJfVyAiPJob8sT4RHQ1O2LUo60xQBz2OX+V01nTmm9wSiqbVx+/nP1OkWezH6EusNbP+3PdMYgE4w==}
 
-  '@prezly/content-renderer-react-js@0.41.1':
-    resolution: {integrity: sha512-Kmrshh9rNkIjTCfT4k7KhIaaaiLDIMJ3pfUdOHUgmaIVN77UGjDPNPD94UoL5lmClxUR17aC/DpPjT4qfJAAoA==}
+  '@prezly/content-renderer-react-js@0.41.2':
+    resolution: {integrity: sha512-qqF2ykcmLNN2zL1gtZqGTpvHaGq2Vw25b5iZL9iSg78tQ6EFAxdw0qRksWfDjCk6W3OupS6m0lVVfcSeE8Ux7Q==}
     peerDependencies:
       react: '18'
       react-dom: '18'
@@ -10896,7 +10896,7 @@ snapshots:
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
 
-  '@prezly/content-renderer-react-js@0.41.1(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@prezly/content-renderer-react-js@0.41.2(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@prezly/linear-partition': 1.0.3
       '@prezly/sdk': 23.17.0
