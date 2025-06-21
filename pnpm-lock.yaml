@@ -199,8 +199,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(encoding@0.1.13)(next@15.1.5(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(@playwright/test@1.53.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/content-renderer-react-js':
-        specifier: 0.41.4
-        version: 0.41.4(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.41.5
+        version: 0.41.5(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/sdk':
         specifier: 21.12.0 || ^23.x
         version: 23.17.0
@@ -2033,8 +2033,8 @@ packages:
   '@prezly/content-format@0.68.0':
     resolution: {integrity: sha512-7S5rgscnnhJfVyAiPJob8sT4RHQ1O2LUo60xQBz2OX+V01nTmm9wSiqbVx+/nP1OkWezH6EusNbP+3PdMYgE4w==}
 
-  '@prezly/content-renderer-react-js@0.41.4':
-    resolution: {integrity: sha512-t6ex9TjHM/lU5ncb6QajhzBdg1tELrnlRL556Q5Rzqk17m+YefvImx4jzB45W9ClDGzsnpzkfTBYSEFz2f0hjw==}
+  '@prezly/content-renderer-react-js@0.41.5':
+    resolution: {integrity: sha512-iE7mfykiFhwQFIkxFutgjt87HYgzsdLJEN6FHkwIJ0pbIot5UpUhXCAp3WiJcu8AJGsKGujN2zyuM6uEbSoFtQ==}
     peerDependencies:
       react: '18'
       react-dom: '18'
@@ -10928,10 +10928,10 @@ snapshots:
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
 
-  '@prezly/content-renderer-react-js@0.41.4(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@prezly/content-renderer-react-js@0.41.5(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@prezly/linear-partition': 1.0.3
-      '@prezly/sdk': 23.17.0
+      '@prezly/sdk': 23.17.1
       '@prezly/story-content-format': 0.68.0
       '@prezly/uploadcare': 2.5.0
       '@react-hookz/web': 12.3.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -18601,7 +18601,7 @@ snapshots:
   terser@5.37.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.14.0
+      acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
     optional: true
@@ -19064,7 +19064,7 @@ snapshots:
       '@webassemblyjs/ast': 1.14.1
       '@webassemblyjs/wasm-edit': 1.14.1
       '@webassemblyjs/wasm-parser': 1.14.1
-      acorn: 8.14.0
+      acorn: 8.15.0
       browserslist: 4.24.4
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.18.0
