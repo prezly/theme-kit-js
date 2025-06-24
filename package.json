@@ -36,7 +36,7 @@
     "@dr.pogodin/babel-preset-svgr": "1.9.1",
     "@playwright/test": "1.53.1",
     "@prezly/eslint-config": "6.0.0",
-    "@prezly/sdk": "23.17.1",
+    "@prezly/sdk": "23.19.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.15.32",
     "@types/react": "19.1.8",
