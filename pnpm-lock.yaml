@@ -43,8 +43,8 @@ importers:
         specifier: 6.0.0
         version: 6.0.0(@types/eslint@9.6.1)(eslint-config-next@15.3.4(eslint@9.29.0(jiti@1.21.7))(typescript@5.7.3))(eslint-plugin-react-hooks@5.1.0(eslint@9.29.0(jiti@1.21.7)))(eslint-plugin-react@7.37.4(eslint@9.29.0(jiti@1.21.7)))(eslint@9.29.0(jiti@1.21.7))(postcss@8.5.6)(prettier@3.5.3)(stylelint@16.13.2(typescript@5.7.3))(typescript@5.7.3)
       '@prezly/sdk':
-        specifier: 23.17.1
-        version: 23.17.1
+        specifier: 23.19.0
+        version: 23.19.0
       '@types/jest':
         specifier: 29.5.14
         version: 29.5.14
@@ -2064,6 +2064,10 @@ packages:
 
   '@prezly/sdk@23.17.1':
     resolution: {integrity: sha512-MJ/UXwaORmqFamjOsh95L5u7uwLHNo/EIzfmhQFOE961hft5oakILazMeqCcEhsK003DNmjGH0pDxp/jAjk2Ew==}
+    engines: {node: '>= 16'}
+
+  '@prezly/sdk@23.19.0':
+    resolution: {integrity: sha512-mbBJJGHaq0IqQmiN4n7k5nmhpHGFuqZIbf59N20TuAYEskzxaQejLBjEFoMkJTxLvD5JXJxHFU7DbyUS/3NHIQ==}
     engines: {node: '>= 16'}
 
   '@prezly/story-content-format@0.68.0':
@@ -10995,6 +10999,12 @@ snapshots:
       query-string: 6.14.1
 
   '@prezly/sdk@23.17.1':
+    dependencies:
+      '@prezly/progress-promise': 2.0.1
+      '@prezly/uploads': 0.2.1
+      query-string: 6.14.1
+
+  '@prezly/sdk@23.19.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
       '@prezly/uploads': 0.2.1
