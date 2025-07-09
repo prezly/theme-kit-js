@@ -12,5 +12,9 @@ export const STORY: Pick<Story, 'culture'> = {
         native_name: 'English (Global)',
         direction: Culture.TextDirection.LTR,
         language_code: 'en',
+        language: {
+                code: 'en',
+                name: 'English',
+            }
     },
 };

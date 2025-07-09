@@ -19,6 +19,10 @@ export const LANGUAGES: Record<
             native_name: 'Nederlands (België)',
             direction: Culture.TextDirection.LTR,
             language_code: 'nl',
+            language: {
+                code: 'nl_BE',
+                name: 'Dutch',
+            }
         },
         is_default: false,
         public_stories_count: 3,
@@ -62,6 +66,10 @@ export const LANGUAGES: Record<
             native_name: 'Nederlands (Nederland)',
             direction: Culture.TextDirection.LTR,
             language_code: 'nl',
+            language: {
+                code: 'nl_NL',
+                name: 'Dutch',
+            }
         },
         is_default: false,
         public_stories_count: 1,
@@ -101,6 +109,10 @@ export const LANGUAGES: Record<
             native_name: 'English (Global)',
             direction: Culture.TextDirection.LTR,
             language_code: 'en',
+            language: {
+                code: 'en',
+                name: 'English',
+            }
         },
         is_default: true,
         public_stories_count: 17,
@@ -146,6 +158,10 @@ export const LANGUAGES: Record<
             native_name: 'English (US)',
             direction: Culture.TextDirection.LTR,
             language_code: 'en',
+            language: {
+                code: 'en_US',
+                name: 'English',
+            }
         },
         is_default: false,
         public_stories_count: 0,
@@ -191,6 +207,10 @@ export const LANGUAGES: Record<
             native_name: 'English (UK)',
             direction: Culture.TextDirection.LTR,
             language_code: 'en',
+            language: {
+                code: 'en_GB',
+                name: 'English',
+            }
         },
         is_default: false,
         public_stories_count: 0,
@@ -236,6 +256,10 @@ export const LANGUAGES: Record<
             native_name: 'Français (Mondial)',
             direction: Culture.TextDirection.LTR,
             language_code: 'fr',
+            language: {
+                code: 'fr',
+                name: 'French',
+            }
         },
         is_default: false,
         public_stories_count: 0,
@@ -281,6 +305,10 @@ export const LANGUAGES: Record<
             native_name: 'Français (België)',
             direction: Culture.TextDirection.LTR,
             language_code: 'fr',
+            language: {
+                code: 'fr_BE',
+                name: 'French',
+            }
         },
         is_default: false,
         public_stories_count: 0,
@@ -326,6 +354,10 @@ export const LANGUAGES: Record<
             native_name: 'Español (España)',
             direction: Culture.TextDirection.LTR,
             language_code: 'es',
+            language: {
+                code: 'es_ES',
+                name: 'Spanish',
+            }
         },
         is_default: false,
         public_stories_count: 0,
@@ -368,6 +400,10 @@ export const LANGUAGES: Record<
             native_name: 'Español (Latinoamérica)',
             direction: Culture.TextDirection.LTR,
             language_code: 'es',
+            language: {
+                code: 'es_419',
+                name: 'Spanish',
+            }
         },
         is_default: false,
         public_stories_count: 0,
@@ -410,6 +446,10 @@ export const LANGUAGES: Record<
             native_name: 'Deutsch (Deutschland)',
             direction: Culture.TextDirection.LTR,
             language_code: 'de',
+            language: {
+                code: 'de_DE',
+                name: 'German',
+            }
         },
         is_default: false,
         public_stories_count: 90,
@@ -449,6 +489,10 @@ export const LANGUAGES: Record<
             native_name: 'English (Germany)',
             direction: Culture.TextDirection.LTR,
             language_code: 'en',
+            language: {
+                code: 'en_DE',
+                name: 'English',
+            }
         },
         is_default: false,
         public_stories_count: 75,
