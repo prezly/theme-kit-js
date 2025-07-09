@@ -13,8 +13,8 @@ export const STORY: Pick<Story, 'culture'> = {
         direction: Culture.TextDirection.LTR,
         language_code: 'en',
         language: {
-                code: 'en',
-                name: 'English',
-            }
+            code: 'en',
+            name: 'English',
+        },
     },
 };

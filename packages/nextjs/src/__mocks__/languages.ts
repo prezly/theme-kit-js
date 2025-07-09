@@ -22,7 +22,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'nl_BE',
                 name: 'Dutch',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 3,
@@ -69,7 +69,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'nl_NL',
                 name: 'Dutch',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 1,
@@ -112,7 +112,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'en',
                 name: 'English',
-            }
+            },
         },
         is_default: true,
         public_stories_count: 17,
@@ -161,7 +161,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'en_US',
                 name: 'English',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 0,
@@ -210,7 +210,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'en_GB',
                 name: 'English',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 0,
@@ -259,7 +259,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'fr',
                 name: 'French',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 0,
@@ -308,7 +308,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'fr_BE',
                 name: 'French',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 0,
@@ -357,7 +357,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'es_ES',
                 name: 'Spanish',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 0,
@@ -403,7 +403,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'es_419',
                 name: 'Spanish',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 0,
@@ -449,7 +449,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'de_DE',
                 name: 'German',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 90,
@@ -492,7 +492,7 @@ export const LANGUAGES: Record<
             language: {
                 code: 'en_DE',
                 name: 'English',
-            }
+            },
         },
         is_default: false,
         public_stories_count: 75,
