@@ -103,8 +103,8 @@ importers:
         specifier: ^10.3.0
         version: link:../intl
       '@prezly/uploadcare':
-        specifier: 2.4.4
-        version: 2.4.4
+        specifier: 2.5.0
+        version: 2.5.0
       '@technically/is-not-undefined':
         specifier: ^1.0.0
         version: 1.0.0
@@ -209,7 +209,7 @@ importers:
         version: 0.68.0
       '@prezly/uploadcare':
         specifier: ^2.4.3
-        version: 2.4.4
+        version: 2.5.0
       '@prezly/uploadcare-image':
         specifier: ^0.3.2
         version: 0.3.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -2095,9 +2095,6 @@ packages:
 
   '@prezly/uploadcare-widget@3.16.1':
     resolution: {integrity: sha512-qfxUdpL4BW0M+q0WGQwCkL0H4UPwFA+prUx95VkQ43gT7/YNUnYriZfDnRMXpBOOxC28N1tVFgS7NPJSOzIsLA==}
-
-  '@prezly/uploadcare@2.4.4':
-    resolution: {integrity: sha512-NMBMvrgBbhcuD/cdoIykiv8/v7l85yn9yVpXPYdXy26eB4aiFJY7JradDzWwm28dy9VM7jGKaQDeB0wxlOWHpw==}
 
   '@prezly/uploadcare@2.5.0':
     resolution: {integrity: sha512-3zflwwqJ87Wadm2zBbIsDoxpCeqpgKqDPWjB0D4d9qZVr6nK9GBV6aMfqtqevsdGoyrtLbmGKWcjOh+p5cMD+g==}
@@ -11063,14 +11060,6 @@ snapshots:
     dependencies:
       '@types/jquery': 3.5.32
       uploadcare-widget: 3.21.8
-
-  '@prezly/uploadcare@2.4.4':
-    dependencies:
-      '@prezly/progress-promise': 2.0.1
-      '@prezly/uploadcare-widget': 3.16.1
-      '@prezly/uploads': 0.3.2
-      lodash.clamp: 4.0.3
-      sanitize-filename: 1.6.3
 
   '@prezly/uploadcare@2.5.0':
     dependencies:
