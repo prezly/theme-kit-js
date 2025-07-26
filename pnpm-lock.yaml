@@ -41,7 +41,7 @@ importers:
         version: 1.54.1
       '@prezly/eslint-config':
         specifier: 6.0.0
-        version: 6.0.0(@types/eslint@9.6.1)(eslint-config-next@15.4.2(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3))(eslint-plugin-react-hooks@5.1.0(eslint@9.31.0(jiti@1.21.7)))(eslint-plugin-react@7.37.4(eslint@9.31.0(jiti@1.21.7)))(eslint@9.31.0(jiti@1.21.7))(postcss@8.5.6)(prettier@3.6.2)(stylelint@16.13.2(typescript@5.7.3))(typescript@5.7.3)
+        version: 6.0.0(@types/eslint@9.6.1)(eslint-config-next@15.4.4(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3))(eslint-plugin-react-hooks@5.1.0(eslint@9.31.0(jiti@1.21.7)))(eslint-plugin-react@7.37.4(eslint@9.31.0(jiti@1.21.7)))(eslint@9.31.0(jiti@1.21.7))(postcss@8.5.6)(prettier@3.6.2)(stylelint@16.13.2(typescript@5.7.3))(typescript@5.7.3)
       '@prezly/sdk':
         specifier: 23.20.0
         version: 23.20.0
@@ -73,8 +73,8 @@ importers:
         specifier: 9.31.0
         version: 9.31.0(jiti@1.21.7)
       eslint-config-next:
-        specifier: 15.4.2
-        version: 15.4.2(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3)
+        specifier: 15.4.4
+        version: 15.4.4(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3)
       jest:
         specifier: 29.7.0
         version: 29.7.0(@types/node@22.16.5)
@@ -1767,8 +1767,8 @@ packages:
   '@next/env@15.1.5':
     resolution: {integrity: sha512-jg8ygVq99W3/XXb9Y6UQsritwhjc+qeiO7QrGZRYOfviyr/HcdnhdBQu4gbp2rBIh2ZyBYTBMWbPw3JSCb0GHw==}
 
-  '@next/eslint-plugin-next@15.4.2':
-    resolution: {integrity: sha512-k0rjdWjXBY6tAOty1ckrMETE6Mx66d85NsgcAIdDp7/cXOsTJ93ywmbg3uUcpxX5TUHFEcCWI5mb8nPhwCe9jg==}
+  '@next/eslint-plugin-next@15.4.4':
+    resolution: {integrity: sha512-1FDsyN//ai3Jd97SEd7scw5h1yLdzDACGOPRofr2GD3sEFsBylEEoL0MHSerd4n2dq9Zm/mFMqi4+NRMOreOKA==}
 
   '@next/swc-darwin-arm64@15.1.5':
     resolution: {integrity: sha512-5ttHGE75Nw9/l5S8zR2xEwR8OHEqcpPym3idIMAZ2yo+Edk0W/Vf46jGqPOZDk+m/SJ+vYZDSuztzhVha8rcdA==}
@@ -4838,8 +4838,8 @@ packages:
       '@typescript-eslint/parser': ^7.0.0
       eslint: ^8.56.0
 
-  eslint-config-next@15.4.2:
-    resolution: {integrity: sha512-rAeZyTWn1/36Y+S+KpJ/W+RAUmM6fpBWsON4Uci+5l9DIKrhkMK0rgAZQ45ktx+xFk5tyYwkTBGit/9jalsHrw==}
+  eslint-config-next@15.4.4:
+    resolution: {integrity: sha512-sK/lWLUVF5om18O5w76Jt3F8uzu/LP5mVa6TprCMWkjWHUmByq80iHGHcdH7k1dLiJlj+DRIWf98d5piwRsSuA==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0 || ^9.0.0
       typescript: '>=3.3.1'
@@ -10658,7 +10658,7 @@ snapshots:
 
   '@next/env@15.1.5': {}
 
-  '@next/eslint-plugin-next@15.4.2':
+  '@next/eslint-plugin-next@15.4.4':
     dependencies:
       fast-glob: 3.3.1
 
@@ -10991,7 +10991,7 @@ snapshots:
     transitivePeerDependencies:
       - js-cookie
 
-  '@prezly/eslint-config@6.0.0(@types/eslint@9.6.1)(eslint-config-next@15.4.2(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3))(eslint-plugin-react-hooks@5.1.0(eslint@9.31.0(jiti@1.21.7)))(eslint-plugin-react@7.37.4(eslint@9.31.0(jiti@1.21.7)))(eslint@9.31.0(jiti@1.21.7))(postcss@8.5.6)(prettier@3.6.2)(stylelint@16.13.2(typescript@5.7.3))(typescript@5.7.3)':
+  '@prezly/eslint-config@6.0.0(@types/eslint@9.6.1)(eslint-config-next@15.4.4(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3))(eslint-plugin-react-hooks@5.1.0(eslint@9.31.0(jiti@1.21.7)))(eslint-plugin-react@7.37.4(eslint@9.31.0(jiti@1.21.7)))(eslint@9.31.0(jiti@1.21.7))(postcss@8.5.6)(prettier@3.6.2)(stylelint@16.13.2(typescript@5.7.3))(typescript@5.7.3)':
     dependencies:
       '@eslint/compat': 1.2.5(eslint@9.31.0(jiti@1.21.7))
       '@eslint/js': 9.18.0
@@ -11015,7 +11015,7 @@ snapshots:
       stylelint-config-standard-scss: 13.1.0(postcss@8.5.6)(stylelint@16.13.2(typescript@5.7.3))
       typescript-eslint: 8.21.0(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3)
     optionalDependencies:
-      eslint-config-next: 15.4.2(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3)
+      eslint-config-next: 15.4.4(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3)
     transitivePeerDependencies:
       - '@types/eslint'
       - eslint-import-resolver-webpack
@@ -14622,9 +14622,9 @@ snapshots:
     transitivePeerDependencies:
       - eslint-plugin-import
 
-  eslint-config-next@15.4.2(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3):
+  eslint-config-next@15.4.4(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3):
     dependencies:
-      '@next/eslint-plugin-next': 15.4.2
+      '@next/eslint-plugin-next': 15.4.4
       '@rushstack/eslint-patch': 1.10.5
       '@typescript-eslint/eslint-plugin': 8.21.0(@typescript-eslint/parser@8.21.0(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3)
       '@typescript-eslint/parser': 8.21.0(eslint@9.31.0(jiti@1.21.7))(typescript@5.7.3)
