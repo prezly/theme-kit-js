@@ -34,8 +34,8 @@ importers:
         specifier: 7.27.1
         version: 7.27.1(@babel/core@7.28.0)
       '@dr.pogodin/babel-preset-svgr':
-        specifier: 1.9.1
-        version: 1.9.1(@babel/parser@7.28.0)(typescript@5.7.3)
+        specifier: 1.9.2
+        version: 1.9.2(@babel/parser@7.28.0)(typescript@5.7.3)
       '@playwright/test':
         specifier: 1.54.1
         version: 1.54.1
@@ -1199,10 +1199,10 @@ packages:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
 
-  '@dr.pogodin/babel-preset-svgr@1.9.1':
-    resolution: {integrity: sha512-NbSfWEdc6aldHznCUDWuskf/wjukmM+wCdDS3MZrYDwL6+i8mIrlKYuzRJK3rEsCtp1D9s9p33/5hy7fzWdr9Q==}
+  '@dr.pogodin/babel-preset-svgr@1.9.2':
+    resolution: {integrity: sha512-IqaOMHRdbDfMAcOauqfxnf0NtgGgKr9mm1U5Bf7QspiTHgvtYWAoFbPLbqDN4j/Z+MHxy6nRYRUUn+NWcMMmFg==}
     peerDependencies:
-      '@babel/parser': ^7.27.2
+      '@babel/parser': ^7.28.0
 
   '@dual-bundle/import-meta-resolve@4.1.0':
     resolution: {integrity: sha512-+nxncfwHM5SgAtrVzgpzJOI1ol0PkumhVo469KCf9lUi21IGcY90G98VuHm9VRrUypmAzawAHO9bs6hqeADaVg==}
@@ -9943,7 +9943,7 @@ snapshots:
 
   '@discoveryjs/json-ext@0.5.7': {}
 
-  '@dr.pogodin/babel-preset-svgr@1.9.1(@babel/parser@7.28.0)(typescript@5.7.3)':
+  '@dr.pogodin/babel-preset-svgr@1.9.2(@babel/parser@7.28.0)(typescript@5.7.3)':
     dependencies:
       '@babel/parser': 7.28.0
       '@svgr/core': 8.1.0(typescript@5.7.3)
