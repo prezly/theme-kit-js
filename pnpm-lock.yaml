@@ -199,14 +199,14 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(encoding@0.1.13)(next@15.1.5(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(@playwright/test@1.54.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/content-renderer-react-js':
-        specifier: 0.41.5
-        version: 0.41.5(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.43.1
+        version: 0.43.1(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/sdk':
         specifier: 21.12.0 || ^23.x
         version: 23.17.0
       '@prezly/story-content-format':
-        specifier: ^0.68.0
-        version: 0.68.0
+        specifier: ^0.71.0
+        version: 0.71.0
       '@prezly/uploadcare':
         specifier: ^2.4.3
         version: 2.4.4
@@ -2040,11 +2040,14 @@ packages:
       react: ^17.x || ^18.x
       react-dom: ^17.x || ^18.x
 
-  '@prezly/content-format@0.68.0':
-    resolution: {integrity: sha512-7S5rgscnnhJfVyAiPJob8sT4RHQ1O2LUo60xQBz2OX+V01nTmm9wSiqbVx+/nP1OkWezH6EusNbP+3PdMYgE4w==}
+  '@prezly/content-format@0.70.1':
+    resolution: {integrity: sha512-qnD+ghv7MYDNtJ5F5N/ZUU7os+dflmoXzGKq3cqmbQ1vX9tZXJ0Hr27RsDHe/mAeTkHqV/UtezGuD06o2/e3kA==}
 
-  '@prezly/content-renderer-react-js@0.41.5':
-    resolution: {integrity: sha512-iE7mfykiFhwQFIkxFutgjt87HYgzsdLJEN6FHkwIJ0pbIot5UpUhXCAp3WiJcu8AJGsKGujN2zyuM6uEbSoFtQ==}
+  '@prezly/content-format@0.71.0':
+    resolution: {integrity: sha512-aBU7l8BWMMVQkXDJvrQRQQRLzWd+UWtXTHHx+EAchWMBy2H4rey1hX8uR+LDH6JRUeig7qLo+5BL0g1cwafFCQ==}
+
+  '@prezly/content-renderer-react-js@0.43.1':
+    resolution: {integrity: sha512-oJdjX3EKJ/YFga6n0rNs/dbjemOf7YPMDwiP4oBcdfkDeVsBCWjdDWO5eZhqlSTLVxDgSxyd/UB5BN+h2mO/mA==}
     peerDependencies:
       react: '18'
       react-dom: '18'
@@ -2072,16 +2075,15 @@ packages:
     resolution: {integrity: sha512-Fq4QnwCDd0hZi5Nmre9hElE0nhcPlLaLQHt/8uuDNu3/Z2Mmfk/3dvuqlE/8nxW1oBXjKVemwZN6bxCDsWuCOw==}
     engines: {node: '>= 16'}
 
-  '@prezly/sdk@23.17.1':
-    resolution: {integrity: sha512-MJ/UXwaORmqFamjOsh95L5u7uwLHNo/EIzfmhQFOE961hft5oakILazMeqCcEhsK003DNmjGH0pDxp/jAjk2Ew==}
-    engines: {node: '>= 16'}
-
   '@prezly/sdk@23.20.0':
     resolution: {integrity: sha512-D4sOUkqoRyKJ4vKruJTeZE2MyBF0bjPKX790PGpXow9H7R+B8gYXAc6VH86VPpQcB66jVtZJSN3vIOK57awzTw==}
     engines: {node: '>= 16'}
 
-  '@prezly/story-content-format@0.68.0':
-    resolution: {integrity: sha512-ltBRPH+722vhiSZ513c4hSZ5A0vzJWDv6Udq+8X1kWhBesnZA7acTCoOqTxnnsfB+sj6b1OM2SBvMK4SqkX1Wg==}
+  '@prezly/story-content-format@0.70.1':
+    resolution: {integrity: sha512-q5nwvlz161PsSB0nTBUBzXPHIgV+8euCCPHGB6NUUNpIpkM2JD9lp8zJnETs2REcOhsTaPMw/oum9Mbp2Qvk4A==}
+
+  '@prezly/story-content-format@0.71.0':
+    resolution: {integrity: sha512-sjjGuK9ngAhO00JG/vdId6QwQzYQsUL990NzrmOwpXTut1Gncw83excnI9LkpiZUmzeoOoPPCRhhaHtkVOQJMw==}
 
   '@prezly/uploadcare-image@0.3.2':
     resolution: {integrity: sha512-gLlgSwPQzlUZqSUOw2YZ6Bceh3A0Ymf5axjQJX1V8PtIHXVLKM9pSq+pmBOoVDs4JXue/unysMTG+qZwEwz9+g==}
@@ -10960,16 +10962,21 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@prezly/content-format@0.68.0':
+  '@prezly/content-format@0.70.1':
     dependencies:
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
 
-  '@prezly/content-renderer-react-js@0.41.5(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@prezly/content-format@0.71.0':
+    dependencies:
+      '@prezly/uploads': 0.2.1
+      is-plain-object: 5.0.0
+
+  '@prezly/content-renderer-react-js@0.43.1(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@prezly/linear-partition': 1.0.3
-      '@prezly/sdk': 23.17.1
-      '@prezly/story-content-format': 0.68.0
+      '@prezly/sdk': 23.20.0
+      '@prezly/story-content-format': 0.70.1
       '@prezly/uploadcare': 2.5.0
       '@react-hookz/web': 12.3.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       classnames: 2.5.1
@@ -11028,21 +11035,21 @@ snapshots:
       '@prezly/uploads': 0.2.1
       query-string: 6.14.1
 
-  '@prezly/sdk@23.17.1':
-    dependencies:
-      '@prezly/progress-promise': 2.0.1
-      '@prezly/uploads': 0.2.1
-      query-string: 6.14.1
-
   '@prezly/sdk@23.20.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
       '@prezly/uploads': 0.2.1
       query-string: 6.14.1
 
-  '@prezly/story-content-format@0.68.0':
+  '@prezly/story-content-format@0.70.1':
     dependencies:
-      '@prezly/content-format': 0.68.0
+      '@prezly/content-format': 0.70.1
+      '@prezly/uploads': 0.2.1
+      is-plain-object: 5.0.0
+
+  '@prezly/story-content-format@0.71.0':
+    dependencies:
+      '@prezly/content-format': 0.71.0
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
 
