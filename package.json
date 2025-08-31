@@ -44,7 +44,7 @@
     "babel-plugin-add-import-extension": "1.6.0",
     "babel-plugin-auto-import": "1.1.0",
     "babel-plugin-transform-remove-imports": "1.8.0",
-    "concurrently": "9.2.0",
+    "concurrently": "9.2.1",
     "eslint": "9.34.0",
     "eslint-config-next": "15.5.0",
     "jest": "29.7.0",
