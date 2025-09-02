@@ -21,6 +21,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 1,
         public_stories_count: 1,
+        hub_public_stories_count: 1,
         categories_count: 0,
         default_email_disclaimer:
             "<p>لقد تلقيت هذه الرسالة الإلكترونية لأنك طرف اتصال لـ%companyname%. إذا لم تعد ترغب في تلقي هذه الرسائل الإلكترونية، يُرجى <a href='%unsubscribe_url%'> إلغاء الاشتراك </a>.</p>",
@@ -73,6 +74,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 1,
         public_stories_count: 1,
+        hub_public_stories_count: 1,
         categories_count: 0,
         default_email_disclaimer:
             "<p>لقد تلقيت هذه الرسالة الإلكترونية لأنك طرف اتصال لـ%companyname%. إذا لم تعد ترغب في تلقي هذه الرسائل الإلكترونية، يُرجى <a href='%unsubscribe_url%'> إلغاء الاشتراك </a>.</p>",
@@ -125,6 +127,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 1,
         public_stories_count: 1,
+        hub_public_stories_count: 1,
         categories_count: 0,
         default_email_disclaimer:
             "<p>لقد تلقيت هذه الرسالة الإلكترونية لأنك طرف اتصال لـ%companyname%. إذا لم تعد ترغب في تلقي هذه الرسائل الإلكترونية، يُرجى <a href='%unsubscribe_url%'> إلغاء الاشتراك </a>.</p>",
@@ -177,6 +180,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 4,
         public_stories_count: 3,
+        hub_public_stories_count: 1,
         categories_count: 3,
         default_email_disclaimer:
             "<p>U heeft deze e-mail ontvangen, omdat u een contact van %companyname% bent. Als u deze e-mails niet meer wenst te ontvangen, kunt u zich <a href='%unsubscribe_url%'>uitschrijven</a>.</p>",
@@ -234,6 +238,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: true,
         stories_count: 23,
         public_stories_count: 21,
+        hub_public_stories_count: 1,
         categories_count: 9,
         default_email_disclaimer:
             "<p>You have received this email because you are a contact of %companyname%. If you no longer wish to receive these emails please <a href='%unsubscribe_url%'>unsubscribe</a>.</p>",
@@ -291,6 +296,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 1,
         public_stories_count: 1,
+        hub_public_stories_count: 1,
         categories_count: 0,
         default_email_disclaimer:
             "<p>You have received this email because you are a contact of %companyname%. If you no longer wish to receive these emails please <a href='%unsubscribe_url%'>unsubscribe</a>.</p>",
@@ -343,6 +349,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 0,
         public_stories_count: 0,
+        hub_public_stories_count: 1,
         categories_count: 0,
         default_email_disclaimer:
             "<p>You have received this email because you are a contact of %companyname%. If you no longer wish to receive these emails please <a href='%unsubscribe_url%'>unsubscribe</a>.</p>",
@@ -395,6 +402,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 1,
         public_stories_count: 1,
+        hub_public_stories_count: 1,
         categories_count: 0,
         default_email_disclaimer:
             "<p>You have received this email because you are a contact of %companyname%. If you no longer wish to receive these emails please <a href='%unsubscribe_url%'>unsubscribe</a>.</p>",
@@ -447,6 +455,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 0,
         public_stories_count: 0,
+        hub_public_stories_count: 1,
         categories_count: 0,
         default_email_disclaimer:
             "<p>You have received this email because you are a contact of %companyname%. If you no longer wish to receive these emails please <a href='%unsubscribe_url%'>unsubscribe</a>.</p>",
@@ -499,6 +508,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 1,
         public_stories_count: 1,
+        hub_public_stories_count: 1,
         categories_count: 0,
         default_email_disclaimer:
             "<p>Έχετε λάβει αυτό το email επειδή είστε μία από τις επαφές της εταιρείας %companyname%. Αν δεν επιθυμείτε πλέον να λαμβάνετε αυτά τα email, παρακαλούμε <a href='%unsubscribe_url%'>καταργήστε την εγγραφή</a>.</p>",
@@ -551,6 +561,7 @@ export const LANGUAGES: NewsroomLanguageSettings[] = [
         is_default: false,
         stories_count: 0,
         public_stories_count: 0,
+        hub_public_stories_count: 1,
         categories_count: 0,
         default_email_disclaimer:
             "<p>Azért kapta ezt az e-mailt, mert %companyname% kapcsolatai között szerepel. Ha nem szeretne több ilyen e-mailt kapni, kérem <a href='%unsubscribe_url%'>iratkozzon le</a>.</p>",
