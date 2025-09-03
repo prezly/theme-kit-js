@@ -216,6 +216,18 @@
   "serverError.title": {
     "message": "Something went wrong..."
   },
+  "share.copyLink": {
+    "message": "Copy link"
+  },
+  "share.copyText": {
+    "message": "Copy text"
+  },
+  "share.downloadAssets": {
+    "message": "Download assets"
+  },
+  "share.downloadPdf": {
+    "message": "Download PDF"
+  },
   "subscription.disclaimer": {
     "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
     "message": "By clicking \"{subscribe}\" I confirm I have read and agree to the {privacyPolicyLink}."

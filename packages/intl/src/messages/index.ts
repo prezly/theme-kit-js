@@ -3,4 +3,5 @@ export * from './content';
 export * from './errors';
 export * from './misc';
 export * from './search';
+export * from './share';
 export * from './subscription';
