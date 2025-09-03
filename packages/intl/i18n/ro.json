@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Copiați URL-ul"
   },
+  "actions.copyText": {
+    "message": "Copy text"
+  },
   "actions.download": {
     "message": "Descărcare"
+  },
+  "actions.downloadAssets": {
+    "message": "Download assets"
+  },
+  "actions.downloadPdf": {
+    "message": "Download PDF"
   },
   "actions.loadMore": {
     "message": "Încarcă mai mult"
