@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Kopier nettadressen"
   },
+  "actions.copyText": {
+    "message": "Copy text"
+  },
   "actions.download": {
     "message": "Last ned"
+  },
+  "actions.downloadAssets": {
+    "message": "Download assets"
+  },
+  "actions.downloadPdf": {
+    "message": "Download PDF"
   },
   "actions.loadMore": {
     "message": "Last inn mer"
