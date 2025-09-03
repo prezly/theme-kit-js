@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Ikkopja l-URL"
   },
+  "actions.copyText": {
+    "message": "Copy text"
+  },
   "actions.download": {
     "message": "Niżżel"
+  },
+  "actions.downloadAssets": {
+    "message": "Download assets"
+  },
+  "actions.downloadPdf": {
+    "message": "Download PDF"
   },
   "actions.loadMore": {
     "message": "Tella' aktar"
