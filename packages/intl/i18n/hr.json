@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Kopiraj URL"
   },
+  "actions.copyText": {
+    "message": "Copy text"
+  },
   "actions.download": {
     "message": "Preuzimanje"
+  },
+  "actions.downloadAssets": {
+    "message": "Download assets"
+  },
+  "actions.downloadPdf": {
+    "message": "Download PDF"
   },
   "actions.loadMore": {
     "message": "Učitaj više"
