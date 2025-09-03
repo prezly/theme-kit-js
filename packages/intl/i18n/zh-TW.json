@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "複製網址"
   },
+  "actions.copyText": {
+    "message": "Copy text"
+  },
   "actions.download": {
     "message": "下載"
+  },
+  "actions.downloadAssets": {
+    "message": "Download assets"
+  },
+  "actions.downloadPdf": {
+    "message": "Download PDF"
   },
   "actions.loadMore": {
     "message": "加載更多"
