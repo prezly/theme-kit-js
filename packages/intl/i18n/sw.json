@@ -6,16 +6,16 @@
     "message": "Nakili Kiunganishi"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Nakili maandishi"
   },
   "actions.download": {
     "message": "Pakua"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Pakua vipengee"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Pakua PDF"
   },
   "actions.loadMore": {
     "message": "Pakia zaidi"
