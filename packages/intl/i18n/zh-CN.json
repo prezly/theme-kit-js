@@ -6,16 +6,16 @@
     "message": "复制网址"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "复制文本"
   },
   "actions.download": {
     "message": "下载"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "下载资产"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "下载 PDF"
   },
   "actions.loadMore": {
     "message": "加载更多"
