@@ -6,7 +6,7 @@
     "message": "Zkopírovat URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Kopírovat text"
   },
   "actions.download": {
     "message": "Stáhnout"
@@ -15,7 +15,7 @@
     "message": "Download assets"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Stáhnout PDF"
   },
   "actions.loadMore": {
     "message": "Načíst více"
