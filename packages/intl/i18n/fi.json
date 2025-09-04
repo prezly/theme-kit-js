@@ -6,16 +6,16 @@
     "message": "Kopioi URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Kopioi teksti"
   },
   "actions.download": {
     "message": "Lataa"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Lataa varat"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Lataa PDF"
   },
   "actions.loadMore": {
     "message": "Lataa lisää"
