@@ -6,16 +6,16 @@
     "message": "نسخ رابط URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "نسخ النص"
   },
   "actions.download": {
     "message": "تنزيل"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "تنزيل الأصول"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "تنزيل ملف PDF"
   },
   "actions.loadMore": {
     "message": "تحميل المزيد"
