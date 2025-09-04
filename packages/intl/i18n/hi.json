@@ -6,16 +6,16 @@
     "message": "यूआरएल कापी करें"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "टेक्स्ट कॉपी करें"
   },
   "actions.download": {
     "message": "डाउनलोड करें"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "एस्सेट डाउनलोड करें"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "PDF डाउनलोड करें"
   },
   "actions.loadMore": {
     "message": "और लोड करें"
