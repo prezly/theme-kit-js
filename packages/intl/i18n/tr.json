@@ -6,16 +6,16 @@
     "message": "URL adresini kopyala"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Metni kopyala"
   },
   "actions.download": {
     "message": "İndir"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Varlıkları indir"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "PDF indir"
   },
   "actions.loadMore": {
     "message": "Daha fazlasını yükle"
