@@ -6,16 +6,16 @@
     "message": "Копирай URL адреса"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Копиране на текст"
   },
   "actions.download": {
     "message": "Изтегли"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Изтегляне на обекти"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Изтегляне на PDF"
   },
   "actions.loadMore": {
     "message": "Зареди повече"
