@@ -6,16 +6,16 @@
     "message": "Skopírovať URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Kopírovať text"
   },
   "actions.download": {
     "message": "Stiahnuť"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Stiahnuť aktíva"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Stiahnuť PDF"
   },
   "actions.loadMore": {
     "message": "Načítať viac"
