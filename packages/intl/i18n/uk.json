@@ -6,16 +6,16 @@
     "message": "Скопіювати URL-адресу"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Скопіювати текст"
   },
   "actions.download": {
     "message": "Завантажити"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Завантажити ресурси"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Завантажити PDF"
   },
   "actions.loadMore": {
     "message": "Завантажити більще"
