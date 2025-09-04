@@ -6,16 +6,16 @@
     "message": "Kopijuoti URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Kopijuoti tekstą"
   },
   "actions.download": {
     "message": "Parsisiųsti"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Atsisiųsti išteklius"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Atsisiųsti PDF"
   },
   "actions.loadMore": {
     "message": "Įkelti daugiau"
