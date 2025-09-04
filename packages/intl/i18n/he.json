@@ -6,13 +6,13 @@
     "message": "העתקת כתובת URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "להעתיק את הטקסט"
   },
   "actions.download": {
     "message": "הורדה"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "להוריד את הנכסים"
   },
   "actions.downloadPdf": {
     "message": "Download PDF"
