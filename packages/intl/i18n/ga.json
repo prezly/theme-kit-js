@@ -6,16 +6,16 @@
     "message": "Copy URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Cóipeáil téacs"
   },
   "actions.download": {
     "message": "Download"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Íoslódáil sócmhainní"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Íoslódáil PDF"
   },
   "actions.loadMore": {
     "message": "Load more"
