@@ -6,16 +6,16 @@
     "message": "Kopiraj URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Kopiraj besedilo"
   },
   "actions.download": {
     "message": "Prenesi"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Prenesi elemente"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Prenesi PDF"
   },
   "actions.loadMore": {
     "message": "Naloži več"
