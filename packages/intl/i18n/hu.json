@@ -6,16 +6,16 @@
     "message": "URL másolása"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Szöveg másolása"
   },
   "actions.download": {
     "message": "Letöltés"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Eszközök letöltése"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "PDF letöltése"
   },
   "actions.loadMore": {
     "message": "Továbbiak betöltése"
