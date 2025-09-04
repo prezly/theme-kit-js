@@ -6,16 +6,16 @@
     "message": "คัดลอก URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "คัดลอกข้อความ"
   },
   "actions.download": {
     "message": "ดาวน์โหลด"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "ดาวน์โหลดแอสเซท"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "ดาวน์โหลด PDF"
   },
   "actions.loadMore": {
     "message": "โหลดเพิ่ม"
