@@ -6,16 +6,16 @@
     "message": "URL نقل کریں"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "ٹیکسٹ نقل کریں"
   },
   "actions.download": {
     "message": "ڈاؤن لوڈ کریں"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "اثاثے ڈاؤن لوڈ کریں"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "PDF ڈاؤن لوڈ کریں"
   },
   "actions.loadMore": {
     "message": "مزید لوڈ کریں"
