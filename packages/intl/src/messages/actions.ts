@@ -5,6 +5,10 @@ export const actions = defineMessages({
         id: 'actions.backToHomepage',
         defaultMessage: 'Back to homepage',
     },
+    copyText: {
+        id: 'actions.copyText',
+        defaultMessage: 'Copy text',
+    },
     copyShareUrl: {
         id: 'actions.copyShareUrl',
         defaultMessage: 'Copy URL',
@@ -12,6 +16,14 @@ export const actions = defineMessages({
     download: {
         id: 'actions.download',
         defaultMessage: 'Download',
+    },
+    downloadAssets: {
+        id: 'actions.downloadAssets',
+        defaultMessage: 'Download assets',
+    },
+    downloadPdf: {
+        id: 'actions.downloadPdf',
+        defaultMessage: 'Download PDF',
     },
     loadMore: {
         id: 'actions.loadMore',

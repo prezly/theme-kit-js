@@ -21,7 +21,7 @@ export interface Options {
 export namespace stories {
     export interface SearchParams {
         search?: string;
-        category?: Pick<Category, 'id'>;
+        categories?: Pick<Category, 'id'>[];
         tags?: string[];
         locale?: Pick<Culture, 'code'> | Culture.Code;
         limit: number;
@@ -38,7 +38,7 @@ export namespace stories {
 export namespace allStories {
     export interface SearchParams {
         search?: string;
-        category?: Pick<Category, 'id'>;
+        categories?: Pick<Category, 'id'>[];
         locale?: Pick<Culture, 'code'>;
     }
 
@@ -241,7 +241,7 @@ export function createClient(
                 query,
                 offset = 0,
                 limit,
-                category,
+                categories,
                 locale,
                 highlighted = 0,
                 tags,
@@ -257,7 +257,9 @@ export function createClient(
                 offset: offset > 0 ? offset + highlighted : offset,
                 search,
                 query: mergeQueries(query, {
-                    [`category.id`]: category ? { $any: [category.id] } : undefined,
+                    [`category.id`]: categories?.length
+                        ? { $all: categories.map(({ id }) => id) }
+                        : undefined,
                     [`newsroom.uuid`]: { $in: [newsroomUuid] },
                     [`locale`]: localeCode ? { $in: [localeCode] } : undefined,
                     [`status`]: { $in: [Story.Status.PUBLISHED] },

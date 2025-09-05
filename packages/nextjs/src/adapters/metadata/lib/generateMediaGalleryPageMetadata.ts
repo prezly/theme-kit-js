@@ -42,6 +42,7 @@ export async function generateMediaGalleryPageMetadata(
             imageUrl,
             generateUrl: (localeCode) => generateUrl('mediaGallery', { ...gallery, localeCode }),
         },
+        gallery.status === NewsroomGallery.Status.PRIVATE ? { robots: 'noindex, nofollow' } : {},
         ...metadata,
     );
 }

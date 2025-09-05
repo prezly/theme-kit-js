@@ -1,6 +1,7 @@
 import type { Locale } from '@prezly/theme-kit-intl';
 import UrlPattern from 'url-pattern';
 
+import { URL_PATTERN_SEGMENT_CHARSET } from './constants';
 import type { ExtractPathParams } from './types';
 import { normalizeUrl } from './utils';
 
@@ -50,8 +51,12 @@ export namespace Route {
         rewrite: string,
         { check, generate, resolveLocale }: Options<Pattern, Match> = {},
     ): Route<Pattern, Match> {
-        const urlPattern = new UrlPattern(pattern);
-        const rewritePattern = new UrlPattern(rewrite);
+        const urlPattern = new UrlPattern(pattern, {
+            segmentValueCharset: URL_PATTERN_SEGMENT_CHARSET,
+        });
+        const rewritePattern = new UrlPattern(rewrite, {
+            segmentValueCharset: URL_PATTERN_SEGMENT_CHARSET,
+        });
 
         return {
             pattern,

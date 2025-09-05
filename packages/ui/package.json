@@ -1,12 +1,8 @@
 {
   "name": "@prezly/theme-kit-ui",
-  "version": "10.2.1",
+  "version": "10.3.1",
   "description": "UI components for Prezly themes",
-  "keywords": [
-    "prezly",
-    "themes",
-    "ui"
-  ],
+  "keywords": ["prezly", "themes", "ui"],
   "author": {
     "name": "Prezly Team"
   },
@@ -23,10 +19,7 @@
       "default": "./build/index.mjs"
     }
   },
-  "files": [
-    "build",
-    "README.md"
-  ],
+  "files": ["build", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/prezly/theme-kit-js.git"
@@ -70,24 +63,24 @@
     "@storybook/testing-library": "0.2.2",
     "@types/tinycolor2": "1.4.6",
     "@vitejs/plugin-react": "3.1.0",
-    "autoprefixer": "10.4.20",
-    "postcss": "8.5.3",
-    "postcss-cli": "11.0.0",
+    "autoprefixer": "10.4.21",
+    "postcss": "8.5.6",
+    "postcss-cli": "11.0.1",
     "postcss-import": "15.1.0",
     "prop-types": "15.8.1",
     "storybook": "7.6.20",
     "tailwindcss": "3.4.17",
-    "vite": "4.5.9",
+    "vite": "4.5.14",
     "vite-plugin-dts": "3.9.1",
-    "vite-plugin-svgr": "4.3.0",
+    "vite-plugin-svgr": "4.5.0",
     "vite-plugin-turbosnap": "1.0.3",
     "vite-tsconfig-paths": "4.3.2"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@prezly/analytics-nextjs": "3.0.0",
-    "@prezly/content-renderer-react-js": "0.37.2",
-    "@prezly/story-content-format": "^0.64.0",
+    "@prezly/content-renderer-react-js": "0.41.5",
+    "@prezly/story-content-format": "^0.68.0",
     "@prezly/uploadcare": "^2.4.3",
     "@prezly/uploadcare-image": "^0.3.2",
     "@radix-ui/react-dialog": "^1.0.5",

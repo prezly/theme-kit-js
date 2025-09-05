@@ -2,6 +2,8 @@ import type { Locale } from '@prezly/theme-kit-intl';
 import { omitUndefined } from '@technically/omit-undefined';
 import UrlPattern from 'url-pattern';
 
+import { URL_PATTERN_SEGMENT_CHARSET } from '../constants';
+
 import { getShortestLocaleSlug } from './getShortestLocaleSlug';
 import { normalizeUrl } from './normalizeUrl';
 
@@ -24,7 +26,9 @@ function toUrlPattern(pattern: string): UrlPattern {
 
     if (cached) return cached;
 
-    const urlPattern = new UrlPattern(pattern);
+    const urlPattern = new UrlPattern(pattern, {
+        segmentValueCharset: URL_PATTERN_SEGMENT_CHARSET,
+    });
 
     CACHE.set(pattern, urlPattern);
 
