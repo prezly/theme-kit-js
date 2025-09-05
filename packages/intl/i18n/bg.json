@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Копирай URL адреса"
   },
+  "actions.copyText": {
+    "message": "Копиране на текст"
+  },
   "actions.download": {
     "message": "Изтегли"
+  },
+  "actions.downloadAssets": {
+    "message": "Изтегляне на обекти"
+  },
+  "actions.downloadPdf": {
+    "message": "Изтегляне на PDF"
   },
   "actions.loadMore": {
     "message": "Зареди повече"

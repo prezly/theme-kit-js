@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "复制网址"
   },
+  "actions.copyText": {
+    "message": "复制文本"
+  },
   "actions.download": {
     "message": "下载"
+  },
+  "actions.downloadAssets": {
+    "message": "下载资产"
+  },
+  "actions.downloadPdf": {
+    "message": "下载 PDF"
   },
   "actions.loadMore": {
     "message": "加载更多"

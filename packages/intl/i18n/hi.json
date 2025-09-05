@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "यूआरएल कापी करें"
   },
+  "actions.copyText": {
+    "message": "टेक्स्ट कॉपी करें"
+  },
   "actions.download": {
     "message": "डाउनलोड करें"
+  },
+  "actions.downloadAssets": {
+    "message": "एस्सेट डाउनलोड करें"
+  },
+  "actions.downloadPdf": {
+    "message": "PDF डाउनलोड करें"
   },
   "actions.loadMore": {
     "message": "और लोड करें"

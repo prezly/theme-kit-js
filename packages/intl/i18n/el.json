@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Αντιγραφή της διεύθυνσης URL"
   },
+  "actions.copyText": {
+    "message": "Αντιγραφή κειμένου"
+  },
   "actions.download": {
     "message": "Λήψη"
+  },
+  "actions.downloadAssets": {
+    "message": "Λήψη στοιχείων"
+  },
+  "actions.downloadPdf": {
+    "message": "Λήψη PDF"
   },
   "actions.loadMore": {
     "message": "Φορτώστε περισσότερα"

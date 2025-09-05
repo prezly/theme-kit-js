@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Kopēt URL"
   },
+  "actions.copyText": {
+    "message": "Kopēt tekstu"
+  },
   "actions.download": {
     "message": "Lejupielādēt"
+  },
+  "actions.downloadAssets": {
+    "message": "Lejupielādēt aktīvus"
+  },
+  "actions.downloadPdf": {
+    "message": "Lejupielādēt PDF"
   },
   "actions.loadMore": {
     "message": "Ielādēt vairāk"

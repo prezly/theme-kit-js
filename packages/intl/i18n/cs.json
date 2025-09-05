@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Zkopírovat URL"
   },
+  "actions.copyText": {
+    "message": "Kopírovat text"
+  },
   "actions.download": {
     "message": "Stáhnout"
+  },
+  "actions.downloadAssets": {
+    "message": "Download assets"
+  },
+  "actions.downloadPdf": {
+    "message": "Stáhnout PDF"
   },
   "actions.loadMore": {
     "message": "Načíst více"

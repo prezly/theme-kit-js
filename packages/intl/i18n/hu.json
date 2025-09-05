@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "URL másolása"
   },
+  "actions.copyText": {
+    "message": "Szöveg másolása"
+  },
   "actions.download": {
     "message": "Letöltés"
+  },
+  "actions.downloadAssets": {
+    "message": "Eszközök letöltése"
+  },
+  "actions.downloadPdf": {
+    "message": "PDF letöltése"
   },
   "actions.loadMore": {
     "message": "Továbbiak betöltése"

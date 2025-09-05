@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "نسخ رابط URL"
   },
+  "actions.copyText": {
+    "message": "نسخ النص"
+  },
   "actions.download": {
     "message": "تنزيل"
+  },
+  "actions.downloadAssets": {
+    "message": "تنزيل الأصول"
+  },
+  "actions.downloadPdf": {
+    "message": "تنزيل ملف PDF"
   },
   "actions.loadMore": {
     "message": "تحميل المزيد"

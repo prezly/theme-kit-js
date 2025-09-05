@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Kopieer URL"
   },
+  "actions.copyText": {
+    "message": "Kopieer teks"
+  },
   "actions.download": {
     "message": "Aflaai"
+  },
+  "actions.downloadAssets": {
+    "message": "Laai bates af"
+  },
+  "actions.downloadPdf": {
+    "message": "Laai PDF af"
   },
   "actions.loadMore": {
     "message": "Laai meer"

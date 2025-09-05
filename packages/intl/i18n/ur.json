@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "URL نقل کریں"
   },
+  "actions.copyText": {
+    "message": "ٹیکسٹ نقل کریں"
+  },
   "actions.download": {
     "message": "ڈاؤن لوڈ کریں"
+  },
+  "actions.downloadAssets": {
+    "message": "اثاثے ڈاؤن لوڈ کریں"
+  },
+  "actions.downloadPdf": {
+    "message": "PDF ڈاؤن لوڈ کریں"
   },
   "actions.loadMore": {
     "message": "مزید لوڈ کریں"

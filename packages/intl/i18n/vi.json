@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Sao chép URL"
   },
+  "actions.copyText": {
+    "message": "Sao chép văn bản"
+  },
   "actions.download": {
     "message": "Tải về"
+  },
+  "actions.downloadAssets": {
+    "message": "Tải về tài sản"
+  },
+  "actions.downloadPdf": {
+    "message": "Tải về PDF"
   },
   "actions.loadMore": {
     "message": "Tải thêm"

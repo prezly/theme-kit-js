@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Kopijuoti URL"
   },
+  "actions.copyText": {
+    "message": "Kopijuoti tekstą"
+  },
   "actions.download": {
     "message": "Parsisiųsti"
+  },
+  "actions.downloadAssets": {
+    "message": "Atsisiųsti išteklius"
+  },
+  "actions.downloadPdf": {
+    "message": "Atsisiųsti PDF"
   },
   "actions.loadMore": {
     "message": "Įkelti daugiau"

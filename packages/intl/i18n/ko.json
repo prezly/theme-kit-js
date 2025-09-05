@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "URL 복사"
   },
+  "actions.copyText": {
+    "message": "텍스트 복사"
+  },
   "actions.download": {
     "message": "다운로드"
+  },
+  "actions.downloadAssets": {
+    "message": "자산 다운로드"
+  },
+  "actions.downloadPdf": {
+    "message": "PDF 다운로드"
   },
   "actions.loadMore": {
     "message": "추가 로드하기"

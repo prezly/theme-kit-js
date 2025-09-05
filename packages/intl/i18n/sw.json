@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Nakili Kiunganishi"
   },
+  "actions.copyText": {
+    "message": "Nakili maandishi"
+  },
   "actions.download": {
     "message": "Pakua"
+  },
+  "actions.downloadAssets": {
+    "message": "Pakua vipengee"
+  },
+  "actions.downloadPdf": {
+    "message": "Pakua PDF"
   },
   "actions.loadMore": {
     "message": "Pakia zaidi"

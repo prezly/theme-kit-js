@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "URL adresini kopyala"
   },
+  "actions.copyText": {
+    "message": "Metni kopyala"
+  },
   "actions.download": {
     "message": "İndir"
+  },
+  "actions.downloadAssets": {
+    "message": "Varlıkları indir"
+  },
+  "actions.downloadPdf": {
+    "message": "PDF indir"
   },
   "actions.loadMore": {
     "message": "Daha fazlasını yükle"

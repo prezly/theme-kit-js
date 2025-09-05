@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "העתקת כתובת URL"
   },
+  "actions.copyText": {
+    "message": "להעתקת הטקסט"
+  },
   "actions.download": {
     "message": "הורדה"
+  },
+  "actions.downloadAssets": {
+    "message": "להורדת הנכסים"
+  },
+  "actions.downloadPdf": {
+    "message": "להורדת ה-PDF"
   },
   "actions.loadMore": {
     "message": "לטעון עוד"

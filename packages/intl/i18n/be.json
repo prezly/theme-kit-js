@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Капіяваць URL-адрас"
   },
+  "actions.copyText": {
+    "message": "Скапіраваць тэкст"
+  },
   "actions.download": {
     "message": "Спампаваць"
+  },
+  "actions.downloadAssets": {
+    "message": "Спампаваць аб’екты"
+  },
+  "actions.downloadPdf": {
+    "message": "Спампаваць PDF"
   },
   "actions.loadMore": {
     "message": "Загрузіць яшчэ"

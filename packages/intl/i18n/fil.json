@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Kopyahin ang URL"
   },
+  "actions.copyText": {
+    "message": "Kopyahin ang text"
+  },
   "actions.download": {
     "message": "Mag-download"
+  },
+  "actions.downloadAssets": {
+    "message": "I-download ang mga asset"
+  },
+  "actions.downloadPdf": {
+    "message": "I-download ang PDF"
   },
   "actions.loadMore": {
     "message": "Mag-load pa"

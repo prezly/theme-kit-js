@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "URL-ді көшіру"
   },
+  "actions.copyText": {
+    "message": "Мәтін көшіру"
+  },
   "actions.download": {
     "message": "Жүктеп алу"
+  },
+  "actions.downloadAssets": {
+    "message": "Активтерді жүктеп алу"
+  },
+  "actions.downloadPdf": {
+    "message": "PDF файлын жүктеп алу"
   },
   "actions.loadMore": {
     "message": "Басқаларын жүктеу"

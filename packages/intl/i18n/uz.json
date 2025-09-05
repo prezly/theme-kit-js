@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "URL dan nusxa ko‘chirish"
   },
+  "actions.copyText": {
+    "message": "Matnni nusxalash"
+  },
   "actions.download": {
     "message": "Yuklab olish"
+  },
+  "actions.downloadAssets": {
+    "message": "Resurslarni yuklab olish"
+  },
+  "actions.downloadPdf": {
+    "message": "PDF yuklab olish"
   },
   "actions.loadMore": {
     "message": "Ko‘proq yuklash"

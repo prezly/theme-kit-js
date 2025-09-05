@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "คัดลอก URL"
   },
+  "actions.copyText": {
+    "message": "คัดลอกข้อความ"
+  },
   "actions.download": {
     "message": "ดาวน์โหลด"
+  },
+  "actions.downloadAssets": {
+    "message": "ดาวน์โหลดแอสเซท"
+  },
+  "actions.downloadPdf": {
+    "message": "ดาวน์โหลด PDF"
   },
   "actions.loadMore": {
     "message": "โหลดเพิ่ม"

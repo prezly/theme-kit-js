@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Копировать URL-адрес"
   },
+  "actions.copyText": {
+    "message": "Копировать текст"
+  },
   "actions.download": {
     "message": "Скачать"
+  },
+  "actions.downloadAssets": {
+    "message": "Скачать материалы"
+  },
+  "actions.downloadPdf": {
+    "message": "Скачать PDF"
   },
   "actions.loadMore": {
     "message": "Загрузить еще"
@@ -87,7 +96,7 @@
     "message": "Настроить параметры"
   },
   "cookieConsent.managePreferencesTitle": {
-    "message": "Настроить параметры файлов cookie"
+    "message": "Настройка параметров файлов cookie"
   },
   "cookieConsent.notice": {
     "message": "Вы можете отозвать куки-файлы в любое время в нижней части страницы."

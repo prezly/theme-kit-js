@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Kopioi URL"
   },
+  "actions.copyText": {
+    "message": "Kopioi teksti"
+  },
   "actions.download": {
     "message": "Lataa"
+  },
+  "actions.downloadAssets": {
+    "message": "Lataa varat"
+  },
+  "actions.downloadPdf": {
+    "message": "Lataa PDF"
   },
   "actions.loadMore": {
     "message": "Lataa lisää"

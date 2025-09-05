@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Salin URL"
   },
+  "actions.copyText": {
+    "message": "Salin teks"
+  },
   "actions.download": {
     "message": "Unduh"
+  },
+  "actions.downloadAssets": {
+    "message": "Unduh aset"
+  },
+  "actions.downloadPdf": {
+    "message": "Unduh PDF"
   },
   "actions.loadMore": {
     "message": "Muat lebih banyak"

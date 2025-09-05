@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Kopier nettadressen"
   },
+  "actions.copyText": {
+    "message": "Kopier tekst"
+  },
   "actions.download": {
     "message": "Last ned"
+  },
+  "actions.downloadAssets": {
+    "message": "Last ned ressurser"
+  },
+  "actions.downloadPdf": {
+    "message": "Last ned PDF"
   },
   "actions.loadMore": {
     "message": "Last inn mer"

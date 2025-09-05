@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "Copy URL"
   },
+  "actions.copyText": {
+    "message": "Cóipeáil téacs"
+  },
   "actions.download": {
     "message": "Download"
+  },
+  "actions.downloadAssets": {
+    "message": "Íoslódáil sócmhainní"
+  },
+  "actions.downloadPdf": {
+    "message": "Íoslódáil PDF"
   },
   "actions.loadMore": {
     "message": "Load more"

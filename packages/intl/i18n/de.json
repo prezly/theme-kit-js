@@ -5,8 +5,17 @@
   "actions.copyShareUrl": {
     "message": "URL kopieren"
   },
+  "actions.copyText": {
+    "message": "Text kopieren"
+  },
   "actions.download": {
     "message": "Herunterladen"
+  },
+  "actions.downloadAssets": {
+    "message": "Assets herunterladen"
+  },
+  "actions.downloadPdf": {
+    "message": "PDF herunterladen"
   },
   "actions.loadMore": {
     "message": "Mehr laden"
