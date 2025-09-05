@@ -6,16 +6,16 @@
     "message": "Kopyahin ang URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Kopyahin ang text"
   },
   "actions.download": {
     "message": "Mag-download"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "I-download ang mga asset"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "I-download ang PDF"
   },
   "actions.loadMore": {
     "message": "Mag-load pa"
