@@ -6,16 +6,16 @@
     "message": "Copier l'URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Copier le texte"
   },
   "actions.download": {
     "message": "Télécharger"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Télécharger les ressources"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Télécharger le PDF"
   },
   "actions.loadMore": {
     "message": "Charger davantage"
