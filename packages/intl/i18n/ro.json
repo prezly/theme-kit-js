@@ -12,7 +12,7 @@
     "message": "Descărcare"
   },
   "actions.downloadAssets": {
-    "message": "Descărcare active"
+    "message": "Descărcare resurse"
   },
   "actions.downloadPdf": {
     "message": "Descărcare PDF"
