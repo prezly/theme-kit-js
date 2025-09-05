@@ -6,16 +6,16 @@
     "message": "Kopēt URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Kopēt tekstu"
   },
   "actions.download": {
     "message": "Lejupielādēt"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Lejupielādēt aktīvus"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Lejupielādēt PDF"
   },
   "actions.loadMore": {
     "message": "Ielādēt vairāk"
