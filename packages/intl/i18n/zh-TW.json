@@ -6,16 +6,16 @@
     "message": "複製網址"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "複製文字"
   },
   "actions.download": {
     "message": "下載"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "下載資產"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "下載 PDF"
   },
   "actions.loadMore": {
     "message": "加載更多"
