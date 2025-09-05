@@ -6,16 +6,16 @@
     "message": "Αντιγραφή της διεύθυνσης URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Αντιγραφή κειμένου"
   },
   "actions.download": {
     "message": "Λήψη"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Λήψη στοιχείων"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Λήψη PDF"
   },
   "actions.loadMore": {
     "message": "Φορτώστε περισσότερα"
