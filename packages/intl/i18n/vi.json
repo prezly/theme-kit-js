@@ -6,16 +6,16 @@
     "message": "Sao chép URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Sao chép văn bản"
   },
   "actions.download": {
     "message": "Tải về"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Tải về tài sản"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Tải về PDF"
   },
   "actions.loadMore": {
     "message": "Tải thêm"
