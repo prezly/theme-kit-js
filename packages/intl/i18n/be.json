@@ -6,16 +6,16 @@
     "message": "Капіяваць URL-адрас"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Скапіраваць тэкст"
   },
   "actions.download": {
     "message": "Спампаваць"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Спампаваць аб’екты"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Спампаваць PDF"
   },
   "actions.loadMore": {
     "message": "Загрузіць яшчэ"
