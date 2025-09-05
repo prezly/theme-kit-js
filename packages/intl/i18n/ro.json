@@ -6,16 +6,16 @@
     "message": "Copiați URL-ul"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Copiere text"
   },
   "actions.download": {
     "message": "Descărcare"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Descărcare active"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Descărcare PDF"
   },
   "actions.loadMore": {
     "message": "Încarcă mai mult"
