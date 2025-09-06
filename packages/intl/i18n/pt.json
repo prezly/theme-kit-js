@@ -12,7 +12,7 @@
     "message": "Descarregar"
   },
   "actions.downloadAssets": {
-    "message": "Descarregar ativos"
+    "message": "Descarregar elementos"
   },
   "actions.downloadPdf": {
     "message": "Descarregar PDF"

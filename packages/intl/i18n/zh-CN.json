@@ -12,7 +12,7 @@
     "message": "下载"
   },
   "actions.downloadAssets": {
-    "message": "下载资产"
+    "message": "下载资源"
   },
   "actions.downloadPdf": {
     "message": "下载 PDF"

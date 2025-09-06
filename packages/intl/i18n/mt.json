@@ -6,16 +6,16 @@
     "message": "Ikkopja l-URL"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "Ikkopja t-test"
   },
   "actions.download": {
     "message": "Niżżel"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Niżżel il-materjal"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Niżżel il-PDF"
   },
   "actions.loadMore": {
     "message": "Tella' aktar"

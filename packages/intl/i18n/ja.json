@@ -6,16 +6,16 @@
     "message": "URLをコピー"
   },
   "actions.copyText": {
-    "message": "Copy text"
+    "message": "テキストをコピー"
   },
   "actions.download": {
     "message": "ダウンロード"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "メディア資産をダウンロード"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "PDFをダウンロード"
   },
   "actions.loadMore": {
     "message": "続きを読み込む"

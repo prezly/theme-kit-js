@@ -12,7 +12,7 @@
     "message": "Жүктеп алу"
   },
   "actions.downloadAssets": {
-    "message": "Активтерді жүктеп алу"
+    "message": "Медиа файлдарды жүктеп алу"
   },
   "actions.downloadPdf": {
     "message": "PDF файлын жүктеп алу"

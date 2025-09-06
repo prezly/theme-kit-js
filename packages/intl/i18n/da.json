@@ -12,7 +12,7 @@
     "message": "Download"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Download medieindhold"
   },
   "actions.downloadPdf": {
     "message": "Download PDF"

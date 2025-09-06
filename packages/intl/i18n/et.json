@@ -12,10 +12,10 @@
     "message": "Laadi alla"
   },
   "actions.downloadAssets": {
-    "message": "Download assets"
+    "message": "Laadi failid alla"
   },
   "actions.downloadPdf": {
-    "message": "Download PDF"
+    "message": "Laadi PDF alla"
   },
   "actions.loadMore": {
     "message": "Laadi veel"
