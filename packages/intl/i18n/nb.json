@@ -12,7 +12,7 @@
     "message": "Last ned"
   },
   "actions.downloadAssets": {
-    "message": "Last ned ressurser"
+    "message": "Last ned medieressurser"
   },
   "actions.downloadPdf": {
     "message": "Last ned PDF"

@@ -12,7 +12,7 @@
     "message": "Lataa"
   },
   "actions.downloadAssets": {
-    "message": "Lataa varat"
+    "message": "Lataa mediaresursseja"
   },
   "actions.downloadPdf": {
     "message": "Lataa PDF"
