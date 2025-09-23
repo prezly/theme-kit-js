@@ -1,29 +1,29 @@
 {
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build", "prebuild"],
-      "outputs": ["{projectRoot}/build", "{projectRoot}/tsconfig*.tsbuildinfo"],
-      "cache": true
+    "targetDefaults": {
+        "build": {
+            "dependsOn": ["^build", "prebuild"],
+            "outputs": ["{projectRoot}/build", "{projectRoot}/tsconfig*.tsbuildinfo"],
+            "cache": true
+        },
+        "typecheck": {
+            "dependsOn": ["^build"],
+            "cache": true
+        },
+        "test": {
+            "dependsOn": ["build"],
+            "outputs": ["{projectRoot}/coverage"],
+            "cache": true
+        },
+        "dev": {
+            "dependsOn": ["^build"]
+        },
+        "lint": {
+            "cache": true
+        }
     },
-    "typecheck": {
-      "dependsOn": ["^build"],
-      "cache": true
-    },
-    "test": {
-      "dependsOn": ["build"],
-      "outputs": ["{projectRoot}/coverage"],
-      "cache": true
-    },
-    "dev": {
-      "dependsOn": ["^build"]
-    },
-    "lint": {
-      "cache": true
+    "namedInputs": {
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
+        "sharedGlobals": [],
+        "production": ["default"]
     }
-  },
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "sharedGlobals": [],
-    "production": ["default"]
-  }
 }

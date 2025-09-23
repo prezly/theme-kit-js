@@ -1,35 +1,35 @@
 {
-  "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "composite": true,
-    "declaration": true,
-    "downlevelIteration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "ignoreDeprecations": "5.0",
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": ["dom", "es2019"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "removeComments": false,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "esnext"
-  },
-  "include": [".prettierrc.js"],
-  "references": [
-    { "path": "./packages/nextjs" },
-    { "path": "./packages/core" },
-    //    { "path": "./packages/ui" },
-    { "path": "./packages/intl" }
-  ]
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "composite": true,
+        "declaration": true,
+        "downlevelIteration": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "ignoreDeprecations": "5.0",
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "lib": ["dom", "es2019"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "removeComments": false,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "esnext"
+    },
+    "include": [".prettierrc.js"],
+    "references": [
+        { "path": "./packages/nextjs" },
+        { "path": "./packages/core" },
+        //    { "path": "./packages/ui" },
+        { "path": "./packages/intl" }
+    ]
 }

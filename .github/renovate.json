@@ -1,6 +1,3 @@
 {
-  "extends": [
-    "config:base",
-    "github>prezly/renovate-presets:themes-libraries"
-  ]
+    "extends": ["config:base", "github>prezly/renovate-presets:themes-libraries"]
 }

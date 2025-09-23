@@ -1,8 +1,8 @@
 {
-  "publishConfig": {
-    "access": "public"
-  },
-  "version": "10.5.0",
-  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "npmClient": "pnpm"
+    "publishConfig": {
+        "access": "public"
+    },
+    "version": "10.5.0",
+    "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+    "npmClient": "pnpm"
 }
