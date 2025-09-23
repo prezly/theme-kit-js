@@ -18,7 +18,7 @@ module.exports = {
              * @param {string} basedir
              * @param {ImportOptions} importOptions
              */
-            resolve(id, basedir, { resolve }) {
+            resolve(id, basedir) {
                 const p = id.endsWith('.css') ? id : `${id}.css`;
                 if (p.startsWith('.')) {
                     return path.resolve(basedir, p);

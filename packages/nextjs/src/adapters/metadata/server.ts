@@ -17,7 +17,7 @@ export namespace MetadataAdapter {
                 Pick<lib.generatePageMetadata.Parameters, 'generateUrl'>,
             ...metadata: Metadata[]
         ) {
-            const { generateUrl, ...prerequisites } = configuration;
+            const { generateUrl: _, ...prerequisites } = configuration;
             return lib.generatePageMetadata({ ...prerequisites, ...params }, ...metadata);
         }
 
