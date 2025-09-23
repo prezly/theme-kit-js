@@ -6,7 +6,8 @@
         "useIgnoreFile": true
     },
     "files": {
-        "ignoreUnknown": false
+        "ignoreUnknown": false,
+        "experimentalScannerIgnores": ["packages/intl/**/*.json"]
     },
     "formatter": {
         "enabled": true,
@@ -31,7 +32,8 @@
                 "noExplicitAny": "off",
                 "noArrayIndexKey": "off",
                 "noAssignInExpressions": "off",
-                "noEmptyBlockStatements": "off"
+                "noEmptyBlockStatements": "off",
+                "noUnknownAtRules": "off"
             },
             "correctness": {
                 "useJsxKeyInIterable": "off",
