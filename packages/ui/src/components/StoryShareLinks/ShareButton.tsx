@@ -32,7 +32,7 @@ export function ShareButton({ network, shareUrl, layout, iconClassName }: Props)
             aria-label="Facebook"
             className={twMerge(
                 'p-3 border-gray-200 bg-white hover:bg-gray-100 active:bg-gray-200',
-                layout === 'vertical' ? `border-b  last:border-b-0` : `border-r last:border-r-0`,
+                layout === 'vertical' ? 'border-b  last:border-b-0' : 'border-r last:border-r-0',
             )}
         >
             <Icon className={twMerge('text-gray-800 w-5', iconClassName)} />

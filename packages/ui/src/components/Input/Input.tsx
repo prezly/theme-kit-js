@@ -10,7 +10,7 @@ export function Input({
     ...inputProps
 }: Input.Props) {
     return (
-        <div className={twMerge(`flex flex-col w-max`, className)}>
+        <div className={twMerge('flex flex-col w-max', className)}>
             <div className="flex items-center">
                 {Icon && iconPlacement === 'left' && <Icon className="w-5 h-5 mr-2" />}
                 <input
@@ -18,7 +18,7 @@ export function Input({
                     className={twMerge(
                         `flex rounded bg-white items-center justify-center w-full p-4 
                     focus:outline-accent-lighter focus-within:outline-accent-lighter label-large`,
-                        error && `border border-error`,
+                        error && 'border border-error',
                         inputClassName,
                     )}
                 />

@@ -26,7 +26,7 @@ export function Dropdown({ children, label, className, contentProps }: Dropdown.
                 <ChevronDownIcon
                     className={twMerge(
                         'w-5 h-5',
-                        `group-data-[state=open]:-rotate-180 transition-transform`,
+                        'group-data-[state=open]:-rotate-180 transition-transform',
                     )}
                 />
             </DropdownMenuTrigger>

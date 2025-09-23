@@ -30,7 +30,7 @@ export function Link({
             ref={forwardRef as any}
             className={twMerge(
                 'flex items-center justify-center w-max rounded transition-colors',
-                size === 'small' ? `label-medium` : `label-large`,
+                size === 'small' ? 'label-medium' : 'label-large',
                 variation === 'primary' &&
                     `
   text-accent hover:text-accent-dark active:text-accent-darker focus:text-accent-darker focus-within:text-accent-darker
@@ -44,7 +44,7 @@ export function Link({
       disabled && 'text-gray-500 pointer-events-none'
   }
   `,
-                Boolean(Icon) && Boolean(children) && `gap-2`,
+                Boolean(Icon) && Boolean(children) && 'gap-2',
                 className,
             )}
             {...linkProps}

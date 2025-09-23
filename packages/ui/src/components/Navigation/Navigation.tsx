@@ -63,7 +63,7 @@ export function Navigation({
 
     const linkClassName = twMerge(
         'label-large text-gray-600 hover:text-gray-800 shrink-0',
-        !isSm && `text-lg font-bold`,
+        !isSm && 'text-lg font-bold',
     );
 
     function toggleMobileNav() {
@@ -80,7 +80,7 @@ export function Navigation({
         <header className={twMerge('p-6 lg:px-12 border-b border-gray-200 relative', className)}>
             <nav className="flex items-center justify-between">
                 <Link className="flex items-center gap-2" href={indexHref}>
-                    <h1 className={twMerge(`subtitle-medium`, Boolean(logo) && `hidden`)}>
+                    <h1 className={twMerge('subtitle-medium', Boolean(logo) && 'hidden')}>
                         {name}
                     </h1>
                     {logo && (
@@ -102,8 +102,8 @@ export function Navigation({
                     className={twMerge(
                         'md:items-center justify-between gap-12 md:gap-4 hidden md:flex',
                         Boolean(openMobileNav && !isSm) &&
-                            `flex flex-col w-screen absolute top-24 left-0 z-10 bg-white border-b border-gray-200`,
-                        shouldUseCenteredLayout ? `lg:w-2/3` : 'md:w-max',
+                            'flex flex-col w-screen absolute top-24 left-0 z-10 bg-white border-b border-gray-200',
+                        shouldUseCenteredLayout ? 'lg:w-2/3' : 'md:w-max',
                     )}
                 >
                     {Boolean(

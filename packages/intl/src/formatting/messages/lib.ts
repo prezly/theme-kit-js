@@ -109,7 +109,7 @@ export function tokenizeMessage(message: string) {
 
     let nesting = 0;
     let result: typeof tokens = [];
-    let buffer: string = '';
+    let buffer = '';
 
     tokens.forEach((token) => {
         switch (token) {

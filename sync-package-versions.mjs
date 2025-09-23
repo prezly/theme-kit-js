@@ -22,7 +22,7 @@ const updatedSubPackages = subPackages.map((subPackage) => {
     if (workspace) {
         contents = subPackages.reduce((contents, sub) => {
             return contents.replace(
-                new RegExp(`"version":\\s+"([^"]+)"`, 'g'),
+                /"version":\s+"([^"]+)"/g,
                 (matchedString, matchedVersion) => matchedString.replace(matchedVersion, monorepoVersion),
             );
         }, contents);

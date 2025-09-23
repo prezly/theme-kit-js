@@ -13,7 +13,7 @@ type Entry = {
     accessed: UnixTimestampInMilliseconds;
 };
 
-export function createSharedMemoryCache(prefix: string = ''): Cache {
+export function createSharedMemoryCache(prefix = ''): Cache {
     return {
         get(key, latestVersion) {
             const entry = CACHE.get(`${prefix}${key}`);

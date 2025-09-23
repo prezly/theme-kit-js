@@ -27,7 +27,7 @@ export function StoryCard({
         <div
             className={twMerge(
                 'flex flex-row items-center p-0 bg-white group sm:max-w-[530px]',
-                size === 'large' ? `flex-col gap-0` : `md:flex-row sm:max-w-none items-start gap-4`,
+                size === 'large' ? 'flex-col gap-0' : 'md:flex-row sm:max-w-none items-start gap-4',
                 className,
             )}
         >
@@ -52,8 +52,8 @@ export function StoryCard({
             <div
                 className={twMerge(
                     size === 'large'
-                        ? `p-6 md:py-6 md:px-0 w-full`
-                        : `py-1 md:py-1 w-full md:w-2/3`,
+                        ? 'p-6 md:py-6 md:px-0 w-full'
+                        : 'py-1 md:py-1 w-full md:w-2/3',
                 )}
             >
                 <div className="flex flex-wrap items-center gap-1">
