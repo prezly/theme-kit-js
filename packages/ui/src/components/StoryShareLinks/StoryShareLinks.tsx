@@ -83,6 +83,7 @@ export function StoryShareLinks({
                 iconClassName={iconClassName}
                 layout={layout}
             />
+            {/** biome-ignore lint/a11y/useValidAnchor: <...> */}
             <a
                 href="#"
                 target="_blank"
@@ -100,6 +101,7 @@ export function StoryShareLinks({
                 <LinkIcon className={twMerge('text-gray-800 w-5', iconClassName)} />
             </a>
             {withScrollToTopButton && isScrollToTopVisible && (
+                // biome-ignore lint/a11y/useValidAnchor: <...>
                 <a
                     href="#"
                     target="_blank"

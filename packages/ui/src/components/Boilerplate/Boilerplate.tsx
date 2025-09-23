@@ -26,6 +26,7 @@ export function Boilerplate({ className, companyInformation, intl = {} }: Boiler
                 {about && (
                     <div
                         className="md:mb-12 text-white"
+                        // biome-ignore lint/security/noDangerouslySetInnerHtml: <This is expected>
                         dangerouslySetInnerHTML={{ __html: about }}
                     />
                 )}
