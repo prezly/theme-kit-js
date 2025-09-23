@@ -9,10 +9,10 @@ const EN = 'en';
 const X_DEFAULT = 'x-default';
 
 const ALLOWED_FALLBACKS: Record<Locale.Code, Locale.LangCode> = {
-    ['en_US']: 'en',
-    ['en_GB']: 'en',
-    ['fr_FR']: 'fr',
-    ['fr_CA']: 'fr',
+    en_US: 'en',
+    en_GB: 'en',
+    fr_FR: 'fr',
+    fr_CA: 'fr',
 };
 
 type HrefKey = Locale.Code | typeof X_DEFAULT;

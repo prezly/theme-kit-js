@@ -88,9 +88,9 @@ export function CategoriesDropdown({ options, indexHref, intl = {} }: Categories
 
 export namespace CategoriesDropdown {
     export interface Intl {
-        ['categories.title']: string;
-        ['categories.view']: string;
-        ['categories.viewAll']: string;
+        'categories.title': string;
+        'categories.view': string;
+        'categories.viewAll': string;
     }
     export interface Option {
         id: Category['id'];

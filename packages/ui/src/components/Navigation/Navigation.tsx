@@ -193,10 +193,10 @@ export function Navigation({
 
 export namespace Navigation {
     export interface Intl extends CategoriesDropdown.Intl {
-        ['newsroom.title']: string;
-        ['media.title']: string;
-        ['about.title']: string;
-        ['contacts.title']: string;
+        'newsroom.title': string;
+        'media.title': string;
+        'about.title': string;
+        'contacts.title': string;
     }
 
     export type DisplayedLanguage = LanguagesDropdown.Option;

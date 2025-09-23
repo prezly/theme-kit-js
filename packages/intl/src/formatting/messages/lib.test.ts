@@ -11,7 +11,7 @@ import {
 import type { IntlDictionary } from './types';
 
 const I18N: IntlDictionary = {
-    ['hello.world']: [
+    'hello.world': [
         {
             type: 0,
             value: '¡Hola, ',
@@ -25,7 +25,7 @@ const I18N: IntlDictionary = {
             value: '!',
         },
     ],
-    ['images.count']: [
+    'images.count': [
         {
             type: 0,
             value: 'Images: ',

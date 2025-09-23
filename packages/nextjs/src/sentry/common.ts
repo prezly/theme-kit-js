@@ -34,7 +34,7 @@ function shouldExceptionBeIgnored(exception: Exception) {
 
     // Ignore global code errors that are not related to the application code.
     // See comments in `IGNORED_EVENT_CULPRITS` const for context on each entry
-    if (stacktrace && stacktrace.frames?.some(shouldStackFrameBeIgnored)) {
+    if (stacktrace?.frames?.some(shouldStackFrameBeIgnored)) {
         return true;
     }
 

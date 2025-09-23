@@ -27,7 +27,7 @@ export function CategoriesList({ categories, intl = {} }: CategoriesList.Props) 
 
 export namespace CategoriesList {
     export interface Intl {
-        ['categories.title']: string;
+        'categories.title': string;
     }
 
     export interface DisplayedCategory extends CategoryLink.DisplayedCategory {

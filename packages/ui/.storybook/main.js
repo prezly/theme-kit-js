@@ -1,4 +1,4 @@
-import { join, dirname } from 'path';
+import { join, dirname } from 'node:path';
 import { mergeConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';

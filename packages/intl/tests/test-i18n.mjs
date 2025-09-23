@@ -1,4 +1,4 @@
-import assert from 'assert';
+import assert from 'node:assert';
 
 import messages from '@prezly/theme-kit-intl/i18n/nl.json' with { type: 'json' };
 

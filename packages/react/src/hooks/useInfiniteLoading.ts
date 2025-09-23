@@ -91,7 +91,7 @@ export function useInfiniteLoading<T>(
         if (data.length === 0 && (typeof total === 'undefined' || total > 0)) {
             load();
         }
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [data.length, load, total]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if (error && tries <= retryOnError) {

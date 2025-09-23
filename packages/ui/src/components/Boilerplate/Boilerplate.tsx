@@ -92,7 +92,7 @@ export namespace Boilerplate {
     }
 
     export interface Intl {
-        ['boilerplate.title']: string;
+        'boilerplate.title': string;
     }
 
     export interface Props {
