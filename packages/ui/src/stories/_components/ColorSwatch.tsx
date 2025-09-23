@@ -41,6 +41,7 @@ export function ColorSwatch({ value, hex }: ColorSwatchProps) {
             >
                 {notification}
             </p>
+            {/** biome-ignore lint/a11y/useKeyWithClickEvents: <...> */}
             <p
                 className={twMerge(
                     'font-bold text-lg leading-7 text-gray-800 m-0',
