@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { Locale } from '../../locales';
 import { withCache } from '../../utils';
 

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { CATEGORIES, LANGUAGES, NEWSROOM } from './__mocks__';

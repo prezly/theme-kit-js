@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { Locale, supportedLocales } from '../../locales';
 
 import {
@@ -33,7 +32,6 @@ const I18N: IntlDictionary = {
         {
             offset: 0,
             options: {
-                // eslint-disable-next-line @typescript-eslint/naming-convention
                 '=0': {
                     value: [
                         {
