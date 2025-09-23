@@ -50,7 +50,6 @@ export function connect<Routes extends RoutesMap>() {
             [routes, locales, defaultLocale, toLocaleSlug],
         ) as UrlGenerator<Router<Routes>>;
 
-        // @ts-expect-error
         return { generateUrl };
     }
 
