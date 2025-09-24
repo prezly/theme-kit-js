@@ -17,10 +17,10 @@ export function ButtonLink(props: ButtonLink.Props) {
         forceRefresh,
         icon,
         theme = defaultTheme,
-        disabled,
+        disabled: _disabled,
         children,
         localeCode,
-        rounded,
+        rounded: _rounded,
         href,
         ...attributes
     } = props;
@@ -33,8 +33,6 @@ export function ButtonLink(props: ButtonLink.Props) {
 
     return (
         <Element
-            disabled={disabled}
-            rounded={rounded}
             href={forceRefresh ? hrefWithLocale : href}
             ref={forwardRef as any}
             className={theme.button(compiledProps, className)}

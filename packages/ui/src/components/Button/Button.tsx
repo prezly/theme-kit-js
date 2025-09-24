@@ -18,7 +18,7 @@ export function Button(props: Button.Props) {
         forwardRef,
         disabled,
         children,
-        rounded,
+        rounded: _rounded,
         ...attributes
     } = props;
 
@@ -30,7 +30,6 @@ export function Button(props: Button.Props) {
             type={type}
             className={theme.button(compiledProps, className)}
             disabled={disabled}
-            rounded={rounded}
             {...attributes}
         >
             {iconPlacement === 'left' && <Icon icon={icon} className={theme.icon(compiledProps)} />}
