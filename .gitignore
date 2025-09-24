@@ -43,10 +43,18 @@ node_modules/
 
 # Build output
 build/
+dist/
+.next/
+out/
 
 # storybook build output
 storybook-static/
 
 # Test
 coverage/
+
+# Cache directories
 .nx/
+.turbo/
+.vercel/
+.docusaurus/

@@ -26,6 +26,7 @@ export function Boilerplate({ className, companyInformation, intl = {} }: Boiler
                 {about && (
                     <div
                         className="md:mb-12 text-white"
+                        // biome-ignore lint/security/noDangerouslySetInnerHtml: <This is expected>
                         dangerouslySetInnerHTML={{ __html: about }}
                     />
                 )}
@@ -92,7 +93,7 @@ export namespace Boilerplate {
     }
 
     export interface Intl {
-        ['boilerplate.title']: string;
+        'boilerplate.title': string;
     }
 
     export interface Props {

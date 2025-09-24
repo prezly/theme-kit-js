@@ -60,8 +60,8 @@ export function StoryShareLinks({
     return (
         <div
             className={twMerge(
-                `flex items-center rounded border border-gray-200 w-max overflow-hidden`,
-                layout === 'vertical' && `flex-col h-max`,
+                'flex items-center rounded border border-gray-200 w-max overflow-hidden',
+                layout === 'vertical' && 'flex-col h-max',
                 className,
             )}
         >
@@ -83,6 +83,7 @@ export function StoryShareLinks({
                 iconClassName={iconClassName}
                 layout={layout}
             />
+            {/** biome-ignore lint/a11y/useValidAnchor: <...> */}
             <a
                 href="#"
                 target="_blank"
@@ -92,14 +93,15 @@ export function StoryShareLinks({
                 className={twMerge(
                     'p-3 border-gray-200 bg-white hover:bg-gray-100 active:bg-gray-200',
                     layout === 'vertical'
-                        ? `border-b  last:border-b-0`
-                        : `border-r last:border-r-0`,
+                        ? 'border-b  last:border-b-0'
+                        : 'border-r last:border-r-0',
                 )}
                 onClick={copyShareUrl}
             >
                 <LinkIcon className={twMerge('text-gray-800 w-5', iconClassName)} />
             </a>
             {withScrollToTopButton && isScrollToTopVisible && (
+                // biome-ignore lint/a11y/useValidAnchor: <...>
                 <a
                     href="#"
                     target="_blank"
@@ -109,8 +111,8 @@ export function StoryShareLinks({
                     className={twMerge(
                         'p-3 border-gray-200 bg-white hover:bg-gray-100 active:bg-gray-200',
                         layout === 'vertical'
-                            ? `border-b  last:border-b-0`
-                            : `border-r last:border-r-0`,
+                            ? 'border-b  last:border-b-0'
+                            : 'border-r last:border-r-0',
                     )}
                     onClick={scrollToTop}
                 >

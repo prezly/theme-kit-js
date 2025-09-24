@@ -50,9 +50,9 @@ export function SubscriptionCta({
 
 export namespace SubscriptionCta {
     export interface Intl {
-        ['subscription.formTitle']: string;
-        ['subscription.labelEmail']: string;
-        ['actions.subscribe']: string;
+        'subscription.formTitle': string;
+        'subscription.labelEmail': string;
+        'actions.subscribe': string;
     }
 
     export interface Props {

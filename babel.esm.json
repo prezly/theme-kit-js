@@ -1,27 +1,23 @@
 {
-  "targets": {
-    "esmodules": true,
-    "node": "16"
-  },
-  "plugins": [
-    [
-      "auto-import", {
-        "declarations": [
-          { "default": "React", "path": "react" }
-        ]
-      }
+    "targets": {
+        "esmodules": true,
+        "node": "16"
+    },
+    "plugins": [
+        [
+            "auto-import",
+            {
+                "declarations": [{ "default": "React", "path": "react" }]
+            }
+        ],
+        ["babel-plugin-transform-remove-imports", { "test": "\\.css$" }],
+        ["babel-plugin-add-import-extension", { "extension": "mjs" }]
     ],
-    ["babel-plugin-transform-remove-imports",{ "test": "\\.css$" }],
-    ["babel-plugin-add-import-extension", { "extension": "mjs" }]
-  ],
-  "presets": [
-    "@babel/typescript",
-    "@babel/react",
-    ["@babel/env", { "modules": false }],
-    "@dr.pogodin/babel-preset-svgr"
-  ],
-  "ignore": [
-    "**/*.test.*",
-    "**/__mocks__/*"
-  ]
+    "presets": [
+        "@babel/typescript",
+        "@babel/react",
+        ["@babel/env", { "modules": false }],
+        "@dr.pogodin/babel-preset-svgr"
+    ],
+    "ignore": ["**/*.test.*", "**/__mocks__/*"]
 }

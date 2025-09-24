@@ -86,11 +86,8 @@ describe('Locale', () => {
     });
 
     it('should check if two locales are equal', () => {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         const en_US = Locale.from('en-US');
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         const en_US2 = Locale.from('en-US');
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         const de_DE = Locale.from('de-DE');
 
         expect(Locale.isEqual(en_US, en_US2)).toBe(true);

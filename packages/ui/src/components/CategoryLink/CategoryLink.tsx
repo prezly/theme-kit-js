@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 export function CategoryLink({ category, className }: CategoryLink.Props) {
     return (
-        <Link className={twMerge(`label-large text-accent`, className)} href={category.href}>
+        <Link className={twMerge('label-large text-accent', className)} href={category.href}>
             <span>{category.name}</span>
         </Link>
     );

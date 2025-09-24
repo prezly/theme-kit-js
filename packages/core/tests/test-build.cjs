@@ -2,7 +2,7 @@
 // and the build output is compatible with CommonJS.
 // By checking it with real Node.js loader.
 
-const assert = require('assert');
+const assert = require('node:assert');
 
 const { ASSETS_CDN_URL } = require('@prezly/theme-kit-core');
 

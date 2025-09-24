@@ -61,9 +61,9 @@ export function SearchResults({
 
 export namespace SearchResults {
     export interface Intl {
-        ['search.fullResultsTitle']: string;
-        ['search.noResults']: string;
-        ['search.showAllResults']: string;
+        'search.fullResultsTitle': string;
+        'search.noResults': string;
+        'search.showAllResults': string;
     }
 
     export interface Props {

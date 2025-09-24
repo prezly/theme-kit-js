@@ -26,7 +26,7 @@ export function connect<Routes extends RoutesMap>() {
 
     function RoutingContextProvider(props: Context<Routes> & { children: ReactNode }) {
         const { children, ...value } = props;
-        return <context.Provider value={value}>{props.children}</context.Provider>;
+        return <context.Provider value={value}>{children}</context.Provider>;
     }
 
     function useRouting() {
@@ -50,7 +50,6 @@ export function connect<Routes extends RoutesMap>() {
             [routes, locales, defaultLocale, toLocaleSlug],
         ) as UrlGenerator<Router<Routes>>;
 
-        // @ts-ignore
         return { generateUrl };
     }
 

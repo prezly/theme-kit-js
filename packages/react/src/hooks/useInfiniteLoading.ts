@@ -91,7 +91,7 @@ export function useInfiniteLoading<T>(
         if (data.length === 0 && (typeof total === 'undefined' || total > 0)) {
             load();
         }
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [data.length, load, total]);
 
     useEffect(() => {
         if (error && tries <= retryOnError) {
@@ -114,5 +114,5 @@ function toError(value: unknown): Error {
     if (value instanceof Error) {
         return value;
     }
-    return new Error(`Unknown error.`);
+    return new Error('Unknown error.');
 }

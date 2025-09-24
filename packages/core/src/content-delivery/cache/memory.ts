@@ -13,7 +13,7 @@ type Entry = {
     accessed: UnixTimestampInMilliseconds;
 };
 
-export function createSharedMemoryCache(prefix: string = ''): Cache {
+export function createSharedMemoryCache(prefix = ''): Cache {
     return {
         get(key, latestVersion) {
             const entry = CACHE.get(`${prefix}${key}`);
@@ -28,13 +28,13 @@ export function createSharedMemoryCache(prefix: string = ''): Cache {
 
             const { value, version } = entry;
 
-            CACHE.set(`${prefix}${key}`, { value, version, accessed: new Date().getTime() });
+            CACHE.set(`${prefix}${key}`, { value, version, accessed: Date.now() });
 
             return value;
         },
 
         set(key, value, version) {
-            const entry = { value, version, accessed: new Date().getTime() };
+            const entry = { value, version, accessed: Date.now() };
 
             CACHE.set(`${prefix}${key}`, entry);
 

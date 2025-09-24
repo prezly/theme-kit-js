@@ -12,7 +12,7 @@ export function DownloadLink({ intl = {} }: DownloadLink.Props) {
 
 export namespace DownloadLink {
     export interface Intl {
-        ['actions.download']: string;
+        'actions.download': string;
     }
 
     export interface Props {

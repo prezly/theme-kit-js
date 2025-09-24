@@ -1,97 +1,107 @@
 {
-  "name": "@prezly/theme-kit-ui",
-  "version": "10.3.1",
-  "description": "UI components for Prezly themes",
-  "keywords": ["prezly", "themes", "ui"],
-  "author": {
-    "name": "Prezly Team"
-  },
-  "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/ui#readme",
-  "license": "MIT",
-  "main": "./build/index.cjs.js",
-  "module": "./build/index.es.js",
-  "types": "./build/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./build/index.d.ts",
-      "import": "./build/index.mjs",
-      "require": "./build/index.cjs",
-      "default": "./build/index.mjs"
+    "name": "@prezly/theme-kit-ui",
+    "version": "10.3.1",
+    "description": "UI components for Prezly themes",
+    "keywords": [
+        "prezly",
+        "themes",
+        "ui"
+    ],
+    "author": {
+        "name": "Prezly Team"
+    },
+    "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/ui#readme",
+    "license": "MIT",
+    "main": "./build/index.cjs.js",
+    "module": "./build/index.es.js",
+    "types": "./build/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./build/index.d.ts",
+            "import": "./build/index.mjs",
+            "require": "./build/index.cjs",
+            "default": "./build/index.mjs"
+        }
+    },
+    "files": [
+        "build",
+        "README.md"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prezly/theme-kit-js.git"
+    },
+    "scripts": {
+        "prebuild": "rimraf build/*",
+        "dev": "vite",
+        "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs && pnpm build:css",
+        "build:types": "tsc --project .",
+        "build:css": "postcss ./styles/base.styles.css -o ./build/styles.css",
+        "build:esm": "pnpm build:esm:code && pnpm build:esm:icons",
+        "build:esm:code": "babel  --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.ts,.tsx --out-file-extension=.mjs",
+        "build:esm:icons": "babel --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.svg     --out-file-extension=.svg.mjs",
+        "build:cjs": "pnpm build:cjs:code && pnpm build:cjs:icons",
+        "build:cjs:code": "babel  --config-file=../../babel.cjs.json src/ --out-dir=build/ --extensions=.ts,.tsx --out-file-extension=.cjs",
+        "build:cjs:icons": "babel --config-file=../../babel.cjs.json src/ --out-dir=build/ --extensions=.svg     --out-file-extension=.svg.cjs",
+        "preview": "vite preview",
+        "build-storybook": "storybook build",
+        "storybook": "storybook dev -p 6006",
+        "lint": "biome lint src",
+        "lint:fix": "biome lint --write src",
+        "format": "biome format src",
+        "format:fix": "biome format --write src"
+    },
+    "bugs": {
+        "url": "https://github.com/prezly/theme-kit-js/issues"
+    },
+    "peerDependencies": {
+        "@prezly/sdk": "21.12.0 || ^23.x",
+        "next": "^15.1.4",
+        "react": "^19.x",
+        "react-dom": "^19.x"
+    },
+    "devDependencies": {
+        "@storybook/addon-designs": "7.0.9",
+        "@storybook/addon-essentials": "7.6.20",
+        "@storybook/addon-interactions": "7.6.20",
+        "@storybook/addon-links": "7.6.20",
+        "@storybook/addon-onboarding": "1.0.11",
+        "@storybook/addon-themes": "7.6.20",
+        "@storybook/blocks": "7.6.20",
+        "@storybook/react": "7.6.20",
+        "@storybook/react-vite": "7.6.20",
+        "@storybook/testing-library": "0.2.2",
+        "@types/tinycolor2": "1.4.6",
+        "@vitejs/plugin-react": "3.1.0",
+        "autoprefixer": "10.4.21",
+        "postcss": "8.5.6",
+        "postcss-cli": "11.0.1",
+        "postcss-import": "15.1.0",
+        "prop-types": "15.8.1",
+        "storybook": "7.6.20",
+        "tailwindcss": "3.4.17",
+        "vite": "4.5.14",
+        "vite-plugin-dts": "3.9.1",
+        "vite-plugin-svgr": "4.5.0",
+        "vite-plugin-turbosnap": "1.0.3",
+        "vite-tsconfig-paths": "4.3.2"
+    },
+    "dependencies": {
+        "@heroicons/react": "^2.0.18",
+        "@prezly/analytics-nextjs": "3.0.0",
+        "@prezly/content-renderer-react-js": "0.41.5",
+        "@prezly/story-content-format": "^0.68.0",
+        "@prezly/uploadcare": "^2.4.3",
+        "@prezly/uploadcare-image": "^0.3.2",
+        "@radix-ui/react-dialog": "^1.0.5",
+        "@radix-ui/react-dropdown-menu": "^2.0.6",
+        "@react-hookz/web": "^23.1.0",
+        "@technically/is-not-undefined": "^1.0.0",
+        "algoliasearch": "^4.20.0",
+        "date-fns": "^2.30.0",
+        "react-instantsearch": "^7.15.0",
+        "social-links": "^1.14.0",
+        "tailwind-merge": "^1.14.0",
+        "tinycolor2": "^1.6.0"
     }
-  },
-  "files": ["build", "README.md"],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prezly/theme-kit-js.git"
-  },
-  "scripts": {
-    "prebuild": "rimraf build/*",
-    "dev": "vite",
-    "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs && pnpm build:css",
-    "build:types": "tsc --project .",
-    "build:css": "postcss ./styles/base.styles.css -o ./build/styles.css",
-    "build:esm": "pnpm build:esm:code && pnpm build:esm:icons",
-    "build:esm:code": "babel  --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.ts,.tsx --out-file-extension=.mjs",
-    "build:esm:icons": "babel --config-file=../../babel.esm.json src/ --out-dir=build/ --extensions=.svg     --out-file-extension=.svg.mjs",
-    "build:cjs": "pnpm build:cjs:code && pnpm build:cjs:icons",
-    "build:cjs:code": "babel  --config-file=../../babel.cjs.json src/ --out-dir=build/ --extensions=.ts,.tsx --out-file-extension=.cjs",
-    "build:cjs:icons": "babel --config-file=../../babel.cjs.json src/ --out-dir=build/ --extensions=.svg     --out-file-extension=.svg.cjs",
-    "preview": "vite preview",
-    "build-storybook": "storybook build",
-    "storybook": "storybook dev -p 6006",
-    "lint": "eslint src"
-  },
-  "bugs": {
-    "url": "https://github.com/prezly/theme-kit-js/issues"
-  },
-  "peerDependencies": {
-    "@prezly/sdk": "21.12.0 || ^23.x",
-    "next": "^15.1.4",
-    "react": "^19.x",
-    "react-dom": "^19.x"
-  },
-  "devDependencies": {
-    "@storybook/addon-designs": "7.0.9",
-    "@storybook/addon-essentials": "7.6.20",
-    "@storybook/addon-interactions": "7.6.20",
-    "@storybook/addon-links": "7.6.20",
-    "@storybook/addon-onboarding": "1.0.11",
-    "@storybook/addon-themes": "7.6.20",
-    "@storybook/blocks": "7.6.20",
-    "@storybook/react": "7.6.20",
-    "@storybook/react-vite": "7.6.20",
-    "@storybook/testing-library": "0.2.2",
-    "@types/tinycolor2": "1.4.6",
-    "@vitejs/plugin-react": "3.1.0",
-    "autoprefixer": "10.4.21",
-    "postcss": "8.5.6",
-    "postcss-cli": "11.0.1",
-    "postcss-import": "15.1.0",
-    "prop-types": "15.8.1",
-    "storybook": "7.6.20",
-    "tailwindcss": "3.4.17",
-    "vite": "4.5.14",
-    "vite-plugin-dts": "3.9.1",
-    "vite-plugin-svgr": "4.5.0",
-    "vite-plugin-turbosnap": "1.0.3",
-    "vite-tsconfig-paths": "4.3.2"
-  },
-  "dependencies": {
-    "@heroicons/react": "^2.0.18",
-    "@prezly/analytics-nextjs": "3.0.0",
-    "@prezly/content-renderer-react-js": "0.41.5",
-    "@prezly/story-content-format": "^0.68.0",
-    "@prezly/uploadcare": "^2.4.3",
-    "@prezly/uploadcare-image": "^0.3.2",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-dropdown-menu": "^2.0.6",
-    "@react-hookz/web": "^23.1.0",
-    "@technically/is-not-undefined": "^1.0.0",
-    "algoliasearch": "^4.20.0",
-    "date-fns": "^2.30.0",
-    "react-instantsearch": "^7.15.0",
-    "social-links": "^1.14.0",
-    "tailwind-merge": "^1.14.0",
-    "tinycolor2": "^1.6.0"
-  }
 }

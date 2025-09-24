@@ -93,10 +93,10 @@ export function Footer({
 
 export namespace Footer {
     export interface Intl extends SubFooter.Intl {
-        ['contacts.title']: string;
-        ['boilerplate.about']: string;
-        ['mediaGallery.title']: string;
-        ['allStories.title']: string;
+        'contacts.title': string;
+        'boilerplate.about': string;
+        'mediaGallery.title': string;
+        'allStories.title': string;
     }
 
     export interface Props {

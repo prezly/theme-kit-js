@@ -1,61 +1,64 @@
 {
-  "name": "@prezly/theme-kit-js-monorepo",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "build": "pnpm exec lerna run build",
-    "dev:core": "pnpm exec lerna run dev --scope=@prezly/theme-kit-core",
-    "dev:nextjs": "pnpm exec lerna run dev --scope=@prezly/theme-kit-nextjs",
-    "dev:ui": "pnpm exec lerna run dev --scope=@prezly/theme-kit-ui",
-    "lint": "pnpm exec lerna run lint",
-    "lint:fix": "pnpm exec lerna run lint -- --fix",
-    "prettier": "prettier --check './packages/**/*.(js|ts|tsx)'",
-    "prettier:fix": "pnpm prettier -- --write --no-list-different",
-    "test": "pnpm exec lerna run test",
-    "typecheck": "pnpm exec lerna run typecheck",
-    "check": "pnpm exec lerna run lint,typecheck,test",
-    "release": "pnpm release:prepare && pnpm release:publish",
-    "release:preview": "pnpm release:prepare && pnpm release:publish:preview",
-    "release:prepare": "pnpm exec lerna run lint,test,build",
-    "release:publish": "lerna publish --no-private",
-    "release:preview-tag": "./release-preview-tag.sh",
-    "release:next-tag": "./release-next-tag.sh",
-    "sync-package-versions": "node ./sync-package-versions.mjs"
-  },
-  "dependencies": {
-    "next": "^15.1.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "7.28.3",
-    "@babel/core": "7.28.4",
-    "@babel/preset-env": "7.28.3",
-    "@babel/preset-react": "7.27.1",
-    "@babel/preset-typescript": "7.27.1",
-    "@dr.pogodin/babel-preset-svgr": "1.9.2",
-    "@playwright/test": "1.55.0",
-    "@prezly/eslint-config": "6.0.0",
-    "@prezly/sdk": "23.20.0",
-    "@types/jest": "29.5.14",
-    "@types/node": "22.18.6",
-    "@types/react": "19.1.13",
-    "@types/react-dom": "19.1.9",
-    "babel-plugin-add-import-extension": "1.6.0",
-    "babel-plugin-auto-import": "1.1.0",
-    "babel-plugin-transform-remove-imports": "1.8.1",
-    "concurrently": "9.2.1",
-    "eslint": "9.36.0",
-    "eslint-config-next": "15.5.3",
-    "jest": "29.7.0",
-    "lerna": "8.2.4",
-    "prettier": "3.6.2",
-    "rimraf": "6.0.1",
-    "ts-jest": "29.4.4",
-    "typescript": "5.7.3"
-  },
-  "sync-package-versions": {
-    "workspace": true,
-    "packages": ["@prezly/sdk", "@prezly/uploadcare"]
-  }
+    "name": "@prezly/theme-kit-js-monorepo",
+    "version": "0.0.0",
+    "private": true,
+    "files": [
+        "biome.json"
+    ],
+    "scripts": {
+        "build": "pnpm exec lerna run build",
+        "dev:core": "pnpm exec lerna run dev --scope=@prezly/theme-kit-core",
+        "dev:nextjs": "pnpm exec lerna run dev --scope=@prezly/theme-kit-nextjs",
+        "dev:ui": "pnpm exec lerna run dev --scope=@prezly/theme-kit-ui",
+        "lint": "biome ci .",
+        "lint:fix": "biome lint --write .",
+        "format": "biome format .",
+        "format:fix": "biome format --write .",
+        "check:fix": "biome check --write .",
+        "test": "pnpm exec lerna run test",
+        "typecheck": "pnpm exec lerna run typecheck",
+        "release": "pnpm release:prepare && pnpm release:publish",
+        "release:preview": "pnpm release:prepare && pnpm release:publish:preview",
+        "release:prepare": "pnpm check && pnpm test && pnpm build",
+        "release:publish": "lerna publish --no-private",
+        "release:preview-tag": "./release-preview-tag.sh",
+        "release:next-tag": "./release-next-tag.sh",
+        "sync-package-versions": "node ./sync-package-versions.mjs"
+    },
+    "dependencies": {
+        "next": "^15.1.5",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "7.28.3",
+        "@babel/core": "7.28.4",
+        "@babel/preset-env": "7.28.3",
+        "@babel/preset-react": "7.27.1",
+        "@babel/preset-typescript": "7.27.1",
+        "@biomejs/biome": "2.2.4",
+        "@dr.pogodin/babel-preset-svgr": "1.9.2",
+        "@playwright/test": "1.55.0",
+        "@prezly/sdk": "23.20.0",
+        "@types/jest": "29.5.14",
+        "@types/node": "22.18.6",
+        "@types/react": "19.1.13",
+        "@types/react-dom": "19.1.9",
+        "babel-plugin-add-import-extension": "1.6.0",
+        "babel-plugin-auto-import": "1.1.0",
+        "babel-plugin-transform-remove-imports": "1.8.1",
+        "concurrently": "9.2.1",
+        "jest": "29.7.0",
+        "lerna": "8.2.4",
+        "rimraf": "6.0.1",
+        "ts-jest": "29.4.4",
+        "typescript": "5.7.3"
+    },
+    "sync-package-versions": {
+        "workspace": true,
+        "packages": [
+            "@prezly/sdk",
+            "@prezly/uploadcare"
+        ]
+    }
 }

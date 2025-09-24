@@ -1,106 +1,115 @@
 {
-  "name": "@prezly/theme-kit-nextjs",
-  "version": "10.5.0",
-  "description": "Data layer and utility library for developing Prezly themes with NextJS",
-  "type": "module",
-  "main": "build/index.mjs",
-  "types": "build/index.d.ts",
-  "files": ["build", "README.md"],
-  "exports": {
-    ".": {
-      "types": "./build/index.d.ts",
-      "require": "./build/index.cjs",
-      "default": "./build/index.mjs"
+    "name": "@prezly/theme-kit-nextjs",
+    "version": "10.5.0",
+    "description": "Data layer and utility library for developing Prezly themes with NextJS",
+    "type": "module",
+    "main": "build/index.mjs",
+    "types": "build/index.d.ts",
+    "files": [
+        "build",
+        "README.md"
+    ],
+    "exports": {
+        ".": {
+            "types": "./build/index.d.ts",
+            "require": "./build/index.cjs",
+            "default": "./build/index.mjs"
+        },
+        "./server": {
+            "types": "./build/server.d.ts",
+            "require": "./build/server.cjs",
+            "default": "./build/server.mjs"
+        },
+        "./middleware": {
+            "types": "./build/middleware/index.d.ts",
+            "require": "./build/middleware/index.cjs",
+            "default": "./build/middleware/index.mjs"
+        },
+        "./next-config": {
+            "types": "./build/next-config/index.d.ts",
+            "require": "./build/next-config/index.cjs",
+            "default": "./build/next-config/index.mjs"
+        },
+        "./sentry": {
+            "types": "./build/sentry/index.d.ts",
+            "require": "./build/sentry/index.cjs",
+            "default": "./build/sentry/index.mjs"
+        },
+        "./playwright": {
+            "types": "./build/playwright/index.d.ts",
+            "require": "./build/playwright/index.cjs",
+            "default": "./build/playwright/index.mjs"
+        }
     },
-    "./server": {
-      "types": "./build/server.d.ts",
-      "require": "./build/server.cjs",
-      "default": "./build/server.mjs"
+    "engines": {
+        "node": ">= 16.x",
+        "npm": ">= 8.x"
     },
-    "./middleware": {
-      "types": "./build/middleware/index.d.ts",
-      "require": "./build/middleware/index.cjs",
-      "default": "./build/middleware/index.mjs"
+    "devEngines": {
+        "node": ">= 16.x",
+        "npm": ">= 8.x"
     },
-    "./next-config": {
-      "types": "./build/next-config/index.d.ts",
-      "require": "./build/next-config/index.cjs",
-      "default": "./build/next-config/index.mjs"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prezly/theme-kit-js.git",
+        "directory": "packages/nextjs"
     },
-    "./sentry": {
-      "types": "./build/sentry/index.d.ts",
-      "require": "./build/sentry/index.cjs",
-      "default": "./build/sentry/index.mjs"
+    "keywords": [
+        "prezly",
+        "nextjs"
+    ],
+    "author": "Prezly Team",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/prezly/theme-kit-js/issues"
     },
-    "./playwright": {
-      "types": "./build/playwright/index.d.ts",
-      "require": "./build/playwright/index.cjs",
-      "default": "./build/playwright/index.mjs"
-    }
-  },
-  "engines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
-  },
-  "devEngines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prezly/theme-kit-js.git",
-    "directory": "packages/nextjs"
-  },
-  "keywords": ["prezly", "nextjs"],
-  "author": "Prezly Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/prezly/theme-kit-js/issues"
-  },
-  "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/nextjs#readme",
-  "scripts": {
-    "prebuild": "rimraf build/* *.tsbuildinfo",
-    "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs",
-    "build:types": "tsc --project .",
-    "build:esm": "babel --config-file=../../babel.esm.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.mjs",
-    "build:cjs": "babel --config-file=../../babel.cjs.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.cjs",
-    "dev": "tsc --watch --preserveWatchOutput --project .",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false --incremental --project .",
-    "lint": "eslint src",
-    "test": "pnpm test:build",
-    "test:build": "pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",
-    "test:build:types": "tsc --esModuleInterop --noEmit build/index.d.ts",
-    "test:build:esm": "node tests/test-build.mjs",
-    "test:build:cjs": "node tests/test-build.cjs"
-  },
-  "peerDependencies": {
-    "@playwright/test": "1.x",
-    "@prezly/sdk": "21.12.0 || ^23.x",
-    "next": "^14.x || ^15.x",
-    "react": "^18.x || ^19.x",
-    "react-dom": "^18.x || ^19.x"
-  },
-  "peerDependenciesMeta": {
-    "@playwright/test": {
-      "optional": true
-    }
-  },
-  "dependencies": {
-    "@prezly/theme-kit-core": "^10.5.0",
-    "@prezly/theme-kit-intl": "^10.5.0",
-    "@prezly/theme-kit-react": "^10.5.0",
-    "@technically/is-not-undefined": "^1.0.0",
-    "@technically/omit-undefined": "^1.0.4",
-    "json-stable-stringify": "^1.2.1",
-    "redis": "^4.7.0",
-    "url-pattern": "^1.0.3"
-  },
-  "devDependencies": {
-    "@sentry/nextjs": "7.120.4"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "sideEffects": false,
-  "gitHead": "51b1ce99cf8ce2c886001077bcaf95cb143f86ce"
+    "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/nextjs#readme",
+    "scripts": {
+        "prebuild": "rimraf build/* *.tsbuildinfo",
+        "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs",
+        "build:types": "tsc --project .",
+        "build:esm": "babel --config-file=../../babel.esm.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.mjs",
+        "build:cjs": "babel --config-file=../../babel.cjs.json src/ --extensions=.ts,.tsx --out-dir=build/ --out-file-extension=.cjs",
+        "dev": "tsc --watch --preserveWatchOutput --project .",
+        "typecheck": "tsc --noEmit --emitDeclarationOnly false --incremental --project .",
+        "lint": "biome lint src",
+        "lint:fix": "biome lint --write src",
+        "format": "biome format src",
+        "format:fix": "biome format --write src",
+        "test": "pnpm test:build",
+        "test:build": "pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",
+        "test:build:types": "tsc --esModuleInterop --noEmit build/index.d.ts",
+        "test:build:esm": "node tests/test-build.mjs",
+        "test:build:cjs": "node tests/test-build.cjs"
+    },
+    "peerDependencies": {
+        "@playwright/test": "1.x",
+        "@prezly/sdk": "21.12.0 || ^23.x",
+        "next": "^14.x || ^15.x",
+        "react": "^18.x || ^19.x",
+        "react-dom": "^18.x || ^19.x"
+    },
+    "peerDependenciesMeta": {
+        "@playwright/test": {
+            "optional": true
+        }
+    },
+    "dependencies": {
+        "@prezly/theme-kit-core": "^10.5.0",
+        "@prezly/theme-kit-intl": "^10.5.0",
+        "@prezly/theme-kit-react": "^10.5.0",
+        "@technically/is-not-undefined": "^1.0.0",
+        "@technically/omit-undefined": "^1.0.4",
+        "json-stable-stringify": "^1.2.1",
+        "redis": "^4.7.0",
+        "url-pattern": "^1.0.3"
+    },
+    "devDependencies": {
+        "@sentry/nextjs": "7.120.4"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "sideEffects": false,
+    "gitHead": "51b1ce99cf8ce2c886001077bcaf95cb143f86ce"
 }

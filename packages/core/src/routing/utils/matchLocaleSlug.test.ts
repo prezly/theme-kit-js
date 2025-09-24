@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import type { Locale } from '@prezly/theme-kit-intl';
 
 import { matchLocaleSlug } from './matchLocaleSlug';

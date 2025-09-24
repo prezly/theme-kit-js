@@ -6,8 +6,8 @@ export function Breadcrumb({ item, isLast, className }: Breadcrumb.Props) {
     return (
         <li
             className={twMerge(
-                `flex items-center label-large gap-2`,
-                !isLast && `text-gray-500 hover:text-gray-600`,
+                'flex items-center label-large gap-2',
+                !isLast && 'text-gray-500 hover:text-gray-600',
                 className,
             )}
         >

@@ -27,7 +27,7 @@ export function Hero({
         <div
             className={twMerge(
                 'flex flex-col items-center p-0 bg-white gap-0 md:gap-12 group',
-                size === 'large' ? `md:flex-row-reverse` : `md:flex-row md:p-12`,
+                size === 'large' ? 'md:flex-row-reverse' : 'md:flex-row md:p-12',
                 className,
             )}
         >
@@ -50,7 +50,7 @@ export function Hero({
             <div
                 className={twMerge(
                     'w-full md:w-1/2',
-                    size === 'large' ? `p-6 md:px-12 md:py-20` : `p-6 md:p-0`,
+                    size === 'large' ? 'p-6 md:px-12 md:py-20' : 'p-6 md:p-0',
                 )}
             >
                 <div className="flex flex-wrap items-center gap-1">
@@ -78,7 +78,7 @@ export function Hero({
                         </p>
                     )}
                     <ButtonLink
-                        className={twMerge('mt-6 w-max', size === 'default' && `md:hidden`)}
+                        className={twMerge('mt-6 w-max', size === 'default' && 'md:hidden')}
                         href={href}
                         icon={ArrowRightIcon}
                         iconPlacement="right"

@@ -38,8 +38,8 @@ export function SubFooter({
 
 export namespace SubFooter {
     export interface Intl extends DataRequestLink.Intl {
-        ['actions.startUsingCookies']: string;
-        ['actions.stopUsingCookies']: string;
+        'actions.startUsingCookies': string;
+        'actions.stopUsingCookies': string;
     }
 
     export interface Props {

@@ -12,7 +12,7 @@ export function DataRequestLink({
 
 export namespace DataRequestLink {
     export interface Intl {
-        ['actions.privacyRequests']: string;
+        'actions.privacyRequests': string;
     }
 
     export interface Props {

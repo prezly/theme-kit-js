@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { Locale } from '../../locales';
 import { withCache } from '../../utils';
 
@@ -109,7 +108,7 @@ export function tokenizeMessage(message: string) {
 
     let nesting = 0;
     let result: typeof tokens = [];
-    let buffer: string = '';
+    let buffer = '';
 
     tokens.forEach((token) => {
         switch (token) {

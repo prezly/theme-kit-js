@@ -68,8 +68,8 @@ export function GalleryMedia({ gallery, className, intl = {} }: GalleryMedia.Pro
 
 export namespace GalleryMedia {
     export interface Intl {
-        ['videos.title']: string;
-        ['images.title']: string;
+        'videos.title': string;
+        'images.title': string;
     }
 
     export interface DisplayedGallery {

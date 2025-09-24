@@ -7,7 +7,7 @@
 // @see https://nodejs.org/api/esm.html
 // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
-import assert from 'assert';
+import assert from 'node:assert';
 
 import { translations } from '@prezly/theme-kit-intl';
 

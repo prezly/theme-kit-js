@@ -16,6 +16,6 @@ export function useDebounce<T extends (...params: never[]) => void>(milliseconds
             clearTimeout(timer.current ?? undefined);
             setTimeout(() => fnRef.current(...params), milliseconds);
         }) as T,
-        [fnRef, timer, milliseconds],
+        [],
     );
 }

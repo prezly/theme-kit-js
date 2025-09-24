@@ -1,69 +1,77 @@
 {
-  "name": "@prezly/theme-kit-core",
-  "version": "10.5.0",
-  "description": "Data layer and utility library for developing Prezly themes with JavaScript",
-  "main": "build/index.mjs",
-  "type": "module",
-  "types": "build/index.d.ts",
-  "files": ["build", "README.md"],
-  "exports": {
-    ".": {
-      "types": "./build/index.d.ts",
-      "require": "./build/index.cjs",
-      "default": "./build/index.mjs"
+    "name": "@prezly/theme-kit-core",
+    "version": "10.5.0",
+    "description": "Data layer and utility library for developing Prezly themes with JavaScript",
+    "main": "build/index.mjs",
+    "type": "module",
+    "types": "build/index.d.ts",
+    "files": [
+        "build",
+        "README.md"
+    ],
+    "exports": {
+        ".": {
+            "types": "./build/index.d.ts",
+            "require": "./build/index.cjs",
+            "default": "./build/index.mjs"
+        }
+    },
+    "scripts": {
+        "prebuild": "rimraf build/* *.tsbuildinfo",
+        "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs",
+        "build:types": "tsc --project .",
+        "build:esm": "babel --config-file=../../babel.esm.json src/ --extensions=.ts --out-dir=build/ --out-file-extension=.mjs",
+        "build:cjs": "babel --config-file=../../babel.cjs.json src/ --extensions=.ts --out-dir=build/ --out-file-extension=.cjs",
+        "dev": "tsc --watch --preserveWatchOutput --project .",
+        "typecheck": "tsc --noEmit --emitDeclarationOnly false --incremental --project .",
+        "lint": "biome lint src",
+        "lint:fix": "biome lint --write src",
+        "format": "biome format src",
+        "format:fix": "biome format --write src",
+        "test": "pnpm test:unit && pnpm test:build",
+        "test:unit": "jest",
+        "test:build": "pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",
+        "test:build:types": "tsc --esModuleInterop --noEmit --target esnext --moduleResolution node build/index.d.ts",
+        "test:build:esm": "node tests/test-build.mjs",
+        "test:build:cjs": "node tests/test-build.cjs"
+    },
+    "peerDependencies": {
+        "@prezly/sdk": "21.12.0 || ^23.x"
+    },
+    "dependencies": {
+        "@prezly/theme-kit-intl": "^10.5.0",
+        "@prezly/uploadcare": "2.4.4",
+        "@technically/is-not-undefined": "^1.0.0",
+        "@technically/omit-undefined": "^1.0.4",
+        "parse-data-url": "^6.0.0",
+        "url-pattern": "^1.0.3"
+    },
+    "devDependencies": {
+        "@types/parse-data-url": "3.0.2"
+    },
+    "engines": {
+        "node": ">= 16.x",
+        "npm": ">= 8.x"
+    },
+    "devEngines": {
+        "node": ">= 16.x",
+        "npm": ">= 8.x"
+    },
+    "keywords": [
+        "prezly"
+    ],
+    "author": "Prezly Team",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/prezly/theme-kit-js/issues"
+    },
+    "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/core#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prezly/theme-kit-js.git",
+        "directory": "packages/core"
+    },
+    "publishConfig": {
+        "access": "public"
     }
-  },
-  "scripts": {
-    "prebuild": "rimraf build/* *.tsbuildinfo",
-    "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs",
-    "build:types": "tsc --project .",
-    "build:esm": "babel --config-file=../../babel.esm.json src/ --extensions=.ts --out-dir=build/ --out-file-extension=.mjs",
-    "build:cjs": "babel --config-file=../../babel.cjs.json src/ --extensions=.ts --out-dir=build/ --out-file-extension=.cjs",
-    "dev": "tsc --watch --preserveWatchOutput --project .",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false --incremental --project .",
-    "lint": "eslint src",
-    "test": "pnpm test:unit && pnpm test:build",
-    "test:unit": "jest",
-    "test:build": "pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",
-    "test:build:types": "tsc --esModuleInterop --noEmit --target esnext --moduleResolution node build/index.d.ts",
-    "test:build:esm": "node tests/test-build.mjs",
-    "test:build:cjs": "node tests/test-build.cjs"
-  },
-  "peerDependencies": {
-    "@prezly/sdk": "21.12.0 || ^23.x"
-  },
-  "dependencies": {
-    "@prezly/theme-kit-intl": "^10.5.0",
-    "@prezly/uploadcare": "2.4.4",
-    "@technically/is-not-undefined": "^1.0.0",
-    "@technically/omit-undefined": "^1.0.4",
-    "parse-data-url": "^6.0.0",
-    "url-pattern": "^1.0.3"
-  },
-  "devDependencies": {
-    "@types/parse-data-url": "3.0.2"
-  },
-  "engines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
-  },
-  "devEngines": {
-    "node": ">= 16.x",
-    "npm": ">= 8.x"
-  },
-  "keywords": ["prezly"],
-  "author": "Prezly Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/prezly/theme-kit-js/issues"
-  },
-  "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/core#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prezly/theme-kit-js.git",
-    "directory": "packages/core"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
 }

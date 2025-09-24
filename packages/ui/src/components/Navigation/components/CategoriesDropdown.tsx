@@ -31,7 +31,7 @@ export function CategoriesDropdown({ options, indexHref, intl = {} }: Categories
                     {intl['categories.title'] ?? 'Categories'}
                 </Button>
                 <div
-                    className={twMerge(`hidden`, mobileDropdownOpen && `flex flex-col gap-6 mt-6`)}
+                    className={twMerge('hidden', mobileDropdownOpen && 'flex flex-col gap-6 mt-6')}
                 >
                     {options.map(({ id, href, name }) => (
                         <Link className="gap-2 label-large text-gray-600" href={href} key={id}>
@@ -88,9 +88,9 @@ export function CategoriesDropdown({ options, indexHref, intl = {} }: Categories
 
 export namespace CategoriesDropdown {
     export interface Intl {
-        ['categories.title']: string;
-        ['categories.view']: string;
-        ['categories.viewAll']: string;
+        'categories.title': string;
+        'categories.view': string;
+        'categories.viewAll': string;
     }
     export interface Option {
         id: Category['id'];

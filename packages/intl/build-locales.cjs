@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const locales = fs
-    .readdirSync(__dirname + '/i18n/')
+    .readdirSync(`${__dirname}/i18n/`)
     .filter((name) => name.endsWith('.json'))
     .map((name) => name.slice(0, -'.json'.length))
     .sort();

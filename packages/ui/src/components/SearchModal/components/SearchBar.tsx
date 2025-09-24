@@ -49,8 +49,8 @@ export function SearchBar({ locale, newsroomName, onClose, intl = {} }: SearchBa
 
 export namespace SearchBar {
     export interface Intl {
-        ['search.action']: string;
-        ['search.inputHint']: string;
+        'search.action': string;
+        'search.inputHint': string;
     }
 
     export interface Props {

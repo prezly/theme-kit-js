@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { Locale, supportedLocales } from '../../locales';
 
 import {
@@ -11,7 +10,7 @@ import {
 import type { IntlDictionary } from './types';
 
 const I18N: IntlDictionary = {
-    [`hello.world`]: [
+    'hello.world': [
         {
             type: 0,
             value: '¡Hola, ',
@@ -25,7 +24,7 @@ const I18N: IntlDictionary = {
             value: '!',
         },
     ],
-    [`images.count`]: [
+    'images.count': [
         {
             type: 0,
             value: 'Images: ',
@@ -33,7 +32,6 @@ const I18N: IntlDictionary = {
         {
             offset: 0,
             options: {
-                // eslint-disable-next-line @typescript-eslint/naming-convention
                 '=0': {
                     value: [
                         {

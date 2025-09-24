@@ -29,7 +29,7 @@ export function CategoryBlock({ className, category, intl = {} }: CategoryBlock.
 
 export namespace CategoryBlock {
     export interface Intl {
-        ['category.view']: string;
+        'category.view': string;
     }
 
     export interface DisplayedCategory {

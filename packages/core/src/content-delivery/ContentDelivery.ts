@@ -257,14 +257,14 @@ export function createClient(
                 offset: offset > 0 ? offset + highlighted : offset,
                 search,
                 query: mergeQueries(query, {
-                    [`category.id`]: categories?.length
+                    'category.id': categories?.length
                         ? { $all: categories.map(({ id }) => id) }
                         : undefined,
-                    [`newsroom.uuid`]: { $in: [newsroomUuid] },
-                    [`locale`]: localeCode ? { $in: [localeCode] } : undefined,
-                    [`status`]: { $in: [Story.Status.PUBLISHED] },
-                    [`visibility`]: { $in: [Story.Visibility.PUBLIC] },
-                    [`tag.name`]: tags?.length ? { $any: tags } : undefined,
+                    'newsroom.uuid': { $in: [newsroomUuid] },
+                    locale: localeCode ? { $in: [localeCode] } : undefined,
+                    status: { $in: [Story.Status.PUBLISHED] },
+                    visibility: { $in: [Story.Visibility.PUBLIC] },
+                    'tag.name': tags?.length ? { $any: tags } : undefined,
                 }),
                 include,
             });
@@ -325,11 +325,11 @@ export function createClient(
                 return await prezly.stories.getBySlug(params.slug!, {
                     formats,
                     query: {
-                        [`newsroom.uuid`]: { $in: [newsroomUuid] },
-                        [`status`]: {
+                        'newsroom.uuid': { $in: [newsroomUuid] },
+                        status: {
                             $in: [Story.Status.PUBLISHED, Story.Status.EMBARGO],
                         },
-                        [`visibility`]: {
+                        visibility: {
                             $in: [
                                 Story.Visibility.PUBLIC,
                                 Story.Visibility.PRIVATE,
