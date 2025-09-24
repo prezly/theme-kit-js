@@ -19,7 +19,7 @@
         "typecheck": "pnpm exec lerna run typecheck",
         "release": "pnpm release:prepare && pnpm release:publish",
         "release:preview": "pnpm release:prepare && pnpm release:publish:preview",
-        "release:prepare": "pnpm check && pnpm test && pnpm build",
+        "release:prepare": "pnpm lint && pnpm test && pnpm build",
         "release:publish": "lerna publish --no-private",
         "release:preview-tag": "./release-preview-tag.sh",
         "release:next-tag": "./release-next-tag.sh",
