@@ -1,6 +1,6 @@
 {
     "name": "@prezly/theme-kit-intl",
-    "version": "10.5.0",
+    "version": "10.5.1",
     "description": "Translations for Prezly themes",
     "type": "module",
     "main": "build/index.mjs",
@@ -40,7 +40,6 @@
         "format": "biome format ./src/",
         "format:fix": "biome format --write ./src/",
         "typecheck": "tsc --noEmit --emitDeclarationOnly false --project .",
-
         "test": "pnpm test:unit && pnpm test:build",
         "test:unit": "jest",
         "test:build": "pnpm test:build:i18n && pnpm test:build:i18n:dist && pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",

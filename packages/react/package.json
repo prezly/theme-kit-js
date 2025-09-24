@@ -1,6 +1,6 @@
 {
     "name": "@prezly/theme-kit-react",
-    "version": "10.5.0",
+    "version": "10.5.1",
     "description": "Data layer and utility library for developing Prezly themes with NextJS",
     "type": "module",
     "main": "build/index.mjs",
@@ -58,7 +58,7 @@
         "react-dom": "^18.x || ^19.x"
     },
     "dependencies": {
-        "@prezly/theme-kit-intl": "^10.5.0"
+        "@prezly/theme-kit-intl": "^10.5.1"
     },
     "publishConfig": {
         "access": "public"
