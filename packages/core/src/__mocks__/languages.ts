@@ -442,8 +442,8 @@ export const LANGUAGES: Record<
         locale: {
             code: 'zh_CN',
             locale: 'zh_CN',
-            name: 'Chinese (Mainland China)',
-            native_name: 'Chinese (Mainland China)',
+            name: 'Chinese (Simplified)',
+            native_name: 'Chinese (Simplified)',
             direction: Culture.TextDirection.LTR,
             language_code: 'zh',
             language: {
