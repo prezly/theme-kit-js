@@ -44,4 +44,8 @@ describe('getShortestLocaleSlug', () => {
     it('returns full code when trying to shorten to region code for es-419', () => {
         expect(getShortestLocaleSlug('es_419', context)).toBe('es-419');
     });
+
+    it('returns full code when trying to shorten to region code for zg-Hant', () => {
+        expect(getShortestLocaleSlug('zh_Hant', context)).toBe('zh-hant');
+    });
 });
