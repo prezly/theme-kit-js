@@ -51,7 +51,7 @@ describe('getUsedLanguages', () => {
         const languages = Object.values(LANGUAGES);
         const usedLanguages = getUsedLanguages(languages);
 
-        expect(usedLanguages).toHaveLength(3);
+        expect(usedLanguages).toHaveLength(5);
         expect(usedLanguages.every(({ public_stories_count }) => public_stories_count > 0)).toBe(
             true,
         );
@@ -178,6 +178,12 @@ describe('getShortestLocaleCode', () => {
     it('returns full code when trying to shorten to region code for es-419', () => {
         expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('es-419'))).toBe(
             'es_419',
+        );
+    });
+
+    it('returns full code when trying to shorten to region code for zg-Hant', () => {
+        expect(getShortestLocaleCode(ALL_LANGUAGES, LocaleObject.fromAnyCode('zh-Hant'))).toBe(
+            'zh_Hant',
         );
     });
 });
