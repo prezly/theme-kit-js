@@ -46,8 +46,6 @@ describe('getShortestLocaleSlug', () => {
     });
 
     it('returns full code when trying to shorten to region code for zg-Hant', () => {
-        expect(getShortestLocaleSlug('zh_Hant', context)).toBe(
-            'zh-hant',
-        );
+        expect(getShortestLocaleSlug('zh_Hant', context)).toBe('zh-hant');
     });
 });
