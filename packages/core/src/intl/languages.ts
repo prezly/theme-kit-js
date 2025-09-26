@@ -200,7 +200,9 @@ export function getShortestLocaleCode<
         // If there are 2 or more matching neutral languages, it means that there are no languages that can be shortened to neutral code
         matchingNeutralLanguagesByRegionCode.length !== 1 &&
         // We don't want just numbers in our region code
-        Number.isNaN(Number(shortRegionCode))
+        Number.isNaN(Number(shortRegionCode)) &&
+        // We don't want Script name to be used as region code (e.g. Hant, Hans)
+        shortRegionCode.length < 4
     ) {
         return shortRegionCode;
     }
