@@ -36,7 +36,7 @@
         "@biomejs/biome": "2.2.4",
         "@dr.pogodin/babel-preset-svgr": "1.9.2",
         "@playwright/test": "1.55.0",
-        "@prezly/biome-config": "^1.0.1",
+        "@prezly/biome-config": "1.0.1",
         "@prezly/sdk": "23.20.0",
         "@types/jest": "29.5.14",
         "@types/node": "22.18.6",
