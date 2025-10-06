@@ -46,7 +46,11 @@ export function createNextConfig({ recommendedHeaders = true }: Partial<Options>
             }),
             images: {
                 ...config.images,
-                domains: [...(config.images?.domains || []), 'cdn.uc.assets.prezly.com'],
+                domains: [
+                    ...(config.images?.domains || []),
+                    'cdn.uc.assets.prezly.com',
+                    'cdn.assets.prezly.com',
+                ],
             },
             ...(basePath && {
                 env: {
