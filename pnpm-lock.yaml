@@ -97,8 +97,8 @@ importers:
         specifier: ^10.5.1
         version: link:../intl
       '@prezly/uploadcare':
-        specifier: 2.4.4
-        version: 2.4.4
+        specifier: 2.6.0
+        version: 2.6.0
       '@technically/is-not-undefined':
         specifier: ^1.0.0
         version: 1.0.0
@@ -2017,8 +2017,8 @@ packages:
   '@prezly/uploadcare@2.4.4':
     resolution: {integrity: sha512-NMBMvrgBbhcuD/cdoIykiv8/v7l85yn9yVpXPYdXy26eB4aiFJY7JradDzWwm28dy9VM7jGKaQDeB0wxlOWHpw==}
 
-  '@prezly/uploadcare@2.5.0':
-    resolution: {integrity: sha512-3zflwwqJ87Wadm2zBbIsDoxpCeqpgKqDPWjB0D4d9qZVr6nK9GBV6aMfqtqevsdGoyrtLbmGKWcjOh+p5cMD+g==}
+  '@prezly/uploadcare@2.6.0':
+    resolution: {integrity: sha512-86GzgF4mgPHgzoKOQWh2ut7ZsgLbvss3UhR7TGx0Rs2eIVuK1fIk0s0SCitfPKgnO7j6NRMrG+Crb1uvhbF6cw==}
 
   '@prezly/uploads@0.2.1':
     resolution: {integrity: sha512-G4U0H89YSp/krcIjSSuZDqCZ2NeE4qQkFjY0yf7vkOf0IuRjpTfLb9Jr8uaOYFpql2ln8XINBPSFZWImThcB8g==}
@@ -10200,7 +10200,7 @@ snapshots:
       '@prezly/linear-partition': 1.0.3
       '@prezly/sdk': 23.20.0
       '@prezly/story-content-format': 0.68.0
-      '@prezly/uploadcare': 2.5.0
+      '@prezly/uploadcare': 2.6.0
       '@react-hookz/web': 12.3.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       classnames: 2.5.1
       player.js: 0.1.0
@@ -10249,7 +10249,7 @@ snapshots:
       lodash.clamp: 4.0.3
       sanitize-filename: 1.6.3
 
-  '@prezly/uploadcare@2.5.0':
+  '@prezly/uploadcare@2.6.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
       '@prezly/uploadcare-widget': 3.16.1
