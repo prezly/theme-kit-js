@@ -33,7 +33,7 @@
         "@babel/preset-env": "7.28.3",
         "@babel/preset-react": "7.27.1",
         "@babel/preset-typescript": "7.27.1",
-        "@biomejs/biome": "2.2.4",
+        "@biomejs/biome": "2.3.0",
         "@dr.pogodin/babel-preset-svgr": "1.9.2",
         "@playwright/test": "1.55.0",
         "@prezly/biome-config": "^1.0.1",
