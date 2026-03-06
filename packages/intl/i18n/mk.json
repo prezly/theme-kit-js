@@ -1,0 +1,241 @@
+{
+  "actions.backToHomepage": {
+    "message": "Назад на почетната страница"
+  },
+  "actions.copyShareUrl": {
+    "message": "Копирај URL"
+  },
+  "actions.copyText": {
+    "message": "Копирај текст"
+  },
+  "actions.download": {
+    "message": "Преземи"
+  },
+  "actions.downloadAssets": {
+    "message": "Преземи материјали"
+  },
+  "actions.downloadPdf": {
+    "message": "Преземи PDF"
+  },
+  "actions.loadMore": {
+    "message": "Вчитај повеќе"
+  },
+  "actions.more": {
+    "message": "Повеќе"
+  },
+  "actions.privacyRequests": {
+    "message": "Барања за приватност"
+  },
+  "actions.readMore": {
+    "message": "Прочитај повеќе"
+  },
+  "actions.reload": {
+    "message": "Повторно вчитај"
+  },
+  "actions.share": {
+    "message": "Сподели:"
+  },
+  "actions.startUsingCookies": {
+    "message": "Почни да користиш колачиња"
+  },
+  "actions.stopUsingCookies": {
+    "message": "Престани да користиш колачиња"
+  },
+  "actions.subscribe": {
+    "message": "Претплати се"
+  },
+  "actions.toggleFilters": {
+    "message": "Пребаци филтри за пребарување"
+  },
+  "actions.unsubscribe": {
+    "message": "Откажи претплата"
+  },
+  "boilerplate.contact": {
+    "message": "Контакт"
+  },
+  "boilerplate.title": {
+    "message": "За {companyName}"
+  },
+  "categories.title": {
+    "message": "Категории"
+  },
+  "contacts.title": {
+    "message": "Контактирајте не"
+  },
+  "cookieConsent.accept": {
+    "message": "Да, можете да користите колачиња"
+  },
+  "cookieConsent.acceptAll": {
+    "message": "Прифати ги сите"
+  },
+  "cookieConsent.acceptSelection": {
+    "message": "Прифати го тековниот избор"
+  },
+  "cookieConsent.categoryFirstParty": {
+    "message": "Аналитика од прва страна"
+  },
+  "cookieConsent.categoryFirstPartyDescription": {
+    "message": "Колачиња кои се користат за собирање информации за тоа како посетителите ја користат нашата веб-страница, директно од нас."
+  },
+  "cookieConsent.categoryNecessary": {
+    "message": "Строго неопходни колачиња"
+  },
+  "cookieConsent.categoryNecessaryDescription": {
+    "message": "Овие колачиња се неопходни за правилното функционирање на веб-страницата и не можат да се деактивираат."
+  },
+  "cookieConsent.categoryThirdParty": {
+    "message": "Колачиња од трета страна"
+  },
+  "cookieConsent.categoryThirdPartyDescription": {
+    "message": "Колачиња поставени од услуги на трети страни, како што се оние за рекламирање, вградување на социјални мрежи и следење на веб-страница."
+  },
+  "cookieConsent.cookiePolicy": {
+    "message": "Политика за колачиња"
+  },
+  "cookieConsent.managePreferences": {
+    "message": "Управувај со поставките"
+  },
+  "cookieConsent.managePreferencesTitle": {
+    "message": "Управувај со поставките за колачиња"
+  },
+  "cookieConsent.notice": {
+    "message": "Можете да ги повлечете колачињата во секое време на дното на страницата."
+  },
+  "cookieConsent.privacyPolicy": {
+    "message": "Политика за приватност"
+  },
+  "cookieConsent.reject": {
+    "message": "Не, не користете колачиња"
+  },
+  "cookieConsent.rejectAll": {
+    "message": "Одбиј ги сите"
+  },
+  "cookieConsent.subtitle": {
+    "message": "Користиме колачиња на нашата веб-страница. Тие ни помагаат малку подобро да ве запознаеме вас и како ја користите нашата веб-страница. Ова ни помага да обезбедиме повредно и поприлагодено искуство за вас и другите."
+  },
+  "cookieConsent.title": {
+    "message": "Сакаме да користиме колачиња"
+  },
+  "errors.emailInvalid": {
+    "message": "Внесете валидна е-маил адреса"
+  },
+  "errors.fieldRequired": {
+    "message": "Ова поле е задолжително"
+  },
+  "errors.unknown": {
+    "message": "Нешто тргна наопаку. Ве молиме обидете се да го пратите формуларот повторно"
+  },
+  "homepage.allStories": {
+    "message": "Сите стории"
+  },
+  "homepage.latestStories": {
+    "message": "Најнови стории"
+  },
+  "mediaGallery.imagesCount": {
+    "message": "{imagesCount, plural, =0 {Нема слики} one {# слика} other {# слики} }"
+  },
+  "mediaGallery.title": {
+    "message": "Медиумски галерии"
+  },
+  "mediaGallery.titleSingular": {
+    "message": "Медиумска галерија"
+  },
+  "mediaGallery.videosCount": {
+    "message": "{videosCount, plural, =0 {Нема видеа} one {# видео} other {# видеа} }"
+  },
+  "misc.embargoMessage": {
+    "description": "Embargo means that the story is not allowed to be shared before the specified date",
+    "message": "Ембарго до {date}"
+  },
+  "misc.loading": {
+    "message": "Се вчитува..."
+  },
+  "misc.shareUrlCopied": {
+    "message": "URL е копиран!"
+  },
+  "misc.toggleMobileNavigation": {
+    "description": "A tooltip for a button that toggles the mobile menu on the web page",
+    "message": "Пребаци навигација"
+  },
+  "newsroom.title": {
+    "message": "Страница"
+  },
+  "noStories.subtitle": {
+    "message": "Вратете се подоцна за да видите нови стории."
+  },
+  "noStories.title": {
+    "message": "Добредојдовте во {newsroom}!"
+  },
+  "notFound.subtitle": {
+    "message": "Ако самите го внесовте URL-то, проверете го правописот во адресната лента."
+  },
+  "notFound.title": {
+    "message": "Страницата што ја барате не постои..."
+  },
+  "search.action": {
+    "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+    "message": "Пребарај"
+  },
+  "search.facets.category": {
+    "message": "Категорија"
+  },
+  "search.facets.month": {
+    "message": "Месец"
+  },
+  "search.facets.year": {
+    "message": "Година"
+  },
+  "search.filters": {
+    "message": "Филтри"
+  },
+  "search.fullResultsSubTitle": {
+    "message": "Најдовме {resultsCount} резултати за {searchQuery}"
+  },
+  "search.fullResultsTitle": {
+    "message": "Резултати од пребарување"
+  },
+  "search.inputHint": {
+    "message": "Внесете пребарување"
+  },
+  "search.inputLabel": {
+    "message": "Пребарај"
+  },
+  "search.noResults": {
+    "message": "Ништо не е најдено! Ве молиме обидете се со друг поим за пребарување!"
+  },
+  "search.resultsTitle": {
+    "message": "Брзи резултати"
+  },
+  "search.showAllResults": {
+    "message": "Покажи ги сите резултати"
+  },
+  "search.title": {
+    "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+    "message": "Пребарување"
+  },
+  "search.viewLess": {
+    "message": "Покажи помалку"
+  },
+  "search.viewMore": {
+    "message": "Покажи повеќе"
+  },
+  "serverError.subtitle": {
+    "message": "Обидете се да ја освежите страницата или вратете се малку подоцна."
+  },
+  "serverError.title": {
+    "message": "Нешто тргна наопаку..."
+  },
+  "subscription.disclaimer": {
+    "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+    "message": "Со кликнување на \"{subscribe}\" потврдувам дека ја имам прочитано и се согласувам со {privacyPolicyLink}."
+  },
+  "subscription.formTitle": {
+    "message": "Добивајте новости на вашиот е-маил"
+  },
+  "subscription.labelEmail": {
+    "message": "Вашата е-маил адреса"
+  },
+  "subscription.privacyPolicy": {
+    "message": "Политика за приватност"
+  }
+}
