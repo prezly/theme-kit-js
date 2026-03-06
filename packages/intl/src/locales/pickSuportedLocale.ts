@@ -2,6 +2,14 @@ import { DEFAULT_LOCALE } from './constants';
 import { isLocaleSupported } from './isLocaleSupported';
 import { Locale } from './Locale';
 
+const COUNTRY_TO_LOCALE: Record<string, Locale.IsoCode> = {
+    ad: 'ca', // Andorra -> Catalan
+    mc: 'fr', // Monaco -> French
+    li: 'de', // Liechtenstein -> German
+    cy: 'el', // Cyprus -> Greek
+    sm: 'it', // San Marino -> Italian
+};
+
 /**
  * Use this function to determine which translations file you should load from `@prezly/theme-kit-intl` package.
  * See https://github.com/prezly/theme-nextjs-bea/blob/main/utils/lang.ts for a usage example.
@@ -23,6 +31,12 @@ export function pickSupportedLocale(locale: Locale | Locale.AnyCode): Locale.Iso
     }
     if (Locale.isEqual(locale, 'zh_HK')) {
         return 'zh-CN';
+    }
+
+    // Custom mapping for country-only locale slugs
+    const countryCode = isoCode.toLowerCase();
+    if (countryCode in COUNTRY_TO_LOCALE) {
+        return COUNTRY_TO_LOCALE[countryCode as keyof typeof COUNTRY_TO_LOCALE];
     }
 
     console.warn(
