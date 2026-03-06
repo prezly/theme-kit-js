@@ -42,7 +42,7 @@ export function getSupportedLocaleIsoCode(locale: LocaleObject): string {
         return 'zh-CN';
     }
 
-     // Custom mapping for country-only locale slugs
+    // Custom mapping for country-only locale slugs
     const countryCode = localeIsoCode.toLowerCase();
     if (countryCode in COUNTRY_TO_LOCALE) {
         return COUNTRY_TO_LOCALE[countryCode as keyof typeof COUNTRY_TO_LOCALE];
