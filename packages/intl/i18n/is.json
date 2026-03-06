@@ -1,0 +1,241 @@
+{
+    "actions.backToHomepage": {
+        "message": "Til baka á forsíðu"
+    },
+    "actions.copyShareUrl": {
+        "message": "Afrita vefslóð"
+    },
+    "actions.copyText": {
+        "message": "Afrita texta"
+    },
+    "actions.download": {
+        "message": "Sækja"
+    },
+    "actions.downloadAssets": {
+        "message": "Sækja efni"
+    },
+    "actions.downloadPdf": {
+        "message": "Sækja PDF"
+    },
+    "actions.loadMore": {
+        "message": "Hlaða meira"
+    },
+    "actions.more": {
+        "message": "Meira"
+    },
+    "actions.privacyRequests": {
+        "message": "Persónuverndarbeiðnir"
+    },
+    "actions.readMore": {
+        "message": "Lesa meira"
+    },
+    "actions.reload": {
+        "message": "Endurhlaða"
+    },
+    "actions.share": {
+        "message": "Deila:"
+    },
+    "actions.startUsingCookies": {
+        "message": "Byrja að nota kökur"
+    },
+    "actions.stopUsingCookies": {
+        "message": "Hætta að nota kökur"
+    },
+    "actions.subscribe": {
+        "message": "Gerást áskrifandi"
+    },
+    "actions.toggleFilters": {
+        "message": "Víxla leitarsíum"
+    },
+    "actions.unsubscribe": {
+        "message": "Segðu upp áskrift"
+    },
+    "boilerplate.contact": {
+        "message": "Tengiliður"
+    },
+    "boilerplate.title": {
+        "message": "Um {companyName}"
+    },
+    "categories.title": {
+        "message": "Flokkar"
+    },
+    "contacts.title": {
+        "message": "Hafið samband"
+    },
+    "cookieConsent.accept": {
+        "message": "Já, þið megið nota kökur"
+    },
+    "cookieConsent.acceptAll": {
+        "message": "Samþykkja öllu"
+    },
+    "cookieConsent.acceptSelection": {
+        "message": "Samþykkja núverandi vali"
+    },
+    "cookieConsent.categoryFirstParty": {
+        "message": "Greining fyrstu aðila"
+    },
+    "cookieConsent.categoryFirstPartyDescription": {
+        "message": "Kökur sem notuð eru til að safna upplýsingum um hvernig gestir nota vefsíðuna okkar, beint af okkur."
+    },
+    "cookieConsent.categoryNecessary": {
+        "message": "Nauðsynleg kökur"
+    },
+    "cookieConsent.categoryNecessaryDescription": {
+        "message": "Þessi kökur eru nauðsynleg til að vefsíðan virki rétt og er ekki hægt að slökkva á þeim."
+    },
+    "cookieConsent.categoryThirdParty": {
+        "message": "Kökur þriðja aðila"
+    },
+    "cookieConsent.categoryThirdPartyDescription": {
+        "message": "Kökur sem sett eru af þjónustu þriðja aðila, svo sem þær sem notuð eru fyrir auglýsingar, samfélagsmiðla og rakningu vefsíðu."
+    },
+    "cookieConsent.cookiePolicy": {
+        "message": "Kökustefna"
+    },
+    "cookieConsent.managePreferences": {
+        "message": "Stjórna stillingum"
+    },
+    "cookieConsent.managePreferencesTitle": {
+        "message": "Stjórna kökustillingum"
+    },
+    "cookieConsent.notice": {
+        "message": "Þú getur afturkallað kökur hvenær sem er neðst á síðunni."
+    },
+    "cookieConsent.privacyPolicy": {
+        "message": "Persónuverndarstefna"
+    },
+    "cookieConsent.reject": {
+        "message": "Nei, ekki nota kökur"
+    },
+    "cookieConsent.rejectAll": {
+        "message": "Hafna öllu"
+    },
+    "cookieConsent.subtitle": {
+        "message": "Við notum kökur á vefsíðunni okkar. Þau hjálpa okkur að kynnast þér bætur og hvernig þú notar vefsíðuna okkar. Þetta hjálpar okkur að veita þér og öðrum dýrmætari og sérsniðnari upplifun."
+    },
+    "cookieConsent.title": {
+        "message": "Við myndum vilja nota kökur"
+    },
+    "errors.emailInvalid": {
+        "message": "Sláðu inn gilt netfang"
+    },
+    "errors.fieldRequired": {
+        "message": "Þessi reitur er skyldugur"
+    },
+    "errors.unknown": {
+        "message": "Eitthvað fór úrskeiðis. Vinsamlegast reynið að senda eyðublaðið aftur"
+    },
+    "homepage.allStories": {
+        "message": "Allar fréttir"
+    },
+    "homepage.latestStories": {
+        "message": "Nýjustu fréttir"
+    },
+    "mediaGallery.imagesCount": {
+        "message": "{imagesCount, plural, =0 {Engar myndir} one {# mynd} other {# myndir} }"
+    },
+    "mediaGallery.title": {
+        "message": "Myndasöfn"
+    },
+    "mediaGallery.titleSingular": {
+        "message": "Myndasafn"
+    },
+    "mediaGallery.videosCount": {
+        "message": "{videosCount, plural, =0 {Engin myndbönd} one {# myndband} other {# myndbönd} }"
+    },
+    "misc.embargoMessage": {
+        "description": "Embargo means that the story is not allowed to be shared before the specified date",
+        "message": "Viðskiptabann til {date}"
+    },
+    "misc.loading": {
+        "message": "Hleður..."
+    },
+    "misc.shareUrlCopied": {
+        "message": "Vefslóð afrituð!"
+    },
+    "misc.toggleMobileNavigation": {
+        "description": "A tooltip for a button that toggles the mobile menu on the web page",
+        "message": "Víxla leiðsögu"
+    },
+    "newsroom.title": {
+        "message": "Vefur"
+    },
+    "noStories.subtitle": {
+        "message": "Komið aftur síðar til að sjá nýjar fréttir."
+    },
+    "noStories.title": {
+        "message": "Velkomin á {newsroom}!"
+    },
+    "notFound.subtitle": {
+        "message": "Ef þú slóst inn vefslóðina sjálf/ur, athugaðu stafsetningu í veffangastiku."
+    },
+    "notFound.title": {
+        "message": "Síðan sem þú leitar að er ekki til..."
+    },
+    "search.action": {
+        "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+        "message": "Leita"
+    },
+    "search.facets.category": {
+        "message": "Flokkur"
+    },
+    "search.facets.month": {
+        "message": "Mánuður"
+    },
+    "search.facets.year": {
+        "message": "Ár"
+    },
+    "search.filters": {
+        "message": "Síur"
+    },
+    "search.fullResultsSubTitle": {
+        "message": "Við fundum {resultsCount} niðurstöður fyrir {searchQuery}"
+    },
+    "search.fullResultsTitle": {
+        "message": "Leitarniðurstöður"
+    },
+    "search.inputHint": {
+        "message": "Sláðu inn leit"
+    },
+    "search.inputLabel": {
+        "message": "Leita"
+    },
+    "search.noResults": {
+        "message": "Ekkert fannst! Vinsamlegast reynið annað leitarorð!"
+    },
+    "search.resultsTitle": {
+        "message": "Fljótlegar niðurstöður"
+    },
+    "search.showAllResults": {
+        "message": "Sýna allar niðurstöður"
+    },
+    "search.title": {
+        "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+        "message": "Leit"
+    },
+    "search.viewLess": {
+        "message": "Sjá minna"
+    },
+    "search.viewMore": {
+        "message": "Sjá meira"
+    },
+    "serverError.subtitle": {
+        "message": "Reynið að endurhlaða síðuna eða komið aftur síðar."
+    },
+    "serverError.title": {
+        "message": "Eitthvað fór úrskeiðis..."
+    },
+    "subscription.disclaimer": {
+        "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+        "message": "Með því að smella á \"{subscribe}\" staðfesti ég að ég hef lesið og samþykki {privacyPolicyLink}."
+    },
+    "subscription.formTitle": {
+        "message": "Fáið fréttir í pósthólfið"
+    },
+    "subscription.labelEmail": {
+        "message": "Netfangið þitt"
+    },
+    "subscription.privacyPolicy": {
+        "message": "Persónuverndarstefna"
+    }
+}

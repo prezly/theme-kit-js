@@ -1,0 +1,241 @@
+{
+    "actions.backToHomepage": {
+        "message": "Kthehu në faqen kryesore"
+    },
+    "actions.copyShareUrl": {
+        "message": "Kopjo URL-në"
+    },
+    "actions.copyText": {
+        "message": "Kopjo tekstin"
+    },
+    "actions.download": {
+        "message": "Shkarko"
+    },
+    "actions.downloadAssets": {
+        "message": "Shkarko materialet"
+    },
+    "actions.downloadPdf": {
+        "message": "Shkarko PDF"
+    },
+    "actions.loadMore": {
+        "message": "Ngarko më shumë"
+    },
+    "actions.more": {
+        "message": "Më shumë"
+    },
+    "actions.privacyRequests": {
+        "message": "Kërkesat për privatësi"
+    },
+    "actions.readMore": {
+        "message": "Lexo më shumë"
+    },
+    "actions.reload": {
+        "message": "Ringarko"
+    },
+    "actions.share": {
+        "message": "Ndaj:"
+    },
+    "actions.startUsingCookies": {
+        "message": "Fillo përdorimin e cookie-ve"
+    },
+    "actions.stopUsingCookies": {
+        "message": "Ndalo përdorimin e cookie-ve"
+    },
+    "actions.subscribe": {
+        "message": "Abonohu"
+    },
+    "actions.toggleFilters": {
+        "message": "Ndrysho filtrat e kërkimit"
+    },
+    "actions.unsubscribe": {
+        "message": "Çabonohu"
+    },
+    "boilerplate.contact": {
+        "message": "Kontakt"
+    },
+    "boilerplate.title": {
+        "message": "Rreth {companyName}"
+    },
+    "categories.title": {
+        "message": "Kategoritë"
+    },
+    "contacts.title": {
+        "message": "Na kontaktoni"
+    },
+    "cookieConsent.accept": {
+        "message": "Po, mund të përdorni cookie"
+    },
+    "cookieConsent.acceptAll": {
+        "message": "Prano të gjitha"
+    },
+    "cookieConsent.acceptSelection": {
+        "message": "Prano zgjedhjen aktuale"
+    },
+    "cookieConsent.categoryFirstParty": {
+        "message": "Analitika e palës së parë"
+    },
+    "cookieConsent.categoryFirstPartyDescription": {
+        "message": "Cookie që përdoren për të mbledhur informacion rreth mënyrës se si vizitorët përdorin faqen tonë, direkt nga ne."
+    },
+    "cookieConsent.categoryNecessary": {
+        "message": "Cookie strikt të nevojshme"
+    },
+    "cookieConsent.categoryNecessaryDescription": {
+        "message": "Këto cookie janë thelbsore për funksionimin e duhur të faqes së internetit dhe nuk mund të çaktivizohen."
+    },
+    "cookieConsent.categoryThirdParty": {
+        "message": "Cookie të palës së tretë"
+    },
+    "cookieConsent.categoryThirdPartyDescription": {
+        "message": "Cookie të vendosura nga shërbime të palës së tretë, si ato që përdoren për reklama, media sociale dhe gjurmimin e faqes."
+    },
+    "cookieConsent.cookiePolicy": {
+        "message": "Politika e cookie-ve"
+    },
+    "cookieConsent.managePreferences": {
+        "message": "Menaxho preferencat"
+    },
+    "cookieConsent.managePreferencesTitle": {
+        "message": "Menaxho preferencat e cookie-ve"
+    },
+    "cookieConsent.notice": {
+        "message": "Mund të revokoni cookie-t në çdo kohë në fund të faqes."
+    },
+    "cookieConsent.privacyPolicy": {
+        "message": "Politika e Privatësisë"
+    },
+    "cookieConsent.reject": {
+        "message": "Jo, mos përdor cookie"
+    },
+    "cookieConsent.rejectAll": {
+        "message": "Refuzo të gjitha"
+    },
+    "cookieConsent.subtitle": {
+        "message": "Ne përdorim cookie në faqen tonë. Ato na ndihmojnë të mësojmë pak më shumë për ju dhe si e përdorni faqen tonë. Kjo na ndihmon të ofrojmë një përvoje më të vlefshme për ju dhe të tjerët."
+    },
+    "cookieConsent.title": {
+        "message": "Dëshirojmë të përdorim cookie"
+    },
+    "errors.emailInvalid": {
+        "message": "Vendosni një adresë emaili të vlefshme"
+    },
+    "errors.fieldRequired": {
+        "message": "Kjo fushë është e detyrueshme"
+    },
+    "errors.unknown": {
+        "message": "Diçka shkoi keq. Ju lutem provoni të dërgoni formularën përsëri"
+    },
+    "homepage.allStories": {
+        "message": "Të gjitha historitë"
+    },
+    "homepage.latestStories": {
+        "message": "Historitë e fundit"
+    },
+    "mediaGallery.imagesCount": {
+        "message": "{imagesCount, plural, =0 {Asnjë imazh} one {# imazh} other {# imazhe} }"
+    },
+    "mediaGallery.title": {
+        "message": "Galeri mediash"
+    },
+    "mediaGallery.titleSingular": {
+        "message": "Galeri mediash"
+    },
+    "mediaGallery.videosCount": {
+        "message": "{videosCount, plural, =0 {Asnjë video} one {# video} other {# video} }"
+    },
+    "misc.embargoMessage": {
+        "description": "Embargo means that the story is not allowed to be shared before the specified date",
+        "message": "Embargo deri më {date}"
+    },
+    "misc.loading": {
+        "message": "Duke ngarkuar..."
+    },
+    "misc.shareUrlCopied": {
+        "message": "URL u kopjua!"
+    },
+    "misc.toggleMobileNavigation": {
+        "description": "A tooltip for a button that toggles the mobile menu on the web page",
+        "message": "Ndrysho navigimin"
+    },
+    "newsroom.title": {
+        "message": "Faqja"
+    },
+    "noStories.subtitle": {
+        "message": "Kthehuni më vonë për të parë histori të reja."
+    },
+    "noStories.title": {
+        "message": "Mirë se vini në {newsroom}!"
+    },
+    "notFound.subtitle": {
+        "message": "Nëse e keni shkruar vetë URL-në, kontrolloni drejtshkrimin në shiritin e adresës."
+    },
+    "notFound.title": {
+        "message": "Faqja që po kërkoni nuk ekziston..."
+    },
+    "search.action": {
+        "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+        "message": "Kërko"
+    },
+    "search.facets.category": {
+        "message": "Kategoria"
+    },
+    "search.facets.month": {
+        "message": "Muaji"
+    },
+    "search.facets.year": {
+        "message": "Viti"
+    },
+    "search.filters": {
+        "message": "Filtrat"
+    },
+    "search.fullResultsSubTitle": {
+        "message": "Gjetëm {resultsCount} rezultate për {searchQuery}"
+    },
+    "search.fullResultsTitle": {
+        "message": "Rezultatet e kërkimit"
+    },
+    "search.inputHint": {
+        "message": "Shkruani kërkimin tuaj"
+    },
+    "search.inputLabel": {
+        "message": "Kërko"
+    },
+    "search.noResults": {
+        "message": "Asgjë nuk u gjet! Ju lutem provoni një term tjetër kërkimi!"
+    },
+    "search.resultsTitle": {
+        "message": "Rezultate të shpejta"
+    },
+    "search.showAllResults": {
+        "message": "Shfaq të gjitha rezultatet"
+    },
+    "search.title": {
+        "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+        "message": "Kërkimi"
+    },
+    "search.viewLess": {
+        "message": "Shiko më pak"
+    },
+    "search.viewMore": {
+        "message": "Shiko më shumë"
+    },
+    "serverError.subtitle": {
+        "message": "Provoni të rifreskoni faqen ose kthehuni pak më vonë."
+    },
+    "serverError.title": {
+        "message": "Diçka shkoi keq..."
+    },
+    "subscription.disclaimer": {
+        "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+        "message": "Duke klikuar \"{subscribe}\" konfirmoj që kam lexuar dhe pranoj {privacyPolicyLink}."
+    },
+    "subscription.formTitle": {
+        "message": "Merrni përditësime në emailin tuaj"
+    },
+    "subscription.labelEmail": {
+        "message": "Adresa juaj e emailit"
+    },
+    "subscription.privacyPolicy": {
+        "message": "Politika e Privatësisë"
+    }
+}

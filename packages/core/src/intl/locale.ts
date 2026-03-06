@@ -1,3 +1,4 @@
+import type { Culture } from '@prezly/sdk';
 import { isLocaleSupported } from '@prezly/theme-kit-intl';
 
 import type { LocaleObject } from './localeObject';
@@ -7,6 +8,14 @@ export const DEFAULT_LOCALE = 'en';
 export type LangCode = string;
 export type RegionCode = string;
 export type LocaleCode = string;
+
+const COUNTRY_TO_LOCALE: Record<string, Culture.IsoCode> = {
+    ad: 'ca', // Andorra -> Catalan
+    mc: 'fr', // Monaco -> French
+    li: 'de', // Liechtenstein -> German
+    cy: 'el', // Cyprus -> Greek
+    sm: 'it', // San Marino -> Italian
+};
 
 /**
  * Use this function to determine which translations file you should load from `@prezly/theme-kit-intl` package.
@@ -31,6 +40,12 @@ export function getSupportedLocaleIsoCode(locale: LocaleObject): string {
     }
     if (localeIsoCode.toLowerCase() === 'zh-hk') {
         return 'zh-CN';
+    }
+
+     // Custom mapping for country-only locale slugs
+    const countryCode = localeIsoCode.toLowerCase();
+    if (countryCode in COUNTRY_TO_LOCALE) {
+        return COUNTRY_TO_LOCALE[countryCode as keyof typeof COUNTRY_TO_LOCALE];
     }
 
     // This code should never be reached, because locale code check is happening in `LocaleObject.fromAnyCode`

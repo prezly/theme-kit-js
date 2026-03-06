@@ -1,0 +1,241 @@
+{
+    "actions.backToHomepage": {
+        "message": "Zréck op d'Startsäit"
+    },
+    "actions.copyShareUrl": {
+        "message": "URL kopéieren"
+    },
+    "actions.copyText": {
+        "message": "Text kopéieren"
+    },
+    "actions.download": {
+        "message": "Eroflueden"
+    },
+    "actions.downloadAssets": {
+        "message": "Materialien eroflueden"
+    },
+    "actions.downloadPdf": {
+        "message": "PDF eroflueden"
+    },
+    "actions.loadMore": {
+        "message": "Méi lueden"
+    },
+    "actions.more": {
+        "message": "Méi"
+    },
+    "actions.privacyRequests": {
+        "message": "Dateschutz-Ufroen"
+    },
+    "actions.readMore": {
+        "message": "Méi liesen"
+    },
+    "actions.reload": {
+        "message": "Nei lueden"
+    },
+    "actions.share": {
+        "message": "Deelen:"
+    },
+    "actions.startUsingCookies": {
+        "message": "Cookien ufänken ze benotzen"
+    },
+    "actions.stopUsingCookies": {
+        "message": "Cookien ophalen ze benotzen"
+    },
+    "actions.subscribe": {
+        "message": "Abonnéieren"
+    },
+    "actions.toggleFilters": {
+        "message": "Sichfilteren ëmschalten"
+    },
+    "actions.unsubscribe": {
+        "message": "Ofmellen"
+    },
+    "boilerplate.contact": {
+        "message": "Kontakt"
+    },
+    "boilerplate.title": {
+        "message": "Iwwer {companyName}"
+    },
+    "categories.title": {
+        "message": "Kategorien"
+    },
+    "contacts.title": {
+        "message": "Kontaktéiert eis"
+    },
+    "cookieConsent.accept": {
+        "message": "Jo, Dir däerft Cookien benotzen"
+    },
+    "cookieConsent.acceptAll": {
+        "message": "All akzeptéieren"
+    },
+    "cookieConsent.acceptSelection": {
+        "message": "Aktuell Auswiel akzeptéieren"
+    },
+    "cookieConsent.categoryFirstParty": {
+        "message": "Eescht Partei Analytik"
+    },
+    "cookieConsent.categoryFirstPartyDescription": {
+        "message": "Cookien déi benotzt ginn fir Informatiounen ze sammelen iwwer wéi Visiteure eis Websäit benotzen, direkt vun eis."
+    },
+    "cookieConsent.categoryNecessary": {
+        "message": "Streng noutwendeg Cookien"
+    },
+    "cookieConsent.categoryNecessaryDescription": {
+        "message": "Dës Cookie si wesentlech fir d'Fonctionnement vun der Websäit an kënnen net desaktivéiert ginn."
+    },
+    "cookieConsent.categoryThirdParty": {
+        "message": "Drëtt Partei Cookien"
+    },
+    "cookieConsent.categoryThirdPartyDescription": {
+        "message": "Cookien déi vun Drëtt-Partei-Servicer gesat ginn, wéi déi fir Reklammen, Social Media Embeds, an Websäit-Tracking."
+    },
+    "cookieConsent.cookiePolicy": {
+        "message": "Cookie-Richtlinn"
+    },
+    "cookieConsent.managePreferences": {
+        "message": "Astellungen verwalten"
+    },
+    "cookieConsent.managePreferencesTitle": {
+        "message": "Cookie-Astellungen verwalten"
+    },
+    "cookieConsent.notice": {
+        "message": "Dir kënnt Cookien zu all Moment um Enn vun der Säit zréckruffen."
+    },
+    "cookieConsent.privacyPolicy": {
+        "message": "Dateschutzrichtlinn"
+    },
+    "cookieConsent.reject": {
+        "message": "Nee, benotzt keng Cookien"
+    },
+    "cookieConsent.rejectAll": {
+        "message": "All ofleenen"
+    },
+    "cookieConsent.subtitle": {
+        "message": "Mir benotzen Cookien op eiser Websäit. Si hëllefen eis Iech e bëssen besser kennenzeléieren a wéi Dir eis Websäit benotzt. Dës hëlleft eis Iech an aneren eng méi wäertvoll a personaliséiert Erfarung ze bidden."
+    },
+    "cookieConsent.title": {
+        "message": "Mir géife gären Cookien benotzen"
+    },
+    "errors.emailInvalid": {
+        "message": "Gitt eng gëlteg E-Mail-Adress un"
+    },
+    "errors.fieldRequired": {
+        "message": "Dëst Feld ass obligatoresch"
+    },
+    "errors.unknown": {
+        "message": "Eppes ass schif gaangen. Probéiert w.e.g. de Formulaire nach eng Kéier ze schécken"
+    },
+    "homepage.allStories": {
+        "message": "All Geschichten"
+    },
+    "homepage.latestStories": {
+        "message": "Neist Geschichten"
+    },
+    "mediaGallery.imagesCount": {
+        "message": "{imagesCount, plural, =0 {Keng Biller} one {# Bild} other {# Biller} }"
+    },
+    "mediaGallery.title": {
+        "message": "Mediegalerienën"
+    },
+    "mediaGallery.titleSingular": {
+        "message": "Mediegalerie"
+    },
+    "mediaGallery.videosCount": {
+        "message": "{videosCount, plural, =0 {Keng Videoen} one {# Video} other {# Videoen} }"
+    },
+    "misc.embargoMessage": {
+        "description": "Embargo means that the story is not allowed to be shared before the specified date",
+        "message": "Embargo bis {date}"
+    },
+    "misc.loading": {
+        "message": "Lueden..."
+    },
+    "misc.shareUrlCopied": {
+        "message": "URL kopéiert!"
+    },
+    "misc.toggleMobileNavigation": {
+        "description": "A tooltip for a button that toggles the mobile menu on the web page",
+        "message": "Navigatioun ëmschalten"
+    },
+    "newsroom.title": {
+        "message": "Säit"
+    },
+    "noStories.subtitle": {
+        "message": "Kommt spéider zréck fir nei Geschichten ze gesinn."
+    },
+    "noStories.title": {
+        "message": "Wëllkomm bei {newsroom}!"
+    },
+    "notFound.subtitle": {
+        "message": "Wann Dir den URL selwer agedréckt hutt, iwwerpréift d'Schreifweis an der Adressleist."
+    },
+    "notFound.title": {
+        "message": "D'Säit déi Dir sicht gëtt et net..."
+    },
+    "search.action": {
+        "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+        "message": "Sichen"
+    },
+    "search.facets.category": {
+        "message": "Kategorie"
+    },
+    "search.facets.month": {
+        "message": "Mount"
+    },
+    "search.facets.year": {
+        "message": "Joer"
+    },
+    "search.filters": {
+        "message": "Filteren"
+    },
+    "search.fullResultsSubTitle": {
+        "message": "Mir hunn {resultsCount} Resultater fir {searchQuery} fonnt"
+    },
+    "search.fullResultsTitle": {
+        "message": "Sichresultater"
+    },
+    "search.inputHint": {
+        "message": "Gitt Är Sich an"
+    },
+    "search.inputLabel": {
+        "message": "Sichen"
+    },
+    "search.noResults": {
+        "message": "Näischt fonnt! Probéiert w.e.g. en anere Sichbegrëff!"
+    },
+    "search.resultsTitle": {
+        "message": "Séier Resultater"
+    },
+    "search.showAllResults": {
+        "message": "All Resultater weisen"
+    },
+    "search.title": {
+        "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+        "message": "Sich"
+    },
+    "search.viewLess": {
+        "message": "Manner weisen"
+    },
+    "search.viewMore": {
+        "message": "Méi weisen"
+    },
+    "serverError.subtitle": {
+        "message": "Probéiert d'Säit nei ze lueden oder kommt e bësse méi spéit zréck."
+    },
+    "serverError.title": {
+        "message": "Eppes ass schif gaangen..."
+    },
+    "subscription.disclaimer": {
+        "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+        "message": "Andeems ech op \"{subscribe}\" klicken, bestätegen ech datt ech d'{privacyPolicyLink} geliest hunn an domat averstane sinn."
+    },
+    "subscription.formTitle": {
+        "message": "Kritt Updates an Ärer Mailbox"
+    },
+    "subscription.labelEmail": {
+        "message": "Är E-Mail-Adress"
+    },
+    "subscription.privacyPolicy": {
+        "message": "Dateschutzrichtlinn"
+    }
+}

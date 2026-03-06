@@ -1,0 +1,117 @@
+{
+    "actions.backToHomepage": { "message": "Nazad na početnu stranicu" },
+    "actions.copyShareUrl": { "message": "Kopiraj URL" },
+    "actions.copyText": { "message": "Kopiraj tekst" },
+    "actions.download": { "message": "Preuzmi" },
+    "actions.downloadAssets": { "message": "Preuzmi materijale" },
+    "actions.downloadPdf": { "message": "Preuzmi PDF" },
+    "actions.loadMore": { "message": "Učitaj više" },
+    "actions.more": { "message": "Više" },
+    "actions.privacyRequests": { "message": "Zahtjevi za privatnost" },
+    "actions.readMore": { "message": "Pročitaj više" },
+    "actions.reload": { "message": "Ponovo učitaj" },
+    "actions.share": { "message": "Podijeli:" },
+    "actions.startUsingCookies": { "message": "Počni koristiti kolačiće" },
+    "actions.stopUsingCookies": { "message": "Prestani koristiti kolačiće" },
+    "actions.subscribe": { "message": "Pretplati se" },
+    "actions.toggleFilters": { "message": "Prebaci filtere pretrage" },
+    "actions.unsubscribe": { "message": "Otkaži pretplatu" },
+    "boilerplate.contact": { "message": "Kontakt" },
+    "boilerplate.title": { "message": "O {companyName}" },
+    "categories.title": { "message": "Kategorije" },
+    "contacts.title": { "message": "Kontaktirajte nas" },
+    "cookieConsent.accept": { "message": "Da, možete koristiti kolačiće" },
+    "cookieConsent.acceptAll": { "message": "Prihvati sve" },
+    "cookieConsent.acceptSelection": { "message": "Prihvati trenutni odabir" },
+    "cookieConsent.categoryFirstParty": { "message": "Analitika prve strane" },
+    "cookieConsent.categoryFirstPartyDescription": {
+        "message": "Kolačići koji se koriste za prikupljanje informacija o tome kako posjetioci koriste našu internet stranicu, direktno od nas."
+    },
+    "cookieConsent.categoryNecessary": { "message": "Strogo neophodni kolačići" },
+    "cookieConsent.categoryNecessaryDescription": {
+        "message": "Ovi kolačići su neophodni za pravilno funkcionisanje internet stranice i ne mogu se deaktivirati."
+    },
+    "cookieConsent.categoryThirdParty": { "message": "Kolačići treće strane" },
+    "cookieConsent.categoryThirdPartyDescription": {
+        "message": "Kolačići koje postavljaju usluge trećih strana, kao što su oni koji se koriste za reklamiranje, ugradnju društvenih mreža i praćenje internet stranice."
+    },
+    "cookieConsent.cookiePolicy": { "message": "Politika kolačića" },
+    "cookieConsent.managePreferences": { "message": "Upravljaj postavkama" },
+    "cookieConsent.managePreferencesTitle": { "message": "Upravljaj postavkama kolačića" },
+    "cookieConsent.notice": {
+        "message": "Možete opozvati kolačiće u bilo koje vrijeme na dnu stranice."
+    },
+    "cookieConsent.privacyPolicy": { "message": "Politika privatnosti" },
+    "cookieConsent.reject": { "message": "Ne, nemojte koristiti kolačiće" },
+    "cookieConsent.rejectAll": { "message": "Odbij sve" },
+    "cookieConsent.subtitle": {
+        "message": "Koristimo kolačiće na našoj internet stranici. Oni nam pomažu da vas malo bolje upoznamo i kako koristite našu internet stranicu. To nam pomaže da pružimo vrijednije i prilagodjenije iskustvo za vas i druge."
+    },
+    "cookieConsent.title": { "message": "Želimo koristiti kolačiće" },
+    "errors.emailInvalid": { "message": "Unesite važeću email adresu" },
+    "errors.fieldRequired": { "message": "Ovo polje je obavezno" },
+    "errors.unknown": { "message": "Nešto nije u redu. Molimo pokušajte ponovo poslati obrazac" },
+    "homepage.allStories": { "message": "Sve priče" },
+    "homepage.latestStories": { "message": "Najnovije priče" },
+    "mediaGallery.imagesCount": {
+        "message": "{imagesCount, plural, =0 {Nema slika} one {# slika} few {# slike} many {# slika} other {# slika} }"
+    },
+    "mediaGallery.title": { "message": "Medijske galerije" },
+    "mediaGallery.titleSingular": { "message": "Medijska galerija" },
+    "mediaGallery.videosCount": {
+        "message": "{videosCount, plural, =0 {Nema videa} one {# video} few {# videa} many {# videa} other {# videa} }"
+    },
+    "misc.embargoMessage": {
+        "description": "Embargo means that the story is not allowed to be shared before the specified date",
+        "message": "Embargo do {date}"
+    },
+    "misc.loading": { "message": "Učitavanje..." },
+    "misc.shareUrlCopied": { "message": "URL kopiran!" },
+    "misc.toggleMobileNavigation": {
+        "description": "A tooltip for a button that toggles the mobile menu on the web page",
+        "message": "Prebaci navigaciju"
+    },
+    "newsroom.title": { "message": "Stranica" },
+    "noStories.subtitle": { "message": "Vratite se kasnije da vidite nove priče." },
+    "noStories.title": { "message": "Dobrodošli u {newsroom}!" },
+    "notFound.subtitle": {
+        "message": "Ako ste sami upisali URL, provjerite pravopis u adresnoj traci."
+    },
+    "notFound.title": { "message": "Stranica koju tražite ne postoji..." },
+    "search.action": {
+        "description": "The word should be treated as a verb (e.g. a Search action on a button)",
+        "message": "Pretraži"
+    },
+    "search.facets.category": { "message": "Kategorija" },
+    "search.facets.month": { "message": "Mjesec" },
+    "search.facets.year": { "message": "Godina" },
+    "search.filters": { "message": "Filteri" },
+    "search.fullResultsSubTitle": {
+        "message": "Pronašli smo {resultsCount} rezultata za {searchQuery}"
+    },
+    "search.fullResultsTitle": { "message": "Rezultati pretrage" },
+    "search.inputHint": { "message": "Upišite pretragu" },
+    "search.inputLabel": { "message": "Pretraga" },
+    "search.noResults": {
+        "message": "Ništa nije pronadjeno! Molimo pokušajte drugi pojam za pretragu!"
+    },
+    "search.resultsTitle": { "message": "Brzi rezultati" },
+    "search.showAllResults": { "message": "Prikaži sve rezultate" },
+    "search.title": {
+        "description": "The word should be treated as a noun (e.g. a title of the Search section)",
+        "message": "Pretraga"
+    },
+    "search.viewLess": { "message": "Prikaži manje" },
+    "search.viewMore": { "message": "Prikaži više" },
+    "serverError.subtitle": {
+        "message": "Pokušajte osvježiti stranicu ili se vratite malo kasnije."
+    },
+    "serverError.title": { "message": "Nešto nije u redu..." },
+    "subscription.disclaimer": {
+        "description": "The variables are replaced with text from `actions.subscribe` and `subscription.privacyPolicy` messages along with a link to the privacy policy.",
+        "message": "Klikom na \"{subscribe}\" potvrđujem da sam pročitao/la i prihvatam {privacyPolicyLink}."
+    },
+    "subscription.formTitle": { "message": "Primajte novosti na vaš email" },
+    "subscription.labelEmail": { "message": "Vaša email adresa" },
+    "subscription.privacyPolicy": { "message": "Politika privatnosti" }
+}
