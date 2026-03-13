@@ -75,10 +75,16 @@ export namespace Route {
                 return matched as Match;
             },
             generate(params: Match) {
+                const encoded = Object.fromEntries(
+                    Object.entries(params ?? {}).map(([key, value]) => [
+                        key,
+                        typeof value === 'string' ? encodeURIComponent(value) : value,
+                    ]),
+                );
                 if (generate) {
-                    return normalizeUrl(generate(urlPattern, params));
+                    return normalizeUrl(generate(urlPattern, encoded as Match));
                 }
-                return normalizeUrl(urlPattern.stringify(params) as `/${string}`);
+                return normalizeUrl(urlPattern.stringify(encoded) as `/${string}`);
             },
             rewrite(params: Match) {
                 return rewritePattern.stringify(params);
