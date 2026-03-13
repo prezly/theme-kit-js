@@ -45,7 +45,7 @@
         "test:build": "pnpm test:build:i18n && pnpm test:build:i18n:dist && pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",
         "test:build:types": "tsc --noEmit build/index.d.ts",
         "test:build:i18n": "node tests/test-i18n.mjs",
-        "test:build:i18n:dist": "echo 'Checking if the build/i18n directory contains 49 files' && ls build/i18n/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
+        "test:build:i18n:dist": "echo 'Checking if the build/i18n directory contains 55 files' && ls build/i18n/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 55 || (echo 'Fail' && false) && echo 'OK'",
         "test:build:cjs": "node tests/test-build.cjs",
         "test:build:esm": "node tests/test-build.mjs",
         "intl:extract": "formatjs extract 'src/messages/**/*.ts' --out-file i18n/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
