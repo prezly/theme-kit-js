@@ -33,18 +33,3 @@ export type IndexedStorySection = Omit<IndexedStory, 'content_text'> & {
     section_title: string | null;
     section_subtitle: string | null;
 };
-
-export type Settings =
-    | {
-          searchBackend: 'algolia';
-          appId: string;
-          apiKey: string;
-          index: string;
-      }
-    | {
-          searchBackend: 'meilisearch';
-          host: string;
-          apiKey: string;
-          index: string;
-          sectionsIndex: string;
-      };
