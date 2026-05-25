@@ -8,10 +8,11 @@ export function BaseFormattedTime({
     value,
     locale,
     timezone,
+    timeFormat,
     ...attributes
 }: BaseFormattedTime.Props) {
     const dateTime = toDate(value);
-    const time = formatTime(dateTime, { locale, timezone })
+    const time = formatTime(dateTime, { locale, timezone, timeFormat })
         .replace(/GMT(?=[+-]\d{2}:\d{2})/g, 'UTC')
         .replace(/(UTC)(\+\d{2}:\d{2})/g, '($1$2)');
 
@@ -27,5 +28,10 @@ export namespace BaseFormattedTime {
         value: Date | Iso8601Date | UnixTimestampInSeconds;
         locale: Locale.Code;
         timezone: Timezone;
+        /**
+         * Optional moment.js style time format coming from `Newsroom['time_format']`.
+         * When omitted, falls back to the locale's default time format.
+         */
+        timeFormat?: string;
     }
 }
