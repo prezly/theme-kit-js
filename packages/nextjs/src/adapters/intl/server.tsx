@@ -23,6 +23,14 @@ export namespace IntlAdapter {
     export interface Configuration {
         resolveDictionary?: (localeCode: Locale.Code) => Awaitable<IntlDictionary>;
         timezone: AsyncResolvable<Timezone>;
+        /**
+         * Optional moment.js style date format from `Newsroom['date_format']`.
+         */
+        dateFormat?: AsyncResolvable<string | undefined>;
+        /**
+         * Optional moment.js style time format from `Newsroom['time_format']`.
+         */
+        timeFormat?: AsyncResolvable<string | undefined>;
     }
 
     export function connect({
@@ -31,6 +39,12 @@ export namespace IntlAdapter {
     }: Configuration) {
         async function useIntl(locale: Locale.Code) {
             const timezone = await AsyncResolvable.resolve(config.timezone);
+            const dateFormat = config.dateFormat
+                ? await AsyncResolvable.resolve(config.dateFormat)
+                : undefined;
+            const timeFormat = config.timeFormat
+                ? await AsyncResolvable.resolve(config.timeFormat)
+                : undefined;
 
             const messages = await resolveDictionary(locale);
 
@@ -43,6 +57,8 @@ export namespace IntlAdapter {
                     return formatMessageString(locale, descriptor, messages, values);
                 },
                 timezone,
+                dateFormat,
+                timeFormat,
             };
         }
 
@@ -58,14 +74,20 @@ export namespace IntlAdapter {
 
         async function FormattedDate(props: Omit<BaseFormattedDate.Props, 'timezone'>) {
             const timezone = await AsyncResolvable.resolve(config.timezone);
+            const dateFormat = config.dateFormat
+                ? await AsyncResolvable.resolve(config.dateFormat)
+                : undefined;
 
-            return <BaseFormattedDate timezone={timezone} {...props} />;
+            return <BaseFormattedDate timezone={timezone} dateFormat={dateFormat} {...props} />;
         }
 
         async function FormattedTime(props: Omit<BaseFormattedTime.Props, 'timezone'>) {
             const timezone = await AsyncResolvable.resolve(config.timezone);
+            const timeFormat = config.timeFormat
+                ? await AsyncResolvable.resolve(config.timeFormat)
+                : undefined;
 
-            return <BaseFormattedTime timezone={timezone} {...props} />;
+            return <BaseFormattedTime timezone={timezone} timeFormat={timeFormat} {...props} />;
         }
 
         return { useIntl, FormattedMessage, FormattedDate, FormattedTime };
