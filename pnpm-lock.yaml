@@ -94,7 +94,7 @@ importers:
         specifier: 21.12.0 || ^23.x
         version: 23.20.0
       '@prezly/theme-kit-intl':
-        specifier: ^10.6.2
+        specifier: ^10.8.0-alpha.0
         version: link:../intl
       '@prezly/uploadcare':
         specifier: 2.4.4
@@ -135,13 +135,13 @@ importers:
         specifier: 21.12.0 || ^23.x
         version: 23.20.0
       '@prezly/theme-kit-core':
-        specifier: ^10.7.0
+        specifier: ^10.8.0-alpha.0
         version: link:../core
       '@prezly/theme-kit-intl':
-        specifier: ^10.6.2
+        specifier: ^10.8.0-alpha.0
         version: link:../intl
       '@prezly/theme-kit-react':
-        specifier: ^10.6.2
+        specifier: ^10.8.0-alpha.0
         version: link:../react
       '@technically/is-not-undefined':
         specifier: ^1.0.0
@@ -175,7 +175,7 @@ importers:
   packages/react:
     dependencies:
       '@prezly/theme-kit-intl':
-        specifier: ^10.6.2
+        specifier: ^10.8.0-alpha.0
         version: link:../intl
       react:
         specifier: ^18.x || ^19.x
@@ -1989,23 +1989,6 @@ packages:
 
   '@prezly/story-content-format@0.68.0':
     resolution: {integrity: sha512-ltBRPH+722vhiSZ513c4hSZ5A0vzJWDv6Udq+8X1kWhBesnZA7acTCoOqTxnnsfB+sj6b1OM2SBvMK4SqkX1Wg==}
-
-  '@prezly/theme-kit-core@10.7.0':
-    resolution: {integrity: sha512-RZL2DbWpBwIqEj+c3SOp9Vx6Mry9Djx0+y1x5OFlToz//A/kEiq1dxosuE/fO0IFz674e7rk8+kkR4QGlpdDYA==}
-    engines: {node: '>= 16.x', npm: '>= 8.x'}
-    peerDependencies:
-      '@prezly/sdk': 21.12.0 || ^23.x
-
-  '@prezly/theme-kit-intl@10.6.2':
-    resolution: {integrity: sha512-/rkif1Tq92EtLF2IcIV1PhitwIWpH3uk9dabGhYHZUorPWFbwCKoQqpZV0xk0gXh7UO0uQuzcpQRBWaeJTQFVA==}
-    engines: {node: '>= 14.x', npm: '>= 7.x'}
-
-  '@prezly/theme-kit-react@10.6.2':
-    resolution: {integrity: sha512-lWWgGlUPHcVkUcFsgbM2S8AsCfF6rgrIgoTtC9DLxI3OzlTSJrz4QrMlRTurckhyK6AG6K6l0HP+wLJNH/YfOg==}
-    engines: {node: '>= 20.x', npm: '>= 8.x'}
-    peerDependencies:
-      react: ^18.x || ^19.x
-      react-dom: ^18.x || ^19.x
 
   '@prezly/uploadcare-image@0.3.2':
     resolution: {integrity: sha512-gLlgSwPQzlUZqSUOw2YZ6Bceh3A0Ymf5axjQJX1V8PtIHXVLKM9pSq+pmBOoVDs4JXue/unysMTG+qZwEwz9+g==}
@@ -9999,26 +9982,6 @@ snapshots:
       '@prezly/content-format': 0.68.0
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
-
-  '@prezly/theme-kit-core@10.7.0(@prezly/sdk@23.20.0)':
-    dependencies:
-      '@prezly/sdk': 23.20.0
-      '@prezly/theme-kit-intl': 10.6.2
-      '@prezly/uploadcare': 2.4.4
-      '@technically/is-not-undefined': 1.0.0
-      '@technically/omit-undefined': 1.0.4
-      parse-data-url: 6.0.0
-      url-pattern: 1.0.3
-
-  '@prezly/theme-kit-intl@10.6.2':
-    dependencies:
-      '@technically/is-not-undefined': 1.0.0
-
-  '@prezly/theme-kit-react@10.6.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@prezly/theme-kit-intl': 10.6.2
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   '@prezly/uploadcare-image@0.3.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
