@@ -17,6 +17,16 @@ export interface IntlContext {
     locales: Locale.Code[];
     messages: IntlDictionary;
     timezone: Timezone;
+    /**
+     * Moment.js style date format from `Newsroom['date_format']`. When provided,
+     * `FormattedDate` will format dates using this pattern.
+     */
+    dateFormat?: string;
+    /**
+     * Moment.js style time format from `Newsroom['time_format']`. When provided,
+     * `FormattedTime` will format times using this pattern.
+     */
+    timeFormat?: string;
 }
 
 const context = createContext<IntlContext>({
