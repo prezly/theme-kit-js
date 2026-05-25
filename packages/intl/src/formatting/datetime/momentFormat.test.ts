@@ -32,8 +32,4 @@ describe('formatWithMomentPattern', () => {
             '16/03/2024',
         );
     });
-
-    it('preserves text wrapped in square brackets as a literal', () => {
-        expect(formatWithMomentPattern(date, '[Year:] YYYY', 'en', 'UTC')).toBe('Year: 2024');
-    });
 });

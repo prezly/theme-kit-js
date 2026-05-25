@@ -15,7 +15,7 @@
 import { Locale } from '../../locales';
 import { withCache } from '../../utils';
 
-const TOKEN_PATTERN = /\[([^\]]+)\]|YYYY|YY|MMMM|MMM|MM|M|DD|D|HH|hh|H|h|mm|m|ss|s|a|A/g;
+const TOKEN_PATTERN = /YYYY|YY|MMMM|MMM|MM|M|DD|D|HH|hh|H|h|mm|m|ss|s|a|A/g;
 
 type IntlPart = Intl.DateTimeFormatPart;
 
@@ -68,9 +68,7 @@ export function formatWithMomentPattern(
     const minute = findPart(parts, 'minute');
     const second = findPart(parts, 'second');
 
-    return pattern.replace(TOKEN_PATTERN, (match, escaped) => {
-        if (escaped) return escaped;
-
+    return pattern.replace(TOKEN_PATTERN, (match) => {
         switch (match) {
             case 'YYYY':
                 return year;
