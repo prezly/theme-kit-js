@@ -8,13 +8,14 @@ export function BaseFormattedDate({
     value,
     locale,
     timezone,
+    dateFormat,
     ...attributes
 }: BaseFormattedDate.Props) {
     const dateTime = toDate(value);
 
     return (
         <time {...attributes} dateTime={dateTime.toISOString()}>
-            {formatDate(dateTime, { locale, timezone })}
+            {formatDate(dateTime, { locale, timezone, dateFormat })}
         </time>
     );
 }
@@ -24,5 +25,10 @@ export namespace BaseFormattedDate {
         value: Date | Iso8601Date | UnixTimestampInSeconds;
         locale: Locale.Code;
         timezone: Timezone;
+        /**
+         * Optional moment.js style date format coming from `Newsroom['date_format']`.
+         * When omitted, falls back to the locale's default long date format.
+         */
+        dateFormat?: string;
     }
 }
