@@ -6,6 +6,7 @@ export {
     type Options,
     generate,
     guessChangeFrequency,
+    guessLastModified,
     guessPriority,
 } from './generate';
 export { stringify } from './stringify';

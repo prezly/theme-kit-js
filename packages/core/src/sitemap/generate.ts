@@ -9,6 +9,7 @@ import type {
     AppUrlGenerator,
     ChangeFrequency,
     ChangeFrequencyFn,
+    LastModifiedFn,
     Priority,
     PriorityFn,
     SitemapFile,
@@ -21,6 +22,7 @@ export interface Options {
     baseUrl: string;
     changeFrequency?: ChangeFrequencyFn;
     priority?: PriorityFn;
+    lastModified?: LastModifiedFn;
 }
 
 type Context = {
@@ -71,7 +73,8 @@ async function generateHomepageEntries(
     {
         priority = guessPriority,
         changeFrequency = guessChangeFrequency,
-    }: Pick<Options, 'priority' | 'changeFrequency'>,
+        lastModified = guessLastModified,
+    }: Pick<Options, 'priority' | 'changeFrequency' | 'lastModified'>,
 ) {
     const { locales, generateUrl } = context;
 
@@ -81,6 +84,7 @@ async function generateHomepageEntries(
             url: generateUrl('index', { localeCode }),
             priority: priority('index', { localeCode }),
             changeFrequency: changeFrequency('index', { localeCode }),
+            lastModified: lastModified('index', { localeCode }),
         }))
         .filter(isNonEmptyUrl);
 
@@ -92,7 +96,8 @@ async function generateStoriesEntries(
     {
         priority = guessPriority,
         changeFrequency = guessChangeFrequency,
-    }: Pick<Options, 'priority' | 'changeFrequency'>,
+        lastModified = guessLastModified,
+    }: Pick<Options, 'priority' | 'changeFrequency' | 'lastModified'>,
 ) {
     const { locales, stories, generateUrl } = context;
 
@@ -105,6 +110,7 @@ async function generateStoriesEntries(
                 url: generateUrl('story', params),
                 priority: priority('story', params),
                 changeFrequency: changeFrequency('story', params),
+                lastModified: lastModified('story', params),
             };
         })
         .filter(isNonEmptyUrl);
@@ -117,7 +123,8 @@ async function generateCategoriesEntries(
     {
         priority = guessPriority,
         changeFrequency = guessChangeFrequency,
-    }: Pick<Options, 'priority' | 'changeFrequency'>,
+        lastModified = guessLastModified,
+    }: Pick<Options, 'priority' | 'changeFrequency' | 'lastModified'>,
 ) {
     const { locales, categories, generateUrl } = context;
 
@@ -133,6 +140,7 @@ async function generateCategoriesEntries(
                         url: generateUrl('category', params),
                         priority: priority('category', params),
                         changeFrequency: changeFrequency('category', params),
+                        lastModified: lastModified('category', params),
                     };
                 }),
         )
@@ -146,7 +154,8 @@ async function generateMediaEntries(
     {
         priority = guessPriority,
         changeFrequency = guessChangeFrequency,
-    }: Pick<Options, 'priority' | 'changeFrequency'>,
+        lastModified = guessLastModified,
+    }: Pick<Options, 'priority' | 'changeFrequency' | 'lastModified'>,
 ) {
     const { newsroom, locales, generateUrl } = context;
 
@@ -158,6 +167,7 @@ async function generateMediaEntries(
             url: generateUrl('media', { localeCode }),
             priority: priority('media', { localeCode }),
             changeFrequency: changeFrequency('media', { localeCode }),
+            lastModified: lastModified('media', { localeCode }),
         }))
         .filter(isNonEmptyUrl);
 
@@ -175,6 +185,14 @@ export function guessPriority(routeName: 'index' | 'category' | 'story' | 'media
     if (routeName === 'index') return 0.9;
     if (routeName === 'category') return 0.8;
     return 0.7;
+}
+
+export function guessLastModified(
+    routeName: 'index' | 'category' | 'story' | 'media',
+    params: { localeCode: Locale.Code; updated_at?: string },
+): string | Date | undefined {
+    if (routeName === 'story') return params.updated_at;
+    return undefined;
 }
 
 export function withAlternateLinks(entries: SitemapFileEntryWithLocale[]): SitemapFileEntry[] {
