@@ -1,4 +1,5 @@
 const fs = require('node:fs');
+const path = require('node:path');
 
 const locales = fs
     .readdirSync(`${__dirname}/i18n/`)
@@ -6,7 +7,7 @@ const locales = fs
     .map((name) => name.slice(0, -'.json'.length))
     .sort();
 
-const [basename] = __filename.split('/').reverse();
+const basename = path.basename(__filename);
 
 process.stdout.write(`
 /**

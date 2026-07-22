@@ -32,7 +32,7 @@
         "url": "git+https://github.com/prezly/theme-kit-js.git"
     },
     "scripts": {
-        "prebuild": "rimraf build/*",
+        "prebuild": "rimraf --glob build/*",
         "dev": "vite",
         "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs && pnpm build:css",
         "build:types": "tsc --project .",

@@ -27,7 +27,7 @@
         "npm": ">= 7.x"
     },
     "scripts": {
-        "clean": "rimraf build/* *.tsbuildinfo",
+        "clean": "rimraf --glob build/* *.tsbuildinfo",
         "prebuild": "pnpm clean && pnpm build:locales && pnpm format",
         "build": "pnpm intl:compile && pnpm build:types && pnpm build:esm && pnpm build:cjs",
         "build:locales": "node ./build-locales.cjs > src/locales/supportedLocales.ts && biome format --write ./src/locales/supportedLocales.ts",
