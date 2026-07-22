@@ -75,13 +75,16 @@ describe('formatDate', () => {
 describe('formatTime', () => {
     const date = new Date('2024-03-15T10:00:00.000Z');
 
+    // On 2024-03-15 Europe/London is at a zero UTC offset (pre-DST). The numeric offset is
+    // optional in these patterns because `timeZoneName: 'longOffset'` renders a zero offset as
+    // bare "GMT" on ICU >= 72 (Node >= 20) but as "GMT+00:00" on older ICU — both are valid.
     it('appends the timezone offset when a moment-style timeFormat is provided', () => {
         const result = formatTime(date, {
             locale: 'en',
             timezone: 'Europe/London',
             timeFormat: 'HH:mm',
         });
-        expect(result).toMatch(/^10:00 GMT[+-]\d{2}:\d{2}$/);
+        expect(result).toMatch(/^10:00 GMT(?:[+-]\d{2}:\d{2})?$/);
     });
 
     it('supports 12-hour moment-style format', () => {
@@ -90,6 +93,6 @@ describe('formatTime', () => {
             timezone: 'Europe/London',
             timeFormat: 'hh:mm a',
         });
-        expect(result).toMatch(/^10:00 (am|AM) GMT[+-]\d{2}:\d{2}$/);
+        expect(result).toMatch(/^10:00 (am|AM) GMT(?:[+-]\d{2}:\d{2})?$/);
     });
 });
