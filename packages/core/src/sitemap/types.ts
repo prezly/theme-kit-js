@@ -68,3 +68,14 @@ export type PriorityFn = {
     ): Priority | undefined;
     (routeName: 'media', params: { localeCode: Locale.Code }): Priority | undefined;
 };
+
+// prettier-ignore
+export type LastModifiedFn = {
+    (routeName: 'index', params: { localeCode: Locale.Code }): string | Date | undefined;
+    (routeName: 'story', params: { localeCode: Locale.Code } & StoryRef): string | Date | undefined;
+    (
+        routeName: 'category',
+        params: { localeCode: Locale.Code } & TranslatedCategory,
+    ): string | Date | undefined;
+    (routeName: 'media', params: { localeCode: Locale.Code }): string | Date | undefined;
+};
