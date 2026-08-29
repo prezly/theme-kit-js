@@ -28,11 +28,11 @@
         "react-dom": "^19.0.0"
     },
     "devDependencies": {
-        "@babel/cli": "7.28.3",
+        "@babel/cli": "7.29.7",
         "@babel/core": "7.28.4",
-        "@babel/preset-env": "7.28.3",
-        "@babel/preset-react": "7.27.1",
-        "@babel/preset-typescript": "7.27.1",
+        "@babel/preset-env": "7.29.7",
+        "@babel/preset-react": "7.29.7",
+        "@babel/preset-typescript": "7.29.7",
         "@biomejs/biome": "2.2.4",
         "@dr.pogodin/babel-preset-svgr": "1.9.2",
         "@playwright/test": "1.55.0",
