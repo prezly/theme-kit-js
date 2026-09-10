@@ -9,12 +9,15 @@ import type {
 import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '@prezly/sdk';
 
 import type { Cache, UnixTimestampInSeconds } from './cache';
+import { RequestCoalescer, sharedContentRequests } from './RequestCoalescer';
 
 export interface Options {
     formats?: Story.FormatVersion[];
     cache?: {
         storage: Cache;
         latestVersion: UnixTimestampInSeconds;
+        /** Stable source/authorization identity. Enables cross-client request sharing. */
+        scope?: string;
     };
 }
 
@@ -350,10 +353,20 @@ export function createClient(
     };
 
     if (cache) {
+        if (cache.scope !== undefined && !cache.scope) {
+            throw new Error('Content cache scope must not be empty.');
+        }
+        const namespace = `${newsroomUuid}:${newsroomThemeUuid}:${formats.join(',')}:`;
+        // A single schema prefix keeps old readers away from scoped envelopes.
+        // Scope/version changes overwrite the same keys rather than adding namespaces.
+        const storage =
+            cache.scope === undefined ? cache.storage : cache.storage.namespace('scoped-v1');
         injectCache(
             client,
-            cache.storage.namespace(`${newsroomUuid}:${newsroomThemeUuid}:${formats.join(',')}:`),
+            storage.namespace(namespace),
             cache.latestVersion,
+            cache.scope,
+            namespace,
             UNCACHED_METHODS,
         );
     }
@@ -361,46 +374,54 @@ export function createClient(
     return client;
 }
 
+type ScopedCacheValue = { scope: string; value: any };
+
 function injectCache(
     client: Client,
     cache: Cache,
     latestVersion: UnixTimestampInSeconds,
+    scope: string | undefined,
+    namespace: string,
     uncachedMethods: (keyof Client)[] = [],
 ) {
-    const methodCalls = new Map<string, Promise<any>>();
+    // An opaque SDK client does not expose its credentials/source. Callers without
+    // an explicit scope keep request-local sharing; the Next.js adapter supplies one.
+    const requests = scope === undefined ? new RequestCoalescer() : sharedContentRequests;
     const methodNames = Object.keys(client) as (keyof Client)[];
 
     methodNames.forEach((methodName) => {
-        if (uncachedMethods.includes(methodName)) {
-            // Do not cache this method.
-            return;
-        }
-
+        if (uncachedMethods.includes(methodName)) return;
         const uncachedFn = client[methodName].bind(client);
 
         client[methodName] = async (...args: Parameters<typeof uncachedFn>) => {
+            // Preserve existing argument serialization; query canonicalization is separate.
             const cacheKey = `${methodName}:${JSON.stringify(args)}`;
-            const dedupeKey = `${latestVersion}:${cacheKey}`;
-
-            // Dedupe requests
-            const pending = methodCalls.get(dedupeKey);
-            if (pending) return pending;
-
-            async function invoke() {
-                const cached = await cache.get(cacheKey, latestVersion);
-                if (cached) return cached;
+            const dedupeKey = JSON.stringify([scope, namespace, latestVersion, cacheKey]);
+            return requests.run(dedupeKey, async () => {
+                try {
+                    const stored = await cache.get<any>(cacheKey, latestVersion);
+                    const cached =
+                        scope === undefined
+                            ? stored
+                            : (stored as ScopedCacheValue | undefined)?.scope === scope
+                              ? stored.value
+                              : undefined;
+                    // Preserve existing negative-cache semantics until null results
+                    // have a deliberately short TTL and correct error classification.
+                    if (cached) return { value: cached };
+                } catch {
+                    // A cache failure must not prevent a bounded origin fallback.
+                }
 
                 const value = await (uncachedFn as Function)(...args);
-                cache.set(cacheKey, value, latestVersion);
-
-                methodCalls.delete(dedupeKey);
-
-                return value;
-            }
-
-            const invokation = invoke();
-            methodCalls.set(dedupeKey, invokation);
-            return invokation;
+                const stored = scope === undefined ? value : { scope, value };
+                // Observe synchronous and asynchronous write failures without holding
+                // up a successful response or leaving an unhandled rejection.
+                const cacheWrite = Promise.resolve()
+                    .then(() => cache.set(cacheKey, stored, latestVersion))
+                    .catch(() => undefined);
+                return { value, cacheWrite };
+            });
         };
     });
 }

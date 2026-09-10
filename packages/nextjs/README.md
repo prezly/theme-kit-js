@@ -358,3 +358,71 @@ Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaig
 [Prezly SDK]: https://www.npmjs.com/package/@prezly/sdk
 [Prezly API Docs]: https://developers.prezly.com/docs/api
 [Typescript]: https://www.typescriptlang.org
+
+
+## Sharing cached content requests
+
+When `PrezlyAdapter.connect` has a memory or Redis cache enabled, concurrent
+`contentDelivery` calls for the same data share one pending operation across
+adapter instances in the same JavaScript runtime. Completed operations leave the
+pending registry after their cache write settles; failures can be retried by a
+later request. This is not a lock shared across pods or workers.
+
+The sharing identity includes the API base URL, access token, custom headers,
+cache configuration, newsroom, theme, content formats, serialized method
+arguments, and cache invalidation version. Credentials are hashed before they
+enter that identity. Cached values also carry the source/authorization hash so
+a different token or API cannot consume a previous identity's warm value.
+
+A custom `fetch` can depend on context the adapter cannot see. It keeps
+client-local sharing unless you provide `cache.requestScope`, a stable string
+that identifies all additional context affecting its responses. Do not opt in
+with a constant scope if that context varies between requests. For direct
+`ContentDelivery.createClient` usage, the equivalent opt-in is `cache.scope`;
+that caller must include its source, authorization and storage identity because
+an arbitrary SDK client does not expose them.
+
+Cached content requests have these per-runtime limits:
+
+| Resource | Limit |
+| --- | --- |
+| Distinct pending content operations | 1,024 (existing followers still share) |
+| Active content API HTTP requests | 32 |
+| Queued content API HTTP requests | 256 |
+| Queue wait | 1 second |
+| Each API HTTP request, including body consumption | 30 seconds |
+| Each Redis command wait | 1 second |
+| Outstanding Redis commands per connection | 128 |
+| Redis connection attempt | 1 second |
+
+Exceeding admission or API deadlines rejects the content call. Redis connection,
+read, and write failures fall back to the bounded API path. Disconnected Redis
+clients do not queue commands, and requests do not wait for reconnection. No
+additional API retries are introduced. The SDK returned as `client` retains its
+existing behavior; these limits apply to the cached `contentDelivery` path.
+Custom fetch implementations should honor `AbortSignal`: an implementation that
+ignores cancellation retains its active slot until it actually settles.
+
+The source-tagged values use one fixed `scoped-v1` namespace, rather than adding
+new retained key namespaces for every token or invalidation version. This creates
+a one-time cold cache on upgrade. Roll out gradually and warm representative
+newsrooms before an expected traffic spike. Existing unscoped entries remain
+subject to their configured expiration; do not flush a Redis instance that also
+contains routing data. TTL, negative-cache classification and query
+canonicalization are separate policies and are unchanged here.
+
+### Verification and release
+
+Run the normal package build and tests with Node 20 and the repository's pnpm
+version. The optional `pnpm --filter @prezly/theme-kit-nextjs test:redis` check
+requires `redis-server` on PATH and built packages. It creates an isolated local
+Redis process with persistence disabled and exercises cold/warm bursts, stalled
+commands, reconnects, invalidation and cache-outage fallback. It does not use a
+configured application Redis URL.
+
+Release the changed core and Next.js packages together through the existing
+Lerna workflow, with Next.js depending on the newly released core. Then update
+Bea to that published version and verify its build before deployment. A merged
+Theme Kit PR alone does not change a deployed newsroom. For pre-release
+validation, install locally packed core and Next.js packages in an isolated Bea
+checkout; do not commit a dependency on a version that has not been published.
