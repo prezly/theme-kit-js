@@ -161,4 +161,29 @@ describe('ContentDelivery request sharing', () => {
         ]);
         expect(result.map((room) => room.name)).toEqual(['A', 'B']);
     });
+
+    it('rechecks cache and origin across clients after a custom write stalls', async () => {
+        jest.useFakeTimers();
+        try {
+            const storage = memory();
+            storage.set.mockImplementation(() => new Promise<void>(() => {}));
+            const sdk = api('original');
+            const cache = { storage: storage.storage, scope: identity(), latestVersion: 1 };
+            const client = () => createClient(sdk.client, 'room', undefined, { cache });
+            await Promise.all(Array.from({ length: 20 }, () => client().newsroom()));
+            expect(storage.get).toHaveBeenCalledTimes(1);
+            expect(sdk.get).toHaveBeenCalledTimes(1);
+            sdk.get.mockResolvedValue({ name: 'fresh', stories_number: 600 });
+            await jest.advanceTimersByTimeAsync(1000);
+            const retried = await Promise.all(
+                Array.from({ length: 20 }, () => client().newsroom()),
+            );
+            expect(retried.every((room) => room.name === 'fresh')).toBe(true);
+            expect(storage.get).toHaveBeenCalledTimes(2);
+            expect(sdk.get).toHaveBeenCalledTimes(2);
+        } finally {
+            await jest.advanceTimersByTimeAsync(1000);
+            jest.useRealTimers();
+        }
+    });
 });

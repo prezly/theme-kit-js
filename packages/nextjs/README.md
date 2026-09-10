@@ -365,8 +365,11 @@ Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaig
 When `PrezlyAdapter.connect` has a memory or Redis cache enabled, concurrent
 `contentDelivery` calls for the same data share one pending operation across
 adapter instances in the same JavaScript runtime. Completed operations leave the
-pending registry after their cache write settles; failures can be retried by a
-later request. This is not a lock shared across pods or workers.
+pending registry when their cache write settles or after one second, whichever
+comes first. Successful responses are delivered immediately, and later write
+failures are observed. A custom cache whose write never settles cannot retain a
+completed result or its pending slot indefinitely. Failed requests can be retried
+by a later request. This is not a lock shared across pods or workers.
 
 The sharing identity includes the API base URL, access token, custom headers,
 cache configuration, newsroom, theme, content formats, serialized method
@@ -387,6 +390,7 @@ Cached content requests have these per-runtime limits:
 | Resource | Limit |
 | --- | --- |
 | Distinct pending content operations | 1,024 (existing followers still share) |
+| Completed-result retention while its cache write is pending | At most 1 second |
 | Active content API HTTP requests | 32 |
 | Pages produced concurrently by one `allStories` operation | 8 |
 | Queued content API HTTP requests | 256 |

@@ -3,7 +3,9 @@ interface Result<T> {
     cacheWrite?: Promise<unknown>;
 }
 
-/** Shares work only while it is running or committing its cache write. */
+const CACHE_WRITE_RETENTION_MS = 1000;
+
+/** Shares running work, then retains its result for a bounded cache-write window. */
 export class RequestCoalescer {
     private readonly pending = new Map<string, Promise<unknown>>();
 
@@ -29,15 +31,25 @@ export class RequestCoalescer {
         // Register before invoking, including synchronous errors and cache hits.
         this.pending.set(key, result);
         void (async () => {
+            let writeTimer: ReturnType<typeof setTimeout> | undefined;
             try {
                 const { value, cacheWrite } = await invoke();
                 resolve(value);
                 // Followers can already use the value while the cache commits.
-                // Keep ownership to avoid another miss during a slow write.
-                await cacheWrite;
+                // Arbitrary caches may never settle: release ownership at the
+                // deadline while still observing a late write rejection.
+                if (cacheWrite) {
+                    await Promise.race([
+                        cacheWrite,
+                        new Promise<void>((release) => {
+                            writeTimer = setTimeout(release, CACHE_WRITE_RETENTION_MS);
+                        }),
+                    ]);
+                }
             } catch (error) {
                 reject(error);
             } finally {
+                clearTimeout(writeTimer);
                 if (this.pending.get(key) === result) this.pending.delete(key);
             }
         })();
