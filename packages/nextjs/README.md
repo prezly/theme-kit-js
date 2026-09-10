@@ -388,6 +388,7 @@ Cached content requests have these per-runtime limits:
 | --- | --- |
 | Distinct pending content operations | 1,024 (existing followers still share) |
 | Active content API HTTP requests | 32 |
+| Pages produced concurrently by one `allStories` operation | 8 |
 | Queued content API HTTP requests | 256 |
 | Queue wait | 1 second |
 | Each API HTTP request, including body consumption | 30 seconds |

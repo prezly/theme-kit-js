@@ -289,18 +289,27 @@ export function createClient(
 
             const pages = Math.ceil(maxStories / chunkSize);
 
-            const promises = Array.from({ length: pages }, (_, chunkIndex) =>
-                client.stories<Include>(
-                    {
-                        ...params,
-                        limit: chunkSize,
-                        offset: chunkIndex * chunkSize,
-                    },
-                    { include },
-                ),
-            );
+            // Bound production as well as transport admission: a large newsroom
+            // must not enqueue every page and overflow the shared HTTP queue itself.
+            const pagesPerBatch = 8;
+            const responses: Awaited<ReturnType<typeof client.stories<Include>>>[] = [];
+            for (let firstPage = 0; firstPage < pages; firstPage += pagesPerBatch) {
+                const batch = await Promise.all(
+                    Array.from({ length: Math.min(pagesPerBatch, pages - firstPage) }, (_, index) =>
+                        client.stories<Include>(
+                            {
+                                ...params,
+                                limit: chunkSize,
+                                offset: (firstPage + index) * chunkSize,
+                            },
+                            { include },
+                        ),
+                    ),
+                );
+                responses.push(...batch);
+            }
 
-            return (await Promise.all(promises)).flatMap((response) => response.stories);
+            return responses.flatMap((response) => response.stories);
         },
 
         async story<Include extends keyof Story.ExtraFields = never>(

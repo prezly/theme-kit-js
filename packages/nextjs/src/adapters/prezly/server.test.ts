@@ -148,3 +148,54 @@ it('fetches every allStories page through the SDK with only one transport slot',
     );
     expect(fetchMock).toHaveBeenCalledTimes(4);
 });
+
+it('handles a large newsroom without overflowing its own global transport queue', async () => {
+    let active = 0;
+    let peak = 0;
+    const fetchMock = jest.fn(async (url: any, init?: RequestInit) => {
+        if (String(url).endsWith('/room')) {
+            return new Response(
+                JSON.stringify({ newsroom: { name: 'large', stories_number: 60000 } }),
+            );
+        }
+        active++;
+        peak = Math.max(active, peak);
+        await tick();
+        active--;
+        const { offset } = JSON.parse(init!.body as string);
+        return new Response(JSON.stringify({ stories: [offset] }));
+    });
+    globalThis.fetch = fetchMock;
+    const caching = cache();
+    const request = () =>
+        PrezlyAdapter.connect(config, { cache: caching })
+            .usePrezlyClient()
+            .contentDelivery.allStories();
+    const expected = Array.from({ length: 300 }, (_, index) => index * 200);
+    expect(await Promise.all(Array.from({ length: 20 }, request))).toEqual(
+        Array.from({ length: 20 }, () => expected),
+    );
+    expect(fetchMock).toHaveBeenCalledTimes(301);
+    expect(peak).toBeLessThanOrEqual(8);
+});
+
+it('stops producing later story batches on failure and can retry the aggregate', async () => {
+    let fail = true;
+    const fetchMock = jest.fn(async (url: any, init?: RequestInit) => {
+        if (String(url).endsWith('/room')) {
+            return new Response(JSON.stringify({ newsroom: { stories_number: 60000 } }));
+        }
+        const { offset } = JSON.parse(init!.body as string);
+        if (offset === 0 && fail) throw new Error('page unavailable');
+        return new Response(JSON.stringify({ stories: [offset] }));
+    });
+    globalThis.fetch = fetchMock;
+    const adapter = PrezlyAdapter.connect(config, { cache: cache() });
+    await expect(adapter.usePrezlyClient().contentDelivery.allStories()).rejects.toThrow(
+        'page unavailable',
+    );
+    await tick();
+    expect(fetchMock).toHaveBeenCalledTimes(9); // newsroom + the first bounded batch only
+    fail = false;
+    expect(await adapter.usePrezlyClient().contentDelivery.allStories()).toHaveLength(300);
+});
