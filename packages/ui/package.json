@@ -78,7 +78,7 @@
         "postcss-cli": "11.0.1",
         "postcss-import": "15.1.0",
         "prop-types": "15.8.1",
-        "storybook": "7.6.20",
+        "storybook": "7.6.21",
         "tailwindcss": "3.4.17",
         "vite": "4.5.14",
         "vite-plugin-dts": "3.9.1",
