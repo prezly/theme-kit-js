@@ -37,8 +37,8 @@ importers:
         specifier: 2.2.4
         version: 2.2.4
       '@dr.pogodin/babel-preset-svgr':
-        specifier: 1.9.2
-        version: 1.9.2(@babel/parser@7.29.8)(supports-color@8.1.1)(typescript@5.7.3)
+        specifier: 1.11.0
+        version: 1.11.0(@babel/parser@7.29.8)(supports-color@8.1.1)(typescript@5.7.3)
       '@playwright/test':
         specifier: 1.55.0
         version: 1.55.0
@@ -1717,10 +1717,11 @@ packages:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
 
-  '@dr.pogodin/babel-preset-svgr@1.9.2':
-    resolution: {integrity: sha512-IqaOMHRdbDfMAcOauqfxnf0NtgGgKr9mm1U5Bf7QspiTHgvtYWAoFbPLbqDN4j/Z+MHxy6nRYRUUn+NWcMMmFg==}
+  '@dr.pogodin/babel-preset-svgr@1.11.0':
+    resolution: {integrity: sha512-u3DF21ko0uGGMYeWpLkHLX423Yitw54QIkGDs/YWV71NSediQQnaHcwZZFEdnBzUWAm6uTly2YNb9LJlHRlCPg==}
+    engines: {node: '>=24'}
     peerDependencies:
-      '@babel/parser': ^7.28.0
+      '@babel/parser': ^7.29.0
 
   '@emnapi/core@1.3.1':
     resolution: {integrity: sha512-pVGjBIt1Y6gg3EJN8jTcfpP/+uuRksIo055oE/OBkDNcjZqVbfkWCksG1Jp4yZnj3iKWyWX8fdG/j6UDYPbFog==}
@@ -10339,7 +10340,7 @@ snapshots:
 
   '@discoveryjs/json-ext@0.5.7': {}
 
-  '@dr.pogodin/babel-preset-svgr@1.9.2(@babel/parser@7.29.8)(supports-color@8.1.1)(typescript@5.7.3)':
+  '@dr.pogodin/babel-preset-svgr@1.11.0(@babel/parser@7.29.8)(supports-color@8.1.1)(typescript@5.7.3)':
     dependencies:
       '@babel/parser': 7.29.8
       '@svgr/core': 8.1.0(supports-color@8.1.1)(typescript@5.7.3)
@@ -13054,7 +13055,7 @@ snapshots:
 
   '@svgr/hast-util-to-babel-ast@8.0.0':
     dependencies:
-      '@babel/types': 7.28.2
+      '@babel/types': 7.29.8
       entities: 4.5.0
 
   '@svgr/plugin-jsx@8.1.0(@svgr/core@8.1.0(supports-color@8.1.1)(typescript@5.7.3))(supports-color@8.1.1)':
