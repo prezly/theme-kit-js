@@ -1,0 +1,25 @@
+packages/core/package.json
+  s_e19e6a41f730d9::t_8f08ce670ff165 42
+pnpm-lock.yaml
+  ai_agent 97-98,141-142,144-145,147-148,181-182
+packages/nextjs/package.json
+  s_e19e6a41f730d9::t_8f08ce670ff165 101-103
+packages/react/package.json
+  s_e19e6a41f730d9::t_8f08ce670ff165 61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "9c717e0cbf2dfe6d0d8966e540a6c221856d1359",
+  "prompts": {},
+  "sessions": {
+    "s_e19e6a41f730d9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a09f57-f839-79b1-bcb8-88db97881972",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Camil Blanaru <camil@edka.io>"
+    }
+  }
+}
