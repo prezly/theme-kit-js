@@ -10,7 +10,7 @@ module.exports = async function assertTelemetry(ContentDelivery, PrezlyAdapter) 
             telemetry: collector.observe,
             fetch: async () => {
                 originRequests += 1;
-                // This uncached SDK fixture also runs on Node 16, without global Response.
+                // Minimal uncached SDK response; no dependence on Response.json().
                 return {
                     ok: true,
                     status: 200,
