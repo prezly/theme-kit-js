@@ -10,6 +10,8 @@ export interface Configuration {
     memory?: boolean;
     latestVersion: Resolvable<number>;
     namespace?: string;
+    /** Extra immutable identity for custom fetch implementations. Enables request sharing. */
+    requestScope?: string;
 }
 
 export function configure(config: Configuration) {

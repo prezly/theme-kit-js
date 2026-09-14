@@ -76,7 +76,9 @@
         "lint:fix": "biome lint --write src",
         "format": "biome format src",
         "format:fix": "biome format --write src",
-        "test": "pnpm test:build",
+        "test": "pnpm test:unit && pnpm test:build",
+        "test:unit": "jest",
+        "test:redis": "node tests/test-redis-resilience.cjs",
         "test:build": "pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",
         "test:build:types": "tsc --esModuleInterop --noEmit build/index.d.ts",
         "test:build:esm": "node tests/test-build.mjs",
@@ -95,6 +97,7 @@
         }
     },
     "dependencies": {
+        "@noble/hashes": "1.8.0",
         "@prezly/theme-kit-core": "^10.9.0",
         "@prezly/theme-kit-intl": "^10.9.0",
         "@prezly/theme-kit-react": "^10.9.0",
