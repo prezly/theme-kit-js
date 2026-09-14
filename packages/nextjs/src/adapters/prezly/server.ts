@@ -8,6 +8,7 @@ import { ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
 
 import { type Configuration as CacheConfig, configure as configureCache } from './cache';
 import { createBoundedFetch } from './requests';
+import { createObservedFetch } from './telemetry';
 
 export namespace PrezlyAdapter {
     export interface Configuration {
@@ -23,13 +24,14 @@ export namespace PrezlyAdapter {
     export interface Options {
         cache?: CacheConfiguration;
         fetch?: typeof fetch;
+        telemetry?: ContentDelivery.TelemetryObserver;
     }
 
     export type CacheConfiguration = CacheConfig;
 
     export function connect(
         config: Resolvable<Configuration>,
-        { cache: cacheConfig, fetch }: Options = {},
+        { cache: cacheConfig, fetch, telemetry: observer }: Options = {},
     ) {
         function usePrezlyClient() {
             const {
@@ -42,16 +44,27 @@ export namespace PrezlyAdapter {
                 theme,
                 formats,
             } = Resolvable.resolve(config);
+            const telemetry: ContentDelivery.Telemetry | undefined = observer
+                ? {
+                      observe: observer,
+                      source:
+                          !baseUrl || baseUrl.replace(/\/$/, '') === 'https://api.prezly.com'
+                              ? 'prezly'
+                              : 'custom',
+                  }
+                : undefined;
 
             const client = createPrezlyClient({
-                fetch,
+                fetch: telemetry
+                    ? createObservedFetch(fetch ?? globalThis.fetch, telemetry, 'raw')
+                    : fetch,
                 accessToken,
                 baseUrl,
                 headers,
             });
 
             const cache = cacheConfig
-                ? configureCache({ namespace: 'content:', ...cacheConfig })
+                ? configureCache({ namespace: 'content:', ...cacheConfig, telemetry })
                 : undefined;
             // Custom fetches may depend on hidden request context. Preserve their
             // existing cache behavior unless the caller declares that identity.
@@ -78,11 +91,16 @@ export namespace PrezlyAdapter {
                       accessToken,
                       baseUrl,
                       headers,
-                      fetch: createBoundedFetch(fetch ?? globalThis.fetch),
+                      fetch: createBoundedFetch(
+                          createObservedFetch(fetch ?? globalThis.fetch, telemetry, 'content'),
+                          undefined,
+                          telemetry,
+                      ),
                   })
                 : client;
             const contentDelivery = ContentDelivery.createClient(contentClient, newsroom, theme, {
                 formats,
+                telemetry,
                 cache: cache ? { ...cache, scope } : undefined,
             });
 

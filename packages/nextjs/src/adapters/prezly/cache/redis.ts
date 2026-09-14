@@ -1,22 +1,32 @@
-import type { ContentDelivery } from '@prezly/theme-kit-core';
+import { ContentDelivery } from '@prezly/theme-kit-core';
 import stableStringify from 'json-stable-stringify';
 import { createClient, type RedisClientOptions } from 'redis';
 
 type Seconds = number;
 type UnixTimestampInSeconds = number;
 type Entry = { version: UnixTimestampInSeconds; value: any };
-type Options = RedisClientOptions & { ttl?: Seconds; prefix?: string };
+type Options = RedisClientOptions & {
+    ttl?: Seconds;
+    prefix?: string;
+    telemetry?: ContentDelivery.Telemetry;
+};
 
 const COMMAND_TIMEOUT = 1000;
 const CONNECTIONS = new Map<string, ReturnType<typeof createClient>>();
 
-async function command<T>(invoke: () => Promise<T>): Promise<T> {
+async function command<T>(
+    invoke: () => Promise<T>,
+    telemetry?: ContentDelivery.Telemetry,
+    operation: 'get' | 'set' | 'expire' = 'get',
+): Promise<T> {
     let timer: ReturnType<typeof setTimeout> | undefined;
+    const start = telemetry ? ContentDelivery.telemetryNow() : 0;
+    let outcome: 'success' | 'error' = 'error';
     try {
         // node-redis 4 can corrupt its command queue when aborting a command
         // already sent to the socket. Leave that operation tracked by the client;
         // commandsQueueMaxLength bounds all outstanding replies, including these.
-        return await Promise.race([
+        const value = await Promise.race([
             Promise.resolve().then(invoke),
             new Promise<never>((_, reject) => {
                 timer = setTimeout(
@@ -25,12 +35,25 @@ async function command<T>(invoke: () => Promise<T>): Promise<T> {
                 );
             }),
         ]);
+        outcome = 'success';
+        return value;
     } finally {
         clearTimeout(timer);
+        ContentDelivery.emit(telemetry, {
+            type: 'redis_command',
+            command: operation,
+            outcome,
+            seconds: telemetry ? ContentDelivery.elapsedSeconds(start) : 0,
+        });
     }
 }
 
-export function createRedisCache({ ttl, prefix = '', ...options }: Options): ContentDelivery.Cache {
+export function createRedisCache({
+    ttl,
+    prefix = '',
+    telemetry,
+    ...options
+}: Options): ContentDelivery.Cache {
     const connectionKey = stableStringify(options) as string;
     let client = CONNECTIONS.get(connectionKey);
     if (!client) {
@@ -50,25 +73,43 @@ export function createRedisCache({ ttl, prefix = '', ...options }: Options): Con
 
     function createCache(namespacePrefix = ''): ContentDelivery.Cache {
         return {
-            async get(key, latestVersion) {
-                if (!connection.isReady) return undefined;
-                const cached = await command(() => connection.get(`${namespacePrefix}${key}`));
+            async get(key, latestVersion, onSource) {
+                if (!connection.isReady) {
+                    ContentDelivery.emit(telemetry, { type: 'redis_unavailable', command: 'get' });
+                    return undefined;
+                }
+                const cached = await command(
+                    () => connection.get(`${namespacePrefix}${key}`),
+                    telemetry,
+                    'get',
+                );
                 if (!cached) return undefined;
                 const entry = JSON.parse(cached) as Entry;
                 if (entry.version < latestVersion) return undefined;
                 if (ttl) {
-                    void command(() => connection.expire(`${namespacePrefix}${key}`, ttl)).catch(
-                        () => undefined,
-                    );
+                    void command(
+                        () => connection.expire(`${namespacePrefix}${key}`, ttl),
+                        telemetry,
+                        'expire',
+                    ).catch(() => undefined);
                 }
+                if (onSource) ContentDelivery.notify(onSource, 'redis');
                 return entry.value;
             },
 
             async set(key, value, version) {
-                if (!connection.isReady) return;
+                if (!connection.isReady) {
+                    ContentDelivery.emit(telemetry, { type: 'redis_unavailable', command: 'set' });
+                    return;
+                }
                 const entry: Entry = { value, version };
-                await command(() =>
-                    connection.set(`${namespacePrefix}${key}`, JSON.stringify(entry), { EX: ttl }),
+                await command(
+                    () =>
+                        connection.set(`${namespacePrefix}${key}`, JSON.stringify(entry), {
+                            EX: ttl,
+                        }),
+                    telemetry,
+                    'set',
                 );
             },
 

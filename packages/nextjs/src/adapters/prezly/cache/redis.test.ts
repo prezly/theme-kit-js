@@ -80,3 +80,33 @@ it.each(['get', 'set'] as const)(
         expect(jest.getTimerCount()).toBe(0);
     },
 );
+
+it('does not fragment Redis connections by observer and distinguishes unavailable from commands', async () => {
+    const { client, options } = connection(false);
+    const events: any[] = [];
+    const observe = (event: any) => {
+        events.push(event);
+    };
+    const cache = createRedisCache({ ...options, telemetry: { observe, source: 'prezly' } });
+    await cache.get('private-key', 1);
+    await cache.set('private-key', 'private-value', 1);
+    expect(events.filter((e) => e.type === 'redis_unavailable')).toHaveLength(2);
+    expect(events.some((e) => e.type === 'redis_command')).toBe(false);
+    expect(client.connect).toHaveBeenCalledTimes(1);
+    client.isReady = true;
+    const source = jest.fn();
+    expect(await cache.namespace('private-room').get('private-key', 1, source)).toBe('cached');
+    expect(source).toHaveBeenCalledWith('redis');
+    await cache.set('private-key', 'value', 2);
+    await new Promise<void>((resolve) => setImmediate(resolve));
+    expect(
+        events
+            .filter((e) => e.type === 'redis_command')
+            .map((e) => e.command)
+            .sort(),
+    ).toEqual(['expire', 'get', 'set']);
+    expect(JSON.stringify(events)).not.toContain('private-');
+    expect(createClient).toHaveBeenLastCalledWith(
+        expect.not.objectContaining({ telemetry: expect.anything() }),
+    );
+});

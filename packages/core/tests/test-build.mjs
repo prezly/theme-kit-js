@@ -8,7 +8,13 @@
 // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
 import assert from 'node:assert';
+import { createRequire } from 'node:module';
 
-import { ASSETS_CDN_URL } from '@prezly/theme-kit-core';
+import { ASSETS_CDN_URL, ContentDelivery } from '@prezly/theme-kit-core';
 
 assert(ASSETS_CDN_URL.startsWith('https://'));
+const cjs = createRequire(import.meta.url)('@prezly/theme-kit-core');
+assert.strictEqual(
+    ContentDelivery.getMetricsCollector('node'),
+    cjs.ContentDelivery.getMetricsCollector('node'),
+);
