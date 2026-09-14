@@ -10,7 +10,13 @@ module.exports = async function assertTelemetry(ContentDelivery, PrezlyAdapter) 
             telemetry: collector.observe,
             fetch: async () => {
                 originRequests += 1;
-                return Response.json({ newsroom: { uuid: 'fixture-newsroom', name: 'Fixture' } });
+                // This uncached SDK fixture also runs on Node 16, without global Response.
+                return {
+                    ok: true,
+                    status: 200,
+                    headers: new Map([['content-type', 'application/json']]),
+                    json: async () => ({ newsroom: { uuid: 'fixture-newsroom', name: 'Fixture' } }),
+                };
             },
         },
     );
@@ -19,6 +25,9 @@ module.exports = async function assertTelemetry(ContentDelivery, PrezlyAdapter) 
     assert.equal(result.uuid, 'fixture-newsroom');
     assert.equal(originRequests, 1);
     const metrics = collector.render();
-    assert.match(metrics, /theme_kit_content_requests_total\{[^\n]*operation="newsroom"[^\n]*\} 1/);
-    assert.match(metrics, /theme_kit_upstream_requests_total\{[^\n]*route="newsroom"[^\n]*\} 1/);
+    assert.match(
+        metrics,
+        /^theme_kit_content_requests_total\{[^\n]*operation="newsroom"[^\n]*\} 1$/m,
+    );
+    assert.match(metrics, /^theme_kit_upstream_requests_total\{[^\n]*route="newsroom"[^\n]*\} 1$/m);
 };

@@ -81,7 +81,7 @@
         "test:unit": "jest",
         "test:redis": "node tests/test-redis-resilience.cjs",
         "test:build": "pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",
-        "test:build:types": "tsc --esModuleInterop --noEmit build/index.d.ts",
+        "test:build:types": "tsc --esModuleInterop --noEmit --target es2020 --moduleResolution node tests/test-build-types.ts",
         "test:build:esm": "node tests/test-build.mjs",
         "test:build:cjs": "node tests/test-build.cjs"
     },
