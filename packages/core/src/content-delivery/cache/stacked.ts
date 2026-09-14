@@ -1,4 +1,4 @@
-import type { CacheLayer } from '../telemetry';
+import { type CacheLayer, notify } from '../telemetry';
 import type { Cache, UnixTimestampInSeconds } from './type';
 
 export function createStackedCache(caches: Cache[]): Cache {
@@ -9,10 +9,14 @@ export function createStackedCache(caches: Cache[]): Cache {
             onSource?: (layer: CacheLayer) => void,
         ) {
             for (let i = 0; i < caches.length; i += 1) {
+                let source: CacheLayer = 'custom';
                 const value = onSource
-                    ? await caches[i].get<T>(key, latestVersion, onSource)
+                    ? await caches[i].get<T>(key, latestVersion, (layer) => {
+                          source = layer;
+                      })
                     : await caches[i].get<T>(key, latestVersion);
                 if (value !== undefined) {
+                    if (onSource) notify(onSource, source);
                     return value;
                 }
             }

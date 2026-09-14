@@ -31,7 +31,7 @@ export function createSharedMemoryCache(prefix = ''): Cache {
 
             CACHE.set(`${prefix}${key}`, { value, version, accessed: Date.now() });
 
-            if (onSource) notify(onSource, 'memory');
+            if (onSource && value !== undefined) notify(onSource, 'memory');
             return value;
         },
 

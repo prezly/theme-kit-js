@@ -250,3 +250,55 @@ it('observes rejecting thenables as well as native promises', async () => {
     notify(() => Promise.reject(Error('ignored')), {});
     await tick();
 });
+
+it('attributes a legacy fallback to custom when an earlier layer returns undefined', async () => {
+    const memory = createSharedMemoryCache(`undefined-layer-${sequence++}`);
+    const emptyMemory: Cache = {
+        get(key, version, source) {
+            memory.set(key, undefined, version);
+            return memory.get(key, version, source);
+        },
+        set: () => {},
+        namespace() {
+            return this;
+        },
+    };
+    const announcingMiss: Cache = {
+        get(_key, _version, source) {
+            source?.('redis');
+            return undefined;
+        },
+        set: () => {},
+        namespace() {
+            return this;
+        },
+    };
+    const legacy: Cache = {
+        get: () => ({ scope: 'scope', value: { name: 'legacy-hit' } }) as any,
+        set: () => {},
+        namespace() {
+            return this;
+        },
+    };
+    for (const first of [emptyMemory, announcingMiss]) {
+        const events: TelemetryEvent[] = [];
+        const origin = sdk();
+        const client = createClient(origin, `fallback-${sequence++}`, undefined, {
+            cache: {
+                storage: createStackedCache([first, legacy]),
+                latestVersion: 1,
+                scope: 'scope',
+            },
+            telemetry: {
+                observe: (e) => {
+                    events.push(e);
+                },
+            },
+        });
+        expect(await client.newsroom()).toEqual({ name: 'legacy-hit' });
+        expect(origin.newsrooms.get).not.toHaveBeenCalled();
+        expect(events.filter((e) => e.type === 'cache_hit')).toEqual([
+            expect.objectContaining({ layer: 'custom' }),
+        ]);
+    }
+});
