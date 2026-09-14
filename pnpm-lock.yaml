@@ -94,8 +94,8 @@ importers:
         specifier: 21.12.0 || ^23.x
         version: 23.20.0
       '@prezly/theme-kit-intl':
-        specifier: ^10.9.0
-        version: 10.9.0
+        specifier: workspace:^
+        version: link:../intl
       '@prezly/uploadcare':
         specifier: 2.4.4
         version: 2.4.4
@@ -138,14 +138,14 @@ importers:
         specifier: 21.12.0 || ^23.x
         version: 23.20.0
       '@prezly/theme-kit-core':
-        specifier: ^10.9.0
-        version: 10.9.0(@prezly/sdk@23.20.0)
+        specifier: workspace:^
+        version: link:../core
       '@prezly/theme-kit-intl':
-        specifier: ^10.9.0
-        version: 10.9.0
+        specifier: workspace:^
+        version: link:../intl
       '@prezly/theme-kit-react':
-        specifier: ^10.9.0
-        version: 10.9.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: workspace:^
+        version: link:../react
       '@technically/is-not-undefined':
         specifier: ^1.0.0
         version: 1.0.0
@@ -178,8 +178,8 @@ importers:
   packages/react:
     dependencies:
       '@prezly/theme-kit-intl':
-        specifier: ^10.9.0
-        version: 10.9.0
+        specifier: workspace:^
+        version: link:../intl
       react:
         specifier: ^18.x || ^19.x
         version: 19.0.0
