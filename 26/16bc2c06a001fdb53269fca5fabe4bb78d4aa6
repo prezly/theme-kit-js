@@ -1,0 +1,21 @@
+packages/nextjs/package.json
+  s_d8d630b584f9b3::t_3954b435227b1d 45,49
+packages/nextjs/tests/assert-telemetry.cjs
+  s_d8d630b584f9b3::t_3954b435227b1d 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "2616bc2c06a001fdb53269fca5fabe4bb78d4aa6",
+  "prompts": {},
+  "sessions": {
+    "s_d8d630b584f9b3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a086c6-152d-7242-ba5e-cd84c827e351",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Camil Blanaru <camil@edka.io>"
+    }
+  }
+}
