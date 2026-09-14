@@ -10,9 +10,19 @@ import { ApiError, Category, NewsroomGallery, SortOrder, Stories, Story } from '
 
 import type { Cache, UnixTimestampInSeconds } from './cache';
 import { RequestCoalescer, sharedContentRequests } from './RequestCoalescer';
+import {
+    CONTENT_OPERATIONS,
+    type ContentOperation,
+    type CacheLayer,
+    type Telemetry,
+    emit,
+    elapsedSeconds,
+    telemetryNow,
+} from './telemetry';
 
 export interface Options {
     formats?: Story.FormatVersion[];
+    telemetry?: Telemetry;
     cache?: {
         storage: Cache;
         latestVersion: UnixTimestampInSeconds;
@@ -100,7 +110,7 @@ export function createClient(
     prezly: PrezlyClient,
     newsroomUuid: Newsroom['uuid'],
     newsroomThemeUuid: NewsroomTheme['id'] | undefined,
-    { formats = [Story.FormatVersion.SLATEJS_V4], cache }: Options = {},
+    { formats = [Story.FormatVersion.SLATEJS_V4], cache, telemetry }: Options = {},
 ) {
     const client = {
         newsroom() {
@@ -377,7 +387,18 @@ export function createClient(
             cache.scope,
             namespace,
             UNCACHED_METHODS,
+            telemetry,
         );
+    } else if (telemetry) {
+        for (const methodName of Object.keys(client) as (keyof Client)[]) {
+            if (UNCACHED_METHODS.includes(methodName)) continue;
+            const invoke = client[methodName].bind(client);
+            const operation = contentOperation(methodName);
+            client[methodName] = ((...args: unknown[]) => {
+                emit(telemetry, { type: 'content_request', operation });
+                return observeOrigin(() => (invoke as Function)(...args), telemetry, operation);
+            }) as any;
+        }
     }
 
     return client;
@@ -392,6 +413,7 @@ function injectCache(
     scope: string | undefined,
     namespace: string,
     uncachedMethods: (keyof Client)[] = [],
+    telemetry?: Telemetry,
 ) {
     // An opaque SDK client does not expose its credentials/source. Callers without
     // an explicit scope keep request-local sharing; the Next.js adapter supplies one.
@@ -401,38 +423,104 @@ function injectCache(
     methodNames.forEach((methodName) => {
         if (uncachedMethods.includes(methodName)) return;
         const uncachedFn = client[methodName].bind(client);
+        const operation = contentOperation(methodName);
 
         client[methodName] = async (...args: Parameters<typeof uncachedFn>) => {
+            emit(telemetry, { type: 'content_request', operation });
             // Preserve existing argument serialization; query canonicalization is separate.
             const cacheKey = `${methodName}:${JSON.stringify(args)}`;
             const dedupeKey = JSON.stringify([scope, namespace, latestVersion, cacheKey]);
-            return requests.run(dedupeKey, async () => {
-                try {
-                    const stored = await cache.get<any>(cacheKey, latestVersion);
-                    const cached =
-                        scope === undefined
-                            ? stored
-                            : (stored as ScopedCacheValue | undefined)?.scope === scope
-                              ? stored.value
-                              : undefined;
-                    // Preserve existing negative-cache semantics until null results
-                    // have a deliberately short TTL and correct error classification.
-                    if (cached) return { value: cached };
-                } catch {
-                    // A cache failure must not prevent a bounded origin fallback.
-                }
+            return requests.run(
+                dedupeKey,
+                async () => {
+                    try {
+                        let layer: CacheLayer = 'custom';
+                        const stored = telemetry
+                            ? await cache.get<any>(cacheKey, latestVersion, (source) => {
+                                  layer =
+                                      source === 'memory' || source === 'redis' ? source : 'custom';
+                              })
+                            : await cache.get<any>(cacheKey, latestVersion);
+                        const cached =
+                            scope === undefined
+                                ? stored
+                                : (stored as ScopedCacheValue | undefined)?.scope === scope
+                                  ? stored.value
+                                  : undefined;
+                        // Preserve existing negative-cache semantics until null results
+                        // have a deliberately short TTL and correct error classification.
+                        if (cached) {
+                            emit(telemetry, { type: 'cache_hit', operation, layer });
+                            return { value: cached };
+                        }
+                    } catch {
+                        emit(telemetry, { type: 'cache_error', operation, action: 'read' });
+                        // A cache failure must not prevent a bounded origin fallback.
+                    }
 
-                const value = await (uncachedFn as Function)(...args);
-                const stored = scope === undefined ? value : { scope, value };
-                // Observe synchronous and asynchronous write failures without holding
-                // up a successful response or leaving an unhandled rejection.
-                const cacheWrite = Promise.resolve()
-                    .then(() => cache.set(cacheKey, stored, latestVersion))
-                    .catch(() => undefined);
-                return { value, cacheWrite };
-            });
+                    emit(telemetry, { type: 'cache_miss', operation });
+                    const value = await observeOrigin(
+                        () => (uncachedFn as Function)(...args),
+                        telemetry,
+                        operation,
+                    );
+                    const stored = scope === undefined ? value : { scope, value };
+                    // Observe synchronous and asynchronous write failures without holding
+                    // up a successful response or leaving an unhandled rejection.
+                    const cacheWrite = Promise.resolve()
+                        .then(() => cache.set(cacheKey, stored, latestVersion))
+                        .catch(() => {
+                            emit(telemetry, { type: 'cache_error', operation, action: 'write' });
+                        });
+                    return { value, cacheWrite };
+                },
+                telemetry
+                    ? (event) =>
+                          emit(telemetry, {
+                              type: event === 'coalesced' ? 'coalesced' : 'content_rejected',
+                              operation,
+                          })
+                    : undefined,
+            );
         };
     });
+}
+
+function contentOperation(name: string): ContentOperation {
+    return CONTENT_OPERATIONS.includes(name as ContentOperation)
+        ? (name as ContentOperation)
+        : 'other';
+}
+
+function observeOrigin(
+    invoke: () => any,
+    telemetry: Telemetry | undefined,
+    operation: ContentOperation,
+): any {
+    if (!telemetry) return invoke();
+    const start = telemetryNow();
+    const complete = (outcome: 'success' | 'error') =>
+        emit(telemetry, { type: 'origin', operation, outcome, seconds: elapsedSeconds(start) });
+    try {
+        const value = invoke();
+        if (value && typeof value.then === 'function') {
+            return Promise.resolve(value).then(
+                (result) => {
+                    complete('success');
+                    return result;
+                },
+                (error) => {
+                    complete('error');
+                    throw error;
+                },
+            );
+        }
+        complete('success');
+        return value;
+    } catch (error) {
+        complete('error');
+        throw error;
+    }
 }
 
 function mergeQueries(...queries: (Query | undefined)[]): Query | undefined {

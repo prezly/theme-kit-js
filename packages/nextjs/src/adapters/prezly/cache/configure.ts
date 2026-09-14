@@ -12,6 +12,7 @@ export interface Configuration {
     namespace?: string;
     /** Extra immutable identity for custom fetch implementations. Enables request sharing. */
     requestScope?: string;
+    telemetry?: ContentDelivery.Telemetry;
 }
 
 export function configure(config: Configuration) {
@@ -31,7 +32,11 @@ function configureStorage(config: Configuration): ContentDelivery.Cache | undefi
     const caches = [
         config.memory ? ContentDelivery.createSharedMemoryCache() : undefined,
         config.redis
-            ? createRedisCache({ ttl: DEFAULT_REDIS_CACHE_TTL, ...config.redis })
+            ? createRedisCache({
+                  ttl: DEFAULT_REDIS_CACHE_TTL,
+                  ...config.redis,
+                  telemetry: config.telemetry,
+              })
             : undefined,
     ].filter(isNotUndefined);
 

@@ -11,6 +11,9 @@ interface Task {
     reject: (error: unknown) => void;
     signal?: AbortSignal | null;
     clearQueueWait: () => void;
+    telemetry?: ContentDelivery.Telemetry;
+    route: ContentDelivery.UpstreamRoute;
+    queuedAt?: number;
 }
 
 function abortReason(signal: AbortSignal): Error {
@@ -41,8 +44,21 @@ export class FetchScheduler {
         }
     }
 
-    run<T>(invoke: (signal: AbortSignal) => Promise<T>, signal?: AbortSignal | null): Promise<T> {
-        if (signal?.aborted) return Promise.reject(abortReason(signal));
+    run<T>(
+        invoke: (signal: AbortSignal) => Promise<T>,
+        signal?: AbortSignal | null,
+        telemetry?: ContentDelivery.Telemetry,
+        route: ContentDelivery.UpstreamRoute = 'other',
+    ): Promise<T> {
+        if (signal?.aborted) {
+            ContentDelivery.emit(telemetry, {
+                type: 'fetch_queue',
+                route,
+                outcome: 'aborted',
+                seconds: 0,
+            });
+            return Promise.reject(abortReason(signal));
+        }
         return new Promise<T>((resolve, reject) => {
             const task: Task = {
                 invoke,
@@ -50,25 +66,44 @@ export class FetchScheduler {
                 reject,
                 signal,
                 clearQueueWait: () => {},
+                telemetry,
+                route,
             };
             if (this.active < this.limits.concurrency) {
                 this.start(task);
                 return;
             }
             if (this.queue.length >= this.limits.queueLimit) {
+                ContentDelivery.emit(telemetry, {
+                    type: 'fetch_queue',
+                    route,
+                    outcome: 'full',
+                    seconds: 0,
+                });
                 reject(new Error('Content request queue is full.'));
                 return;
             }
-            const cancel = (error: Error) => {
+            task.queuedAt = telemetry ? ContentDelivery.telemetryNow() : undefined;
+            ContentDelivery.emit(telemetry, { type: 'fetch_queue', route, outcome: 'queued' });
+            const cancel = (error: Error, outcome: 'aborted' | 'wait_timeout') => {
                 const index = this.queue.indexOf(task);
                 if (index < 0) return;
                 this.queue.splice(index, 1);
                 task.clearQueueWait();
+                ContentDelivery.emit(telemetry, {
+                    type: 'fetch_queue',
+                    route,
+                    outcome,
+                    seconds:
+                        task.queuedAt === undefined
+                            ? 0
+                            : ContentDelivery.elapsedSeconds(task.queuedAt),
+                });
                 reject(error);
             };
-            const onAbort = () => cancel(abortReason(signal!));
+            const onAbort = () => cancel(abortReason(signal!), 'aborted');
             const timer = setTimeout(
-                () => cancel(new Error('Content request queue wait timed out.')),
+                () => cancel(new Error('Content request queue wait timed out.'), 'wait_timeout'),
                 this.limits.queueTimeout,
             );
             task.clearQueueWait = () => {
@@ -82,16 +117,25 @@ export class FetchScheduler {
 
     private start(task: Task): void {
         task.clearQueueWait();
+        ContentDelivery.emit(task.telemetry, {
+            type: 'fetch_queue',
+            route: task.route,
+            outcome: 'accepted',
+            seconds:
+                task.queuedAt === undefined ? 0 : ContentDelivery.elapsedSeconds(task.queuedAt),
+        });
         this.active += 1;
         const controller = new AbortController();
         const rejectAbort = () => task.reject(abortReason(controller.signal));
         const forwardAbort = () => controller.abort(task.signal?.reason);
         controller.signal.addEventListener('abort', rejectAbort, { once: true });
         task.signal?.addEventListener('abort', forwardAbort, { once: true });
-        const timer = setTimeout(
-            () => controller.abort(new Error('Content request timed out.')),
-            this.limits.requestTimeout,
-        );
+        const timer = setTimeout(() => {
+            if (!controller.signal.aborted) {
+                ContentDelivery.emit(task.telemetry, { type: 'fetch_timeout', route: task.route });
+                controller.abort(new Error('Content request timed out.'));
+            }
+        }, this.limits.requestTimeout);
 
         void Promise.resolve()
             .then(() => {
@@ -122,19 +166,27 @@ const sharedContentFetches = (registry[key] ??= new FetchScheduler());
 export function createBoundedFetch(
     fetchImpl: typeof fetch,
     scheduler = sharedContentFetches,
+    telemetry?: ContentDelivery.Telemetry,
 ): typeof fetch {
     return (input, init) => {
         const signal = init?.signal ?? (input instanceof Request ? input.signal : undefined);
-        return scheduler.run(async (requestSignal) => {
-            const response = await fetchImpl(input, { ...init, signal: requestSignal });
-            // Keep the deadline and slot through body consumption, not just headers.
-            // Only the internal content SDK uses this wrapper; the raw SDK is unchanged.
-            const body = response.body === null ? null : await response.arrayBuffer();
-            return new Response(body, {
-                status: response.status,
-                statusText: response.statusText,
-                headers: response.headers,
-            });
-        }, signal);
+        return scheduler.run(
+            async (requestSignal) => {
+                const response = await fetchImpl(input, { ...init, signal: requestSignal });
+                // Keep the deadline and slot through body consumption, not just headers.
+                // Only the internal content SDK uses this wrapper; the raw SDK is unchanged.
+                const body = response.body === null ? null : await response.arrayBuffer();
+                return new Response(body, {
+                    status: response.status,
+                    statusText: response.statusText,
+                    headers: response.headers,
+                });
+            },
+            signal,
+            telemetry,
+            telemetry ? upstreamRoute(input) : 'other',
+        );
     };
 }
+import { ContentDelivery } from '@prezly/theme-kit-core';
+import { upstreamRoute } from './telemetry';

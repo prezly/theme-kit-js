@@ -15,10 +15,18 @@ export class RequestCoalescer {
         }
     }
 
-    run<T>(key: string, invoke: () => Promise<Result<T>>): Promise<T> {
+    run<T>(
+        key: string,
+        invoke: () => Promise<Result<T>>,
+        observer?: (event: 'coalesced' | 'rejected') => unknown,
+    ): Promise<T> {
         const existing = this.pending.get(key);
-        if (existing) return existing as Promise<T>;
+        if (existing) {
+            notify(observer, 'coalesced');
+            return existing as Promise<T>;
+        }
         if (this.pending.size >= this.limit) {
+            notify(observer, 'rejected');
             return Promise.reject(new Error('Too many pending content requests.'));
         }
 
@@ -61,3 +69,4 @@ export class RequestCoalescer {
 const key = Symbol.for('@prezly/theme-kit-core/content-requests/v1');
 const registry = globalThis as unknown as Record<symbol, RequestCoalescer | undefined>;
 export const sharedContentRequests = (registry[key] ??= new RequestCoalescer());
+import { notify } from './telemetry';

@@ -1,4 +1,5 @@
 import type { Cache, UnixTimestampInSeconds } from './type';
+import { notify } from '../telemetry';
 
 export const RECORDS_LIMIT = 10000;
 const GC_PROBABILITY = 1 / 100;
@@ -15,7 +16,7 @@ type Entry = {
 
 export function createSharedMemoryCache(prefix = ''): Cache {
     return {
-        get(key, latestVersion) {
+        get(key, latestVersion, onSource) {
             const entry = CACHE.get(`${prefix}${key}`);
             if (!entry) {
                 return undefined;
@@ -30,6 +31,7 @@ export function createSharedMemoryCache(prefix = ''): Cache {
 
             CACHE.set(`${prefix}${key}`, { value, version, accessed: Date.now() });
 
+            if (onSource) notify(onSource, 'memory');
             return value;
         },
 
