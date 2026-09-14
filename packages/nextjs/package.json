@@ -42,11 +42,11 @@
         }
     },
     "engines": {
-        "node": ">= 16.x",
+        "node": ">= 18.18.0",
         "npm": ">= 8.x"
     },
     "devEngines": {
-        "node": ">= 16.x",
+        "node": ">= 18.18.0",
         "npm": ">= 8.x"
     },
     "repository": {
@@ -65,6 +65,7 @@
     },
     "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/nextjs#readme",
     "scripts": {
+        "prepack": "pnpm test:build",
         "prebuild": "rimraf --glob build/* *.tsbuildinfo",
         "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs",
         "build:types": "tsc --project .",
@@ -80,7 +81,7 @@
         "test:unit": "jest",
         "test:redis": "node tests/test-redis-resilience.cjs",
         "test:build": "pnpm test:build:cjs && pnpm test:build:esm && pnpm test:build:types",
-        "test:build:types": "tsc --esModuleInterop --noEmit build/index.d.ts",
+        "test:build:types": "tsc --esModuleInterop --noEmit --target es2020 --moduleResolution node tests/test-build-types.ts",
         "test:build:esm": "node tests/test-build.mjs",
         "test:build:cjs": "node tests/test-build.cjs"
     },
