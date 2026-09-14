@@ -98,9 +98,9 @@
     },
     "dependencies": {
         "@noble/hashes": "1.8.0",
-        "@prezly/theme-kit-core": "^10.9.0",
-        "@prezly/theme-kit-intl": "^10.9.0",
-        "@prezly/theme-kit-react": "^10.9.0",
+        "@prezly/theme-kit-core": "workspace:^",
+        "@prezly/theme-kit-intl": "workspace:^",
+        "@prezly/theme-kit-react": "workspace:^",
         "@technically/is-not-undefined": "^1.0.0",
         "@technically/omit-undefined": "^1.0.4",
         "json-stable-stringify": "^1.2.1",
