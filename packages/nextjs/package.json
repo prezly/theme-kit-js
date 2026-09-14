@@ -65,6 +65,7 @@
     },
     "homepage": "https://github.com/prezly/theme-kit-js/tree/main/packages/nextjs#readme",
     "scripts": {
+        "prepack": "pnpm test:build",
         "prebuild": "rimraf --glob build/* *.tsbuildinfo",
         "build": "pnpm build:types && pnpm build:esm && pnpm build:cjs",
         "build:types": "tsc --project .",

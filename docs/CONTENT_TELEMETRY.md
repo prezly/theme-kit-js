@@ -50,6 +50,8 @@ The collector initializes aggregate families with zero-valued `other` series, th
 
 ## Serving and rollout
 
+Version 10.9.2's registry tarballs were verified to omit these APIs despite the Git tag containing the source. Use a corrected release and verify the installed artifact before enabling telemetry. The core and Next.js packages run their compiled CJS/ESM/type checks in `prepack`, including an actual adapter-to-collector fixture. npm/pnpm packing and Lerna publishing fail if those checks fail; do not bypass lifecycle scripts. Run `pnpm release:prepare` to rebuild before publishing a new patch (an existing npm version cannot be replaced).
+
 Publish the Theme Kit release first, then adopt it in Bea and attach the observer. For Kubernetes, expose the Node collector on a dedicated internal metrics port/Service with a selected ServiceMonitor, not a public newsroom API route. Exporter failure must not affect page readiness or request handling. The collector itself does not start or expose that endpoint.
 
 Next.js middleware runs in a separate Edge realm. A Node exporter cannot read its counters merely because both use this library. Edge metrics need their own verified collection path; do not claim Node metrics cover middleware. Keep package versions aligned and verify the actual runtime/build and enabled adapter coverage before comparing runs. Uninstrumented clients/older code are not inferred from observed counts.

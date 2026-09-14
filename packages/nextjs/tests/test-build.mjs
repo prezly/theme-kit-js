@@ -9,6 +9,10 @@
 
 import assert from 'node:assert';
 
-import { RoutingAdapter } from '@prezly/theme-kit-nextjs';
+import { ContentDelivery, RoutingAdapter } from '@prezly/theme-kit-nextjs';
+import { PrezlyAdapter } from '@prezly/theme-kit-nextjs/server';
+import assertTelemetry from './assert-telemetry.cjs';
 
 assert(typeof RoutingAdapter.connect === 'function');
+
+await assertTelemetry(ContentDelivery, PrezlyAdapter);

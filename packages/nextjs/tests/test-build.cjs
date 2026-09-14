@@ -12,3 +12,11 @@ assert(typeof RoutingAdapter.connect === 'function');
 const { IntlMiddleware } = require('../build/middleware/index.cjs');
 
 assert(typeof IntlMiddleware.getLocaleCodeFromHeader === 'function');
+
+require('./assert-telemetry.cjs')(
+    require('@prezly/theme-kit-nextjs').ContentDelivery,
+    require('@prezly/theme-kit-nextjs/server').PrezlyAdapter,
+).catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+});
