@@ -418,7 +418,25 @@ export function createClient(
     return client;
 }
 
-type ScopedCacheValue = { scope: string; value: any };
+type ScopedCacheValue = {
+    scope: string;
+    value: any;
+    /**
+     * Present only on not-found (`null`) results. ContentDelivery enforces this
+     * deadline itself, so a cache layer that ignores the `ttl` hint, or an entry
+     * written before negative caching existed, can never serve a stale null.
+     */
+    expires?: UnixTimestampInSeconds;
+};
+
+function readScopedValue(stored: ScopedCacheValue | undefined, scope: string): unknown {
+    if (stored?.scope !== scope) return undefined;
+    if (stored.value === null) {
+        const fresh = typeof stored.expires === 'number' && stored.expires > Date.now() / 1000;
+        return fresh ? null : undefined;
+    }
+    return stored.value;
+}
 
 function injectCache(
     client: Client,
@@ -430,8 +448,10 @@ function injectCache(
     telemetry?: Telemetry,
     negativeTtl: number = DEFAULT_NEGATIVE_TTL,
 ) {
-    if (!Number.isFinite(negativeTtl) || negativeTtl <= 0) {
-        throw new RangeError('The negative cache TTL must be a positive number of seconds.');
+    if (!Number.isInteger(negativeTtl) || negativeTtl < 1) {
+        throw new RangeError(
+            'The negative cache TTL must be a positive integer number of seconds.',
+        );
     }
     // An opaque SDK client does not expose its credentials/source. Callers without
     // an explicit scope keep request-local sharing; the Next.js adapter supplies one.
@@ -459,14 +479,16 @@ function injectCache(
                                       source === 'memory' || source === 'redis' ? source : 'custom';
                               })
                             : await cache.get<any>(cacheKey, latestVersion);
+                        // Only an absent entry is a miss: a stored `false` or `0` is a valid
+                        // result. A stored `null` (not found) is a hit only inside its own
+                        // deadline, which lives in the scoped envelope. Unscoped clients
+                        // cannot carry that deadline and keep treating null as a miss.
                         const cached =
                             scope === undefined
-                                ? stored
-                                : (stored as ScopedCacheValue | undefined)?.scope === scope
-                                  ? stored.value
-                                  : undefined;
-                        // Only an absent entry is a miss. A stored `null` (not found),
-                        // `false` or `0` is a valid result and must not reach the origin.
+                                ? stored === null
+                                    ? undefined
+                                    : stored
+                                : readScopedValue(stored, scope);
                         if (cached !== undefined) {
                             emit(telemetry, { type: 'cache_hit', operation, layer });
                             return { value: cached };
@@ -482,15 +504,26 @@ function injectCache(
                         telemetry,
                         operation,
                     );
-                    const stored = scope === undefined ? value : { scope, value };
                     // `null` means the API answered 403/404/410 for this lookup. Keep it
-                    // only briefly. Errors (401, 429, 5xx, transport) throw above and are
+                    // only briefly, with the deadline in the envelope and a matching
+                    // layer hint. Errors (401, 429, 5xx, transport) throw above and are
                     // never stored. `undefined` results are not stored either.
-                    const options = value === null ? { ttl: negativeTtl } : undefined;
+                    const negative = value === null && scope !== undefined;
+                    const stored: unknown =
+                        scope === undefined
+                            ? value
+                            : negative
+                              ? {
+                                    scope,
+                                    value,
+                                    expires: Math.floor(Date.now() / 1000) + negativeTtl,
+                                }
+                              : { scope, value };
+                    const options = negative ? { ttl: negativeTtl } : undefined;
                     // Observe synchronous and asynchronous write failures without holding
                     // up a successful response or leaving an unhandled rejection.
                     const cacheWrite =
-                        value === undefined
+                        value === undefined || (value === null && scope === undefined)
                             ? undefined
                             : Promise.resolve()
                                   .then(() => cache.set(cacheKey, stored, latestVersion, options))

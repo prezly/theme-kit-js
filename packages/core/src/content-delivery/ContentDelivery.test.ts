@@ -220,7 +220,70 @@ describe('ContentDelivery negative caching', () => {
         expect(sdk.getBySlug).toHaveBeenCalledTimes(1);
         const [entry] = storage.entries.values();
         expect(entry.ttl).toBe(DEFAULT_NEGATIVE_TTL);
-        expect(entry.value).toEqual({ scope: cache.scope, value: null });
+        expect(entry.value).toEqual({
+            scope: cache.scope,
+            value: null,
+            expires: expect.any(Number),
+        });
+        expect(entry.value.expires).toBeGreaterThan(Date.now() / 1000);
+        expect(entry.value.expires).toBeLessThanOrEqual(Date.now() / 1000 + DEFAULT_NEGATIVE_TTL);
+    });
+
+    it('treats a null written by a cache that ignores the ttl hint as a miss once its deadline passes', async () => {
+        jest.useFakeTimers();
+        try {
+            const storage = memory();
+            const sdk = storyApi([404, 'story']);
+            const cache = {
+                storage: storage.storage,
+                latestVersion: 1,
+                scope: identity(),
+                negativeTtl: 30,
+            };
+            expect(
+                await createClient(sdk.client, 'room', undefined, { cache }).story({ slug: 's' }),
+            ).toBeNull();
+            await jest.advanceTimersByTimeAsync(0);
+            jest.advanceTimersByTime(29_000);
+            expect(
+                await createClient(sdk.client, 'room', undefined, { cache }).story({ slug: 's' }),
+            ).toBeNull();
+            await jest.advanceTimersByTimeAsync(0);
+            expect(sdk.getBySlug).toHaveBeenCalledTimes(1);
+            jest.advanceTimersByTime(2_000);
+            expect(
+                await createClient(sdk.client, 'room', undefined, { cache }).story({ slug: 's' }),
+            ).toMatchObject({ slug: 's' });
+            expect(sdk.getBySlug).toHaveBeenCalledTimes(2);
+        } finally {
+            jest.useRealTimers();
+        }
+    });
+
+    it('treats a legacy null envelope without a deadline as a miss and replaces it', async () => {
+        const storage = memory();
+        const sdk = storyApi(['story']);
+        const scope = identity();
+        const cache = { storage: storage.storage, latestVersion: 1, scope };
+        const client = createClient(sdk.client, 'room', undefined, { cache });
+        await client.story({ slug: 'legacy' });
+        await flush();
+        const [key] = storage.entries.keys();
+        storage.entries.set(key, { value: { scope, value: null }, version: 1 });
+        expect(await client.story({ slug: 'legacy' })).toMatchObject({ slug: 'legacy' });
+        expect(sdk.getBySlug).toHaveBeenCalledTimes(2);
+    });
+
+    it('does not store null for clients without a scope', async () => {
+        const storage = memory();
+        const sdk = storyApi([404, 404]);
+        const cache = { storage: storage.storage, latestVersion: 1 };
+        const client = createClient(sdk.client, 'room', undefined, { cache });
+        expect(await client.story({ slug: 's' })).toBeNull();
+        await flush();
+        expect(storage.set).not.toHaveBeenCalled();
+        expect(await client.story({ slug: 's' })).toBeNull();
+        expect(sdk.getBySlug).toHaveBeenCalledTimes(2);
     });
 
     it.each([403, 410])(

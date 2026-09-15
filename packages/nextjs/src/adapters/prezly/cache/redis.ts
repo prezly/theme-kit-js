@@ -109,10 +109,11 @@ export function createRedisCache({
                     ContentDelivery.emit(telemetry, { type: 'redis_unavailable', command: 'set' });
                     return;
                 }
+                // SET EX takes whole seconds; round a fractional hint up, never down.
                 const entry: Entry =
                     options?.ttl === undefined
                         ? { value, version }
-                        : { value, version, ttl: options.ttl };
+                        : { value, version, ttl: Math.max(1, Math.ceil(options.ttl)) };
                 await command(
                     () =>
                         connection.set(`${namespacePrefix}${key}`, JSON.stringify(entry), {

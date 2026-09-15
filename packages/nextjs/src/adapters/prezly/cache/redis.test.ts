@@ -75,6 +75,16 @@ it('stores a short-lived entry with its own expiry and never renews it', async (
     expect(await cache.get('missing', 5)).toBeUndefined();
 });
 
+it('rounds a fractional ttl hint up to whole seconds for SET EX', async () => {
+    const { client, cache } = connection();
+    await cache.set('short', null, 1, { ttl: 0.5 });
+    expect(client.set).toHaveBeenLastCalledWith(
+        'test:short',
+        JSON.stringify({ value: null, version: 1, ttl: 1 }),
+        { EX: 1 },
+    );
+});
+
 it.each([false, 0, ''])('returns a stored %p as a hit', async (value) => {
     const { client, cache } = connection();
     client.get.mockResolvedValueOnce(JSON.stringify({ value, version: 2 }));

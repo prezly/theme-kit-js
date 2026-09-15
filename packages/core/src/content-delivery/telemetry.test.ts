@@ -39,7 +39,9 @@ it('counts concurrent callers once each, one origin, and a later valid memory hi
 
 it.each([
     ['a mismatched scope', { scope: 'another-secret', value: { name: 'room' } }, false],
-    ['a stored null', { scope: 'scope', value: null }, true],
+    ['a legacy null without a deadline', { scope: 'scope', value: null }, false],
+    ['an expired null', { scope: 'scope', value: null, expires: 1 }, false],
+    ['a fresh null', { scope: 'scope', value: null, expires: Date.now() / 1000 + 60 }, true],
 ])('reports %s as a cache hit: %p', async (_label, value, hit) => {
     const events: TelemetryEvent[] = [];
     const storage: Cache = {
