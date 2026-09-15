@@ -12,6 +12,8 @@ export interface Configuration {
     namespace?: string;
     /** Extra immutable identity for custom fetch implementations. Enables request sharing. */
     requestScope?: string;
+    /** Retention in seconds for not-found results. See `ContentDelivery.DEFAULT_NEGATIVE_TTL`. */
+    negativeTtl?: number;
     telemetry?: ContentDelivery.Telemetry;
 }
 
@@ -22,6 +24,7 @@ export function configure(config: Configuration) {
         return {
             storage: config.namespace ? storage.namespace(config.namespace) : storage,
             latestVersion: Resolvable.resolve(config.latestVersion),
+            negativeTtl: config.negativeTtl,
         };
     }
 

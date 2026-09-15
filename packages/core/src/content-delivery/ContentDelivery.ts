@@ -28,8 +28,21 @@ export interface Options {
         latestVersion: UnixTimestampInSeconds;
         /** Stable source/authorization identity. Enables cross-client request sharing. */
         scope?: string;
+        /**
+         * Retention in seconds for `null` results, i.e. content the API reported as
+         * not found, gone or forbidden. Defaults to `DEFAULT_NEGATIVE_TTL`.
+         * A cache version change still invalidates them immediately.
+         */
+        negativeTtl?: number;
     };
 }
+
+/**
+ * Not-found results are cached only briefly: long enough to absorb repeated
+ * requests for the same missing slug, short enough that a story published
+ * without a cache version change appears within a minute.
+ */
+export const DEFAULT_NEGATIVE_TTL = 60;
 
 export namespace stories {
     export interface SearchParams {
@@ -388,6 +401,7 @@ export function createClient(
             namespace,
             UNCACHED_METHODS,
             telemetry,
+            cache.negativeTtl ?? DEFAULT_NEGATIVE_TTL,
         );
     } else if (telemetry) {
         for (const methodName of Object.keys(client) as (keyof Client)[]) {
@@ -414,7 +428,11 @@ function injectCache(
     namespace: string,
     uncachedMethods: (keyof Client)[] = [],
     telemetry?: Telemetry,
+    negativeTtl: number = DEFAULT_NEGATIVE_TTL,
 ) {
+    if (!Number.isFinite(negativeTtl) || negativeTtl <= 0) {
+        throw new RangeError('The negative cache TTL must be a positive number of seconds.');
+    }
     // An opaque SDK client does not expose its credentials/source. Callers without
     // an explicit scope keep request-local sharing; the Next.js adapter supplies one.
     const requests = scope === undefined ? new RequestCoalescer() : sharedContentRequests;
@@ -447,9 +465,9 @@ function injectCache(
                                 : (stored as ScopedCacheValue | undefined)?.scope === scope
                                   ? stored.value
                                   : undefined;
-                        // Preserve existing negative-cache semantics until null results
-                        // have a deliberately short TTL and correct error classification.
-                        if (cached) {
+                        // Only an absent entry is a miss. A stored `null` (not found),
+                        // `false` or `0` is a valid result and must not reach the origin.
+                        if (cached !== undefined) {
                             emit(telemetry, { type: 'cache_hit', operation, layer });
                             return { value: cached };
                         }
@@ -465,13 +483,24 @@ function injectCache(
                         operation,
                     );
                     const stored = scope === undefined ? value : { scope, value };
+                    // `null` means the API answered 403/404/410 for this lookup. Keep it
+                    // only briefly. Errors (401, 429, 5xx, transport) throw above and are
+                    // never stored. `undefined` results are not stored either.
+                    const options = value === null ? { ttl: negativeTtl } : undefined;
                     // Observe synchronous and asynchronous write failures without holding
                     // up a successful response or leaving an unhandled rejection.
-                    const cacheWrite = Promise.resolve()
-                        .then(() => cache.set(cacheKey, stored, latestVersion))
-                        .catch(() => {
-                            emit(telemetry, { type: 'cache_error', operation, action: 'write' });
-                        });
+                    const cacheWrite =
+                        value === undefined
+                            ? undefined
+                            : Promise.resolve()
+                                  .then(() => cache.set(cacheKey, stored, latestVersion, options))
+                                  .catch(() => {
+                                      emit(telemetry, {
+                                          type: 'cache_error',
+                                          operation,
+                                          action: 'write',
+                                      });
+                                  });
                     return { value, cacheWrite };
                 },
                 telemetry

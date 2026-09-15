@@ -1,22 +1,22 @@
 import type { PrezlyClient } from '@prezly/sdk';
-import { Story } from '@prezly/sdk';
+import { ApiError, Story } from '@prezly/sdk';
 
-import type { Cache } from './cache';
-import { createClient } from './ContentDelivery';
+import type { Cache, SetOptions } from './cache';
+import { createClient, DEFAULT_NEGATIVE_TTL } from './ContentDelivery';
 
 function memory() {
-    const entries = new Map<string, { version: number; value: any }>();
+    const entries = new Map<string, { version: number; value: any; ttl?: number }>();
     const get = jest.fn((key: string, version: number) => {
         const entry = entries.get(key);
         return entry && entry.version >= version ? entry.value : undefined;
     });
-    const set = jest.fn(async (key: string, value: any, version: number) => {
-        entries.set(key, { value, version });
+    const set = jest.fn(async (key: string, value: any, version: number, options?: SetOptions) => {
+        entries.set(key, { value, version, ttl: options?.ttl });
     });
     function storage(prefix = ''): Cache {
         return {
             get: (key, version) => get(prefix + key, version),
-            set: (key, value, version) => set(prefix + key, value, version),
+            set: (key, value, version, options) => set(prefix + key, value, version, options),
             namespace: (name) => storage(`${prefix}${name}:`),
         };
     }
@@ -186,4 +186,166 @@ describe('ContentDelivery request sharing', () => {
             jest.useRealTimers();
         }
     });
+});
+
+function apiError(status: number) {
+    return new ApiError({
+        payload: { code: status, message: 'x' } as any,
+        status,
+        statusText: 'x',
+        headers: {},
+    });
+}
+function storyApi(outcomes: (number | 'story')[]) {
+    const queue = [...outcomes];
+    const getBySlug = jest.fn(async (slug: string) => {
+        const outcome = queue.shift() ?? 'story';
+        if (outcome === 'story') return { slug, uuid: `uuid-${slug}` };
+        throw apiError(outcome);
+    });
+    return { getBySlug, client: { stories: { getBySlug } } as unknown as PrezlyClient };
+}
+
+describe('ContentDelivery negative caching', () => {
+    it('reuses a cached null story across clients and stores it with the negative TTL', async () => {
+        const storage = memory();
+        const sdk = storyApi([404]);
+        const cache = { storage: storage.storage, latestVersion: 1, scope: identity() };
+        const first = createClient(sdk.client, 'room', undefined, { cache });
+        expect(await first.story({ slug: 'missing' })).toBeNull();
+        await flush();
+        expect(
+            await createClient(sdk.client, 'room', undefined, { cache }).story({ slug: 'missing' }),
+        ).toBeNull();
+        expect(sdk.getBySlug).toHaveBeenCalledTimes(1);
+        const [entry] = storage.entries.values();
+        expect(entry.ttl).toBe(DEFAULT_NEGATIVE_TTL);
+        expect(entry.value).toEqual({ scope: cache.scope, value: null });
+    });
+
+    it.each([403, 410])(
+        'keeps a %s result only for the configured negative TTL',
+        async (status) => {
+            const storage = memory();
+            const sdk = storyApi([status]);
+            const cache = {
+                storage: storage.storage,
+                latestVersion: 1,
+                scope: identity(),
+                negativeTtl: 5,
+            };
+            expect(
+                await createClient(sdk.client, 'room', undefined, { cache }).story({ slug: 's' }),
+            ).toBeNull();
+            await flush();
+            expect([...storage.entries.values()][0].ttl).toBe(5);
+        },
+    );
+
+    it('stores found stories without a short TTL', async () => {
+        const storage = memory();
+        const sdk = storyApi(['story']);
+        const cache = { storage: storage.storage, latestVersion: 1, scope: identity() };
+        expect(
+            await createClient(sdk.client, 'room', undefined, { cache }).story({ slug: 's' }),
+        ).toMatchObject({ slug: 's' });
+        await flush();
+        expect([...storage.entries.values()][0].ttl).toBeUndefined();
+    });
+
+    it('serves published content after a cache version change', async () => {
+        const storage = memory();
+        const sdk = storyApi([404, 'story']);
+        const cache = { storage: storage.storage, latestVersion: 1, scope: identity() };
+        expect(
+            await createClient(sdk.client, 'room', undefined, { cache }).story({ slug: 's' }),
+        ).toBeNull();
+        await flush();
+        expect(
+            await createClient(sdk.client, 'room', undefined, {
+                cache: { ...cache, latestVersion: 2 },
+            }).story({ slug: 's' }),
+        ).toMatchObject({ slug: 's' });
+        expect(sdk.getBySlug).toHaveBeenCalledTimes(2);
+    });
+
+    it.each([401, 429, 500, 503])(
+        'does not store a %s failure and retries the next lookup',
+        async (status) => {
+            const storage = memory();
+            const sdk = storyApi([status, 'story']);
+            const cache = { storage: storage.storage, latestVersion: 1, scope: identity() };
+            const client = createClient(sdk.client, 'room', undefined, { cache });
+            await expect(client.story({ slug: 's' })).rejects.toMatchObject({ status });
+            await flush();
+            expect(storage.set).not.toHaveBeenCalled();
+            expect(await client.story({ slug: 's' })).toMatchObject({ slug: 's' });
+        },
+    );
+
+    it('does not store a transport failure', async () => {
+        const storage = memory();
+        const getBySlug = jest.fn(async () => {
+            throw new TypeError('fetch failed');
+        });
+        const client = { stories: { getBySlug } } as unknown as PrezlyClient;
+        const cache = { storage: storage.storage, latestVersion: 1, scope: identity() };
+        await expect(
+            createClient(client, 'room', undefined, { cache }).story({ slug: 's' }),
+        ).rejects.toThrow('fetch failed');
+        await flush();
+        expect(storage.set).not.toHaveBeenCalled();
+    });
+
+    it('isolates not-found results per newsroom', async () => {
+        const storage = memory();
+        const sdk = storyApi([404, 'story']);
+        const cache = { storage: storage.storage, latestVersion: 1, scope: identity() };
+        expect(
+            await createClient(sdk.client, 'room-a', undefined, { cache }).story({ slug: 's' }),
+        ).toBeNull();
+        await flush();
+        expect(
+            await createClient(sdk.client, 'room-b', undefined, { cache }).story({ slug: 's' }),
+        ).toMatchObject({ slug: 's' });
+        expect(sdk.getBySlug).toHaveBeenCalledTimes(2);
+        expect(storage.entries.size).toBe(2);
+    });
+
+    it.each([false, 0, ''])('treats a cached %p as a hit', async (value) => {
+        const storage = memory();
+        const get = jest.fn(async () => value);
+        const client = { newsrooms: { get } } as unknown as PrezlyClient;
+        const cache = { storage: storage.storage, latestVersion: 1, scope: identity() };
+        expect(await createClient(client, 'room', undefined, { cache }).newsroom()).toBe(value);
+        await flush();
+        expect(await createClient(client, 'room', undefined, { cache }).newsroom()).toBe(value);
+        expect(get).toHaveBeenCalledTimes(1);
+        expect([...storage.entries.values()][0].ttl).toBeUndefined();
+    });
+
+    it('does not store undefined results', async () => {
+        const storage = memory();
+        const cache = { storage: storage.storage, latestVersion: 1, scope: identity() };
+        expect(
+            await createClient(api().client, 'room', undefined, { cache }).theme(),
+        ).toBeUndefined();
+        await flush();
+        expect(storage.set).not.toHaveBeenCalled();
+    });
+
+    it.each([0, -1, Number.NaN, Number.POSITIVE_INFINITY])(
+        'rejects a negative TTL of %p',
+        (negativeTtl) => {
+            const cache = {
+                storage: memory().storage,
+                latestVersion: 1,
+                scope: identity(),
+                negativeTtl,
+            };
+            expect(() => createClient(api().client, 'room', undefined, { cache })).toThrow(
+                RangeError,
+            );
+        },
+    );
 });

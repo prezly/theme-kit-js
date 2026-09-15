@@ -413,8 +413,24 @@ new retained key namespaces for every token or invalidation version. This create
 a one-time cold cache on upgrade. Roll out gradually and warm representative
 newsrooms before an expected traffic spike. Existing unscoped entries remain
 subject to their configured expiration; do not flush a Redis instance that also
-contains routing data. TTL, negative-cache classification and query
-canonicalization are separate policies and are unchanged here.
+contains routing data. TTL and query canonicalization are separate policies and
+are unchanged here.
+
+### Not-found results
+
+`contentDelivery.story()` and `contentDelivery.gallery()` resolve `null` when the
+API answers 403, 404 or 410. A `null` result is a cache hit like any other value:
+only an absent entry falls back to the API, so `false` and `0` are also valid
+cached values. Not-found entries are kept for `negativeTtl` seconds (default 60,
+`ContentDelivery.DEFAULT_NEGATIVE_TTL`) in memory and in Redis, and Redis does
+not renew that lifetime on read. A cache version change still invalidates them
+at once, so publishing a story makes it visible immediately; a story that becomes
+available without a version change appears within the TTL. Errors such as 401,
+429, 5xx and transport failures throw and are never stored. `undefined` results
+are not stored either.
+
+Set `cache.negativeTtl` in `PrezlyAdapter.connect` to change the retention. It
+must be a positive number of seconds.
 
 ### Verification and release
 

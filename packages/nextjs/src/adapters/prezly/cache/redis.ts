@@ -4,7 +4,12 @@ import { createClient, type RedisClientOptions } from 'redis';
 
 type Seconds = number;
 type UnixTimestampInSeconds = number;
-type Entry = { version: UnixTimestampInSeconds; value: any };
+type Entry = {
+    version: UnixTimestampInSeconds;
+    value: any;
+    /** Present for entries stored with their own short retention (e.g. not-found results). */
+    ttl?: Seconds;
+};
 type Options = RedisClientOptions & {
     ttl?: Seconds;
     prefix?: string;
@@ -86,7 +91,9 @@ export function createRedisCache({
                 if (!cached) return undefined;
                 const entry = JSON.parse(cached) as Entry;
                 if (entry.version < latestVersion) return undefined;
-                if (ttl) {
+                // Sliding expiry applies to regular content only. An entry with its
+                // own short retention must not be renewed to the default lifetime.
+                if (ttl && entry.ttl === undefined) {
                     void command(
                         () => connection.expire(`${namespacePrefix}${key}`, ttl),
                         telemetry,
@@ -97,16 +104,19 @@ export function createRedisCache({
                 return entry.value;
             },
 
-            async set(key, value, version) {
+            async set(key, value, version, options) {
                 if (!connection.isReady) {
                     ContentDelivery.emit(telemetry, { type: 'redis_unavailable', command: 'set' });
                     return;
                 }
-                const entry: Entry = { value, version };
+                const entry: Entry =
+                    options?.ttl === undefined
+                        ? { value, version }
+                        : { value, version, ttl: options.ttl };
                 await command(
                     () =>
                         connection.set(`${namespacePrefix}${key}`, JSON.stringify(entry), {
-                            EX: ttl,
+                            EX: entry.ttl ?? ttl,
                         }),
                     telemetry,
                     'set',
