@@ -196,14 +196,14 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(encoding@0.1.13)(next@15.1.5(@babel/core@7.29.6(supports-color@8.1.1))(@playwright/test@1.63.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/content-renderer-react-js':
-        specifier: 0.41.5
-        version: 0.41.5(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.45.0
+        version: 0.45.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@prezly/sdk':
         specifier: 21.12.0 || ^23.x
         version: 23.20.0
       '@prezly/story-content-format':
-        specifier: ^0.68.0
-        version: 0.68.0
+        specifier: ^0.71.0
+        version: 0.71.0
       '@prezly/uploadcare':
         specifier: ^2.4.3
         version: 2.4.4
@@ -218,7 +218,7 @@ importers:
         version: 2.1.4(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-hookz/web':
         specifier: ^23.1.0
-        version: 23.1.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 23.1.0(js-cookie@3.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@technically/is-not-undefined':
         specifier: ^1.0.0
         version: 1.0.0
@@ -2497,14 +2497,14 @@ packages:
     peerDependencies:
       '@biomejs/biome': ^2.2.4
 
-  '@prezly/content-format@0.68.0':
-    resolution: {integrity: sha512-7S5rgscnnhJfVyAiPJob8sT4RHQ1O2LUo60xQBz2OX+V01nTmm9wSiqbVx+/nP1OkWezH6EusNbP+3PdMYgE4w==}
+  '@prezly/content-format@0.71.0':
+    resolution: {integrity: sha512-aBU7l8BWMMVQkXDJvrQRQQRLzWd+UWtXTHHx+EAchWMBy2H4rey1hX8uR+LDH6JRUeig7qLo+5BL0g1cwafFCQ==}
 
-  '@prezly/content-renderer-react-js@0.41.5':
-    resolution: {integrity: sha512-iE7mfykiFhwQFIkxFutgjt87HYgzsdLJEN6FHkwIJ0pbIot5UpUhXCAp3WiJcu8AJGsKGujN2zyuM6uEbSoFtQ==}
+  '@prezly/content-renderer-react-js@0.45.0':
+    resolution: {integrity: sha512-fHBQKx7oQ9o72yr1PMBX8kHPGPbqDD8RQyqYPpFYvomgWcCsBhRj3Fi3Xwft4R3fyTmCyvcMD8NjaWo5iAk8CQ==}
     peerDependencies:
-      react: '18'
-      react-dom: '18'
+      react: ^18 || ^19
+      react-dom: ^18 || ^19
 
   '@prezly/linear-partition@1.0.3':
     resolution: {integrity: sha512-4zrHaoxQHPFMYJmlSKKEkO5HpNtL8S6+g7b6jy5iHgjHEZK48qDAmv67DuJUYFi3h7TmIwdfF4wxr0l0Zv2ZUw==}
@@ -2516,25 +2516,12 @@ packages:
     resolution: {integrity: sha512-D4sOUkqoRyKJ4vKruJTeZE2MyBF0bjPKX790PGpXow9H7R+B8gYXAc6VH86VPpQcB66jVtZJSN3vIOK57awzTw==}
     engines: {node: '>= 16'}
 
-  '@prezly/story-content-format@0.68.0':
-    resolution: {integrity: sha512-ltBRPH+722vhiSZ513c4hSZ5A0vzJWDv6Udq+8X1kWhBesnZA7acTCoOqTxnnsfB+sj6b1OM2SBvMK4SqkX1Wg==}
+  '@prezly/sdk@26.8.0':
+    resolution: {integrity: sha512-8Uqyl5tS7W+gi4gIuxM6eoc6K1Etr5eSFpUyCBBTwGJ+3OnM+3QnR3wP67mh+UB1MXLaj9El7FDmY3ns8Bh8Bg==}
+    engines: {node: '>=22'}
 
-  '@prezly/theme-kit-core@10.9.0':
-    resolution: {integrity: sha512-C9ybKnyWX4eP/DGEYgKcikFWLrL4j0m6CNtpi0jDhUzdf/qaYWCUlCcIw0Vt5jsJSQrW+bALWPcLUsfEC8blcQ==}
-    engines: {node: '>= 16.x', npm: '>= 8.x'}
-    peerDependencies:
-      '@prezly/sdk': 21.12.0 || ^23.x
-
-  '@prezly/theme-kit-intl@10.9.0':
-    resolution: {integrity: sha512-RAz6OEpWPOyQwDsMPsPAZePPlsg8WjsOrRQQaX4k/KfHqrw+TxRaqPs4J4D+2vfV333urylrZPlNYsY9UFy3sg==}
-    engines: {node: '>= 14.x', npm: '>= 7.x'}
-
-  '@prezly/theme-kit-react@10.9.0':
-    resolution: {integrity: sha512-NlyOQ+BPI6GhcMOEOGucDY2jayQVQICY3A4Dk5BRyCKjM38mGBXMyUuMTkmDdp3pLPdz6xI92zU4LCA4lqx4rQ==}
-    engines: {node: '>= 20.x', npm: '>= 8.x'}
-    peerDependencies:
-      react: ^18.x || ^19.x
-      react-dom: ^18.x || ^19.x
+  '@prezly/story-content-format@0.71.0':
+    resolution: {integrity: sha512-sjjGuK9ngAhO00JG/vdId6QwQzYQsUL990NzrmOwpXTut1Gncw83excnI9LkpiZUmzeoOoPPCRhhaHtkVOQJMw==}
 
   '@prezly/uploadcare-image@0.3.2':
     resolution: {integrity: sha512-gLlgSwPQzlUZqSUOw2YZ6Bceh3A0Ymf5axjQJX1V8PtIHXVLKM9pSq+pmBOoVDs4JXue/unysMTG+qZwEwz9+g==}
@@ -2548,8 +2535,8 @@ packages:
   '@prezly/uploadcare@2.4.4':
     resolution: {integrity: sha512-NMBMvrgBbhcuD/cdoIykiv8/v7l85yn9yVpXPYdXy26eB4aiFJY7JradDzWwm28dy9VM7jGKaQDeB0wxlOWHpw==}
 
-  '@prezly/uploadcare@2.5.0':
-    resolution: {integrity: sha512-3zflwwqJ87Wadm2zBbIsDoxpCeqpgKqDPWjB0D4d9qZVr6nK9GBV6aMfqtqevsdGoyrtLbmGKWcjOh+p5cMD+g==}
+  '@prezly/uploadcare@2.6.0':
+    resolution: {integrity: sha512-86GzgF4mgPHgzoKOQWh2ut7ZsgLbvss3UhR7TGx0Rs2eIVuK1fIk0s0SCitfPKgnO7j6NRMrG+Crb1uvhbF6cw==}
 
   '@prezly/uploads@0.2.1':
     resolution: {integrity: sha512-G4U0H89YSp/krcIjSSuZDqCZ2NeE4qQkFjY0yf7vkOf0IuRjpTfLb9Jr8uaOYFpql2ln8XINBPSFZWImThcB8g==}
@@ -3126,16 +3113,6 @@ packages:
     resolution: {integrity: sha512-N56fTrAPUDz/R423pag+n6TXWbvlBZDtTehaGFjK0InmN+V2OFWLE/WmORhmn6Ce7dlwH5+tQN1LJFw3ngTJVg==}
     deprecated: PACKAGE IS DEPRECATED AND WILL BE DETED SOON, USE @ver0/deep-equal INSTEAD
 
-  '@react-hookz/web@12.3.0':
-    resolution: {integrity: sha512-Uujp2RfX/oDEtAbdkV0W/nhiQ5ZYVH+MEq04T7/8TstyiwoIlvsRbEic6c6gQA6sQ/lw93cZ8NP8R7AYjiqDvg==}
-    peerDependencies:
-      js-cookie: ^3.0.1
-      react: ^16.8 || ^17 || ^18
-      react-dom: ^16.8 || ^17 || ^18
-    peerDependenciesMeta:
-      js-cookie:
-        optional: true
-
   '@react-hookz/web@14.7.1':
     resolution: {integrity: sha512-kU1CccZDXvQ9G4vcCCpX3mDQqYKkuLXGFOtPMgmbZ9KrvkEduMRH4JqSVXp1nI/bGI1GJ0KAWm4UEb1x5eDGAg==}
     peerDependencies:
@@ -3152,6 +3129,17 @@ packages:
       js-cookie: ^3.0.5
       react: ^16.8 || ^17 || ^18
       react-dom: ^16.8 || ^17 || ^18
+    peerDependenciesMeta:
+      js-cookie:
+        optional: true
+
+  '@react-hookz/web@26.1.0':
+    resolution: {integrity: sha512-GKErtGGoaPNWc8rp4SE/rVgJT1kJ/3s6n3q+Vs6DM4TRVsLqbsIGU9u3jTwcV3tCYgxAwz9DqJZxCaal89Lxqg==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      js-cookie: ^3.0.5
+      react: ^16.8 || ^17 || ^18 || ^19
+      react-dom: ^16.8 || ^17 || ^18 || ^19
     peerDependenciesMeta:
       js-cookie:
         optional: true
@@ -3954,6 +3942,10 @@ packages:
 
   '@types/yargs@17.0.33':
     resolution: {integrity: sha512-WpxBCKWPLr4xSsHgz511rFJAM+wS28w2zEO1QDNY5zM/S8ok70NNfztH0xwhqKyaK0OHCbN98LDAZuy1ctxDkA==}
+
+  '@ver0/deep-equal@2.0.1':
+    resolution: {integrity: sha512-JVSbDwzKASqorJum+ATnnZNIkni4K4G3aeJDsTgEhHcm0CiCwAVaLbhFByeNAir1HExEWjHxhIXVR+d8ZzeJGw==}
+    engines: {node: '>=20'}
 
   '@vitejs/plugin-react@3.1.0':
     resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==}
@@ -6058,6 +6050,9 @@ packages:
     resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
     engines: {node: '>=14'}
 
+  js-cookie@3.0.8:
+    resolution: {integrity: sha512-yeJd4aNAdYZQjaon2bpD/Gb0B/omw7HQOsynXXcOiWVCacbBcPlgn8S/d1X6blFSaHao7ozqtW7NZW19xpCtIw==}
+
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -7594,8 +7589,8 @@ packages:
     resolution: {integrity: sha512-haPVm1EkS9pgvHrQ/F3Xy+hgcuMV0Wm9vfIBSiwZ05k+xgb0PkBQpGsAA/oWdDobNaZTH5ppvHtzCFbnSEwHVw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
 
-  shave@2.5.10:
-    resolution: {integrity: sha512-D35tlzDWSCdgBBNzuV3R72SkxIpCupB4WIpJBzbZ1lQYwGsJQP51uG39Xr7S1ISZKh890X10zLWOPwjyf3iQUw==}
+  shave@5.1.0:
+    resolution: {integrity: sha512-WLL/4JZyRpfvRP/n+rODovGQuieF+m4QTp4gThKTx69ATLIq7wX3vWvo+iPBjG5JVvzsOA5pNc2rSniGcP3hUg==}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -7663,6 +7658,9 @@ packages:
 
   social-links@1.14.0:
     resolution: {integrity: sha512-98FpRSrHilAcD/p4Aro2J5rzKnpFJ5QF5M9YEWns6gXwosgBqWKV+AtgYJFRIsvXMyd9UTD3SzPcSU8IJMW7cw==}
+
+  social-links@1.15.1:
+    resolution: {integrity: sha512-GCB0h9sSo/MQt5F+GsJYqQf+abYkCPZtLXtvk3FrQj1qzEnKqy6y4NJfLXMENeJMJveybMqEt8oJN+uhw5KL5w==}
 
   socks-proxy-agent@8.0.5:
     resolution: {integrity: sha512-HehCEsotFqbPW9sJ8WVYB6UbmIMv7kUUORIF2Nncq4VQvBfNBLibW9YZR5dlYCSUhwcD628pRllm7n+E+YTzJw==}
@@ -11303,28 +11301,27 @@ snapshots:
     dependencies:
       '@biomejs/biome': 2.2.4
 
-  '@prezly/content-format@0.68.0':
+  '@prezly/content-format@0.71.0':
     dependencies:
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
 
-  '@prezly/content-renderer-react-js@0.41.5(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@prezly/content-renderer-react-js@0.45.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@prezly/linear-partition': 1.0.3
-      '@prezly/sdk': 23.20.0
-      '@prezly/story-content-format': 0.68.0
-      '@prezly/uploadcare': 2.5.0
-      '@react-hookz/web': 12.3.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@prezly/sdk': 26.8.0
+      '@prezly/story-content-format': 0.71.0
+      '@prezly/uploadcare': 2.6.0
+      '@react-hookz/web': 26.1.0(js-cookie@3.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       classnames: 2.5.1
+      js-cookie: 3.0.8
       player.js: 0.1.0
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       react-modal: 3.16.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       resize-observer-polyfill: 1.5.1
-      shave: 2.5.10
-      social-links: 1.14.0
-    transitivePeerDependencies:
-      - js-cookie
+      shave: 5.1.0
+      social-links: 1.15.1
 
   '@prezly/linear-partition@1.0.3':
     dependencies:
@@ -11338,31 +11335,17 @@ snapshots:
       '@prezly/uploads': 0.2.1
       query-string: 6.14.1
 
-  '@prezly/story-content-format@0.68.0':
+  '@prezly/sdk@26.8.0':
     dependencies:
-      '@prezly/content-format': 0.68.0
+      '@prezly/progress-promise': 2.0.1
+      '@prezly/uploads': 0.3.2
+      query-string: 6.14.1
+
+  '@prezly/story-content-format@0.71.0':
+    dependencies:
+      '@prezly/content-format': 0.71.0
       '@prezly/uploads': 0.2.1
       is-plain-object: 5.0.0
-
-  '@prezly/theme-kit-core@10.9.0(@prezly/sdk@23.20.0)':
-    dependencies:
-      '@prezly/sdk': 23.20.0
-      '@prezly/theme-kit-intl': 10.9.0
-      '@prezly/uploadcare': 2.4.4
-      '@technically/is-not-undefined': 1.0.0
-      '@technically/omit-undefined': 1.0.4
-      parse-data-url: 6.0.0
-      url-pattern: 1.0.3
-
-  '@prezly/theme-kit-intl@10.9.0':
-    dependencies:
-      '@technically/is-not-undefined': 1.0.0
-
-  '@prezly/theme-kit-react@10.9.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@prezly/theme-kit-intl': 10.9.0
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
 
   '@prezly/uploadcare-image@0.3.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
@@ -11382,7 +11365,7 @@ snapshots:
       lodash.clamp: 4.0.3
       sanitize-filename: 1.6.3
 
-  '@prezly/uploadcare@2.5.0':
+  '@prezly/uploadcare@2.6.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
       '@prezly/uploadcare-widget': 3.16.1
@@ -11941,14 +11924,6 @@ snapshots:
 
   '@react-hookz/deep-equal@1.0.4': {}
 
-  '@react-hookz/web@12.3.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-hookz/deep-equal': 1.0.4
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    optionalDependencies:
-      js-cookie: 3.0.5
-
   '@react-hookz/web@14.7.1(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-hookz/deep-equal': 1.0.4
@@ -11957,13 +11932,21 @@ snapshots:
     optionalDependencies:
       js-cookie: 3.0.5
 
-  '@react-hookz/web@23.1.0(js-cookie@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@react-hookz/web@23.1.0(js-cookie@3.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-hookz/deep-equal': 1.0.4
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
-      js-cookie: 3.0.5
+      js-cookie: 3.0.8
+
+  '@react-hookz/web@26.1.0(js-cookie@3.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@ver0/deep-equal': 2.0.1
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+    optionalDependencies:
+      js-cookie: 3.0.8
 
   '@redis/bloom@1.2.0(@redis/client@1.6.0)':
     dependencies:
@@ -13378,6 +13361,8 @@ snapshots:
   '@types/yargs@17.0.33':
     dependencies:
       '@types/yargs-parser': 21.0.3
+
+  '@ver0/deep-equal@2.0.1': {}
 
   '@vitejs/plugin-react@3.1.0(supports-color@8.1.1)(vite@4.5.14(@types/node@22.18.6))':
     dependencies:
@@ -15865,6 +15850,8 @@ snapshots:
 
   js-cookie@3.0.5: {}
 
+  js-cookie@3.0.8: {}
+
   js-tokens@4.0.0: {}
 
   js-yaml@3.14.1:
@@ -17671,7 +17658,7 @@ snapshots:
       '@img/sharp-win32-x64': 0.33.5
     optional: true
 
-  shave@2.5.10: {}
+  shave@5.1.0: {}
 
   shebang-command@2.0.0:
     dependencies:
@@ -17745,6 +17732,8 @@ snapshots:
       tslib: 2.8.1
 
   social-links@1.14.0: {}
+
+  social-links@1.15.1: {}
 
   socks-proxy-agent@8.0.5(supports-color@8.1.1):
     dependencies:
