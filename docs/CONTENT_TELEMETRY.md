@@ -32,7 +32,7 @@ All metrics use the `theme_kit_` prefix. Runtime labels are restricted to `node`
 | --- | --- |
 | `content_requests_total` | Invocations of the cacheable ContentDelivery operations, including followers. Derived helper methods are not separately counted. |
 | `content_cache_hits_total` | Values accepted after version/source-scope validation and the existing truthiness check. `layer` is memory, Redis or custom. |
-| `content_cache_misses_total` | Lookups that require fallback, including stale/mismatched/null values and cache-read failures. |
+| `content_cache_misses_total` | Lookups that require fallback, including stale/mismatched values and cache-read failures. A cached `null` (not-found) result counts as a hit. |
 | `content_cache_errors_total` | Read/write failures. A successful response does not wait for telemetry or cache writes. |
 | `content_coalesced_total` | Calls joining an existing pending result, including the bounded post-result write window. |
 | `content_rejected_total` | New keys rejected by the pending-content limit. |
@@ -44,7 +44,7 @@ All metrics use the `theme_kit_` prefix. Runtime labels are restricted to `node`
 | `redis_command_attempts_total`, `redis_command_duration_seconds` | Application-visible Redis command attempts/outcomes, including command deadlines. A late underlying reply can arrive after an observed timeout. |
 | `redis_unavailable_total` | Operations skipped while the shared connection is not ready, not commands sent to Redis. |
 
-Memory/Redis source reporting is carried through an optional third argument to `Cache.get`. Existing custom caches remain compatible and are reported as `custom` unless they report a layer. A returned candidate is not counted as a hit until ContentDelivery accepts its scope/version/value. Metrics do not implement the separate null-cache or cache-promotion fixes.
+Memory/Redis source reporting is carried through an optional third argument to `Cache.get`. Existing custom caches remain compatible and are reported as `custom` unless they report a layer. A returned candidate is not counted as a hit until ContentDelivery accepts its scope/version/value. Hits do not distinguish not-found entries from content; metrics do not implement the separate cache-promotion fix.
 
 The collector initializes aggregate families with zero-valued `other` series, then initializes all outcomes for observed operation/route combinations. This makes installed-idle aggregate counters available without retaining events or creating labels from data. A zero command count does not prove Redis is configured/healthy. A never-observed specific operation may be absent. Counter resets indicate a runtime/collector restart; use `rate`/`increase`, not raw counter subtraction.
 

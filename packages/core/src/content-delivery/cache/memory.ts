@@ -12,6 +12,8 @@ type Entry = {
     version: UnixTimestampInSeconds;
     value: any;
     accessed: UnixTimestampInMilliseconds;
+    /** Absolute expiry for entries stored with an explicit `ttl`. */
+    expires?: UnixTimestampInMilliseconds;
 };
 
 export function createSharedMemoryCache(prefix = ''): Cache {
@@ -22,21 +24,29 @@ export function createSharedMemoryCache(prefix = ''): Cache {
                 return undefined;
             }
 
-            if (entry.version < latestVersion) {
+            if (
+                entry.version < latestVersion ||
+                (entry.expires ?? Number.POSITIVE_INFINITY) <= Date.now()
+            ) {
                 CACHE.delete(`${prefix}${key}`);
                 return undefined;
             }
 
-            const { value, version } = entry;
+            const { value, version, expires } = entry;
 
-            CACHE.set(`${prefix}${key}`, { value, version, accessed: Date.now() });
+            CACHE.set(`${prefix}${key}`, { value, version, expires, accessed: Date.now() });
 
             if (onSource && value !== undefined) notify(onSource, 'memory');
             return value;
         },
 
-        set(key, value, version) {
-            const entry = { value, version, accessed: Date.now() };
+        set(key, value, version, options) {
+            const entry: Entry = {
+                value,
+                version,
+                accessed: Date.now(),
+                expires: options?.ttl === undefined ? undefined : Date.now() + options.ttl * 1000,
+            };
 
             CACHE.set(`${prefix}${key}`, entry);
 

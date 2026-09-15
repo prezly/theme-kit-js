@@ -28,8 +28,21 @@ export interface Options {
         latestVersion: UnixTimestampInSeconds;
         /** Stable source/authorization identity. Enables cross-client request sharing. */
         scope?: string;
+        /**
+         * Retention in seconds for `null` results, i.e. content the API reported as
+         * not found, gone or forbidden. Defaults to `DEFAULT_NEGATIVE_TTL`.
+         * A cache version change still invalidates them immediately.
+         */
+        negativeTtl?: number;
     };
 }
+
+/**
+ * Not-found results are cached only briefly: long enough to absorb repeated
+ * requests for the same missing slug, short enough that a story published
+ * without a cache version change appears within a minute.
+ */
+export const DEFAULT_NEGATIVE_TTL = 60;
 
 export namespace stories {
     export interface SearchParams {
@@ -388,6 +401,7 @@ export function createClient(
             namespace,
             UNCACHED_METHODS,
             telemetry,
+            cache.negativeTtl ?? DEFAULT_NEGATIVE_TTL,
         );
     } else if (telemetry) {
         for (const methodName of Object.keys(client) as (keyof Client)[]) {
@@ -404,7 +418,25 @@ export function createClient(
     return client;
 }
 
-type ScopedCacheValue = { scope: string; value: any };
+type ScopedCacheValue = {
+    scope: string;
+    value: any;
+    /**
+     * Present only on not-found (`null`) results. ContentDelivery enforces this
+     * deadline itself, so a cache layer that ignores the `ttl` hint, or an entry
+     * written before negative caching existed, can never serve a stale null.
+     */
+    expires?: UnixTimestampInSeconds;
+};
+
+function readScopedValue(stored: ScopedCacheValue | undefined, scope: string): unknown {
+    if (stored?.scope !== scope) return undefined;
+    if (stored.value === null) {
+        const fresh = typeof stored.expires === 'number' && stored.expires > Date.now() / 1000;
+        return fresh ? null : undefined;
+    }
+    return stored.value;
+}
 
 function injectCache(
     client: Client,
@@ -414,7 +446,13 @@ function injectCache(
     namespace: string,
     uncachedMethods: (keyof Client)[] = [],
     telemetry?: Telemetry,
+    negativeTtl: number = DEFAULT_NEGATIVE_TTL,
 ) {
+    if (!Number.isInteger(negativeTtl) || negativeTtl < 1) {
+        throw new RangeError(
+            'The negative cache TTL must be a positive integer number of seconds.',
+        );
+    }
     // An opaque SDK client does not expose its credentials/source. Callers without
     // an explicit scope keep request-local sharing; the Next.js adapter supplies one.
     const requests = scope === undefined ? new RequestCoalescer() : sharedContentRequests;
@@ -441,15 +479,17 @@ function injectCache(
                                       source === 'memory' || source === 'redis' ? source : 'custom';
                               })
                             : await cache.get<any>(cacheKey, latestVersion);
+                        // Only an absent entry is a miss: a stored `false` or `0` is a valid
+                        // result. A stored `null` (not found) is a hit only inside its own
+                        // deadline, which lives in the scoped envelope. Unscoped clients
+                        // cannot carry that deadline and keep treating null as a miss.
                         const cached =
                             scope === undefined
-                                ? stored
-                                : (stored as ScopedCacheValue | undefined)?.scope === scope
-                                  ? stored.value
-                                  : undefined;
-                        // Preserve existing negative-cache semantics until null results
-                        // have a deliberately short TTL and correct error classification.
-                        if (cached) {
+                                ? stored === null
+                                    ? undefined
+                                    : stored
+                                : readScopedValue(stored, scope);
+                        if (cached !== undefined) {
                             emit(telemetry, { type: 'cache_hit', operation, layer });
                             return { value: cached };
                         }
@@ -464,14 +504,36 @@ function injectCache(
                         telemetry,
                         operation,
                     );
-                    const stored = scope === undefined ? value : { scope, value };
+                    // `null` means the API answered 403/404/410 for this lookup. Keep it
+                    // only briefly, with the deadline in the envelope and a matching
+                    // layer hint. Errors (401, 429, 5xx, transport) throw above and are
+                    // never stored. `undefined` results are not stored either.
+                    const negative = value === null && scope !== undefined;
+                    const stored: unknown =
+                        scope === undefined
+                            ? value
+                            : negative
+                              ? {
+                                    scope,
+                                    value,
+                                    expires: Math.floor(Date.now() / 1000) + negativeTtl,
+                                }
+                              : { scope, value };
+                    const options = negative ? { ttl: negativeTtl } : undefined;
                     // Observe synchronous and asynchronous write failures without holding
                     // up a successful response or leaving an unhandled rejection.
-                    const cacheWrite = Promise.resolve()
-                        .then(() => cache.set(cacheKey, stored, latestVersion))
-                        .catch(() => {
-                            emit(telemetry, { type: 'cache_error', operation, action: 'write' });
-                        });
+                    const cacheWrite =
+                        value === undefined || (value === null && scope === undefined)
+                            ? undefined
+                            : Promise.resolve()
+                                  .then(() => cache.set(cacheKey, stored, latestVersion, options))
+                                  .catch(() => {
+                                      emit(telemetry, {
+                                          type: 'cache_error',
+                                          operation,
+                                          action: 'write',
+                                      });
+                                  });
                     return { value, cacheWrite };
                 },
                 telemetry

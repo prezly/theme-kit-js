@@ -37,34 +37,34 @@ it('counts concurrent callers once each, one origin, and a later valid memory hi
     expect(JSON.stringify(events)).not.toMatch(/private-|payload|token|cacheKey/);
 });
 
-it('does not call a mismatched scope or a stored null a cache hit', async () => {
-    for (const value of [
-        { scope: 'another-secret', value: { name: 'room' } },
-        { scope: 'scope', value: null },
-    ]) {
-        const events: TelemetryEvent[] = [];
-        const storage: Cache = {
-            get: (_key, _version, source) => {
-                source?.('redis');
-                return value as any;
+it.each([
+    ['a mismatched scope', { scope: 'another-secret', value: { name: 'room' } }, false],
+    ['a legacy null without a deadline', { scope: 'scope', value: null }, false],
+    ['an expired null', { scope: 'scope', value: null, expires: 1 }, false],
+    ['a fresh null', { scope: 'scope', value: null, expires: Date.now() / 1000 + 60 }, true],
+])('reports %s as a cache hit: %p', async (_label, value, hit) => {
+    const events: TelemetryEvent[] = [];
+    const storage: Cache = {
+        get: (_key, _version, source) => {
+            source?.('redis');
+            return value as any;
+        },
+        set: () => {},
+        namespace() {
+            return this;
+        },
+    };
+    await createClient(sdk(), 'room', undefined, {
+        cache: { storage, latestVersion: 1, scope: 'scope' },
+        telemetry: {
+            observe: (e) => {
+                events.push(e);
             },
-            set: () => {},
-            namespace() {
-                return this;
-            },
-        };
-        await createClient(sdk(), 'room', undefined, {
-            cache: { storage, latestVersion: 1, scope: 'scope' },
-            telemetry: {
-                observe: (e) => {
-                    events.push(e);
-                },
-            },
-        }).newsroom();
-        await tick();
-        expect(events.some((e) => e.type === 'cache_hit')).toBe(false);
-        expect(events.filter((e) => e.type === 'cache_miss')).toHaveLength(1);
-    }
+        },
+    }).newsroom();
+    await tick();
+    expect(events.some((e) => e.type === 'cache_hit')).toBe(hit);
+    expect(events.filter((e) => e.type === 'cache_miss')).toHaveLength(hit ? 0 : 1);
 });
 
 it('attributes a valid lower-layer hit after version and scope validation', async () => {
