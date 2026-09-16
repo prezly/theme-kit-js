@@ -516,7 +516,9 @@ function injectCache(
                               ? {
                                     scope,
                                     value,
-                                    expires: Math.floor(Date.now() / 1000) + negativeTtl,
+                                    // Fractional seconds: flooring would shorten a 1-second
+                                    // retention to almost nothing.
+                                    expires: Date.now() / 1000 + negativeTtl,
                                 }
                               : { scope, value };
                     const options = negative ? { ttl: negativeTtl } : undefined;

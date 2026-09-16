@@ -31,7 +31,7 @@ All metrics use the `theme_kit_` prefix. Runtime labels are restricted to `node`
 | Metric | Meaning |
 | --- | --- |
 | `content_requests_total` | Invocations of the cacheable ContentDelivery operations, including followers. Derived helper methods are not separately counted. |
-| `content_cache_hits_total` | Values accepted after version/source-scope validation and the existing truthiness check. `layer` is memory, Redis or custom. |
+| `content_cache_hits_total` | Values accepted after version/source-scope validation; a stored `null` counts only inside its not-found deadline. `layer` is memory, Redis or custom. |
 | `content_cache_misses_total` | Lookups that require fallback, including stale/mismatched values and cache-read failures. A cached `null` (not-found) result counts as a hit. |
 | `content_cache_errors_total` | Read/write failures. A successful response does not wait for telemetry or cache writes. |
 | `content_coalesced_total` | Calls joining an existing pending result, including the bounded post-result write window. |
