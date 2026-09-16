@@ -46,6 +46,21 @@ To keep versions in sync, releasing new packages should only be done from the ro
 
 To publish a production version, run `pnpm release`. Make sure you're on the `main` branch and don't have any uncommitted files before running the command. After the script finishes, a new GitHub release draft will open in your browser. Please make sure to fill it in a similar manner to previous releases (hitting "Auto-generate release notes" usually produces a nicer output than Lerna's default).
 
+### Publishing with a hardware security key
+
+`lerna publish` can only take a six-digit one-time password, so an npm account whose second factor is a hardware key stops at the OTP prompt after it has already committed, tagged and pushed the version. Do not fall back to `npm publish` inside a package directory: npm does not rewrite pnpm's `workspace:^` dependency specifiers, and the published package cannot be installed (this happened with 10.10.0). Build the tarballs with pnpm, which rewrites them, and publish the tarballs with npm, which supports the browser-based key flow:
+
+```sh
+pnpm exec lerna version minor --no-private   # commits, tags and pushes; answer the prompts
+cd packages/core && pnpm pack --pack-destination /tmp/release
+cd ../nextjs && pnpm pack --pack-destination /tmp/release
+grep -c 'workspace:' /tmp/release/*/package.json 2>/dev/null   # must be empty
+npm publish /tmp/release/prezly-theme-kit-core-<version>.tgz
+npm publish /tmp/release/prezly-theme-kit-nextjs-<version>.tgz
+```
+
+Publish core before Next.js. Include every package Lerna listed as changed.
+
 To publish a preview version (e.g. for testing), run `pnpm release:preview`. This command can be executed on any branch, but you still need to have no uncommitted files. Please make sure to use a pre-release version to not conflict with production versions.
 
 ----
