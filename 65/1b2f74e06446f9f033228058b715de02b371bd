@@ -1,0 +1,32 @@
+packages/nextjs/src/adapters/prezly/cache/configure.ts
+  s_fdf2b1639fe8c9::t_d13a000ca36d6f 41-46
+  s_fdf2b1639fe8c9::t_2024ae7597a293 10-15
+packages/nextjs/README.md
+  s_fdf2b1639fe8c9::t_e81b5ac4d8ba76 419-447
+packages/core/src/content-delivery/cache/type.ts
+  s_fdf2b1639fe8c9::t_c0fd6102d983f7 15-25,36-44
+packages/core/src/content-delivery/cache/stacked.ts
+  s_fdf2b1639fe8c9::t_d1c822983ab5ab 2,4-10,12-58,65-73
+packages/core/src/content-delivery/cache/memory.ts
+  s_fdf2b1639fe8c9::t_c911aaccae130d 1,4-9,11-14,21-22,27-62,64-76,78-86,88-94,96-107,111-113,117,120-122,131-141,144-150
+packages/core/src/content-delivery/cache/index.ts
+  s_fdf2b1639fe8c9::t_938b2058712193 2-10
+packages/nextjs/src/adapters/prezly/cache/redis.ts
+  s_fdf2b1639fe8c9::t_b9503a427f9559 12-13,82-105,107,112-119,124-134,143
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "651b2f74e06446f9f033228058b715de02b371bd",
+  "prompts": {},
+  "sessions": {
+    "s_fdf2b1639fe8c9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bd8d06a6-53f8-4a15-9a2a-844975e13763",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Camil Blanaru <camil@edka.io>"
+    }
+  }
+}
