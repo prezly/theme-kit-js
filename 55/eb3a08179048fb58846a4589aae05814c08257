@@ -1,0 +1,19 @@
+README.md
+  s_fdf2b1639fe8c9::t_2e8d603bc8a515 49-63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "55eb3a08179048fb58846a4589aae05814c08257",
+  "prompts": {},
+  "sessions": {
+    "s_fdf2b1639fe8c9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bd8d06a6-53f8-4a15-9a2a-844975e13763",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Camil Blanaru <camil@edka.io>"
+    }
+  }
+}
