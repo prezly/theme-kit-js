@@ -9,6 +9,8 @@ type Entry = {
     value: any;
     /** Present for entries stored with their own short retention (e.g. not-found results). */
     ttl?: Seconds;
+    /** When the entry was last written, for sliding-expiry renewal. Absent on entries from older releases. */
+    written?: UnixTimestampInSeconds;
 };
 type Options = RedisClientOptions & {
     ttl?: Seconds;
@@ -77,31 +79,57 @@ export function createRedisCache({
     const connection = client;
 
     function createCache(namespacePrefix = ''): ContentDelivery.Cache {
-        return {
-            async get(key, latestVersion, onSource) {
-                if (!connection.isReady) {
-                    ContentDelivery.emit(telemetry, { type: 'redis_unavailable', command: 'get' });
-                    return undefined;
-                }
-                const cached = await command(
-                    () => connection.get(`${namespacePrefix}${key}`),
-                    telemetry,
-                    'get',
-                );
-                if (!cached) return undefined;
-                const entry = JSON.parse(cached) as Entry;
-                if (entry.version < latestVersion) return undefined;
-                // Sliding expiry applies to regular content only. An entry with its
-                // own short retention must not be renewed to the default lifetime.
-                if (ttl && entry.ttl === undefined) {
+        async function read(
+            key: string,
+            latestVersion: UnixTimestampInSeconds,
+        ): Promise<Entry | undefined> {
+            if (!connection.isReady) {
+                ContentDelivery.emit(telemetry, { type: 'redis_unavailable', command: 'get' });
+                return undefined;
+            }
+            const fullKey = `${namespacePrefix}${key}`;
+            const cached = await command(() => connection.get(fullKey), telemetry, 'get');
+            if (!cached) return undefined;
+            const entry = JSON.parse(cached) as Entry;
+            if (entry.version < latestVersion) return undefined;
+            // Sliding expiry applies to regular content only: an entry with its
+            // own short retention must not be renewed to the default lifetime.
+            // Renewal used to be an EXPIRE on every read, doubling the command
+            // rate. Now an entry is rewritten with a fresh timestamp only once it
+            // has consumed half of its lifetime, so a hot key costs one write per
+            // half-life instead of one per read. Entries from older releases
+            // carry no timestamp and are renewed on their first read.
+            if (ttl && entry.ttl === undefined) {
+                const now = Math.floor(Date.now() / 1000);
+                if (entry.written === undefined || now - entry.written >= ttl / 2) {
+                    const renewed: Entry = { ...entry, written: now };
                     void command(
-                        () => connection.expire(`${namespacePrefix}${key}`, ttl),
+                        () => connection.set(fullKey, JSON.stringify(renewed), { EX: ttl }),
                         telemetry,
                         'expire',
                     ).catch(() => undefined);
                 }
+            }
+            return entry;
+        }
+
+        return {
+            async get(key, latestVersion, onSource) {
+                const entry = await read(key, latestVersion);
+                if (!entry) return undefined;
                 if (onSource) ContentDelivery.notify(onSource, 'redis');
                 return entry.value;
+            },
+
+            async lookup(key, latestVersion) {
+                const entry = await read(key, latestVersion);
+                if (!entry) return undefined;
+                return {
+                    value: entry.value,
+                    version: entry.version,
+                    ttl: entry.ttl,
+                    layer: 'redis' as const,
+                };
             },
 
             async set(key, value, version, options) {
@@ -112,7 +140,7 @@ export function createRedisCache({
                 // SET EX takes whole seconds; round a fractional hint up, never down.
                 const entry: Entry =
                     options?.ttl === undefined
-                        ? { value, version }
+                        ? { value, version, written: Math.floor(Date.now() / 1000) }
                         : { value, version, ttl: Math.max(1, Math.ceil(options.ttl)) };
                 await command(
                     () =>

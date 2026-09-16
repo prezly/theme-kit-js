@@ -7,7 +7,12 @@ const DEFAULT_REDIS_CACHE_TTL = 30 * 24 * 60 * 60; // 30 days
 
 export interface Configuration {
     redis?: { url: string; prefix?: string; ttl?: number };
-    memory?: boolean;
+    /**
+     * In-process cache in front of Redis. `true` uses the default bounds
+     * (128 MiB of estimated payload, 20,000 entries); pass an object to change
+     * them. The store is shared by every adapter in the runtime.
+     */
+    memory?: boolean | ContentDelivery.MemoryCacheOptions;
     latestVersion: Resolvable<number>;
     namespace?: string;
     /** Extra immutable identity for custom fetch implementations. Enables request sharing. */
@@ -33,7 +38,12 @@ export function configure(config: Configuration) {
 
 function configureStorage(config: Configuration): ContentDelivery.Cache | undefined {
     const caches = [
-        config.memory ? ContentDelivery.createSharedMemoryCache() : undefined,
+        config.memory
+            ? ContentDelivery.createSharedMemoryCache(
+                  '',
+                  typeof config.memory === 'object' ? config.memory : undefined,
+              )
+            : undefined,
         config.redis
             ? createRedisCache({
                   ttl: DEFAULT_REDIS_CACHE_TTL,

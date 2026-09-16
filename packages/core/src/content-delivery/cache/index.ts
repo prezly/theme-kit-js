@@ -1,3 +1,11 @@
 export * from './type';
-export { createSharedMemoryCache } from './memory';
+export {
+    clearSharedMemoryCache,
+    configureSharedMemoryCache,
+    createSharedMemoryCache,
+    DEFAULT_MAX_BYTES,
+    DEFAULT_MAX_RECORDS,
+    inspectSharedMemoryCache,
+    type MemoryCacheOptions,
+} from './memory';
 export { createStackedCache } from './stacked';

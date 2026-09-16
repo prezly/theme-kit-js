@@ -1,4 +1,9 @@
-import { createSharedMemoryCache, RECORDS_LIMIT } from './memory';
+import {
+    clearSharedMemoryCache,
+    configureSharedMemoryCache,
+    createSharedMemoryCache,
+    inspectSharedMemoryCache,
+} from './memory';
 
 describe('createSharedMemoryCache', () => {
     afterEach(() => jest.useRealTimers());
@@ -70,32 +75,73 @@ describe('createSharedMemoryCache', () => {
         expect(b.get('hello', 0)).toBe('universe');
     });
 
-    it('should garbage-collect old cache records when threshold is reached (with a chance of 1/100)', () => {
-        const cache = createSharedMemoryCache();
-
-        for (let i = 0; i < RECORDS_LIMIT; i += 1) {
-            cache.set(`record-${i}`, `value-${i}`, 0);
+    it('evicts the least recently used entries once the record bound is reached', () => {
+        clearSharedMemoryCache();
+        configureSharedMemoryCache({ maxRecords: 3 });
+        try {
+            const cache = createSharedMemoryCache('lru:');
+            cache.set('a', 1, 0);
+            cache.set('b', 2, 0);
+            cache.set('c', 3, 0);
+            expect(cache.get('a', 0)).toBe(1); // a becomes most recently used
+            cache.set('d', 4, 0); // evicts b, the least recently used
+            expect(cache.get('b', 0)).toBeUndefined();
+            expect(cache.get('a', 0)).toBe(1);
+            expect(cache.get('c', 0)).toBe(3);
+            expect(cache.get('d', 0)).toBe(4);
+            expect(inspectSharedMemoryCache().records).toBe(3);
+        } finally {
+            configureSharedMemoryCache();
+            clearSharedMemoryCache();
         }
+    });
 
-        for (let i = 0; i < RECORDS_LIMIT; i += 1) {
-            expect(cache.get(`record-${i}`, 0)).toBe(`value-${i}`);
+    it('evicts by estimated bytes and accounts for overwrites and removals', () => {
+        clearSharedMemoryCache();
+        configureSharedMemoryCache({ maxBytes: 200 });
+        try {
+            const cache = createSharedMemoryCache('bytes:');
+            const big = 'x'.repeat(120);
+            cache.set('one', big, 0);
+            expect(inspectSharedMemoryCache().bytes).toBeGreaterThan(120);
+            cache.set('two', big, 0); // two entries exceed 200 bytes: one is evicted
+            expect(cache.get('one', 0)).toBeUndefined();
+            expect(cache.get('two', 0)).toBe(big);
+            cache.set('two', 'tiny', 0); // overwrite releases the old size
+            expect(inspectSharedMemoryCache().bytes).toBeLessThan(40);
+            expect(cache.get('two', 1)).toBeUndefined(); // version removal releases the rest
+            expect(inspectSharedMemoryCache().bytes).toBe(0);
+        } finally {
+            configureSharedMemoryCache();
+            clearSharedMemoryCache();
         }
+    });
 
-        // Write 10% more records, 10 times to trigger CG
-        for (let repeat = 0; repeat < 100; repeat += 1) {
-            for (let i = RECORDS_LIMIT; i < RECORDS_LIMIT * 1.1; i += 1) {
-                cache.set(`record-${i}`, `value-${i}`, 0);
-            }
-        }
+    it('rejects invalid bounds', () => {
+        expect(() => configureSharedMemoryCache({ maxRecords: 0 })).toThrow(RangeError);
+        expect(() => configureSharedMemoryCache({ maxBytes: 1.5 })).toThrow(RangeError);
+        configureSharedMemoryCache();
+    });
 
-        // the oldest part of the cache should be removed already
-        for (let i = 0; i < RECORDS_LIMIT * 0.09; i += 1) {
-            expect(cache.get(`record-${i}`, 0)).toBeUndefined();
-        }
-
-        // and the rest kept
-        for (let i = RECORDS_LIMIT * 0.11; i < RECORDS_LIMIT * 1.1; i += 1) {
-            expect(cache.get(`record-${i}`, 0)).toBe(`value-${i}`);
-        }
+    it('exposes version and remaining retention through lookup', () => {
+        jest.useFakeTimers();
+        const cache = createSharedMemoryCache('lookup:');
+        cache.set('content', { a: 1 }, 7);
+        cache.set('missing', null, 7, { ttl: 30 });
+        expect(cache.lookup?.('content', 7)).toEqual({
+            value: { a: 1 },
+            version: 7,
+            ttl: undefined,
+            layer: 'memory',
+        });
+        jest.advanceTimersByTime(10_000);
+        expect(cache.lookup?.('missing', 7)).toEqual({
+            value: null,
+            version: 7,
+            ttl: 20,
+            layer: 'memory',
+        });
+        expect(cache.lookup?.('content', 8)).toBeUndefined();
+        expect(cache.lookup?.('absent', 7)).toBeUndefined();
     });
 });
