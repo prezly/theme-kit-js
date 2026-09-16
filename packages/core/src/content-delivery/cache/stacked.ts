@@ -1,27 +1,86 @@
 import { type CacheLayer, notify } from '../telemetry';
-import type { Cache, UnixTimestampInSeconds } from './type';
+import type { Cache, Lookup, UnixTimestampInSeconds } from './type';
 
+/**
+ * Reads layers in order and refills every earlier layer with a hit found in a
+ * later one, carrying the entry's own version and retention, so the next
+ * request on this runtime is served from memory instead of Redis. Only layers
+ * that expose `lookup` are refill sources; a hit from a `get`-only layer is
+ * returned as before and not copied.
+ */
 export function createStackedCache(caches: Cache[]): Cache {
+    async function find<T>(
+        key: string,
+        latestVersion: UnixTimestampInSeconds,
+        onSource?: (layer: CacheLayer) => void,
+    ): Promise<{ index: number; found: Lookup<T> | undefined; value: T | undefined }> {
+        for (let i = 0; i < caches.length; i += 1) {
+            const layer = caches[i];
+            if (layer.lookup) {
+                const found = await layer.lookup<T>(key, latestVersion);
+                // An entry holding `undefined` is a miss by the `get` contract.
+                if (found !== undefined && found.value !== undefined) {
+                    if (onSource) notify(onSource, found.layer);
+                    return { index: i, found, value: found.value };
+                }
+                continue;
+            }
+            let source: CacheLayer = 'custom';
+            const value = onSource
+                ? await layer.get<T>(key, latestVersion, (reported) => {
+                      source = reported;
+                  })
+                : await layer.get<T>(key, latestVersion);
+            if (value !== undefined) {
+                if (onSource) notify(onSource, source);
+                return { index: i, found: undefined, value };
+            }
+        }
+        return { index: -1, found: undefined, value: undefined };
+    }
+
+    function refill<T>(key: string, index: number, found: Lookup<T>): void {
+        for (let j = 0; j < index; j += 1) {
+            const layer = caches[j];
+            // Best effort: the response never waits on a refill, and a failing
+            // layer must not turn a hit into an error.
+            void Promise.resolve()
+                .then(() =>
+                    layer.set(
+                        key,
+                        found.value,
+                        found.version,
+                        found.ttl === undefined ? undefined : { ttl: found.ttl },
+                    ),
+                )
+                .catch(() => undefined);
+        }
+    }
+
+    // A hit from a get-only layer has no version or retention to report, so a
+    // stack containing one cannot represent every hit as a `Lookup`. Such a
+    // stack is read with `get` by an outer stack and never used as a refill
+    // source, instead of turning those hits into misses.
+    const lookup = caches.every((cache) => cache.lookup)
+        ? async <T>(key: string, latestVersion: UnixTimestampInSeconds) => {
+              const { index, found } = await find<T>(key, latestVersion);
+              if (found && index > 0) refill(key, index, found);
+              return found;
+          }
+        : undefined;
+
     return {
         async get<T>(
             key: string,
             latestVersion: UnixTimestampInSeconds,
             onSource?: (layer: CacheLayer) => void,
         ) {
-            for (let i = 0; i < caches.length; i += 1) {
-                let source: CacheLayer = 'custom';
-                const value = onSource
-                    ? await caches[i].get<T>(key, latestVersion, (layer) => {
-                          source = layer;
-                      })
-                    : await caches[i].get<T>(key, latestVersion);
-                if (value !== undefined) {
-                    if (onSource) notify(onSource, source);
-                    return value;
-                }
-            }
-            return undefined;
+            const { index, found, value } = await find<T>(key, latestVersion, onSource);
+            if (found && index > 0) refill(key, index, found);
+            return value;
         },
+
+        lookup,
 
         async set(key, value, version, options) {
             await Promise.all(caches.map((cache) => cache.set(key, value, version, options)));

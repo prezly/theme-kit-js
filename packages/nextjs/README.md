@@ -416,6 +416,42 @@ subject to their configured expiration; do not flush a Redis instance that also
 contains routing data. TTL and query canonicalization are separate policies and
 are unchanged here.
 
+### Memory layer refill and bounds
+
+With both `memory` and `redis` enabled the layers form a stack. A hit found in
+Redis is written back into the in-process layer with the entry's own version
+and retention, so the next request on that runtime is served from memory
+without a Redis round trip or a JSON decode. Before this, a memory entry lost to
+a version change was never refilled and every later read on that pod went to
+Redis. Stale entries are never copied: only a value that passed the version
+check is written back, and a not-found entry keeps its short retention. Only
+layers that implement the optional `lookup` method are refill sources; a
+third-party `Cache` that implements `get` alone is read as before and never
+copied from.
+
+The in-process store is one `Map` per runtime shared by every adapter and
+namespace, bounded to 128 MiB of estimated payload and 20,000 entries by
+default. It evicts the least recently used entry first, deterministically and
+without sorting; a read moves the entry to the most recent position. Pass
+`memory: { maxBytes, maxRecords }` to `PrezlyAdapter.connect` to change the
+bounds; both must be positive integers. `ContentDelivery.inspectSharedMemoryCache()`
+reports the current occupancy.
+
+Redis renewal changed at the same time. Regular content keeps a sliding
+expiry, but instead of an `EXPIRE` on every read, an entry is rewritten with a
+fresh timestamp only once it has consumed half of its lifetime, so a hot key
+costs one write per half-life instead of one per read. The rewrite runs as a
+small Lua script that compares the stored payload with the one that was read,
+so a renewal landing after another pod refreshed the key never puts the older
+payload back. Entries written by older releases carry no timestamp and are
+renewed on their first read. The renewal still reports as the `expire` command
+in telemetry. Not-found entries are never renewed.
+
+The in-process store also refuses two kinds of write: an entry older than the
+one it already holds for that key (a refill that lost a race with an origin
+fetch) and an entry larger than `maxBytes` on its own, which would otherwise
+evict every other tenant and still not fit.
+
 ### Not-found results
 
 `contentDelivery.story()` and `contentDelivery.gallery()` resolve `null` when the

@@ -1,58 +1,136 @@
-import type { Cache, UnixTimestampInSeconds } from './type';
+import type { Cache, Lookup, UnixTimestampInSeconds } from './type';
 import { notify } from '../telemetry';
 
-export const RECORDS_LIMIT = 10000;
-const GC_PROBABILITY = 1 / 100;
+export interface MemoryCacheOptions {
+    /** Upper bound on the estimated size of all stored values, in bytes. */
+    maxBytes?: number;
+    /** Upper bound on the number of stored entries. */
+    maxRecords?: number;
+}
 
-const CACHE = new Map<string, Entry>();
+export const DEFAULT_MAX_BYTES = 128 * 1024 * 1024;
+export const DEFAULT_MAX_RECORDS = 20000;
+/** @deprecated Use `DEFAULT_MAX_RECORDS`. */
+export const RECORDS_LIMIT = DEFAULT_MAX_RECORDS;
 
 type UnixTimestampInMilliseconds = number;
 
 type Entry = {
     version: UnixTimestampInSeconds;
     value: any;
-    accessed: UnixTimestampInMilliseconds;
+    /** Estimated size of the serialized value plus its key. */
+    bytes: number;
     /** Absolute expiry for entries stored with an explicit `ttl`. */
     expires?: UnixTimestampInMilliseconds;
 };
 
-export function createSharedMemoryCache(prefix = ''): Cache {
+/**
+ * One store per JavaScript runtime, shared by every namespace. `Map` keeps
+ * insertion order, so re-inserting an entry on read makes the first entry the
+ * least recently used one and eviction is a pop from the front: no sorting,
+ * no probability.
+ */
+const CACHE = new Map<string, Entry>();
+let totalBytes = 0;
+let maxBytes = DEFAULT_MAX_BYTES;
+let maxRecords = DEFAULT_MAX_RECORDS;
+
+/** Sets the bounds of the shared store for the whole runtime. */
+export function configureSharedMemoryCache(options: MemoryCacheOptions = {}): void {
+    for (const name of ['maxBytes', 'maxRecords'] as const) {
+        const value = options[name];
+        if (value !== undefined && (!Number.isInteger(value) || value < 1)) {
+            throw new RangeError(`The memory cache ${name} bound must be a positive integer.`);
+        }
+    }
+    const nextMaxBytes = options.maxBytes ?? DEFAULT_MAX_BYTES;
+    const nextMaxRecords = options.maxRecords ?? DEFAULT_MAX_RECORDS;
+    if (nextMaxBytes === maxBytes && nextMaxRecords === maxRecords) return;
+    maxBytes = nextMaxBytes;
+    maxRecords = nextMaxRecords;
+    evict();
+}
+
+/** Empties the shared store. Intended for tests. */
+export function clearSharedMemoryCache(): void {
+    CACHE.clear();
+    totalBytes = 0;
+}
+
+/** Current occupancy of the shared store. */
+export function inspectSharedMemoryCache() {
+    return { records: CACHE.size, bytes: totalBytes, maxBytes, maxRecords };
+}
+
+export function createSharedMemoryCache(prefix = '', options?: MemoryCacheOptions): Cache {
+    if (options) configureSharedMemoryCache(options);
+
+    function read(key: string): Entry | undefined {
+        const fullKey = `${prefix}${key}`;
+        const entry = CACHE.get(fullKey);
+        if (!entry) return undefined;
+        if ((entry.expires ?? Number.POSITIVE_INFINITY) <= Date.now()) {
+            remove(fullKey, entry);
+            return undefined;
+        }
+        // Most recently used entries live at the end of the map.
+        CACHE.delete(fullKey);
+        CACHE.set(fullKey, entry);
+        return entry;
+    }
+
+    function validate(key: string, latestVersion: UnixTimestampInSeconds): Entry | undefined {
+        const entry = read(key);
+        if (!entry) return undefined;
+        if (entry.version < latestVersion) {
+            remove(`${prefix}${key}`, entry);
+            return undefined;
+        }
+        return entry;
+    }
+
     return {
         get(key, latestVersion, onSource) {
-            const entry = CACHE.get(`${prefix}${key}`);
-            if (!entry) {
-                return undefined;
-            }
+            const entry = validate(key, latestVersion);
+            if (!entry) return undefined;
+            if (onSource && entry.value !== undefined) notify(onSource, 'memory');
+            return entry.value;
+        },
 
-            if (
-                entry.version < latestVersion ||
-                (entry.expires ?? Number.POSITIVE_INFINITY) <= Date.now()
-            ) {
-                CACHE.delete(`${prefix}${key}`);
-                return undefined;
-            }
-
-            const { value, version, expires } = entry;
-
-            CACHE.set(`${prefix}${key}`, { value, version, expires, accessed: Date.now() });
-
-            if (onSource && value !== undefined) notify(onSource, 'memory');
-            return value;
+        lookup<T>(key: string, latestVersion: UnixTimestampInSeconds): Lookup<T> | undefined {
+            const entry = validate(key, latestVersion);
+            if (!entry) return undefined;
+            return {
+                value: entry.value as T,
+                version: entry.version,
+                ttl:
+                    entry.expires === undefined
+                        ? undefined
+                        : Math.max(1, Math.ceil((entry.expires - Date.now()) / 1000)),
+                layer: 'memory',
+            };
         },
 
         set(key, value, version, options) {
+            const fullKey = `${prefix}${key}`;
+            const previous = CACHE.get(fullKey);
+            // A late write (e.g. a refill that raced with a newer origin fetch)
+            // must not replace a newer entry with an older one.
+            if (previous && previous.version > version) return;
+            const bytes = estimateBytes(fullKey, value);
+            // One entry larger than the whole store would evict everything else
+            // and still not fit; skip it rather than flush every tenant.
+            if (bytes > maxBytes) return;
+            if (previous) remove(fullKey, previous);
             const entry: Entry = {
                 value,
                 version,
-                accessed: Date.now(),
+                bytes,
                 expires: options?.ttl === undefined ? undefined : Date.now() + options.ttl * 1000,
             };
-
-            CACHE.set(`${prefix}${key}`, entry);
-
-            if (CACHE.size > RECORDS_LIMIT && Math.random() < GC_PROBABILITY) {
-                gc();
-            }
+            CACHE.set(fullKey, entry);
+            totalBytes += entry.bytes;
+            evict();
         },
 
         namespace(namespace: string): Cache {
@@ -61,16 +139,24 @@ export function createSharedMemoryCache(prefix = ''): Cache {
     };
 }
 
-function gc() {
-    Array.from(CACHE.entries())
-        .sort(([, a], [, b]) => -cmp(a.accessed, b.accessed))
-        .slice(RECORDS_LIMIT)
-        .forEach(([key]) => {
-            CACHE.delete(key);
-        });
+function remove(fullKey: string, entry: Entry): void {
+    if (CACHE.delete(fullKey)) totalBytes -= entry.bytes;
 }
 
-function cmp(a: UnixTimestampInMilliseconds, b: UnixTimestampInMilliseconds) {
-    if (a === b) return 0;
-    return a < b ? -1 : 1;
+/** Drops least recently used entries until both bounds hold. */
+function evict(): void {
+    while (CACHE.size > maxRecords || totalBytes > maxBytes) {
+        const oldest = CACHE.keys().next();
+        if (oldest.done) break;
+        remove(oldest.value, CACHE.get(oldest.value)!);
+    }
+}
+
+function estimateBytes(key: string, value: unknown): number {
+    try {
+        const serialized = JSON.stringify(value);
+        return key.length + (serialized === undefined ? 0 : serialized.length);
+    } catch {
+        return key.length;
+    }
 }
