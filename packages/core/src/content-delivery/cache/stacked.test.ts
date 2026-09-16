@@ -104,6 +104,21 @@ it('does not refill from a layer without lookup', async () => {
     expect(memory.set).not.toHaveBeenCalled();
 });
 
+it('withholds lookup when a layer cannot report hits, so nested stacks keep those hits', async () => {
+    const memory = layer('memory');
+    const custom = legacyLayer({ key: { value: 'custom value', version: 1 } });
+    const inner = createStackedCache([memory.cache, custom.cache]);
+    expect(inner.lookup).toBeUndefined();
+    const outerMemory = layer('memory');
+    const outer = createStackedCache([outerMemory.cache, inner]);
+    const sources: string[] = [];
+    expect(await outer.get('key', 1, (source) => sources.push(source))).toBe('custom value');
+    expect(sources).toEqual(['custom']);
+    await flush();
+    expect(outerMemory.set).not.toHaveBeenCalled();
+    expect(createStackedCache([memory.cache, layer('redis').cache]).lookup).toBeDefined();
+});
+
 it('returns the hit even when a refill write fails', async () => {
     const memory = layer('memory');
     memory.set.mockRejectedValue(new Error('memory full'));

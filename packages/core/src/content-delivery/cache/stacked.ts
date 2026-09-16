@@ -57,6 +57,18 @@ export function createStackedCache(caches: Cache[]): Cache {
         }
     }
 
+    // A hit from a get-only layer has no version or retention to report, so a
+    // stack containing one cannot represent every hit as a `Lookup`. Such a
+    // stack is read with `get` by an outer stack and never used as a refill
+    // source, instead of turning those hits into misses.
+    const lookup = caches.every((cache) => cache.lookup)
+        ? async <T>(key: string, latestVersion: UnixTimestampInSeconds) => {
+              const { index, found } = await find<T>(key, latestVersion);
+              if (found && index > 0) refill(key, index, found);
+              return found;
+          }
+        : undefined;
+
     return {
         async get<T>(
             key: string,
@@ -68,11 +80,7 @@ export function createStackedCache(caches: Cache[]): Cache {
             return value;
         },
 
-        async lookup<T>(key: string, latestVersion: UnixTimestampInSeconds) {
-            const { index, found } = await find<T>(key, latestVersion);
-            if (found && index > 0) refill(key, index, found);
-            return found;
-        },
+        lookup,
 
         async set(key, value, version, options) {
             await Promise.all(caches.map((cache) => cache.set(key, value, version, options)));
