@@ -9,7 +9,11 @@ type Entry = {
     value: any;
     /** Present for entries stored with their own short retention (e.g. not-found results). */
     ttl?: Seconds;
-    /** When the entry was last written, for sliding-expiry renewal. Absent on entries from older releases. */
+    /**
+     * When the entry was last written: renewal timing for regular entries and
+     * remaining-retention reporting for short-lived ones. Absent on entries
+     * from older releases.
+     */
     written?: UnixTimestampInSeconds;
 };
 type Options = RedisClientOptions & {
@@ -19,6 +23,18 @@ type Options = RedisClientOptions & {
 };
 
 const COMMAND_TIMEOUT = 1000;
+/**
+ * Renews an entry only if it is still the one that was read, so a renewal
+ * that lands after a newer write (another pod refreshing the key from origin)
+ * never puts the older payload back. EXPIRE had no such race; a plain SET has.
+ */
+const RENEW_IF_UNCHANGED = `
+if redis.call('GET', KEYS[1]) == ARGV[1] then
+    return redis.call('SET', KEYS[1], ARGV[2], 'EX', ARGV[3])
+end
+return nil
+`;
+const now = (): UnixTimestampInSeconds => Math.floor(Date.now() / 1000);
 const CONNECTIONS = new Map<string, ReturnType<typeof createClient>>();
 
 async function command<T>(
@@ -98,13 +114,22 @@ export function createRedisCache({
             // rate. Now an entry is rewritten with a fresh timestamp only once it
             // has consumed half of its lifetime, so a hot key costs one write per
             // half-life instead of one per read. Entries from older releases
-            // carry no timestamp and are renewed on their first read.
+            // carry no timestamp and are renewed on their first read. A timestamp
+            // in the future (clock skew) is treated as due as well.
             if (ttl && entry.ttl === undefined) {
-                const now = Math.floor(Date.now() / 1000);
-                if (entry.written === undefined || now - entry.written >= ttl / 2) {
-                    const renewed: Entry = { ...entry, written: now };
+                const time = now();
+                if (
+                    entry.written === undefined ||
+                    entry.written > time ||
+                    time - entry.written >= ttl / 2
+                ) {
+                    const renewed: Entry = { ...entry, written: time };
                     void command(
-                        () => connection.set(fullKey, JSON.stringify(renewed), { EX: ttl }),
+                        () =>
+                            connection.eval(RENEW_IF_UNCHANGED, {
+                                keys: [fullKey],
+                                arguments: [cached, JSON.stringify(renewed), String(ttl)],
+                            }),
                         telemetry,
                         'expire',
                     ).catch(() => undefined);
@@ -124,10 +149,14 @@ export function createRedisCache({
             async lookup(key, latestVersion) {
                 const entry = await read(key, latestVersion);
                 if (!entry) return undefined;
+                // Report what is left of a short retention, so a refilled copy
+                // does not outlive this one. Legacy entries have no timestamp
+                // and report their original retention.
+                const age = entry.written === undefined ? 0 : Math.max(0, now() - entry.written);
                 return {
                     value: entry.value,
                     version: entry.version,
-                    ttl: entry.ttl,
+                    ttl: entry.ttl === undefined ? undefined : Math.max(1, entry.ttl - age),
                     layer: 'redis' as const,
                 };
             },
@@ -140,8 +169,13 @@ export function createRedisCache({
                 // SET EX takes whole seconds; round a fractional hint up, never down.
                 const entry: Entry =
                     options?.ttl === undefined
-                        ? { value, version, written: Math.floor(Date.now() / 1000) }
-                        : { value, version, ttl: Math.max(1, Math.ceil(options.ttl)) };
+                        ? { value, version, written: now() }
+                        : {
+                              value,
+                              version,
+                              ttl: Math.max(1, Math.ceil(options.ttl)),
+                              written: now(),
+                          };
                 await command(
                     () =>
                         connection.set(`${namespacePrefix}${key}`, JSON.stringify(entry), {

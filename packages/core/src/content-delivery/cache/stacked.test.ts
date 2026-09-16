@@ -84,6 +84,15 @@ it('never refills from a stale entry or on a miss', async () => {
     expect(memory.set).not.toHaveBeenCalled();
 });
 
+it('treats an entry holding undefined as a miss and reads the next layer', async () => {
+    const memory = layer('memory', { key: { value: undefined, version: 1 } });
+    const redis = layer('redis', { key: { value: 'value', version: 1 } });
+    const stacked = createStackedCache([memory.cache, redis.cache]);
+    const sources: string[] = [];
+    expect(await stacked.get('key', 1, (source) => sources.push(source))).toBe('value');
+    expect(sources).toEqual(['redis']);
+});
+
 it('does not refill from a layer without lookup', async () => {
     const memory = layer('memory');
     const custom = legacyLayer({ key: { value: 'custom value', version: 1 } });

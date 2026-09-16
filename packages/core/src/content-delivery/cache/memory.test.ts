@@ -117,6 +117,33 @@ describe('createSharedMemoryCache', () => {
         }
     });
 
+    it('keeps a newer entry when an older version is written late', () => {
+        const cache = createSharedMemoryCache('late:');
+        cache.set('key', 'new', 2);
+        cache.set('key', 'old', 1); // e.g. a refill that raced with an origin fetch
+        expect(cache.get('key', 2)).toBe('new');
+        cache.set('key', 'newer', 3);
+        expect(cache.get('key', 3)).toBe('newer');
+    });
+
+    it('skips an entry larger than the whole store instead of flushing it', () => {
+        clearSharedMemoryCache();
+        configureSharedMemoryCache({ maxBytes: 100 });
+        try {
+            const cache = createSharedMemoryCache('huge:');
+            cache.set('a', 'x'.repeat(30), 0);
+            cache.set('b', 'x'.repeat(30), 0);
+            cache.set('c', 'x'.repeat(500), 0);
+            expect(cache.get('c', 0)).toBeUndefined();
+            expect(cache.get('a', 0)).toBe('x'.repeat(30));
+            expect(cache.get('b', 0)).toBe('x'.repeat(30));
+            expect(inspectSharedMemoryCache().records).toBe(2);
+        } finally {
+            configureSharedMemoryCache();
+            clearSharedMemoryCache();
+        }
+    });
+
     it('rejects invalid bounds', () => {
         expect(() => configureSharedMemoryCache({ maxRecords: 0 })).toThrow(RangeError);
         expect(() => configureSharedMemoryCache({ maxBytes: 1.5 })).toThrow(RangeError);

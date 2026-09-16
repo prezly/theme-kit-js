@@ -37,13 +37,17 @@ let maxRecords = DEFAULT_MAX_RECORDS;
 
 /** Sets the bounds of the shared store for the whole runtime. */
 export function configureSharedMemoryCache(options: MemoryCacheOptions = {}): void {
-    for (const [name, value] of Object.entries(options)) {
+    for (const name of ['maxBytes', 'maxRecords'] as const) {
+        const value = options[name];
         if (value !== undefined && (!Number.isInteger(value) || value < 1)) {
             throw new RangeError(`The memory cache ${name} bound must be a positive integer.`);
         }
     }
-    maxBytes = options.maxBytes ?? DEFAULT_MAX_BYTES;
-    maxRecords = options.maxRecords ?? DEFAULT_MAX_RECORDS;
+    const nextMaxBytes = options.maxBytes ?? DEFAULT_MAX_BYTES;
+    const nextMaxRecords = options.maxRecords ?? DEFAULT_MAX_RECORDS;
+    if (nextMaxBytes === maxBytes && nextMaxRecords === maxRecords) return;
+    maxBytes = nextMaxBytes;
+    maxRecords = nextMaxRecords;
     evict();
 }
 
@@ -110,11 +114,18 @@ export function createSharedMemoryCache(prefix = '', options?: MemoryCacheOption
         set(key, value, version, options) {
             const fullKey = `${prefix}${key}`;
             const previous = CACHE.get(fullKey);
+            // A late write (e.g. a refill that raced with a newer origin fetch)
+            // must not replace a newer entry with an older one.
+            if (previous && previous.version > version) return;
+            const bytes = estimateBytes(fullKey, value);
+            // One entry larger than the whole store would evict everything else
+            // and still not fit; skip it rather than flush every tenant.
+            if (bytes > maxBytes) return;
             if (previous) remove(fullKey, previous);
             const entry: Entry = {
                 value,
                 version,
-                bytes: estimateBytes(fullKey, value),
+                bytes,
                 expires: options?.ttl === undefined ? undefined : Date.now() + options.ttl * 1000,
             };
             CACHE.set(fullKey, entry);

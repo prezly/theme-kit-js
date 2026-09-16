@@ -440,10 +440,17 @@ reports the current occupancy.
 Redis renewal changed at the same time. Regular content keeps a sliding
 expiry, but instead of an `EXPIRE` on every read, an entry is rewritten with a
 fresh timestamp only once it has consumed half of its lifetime, so a hot key
-costs one write per half-life instead of one per read. Entries written by
-older releases carry no timestamp and are renewed on their first read. The
-renewal still reports as the `expire` command in telemetry. Not-found entries
-are never renewed.
+costs one write per half-life instead of one per read. The rewrite runs as a
+small Lua script that compares the stored payload with the one that was read,
+so a renewal landing after another pod refreshed the key never puts the older
+payload back. Entries written by older releases carry no timestamp and are
+renewed on their first read. The renewal still reports as the `expire` command
+in telemetry. Not-found entries are never renewed.
+
+The in-process store also refuses two kinds of write: an entry older than the
+one it already holds for that key (a refill that lost a race with an origin
+fetch) and an entry larger than `maxBytes` on its own, which would otherwise
+evict every other tenant and still not fit.
 
 ### Not-found results
 

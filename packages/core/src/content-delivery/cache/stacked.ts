@@ -18,7 +18,8 @@ export function createStackedCache(caches: Cache[]): Cache {
             const layer = caches[i];
             if (layer.lookup) {
                 const found = await layer.lookup<T>(key, latestVersion);
-                if (found !== undefined) {
+                // An entry holding `undefined` is a miss by the `get` contract.
+                if (found !== undefined && found.value !== undefined) {
                     if (onSource) notify(onSource, found.layer);
                     return { index: i, found, value: found.value };
                 }
