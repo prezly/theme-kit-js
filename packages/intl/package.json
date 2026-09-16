@@ -22,10 +22,6 @@
         "node": ">= 14.x",
         "npm": ">= 7.x"
     },
-    "devEngines": {
-        "node": ">= 14.x",
-        "npm": ">= 7.x"
-    },
     "scripts": {
         "clean": "rimraf --glob build/* *.tsbuildinfo",
         "prebuild": "pnpm clean && pnpm build:locales && pnpm format",

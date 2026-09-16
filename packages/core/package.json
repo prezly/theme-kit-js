@@ -54,10 +54,6 @@
         "node": ">= 16.x",
         "npm": ">= 8.x"
     },
-    "devEngines": {
-        "node": ">= 16.x",
-        "npm": ">= 8.x"
-    },
     "keywords": [
         "prezly"
     ],

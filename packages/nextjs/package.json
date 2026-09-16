@@ -45,10 +45,6 @@
         "node": ">= 18.18.0",
         "npm": ">= 8.x"
     },
-    "devEngines": {
-        "node": ">= 18.18.0",
-        "npm": ">= 8.x"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/prezly/theme-kit-js.git",

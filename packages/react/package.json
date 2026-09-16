@@ -20,10 +20,6 @@
         "node": ">= 20.x",
         "npm": ">= 8.x"
     },
-    "devEngines": {
-        "node": ">= 20.x",
-        "npm": ">= 8.x"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/prezly/theme-kit-js.git",
