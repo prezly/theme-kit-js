@@ -58,6 +58,40 @@ it('preserves namespace, version and sliding expiry and observes expiry rejectio
     );
 });
 
+it('stores a short-lived entry with its own expiry and never renews it', async () => {
+    const { client, cache } = connection();
+    await cache.set('missing', null, 4, { ttl: 60 });
+    expect(client.set).toHaveBeenLastCalledWith(
+        'test:missing',
+        JSON.stringify({ value: null, version: 4, ttl: 60 }),
+        { EX: 60 },
+    );
+    client.get.mockResolvedValueOnce(JSON.stringify({ value: null, version: 4, ttl: 60 }));
+    const onSource = jest.fn();
+    expect(await cache.get('missing', 4, onSource)).toBeNull();
+    expect(onSource).toHaveBeenCalledWith('redis');
+    expect(client.expire).not.toHaveBeenCalled();
+    client.get.mockResolvedValueOnce(JSON.stringify({ value: null, version: 4, ttl: 60 }));
+    expect(await cache.get('missing', 5)).toBeUndefined();
+});
+
+it('rounds a fractional ttl hint up to whole seconds for SET EX', async () => {
+    const { client, cache } = connection();
+    await cache.set('short', null, 1, { ttl: 0.5 });
+    expect(client.set).toHaveBeenLastCalledWith(
+        'test:short',
+        JSON.stringify({ value: null, version: 1, ttl: 1 }),
+        { EX: 1 },
+    );
+});
+
+it.each([false, 0, ''])('returns a stored %p as a hit', async (value) => {
+    const { client, cache } = connection();
+    client.get.mockResolvedValueOnce(JSON.stringify({ value, version: 2 }));
+    expect(await cache.get('key', 2)).toBe(value);
+    expect(client.expire).toHaveBeenCalledTimes(1);
+});
+
 it.each(['get', 'set'] as const)(
     'times out stalled %s commands without unsafe cancellation and recovers',
     async (method) => {
