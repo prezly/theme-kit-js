@@ -41,7 +41,7 @@
         "test:build:cjs": "node test/test-build.cjs",
         "test:build:esm": "node test/test-build.mjs",
         "test:build:dts": "tsc --noEmit build/cjs/index.d.ts && tsc --noEmit build/esm/index.d.ts",
-        "test:build:messages": "echo 'Checking if the build/messages directory contains 49 files' && ls build/messages/*.json | cut -d\\/ -f3 | cut -d. -f1 | sort | wc -l | grep -q 49 || (echo 'Fail' && false) && echo 'OK'",
+        "test:build:messages": "node test/test-build-messages.cjs",
         "intl:extract": "formatjs extract 'src/messages/**/*.ts' --out-file i18n/en.json --format crowdin --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
         "intl:compile": "formatjs compile-folder --ast --format crowdin i18n build/messages"
     },
