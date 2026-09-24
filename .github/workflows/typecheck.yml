@@ -4,8 +4,12 @@ on: [push]
 
 jobs:
   typecheck:
-    name: Run TSC type check
+    name: Run TSC type check (SDK ${{ matrix.sdk }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sdk: ['24.0.0', '26.15.0']
 
     steps:
     - uses: actions/checkout@v3
@@ -16,7 +20,7 @@ jobs:
         cache-name: cache-node-modules
       with:
         path: "**/node_modules"
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-sdk-${{ matrix.sdk }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
@@ -28,6 +32,9 @@ jobs:
         node-version-file: '.nvmrc'
 
     - run: npm ci
+
+    - name: Select SDK version
+      run: npm install --no-save --package-lock=false @prezly/sdk@${{ matrix.sdk }}
 
     - run: npm run typecheck
       env:

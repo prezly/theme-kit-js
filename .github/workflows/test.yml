@@ -4,8 +4,12 @@ on: push
 
 jobs:
   run-tests:
-    name: Run tests
+    name: Run tests (SDK ${{ matrix.sdk }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sdk: ['24.0.0', '26.15.0']
 
     steps:
       - name: Check out Git repository
@@ -22,7 +26,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-sdk-${{ matrix.sdk }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -30,6 +34,9 @@ jobs:
 
       - name: Install Node.js dependencies
         run: npm ci
+
+      - name: Select SDK version
+        run: npm install --no-save --package-lock=false @prezly/sdk@${{ matrix.sdk }}
 
       - name: Run tests
         run: npm test
