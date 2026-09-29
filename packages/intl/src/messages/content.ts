@@ -75,6 +75,35 @@ export const newsroom = defineMessages({
     },
 });
 
+export const liveEvent = defineMessages({
+    badge: {
+        id: 'liveEvent.badge',
+        defaultMessage: 'Live',
+        description:
+            'A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in "live coverage"',
+    },
+    updates: {
+        id: 'liveEvent.updates',
+        defaultMessage: 'Live updates',
+        description: 'Title of the timeline of short news updates about an ongoing event',
+    },
+    lastUpdated: {
+        id: 'liveEvent.lastUpdated',
+        defaultMessage: 'Last updated {time}',
+        description: '{time} is a time of day, e.g. "14:05 CEST"',
+    },
+    noLiveEvents: {
+        id: 'liveEvent.noLiveEvents',
+        defaultMessage: 'No live events',
+        description: 'Shown when there is no ongoing event covered with live updates',
+    },
+    previousEvents: {
+        id: 'liveEvent.previousEvents',
+        defaultMessage: 'Previous events',
+        description: 'Title of a list of past events that were covered with live updates',
+    },
+});
+
 export const cookieConsent = defineMessages({
     title: {
         id: 'cookieConsent.title',
