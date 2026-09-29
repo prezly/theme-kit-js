@@ -131,6 +131,26 @@
   "homepage.latestStories": {
     "message": "Najnovije priče"
   },
+  "liveEvent.badge": {
+    "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
+    "message": "Live"
+  },
+  "liveEvent.lastUpdated": {
+    "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
+    "message": "Last updated {time}"
+  },
+  "liveEvent.noLiveEvents": {
+    "description": "Shown when there is no ongoing event covered with live updates",
+    "message": "No live events"
+  },
+  "liveEvent.previousEvents": {
+    "description": "Title of a list of past events that were covered with live updates",
+    "message": "Previous events"
+  },
+  "liveEvent.updates": {
+    "description": "Title of the timeline of short news updates about an ongoing event",
+    "message": "Live updates"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Nema slika} one {# slika} few {# slike} many {# slika} other {# slika} }"
   },
