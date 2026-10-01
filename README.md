@@ -6,9 +6,10 @@ See individual package READMEs for more information:
 
 - [@prezly/theme-kit-core](./packages/core#readme)
 - [@prezly/theme-kit-nextjs](./packages/nextjs#readme)
-- [@prezly/theme-kit-ui](./packages/ui#readme)
+- [@prezly/theme-kit-react](./packages/react#readme)
 - [@prezly/theme-kit-intl](./packages/intl#readme)
 
+The unused `packages/ui` directory is excluded from the workspace, builds, and releases.
 
 ## Working with the repo locally
 

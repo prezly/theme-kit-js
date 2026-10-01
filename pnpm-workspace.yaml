@@ -1,5 +1,8 @@
 packages:
-    - 'packages/*'
+    - 'packages/core'
+    - 'packages/intl'
+    - 'packages/nextjs'
+    - 'packages/react'
 allowBuilds:
     esbuild: true
     sharp: true

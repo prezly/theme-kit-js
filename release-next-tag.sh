@@ -18,8 +18,7 @@ git add lerna.json \
         packages/core/package.json \
         packages/intl/package.json \
         packages/react/package.json \
-        packages/nextjs/package.json \
-        packages/ui/package.json
+        packages/nextjs/package.json
 
 git commit -m "v$VERSION"
 
