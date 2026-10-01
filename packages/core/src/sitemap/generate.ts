@@ -131,7 +131,10 @@ async function generateCategoriesEntries(
     const entries = categories
         .flatMap((category) =>
             Category.translations(category)
-                .filter(({ locale }) => locales.includes(locale))
+                .filter(
+                    ({ locale, public_stories_number }) =>
+                        locales.includes(locale) && public_stories_number !== 0,
+                )
                 .map((translation) => {
                     const params = { ...translation, localeCode: translation.locale };
 
