@@ -27,7 +27,9 @@ export async function generateCategoryPageMetadata(
             description,
             generateUrl: (localeCode) => {
                 const translated = Category.translation(category, localeCode);
-                return translated && generateUrl('category', { ...translated, localeCode });
+                if (!translated || translated.public_stories_number === 0) return undefined;
+
+                return generateUrl('category', { ...translated, localeCode });
             },
         },
         ...metadata,
