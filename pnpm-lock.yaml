@@ -97,8 +97,8 @@ importers:
         specifier: workspace:^
         version: link:../intl
       '@prezly/uploadcare':
-        specifier: 2.4.4
-        version: 2.4.4
+        specifier: 2.6.0
+        version: 2.6.0
       '@technically/is-not-undefined':
         specifier: ^1.0.0
         version: 1.0.0
@@ -1636,8 +1636,8 @@ packages:
   '@prezly/uploadcare-widget@3.16.1':
     resolution: {integrity: sha512-qfxUdpL4BW0M+q0WGQwCkL0H4UPwFA+prUx95VkQ43gT7/YNUnYriZfDnRMXpBOOxC28N1tVFgS7NPJSOzIsLA==}
 
-  '@prezly/uploadcare@2.4.4':
-    resolution: {integrity: sha512-NMBMvrgBbhcuD/cdoIykiv8/v7l85yn9yVpXPYdXy26eB4aiFJY7JradDzWwm28dy9VM7jGKaQDeB0wxlOWHpw==}
+  '@prezly/uploadcare@2.6.0':
+    resolution: {integrity: sha512-86GzgF4mgPHgzoKOQWh2ut7ZsgLbvss3UhR7TGx0Rs2eIVuK1fIk0s0SCitfPKgnO7j6NRMrG+Crb1uvhbF6cw==}
 
   '@prezly/uploads@0.2.1':
     resolution: {integrity: sha512-G4U0H89YSp/krcIjSSuZDqCZ2NeE4qQkFjY0yf7vkOf0IuRjpTfLb9Jr8uaOYFpql2ln8XINBPSFZWImThcB8g==}
@@ -6673,7 +6673,7 @@ snapshots:
       '@types/jquery': 3.5.32
       uploadcare-widget: 3.21.8
 
-  '@prezly/uploadcare@2.4.4':
+  '@prezly/uploadcare@2.6.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
       '@prezly/uploadcare-widget': 3.16.1
