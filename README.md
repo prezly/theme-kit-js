@@ -35,8 +35,10 @@ Prezly SDK has a tendency to introduce major releases that are not necessary bre
 GitHub Actions are set up with a version matrix to ensure compatibility with all currently supported versions. Please keep the matrix in sync with the peer dependency version range.
 
 SDK 26 support requires `@prezly/sdk >=26.16.0 <27` and Node.js 22 or newer.
-The existing SDK `21.12.0` and `23.x` peer ranges remain supported. Development
-and CI use Node.js 22 so that all supported SDK versions can be tested.
+SDK `21.12.0` and `23.x` from `23.0.1` remain supported. SDK `23.0.0` is excluded
+because failed requests can leave promises pending; `23.0.1` fixes rejection
+propagation. Development and CI use Node.js 22 so that all supported SDK versions
+can be tested.
 
 ### DEV-24508 release order
 

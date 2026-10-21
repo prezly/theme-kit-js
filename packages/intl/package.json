@@ -65,7 +65,8 @@
         "@technically/is-not-undefined": "^1.0.0"
     },
     "devDependencies": {
-        "@formatjs/cli": "4.8.4"
+        "@formatjs/cli": "4.8.4",
+        "typescript": "5.7.3"
     },
     "publishConfig": {
         "access": "public"
