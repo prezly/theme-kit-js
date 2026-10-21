@@ -4,8 +4,12 @@ on: push
 
 jobs:
   run-tests:
-    name: Run tests
+    name: Run tests (SDK ${{ matrix.sdk }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sdk: ['21.12.0', '23.0.0', '23.20.0', '26.16.0']
 
     steps:
       - name: Check out Git repository
@@ -15,12 +19,15 @@ jobs:
         uses: prezly/setup-github-actions@v1
         with:
           pnpm: 9.15.4
-          node: 20
+          node: 22
 
       - name: Install Node.js dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run tests
+      - name: Select SDK version
+        run: pnpm add --workspace-root --save-dev --save-exact @prezly/sdk@${{ matrix.sdk }}
+
+      - name: Run tests (SDK ${{ matrix.sdk }})
         run: pnpm test
 
       - name: Check modified intl artifacts

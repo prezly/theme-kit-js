@@ -4,8 +4,12 @@ on: [push]
 
 jobs:
   typecheck:
-    name: Run TSC type check
+    name: Run TSC type check (SDK ${{ matrix.sdk }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sdk: ['21.12.0', '23.0.0', '23.20.0', '26.16.0']
 
     steps:
     - uses: actions/checkout@v3
@@ -14,9 +18,12 @@ jobs:
       uses: prezly/setup-github-actions@v1
       with:
         pnpm: 9.15.4
-        node: 20
+        node: 22
 
     - run: pnpm install --frozen-lockfile
+
+    - name: Select SDK version
+      run: pnpm add --workspace-root --save-dev --save-exact @prezly/sdk@${{ matrix.sdk }}
 
     - run: pnpm typecheck
       env:
