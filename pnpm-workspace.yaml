@@ -1,8 +1,10 @@
 packages:
-    - 'packages/core'
-    - 'packages/intl'
-    - 'packages/nextjs'
-    - 'packages/react'
+  - 'packages/core'
+  - 'packages/intl'
+  - 'packages/nextjs'
+  - 'packages/react'
 allowBuilds:
-    esbuild: true
-    sharp: true
+  '@sentry/cli': true
+  esbuild: true
+  nx: true
+  sharp: true
