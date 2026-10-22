@@ -34,6 +34,31 @@ Prezly SDK has a tendency to introduce major releases that are not necessary bre
 
 GitHub Actions are set up with a version matrix to ensure compatibility with all currently supported versions. Please keep the matrix in sync with the peer dependency version range.
 
+SDK 26 support requires `@prezly/sdk >=26.16.0 <27` and Node.js 22 or newer.
+SDK `21.12.0` and `23.x` from `23.0.1` remain supported. SDK `23.0.0` is excluded
+because failed requests can leave promises pending; `23.0.1` fixes rejection
+propagation. Development and CI use Node.js 22 so that all supported SDK versions
+can be tested.
+
+### DEV-24508 release order
+
+The theme PRs using Theme Kit 10.12.0 and SDK 26.16.0 must wait for the SDK 26
+compatibility release. Version 10.12.0 excludes SDK 26 from its peer range.
+
+1. Merge the SDK 26 support PR and publish a minor Theme Kit release (10.13.0
+   if no other release has advanced the version). Follow the publishing process
+   below, including every package Lerna lists as changed and publishing core
+   before Next.js.
+2. Verify the registry tarballs for core and Next.js contain the SDK 26 peer
+   range and rewritten workspace dependencies. Confirm a fresh consumer install
+   with SDK 26.16.0 on Node.js 22 and run its build and tests.
+3. Update the 24 blocked theme PRs to the published Theme Kit version, regenerate
+   their lockfiles, and rerun their CI before resuming merges. Do not resume with
+   Theme Kit 10.12.0 or bypass peer checks to unblock them.
+
+Track release completion and the theme rollout in
+[DEV-24508](https://linear.app/prezly/issue/DEV-24508).
+
 ### Publishing new releases
 
 ## Before you publish

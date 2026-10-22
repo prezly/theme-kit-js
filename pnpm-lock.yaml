@@ -46,8 +46,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1(@biomejs/biome@2.2.4)
       '@prezly/sdk':
-        specifier: 23.20.0
-        version: 23.20.0
+        specifier: 26.16.0
+        version: 26.16.0
       '@types/jest':
         specifier: 29.5.14
         version: 29.5.14
@@ -91,8 +91,8 @@ importers:
   packages/core:
     dependencies:
       '@prezly/sdk':
-        specifier: 21.12.0 || ^23.x
-        version: 23.20.0
+        specifier: 21.12.0 || ^23.0.1 || ^26.16.0
+        version: 26.16.0
       '@prezly/theme-kit-intl':
         specifier: workspace:^
         version: link:../intl
@@ -125,6 +125,9 @@ importers:
       '@formatjs/cli':
         specifier: 4.8.4
         version: 4.8.4(ts-jest@29.4.15(@babel/core@7.29.7(supports-color@8.1.1))(@jest/transform@29.7.0(supports-color@8.1.1))(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(esbuild@0.18.20)(jest-util@29.7.0)(jest@29.7.0(@types/node@22.20.5)(supports-color@8.1.1))(typescript@5.7.3))
+      typescript:
+        specifier: 5.7.3
+        version: 5.7.3
 
   packages/nextjs:
     dependencies:
@@ -135,8 +138,8 @@ importers:
         specifier: 1.x
         version: 1.64.1
       '@prezly/sdk':
-        specifier: 21.12.0 || ^23.x
-        version: 23.20.0
+        specifier: 21.12.0 || ^23.0.1 || ^26.16.0
+        version: 26.16.0
       '@prezly/theme-kit-core':
         specifier: workspace:^
         version: link:../core
@@ -1629,9 +1632,9 @@ packages:
   '@prezly/progress-promise@2.0.1':
     resolution: {integrity: sha512-uKBTA1gZ90ckKK/4wVoVORC3VUTkOgFwhZWwWsceKxVoAgDxqS5s0NXP5V7J+niEdvCkcoEVeCc25kCs+Hr/uQ==}
 
-  '@prezly/sdk@23.20.0':
-    resolution: {integrity: sha512-D4sOUkqoRyKJ4vKruJTeZE2MyBF0bjPKX790PGpXow9H7R+B8gYXAc6VH86VPpQcB66jVtZJSN3vIOK57awzTw==}
-    engines: {node: '>= 16'}
+  '@prezly/sdk@26.16.0':
+    resolution: {integrity: sha512-N9lfbSMLUNt2wE8+1olJySS4edr/lrirXJZ3jLuwUwGrI9S3vRCf4BLpN4gOEKgbbgb4wXrCwKtZP0Jh2FE9kQ==}
+    engines: {node: '>=22'}
 
   '@prezly/uploadcare-widget@3.16.1':
     resolution: {integrity: sha512-qfxUdpL4BW0M+q0WGQwCkL0H4UPwFA+prUx95VkQ43gT7/YNUnYriZfDnRMXpBOOxC28N1tVFgS7NPJSOzIsLA==}
@@ -6662,11 +6665,10 @@ snapshots:
 
   '@prezly/progress-promise@2.0.1': {}
 
-  '@prezly/sdk@23.20.0':
+  '@prezly/sdk@26.16.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
-      '@prezly/uploads': 0.2.1
-      query-string: 6.14.1
+      '@prezly/uploads': 0.3.2
 
   '@prezly/uploadcare-widget@3.16.1':
     dependencies:
