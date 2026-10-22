@@ -97,8 +97,8 @@ importers:
         specifier: workspace:^
         version: link:../intl
       '@prezly/uploadcare':
-        specifier: 2.4.4
-        version: 2.4.4
+        specifier: 2.6.0
+        version: 2.6.0
       '@technically/is-not-undefined':
         specifier: ^1.0.0
         version: 1.0.0
@@ -1639,11 +1639,8 @@ packages:
   '@prezly/uploadcare-widget@3.16.1':
     resolution: {integrity: sha512-qfxUdpL4BW0M+q0WGQwCkL0H4UPwFA+prUx95VkQ43gT7/YNUnYriZfDnRMXpBOOxC28N1tVFgS7NPJSOzIsLA==}
 
-  '@prezly/uploadcare@2.4.4':
-    resolution: {integrity: sha512-NMBMvrgBbhcuD/cdoIykiv8/v7l85yn9yVpXPYdXy26eB4aiFJY7JradDzWwm28dy9VM7jGKaQDeB0wxlOWHpw==}
-
-  '@prezly/uploads@0.2.1':
-    resolution: {integrity: sha512-G4U0H89YSp/krcIjSSuZDqCZ2NeE4qQkFjY0yf7vkOf0IuRjpTfLb9Jr8uaOYFpql2ln8XINBPSFZWImThcB8g==}
+  '@prezly/uploadcare@2.6.0':
+    resolution: {integrity: sha512-86GzgF4mgPHgzoKOQWh2ut7ZsgLbvss3UhR7TGx0Rs2eIVuK1fIk0s0SCitfPKgnO7j6NRMrG+Crb1uvhbF6cw==}
 
   '@prezly/uploads@0.3.2':
     resolution: {integrity: sha512-bUIRPKC8bfjJgmKFG9T4CZssAb1jZu9XrYBQX3vgXOmN6ot+mK2rMwm0Lp7guUS4xMKvrnDAqz6si360RUCDCA==}
@@ -2586,10 +2583,6 @@ packages:
     resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
     engines: {node: '>=0.10.0'}
 
-  decode-uri-component@0.2.2:
-    resolution: {integrity: sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==}
-    engines: {node: '>=0.10'}
-
   dedent@1.5.3:
     resolution: {integrity: sha512-NHQtfOOW68WD8lgypbLA5oT+Bt0xXJhiYvoR6SmmNXZfpzOGXwdKWmcwG8N7PwVVWV3eF/68nmD9BaJSsTBhyQ==}
     peerDependencies:
@@ -2822,10 +2815,6 @@ packages:
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
-
-  filter-obj@1.1.0:
-    resolution: {integrity: sha512-8rXg1ZnX7xzy2NGDVkBVaAy+lSlPNwad13BtgSlLuxfIslyt5Vg64U7tFcCt4WS1R0hvtnQybT/IyCkGZ3DpXQ==}
-    engines: {node: '>=0.10.0'}
 
   find-up@2.1.0:
     resolution: {integrity: sha512-NWzkk0jSJtTt08+FBFMvXoeZnOJD+jTtsRmBYbAIzJdX6l7dLgR7CTubCM5/eDdPUBvLCeVasP1brfVR/9/EZQ==}
@@ -4156,10 +4145,6 @@ packages:
   pure-rand@6.1.0:
     resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
 
-  query-string@6.14.1:
-    resolution: {integrity: sha512-XDxAeVmpfu1/6IjyT/gXHOl+S0vQ9owggJ30hhWKdHAsNPOcasn5o9BW0eejZqL2e4vMjhAxoW3jVHcD6mbcYw==}
-    engines: {node: '>=6'}
-
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -4461,10 +4446,6 @@ packages:
   spdx-license-ids@3.0.21:
     resolution: {integrity: sha512-Bvg/8F5XephndSK3JffaRqdT+gyhfqIPwDHpX80tJrF8QQRYMo8sNMeaZ2Dp5+jhwKnUmIOyFFQfHRkjJm5nXg==}
 
-  split-on-first@1.1.0:
-    resolution: {integrity: sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw==}
-    engines: {node: '>=6'}
-
   split2@3.2.2:
     resolution: {integrity: sha512-9NThjpgZnifTkJpzTZ7Eue85S49QwpNhZTq6GRJwObb6jnLFNGB7Qm73V5HewTROPyxD0C29xqmaI68bQtV+hg==}
 
@@ -4492,10 +4473,6 @@ packages:
   streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
     engines: {node: '>=10.0.0'}
-
-  strict-uri-encode@2.0.0:
-    resolution: {integrity: sha512-QwiXZgpRcKkhTj2Scnn++4PKtWsH0kpzZ62L2R6c/LUVYv7hVnZqcg2+sMuT6R7Jusu1vviK/MFsu6kNJfWlEQ==}
-    engines: {node: '>=4'}
 
   string-length@4.0.2:
     resolution: {integrity: sha512-+l6rNN5fYHNhZZy41RXsYptCjA2Igmq4EG7kZAYFQI1E1VTXarr6ZPXBg6eq7Y6eK4FEhY6AJlyuFIb/v/S0VQ==}
@@ -6675,17 +6652,13 @@ snapshots:
       '@types/jquery': 3.5.32
       uploadcare-widget: 3.21.8
 
-  '@prezly/uploadcare@2.4.4':
+  '@prezly/uploadcare@2.6.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
       '@prezly/uploadcare-widget': 3.16.1
       '@prezly/uploads': 0.3.2
       lodash.clamp: 4.0.3
       sanitize-filename: 1.6.3
-
-  '@prezly/uploads@0.2.1':
-    dependencies:
-      is-plain-object: 5.0.0
 
   '@prezly/uploads@0.3.2':
     dependencies:
@@ -7773,8 +7746,6 @@ snapshots:
 
   decamelize@1.2.0: {}
 
-  decode-uri-component@0.2.2: {}
-
   dedent@1.5.3: {}
 
   deepmerge@4.3.1: {}
@@ -8009,8 +7980,6 @@ snapshots:
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
-
-  filter-obj@1.1.0: {}
 
   find-up@2.1.0:
     dependencies:
@@ -9670,13 +9639,6 @@ snapshots:
 
   pure-rand@6.1.0: {}
 
-  query-string@6.14.1:
-    dependencies:
-      decode-uri-component: 0.2.2
-      filter-obj: 1.1.0
-      split-on-first: 1.1.0
-      strict-uri-encode: 2.0.0
-
   queue-microtask@1.2.3: {}
 
   quick-lru@4.0.1: {}
@@ -10009,8 +9971,6 @@ snapshots:
 
   spdx-license-ids@3.0.21: {}
 
-  split-on-first@1.1.0: {}
-
   split2@3.2.2:
     dependencies:
       readable-stream: 3.6.2
@@ -10036,8 +9996,6 @@ snapshots:
       type-fest: 0.7.1
 
   streamsearch@1.1.0: {}
-
-  strict-uri-encode@2.0.0: {}
 
   string-length@4.0.2:
     dependencies:
