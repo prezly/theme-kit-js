@@ -102,6 +102,18 @@ export const liveEvent = defineMessages({
         defaultMessage: 'Previous events',
         description: 'Title of a list of past events that were covered with live updates',
     },
+    ended: {
+        id: 'liveEvent.ended',
+        defaultMessage: 'This event has ended',
+        description:
+            'Shown on the timeline of a past event, so readers know the updates are no longer live',
+    },
+    newUpdates: {
+        id: 'liveEvent.newUpdates',
+        defaultMessage: '{count, plural, one {# new update} other {# new updates} }',
+        description:
+            'Button above a live timeline that shows updates published since the reader opened the page',
+    },
 });
 
 export const cookieConsent = defineMessages({
