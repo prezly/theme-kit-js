@@ -133,23 +133,23 @@
   },
   "liveEvent.badge": {
     "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
-    "message": "Live"
+    "message": "即時"
   },
   "liveEvent.lastUpdated": {
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
-    "message": "Last updated {time}"
+    "message": "最後更新於 {time}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",
-    "message": "No live events"
+    "message": "目前沒有進行中的事件"
   },
   "liveEvent.previousEvents": {
     "description": "Title of a list of past events that were covered with live updates",
-    "message": "Previous events"
+    "message": "過往事件"
   },
   "liveEvent.updates": {
     "description": "Title of the timeline of short news updates about an ongoing event",
-    "message": "Live updates"
+    "message": "即時動態"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {沒有圖片} other {# 張圖片} }"
