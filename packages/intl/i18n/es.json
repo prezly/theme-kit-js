@@ -131,6 +131,26 @@
   "homepage.latestStories": {
     "message": "Últimas historias"
   },
+  "liveEvent.badge": {
+    "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
+    "message": "En directo"
+  },
+  "liveEvent.lastUpdated": {
+    "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
+    "message": "Última actualización: {time}"
+  },
+  "liveEvent.noLiveEvents": {
+    "description": "Shown when there is no ongoing event covered with live updates",
+    "message": "No hay eventos en directo"
+  },
+  "liveEvent.previousEvents": {
+    "description": "Title of a list of past events that were covered with live updates",
+    "message": "Eventos anteriores"
+  },
+  "liveEvent.updates": {
+    "description": "Title of the timeline of short news updates about an ongoing event",
+    "message": "Actualizaciones en directo"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Sin imágenes} one {# imagen} few {# imágenes} many {# imágenes} other {# imágenes} }"
   },

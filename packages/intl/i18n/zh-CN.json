@@ -131,6 +131,26 @@
   "homepage.latestStories": {
     "message": "最新故事"
   },
+  "liveEvent.badge": {
+    "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
+    "message": "实时"
+  },
+  "liveEvent.lastUpdated": {
+    "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
+    "message": "最后更新于 {time}"
+  },
+  "liveEvent.noLiveEvents": {
+    "description": "Shown when there is no ongoing event covered with live updates",
+    "message": "暂无进行中的事件"
+  },
+  "liveEvent.previousEvents": {
+    "description": "Title of a list of past events that were covered with live updates",
+    "message": "往期事件"
+  },
+  "liveEvent.updates": {
+    "description": "Title of the timeline of short news updates about an ongoing event",
+    "message": "实时动态"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {没有图像} one {# 图像} few {# 图像} many {# 图像} other {# 图像} }"
   },

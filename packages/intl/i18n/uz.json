@@ -131,6 +131,26 @@
   "homepage.latestStories": {
     "message": "Oxirgi hikoyalar"
   },
+  "liveEvent.badge": {
+    "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
+    "message": "Jonli"
+  },
+  "liveEvent.lastUpdated": {
+    "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
+    "message": "Oxirgi yangilanish: {time}"
+  },
+  "liveEvent.noLiveEvents": {
+    "description": "Shown when there is no ongoing event covered with live updates",
+    "message": "Davom etayotgan voqealar yo‘q"
+  },
+  "liveEvent.previousEvents": {
+    "description": "Title of a list of past events that were covered with live updates",
+    "message": "Oldingi voqealar"
+  },
+  "liveEvent.updates": {
+    "description": "Title of the timeline of short news updates about an ongoing event",
+    "message": "Jonli yangiliklar"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Rasm yo'q} one {# rasm} other {# rasm} }"
   },

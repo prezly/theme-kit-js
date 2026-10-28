@@ -131,6 +131,26 @@
   "homepage.latestStories": {
     "message": "Na scéalta is déanaí"
   },
+  "liveEvent.badge": {
+    "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
+    "message": "Beo"
+  },
+  "liveEvent.lastUpdated": {
+    "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
+    "message": "Nuashonraithe go deireanach {time}"
+  },
+  "liveEvent.noLiveEvents": {
+    "description": "Shown when there is no ongoing event covered with live updates",
+    "message": "Níl aon imeachtaí beo ann"
+  },
+  "liveEvent.previousEvents": {
+    "description": "Title of a list of past events that were covered with live updates",
+    "message": "Imeachtaí roimhe seo"
+  },
+  "liveEvent.updates": {
+    "description": "Title of the timeline of short news updates about an ongoing event",
+    "message": "Nuashonruithe beo"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Gan íomha} one {# íomha} few {# íomha} many {# n-íomha} other {# íomha} }"
   },

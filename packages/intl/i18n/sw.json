@@ -131,6 +131,26 @@
   "homepage.latestStories": {
     "message": "Hadithi za hivi karibuni"
   },
+  "liveEvent.badge": {
+    "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
+    "message": "Mubashara"
+  },
+  "liveEvent.lastUpdated": {
+    "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
+    "message": "Ilisasishwa mwisho {time}"
+  },
+  "liveEvent.noLiveEvents": {
+    "description": "Shown when there is no ongoing event covered with live updates",
+    "message": "Hakuna matukio ya moja kwa moja"
+  },
+  "liveEvent.previousEvents": {
+    "description": "Title of a list of past events that were covered with live updates",
+    "message": "Matukio yaliyopita"
+  },
+  "liveEvent.updates": {
+    "description": "Title of the timeline of short news updates about an ongoing event",
+    "message": "Taarifa za moja kwa moja"
+  },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Hakuna picha} one {# picha} other {# picha}}"
   },
