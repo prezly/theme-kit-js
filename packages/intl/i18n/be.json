@@ -135,9 +135,17 @@
     "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
     "message": "Наўпрост"
   },
+  "liveEvent.ended": {
+    "description": "Shown on the timeline of a past event, so readers know the updates are no longer live",
+    "message": "Гэтая падзея скончылася"
+  },
   "liveEvent.lastUpdated": {
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
     "message": "Апошняе абнаўленне: {time}"
+  },
+  "liveEvent.newUpdates": {
+    "description": "Button above a live timeline that shows updates published since the reader opened the page",
+    "message": "{count, plural, one {# новае абнаўленне} few {# новыя абнаўленні} many {# новых абнаўленняў} other {# новага абнаўлення}}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",

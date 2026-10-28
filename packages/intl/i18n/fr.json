@@ -135,9 +135,17 @@
     "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
     "message": "En direct"
   },
+  "liveEvent.ended": {
+    "description": "Shown on the timeline of a past event, so readers know the updates are no longer live",
+    "message": "Cet événement est terminé"
+  },
   "liveEvent.lastUpdated": {
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
     "message": "Dernière mise à jour : {time}"
+  },
+  "liveEvent.newUpdates": {
+    "description": "Button above a live timeline that shows updates published since the reader opened the page",
+    "message": "{count, plural, one {# nouvelle mise à jour} other {# nouvelles mises à jour}}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",

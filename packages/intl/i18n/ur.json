@@ -135,9 +135,17 @@
     "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
     "message": "براہ راست"
   },
+  "liveEvent.ended": {
+    "description": "Shown on the timeline of a past event, so readers know the updates are no longer live",
+    "message": "یہ واقعہ ختم ہو گیا ہے"
+  },
   "liveEvent.lastUpdated": {
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
     "message": "آخری اپ ڈیٹ {time}"
+  },
+  "liveEvent.newUpdates": {
+    "description": "Button above a live timeline that shows updates published since the reader opened the page",
+    "message": "{count, plural, one {# نئی اپ ڈیٹ} other {# نئی اپ ڈیٹس}}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",
