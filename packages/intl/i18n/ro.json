@@ -137,19 +137,19 @@
   },
   "liveEvent.lastUpdated": {
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
-    "message": "Last updated {time}"
+    "message": "Ultima actualizare: {time}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",
-    "message": "No live events"
+    "message": "Niciun eveniment live"
   },
   "liveEvent.previousEvents": {
     "description": "Title of a list of past events that were covered with live updates",
-    "message": "Previous events"
+    "message": "Evenimente anterioare"
   },
   "liveEvent.updates": {
     "description": "Title of the timeline of short news updates about an ongoing event",
-    "message": "Live updates"
+    "message": "Actualizări live"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {Fără imagini} one {# imagine} few {# imagini} other {# imagini} }"
