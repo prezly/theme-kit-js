@@ -133,23 +133,23 @@
   },
   "liveEvent.badge": {
     "description": "A short badge on an ongoing event (e.g. an incident) whose page is updated as news comes in, as in \"live coverage\"",
-    "message": "Live"
+    "message": "실시간"
   },
   "liveEvent.lastUpdated": {
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
-    "message": "Last updated {time}"
+    "message": "마지막 업데이트 {time}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",
-    "message": "No live events"
+    "message": "진행 중인 이벤트가 없습니다"
   },
   "liveEvent.previousEvents": {
     "description": "Title of a list of past events that were covered with live updates",
-    "message": "Previous events"
+    "message": "이전 이벤트"
   },
   "liveEvent.updates": {
     "description": "Title of the timeline of short news updates about an ongoing event",
-    "message": "Live updates"
+    "message": "실시간 업데이트"
   },
   "mediaGallery.imagesCount": {
     "message": "{imagesCount, plural, =0 {이미지 없음} other {# 이미지} }"
