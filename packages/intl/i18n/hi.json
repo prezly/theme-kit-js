@@ -143,17 +143,29 @@
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
     "message": "अंतिम अपडेट {time}"
   },
+  "liveEvent.latestNews": {
+    "description": "Label in the top bar of a live news site, and the footer link to its homepage",
+    "message": "ताज़ा समाचार"
+  },
   "liveEvent.newUpdates": {
     "description": "Button above a live timeline that shows updates published since the reader opened the page",
     "message": "{count, plural, one {# नया अपडेट} other {# नए अपडेट}}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",
-    "message": "कोई लाइव इवेंट नहीं"
+    "message": "अभी कोई लाइव अपडेट नहीं"
+  },
+  "liveEvent.noLiveEventsText": {
+    "description": "Shown below \"No live updates right now\", when there is no ongoing event",
+    "message": "कोई खबर आते ही अपडेट यहाँ दिखाई देंगे।"
   },
   "liveEvent.previousEvents": {
     "description": "Title of a list of past events that were covered with live updates",
     "message": "पिछले इवेंट"
+  },
+  "liveEvent.subscribeTitle": {
+    "description": "Title of the form to get an email each time a live news site is updated",
+    "message": "ईमेल से अपडेट पाएँ"
   },
   "liveEvent.updates": {
     "description": "Title of the timeline of short news updates about an ongoing event",

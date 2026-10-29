@@ -143,17 +143,29 @@
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
     "message": "Ilisasishwa mwisho {time}"
   },
+  "liveEvent.latestNews": {
+    "description": "Label in the top bar of a live news site, and the footer link to its homepage",
+    "message": "Habari za hivi punde"
+  },
   "liveEvent.newUpdates": {
     "description": "Button above a live timeline that shows updates published since the reader opened the page",
     "message": "{count, plural, one {Taarifa # mpya} other {Taarifa # mpya}}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",
-    "message": "Hakuna matukio ya moja kwa moja"
+    "message": "Hakuna masasisho ya moja kwa moja kwa sasa"
+  },
+  "liveEvent.noLiveEventsText": {
+    "description": "Shown below \"No live updates right now\", when there is no ongoing event",
+    "message": "Masasisho yataonekana hapa mara tu kutakapokuwa na habari."
   },
   "liveEvent.previousEvents": {
     "description": "Title of a list of past events that were covered with live updates",
     "message": "Matukio yaliyopita"
+  },
+  "liveEvent.subscribeTitle": {
+    "description": "Title of the form to get an email each time a live news site is updated",
+    "message": "Pokea masasisho kwa barua pepe"
   },
   "liveEvent.updates": {
     "description": "Title of the timeline of short news updates about an ongoing event",

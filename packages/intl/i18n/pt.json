@@ -143,17 +143,29 @@
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
     "message": "Última atualização: {time}"
   },
+  "liveEvent.latestNews": {
+    "description": "Label in the top bar of a live news site, and the footer link to its homepage",
+    "message": "Últimas notícias"
+  },
   "liveEvent.newUpdates": {
     "description": "Button above a live timeline that shows updates published since the reader opened the page",
     "message": "{count, plural, one {# nova atualização} other {# novas atualizações}}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",
-    "message": "Não há eventos em direto"
+    "message": "Sem atualizações em direto de momento"
+  },
+  "liveEvent.noLiveEventsText": {
+    "description": "Shown below \"No live updates right now\", when there is no ongoing event",
+    "message": "As atualizações aparecerão aqui assim que houver novidades."
   },
   "liveEvent.previousEvents": {
     "description": "Title of a list of past events that were covered with live updates",
     "message": "Eventos anteriores"
+  },
+  "liveEvent.subscribeTitle": {
+    "description": "Title of the form to get an email each time a live news site is updated",
+    "message": "Receba atualizações por e-mail"
   },
   "liveEvent.updates": {
     "description": "Title of the timeline of short news updates about an ongoing event",

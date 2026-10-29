@@ -143,17 +143,29 @@
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
     "message": "Darrera actualització: {time}"
   },
+  "liveEvent.latestNews": {
+    "description": "Label in the top bar of a live news site, and the footer link to its homepage",
+    "message": "Últimes notícies"
+  },
   "liveEvent.newUpdates": {
     "description": "Button above a live timeline that shows updates published since the reader opened the page",
     "message": "{count, plural, one {# actualització nova} other {# actualitzacions noves}}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",
-    "message": "No hi ha esdeveniments en directe"
+    "message": "Ara mateix no hi ha actualitzacions en directe"
+  },
+  "liveEvent.noLiveEventsText": {
+    "description": "Shown below \"No live updates right now\", when there is no ongoing event",
+    "message": "Les actualitzacions apareixeran aquí tan bon punt hi hagi novetats."
   },
   "liveEvent.previousEvents": {
     "description": "Title of a list of past events that were covered with live updates",
     "message": "Esdeveniments anteriors"
+  },
+  "liveEvent.subscribeTitle": {
+    "description": "Title of the form to get an email each time a live news site is updated",
+    "message": "Rep actualitzacions per correu electrònic"
   },
   "liveEvent.updates": {
     "description": "Title of the timeline of short news updates about an ongoing event",

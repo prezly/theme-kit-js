@@ -143,17 +143,29 @@
     "description": "{time} is a time of day, e.g. \"14:05 CEST\"",
     "message": "Paskutinį kartą atnaujinta {time}"
   },
+  "liveEvent.latestNews": {
+    "description": "Label in the top bar of a live news site, and the footer link to its homepage",
+    "message": "Naujausios žinios"
+  },
   "liveEvent.newUpdates": {
     "description": "Button above a live timeline that shows updates published since the reader opened the page",
     "message": "{count, plural, one {# naujas atnaujinimas} few {# nauji atnaujinimai} many {# naujo atnaujinimo} other {# naujų atnaujinimų}}"
   },
   "liveEvent.noLiveEvents": {
     "description": "Shown when there is no ongoing event covered with live updates",
-    "message": "Šiuo metu tiesioginių įvykių nėra"
+    "message": "Šiuo metu tiesioginių naujienų nėra"
+  },
+  "liveEvent.noLiveEventsText": {
+    "description": "Shown below \"No live updates right now\", when there is no ongoing event",
+    "message": "Naujienos čia pasirodys, kai tik jų bus."
   },
   "liveEvent.previousEvents": {
     "description": "Title of a list of past events that were covered with live updates",
     "message": "Ankstesni įvykiai"
+  },
+  "liveEvent.subscribeTitle": {
+    "description": "Title of the form to get an email each time a live news site is updated",
+    "message": "Gaukite naujienas el. paštu"
   },
   "liveEvent.updates": {
     "description": "Title of the timeline of short news updates about an ongoing event",
