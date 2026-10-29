@@ -94,8 +94,24 @@ export const liveEvent = defineMessages({
     },
     noLiveEvents: {
         id: 'liveEvent.noLiveEvents',
-        defaultMessage: 'No live events',
+        defaultMessage: 'No live updates right now',
         description: 'Shown when there is no ongoing event covered with live updates',
+    },
+    noLiveEventsText: {
+        id: 'liveEvent.noLiveEventsText',
+        defaultMessage: 'Updates will appear here as soon as there is news.',
+        description: 'Shown below "No live updates right now", when there is no ongoing event',
+    },
+    latestNews: {
+        id: 'liveEvent.latestNews',
+        defaultMessage: 'Latest news',
+        description:
+            'Label in the top bar of a live news site, and the footer link to its homepage',
+    },
+    subscribeTitle: {
+        id: 'liveEvent.subscribeTitle',
+        defaultMessage: 'Get updates by email',
+        description: 'Title of the form to get an email each time a live news site is updated',
     },
     previousEvents: {
         id: 'liveEvent.previousEvents',
