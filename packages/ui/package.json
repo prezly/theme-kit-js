@@ -73,7 +73,7 @@
         "@storybook/testing-library": "0.2.2",
         "@types/tinycolor2": "1.4.6",
         "@vitejs/plugin-react": "3.1.0",
-        "autoprefixer": "10.6.1",
+        "autoprefixer": "10.6.2",
         "postcss": "8.5.31",
         "postcss-cli": "11.0.1",
         "postcss-import": "15.1.0",
