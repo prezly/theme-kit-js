@@ -1,0 +1,121 @@
+name: Publish Theme Kit
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Validate packages without publishing (does not test OIDC authentication)
+        type: boolean
+        required: true
+        default: true
+      dist_tag:
+        description: npm release channel
+        type: choice
+        required: true
+        default: latest
+        options: [latest, next]
+
+# Serialize all channels and retries. Never cancel an in-progress partial release.
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  CI: 'true'
+  NX_DAEMON: 'false'
+  NX_SKIP_NX_CACHE: 'true'
+
+jobs:
+  compatibility:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        sdk: ['21.12.0', '23.0.1', '23.20.0', '26.16.0']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+          registry-url: https://registry.npmjs.org
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+          run_install: false
+      - run: pnpm install --frozen-lockfile
+      - name: Select SDK version
+        env:
+          SDK_VERSION: ${{ matrix.sdk }}
+        run: |
+          node .github/scripts/sdk-version.cjs select "$SDK_VERSION"
+          pnpm install --no-frozen-lockfile
+          node .github/scripts/sdk-version.cjs verify "$SDK_VERSION"
+      - run: pnpm build
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: git diff --exit-code -- packages/intl/i18n packages/intl/src
+
+  publish:
+    needs: compatibility
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment: npm
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      DIST_TAG: ${{ inputs.dist_tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+          registry-url: https://registry.npmjs.org
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+          run_install: false
+      - run: pnpm install --frozen-lockfile
+      - name: Use OIDC-compatible npm
+        run: |
+          npm install --global npm@11.15.0 --ignore-scripts
+          node --version
+          npm --version
+          pnpm --version
+      - name: Test release safeguards
+        run: node --test .github/scripts/release-checks.mjs
+      - run: pnpm build
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - name: Pack and validate consumer installation
+        run: node .github/scripts/release.mjs pack "$DIST_TAG"
+      - name: Ensure checks did not change committed sources
+        run: git diff --exit-code
+      - name: Preserve validated tarballs for release diagnosis
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-release-${{ github.sha }}-${{ github.run_attempt }}
+          path: .release/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+      - name: Publish dry run
+        if: inputs.dry_run
+        run: node .github/scripts/release.mjs dry-run "$DIST_TAG"
+      - name: Publish committed versions
+        if: ${{ !inputs.dry_run }}
+        run: node .github/scripts/release.mjs publish "$DIST_TAG"
+      - name: Verify registry installation
+        if: ${{ !inputs.dry_run }}
+        run: node .github/scripts/release.mjs verify "$DIST_TAG"

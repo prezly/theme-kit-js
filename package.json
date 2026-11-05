@@ -13,13 +13,8 @@
         "check:fix": "biome check --write .",
         "test": "pnpm exec lerna run test",
         "typecheck": "pnpm exec lerna run typecheck",
-        "release": "pnpm release:prepare && pnpm release:publish",
-        "release:preview": "pnpm release:prepare && pnpm release:publish:preview",
-        "release:prepare": "pnpm lint && pnpm test && pnpm build",
-        "release:publish": "lerna publish --no-private",
-        "release:preview-tag": "./release-preview-tag.sh",
-        "release:next-tag": "./release-next-tag.sh",
-        "sync-package-versions": "node ./sync-package-versions.mjs"
+        "sync-package-versions": "node ./sync-package-versions.mjs",
+        "release": "node -e \"console.error('Use the manual publish.yml GitHub workflow. See README.md.'); process.exit(1)\""
     },
     "dependencies": {
         "next": "^15.1.5",

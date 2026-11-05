@@ -47,8 +47,7 @@ compatibility release. Version 10.12.0 excludes SDK 26 from its peer range.
 
 1. Merge the SDK 26 support PR and publish a minor Theme Kit release (10.13.0
    if no other release has advanced the version). Follow the publishing process
-   below, including every package Lerna lists as changed and publishing core
-   before Next.js.
+   below, including all four release packages in dependency order.
 2. Verify the registry tarballs for core and Next.js contain the SDK 26 peer
    range and rewritten workspace dependencies. Confirm a fresh consumer install
    with SDK 26.16.0 on Node.js 22 and run its build and tests.
@@ -59,35 +58,49 @@ compatibility release. Version 10.12.0 excludes SDK 26 from its peer range.
 Track release completion and the theme rollout in
 [DEV-24508](https://linear.app/prezly/issue/DEV-24508).
 
-### Publishing new releases
 
-## Before you publish
+## Publishing releases
 
-* Make sure that `@prezly/sdk` peer dependency on all packages is updated to the earliest supported version. This should usually match the version in root `devDependencies`.
-* Make sure that SDK version matrix in GitHub workflows is matching the `@prezly/sdk` peer dependency version range
+Releases use the manually dispatched [Publish Theme Kit workflow](https://github.com/prezly/theme-kit-js/actions/workflows/publish.yml).
+Local publishing through Lerna is retired. Keep account 2FA enabled: CI authenticates with npm trusted publishing (OIDC), without a personal npm token or an interactive OTP.
 
-## Publishing a new version
+### One-time setup
 
-To keep versions in sync, releasing new packages should only be done from the root directory.
+1. Create the GitHub environment **`npm`** in `prezly/theme-kit-js`. Restrict deployment branches to **`main`**, and configure required reviewers if available. The workflow also restricts execution to that branch.
+2. Merge `.github/workflows/publish.yml` through a reviewed PR before configuring npm. The workflow uses GitHub-hosted runners, Node 24, npm 11.15.0 (OIDC requires at least 11.5.1), and `id-token: write`. No `NPM_TOKEN` or `NODE_AUTH_TOKEN` secret is required.
+3. On npm, open each package's Settings → Trusted Publisher → GitHub Actions. Use organization **`prezly`**, repository **`theme-kit-js`**, workflow filename **`publish.yml`** (filename only), and environment **`npm`**. Enable **Allow npm publish**. Leave **Allow npm dist-tag** disabled; this workflow sets the tag when publishing and does not retag existing versions.
+4. Configure all four packages: `@prezly/theme-kit-intl`, `@prezly/theme-kit-core`, `@prezly/theme-kit-react`, and `@prezly/theme-kit-nextjs`. Preserve unrelated existing trusted publishers. Create connections close to the approved first release: npm currently requires the first successful publish within two days, otherwise the connection expires and must be recreated.
 
-To publish a production version, run `pnpm release`. Make sure you're on the `main` branch and don't have any uncommitted files before running the command. After the script finishes, a new GitHub release draft will open in your browser. Please make sure to fill it in a similar manner to previous releases (hitting "Auto-generate release notes" usually produces a nicer output than Lerna's default).
+See [npm trusted publishing documentation](https://docs.npmjs.com/trusted-publishers/). The SDK workflow's permissions alone do not prove that its separate npm connection works.
 
-### Publishing with a hardware security key
+### Prepare reviewed versions
 
-`lerna publish` can only take a six-digit one-time password, so an npm account whose second factor is a hardware key stops at the OTP prompt after it has already committed, tagged and pushed the version. Do not fall back to `npm publish` inside a package directory: npm does not rewrite pnpm's `workspace:^` dependency specifiers, and the published package cannot be installed (this happened with 10.10.0). Build the tarballs with pnpm, which rewrites them, and publish the tarballs with npm, which supports the browser-based key flow:
+Update `lerna.json` and the four workspace `package.json` versions together in a PR. Keep internal dependency declarations as `workspace:^`; pnpm rewrites them when packing. Exclude `packages/ui`.
+Update the lockfile if the manifest changes require it, and include release notes in the PR. Do not use local release scripts to bump, commit, tag or push versions.
+Versions are never changed by CI. A new release needs unpublished committed versions. `latest` rejects prerelease versions; use `next` for reviewed prereleases. Both channels publish only from `main`.
 
-```sh
-pnpm exec lerna version minor --no-private   # commits, tags and pushes; answer the prompts
-cd packages/core && pnpm pack --pack-destination /tmp/release
-cd ../nextjs && pnpm pack --pack-destination /tmp/release
-grep -c 'workspace:' /tmp/release/*/package.json 2>/dev/null   # must be empty
-npm publish /tmp/release/prezly-theme-kit-core-<version>.tgz
-npm publish /tmp/release/prezly-theme-kit-nextjs-<version>.tgz
-```
+### Validate and publish
 
-Publish core before Next.js. Include every package Lerna listed as changed.
+1. Merge the reviewed version and workflow changes into `main`.
+2. Open Actions → Publish Theme Kit → Run workflow. Select `main`, choose `latest` or `next`, and leave **dry_run=true**.
+3. Inspect all checks, the job summary, and the `npm-release-<commit>-<attempt>` artifact. Compatibility checks run in separate jobs, so their dependency overrides cannot affect release tarballs. The release job builds with the frozen lockfile, runs lint, type checks and tests, packs using `pnpm pack`, checks packed manifests and entry points, and installs the tarballs in a fresh consumer directory with CommonJS and ESM smoke tests. It rejects source changes made by build scripts.
+4. A dry run validates all tarballs and reports existing versions without overwriting them. It runs `npm publish --dry-run` only for unpublished versions, because npm rejects existing versions even in dry-run mode. **Dry runs do not prove OIDC publishing authentication works.** If a version already exists with different bytes or a different channel tag, a real release will stop before publishing any package. Prepare a reviewed version bump first.
+5. Obtain explicit release approval for the commit, versions and channel. Dispatch again with **dry_run=false** and the same channel, checking that the default-branch commit is the one approved. Approve the environment deployment if required. The real run repeats all checks and publishes the validated tarballs using `npm publish`.
+6. The workflow verifies registry integrity and tags, then installs exact published versions in a fresh directory and checks CommonJS and ESM imports. Check this step before announcing success. No Git tag or GitHub Release is created automatically.
 
-To publish a preview version (e.g. for testing), run `pnpm release:preview`. This command can be executed on any branch, but you still need to have no uncommitted files. Please make sure to use a pre-release version to not conflict with production versions.
+One repository-wide concurrency group serializes both channels and retries, with `cancel-in-progress: false`. Do not cancel an active publish or run a separate publisher alongside it. GitHub may replace older pending runs; select the intended commit before dispatching again.
+
+### Recovery
+
+Publishing is ordered **intl → core → react → nextjs**, with registry verification between packages. `packages/ui` is never packed or published. npm publication is not atomic across packages.
+
+1. Read the failing run's summary and retain its artifact, commit SHA and channel. Inspect registry versions before retrying; a network failure does not mean publishing failed.
+2. Fix the npm trusted publisher mapping or environment setup if authentication failed. A connection must exactly match this repository, `publish.yml`, and `npm`. Do not add a personal token as a workaround.
+3. Rerun **all jobs of the same workflow run**, keeping its original commit and channel. Previously published versions are skipped only when their SHA-512 integrity and selected dist-tag exactly match the rebuilt tarballs. All packages are preflighted before any publication. The remaining packages publish in dependency order. The registry verification step also checks skipped packages.
+4. If rebuilt bytes differ, stop. Do not unpublish, overwrite, or bypass the comparison. Compare the retained artifact with the rebuild to diagnose the difference. Prepare a new reviewed coordinated version bump for all four packages and release it normally. Keep consumers on the previous complete release until the new set passes registry installation checks.
+5. A different existing dist-tag also stops recovery. Retagging or promoting an existing `next` version needs a separately approved process and is not performed by this workflow.
+
+For local checks after building, use `node .github/scripts/release.mjs pack latest` and `node .github/scripts/release.mjs dry-run latest`. These use no publishing credentials. Real publication is guarded to run only in the manual default-branch GitHub workflow. Artifacts are written to ignored `.release/`; npm installs use a temporary directory outside the workspace. Run `node --test .github/scripts/release-checks.mjs` to test release safeguards without contacting npm or publishing.
 
 ----
 
