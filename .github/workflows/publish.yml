@@ -93,7 +93,7 @@ jobs:
           npm --version
           pnpm --version
       - name: Test release safeguards
-        run: node --test .github/scripts/release-checks.mjs .github/scripts/release-tag-checks.mjs
+        run: node --test .github/scripts/release-checks.mjs .github/scripts/release-tag-checks.mjs .github/scripts/github-release-checks.mjs
       - run: pnpm build
       - run: pnpm lint
       - run: pnpm typecheck
@@ -126,7 +126,7 @@ jobs:
 
   # Keep repository write access away from dependency lifecycle and build scripts.
   tag:
-    name: Create release Git tag
+    name: Create Git tag and GitHub Release
     needs: publish
     if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
@@ -146,3 +146,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: node .github/scripts/release-tag.mjs create
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DIST_TAG: ${{ inputs.dist_tag }}
+        run: node .github/scripts/github-release.mjs
