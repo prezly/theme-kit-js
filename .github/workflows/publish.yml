@@ -93,7 +93,7 @@ jobs:
           npm --version
           pnpm --version
       - name: Test release safeguards
-        run: node --test .github/scripts/release-checks.mjs
+        run: node --test .github/scripts/release-checks.mjs .github/scripts/release-tag-checks.mjs
       - run: pnpm build
       - run: pnpm lint
       - run: pnpm typecheck
@@ -110,6 +110,10 @@ jobs:
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 30
+      - name: Check shared version and release Git tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node .github/scripts/release-tag.mjs check
       - name: Publish dry run
         if: inputs.dry_run
         run: node .github/scripts/release.mjs dry-run "$DIST_TAG"
@@ -119,3 +123,26 @@ jobs:
       - name: Verify registry installation
         if: ${{ !inputs.dry_run }}
         run: node .github/scripts/release.mjs verify "$DIST_TAG"
+
+  # Keep repository write access away from dependency lifecycle and build scripts.
+  tag:
+    name: Create release Git tag
+    needs: publish
+    if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: npm
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+      - name: Create release Git tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node .github/scripts/release-tag.mjs create
