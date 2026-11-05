@@ -58,3 +58,6 @@ coverage/
 .turbo/
 .vercel/
 .docusaurus/
+
+# Validated release artifacts
+/.release/
