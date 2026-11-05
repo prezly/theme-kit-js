@@ -69,7 +69,7 @@ jobs:
     timeout-minutes: 45
     environment: npm
     permissions:
-      contents: write
+      contents: read
       id-token: write
     env:
       DIST_TAG: ${{ inputs.dist_tag }}
@@ -123,8 +123,26 @@ jobs:
       - name: Verify registry installation
         if: ${{ !inputs.dry_run }}
         run: node .github/scripts/release.mjs verify "$DIST_TAG"
+
+  # Keep repository write access away from dependency lifecycle and build scripts.
+  tag:
+    name: Create release Git tag
+    needs: publish
+    if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: npm
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
       - name: Create release Git tag
-        if: ${{ !inputs.dry_run }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: node .github/scripts/release-tag.mjs create
