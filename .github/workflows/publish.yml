@@ -47,7 +47,7 @@ jobs:
           registry-url: https://registry.npmjs.org
       - uses: pnpm/action-setup@v4
         with:
-          version: 9.15.4
+          version: 9.15.9
           run_install: false
       - run: pnpm install --frozen-lockfile
       - name: Select SDK version
@@ -83,7 +83,7 @@ jobs:
           registry-url: https://registry.npmjs.org
       - uses: pnpm/action-setup@v4
         with:
-          version: 9.15.4
+          version: 9.15.9
           run_install: false
       - run: pnpm install --frozen-lockfile
       - name: Use OIDC-compatible npm
