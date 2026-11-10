@@ -51,6 +51,33 @@ function findPart(parts: IntlPart[], type: IntlPart['type']): string {
     return parts.find((part) => part.type === type)?.value ?? '';
 }
 
+/**
+ * Return the month name, keeping any letter suffix that Intl emits as a separate
+ * literal part. For example, `ja` returns `{ month: "10" }, { literal: "月" }`
+ * for a month-only formatter, and dropping the literal would render a bare "10".
+ */
+function formatMonthName(
+    date: Date,
+    locale: Locale.Code,
+    timeZone: string,
+    month: 'long' | 'short',
+): string {
+    const monthParts = getMonthFormatter(locale, timeZone, month).formatToParts(date);
+    const index = monthParts.findIndex((part) => part.type === 'month');
+    if (index === -1) {
+        return '';
+    }
+
+    let value = monthParts[index].value;
+    for (const part of monthParts.slice(index + 1)) {
+        if (part.type !== 'literal' || !/^\p{L}+$/u.test(part.value)) {
+            break;
+        }
+        value += part.value;
+    }
+    return value;
+}
+
 function pad(value: string, length: number): string {
     return value.padStart(length, '0');
 }
@@ -74,14 +101,10 @@ export function formatWithMomentPattern(
                 return year;
             case 'YY':
                 return year.slice(-2);
-            case 'MMMM': {
-                const monthParts = getMonthFormatter(locale, timeZone, 'long').formatToParts(date);
-                return findPart(monthParts, 'month');
-            }
-            case 'MMM': {
-                const monthParts = getMonthFormatter(locale, timeZone, 'short').formatToParts(date);
-                return findPart(monthParts, 'month');
-            }
+            case 'MMMM':
+                return formatMonthName(date, locale, timeZone, 'long');
+            case 'MMM':
+                return formatMonthName(date, locale, timeZone, 'short');
             case 'MM': {
                 const monthParts = getMonthFormatter(locale, timeZone, '2-digit').formatToParts(
                     date,

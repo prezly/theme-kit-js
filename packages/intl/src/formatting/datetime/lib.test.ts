@@ -25,6 +25,37 @@ describe('getTimeFormat', () => {
 });
 
 describe('formatDate', () => {
+    describe('with a Newsroom date format in Asia/Hong_Kong', () => {
+        const timezone = 'Asia/Hong_Kong';
+        const sep22 = new Date('2026-09-22T04:00:00.000Z');
+        const oct1 = new Date('2026-10-01T04:00:00.000Z');
+
+        test.each([
+            ['en', 'MMM D, YY', sep22, 'Sep 22, 26'],
+            ['en', 'MMM D, YY', oct1, 'Oct 1, 26'],
+            ['en', 'DD/MM/YYYY', sep22, '22/09/2026'],
+            ['en', 'DD/MM/YYYY', oct1, '01/10/2026'],
+        ] as const)(
+            'applies the pattern for %s: "%s" on %s',
+            (locale, dateFormat, date, expected) => {
+                expect(formatDate(date, { locale, timezone, dateFormat })).toBe(expected);
+            },
+        );
+
+        test.each([
+            ['zh_HK', sep22, '2026年9月22日'],
+            ['zh_HK', oct1, '2026年10月1日'],
+            ['ja_JP', sep22, '2026年9月22日'],
+            ['ja_JP', oct1, '2026年10月1日'],
+            ['ko_KR', sep22, '2026년 9월 22일'],
+            ['ko_KR', oct1, '2026년 10월 1일'],
+        ] as const)('falls back to the native long date for %s on %s', (locale, date, expected) => {
+            for (const dateFormat of ['MMM D, YY', 'DD/MM/YYYY']) {
+                expect(formatDate(date, { locale, timezone, dateFormat })).toBe(expected);
+            }
+        });
+    });
+
     const date = new Date('2024-03-15T10:00:00.000Z');
 
     it('formats using locale defaults when no dateFormat is provided', () => {
