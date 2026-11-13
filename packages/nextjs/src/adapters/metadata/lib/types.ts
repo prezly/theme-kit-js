@@ -17,7 +17,9 @@ export type AbsoluteUrlGenerator = {
     (routeName: 'story', params: { localeCode: Locale.Code } & StoryRef): Url | undefined;
     (
         routeName: 'category',
-        params: { localeCode: Locale.Code } & TranslatedCategory,
+        // `path` is the category's address for nested URLs (`cars/models/eqs`). Optional here,
+        // because older versions of `@prezly/sdk` do not have it on `TranslatedCategory`.
+        params: { localeCode: Locale.Code } & TranslatedCategory & { path?: string },
     ): Url | undefined;
     (routeName: 'media', params: { localeCode: Locale.Code }): Url | undefined;
     (

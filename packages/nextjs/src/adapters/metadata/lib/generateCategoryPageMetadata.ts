@@ -1,5 +1,5 @@
 import { Category } from '@prezly/sdk';
-import { AsyncResolvable, Resolvable } from '@prezly/theme-kit-core';
+import { AsyncResolvable, ContentDelivery, Resolvable } from '@prezly/theme-kit-core';
 import type { Metadata } from 'next';
 
 import type { AbsoluteUrlGenerator, Prerequisites } from './types';
@@ -29,7 +29,13 @@ export async function generateCategoryPageMetadata(
                 const translated = Category.translation(category, localeCode);
                 if (!translated || translated.public_stories_number === 0) return undefined;
 
-                return generateUrl('category', { ...translated, localeCode });
+                // `path` for routes with nested category URLs (`/category/*path`),
+                // `slug` for routes with one segment (`/category/:slug`).
+                return generateUrl('category', {
+                    ...translated,
+                    path: ContentDelivery.categoryPath(translated),
+                    localeCode,
+                });
             },
         },
         ...metadata,

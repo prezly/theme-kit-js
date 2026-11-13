@@ -6,6 +6,7 @@ import { URL_PATTERN_SEGMENT_CHARSET } from '../constants';
 
 import { getShortestLocaleSlug } from './getShortestLocaleSlug';
 import { normalizeUrl } from './normalizeUrl';
+import { parseWildcard, stringify, type Wildcard } from './wildcard';
 
 export interface Context {
     defaultLocale: Locale.Code;
@@ -19,20 +20,30 @@ export interface Context {
 export type Params = Record<string, string | undefined | null> &
     ({ localeCode?: Locale.Code } | { localeSlug?: Locale.AnySlug });
 
-const CACHE = new Map<string, UrlPattern>();
+interface Parsed {
+    urlPattern: UrlPattern;
+    wildcard: Wildcard['name'];
+}
 
-function toUrlPattern(pattern: string): UrlPattern {
+const CACHE = new Map<string, Parsed>();
+
+function toUrlPattern(pattern: string): Parsed {
     const cached = CACHE.get(pattern);
 
     if (cached) return cached;
 
-    const urlPattern = new UrlPattern(pattern, {
-        segmentValueCharset: URL_PATTERN_SEGMENT_CHARSET,
-    });
+    // A pattern can end in a named wildcard (`/category/*path`), which takes several segments.
+    const wildcard = parseWildcard(pattern);
+    const parsed = {
+        urlPattern: new UrlPattern(wildcard.pattern, {
+            segmentValueCharset: URL_PATTERN_SEGMENT_CHARSET,
+        }),
+        wildcard: wildcard.name,
+    };
 
-    CACHE.set(pattern, urlPattern);
+    CACHE.set(pattern, parsed);
 
-    return urlPattern;
+    return parsed;
 }
 
 export function generateUrlFromPattern(
@@ -40,24 +51,26 @@ export function generateUrlFromPattern(
     params: Params = {},
     context?: Context,
 ) {
-    const urlPattern = toUrlPattern(pattern);
+    const { urlPattern, wildcard } = toUrlPattern(pattern);
 
     if (context) {
         const { localeCode } = params;
         const localeSlug = getLocaleSlug(params, context);
 
         return normalizeUrl(
-            urlPattern.stringify(
+            stringify(
+                urlPattern,
                 omitUndefined({
                     ...params,
                     localeCode,
                     localeSlug,
                 }),
+                wildcard,
             ) as `/${string}`,
         );
     }
 
-    return normalizeUrl(urlPattern.stringify(omitUndefined(params)) as `/${string}`);
+    return normalizeUrl(stringify(urlPattern, omitUndefined(params), wildcard) as `/${string}`);
 }
 
 function getLocaleSlug(params: Params, context: Context): string {

@@ -2,6 +2,7 @@ import { Category } from '@prezly/sdk';
 import type { Newsroom, Story } from '@prezly/sdk';
 import { Locale } from '@prezly/theme-kit-intl';
 
+import { categoryPath } from '../content-delivery';
 import { AsyncResolvable } from '../resolvable';
 
 import { build } from './build';
@@ -136,7 +137,13 @@ async function generateCategoriesEntries(
                         locales.includes(locale) && public_stories_number !== 0,
                 )
                 .map((translation) => {
-                    const params = { ...translation, localeCode: translation.locale };
+                    // `path` for routes with nested category URLs (`/category/*path`),
+                    // `slug` for routes with one segment (`/category/:slug`).
+                    const params = {
+                        ...translation,
+                        path: categoryPath(translation),
+                        localeCode: translation.locale,
+                    };
 
                     return {
                         locale: translation.locale,
