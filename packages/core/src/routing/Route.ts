@@ -63,6 +63,15 @@ export namespace Route {
             segmentValueCharset: URL_PATTERN_SEGMENT_CHARSET,
         });
 
+        // A custom `generate` gets the pattern to stringify its params with. On a wildcard route
+        // it gets one that takes the wildcard by its name, like the params it is given.
+        const generatePattern: UrlPattern = wildcard.name
+            ? Object.assign(Object.create(urlPattern), {
+                  stringify: (params?: Record<string, unknown>) =>
+                      stringify(urlPattern, params ?? {}, wildcard.name),
+              })
+            : urlPattern;
+
         function encode(key: string, value: string) {
             return key === wildcard.name ? encodeWildcard(value) : encodeURIComponent(value);
         }
@@ -98,7 +107,7 @@ export namespace Route {
                     ]),
                 );
                 if (generate) {
-                    return normalizeUrl(generate(urlPattern, encoded as Match));
+                    return normalizeUrl(generate(generatePattern, encoded as Match));
                 }
                 return normalizeUrl(stringify(urlPattern, encoded, wildcard.name) as `/${string}`);
             },

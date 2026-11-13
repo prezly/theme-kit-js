@@ -40,6 +40,18 @@ describe('a named wildcard', () => {
         );
     });
 
+    it('should let a custom generate() stringify the wildcard by its name', () => {
+        const custom = Route.create('/category/*path', '/:localeCode/category/*path', {
+            generate(pattern, params) {
+                return `${pattern.stringify(params)}?preview` as `/${string}`;
+            },
+        });
+
+        expect(custom.generate({ path: 'cars/models/eqs' })).toBe(
+            '/category/cars/models/eqs?preview',
+        );
+    });
+
     it('should rewrite to the internal URL', () => {
         expect(route.rewrite({ localeCode: 'en', path: 'cars/models/eqs' } as never)).toBe(
             '/en/category/cars/models/eqs',
