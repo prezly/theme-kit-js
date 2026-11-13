@@ -455,6 +455,16 @@ describe('ContentDelivery categories', () => {
         expect((await client().category('launches'))?.id).toBe(5);
     });
 
+    it('finds a category by its exact path only, for themes with nested URLs', async () => {
+        expect((await client().translatedCategoryByPath('en', 'vans/launches'))?.id).toBe(5);
+        // `launches` is the slug of a category that lives at `vans/launches`. Not a match:
+        // the theme decides whether to redirect, after asking movedCategory().
+        expect(await client().translatedCategoryByPath('en', 'launches')).toBeUndefined();
+        expect((await client().translatedCategoryBySlug('en', 'launches'))?.id).toBe(5);
+        // Without a path, the slug is the path.
+        expect((await client().translatedCategoryByPath('en', 'vans'))?.id).toBe(4);
+    });
+
     it('finds the category that used to have a path', async () => {
         expect((await client().movedCategory('en', 'cars-events'))?.id).toBe(2);
         expect((await client().movedCategory('en', 'happenings'))?.id).toBe(3);

@@ -116,6 +116,8 @@ const UNCACHED_METHODS: (keyof Client)[] = [
     'notifications',
     'category',
     'translatedCategory',
+    'translatedCategoryByPath',
+    'translatedCategoryBySlug',
     'translatedCategories',
     'movedCategory',
 ];
@@ -252,32 +254,61 @@ export function createClient(
         },
 
         /**
-         * Finds a category by its address in a locale.
+         * Finds a category by its address in a locale, for themes whose category URLs have one
+         * segment (`/category/:slug`).
          *
-         * The address is the category's path: the slugs of its parent categories and its own
-         * (`cars/models/eqs`), which for a top-level category is just its slug. A theme whose
-         * category URLs have one segment can keep passing a slug: when no category has that
-         * path, the first category with that slug is returned, as before.
+         * It returns the category with that path, which for a top-level category is its slug.
+         * When no category has that path, it returns the first category with that slug, as it
+         * always did. So the result can be a category that lives at another address: a theme
+         * with nested category URLs should use `translatedCategoryByPath()`, which never guesses.
          */
         async translatedCategory(
             locale: Culture['code'],
             pathOrSlug: Category.Translation['slug'],
         ) {
+            return (
+                (await client.translatedCategoryByPath(locale, pathOrSlug ?? '')) ??
+                (await client.translatedCategoryBySlug(locale, pathOrSlug ?? ''))
+            );
+        },
+
+        /**
+         * Finds the category that is at this path in a locale: `cars/models/eqs`. Only an exact
+         * match counts.
+         *
+         * For themes with nested category URLs (`/category/*path`). When it finds nothing, ask
+         * `movedCategory()` whether a category used to be there, and only then fall back to
+         * `translatedCategoryBySlug()` for old one-segment links. Redirect in both cases, so
+         * every category is served at one URL.
+         */
+        async translatedCategoryByPath(locale: Culture['code'], path: string) {
             const categories = await client.categories();
 
-            const found =
-                categories.find((category) => {
-                    const translation = category.i18n[locale];
-                    return translation && categoryPath(translation) === pathOrSlug;
-                }) ?? categories.find((category) => category.i18n[locale]?.slug === pathOrSlug);
+            const found = categories.find((category) => {
+                const translation = category.i18n[locale];
+                return translation && categoryPath(translation) === path;
+            });
+
+            return found ? Category.translation(found, locale) : undefined;
+        },
+
+        /**
+         * Finds the first category with this slug in a locale. Slugs repeat across parent
+         * categories (`cars/events`, `vans/events`), so this is a guess, for old links only.
+         */
+        async translatedCategoryBySlug(locale: Culture['code'], slug: string) {
+            const categories = await client.categories();
+            const found = categories.find((category) => category.i18n[locale]?.slug === slug);
 
             return found ? Category.translation(found, locale) : undefined;
         },
 
         /**
          * Finds the category that used to have this path in a locale, to redirect a request for
-         * its old address to the current one. Use it only when `translatedCategory()` found
-         * nothing: a category that has the path now always wins over one that had it before.
+         * its old address to the current one. Use it only when `translatedCategoryByPath()`
+         * found nothing: a category that has the path now always wins over one that had it
+         * before. Ask it before falling back to a slug: what the path used to lead to is known,
+         * a slug is a guess.
          */
         async movedCategory(locale: Culture['code'], path: string) {
             const categories = await client.categories();
