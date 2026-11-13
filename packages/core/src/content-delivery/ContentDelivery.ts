@@ -116,8 +116,32 @@ const UNCACHED_METHODS: (keyof Client)[] = [
     'notifications',
     'category',
     'translatedCategory',
+    'translatedCategoryByPath',
+    'translatedCategoryBySlug',
     'translatedCategories',
+    'movedCategory',
 ];
+
+/**
+ * The address of a category page: `cars/models/eqs`.
+ *
+ * Read like this, because `path` is only known to newer versions of `@prezly/sdk`. Without it
+ * (an older SDK or API response, or a category from before paths existed) the path is the slug.
+ */
+export function categoryPath<T extends { slug: string | null }>(translation: T): T['slug'] {
+    const { path } = translation as { path?: string | null };
+
+    return path || translation.slug;
+}
+
+/**
+ * The paths a category had before in a locale, the most recently replaced first.
+ */
+export function previousCategoryPaths(category: Category, locale: Culture['code']): string[] {
+    const translation = category.i18n[locale] as { previous_paths?: string[] } | undefined;
+
+    return translation?.previous_paths ?? [];
+}
 
 export function createClient(
     prezly: PrezlyClient,
@@ -202,6 +226,10 @@ export function createClient(
             return prezly.newsroomCategories.list(newsroomUuid, { sortOrder: '+order' });
         },
 
+        /**
+         * Finds a category by its ID, or by its address in any locale: its path
+         * (`cars/models/eqs`), or else its slug.
+         */
         async category(arg: Category['id'] | Category.Translation['slug']) {
             const categories = await client.categories();
 
@@ -209,8 +237,12 @@ export function createClient(
                 return categories.find((category) => category.id === arg);
             }
 
-            return categories.find((category) =>
-                Category.translations(category).some((translation) => translation.slug === arg),
+            const has = (matches: (translation: Category.Translation) => boolean) =>
+                categories.find((category) => Object.values(category.i18n).some(matches));
+
+            return (
+                has((translation) => categoryPath(translation) === arg) ??
+                has((translation) => translation.slug === arg)
             );
         },
 
@@ -221,9 +253,71 @@ export function createClient(
             return Category.translations(categories ?? (await client.categories()), locale);
         },
 
-        async translatedCategory(locale: Culture['code'], slug: Category.Translation['slug']) {
-            const translations = await client.translatedCategories(locale);
-            return translations.find((category) => category.slug === slug);
+        /**
+         * Finds a category by its address in a locale, for themes whose category URLs have one
+         * segment (`/category/:slug`).
+         *
+         * It returns the category with that path, which for a top-level category is its slug.
+         * When no category has that path, it returns the first category with that slug, as it
+         * always did. So the result can be a category that lives at another address: a theme
+         * with nested category URLs should use `translatedCategoryByPath()`, which never guesses.
+         */
+        async translatedCategory(
+            locale: Culture['code'],
+            pathOrSlug: Category.Translation['slug'],
+        ) {
+            return (
+                (await client.translatedCategoryByPath(locale, pathOrSlug ?? '')) ??
+                (await client.translatedCategoryBySlug(locale, pathOrSlug ?? ''))
+            );
+        },
+
+        /**
+         * Finds the category that is at this path in a locale: `cars/models/eqs`. Only an exact
+         * match counts.
+         *
+         * For themes with nested category URLs (`/category/*path`). When it finds nothing, ask
+         * `movedCategory()` whether a category used to be there, and only then fall back to
+         * `translatedCategoryBySlug()` for old one-segment links. Redirect in both cases, so
+         * every category is served at one URL.
+         */
+        async translatedCategoryByPath(locale: Culture['code'], path: string) {
+            const categories = await client.categories();
+
+            const found = categories.find((category) => {
+                const translation = category.i18n[locale];
+                return translation && categoryPath(translation) === path;
+            });
+
+            return found ? Category.translation(found, locale) : undefined;
+        },
+
+        /**
+         * Finds the first category with this slug in a locale. Slugs repeat across parent
+         * categories (`cars/events`, `vans/events`), so this is a guess, for old links only.
+         */
+        async translatedCategoryBySlug(locale: Culture['code'], slug: string) {
+            const categories = await client.categories();
+            const found = categories.find((category) => category.i18n[locale]?.slug === slug);
+
+            return found ? Category.translation(found, locale) : undefined;
+        },
+
+        /**
+         * Finds the category that used to have this path in a locale, to redirect a request for
+         * its old address to the current one. Use it only when `translatedCategoryByPath()`
+         * found nothing: a category that has the path now always wins over one that had it
+         * before. Ask it before falling back to a slug: what the path used to lead to is known,
+         * a slug is a guess.
+         */
+        async movedCategory(locale: Culture['code'], path: string) {
+            const categories = await client.categories();
+
+            const moved = categories.find((category) =>
+                previousCategoryPaths(category, locale).includes(path),
+            );
+
+            return moved ? Category.translation(moved, locale) : undefined;
         },
 
         featuredContacts() {

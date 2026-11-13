@@ -57,4 +57,16 @@ describe('generateUrlFromPattern', () => {
 
         expect(href).toBe('/nl/media');
     });
+
+    it('should generate a URL with a named wildcard', () => {
+        const pattern = '/(:localeSlug/)category/*path';
+        const context = { defaultLocale: 'en' as const, locales: ['en' as const, 'fr' as const] };
+
+        expect(generateUrlFromPattern(pattern, { localeCode: 'en', path: 'cars' }, context)).toBe(
+            '/category/cars',
+        );
+        expect(
+            generateUrlFromPattern(pattern, { localeCode: 'fr', path: 'cars/models/eqs' }, context),
+        ).toBe('/fr/category/cars/models/eqs');
+    });
 });

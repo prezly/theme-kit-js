@@ -4,6 +4,7 @@ import UrlPattern from 'url-pattern';
 import { URL_PATTERN_SEGMENT_CHARSET } from './constants';
 import type { ExtractPathParams } from './types';
 import { normalizeUrl } from './utils';
+import { encodeWildcard, fromMatch, parseWildcard, stringify } from './utils/wildcard';
 
 type Awaitable<T> = T | Promise<T>;
 
@@ -51,20 +52,44 @@ export namespace Route {
         rewrite: string,
         { check, generate, resolveLocale }: Options<Pattern, Match> = {},
     ): Route<Pattern, Match> {
-        const urlPattern = new UrlPattern(pattern, {
+        // A pattern can end in a named wildcard (`/category/*path`), which takes several segments.
+        const wildcard = parseWildcard(pattern);
+        const rewriteWildcard = parseWildcard(rewrite);
+
+        const urlPattern = new UrlPattern(wildcard.pattern, {
             segmentValueCharset: URL_PATTERN_SEGMENT_CHARSET,
         });
-        const rewritePattern = new UrlPattern(rewrite, {
+        const rewritePattern = new UrlPattern(rewriteWildcard.pattern, {
             segmentValueCharset: URL_PATTERN_SEGMENT_CHARSET,
         });
+
+        // A custom `generate` gets the pattern to stringify its params with. On a wildcard route
+        // it gets one that takes the wildcard by its name, like the params it is given.
+        const generatePattern: UrlPattern = wildcard.name
+            ? Object.assign(Object.create(urlPattern), {
+                  stringify: (params?: Record<string, unknown>) =>
+                      stringify(urlPattern, params ?? {}, wildcard.name),
+              })
+            : urlPattern;
+
+        function encode(key: string, value: string) {
+            return key === wildcard.name ? encodeWildcard(value) : encodeURIComponent(value);
+        }
 
         return {
             pattern,
             match(path: string, searchParams: URLSearchParams) {
-                const matched: Record<string, string | undefined> | undefined =
+                const match: Record<string, string | undefined> | undefined =
                     urlPattern.match(path);
 
-                if (!matched) {
+                if (!match) {
+                    return undefined;
+                }
+
+                const matched = fromMatch(match, wildcard.name);
+
+                // `/category/` is not a category: a wildcard has to have something in it.
+                if (wildcard.name && !matched[wildcard.name]) {
                     return undefined;
                 }
 
@@ -78,16 +103,16 @@ export namespace Route {
                 const encoded = Object.fromEntries(
                     Object.entries(params ?? {}).map(([key, value]) => [
                         key,
-                        typeof value === 'string' ? encodeURIComponent(value) : value,
+                        typeof value === 'string' ? encode(key, value) : value,
                     ]),
                 );
                 if (generate) {
-                    return normalizeUrl(generate(urlPattern, encoded as Match));
+                    return normalizeUrl(generate(generatePattern, encoded as Match));
                 }
-                return normalizeUrl(urlPattern.stringify(encoded) as `/${string}`);
+                return normalizeUrl(stringify(urlPattern, encoded, wildcard.name) as `/${string}`);
             },
             rewrite(params: Match) {
-                return rewritePattern.stringify(params);
+                return stringify(rewritePattern, params ?? {}, rewriteWildcard.name);
             },
             resolveLocale,
         };

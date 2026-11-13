@@ -412,3 +412,63 @@ describe('ContentDelivery negative caching', () => {
         },
     );
 });
+
+describe('ContentDelivery categories', () => {
+    function translation(slug: string, path: string | undefined, previous_paths: string[] = []) {
+        return {
+            locale: { code: 'en' },
+            name: slug,
+            description: null,
+            slug,
+            path,
+            previous_paths,
+            public_stories_number: 1,
+        };
+    }
+    const categories = [
+        { id: 1, i18n: { en: translation('cars', 'cars') } },
+        { id: 2, i18n: { en: translation('events', 'cars/events', ['cars-events']) } },
+        { id: 3, i18n: { en: translation('events', 'events', ['happenings']) } },
+        // From an API that does not know paths yet.
+        { id: 4, i18n: { en: translation('vans', undefined) } },
+        { id: 5, i18n: { en: translation('launches', 'vans/launches') } },
+    ];
+    function client() {
+        const list = jest.fn(async () => categories);
+        return createClient(
+            { newsroomCategories: { list } } as unknown as PrezlyClient,
+            'room',
+            undefined,
+        );
+    }
+
+    it('finds a category by its path', async () => {
+        expect((await client().translatedCategory('en', 'cars/events'))?.id).toBe(2);
+        expect((await client().translatedCategory('en', 'events'))?.id).toBe(3);
+        expect((await client().category('cars/events'))?.id).toBe(2);
+        expect(await client().translatedCategory('en', 'cars/nothing')).toBeUndefined();
+    });
+
+    it('falls back to the slug, for themes with one-segment category URLs', async () => {
+        expect((await client().translatedCategory('en', 'vans'))?.id).toBe(4);
+        expect((await client().translatedCategory('en', 'launches'))?.id).toBe(5);
+        expect((await client().category('launches'))?.id).toBe(5);
+    });
+
+    it('finds a category by its exact path only, for themes with nested URLs', async () => {
+        expect((await client().translatedCategoryByPath('en', 'vans/launches'))?.id).toBe(5);
+        // `launches` is the slug of a category that lives at `vans/launches`. Not a match:
+        // the theme decides whether to redirect, after asking movedCategory().
+        expect(await client().translatedCategoryByPath('en', 'launches')).toBeUndefined();
+        expect((await client().translatedCategoryBySlug('en', 'launches'))?.id).toBe(5);
+        // Without a path, the slug is the path.
+        expect((await client().translatedCategoryByPath('en', 'vans'))?.id).toBe(4);
+    });
+
+    it('finds the category that used to have a path', async () => {
+        expect((await client().movedCategory('en', 'cars-events'))?.id).toBe(2);
+        expect((await client().movedCategory('en', 'happenings'))?.id).toBe(3);
+        expect(await client().movedCategory('en', 'nothing')).toBeUndefined();
+        expect(await client().movedCategory('fr', 'cars-events')).toBeUndefined();
+    });
+});
