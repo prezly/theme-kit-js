@@ -31,7 +31,7 @@
         "@dr.pogodin/babel-preset-svgr": "1.11.0",
         "@playwright/test": "1.65.0",
         "@prezly/biome-config": "1.0.1",
-        "@prezly/sdk": "26.16.0",
+        "@prezly/sdk": "26.18.0",
         "@types/jest": "29.5.14",
         "@types/node": "22.20.5",
         "@types/react": "19.3.0",
