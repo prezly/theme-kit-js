@@ -46,8 +46,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1(@biomejs/biome@2.2.4)
       '@prezly/sdk':
-        specifier: 26.16.0
-        version: 26.16.0
+        specifier: 26.18.0
+        version: 26.18.0
       '@types/jest':
         specifier: 29.5.14
         version: 29.5.14
@@ -92,7 +92,7 @@ importers:
     dependencies:
       '@prezly/sdk':
         specifier: 21.12.0 || ^23.0.1 || ^26.16.0
-        version: 26.16.0
+        version: 26.17.0
       '@prezly/theme-kit-intl':
         specifier: workspace:^
         version: link:../intl
@@ -139,7 +139,7 @@ importers:
         version: 1.65.0
       '@prezly/sdk':
         specifier: 21.12.0 || ^23.0.1 || ^26.16.0
-        version: 26.16.0
+        version: 26.17.0
       '@prezly/theme-kit-core':
         specifier: workspace:^
         version: link:../core
@@ -1666,8 +1666,12 @@ packages:
   '@prezly/progress-promise@2.0.1':
     resolution: {integrity: sha512-uKBTA1gZ90ckKK/4wVoVORC3VUTkOgFwhZWwWsceKxVoAgDxqS5s0NXP5V7J+niEdvCkcoEVeCc25kCs+Hr/uQ==}
 
-  '@prezly/sdk@26.16.0':
-    resolution: {integrity: sha512-N9lfbSMLUNt2wE8+1olJySS4edr/lrirXJZ3jLuwUwGrI9S3vRCf4BLpN4gOEKgbbgb4wXrCwKtZP0Jh2FE9kQ==}
+  '@prezly/sdk@26.17.0':
+    resolution: {integrity: sha512-xocHfUWHZpokM0pcZDRoRqIDYtgivev73TX2MnRkDE2PULmcFTGcEOg+fax/u+3h3TkRvISpIj/0k6htjgtp2Q==}
+    engines: {node: '>=22'}
+
+  '@prezly/sdk@26.18.0':
+    resolution: {integrity: sha512-yltlw+FrS8tzaYgF9X2lbFS65SxEzj3ZMQQyXBspGF8CwfGkPaDlLtIqbL1YaxhGDVjus3HynRqyVfH4RYPjLw==}
     engines: {node: '>=22'}
 
   '@prezly/uploadcare-widget@3.16.1':
@@ -6726,7 +6730,12 @@ snapshots:
 
   '@prezly/progress-promise@2.0.1': {}
 
-  '@prezly/sdk@26.16.0':
+  '@prezly/sdk@26.17.0':
+    dependencies:
+      '@prezly/progress-promise': 2.0.1
+      '@prezly/uploads': 0.3.2
+
+  '@prezly/sdk@26.18.0':
     dependencies:
       '@prezly/progress-promise': 2.0.1
       '@prezly/uploads': 0.3.2
