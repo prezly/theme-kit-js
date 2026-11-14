@@ -10,7 +10,7 @@ importers:
     dependencies:
       next:
         specifier: ^15.1.5
-        version: 15.1.5(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 15.1.5(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -40,8 +40,8 @@ importers:
         specifier: 1.11.0
         version: 1.11.0(@babel/parser@7.29.14)(supports-color@8.1.1)(typescript@5.7.3)
       '@playwright/test':
-        specifier: 1.65.0
-        version: 1.65.0
+        specifier: 1.65.1
+        version: 1.65.1
       '@prezly/biome-config':
         specifier: 1.0.1
         version: 1.0.1(@biomejs/biome@2.2.4)
@@ -1684,6 +1684,11 @@ packages:
 
   '@playwright/test@1.65.0':
     resolution: {integrity: sha512-iGURLGuKDLakSEl7Pgfv8h7f+XLT+V861Wfhz0zlEl5nyFuKUopdkFBPKqTllTUp06aOwPuH8iuUEb3yp3MpbQ==}
+    engines: {node: '>=20'}
+    hasBin: true
+
+  '@playwright/test@1.65.1':
+    resolution: {integrity: sha512-y+NCIRm2LvY4slUVWvGh1nujJ8RF/hEisIsq2mtUPgdQC4L701bq5hZGMhrpeXjACvwvO9tj5dJqhvM6TP9lbw==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -4113,8 +4118,18 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
+  playwright-core@1.65.1:
+    resolution: {integrity: sha512-hqPpz7blSMPxWVdoeE1yiBSzXsKiVOd2k+kjCvmUywD2GPO2Dd9HfcWnq9NN0GHbNZDFgZ9JfBFr+X5/BLo0qw==}
+    engines: {node: '>=20'}
+    hasBin: true
+
   playwright@1.65.0:
     resolution: {integrity: sha512-F3AMWcR44qMBt4kq+6Kb6mX7bjGXshktKFOPULd7reED6ZJWevjbNRqysP7q+AATE9kdPEZBibex1BYsvpVoeA==}
+    engines: {node: '>=20'}
+    hasBin: true
+
+  playwright@1.65.1:
+    resolution: {integrity: sha512-vJ1FuoOrNwOKHUIVEvSt3jT1L+wjjDpwhwIstKtfvTh8XIG4FG4bIFuvNdMxi81LGfAhUgUZleVFaOLY4RIUUw==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -6757,6 +6772,10 @@ snapshots:
     dependencies:
       playwright: 1.65.0
 
+  '@playwright/test@1.65.1':
+    dependencies:
+      playwright: 1.65.1
+
   '@prezly/biome-config@1.0.1(@biomejs/biome@2.2.4)':
     dependencies:
       '@biomejs/biome': 2.2.4
@@ -9329,6 +9348,32 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
+  next@15.1.5(@babel/core@7.29.13(supports-color@8.1.1))(@playwright/test@1.65.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      '@next/env': 15.1.5
+      '@swc/counter': 0.1.3
+      '@swc/helpers': 0.5.15
+      busboy: 1.6.0
+      caniuse-lite: 1.0.30001695
+      postcss: 8.4.31
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+      styled-jsx: 5.1.6(@babel/core@7.29.13(supports-color@8.1.1))(react@19.0.0)
+    optionalDependencies:
+      '@next/swc-darwin-arm64': 15.1.5
+      '@next/swc-darwin-x64': 15.1.5
+      '@next/swc-linux-arm64-gnu': 15.1.5
+      '@next/swc-linux-arm64-musl': 15.1.5
+      '@next/swc-linux-x64-gnu': 15.1.5
+      '@next/swc-linux-x64-musl': 15.1.5
+      '@next/swc-win32-arm64-msvc': 15.1.5
+      '@next/swc-win32-x64-msvc': 15.1.5
+      '@playwright/test': 1.65.1
+      sharp: 0.33.5
+    transitivePeerDependencies:
+      - '@babel/core'
+      - babel-plugin-macros
+
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
@@ -9683,9 +9728,15 @@ snapshots:
 
   playwright-core@1.65.0: {}
 
+  playwright-core@1.65.1: {}
+
   playwright@1.65.0:
     dependencies:
       playwright-core: 1.65.0
+
+  playwright@1.65.1:
+    dependencies:
+      playwright-core: 1.65.1
 
   postcss-selector-parser@6.1.2:
     dependencies:
