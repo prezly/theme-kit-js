@@ -12,4 +12,5 @@ export * from './resolvable';
 export * from './routing';
 export * as Search from './search';
 export * as Sitemap from './sitemap';
+export * as Stories from './stories';
 export * as Uploads from './uploads';

@@ -1,6 +1,6 @@
 import { Story } from '@prezly/sdk';
 import type { StoryRef } from '@prezly/sdk';
-import { AsyncResolvable } from '@prezly/theme-kit-core';
+import { AsyncResolvable, Stories } from '@prezly/theme-kit-core';
 import type { Locale } from '@prezly/theme-kit-intl';
 import type { Metadata } from 'next';
 
@@ -30,10 +30,7 @@ export async function generateStoryPageMetadata(
     );
 
     function generateStoryUrl(localeCode: Locale.Code, translation: StoryRef) {
-        if (Story.isPublished(translation)) {
-            return generateUrl?.('story', { ...translation, localeCode });
-        }
-        return undefined;
+        return generateUrl?.('story', { ...translation, localeCode });
     }
 
     const { author, oembed } = story;
@@ -64,13 +61,18 @@ export async function generateStoryPageMetadata(
             title: isPreview ? `[Preview]: ${title}` : title,
             description,
             generateUrl: (localeCode) => {
-                const target = [story, ...story.translations].find(
-                    (translation) => translation.culture.code === localeCode,
-                );
-                if (target) {
-                    return generateStoryUrl(localeCode, target);
+                if (story.culture.code === localeCode) {
+                    return Story.isPublished(story)
+                        ? generateStoryUrl(localeCode, story)
+                        : undefined;
                 }
-                return undefined;
+
+                // The page must not disclose translations its visitors cannot open.
+                const translation = Stories.getPublicTranslations(story).find(
+                    (candidate) => candidate.culture.code === localeCode,
+                );
+
+                return translation ? generateStoryUrl(localeCode, translation) : undefined;
             },
         },
         {
