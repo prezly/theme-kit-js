@@ -92,12 +92,14 @@ One repository-wide concurrency group serializes both channels and retries, with
 
 ### Recovery
 
-Publishing is ordered **intl → core → react → nextjs**, with registry verification between packages. `packages/ui` is never packed or published. npm publication is not atomic across packages.
+Publishing is ordered **intl → core → react → nextjs**. The four packages are published first and verified against the registry together. `packages/ui` is never packed or published. npm publication is not atomic across packages.
+
+npm scans a new version before serving it, usually for a few minutes. The publish step waits up to 20 minutes for the registry to serve every published version. If that wait times out, the versions are published: wait until `npm view <package>@<version>` shows them, then rerun.
 
 1. Read the failing run's summary and retain its artifact, commit SHA and channel. Inspect registry versions before retrying; a network failure does not mean publishing failed.
 2. Fix the npm trusted publisher mapping or environment setup if authentication failed. A connection must exactly match this repository, `publish.yml`, and `npm`. Do not add a personal token as a workaround.
-3. Rerun **all jobs of the same workflow run**, keeping its original commit and channel. Previously published versions are skipped only when their SHA-512 integrity and selected dist-tag exactly match the rebuilt tarballs. All packages are preflighted before any publication. The remaining packages publish in dependency order. The registry verification step also checks skipped packages.
-4. If rebuilt bytes differ, stop. Do not unpublish, overwrite, or bypass the comparison. Compare the retained artifact with the rebuild to diagnose the difference. Prepare a new reviewed coordinated version bump for all four packages and release it normally. Keep consumers on the previous complete release until the new set passes registry installation checks.
+3. Rerun **all jobs of the same workflow run**, keeping its original commit and channel. Previously published versions are skipped only when the selected dist-tag matches and the registry tarball has the same contents as the rebuilt tarball: every file byte for byte, ignoring only the key order inside the dependency sections of `package.json`. All packages are preflighted before any publication. The remaining packages publish in dependency order. The registry verification step also checks skipped packages.
+4. If rebuilt contents differ, stop. Do not unpublish, overwrite, or bypass the comparison. Compare the retained artifact with the rebuild to diagnose the difference. Prepare a new reviewed coordinated version bump for all four packages and release it normally. Keep consumers on the previous complete release until the new set passes registry installation checks.
 5. Before publishing, the workflow checks that the release Git tag is absent or points to the same commit. It never moves an existing Git tag. If tag or GitHub Release creation fails after npm publication, fix the GitHub permission, tag-rule or API issue and rerun all jobs of the same run: identical npm packages are skipped and Git tag and release creation are retried. Existing release titles and notes are preserved; only the release flags are updated. A conflicting Git tag stops both dry runs and real releases and must be investigated before retrying.
 
 A different existing dist-tag also stops recovery. Retagging or promoting an existing `next` version needs a separately approved process and is not performed by this workflow.

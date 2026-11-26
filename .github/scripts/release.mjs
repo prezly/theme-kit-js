@@ -11,8 +11,9 @@ import {
     writeFileSync,
 } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { resolve } from 'node:path';
+import { relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { isDeepStrictEqual } from 'node:util';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const output = resolve(root, '.release');
@@ -27,6 +28,20 @@ assert(
     'Expected pack, dry-run, publish or verify',
 );
 assert(['latest', 'next'].includes(tag), 'Expected latest or next');
+// npm scans a new version before serving it, so it appears minutes after `npm publish` returns:
+// 95-249 seconds observed, 15 minutes or more documented at peak times.
+const registryWait = Number(process.env.RELEASE_REGISTRY_WAIT_MS ?? 20 * 60 * 1000);
+const registryPoll = Number(process.env.RELEASE_REGISTRY_POLL_MS ?? 15 * 1000);
+assert(
+    Number.isFinite(registryWait) && Number.isFinite(registryPoll),
+    'Invalid registry wait settings',
+);
+const dependencySections = [
+    'dependencies',
+    'optionalDependencies',
+    'peerDependencies',
+    'devDependencies',
+];
 const json = (file) => JSON.parse(readFileSync(file, 'utf8'));
 const run = (bin, args, cwd = root) => execFileSync(bin, args, { cwd, stdio: 'inherit' });
 const capture = (bin, args) =>
@@ -50,12 +65,7 @@ function inspect(file, source) {
     assert.equal(packed.repository?.url, `git+https://github.com/${repository}.git`);
     assert.match(packed.version, /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/);
     assert(tag !== 'latest' || !packed.version.includes('-'), 'Prereleases must use next');
-    for (const section of [
-        'dependencies',
-        'optionalDependencies',
-        'peerDependencies',
-        'devDependencies',
-    ]) {
+    for (const section of dependencySections) {
         for (const [name, range] of Object.entries(packed[section] ?? {})) {
             assert(
                 !/^(workspace:|file:|link:)/.test(range),
@@ -143,6 +153,54 @@ async function metadata(pkg) {
     return response.json();
 }
 
+// Every file must match byte for byte. Only the key order inside dependency sections is ignored:
+// it carries no meaning, and pnpm writes rewritten workspace ranges in varying order.
+function contents(file) {
+    const directory = mkdtempSync(resolve(tmpdir(), 'prezly-release-compare-'));
+    try {
+        run('tar', ['-xzf', file, '-C', directory]);
+        const entries = readdirSync(directory, { recursive: true, withFileTypes: true })
+            .filter((entry) => entry.isFile())
+            .map((entry) => {
+                const path = resolve(entry.parentPath, entry.name);
+                const name = relative(directory, path);
+                if (name !== 'package/package.json') return [name, digest(path)];
+                const manifest = json(path);
+                for (const section of dependencySections) {
+                    if (!manifest[section]) continue;
+                    manifest[section] = Object.fromEntries(
+                        Object.entries(manifest[section]).sort(([a], [b]) => (a < b ? -1 : 1)),
+                    );
+                }
+                return [name, JSON.stringify(manifest)];
+            });
+        return Object.fromEntries(entries);
+    } finally {
+        rmSync(directory, { recursive: true, force: true });
+    }
+}
+
+// A published version is only skipped when the registry provably serves this very package.
+async function matches(pkg, dist) {
+    if (dist?.integrity === pkg.integrity) return true;
+    if (!dist?.integrity || !dist.tarball?.startsWith(`${registry}/`)) return false;
+    const response = await fetch(dist.tarball, { signal: AbortSignal.timeout(120000) });
+    assert(response.ok, `Registry download failed for ${pkg.name}: HTTP ${response.status}`);
+    const directory = mkdtempSync(resolve(tmpdir(), 'prezly-release-published-'));
+    try {
+        const file = resolve(directory, 'published.tgz');
+        writeFileSync(file, Buffer.from(await response.arrayBuffer()));
+        assert.equal(
+            digest(file),
+            dist.integrity,
+            `${pkg.name}: registry tarball does not match its integrity`,
+        );
+        return isDeepStrictEqual(contents(file), contents(pkg.file));
+    } finally {
+        rmSync(directory, { recursive: true, force: true });
+    }
+}
+
 if (command === 'pack') {
     rmSync(output, { recursive: true, force: true });
     mkdirSync(output);
@@ -172,10 +230,9 @@ if (command === 'pack') {
 } else if (command === 'verify') {
     for (const pkg of packages) {
         const data = await metadata(pkg);
-        assert.equal(
-            data.versions?.[pkg.version]?.dist?.integrity,
-            pkg.integrity,
-            `${pkg.name}: published bytes differ`,
+        assert(
+            await matches(pkg, data.versions?.[pkg.version]?.dist),
+            `${pkg.name}: published contents differ`,
         );
         assert.equal(data['dist-tags']?.[tag], pkg.version, `${pkg.name}: unexpected ${tag} tag`);
     }
@@ -200,13 +257,19 @@ if (command === 'pack') {
         const data = await metadata(pkg);
         const existing = data.versions?.[pkg.version];
         const identical = existing?.dist?.integrity === pkg.integrity;
-        const tagged = data['dist-tags']?.[tag] === pkg.version;
-        report(
-            `${pkg.name}@${pkg.version}: ${existing ? (identical && tagged ? 'already published, identical bytes and tag' : 'version exists with different bytes or tag; real release blocked') : `ready for ${tag}`}`,
-        );
+        const released =
+            Boolean(existing) &&
+            data['dist-tags']?.[tag] === pkg.version &&
+            (await matches(pkg, existing.dist));
+        let status = `ready for ${tag}`;
+        if (released && identical) status = 'already published, identical bytes and tag';
+        else if (released) status = 'already published, identical contents and tag';
+        else if (existing)
+            status = 'version exists with different contents or tag; real release blocked';
+        report(`${pkg.name}@${pkg.version}: ${status}`);
         if (command === 'publish' && existing) {
             assert(
-                identical && tagged,
+                released,
                 `${pkg.name}: existing version differs. See release recovery documentation.`,
             );
         }
@@ -231,8 +294,10 @@ if (command === 'pack') {
             report(
                 'All versions already exist. No publish performed; OIDC authentication was not exercised.',
             );
-        for (const pkg of plan) {
-            if (pkg.skip) continue;
+        // npm does not check that dependencies are visible yet, so publish everything in
+        // dependency order first and wait once: the scan delay must not add up per package.
+        let pending = plan.filter((pkg) => !pkg.skip);
+        for (const pkg of pending) {
             run('npm', [
                 'publish',
                 pkg.file,
@@ -241,24 +306,34 @@ if (command === 'pack') {
                 `--tag=${tag}`,
                 `--registry=${registry}`,
             ]);
-            // Wait for registry propagation before moving on to dependent packages.
-            let visible = false;
-            for (let attempt = 0; attempt < 12; attempt++) {
-                const data = await metadata(pkg);
+        }
+        const started = Date.now();
+        while (pending.length > 0) {
+            const hidden = [];
+            for (const pkg of pending) {
+                // The versions are published. A failed lookup must not fail the release.
+                const data = await metadata(pkg).catch((error) => {
+                    console.log(`${pkg.name}: ${error.message}; retrying`);
+                });
                 if (
-                    data.versions?.[pkg.version]?.dist?.integrity === pkg.integrity &&
+                    data?.versions?.[pkg.version]?.dist?.integrity === pkg.integrity &&
                     data['dist-tags']?.[tag] === pkg.version
                 ) {
-                    visible = true;
-                    break;
+                    report(`Published and verified ${pkg.name}@${pkg.version}`);
+                } else {
+                    hidden.push(pkg);
                 }
-                await new Promise((done) => setTimeout(done, 5000));
             }
+            pending = hidden;
+            if (pending.length === 0) break;
+            const names = pending.map((pkg) => pkg.name).join(', ');
+            const elapsed = Math.round((Date.now() - started) / 1000);
             assert(
-                visible,
-                `${pkg.name}: registry verification timed out; see recovery documentation`,
+                Date.now() - started < registryWait,
+                `${names}: published, but registry verification timed out after ${elapsed}s; see recovery documentation`,
             );
-            report(`Published and verified ${pkg.name}@${pkg.version}`);
+            console.log(`Waiting for npm to serve ${names} (${elapsed}s elapsed)`);
+            await new Promise((done) => setTimeout(done, registryPoll));
         }
     }
 }

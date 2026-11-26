@@ -40,12 +40,13 @@ function fixture(options = {}) {
             version,
             main: 'build/index.cjs',
             repository: { url: `git+https://github.com/${repository}.git` },
+            dependencies: { alpha: '^1.0.0', beta: '^1.0.0' },
         };
         mkdirSync(resolve(root, directory), { recursive: true });
         writeFileSync(resolve(root, directory, 'package.json'), JSON.stringify(manifest));
         const staging = resolve(root, `staging-${index}`);
         mkdirSync(resolve(staging, 'package/build'), { recursive: true });
-        if (options.workspace) manifest.dependencies = { unexpected: 'workspace:^' };
+        if (options.workspace) manifest.dependencies.unexpected = 'workspace:^';
         writeFileSync(resolve(staging, 'package/package.json'), JSON.stringify(manifest));
         if (!options.missingEntry)
             writeFileSync(resolve(staging, 'package/build/index.cjs'), 'module.exports = {};');
@@ -56,15 +57,28 @@ function fixture(options = {}) {
         );
         execFileSync('tar', ['-czf', file, '-C', staging, 'package']);
         const integrity = `sha512-${createHash('sha512').update(readFileSync(file)).digest('base64')}`;
+        const last = index === definitions.length - 1;
+        // An earlier build of the same version, as the registry would serve it.
+        let rebuilt;
+        if (last && (options.reordered || options.changed)) {
+            manifest.dependencies = { beta: '^1.0.0', alpha: '^1.0.0' };
+            writeFileSync(resolve(staging, 'package/package.json'), JSON.stringify(manifest));
+            if (options.changed)
+                writeFileSync(resolve(staging, 'package/build/index.cjs'), 'module.exports = 1;');
+            rebuilt = resolve(root, 'registry.tgz');
+            execFileSync('tar', ['-czf', rebuilt, '-C', staging, 'package']);
+        }
         metadata[name] = {
             version,
             integrity,
             file,
-            existing:
-                options.existing ||
-                (options.partial && index === 0) ||
-                (options.conflict && index === definitions.length - 1),
-            conflict: options.conflict && index === definitions.length - 1,
+            existing: options.existing || (options.partial && index === 0) || Boolean(rebuilt),
+            published: rebuilt
+                ? {
+                      file: rebuilt,
+                      integrity: `sha512-${createHash('sha512').update(readFileSync(rebuilt)).digest('base64')}`,
+                  }
+                : undefined,
         };
     }
     writeFileSync(resolve(root, 'metadata.json'), JSON.stringify(metadata));
@@ -81,14 +95,22 @@ function fixture(options = {}) {
         `
 import fs from 'node:fs';
 const packages = JSON.parse(fs.readFileSync(process.env.TEST_METADATA));
+const lookups = {};
 globalThis.fetch = async (url) => {
     if (process.env.TEST_REGISTRY_FAIL) return { ok: false, status: 503 };
-    const name = decodeURIComponent(new URL(url).pathname.slice(1));
-    const pkg = packages[name];
+    const [path, tarball] = decodeURIComponent(new URL(url).pathname.slice(1)).split('/-/');
+    const pkg = packages[path];
+    if (tarball) return { ok: true, arrayBuffer: async () => fs.readFileSync(pkg.published.file) };
     const calls = fs.readFileSync(process.env.TEST_CALLS, 'utf8').trim().split('\\n').filter(Boolean).map(JSON.parse);
     const published = calls.some((args) => args[0] === 'publish' && args[1] === pkg.file && !args.includes('--dry-run'));
-    const exists = pkg.existing || published;
-    return { ok: true, json: async () => ({ versions: exists ? { [pkg.version]: { dist: { integrity: pkg.conflict ? 'different' : pkg.integrity } } } : {}, 'dist-tags': exists ? { latest: pkg.version } : {} }) };
+    // npm serves a new version only minutes after the publish call returns.
+    if (published) {
+        lookups[path] = (lookups[path] ?? 0) + 1;
+        if (lookups[path] <= Number(process.env.TEST_REGISTRY_ERRORS ?? 0)) return { ok: false, status: 503 };
+    }
+    const exists = pkg.existing || (published && lookups[path] > Number(process.env.TEST_REGISTRY_LAG ?? 0));
+    const dist = { integrity: pkg.published?.integrity ?? pkg.integrity, tarball: 'https://registry.npmjs.org/' + path + '/-/package.tgz' };
+    return { ok: true, json: async () => ({ versions: exists ? { [pkg.version]: { dist } } : {}, 'dist-tags': exists ? { latest: pkg.version } : {} }) };
 };
 `,
     );
@@ -117,6 +139,7 @@ globalThis.fetch = async (url) => {
                         TEST_CALLS: resolve(root, 'calls'),
                         TEST_METADATA: resolve(root, 'metadata.json'),
                         GITHUB_STEP_SUMMARY: '',
+                        RELEASE_REGISTRY_POLL_MS: '10',
                         ...extraEnv,
                     },
                 },
@@ -140,7 +163,7 @@ for (const [name, options, expected] of [
     ['rejects workspace protocols in packed manifests', { workspace: true }, /unresolved/],
     ['rejects missing exports', { missingEntry: true }, /Missing package target/],
     ['rejects prereleases on latest', { prerelease: true }, /Prereleases must use next/],
-    ['preflights every version before writing', { conflict: true }, /existing version differs/],
+    ['preflights every version before writing', { changed: true }, /existing version differs/],
 ]) {
     test(name, (t) => {
         const f = fixture(options);
@@ -164,7 +187,7 @@ for (const [name, env] of [
     });
 }
 test('dry run never publishes, even when existing versions differ', (t) => {
-    const f = fixture({ conflict: true });
+    const f = fixture({ changed: true });
     t.after(() => f.cleanup());
     const result = f.run('dry-run');
     assert.equal(result.status, 0, result.stderr);
@@ -176,6 +199,35 @@ test('retry skips byte-identical published versions', (t) => {
     const result = f.run();
     assert.equal(result.status, 0, result.stderr);
     assert.deepEqual(f.writes(), []);
+});
+test('retry skips a rebuilt version that only reorders dependency keys', (t) => {
+    const f = fixture({ reordered: true });
+    t.after(() => f.cleanup());
+    const result = f.run();
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stdout, /already published, identical contents and tag/);
+    assert.deepEqual(
+        f.writes().map((args) => args[1].split('/').pop()),
+        definitions
+            .slice(0, -1)
+            .map(([, name]) => `${name.replace('@', '').replace('/', '-')}-1.0.0.tgz`),
+    );
+});
+test('waits for npm to serve the published versions', (t) => {
+    const f = fixture();
+    t.after(() => f.cleanup());
+    const result = f.run('publish', { TEST_REGISTRY_LAG: '3', TEST_REGISTRY_ERRORS: '1' });
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stdout, /Waiting for npm to serve/);
+    assert.equal(f.writes().length, definitions.length);
+});
+test('fails when npm never serves the published versions', (t) => {
+    const f = fixture();
+    t.after(() => f.cleanup());
+    const result = f.run('publish', { TEST_REGISTRY_LAG: '1000', RELEASE_REGISTRY_WAIT_MS: '50' });
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /registry verification timed out/);
+    assert.equal(f.writes().length, definitions.length);
 });
 test('publishes dependencies before consumers', (t) => {
     const f = fixture();
