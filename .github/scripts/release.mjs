@@ -28,6 +28,14 @@ assert(
     'Expected pack, dry-run, publish or verify',
 );
 assert(['latest', 'next'].includes(tag), 'Expected latest or next');
+// npm scans a new version before serving it, so it appears minutes after `npm publish` returns:
+// 95-249 seconds observed, 15 minutes or more documented at peak times.
+const registryWait = Number(process.env.RELEASE_REGISTRY_WAIT_MS ?? 20 * 60 * 1000);
+const registryPoll = Number(process.env.RELEASE_REGISTRY_POLL_MS ?? 15 * 1000);
+assert(
+    Number.isFinite(registryWait) && Number.isFinite(registryPoll),
+    'Invalid registry wait settings',
+);
 const dependencySections = [
     'dependencies',
     'optionalDependencies',
@@ -296,23 +304,26 @@ if (command === 'pack') {
                 `--tag=${tag}`,
                 `--registry=${registry}`,
             ]);
-            // Wait for registry propagation before moving on to dependent packages.
-            let visible = false;
-            for (let attempt = 0; attempt < 12; attempt++) {
-                const data = await metadata(pkg);
+            // Wait for the registry to serve the version before moving on to dependent packages.
+            const started = Date.now();
+            for (;;) {
+                // The version is published. A failed lookup must not fail the release.
+                const data = await metadata(pkg).catch((error) => {
+                    console.log(`${pkg.name}: ${error.message}; retrying`);
+                });
                 if (
-                    data.versions?.[pkg.version]?.dist?.integrity === pkg.integrity &&
+                    data?.versions?.[pkg.version]?.dist?.integrity === pkg.integrity &&
                     data['dist-tags']?.[tag] === pkg.version
-                ) {
-                    visible = true;
+                )
                     break;
-                }
-                await new Promise((done) => setTimeout(done, 5000));
+                const elapsed = Math.round((Date.now() - started) / 1000);
+                assert(
+                    Date.now() - started < registryWait,
+                    `${pkg.name}: published, but registry verification timed out after ${elapsed}s; see recovery documentation`,
+                );
+                console.log(`Waiting for npm to serve ${pkg.name} (${elapsed}s elapsed)`);
+                await new Promise((done) => setTimeout(done, registryPoll));
             }
-            assert(
-                visible,
-                `${pkg.name}: registry verification timed out; see recovery documentation`,
-            );
             report(`Published and verified ${pkg.name}@${pkg.version}`);
         }
     }

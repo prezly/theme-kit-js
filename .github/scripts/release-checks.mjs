@@ -95,6 +95,7 @@ function fixture(options = {}) {
         `
 import fs from 'node:fs';
 const packages = JSON.parse(fs.readFileSync(process.env.TEST_METADATA));
+const lookups = {};
 globalThis.fetch = async (url) => {
     if (process.env.TEST_REGISTRY_FAIL) return { ok: false, status: 503 };
     const [path, tarball] = decodeURIComponent(new URL(url).pathname.slice(1)).split('/-/');
@@ -102,7 +103,12 @@ globalThis.fetch = async (url) => {
     if (tarball) return { ok: true, arrayBuffer: async () => fs.readFileSync(pkg.published.file) };
     const calls = fs.readFileSync(process.env.TEST_CALLS, 'utf8').trim().split('\\n').filter(Boolean).map(JSON.parse);
     const published = calls.some((args) => args[0] === 'publish' && args[1] === pkg.file && !args.includes('--dry-run'));
-    const exists = pkg.existing || published;
+    // npm serves a new version only minutes after the publish call returns.
+    if (published) {
+        lookups[path] = (lookups[path] ?? 0) + 1;
+        if (lookups[path] <= Number(process.env.TEST_REGISTRY_ERRORS ?? 0)) return { ok: false, status: 503 };
+    }
+    const exists = pkg.existing || (published && lookups[path] > Number(process.env.TEST_REGISTRY_LAG ?? 0));
     const dist = { integrity: pkg.published?.integrity ?? pkg.integrity, tarball: 'https://registry.npmjs.org/' + path + '/-/package.tgz' };
     return { ok: true, json: async () => ({ versions: exists ? { [pkg.version]: { dist } } : {}, 'dist-tags': exists ? { latest: pkg.version } : {} }) };
 };
@@ -133,6 +139,7 @@ globalThis.fetch = async (url) => {
                         TEST_CALLS: resolve(root, 'calls'),
                         TEST_METADATA: resolve(root, 'metadata.json'),
                         GITHUB_STEP_SUMMARY: '',
+                        RELEASE_REGISTRY_POLL_MS: '10',
                         ...extraEnv,
                     },
                 },
@@ -205,6 +212,22 @@ test('retry skips a rebuilt version that only reorders dependency keys', (t) => 
             .slice(0, -1)
             .map(([, name]) => `${name.replace('@', '').replace('/', '-')}-1.0.0.tgz`),
     );
+});
+test('waits for npm to serve the published versions', (t) => {
+    const f = fixture();
+    t.after(() => f.cleanup());
+    const result = f.run('publish', { TEST_REGISTRY_LAG: '3', TEST_REGISTRY_ERRORS: '1' });
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stdout, /Waiting for npm to serve/);
+    assert.equal(f.writes().length, definitions.length);
+});
+test('fails when npm never serves the published versions', (t) => {
+    const f = fixture();
+    t.after(() => f.cleanup());
+    const result = f.run('publish', { TEST_REGISTRY_LAG: '1000', RELEASE_REGISTRY_WAIT_MS: '50' });
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /registry verification timed out/);
+    assert.equal(f.writes().length, 1);
 });
 test('publishes dependencies before consumers', (t) => {
     const f = fixture();
