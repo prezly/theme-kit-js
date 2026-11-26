@@ -294,8 +294,10 @@ if (command === 'pack') {
             report(
                 'All versions already exist. No publish performed; OIDC authentication was not exercised.',
             );
-        for (const pkg of plan) {
-            if (pkg.skip) continue;
+        // npm does not check that dependencies are visible yet, so publish everything in
+        // dependency order first and wait once: the scan delay must not add up per package.
+        let pending = plan.filter((pkg) => !pkg.skip);
+        for (const pkg of pending) {
             run('npm', [
                 'publish',
                 pkg.file,
@@ -304,27 +306,34 @@ if (command === 'pack') {
                 `--tag=${tag}`,
                 `--registry=${registry}`,
             ]);
-            // Wait for the registry to serve the version before moving on to dependent packages.
-            const started = Date.now();
-            for (;;) {
-                // The version is published. A failed lookup must not fail the release.
+        }
+        const started = Date.now();
+        while (pending.length > 0) {
+            const hidden = [];
+            for (const pkg of pending) {
+                // The versions are published. A failed lookup must not fail the release.
                 const data = await metadata(pkg).catch((error) => {
                     console.log(`${pkg.name}: ${error.message}; retrying`);
                 });
                 if (
                     data?.versions?.[pkg.version]?.dist?.integrity === pkg.integrity &&
                     data['dist-tags']?.[tag] === pkg.version
-                )
-                    break;
-                const elapsed = Math.round((Date.now() - started) / 1000);
-                assert(
-                    Date.now() - started < registryWait,
-                    `${pkg.name}: published, but registry verification timed out after ${elapsed}s; see recovery documentation`,
-                );
-                console.log(`Waiting for npm to serve ${pkg.name} (${elapsed}s elapsed)`);
-                await new Promise((done) => setTimeout(done, registryPoll));
+                ) {
+                    report(`Published and verified ${pkg.name}@${pkg.version}`);
+                } else {
+                    hidden.push(pkg);
+                }
             }
-            report(`Published and verified ${pkg.name}@${pkg.version}`);
+            pending = hidden;
+            if (pending.length === 0) break;
+            const names = pending.map((pkg) => pkg.name).join(', ');
+            const elapsed = Math.round((Date.now() - started) / 1000);
+            assert(
+                Date.now() - started < registryWait,
+                `${names}: published, but registry verification timed out after ${elapsed}s; see recovery documentation`,
+            );
+            console.log(`Waiting for npm to serve ${names} (${elapsed}s elapsed)`);
+            await new Promise((done) => setTimeout(done, registryPoll));
         }
     }
 }

@@ -227,7 +227,7 @@ test('fails when npm never serves the published versions', (t) => {
     const result = f.run('publish', { TEST_REGISTRY_LAG: '1000', RELEASE_REGISTRY_WAIT_MS: '50' });
     assert.notEqual(result.status, 0);
     assert.match(result.stderr, /registry verification timed out/);
-    assert.equal(f.writes().length, 1);
+    assert.equal(f.writes().length, definitions.length);
 });
 test('publishes dependencies before consumers', (t) => {
     const f = fixture();
