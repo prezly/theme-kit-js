@@ -41,6 +41,18 @@ function getTimezoneOffsetString(date: Date, locale: Locale.Code, timezone: stri
     return parts.find((p) => p.type === 'timeZoneName')?.value ?? '';
 }
 
+/**
+ * Languages whose natural date order and markers (年/月/日, 년/월/일) can't be
+ * expressed by the Latin-oriented moment patterns stored on the Newsroom
+ * (e.g. `MMM D, YY`). For these, the Newsroom `date_format` is ignored and the
+ * locale's own Intl date format is used instead.
+ */
+const LANGUAGES_IGNORING_DATE_FORMAT: string[] = ['ja', 'ko', 'zh'];
+
+function shouldApplyDateFormat(locale: Locale.Code): boolean {
+    return !LANGUAGES_IGNORING_DATE_FORMAT.includes(Locale.from(locale).lang);
+}
+
 export function formatDate(
     input: Date | Iso8601Date | UnixTimestampInSeconds,
     context: { locale: Locale.Code; timezone: Timezone; dateFormat?: string },
@@ -48,7 +60,7 @@ export function formatDate(
 ) {
     const dateTime = toDate(input);
 
-    if (context.dateFormat) {
+    if (context.dateFormat && shouldApplyDateFormat(context.locale)) {
         return formatWithMomentPattern(
             dateTime,
             context.dateFormat,

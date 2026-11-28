@@ -32,4 +32,20 @@ describe('formatWithMomentPattern', () => {
             '16/03/2024',
         );
     });
+
+    describe('CJK month names', () => {
+        const sep22 = new Date('2026-09-22T04:00:00.000Z');
+        const oct1 = new Date('2026-10-01T04:00:00.000Z');
+
+        test.each([
+            ['ja_JP', sep22, '9月 22, 26'],
+            ['ja_JP', oct1, '10月 1, 26'],
+            ['ko_KR', oct1, '10월 1, 26'],
+            ['zh_HK', sep22, '9月 22, 26'],
+        ] as const)('keeps the month marker for %s (%s)', (locale, date, expected) => {
+            expect(formatWithMomentPattern(date, 'MMM D, YY', locale, 'Asia/Hong_Kong')).toBe(
+                expected,
+            );
+        });
+    });
 });
